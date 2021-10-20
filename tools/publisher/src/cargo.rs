@@ -30,7 +30,7 @@ pub async fn confirm_installed_on_path() -> Result<()> {
 
 /// Returns a `Cmd` that, when spawned, will asynchronously run `cargo publish` in the given crate path.
 pub fn publish_task(crate_path: &Path) -> Cmd {
-    cmd!["cargo", "publish"].working_dir(crate_path)
+    cmd!["cargo", "publish", "--jobs", "1"].working_dir(crate_path)
 }
 
 #[derive(Default)]

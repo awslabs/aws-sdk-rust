@@ -84,7 +84,7 @@ impl PackageStats {
     fn calculate(packages: &[Package]) -> PackageStats {
         let mut stats = PackageStats::default();
         for package in packages {
-            if package.handle.name.starts_with("smithy-") {
+            if package.handle.name.starts_with("aws-smithy-") {
                 stats.smithy_runtime_crates += 1;
             } else if package.handle.name.starts_with("aws-sdk-") {
                 stats.aws_sdk_crates += 1;

@@ -46,14 +46,31 @@ pub async fn subcommand_publish() -> Result<()> {
                 info!("Executing `{}`...", plan);
                 let output = task.spawn().await?;
                 if !output.status.success() {
-                    let message = format!(
-                        "Cargo publish failed:\nPlan: {}\nStatus: {}\nStdout: {}\nStderr: {}\n",
-                        plan,
-                        output.status,
-                        String::from_utf8_lossy(&output.stdout),
-                        String::from_utf8_lossy(&output.stderr)
+                    let already_uploaded_msg = format!(
+                        "error: crate version `{}` is already uploaded",
+                        package.handle.version
                     );
-                    return Err(anyhow::Error::msg(message));
+                    let (stdout, stderr) = (
+                        String::from_utf8_lossy(&output.stdout),
+                        String::from_utf8_lossy(&output.stderr),
+                    );
+                    if stdout.contains(&already_uploaded_msg)
+                        || stderr.contains(&already_uploaded_msg)
+                    {
+                        info!(
+                            "{}-{} has already been published to crates.io.",
+                            package.handle.name, package.handle.version
+                        );
+                    } else {
+                        let message = format!(
+                            "Cargo publish failed:\nPlan: {}\nStatus: {}\nStdout: {}\nStderr: {}\n",
+                            plan,
+                            output.status,
+                            String::from_utf8_lossy(&output.stdout),
+                            String::from_utf8_lossy(&output.stderr)
+                        );
+                        return Err(anyhow::Error::msg(message));
+                    }
                 }
                 tokio::time::sleep(BACKOFF).await;
                 drop(permit);
