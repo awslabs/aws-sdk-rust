@@ -68,7 +68,7 @@ pub struct ReplicationGroup {
     /// </p>
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    pub auth_token_last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
     /// after the cluster is created. To enable in-transit encryption on a cluster
@@ -103,7 +103,7 @@ pub struct ReplicationGroup {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
-    pub replication_group_create_time: std::option::Option<smithy_types::Instant>,
+    pub replication_group_create_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReplicationGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -181,7 +181,7 @@ pub mod replication_group {
         pub(crate) cluster_enabled: std::option::Option<bool>,
         pub(crate) cache_node_type: std::option::Option<std::string::String>,
         pub(crate) auth_token_enabled: std::option::Option<bool>,
-        pub(crate) auth_token_last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) transit_encryption_enabled: std::option::Option<bool>,
         pub(crate) at_rest_encryption_enabled: std::option::Option<bool>,
         pub(crate) member_clusters_outpost_arns:
@@ -191,7 +191,7 @@ pub mod replication_group {
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) log_delivery_configurations:
             std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
-        pub(crate) replication_group_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) replication_group_create_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier for the replication group.</p>
@@ -199,6 +199,7 @@ pub mod replication_group {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the replication group.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -211,6 +212,7 @@ pub mod replication_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The user supplied description of the replication group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -223,6 +225,7 @@ pub mod replication_group {
             self.global_replication_group_info = Some(input);
             self
         }
+        /// <p>The name of the Global datastore and role of this replication group in the Global datastore.</p>
         pub fn set_global_replication_group_info(
             mut self,
             input: std::option::Option<crate::model::GlobalReplicationGroupInfo>,
@@ -241,6 +244,13 @@ pub mod replication_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current state of this replication group -
+        /// <code>creating</code>,
+        /// <code>available</code>,
+        /// <code>modifying</code>,
+        /// <code>deleting</code>,
+        /// <code>create-failed</code>,
+        /// <code>snapshotting</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -254,6 +264,8 @@ pub mod replication_group {
             self.pending_modified_values = Some(input);
             self
         }
+        /// <p>A group of settings to be applied to the replication group,
+        /// either immediately or during the next maintenance window.</p>
         pub fn set_pending_modified_values(
             mut self,
             input: std::option::Option<crate::model::ReplicationGroupPendingModifiedValues>,
@@ -261,12 +273,18 @@ pub mod replication_group {
             self.pending_modified_values = input;
             self
         }
+        /// Appends an item to `member_clusters`.
+        ///
+        /// To override the contents of this collection use [`set_member_clusters`](Self::set_member_clusters).
+        ///
+        /// <p>The names of all the cache clusters that are part of this replication group.</p>
         pub fn member_clusters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.member_clusters.unwrap_or_default();
             v.push(input.into());
             self.member_clusters = Some(v);
             self
         }
+        /// <p>The names of all the cache clusters that are part of this replication group.</p>
         pub fn set_member_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -274,12 +292,24 @@ pub mod replication_group {
             self.member_clusters = input;
             self
         }
+        /// Appends an item to `node_groups`.
+        ///
+        /// To override the contents of this collection use [`set_node_groups`](Self::set_node_groups).
+        ///
+        /// <p>A list of node groups in this replication group.
+        /// For Redis (cluster mode disabled) replication groups, this is a single-element list.
+        /// For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+        /// node group (shard).</p>
         pub fn node_groups(mut self, input: impl Into<crate::model::NodeGroup>) -> Self {
             let mut v = self.node_groups.unwrap_or_default();
             v.push(input.into());
             self.node_groups = Some(v);
             self
         }
+        /// <p>A list of node groups in this replication group.
+        /// For Redis (cluster mode disabled) replication groups, this is a single-element list.
+        /// For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+        /// node group (shard).</p>
         pub fn set_node_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeGroup>>,
@@ -292,6 +322,7 @@ pub mod replication_group {
             self.snapshotting_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster ID that is used as the daily snapshot source for the replication group.</p>
         pub fn set_snapshotting_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -304,6 +335,7 @@ pub mod replication_group {
             self.automatic_failover = Some(input);
             self
         }
+        /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
         pub fn set_automatic_failover(
             mut self,
             input: std::option::Option<crate::model::AutomaticFailoverStatus>,
@@ -317,6 +349,8 @@ pub mod replication_group {
             self.multi_az = Some(input);
             self
         }
+        /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>
+        /// </p>
         pub fn set_multi_az(
             mut self,
             input: std::option::Option<crate::model::MultiAzStatus>,
@@ -330,6 +364,8 @@ pub mod replication_group {
             self.configuration_endpoint = Some(input);
             self
         }
+        /// <p>The configuration endpoint for this replication group.
+        /// Use the configuration endpoint to connect to this replication group.</p>
         pub fn set_configuration_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -348,6 +384,13 @@ pub mod replication_group {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+        /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+        /// <important>
+        /// <p>
+        /// If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+        /// </important>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -363,6 +406,13 @@ pub mod replication_group {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of your node group (shard).</p>
+        /// <p>Example: <code>05:00-09:00</code>
+        /// </p>
+        /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -378,6 +428,10 @@ pub mod replication_group {
             self.cluster_enabled = Some(input);
             self
         }
+        /// <p>A flag indicating whether or not this replication group is cluster enabled;
+        /// i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
+        /// <p>Valid values: <code>true</code> | <code>false</code>
+        /// </p>
         pub fn set_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cluster_enabled = input;
             self
@@ -387,6 +441,7 @@ pub mod replication_group {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The name of the compute and memory capacity node type for each node in the replication group.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -402,18 +457,23 @@ pub mod replication_group {
             self.auth_token_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables using an <code>AuthToken</code> (password)
+        /// when issuing Redis commands.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_auth_token_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auth_token_enabled = input;
             self
         }
         /// <p>The date the auth token was last modified</p>
-        pub fn auth_token_last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.auth_token_last_modified_date = Some(input);
             self
         }
+        /// <p>The date the auth token was last modified</p>
         pub fn set_auth_token_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.auth_token_last_modified_date = input;
             self
@@ -432,6 +492,16 @@ pub mod replication_group {
             self.transit_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
+        /// after the cluster is created. To enable in-transit encryption on a cluster
+        /// you must set <code>TransitEncryptionEnabled</code> to <code>true</code>
+        /// when you create a cluster.</p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -450,10 +520,25 @@ pub mod replication_group {
             self.at_rest_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code>
+        /// after the cluster is created. To enable encryption at-rest on a cluster
+        /// you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
+        /// when you create a cluster.</p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.at_rest_encryption_enabled = input;
             self
         }
+        /// Appends an item to `member_clusters_outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_member_clusters_outpost_arns`](Self::set_member_clusters_outpost_arns).
+        ///
+        /// <p>The outpost ARNs of the replication group's member clusters.</p>
         pub fn member_clusters_outpost_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -463,6 +548,7 @@ pub mod replication_group {
             self.member_clusters_outpost_arns = Some(v);
             self
         }
+        /// <p>The outpost ARNs of the replication group's member clusters.</p>
         pub fn set_member_clusters_outpost_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -475,6 +561,7 @@ pub mod replication_group {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -484,16 +571,23 @@ pub mod replication_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `user_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
+        ///
+        /// <p>The ID of the user group associated to the replication group.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids = Some(v);
             self
         }
+        /// <p>The ID of the user group associated to the replication group.</p>
         pub fn set_user_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -501,6 +595,11 @@ pub mod replication_group {
             self.user_group_ids = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Returns the destination, format and type of the logs. </p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfiguration>,
@@ -510,6 +609,7 @@ pub mod replication_group {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Returns the destination, format and type of the logs. </p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
@@ -518,13 +618,14 @@ pub mod replication_group {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn replication_group_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn replication_group_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.replication_group_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the cluster was created.</p>
         pub fn set_replication_group_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_group_create_time = input;
             self
@@ -617,6 +718,7 @@ pub mod log_delivery_configuration {
             self.log_type = Some(input);
             self
         }
+        /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -626,6 +728,7 @@ pub mod log_delivery_configuration {
             self.destination_type = Some(input);
             self
         }
+        /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -638,6 +741,7 @@ pub mod log_delivery_configuration {
             self.destination_details = Some(input);
             self
         }
+        /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
         pub fn set_destination_details(
             mut self,
             input: std::option::Option<crate::model::DestinationDetails>,
@@ -650,6 +754,7 @@ pub mod log_delivery_configuration {
             self.log_format = Some(input);
             self
         }
+        /// <p>Returns the log format, either JSON or TEXT.</p>
         pub fn set_log_format(
             mut self,
             input: std::option::Option<crate::model::LogFormat>,
@@ -663,6 +768,8 @@ pub mod log_delivery_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>Returns the log delivery configuration status. Values are one of <code>enabling</code> | <code>disabling</code> | <code>modifying</code> | <code>active</code> | <code>error</code>
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LogDeliveryConfigurationStatus>,
@@ -675,6 +782,7 @@ pub mod log_delivery_configuration {
             self.message = Some(input.into());
             self
         }
+        /// <p>Returns an error message for the log delivery configuration.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -699,6 +807,7 @@ impl LogDeliveryConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -710,10 +819,15 @@ impl LogDeliveryConfiguration {
     std::hash::Hash,
 )]
 pub enum LogDeliveryConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Disabling,
+    #[allow(missing_docs)] // documentation missing in model
     Enabling,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -738,6 +852,7 @@ impl std::str::FromStr for LogDeliveryConfigurationStatus {
     }
 }
 impl LogDeliveryConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogDeliveryConfigurationStatus::Active => "active",
@@ -748,6 +863,7 @@ impl LogDeliveryConfigurationStatus {
             LogDeliveryConfigurationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["active", "disabling", "enabling", "error", "modifying"]
     }
@@ -758,6 +874,7 @@ impl AsRef<str> for LogDeliveryConfigurationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -769,7 +886,9 @@ impl AsRef<str> for LogDeliveryConfigurationStatus {
     std::hash::Hash,
 )]
 pub enum LogFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Text,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -791,6 +910,7 @@ impl std::str::FromStr for LogFormat {
     }
 }
 impl LogFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogFormat::Json => "json",
@@ -798,6 +918,7 @@ impl LogFormat {
             LogFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["json", "text"]
     }
@@ -847,6 +968,7 @@ pub mod destination_details {
             self.cloud_watch_logs_details = Some(input);
             self
         }
+        /// <p>The configuration details of the CloudWatch Logs destination.</p>
         pub fn set_cloud_watch_logs_details(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestinationDetails>,
@@ -862,6 +984,7 @@ pub mod destination_details {
             self.kinesis_firehose_details = Some(input);
             self
         }
+        /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
         pub fn set_kinesis_firehose_details(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseDestinationDetails>,
@@ -913,6 +1036,7 @@ pub mod kinesis_firehose_destination_details {
             self.delivery_stream = Some(input.into());
             self
         }
+        /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
         pub fn set_delivery_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -963,6 +1087,7 @@ pub mod cloud_watch_logs_destination_details {
             self.log_group = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch Logs log group.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -982,6 +1107,7 @@ impl CloudWatchLogsDestinationDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -993,7 +1119,9 @@ impl CloudWatchLogsDestinationDetails {
     std::hash::Hash,
 )]
 pub enum DestinationType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudWatchLogs,
+    #[allow(missing_docs)] // documentation missing in model
     KinesisFirehose,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1015,6 +1143,7 @@ impl std::str::FromStr for DestinationType {
     }
 }
 impl DestinationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DestinationType::CloudWatchLogs => "cloudwatch-logs",
@@ -1022,6 +1151,7 @@ impl DestinationType {
             DestinationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cloudwatch-logs", "kinesis-firehose"]
     }
@@ -1032,6 +1162,7 @@ impl AsRef<str> for DestinationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1043,6 +1174,7 @@ impl AsRef<str> for DestinationType {
     std::hash::Hash,
 )]
 pub enum LogType {
+    #[allow(missing_docs)] // documentation missing in model
     SlowLog,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1063,12 +1195,14 @@ impl std::str::FromStr for LogType {
     }
 }
 impl LogType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::SlowLog => "slow-log",
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["slow-log"]
     }
@@ -1111,6 +1245,7 @@ pub mod endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>The DNS hostname of the cache node.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -1120,6 +1255,7 @@ pub mod endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>The port number that the cache engine is listening on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -1140,6 +1276,7 @@ impl Endpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1151,7 +1288,9 @@ impl Endpoint {
     std::hash::Hash,
 )]
 pub enum MultiAzStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1173,6 +1312,7 @@ impl std::str::FromStr for MultiAzStatus {
     }
 }
 impl MultiAzStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MultiAzStatus::Disabled => "disabled",
@@ -1180,6 +1320,7 @@ impl MultiAzStatus {
             MultiAzStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
@@ -1190,6 +1331,7 @@ impl AsRef<str> for MultiAzStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1201,9 +1343,13 @@ impl AsRef<str> for MultiAzStatus {
     std::hash::Hash,
 )]
 pub enum AutomaticFailoverStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Disabling,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1227,6 +1373,7 @@ impl std::str::FromStr for AutomaticFailoverStatus {
     }
 }
 impl AutomaticFailoverStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutomaticFailoverStatus::Disabled => "disabled",
@@ -1236,6 +1383,7 @@ impl AutomaticFailoverStatus {
             AutomaticFailoverStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["disabled", "disabling", "enabled", "enabling"]
     }
@@ -1302,6 +1450,9 @@ pub mod node_group {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001.
+        /// A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for
+        /// a node group. </p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1315,6 +1466,8 @@ pub mod node_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current state of this replication group - <code>creating</code>,
+        /// <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1324,6 +1477,7 @@ pub mod node_group {
             self.primary_endpoint = Some(input);
             self
         }
+        /// <p>The endpoint of the primary node in this node group (shard).</p>
         pub fn set_primary_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -1336,6 +1490,7 @@ pub mod node_group {
             self.reader_endpoint = Some(input);
             self
         }
+        /// <p>The endpoint of the replica nodes in this node group (shard).</p>
         pub fn set_reader_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -1348,10 +1503,16 @@ pub mod node_group {
             self.slots = Some(input.into());
             self
         }
+        /// <p>The keyspace for this node group (shard).</p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
         }
+        /// Appends an item to `node_group_members`.
+        ///
+        /// To override the contents of this collection use [`set_node_group_members`](Self::set_node_group_members).
+        ///
+        /// <p>A list containing information about individual nodes within the node group (shard).</p>
         pub fn node_group_members(
             mut self,
             input: impl Into<crate::model::NodeGroupMember>,
@@ -1361,6 +1522,7 @@ pub mod node_group {
             self.node_group_members = Some(v);
             self
         }
+        /// <p>A list containing information about individual nodes within the node group (shard).</p>
         pub fn set_node_group_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeGroupMember>>,
@@ -1442,6 +1604,7 @@ pub mod node_group_member {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the cluster to which the node belongs.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,6 +1617,7 @@ pub mod node_group_member {
             self.cache_node_id = Some(input.into());
             self
         }
+        /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
         pub fn set_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1467,6 +1631,8 @@ pub mod node_group_member {
             self.read_endpoint = Some(input);
             self
         }
+        /// <p>The information required for client programs to connect to a node for read operations.
+        /// The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
         pub fn set_read_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -1482,6 +1648,7 @@ pub mod node_group_member {
             self.preferred_availability_zone = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone in which the node is located.</p>
         pub fn set_preferred_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1494,6 +1661,7 @@ pub mod node_group_member {
             self.preferred_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The outpost ARN of the node group member.</p>
         pub fn set_preferred_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1508,6 +1676,9 @@ pub mod node_group_member {
             self.current_role = Some(input.into());
             self
         }
+        /// <p>The role that is currently assigned to the node - <code>primary</code> or
+        /// <code>replica</code>. This member is only applicable for Redis (cluster mode disabled)
+        /// replication groups.</p>
         pub fn set_current_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.current_role = input;
             self
@@ -1590,6 +1761,8 @@ pub mod replication_group_pending_modified_values {
             self.primary_cluster_id = Some(input.into());
             self
         }
+        /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code>
+        /// was specified), or during the next maintenance window.</p>
         pub fn set_primary_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1605,6 +1778,7 @@ pub mod replication_group_pending_modified_values {
             self.automatic_failover_status = Some(input);
             self
         }
+        /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
         pub fn set_automatic_failover_status(
             mut self,
             input: std::option::Option<crate::model::PendingAutomaticFailoverStatus>,
@@ -1617,6 +1791,7 @@ pub mod replication_group_pending_modified_values {
             self.resharding = Some(input);
             self
         }
+        /// <p>The status of an online resharding operation.</p>
         pub fn set_resharding(
             mut self,
             input: std::option::Option<crate::model::ReshardingStatus>,
@@ -1629,6 +1804,7 @@ pub mod replication_group_pending_modified_values {
             self.auth_token_status = Some(input);
             self
         }
+        /// <p>The auth token status</p>
         pub fn set_auth_token_status(
             mut self,
             input: std::option::Option<crate::model::AuthTokenUpdateStatus>,
@@ -1641,6 +1817,7 @@ pub mod replication_group_pending_modified_values {
             self.user_groups = Some(input);
             self
         }
+        /// <p>The user group being modified.</p>
         pub fn set_user_groups(
             mut self,
             input: std::option::Option<crate::model::UserGroupsUpdateStatus>,
@@ -1648,6 +1825,11 @@ pub mod replication_group_pending_modified_values {
             self.user_groups = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>The log delivery configurations being modified </p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::PendingLogDeliveryConfiguration>,
@@ -1657,6 +1839,7 @@ pub mod replication_group_pending_modified_values {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>The log delivery configurations being modified </p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -1726,6 +1909,7 @@ pub mod pending_log_delivery_configuration {
             self.log_type = Some(input);
             self
         }
+        /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -1735,6 +1919,7 @@ pub mod pending_log_delivery_configuration {
             self.destination_type = Some(input);
             self
         }
+        /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -1747,6 +1932,7 @@ pub mod pending_log_delivery_configuration {
             self.destination_details = Some(input);
             self
         }
+        /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
         pub fn set_destination_details(
             mut self,
             input: std::option::Option<crate::model::DestinationDetails>,
@@ -1759,6 +1945,7 @@ pub mod pending_log_delivery_configuration {
             self.log_format = Some(input);
             self
         }
+        /// <p>Returns the log format, either JSON or TEXT</p>
         pub fn set_log_format(
             mut self,
             input: std::option::Option<crate::model::LogFormat>,
@@ -1812,12 +1999,18 @@ pub mod user_groups_update_status {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `user_group_ids_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
+        ///
+        /// <p>The ID of the user group to add.</p>
         pub fn user_group_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids_to_add.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids_to_add = Some(v);
             self
         }
+        /// <p>The ID of the user group to add.</p>
         pub fn set_user_group_ids_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1825,12 +2018,18 @@ pub mod user_groups_update_status {
             self.user_group_ids_to_add = input;
             self
         }
+        /// Appends an item to `user_group_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
+        ///
+        /// <p>The ID of the user group to remove.</p>
         pub fn user_group_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids_to_remove = Some(v);
             self
         }
+        /// <p>The ID of the user group to remove.</p>
         pub fn set_user_group_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1854,6 +2053,7 @@ impl UserGroupsUpdateStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1865,7 +2065,9 @@ impl UserGroupsUpdateStatus {
     std::hash::Hash,
 )]
 pub enum AuthTokenUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Rotating,
+    #[allow(missing_docs)] // documentation missing in model
     Setting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1887,6 +2089,7 @@ impl std::str::FromStr for AuthTokenUpdateStatus {
     }
 }
 impl AuthTokenUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthTokenUpdateStatus::Rotating => "ROTATING",
@@ -1894,6 +2097,7 @@ impl AuthTokenUpdateStatus {
             AuthTokenUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ROTATING", "SETTING"]
     }
@@ -1932,6 +2136,7 @@ pub mod resharding_status {
             self.slot_migration = Some(input);
             self
         }
+        /// <p>Represents the progress of an online resharding operation.</p>
         pub fn set_slot_migration(
             mut self,
             input: std::option::Option<crate::model::SlotMigration>,
@@ -1982,6 +2187,7 @@ pub mod slot_migration {
             self.progress_percentage = Some(input);
             self
         }
+        /// <p>The percentage of the slot migration that is complete.</p>
         pub fn set_progress_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.progress_percentage = input;
             self
@@ -2001,6 +2207,7 @@ impl SlotMigration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2012,7 +2219,9 @@ impl SlotMigration {
     std::hash::Hash,
 )]
 pub enum PendingAutomaticFailoverStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2034,6 +2243,7 @@ impl std::str::FromStr for PendingAutomaticFailoverStatus {
     }
 }
 impl PendingAutomaticFailoverStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PendingAutomaticFailoverStatus::Disabled => "disabled",
@@ -2041,6 +2251,7 @@ impl PendingAutomaticFailoverStatus {
             PendingAutomaticFailoverStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
@@ -2092,6 +2303,7 @@ pub mod global_replication_group_info {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2107,6 +2319,7 @@ pub mod global_replication_group_info {
             self.global_replication_group_member_role = Some(input.into());
             self
         }
+        /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
         pub fn set_global_replication_group_member_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2162,6 +2375,7 @@ pub mod customer_node_endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>The address of the node endpoint</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -2171,6 +2385,7 @@ pub mod customer_node_endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>The port of the node endpoint</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -2253,6 +2468,7 @@ pub mod cache_security_group {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon account ID of the cache security group owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -2262,6 +2478,7 @@ pub mod cache_security_group {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache security group.</p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2274,10 +2491,16 @@ pub mod cache_security_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the cache security group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `ec2_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_security_groups`](Self::set_ec2_security_groups).
+        ///
+        /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
         pub fn ec2_security_groups(
             mut self,
             input: impl Into<crate::model::Ec2SecurityGroup>,
@@ -2287,6 +2510,7 @@ pub mod cache_security_group {
             self.ec2_security_groups = Some(v);
             self
         }
+        /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
         pub fn set_ec2_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
@@ -2299,6 +2523,7 @@ pub mod cache_security_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the cache security group,</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2361,6 +2586,7 @@ pub mod ec2_security_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the Amazon EC2 security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2370,6 +2596,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon EC2 security group.</p>
         pub fn set_ec2_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2385,6 +2612,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
         pub fn set_ec2_security_group_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2441,6 +2669,7 @@ pub mod parameter_name_value {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2453,6 +2682,7 @@ pub mod parameter_name_value {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value of the parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2509,6 +2739,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag. May not be null.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2518,6 +2749,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value. May be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2553,6 +2785,7 @@ pub struct CacheCluster {
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
     pub client_download_landing_page: std::option::Option<std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the cluster.</p>
+    ///
     /// <p>The following node types are supported by ElastiCache.
     /// Generally speaking, the current generation types provide more memory and computational power
     /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -2562,6 +2795,7 @@ pub struct CacheCluster {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -2572,11 +2806,17 @@ pub struct CacheCluster {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -2585,7 +2825,11 @@ pub struct CacheCluster {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -2600,12 +2844,18 @@ pub struct CacheCluster {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -2613,6 +2863,7 @@ pub struct CacheCluster {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -2620,6 +2871,7 @@ pub struct CacheCluster {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -2627,11 +2879,13 @@ pub struct CacheCluster {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -2649,6 +2903,10 @@ pub struct CacheCluster {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -2657,6 +2915,12 @@ pub struct CacheCluster {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -2671,6 +2935,7 @@ pub struct CacheCluster {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -2680,6 +2945,17 @@ pub struct CacheCluster {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -2689,6 +2965,7 @@ pub struct CacheCluster {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -2697,10 +2974,12 @@ pub struct CacheCluster {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -2746,7 +3025,7 @@ pub struct CacheCluster {
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    pub cache_cluster_create_time: std::option::Option<smithy_types::Instant>,
+    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the weekly time range during which maintenance
     /// on the cluster is performed. It is specified as a range in
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -2833,7 +3112,7 @@ pub struct CacheCluster {
     /// </p>
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
-    pub auth_token_last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
     /// after the cluster is created. To enable in-transit encryption on a cluster
@@ -2946,7 +3225,7 @@ pub mod cache_cluster {
         pub(crate) num_cache_nodes: std::option::Option<i32>,
         pub(crate) preferred_availability_zone: std::option::Option<std::string::String>,
         pub(crate) preferred_outpost_arn: std::option::Option<std::string::String>,
-        pub(crate) cache_cluster_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) pending_modified_values:
             std::option::Option<crate::model::PendingModifiedValues>,
@@ -2965,7 +3244,7 @@ pub mod cache_cluster {
         pub(crate) snapshot_retention_limit: std::option::Option<i32>,
         pub(crate) snapshot_window: std::option::Option<std::string::String>,
         pub(crate) auth_token_enabled: std::option::Option<bool>,
-        pub(crate) auth_token_last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) auth_token_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) transit_encryption_enabled: std::option::Option<bool>,
         pub(crate) at_rest_encryption_enabled: std::option::Option<bool>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2980,6 +3259,8 @@ pub mod cache_cluster {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The user-supplied identifier of the cluster.
+        /// This identifier is a unique key that identifies a cluster.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2995,6 +3276,10 @@ pub mod cache_cluster {
             self.configuration_endpoint = Some(input);
             self
         }
+        /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster.
+        /// The configuration endpoint will always have <code>.cfg</code> in it.</p>
+        /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
+        /// </p>
         pub fn set_configuration_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -3010,6 +3295,7 @@ pub mod cache_cluster {
             self.client_download_landing_page = Some(input.into());
             self
         }
+        /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
         pub fn set_client_download_landing_page(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3018,6 +3304,7 @@ pub mod cache_cluster {
             self
         }
         /// <p>The name of the compute and memory capacity node type for the cluster.</p>
+        ///
         /// <p>The following node types are supported by ElastiCache.
         /// Generally speaking, the current generation types provide more memory and computational power
         /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -3027,6 +3314,7 @@ pub mod cache_cluster {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -3037,11 +3325,17 @@ pub mod cache_cluster {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -3050,7 +3344,11 @@ pub mod cache_cluster {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -3065,12 +3363,18 @@ pub mod cache_cluster {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -3078,6 +3382,7 @@ pub mod cache_cluster {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -3085,6 +3390,7 @@ pub mod cache_cluster {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -3092,11 +3398,13 @@ pub mod cache_cluster {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -3114,6 +3422,10 @@ pub mod cache_cluster {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -3122,6 +3434,12 @@ pub mod cache_cluster {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -3136,6 +3454,7 @@ pub mod cache_cluster {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -3145,6 +3464,17 @@ pub mod cache_cluster {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -3154,6 +3484,7 @@ pub mod cache_cluster {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -3162,10 +3493,12 @@ pub mod cache_cluster {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -3188,6 +3521,220 @@ pub mod cache_cluster {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The name of the compute and memory capacity node type for the cluster.</p>
+        ///
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3201,6 +3748,8 @@ pub mod cache_cluster {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The name of the cache engine (<code>memcached</code> or
+        /// <code>redis</code>) to be used for this cluster.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -3210,6 +3759,7 @@ pub mod cache_cluster {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version of the cache engine that is used in this cluster.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3231,6 +3781,16 @@ pub mod cache_cluster {
             self.cache_cluster_status = Some(input.into());
             self
         }
+        /// <p>The current state of this cluster, one of the following values:
+        /// <code>available</code>,
+        /// <code>creating</code>,
+        /// <code>deleted</code>,
+        /// <code>deleting</code>,
+        /// <code>incompatible-network</code>,
+        /// <code>modifying</code>,
+        /// <code>rebooting cluster nodes</code>,
+        /// <code>restore-failed</code>, or
+        /// <code>snapshotting</code>.</p>
         pub fn set_cache_cluster_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3245,6 +3805,9 @@ pub mod cache_cluster {
             self.num_cache_nodes = Some(input);
             self
         }
+        /// <p>The number of cache nodes in the cluster.</p>
+        /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// this value must be between 1 and 40.</p>
         pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_nodes = input;
             self
@@ -3258,6 +3821,8 @@ pub mod cache_cluster {
             self.preferred_availability_zone = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone in which the cluster is located or "Multiple"
+        /// if the cache nodes are located in different Availability Zones.</p>
         pub fn set_preferred_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3270,6 +3835,7 @@ pub mod cache_cluster {
             self.preferred_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The outpost ARN in which the cache cluster is created.</p>
         pub fn set_preferred_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3278,13 +3844,14 @@ pub mod cache_cluster {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn cache_cluster_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.cache_cluster_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the cluster was created.</p>
         pub fn set_cache_cluster_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.cache_cluster_create_time = input;
             self
@@ -3340,6 +3907,50 @@ pub mod cache_cluster {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sun</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tue</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>wed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>thu</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sat</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code>
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3356,6 +3967,8 @@ pub mod cache_cluster {
             self.pending_modified_values = Some(input);
             self
         }
+        /// <p>A group of settings that are applied to the cluster in the future,
+        /// or that are currently being applied.</p>
         pub fn set_pending_modified_values(
             mut self,
             input: std::option::Option<crate::model::PendingModifiedValues>,
@@ -3372,6 +3985,8 @@ pub mod cache_cluster {
             self.notification_configuration = Some(input);
             self
         }
+        /// <p>Describes a notification topic and its status.
+        /// Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -3379,6 +3994,11 @@ pub mod cache_cluster {
             self.notification_configuration = input;
             self
         }
+        /// Appends an item to `cache_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_cache_security_groups`](Self::set_cache_security_groups).
+        ///
+        /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
         pub fn cache_security_groups(
             mut self,
             input: impl Into<crate::model::CacheSecurityGroupMembership>,
@@ -3388,6 +4008,7 @@ pub mod cache_cluster {
             self.cache_security_groups = Some(v);
             self
         }
+        /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
         pub fn set_cache_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroupMembership>>,
@@ -3403,6 +4024,7 @@ pub mod cache_cluster {
             self.cache_parameter_group = Some(input);
             self
         }
+        /// <p>Status of the cache parameter group.</p>
         pub fn set_cache_parameter_group(
             mut self,
             input: std::option::Option<crate::model::CacheParameterGroupStatus>,
@@ -3415,6 +4037,7 @@ pub mod cache_cluster {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group associated with the cluster.</p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3422,12 +4045,18 @@ pub mod cache_cluster {
             self.cache_subnet_group_name = input;
             self
         }
+        /// Appends an item to `cache_nodes`.
+        ///
+        /// To override the contents of this collection use [`set_cache_nodes`](Self::set_cache_nodes).
+        ///
+        /// <p>A list of cache nodes that are members of the cluster.</p>
         pub fn cache_nodes(mut self, input: impl Into<crate::model::CacheNode>) -> Self {
             let mut v = self.cache_nodes.unwrap_or_default();
             v.push(input.into());
             self.cache_nodes = Some(v);
             self
         }
+        /// <p>A list of cache nodes that are members of the cluster.</p>
         pub fn set_cache_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheNode>>,
@@ -3440,10 +4069,16 @@ pub mod cache_cluster {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of VPC Security Groups associated with the cluster.</p>
         pub fn security_groups(
             mut self,
             input: impl Into<crate::model::SecurityGroupMembership>,
@@ -3453,6 +4088,7 @@ pub mod cache_cluster {
             self.security_groups = Some(v);
             self
         }
+        /// <p>A list of VPC Security Groups associated with the cluster.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
@@ -3466,6 +4102,8 @@ pub mod cache_cluster {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The replication group to which this cluster belongs.
+        /// If this field is empty, the cluster is not associated with any replication group.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3484,6 +4122,13 @@ pub mod cache_cluster {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,  a
+        /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+        /// <important>
+        /// <p>
+        /// If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+        /// </important>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -3496,6 +4141,10 @@ pub mod cache_cluster {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache begins taking a
+        /// daily snapshot of your cluster.</p>
+        /// <p>Example: <code>05:00-09:00</code>
+        /// </p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3511,18 +4160,23 @@ pub mod cache_cluster {
             self.auth_token_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables using an <code>AuthToken</code> (password)
+        /// when issuing Redis commands.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_auth_token_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auth_token_enabled = input;
             self
         }
         /// <p>The date the auth token was last modified</p>
-        pub fn auth_token_last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn auth_token_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.auth_token_last_modified_date = Some(input);
             self
         }
+        /// <p>The date the auth token was last modified</p>
         pub fn set_auth_token_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.auth_token_last_modified_date = input;
             self
@@ -3541,6 +4195,16 @@ pub mod cache_cluster {
             self.transit_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
+        /// after the cluster is created. To enable in-transit encryption on a cluster
+        /// you must set <code>TransitEncryptionEnabled</code> to <code>true</code>
+        /// when you create a cluster.</p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -3559,6 +4223,16 @@ pub mod cache_cluster {
             self.at_rest_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code>
+        /// after the cluster is created. To enable at-rest encryption on a cluster
+        /// you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
+        /// when you create a cluster.</p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.at_rest_encryption_enabled = input;
             self
@@ -3568,6 +4242,7 @@ pub mod cache_cluster {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3577,6 +4252,7 @@ pub mod cache_cluster {
             self.replication_group_log_delivery_enabled = Some(input);
             self
         }
+        /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
         pub fn set_replication_group_log_delivery_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -3584,6 +4260,11 @@ pub mod cache_cluster {
             self.replication_group_log_delivery_enabled = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Returns the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfiguration>,
@@ -3593,6 +4274,7 @@ pub mod cache_cluster {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Returns the destination, format and type of the logs.</p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
@@ -3680,6 +4362,7 @@ pub mod security_group_membership {
             self.security_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cache security group.</p>
         pub fn set_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3694,6 +4377,9 @@ pub mod security_group_membership {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the cache security group membership.
+        /// The status changes whenever a cache security group is modified,
+        /// or when the cache security groups assigned to a cluster are modified.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3717,6 +4403,7 @@ impl SecurityGroupMembership {
 /// <p>Represents an individual cache node within a cluster. Each cache node runs its own
 /// instance of the cluster's protocol-compliant caching software - either Memcached or
 /// Redis.</p>
+///
 /// <p>The following node types are supported by ElastiCache.
 /// Generally speaking, the current generation types provide more memory and computational power
 /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -3726,6 +4413,7 @@ impl SecurityGroupMembership {
 /// <ul>
 /// <li>
 /// <p>Current generation: </p>
+///
 /// <p>
 /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
 /// <p>  
@@ -3736,11 +4424,17 @@ impl SecurityGroupMembership {
 /// <code>cache.m6g.8xlarge</code>,
 /// <code>cache.m6g.12xlarge</code>,
 /// <code>cache.m6g.16xlarge</code>
+///
+///
+///
 /// </p>  
+///
 /// <note>
 /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
 /// </p>
 /// </note>
+///
+///
 /// <p>
 /// <b>M5 node types:</b>
 /// <code>cache.m5.large</code>,
@@ -3749,7 +4443,11 @@ impl SecurityGroupMembership {
 /// <code>cache.m5.4xlarge</code>,
 /// <code>cache.m5.12xlarge</code>,
 /// <code>cache.m5.24xlarge</code>
+///
+///
 /// </p>  
+///
+///
 /// <p>
 /// <b>M4 node types:</b>
 /// <code>cache.m4.large</code>,
@@ -3764,12 +4462,18 @@ impl SecurityGroupMembership {
 /// <code>cache.t3.small</code>,
 /// <code>cache.t3.medium</code>
 /// </p>
+///
+///
 /// <p>
 /// <b>T2 node types:</b>
 /// <code>cache.t2.micro</code>,
 /// <code>cache.t2.small</code>,
 /// <code>cache.t2.medium</code>
 /// </p>
+///
+///
+///
+///
 /// </li>
 /// <li>
 /// <p>Previous generation: (not recommended)</p>
@@ -3777,6 +4481,7 @@ impl SecurityGroupMembership {
 /// <b>T1 node types:</b>
 /// <code>cache.t1.micro</code>
 /// </p>
+///
 /// <p>
 /// <b>M1 node types:</b>
 /// <code>cache.m1.small</code>,
@@ -3784,6 +4489,7 @@ impl SecurityGroupMembership {
 /// <code>cache.m1.large</code>,
 /// <code>cache.m1.xlarge</code>
 /// </p>
+///
 /// <p>
 /// <b>M3 node types:</b>
 /// <code>cache.m3.medium</code>,
@@ -3791,11 +4497,13 @@ impl SecurityGroupMembership {
 /// <code>cache.m3.xlarge</code>,
 /// <code>cache.m3.2xlarge</code>
 /// </p>
+///
 /// </li>
 /// </ul>
 /// </li>
 /// <li>
 /// <p>Compute optimized:</p>
+///
 /// <ul>
 /// <li>
 /// <p>Previous generation: (not recommended)</p>
@@ -3813,6 +4521,10 @@ impl SecurityGroupMembership {
 /// <p>Current generation: </p>
 /// <p>
 /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+///
+///
+///
+///
 /// <p>  
 /// <code>cache.r6g.large</code>,
 /// <code>cache.r6g.xlarge</code>,
@@ -3821,6 +4533,12 @@ impl SecurityGroupMembership {
 /// <code>cache.r6g.8xlarge</code>,
 /// <code>cache.r6g.12xlarge</code>,
 /// <code>cache.r6g.16xlarge</code>
+///
+///
+///
+///
+///
+///
 /// </p>  
 /// <note>
 /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -3835,6 +4553,7 @@ impl SecurityGroupMembership {
 /// <code>cache.r5.12xlarge</code>,
 /// <code>cache.r5.24xlarge</code>
 /// </p>
+///
 /// <p>
 /// <b>R4 node types:</b>
 /// <code>cache.r4.large</code>,
@@ -3844,6 +4563,17 @@ impl SecurityGroupMembership {
 /// <code>cache.r4.8xlarge</code>,
 /// <code>cache.r4.16xlarge</code>
 /// </p>
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
 /// </li>
 /// <li>
 /// <p>Previous generation: (not recommended)</p>
@@ -3853,6 +4583,7 @@ impl SecurityGroupMembership {
 /// <code>cache.m2.2xlarge</code>,
 /// <code>cache.m2.4xlarge</code>
 /// </p>
+///
 /// <p>
 /// <b>R3 node types:</b>
 /// <code>cache.r3.large</code>,
@@ -3861,10 +4592,12 @@ impl SecurityGroupMembership {
 /// <code>cache.r3.4xlarge</code>,
 /// <code>cache.r3.8xlarge</code>
 /// </p>
+///
 /// </li>
 /// </ul>
 /// </li>
 /// </ul>
+///
 /// <p>
 /// <b>Additional node type info</b>
 /// </p>
@@ -3891,7 +4624,7 @@ pub struct CacheNode {
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
     pub cache_node_status: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created.</p>
-    pub cache_node_create_time: std::option::Option<smithy_types::Instant>,
+    pub cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The hostname for connecting to this cache node.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The status of the parameter group applied to this cache node.</p>
@@ -3929,7 +4662,7 @@ pub mod cache_node {
     pub struct Builder {
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_status: std::option::Option<std::string::String>,
-        pub(crate) cache_node_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
         pub(crate) parameter_group_status: std::option::Option<std::string::String>,
         pub(crate) source_cache_node_id: std::option::Option<std::string::String>,
@@ -3942,6 +4675,7 @@ pub mod cache_node {
             self.cache_node_id = Some(input.into());
             self
         }
+        /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
         pub fn set_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3954,6 +4688,7 @@ pub mod cache_node {
             self.cache_node_status = Some(input.into());
             self
         }
+        /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
         pub fn set_cache_node_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3962,13 +4697,14 @@ pub mod cache_node {
             self
         }
         /// <p>The date and time when the cache node was created.</p>
-        pub fn cache_node_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn cache_node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.cache_node_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the cache node was created.</p>
         pub fn set_cache_node_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.cache_node_create_time = input;
             self
@@ -3978,6 +4714,7 @@ pub mod cache_node {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The hostname for connecting to this cache node.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
@@ -3987,6 +4724,7 @@ pub mod cache_node {
             self.parameter_group_status = Some(input.into());
             self
         }
+        /// <p>The status of the parameter group applied to this cache node.</p>
         pub fn set_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4000,6 +4738,8 @@ pub mod cache_node {
             self.source_cache_node_id = Some(input.into());
             self
         }
+        /// <p>The ID of the primary node to which this read replica node is synchronized.
+        /// If this field is empty, this node is not associated with a primary cluster.</p>
         pub fn set_source_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4012,6 +4752,7 @@ pub mod cache_node {
             self.customer_availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone where this node was created and now resides.</p>
         pub fn set_customer_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4024,6 +4765,7 @@ pub mod cache_node {
             self.customer_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The customer outpost ARN of the cache node.</p>
         pub fn set_customer_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4094,6 +4836,7 @@ pub mod cache_parameter_group_status {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4106,6 +4849,7 @@ pub mod cache_parameter_group_status {
             self.parameter_apply_status = Some(input.into());
             self
         }
+        /// <p>The status of parameter updates.</p>
         pub fn set_parameter_apply_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4113,12 +4857,20 @@ pub mod cache_parameter_group_status {
             self.parameter_apply_status = input;
             self
         }
+        /// Appends an item to `cache_node_ids_to_reboot`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
+        ///
+        /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied.
+        /// A node ID is a numeric identifier (0001, 0002, etc.).</p>
         pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_node_ids_to_reboot.unwrap_or_default();
             v.push(input.into());
             self.cache_node_ids_to_reboot = Some(v);
             self
         }
+        /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied.
+        /// A node ID is a numeric identifier (0001, 0002, etc.).</p>
         pub fn set_cache_node_ids_to_reboot(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4175,6 +4927,7 @@ pub mod cache_security_group_membership {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache security group.</p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4187,6 +4940,7 @@ pub mod cache_security_group_membership {
             self.status = Some(input.into());
             self
         }
+        /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4241,6 +4995,7 @@ pub mod notification_configuration {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -4250,6 +5005,7 @@ pub mod notification_configuration {
             self.topic_status = Some(input.into());
             self
         }
+        /// <p>The current state of the topic.</p>
         pub fn set_topic_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_status = input;
             self
@@ -4330,16 +5086,27 @@ pub mod pending_modified_values {
             self.num_cache_nodes = Some(input);
             self
         }
+        /// <p>The new number of cache nodes for the cluster.</p>
+        /// <p>For clusters running Redis, this value must be 1.
+        /// For clusters running Memcached, this value must be between 1 and 40.</p>
         pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_nodes = input;
             self
         }
+        /// Appends an item to `cache_node_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_ids_to_remove`](Self::set_cache_node_ids_to_remove).
+        ///
+        /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster.
+        /// A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
         pub fn cache_node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_node_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.cache_node_ids_to_remove = Some(v);
             self
         }
+        /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster.
+        /// A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
         pub fn set_cache_node_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4352,6 +5119,7 @@ pub mod pending_modified_values {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The new cache engine version that the cluster  runs.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4364,6 +5132,7 @@ pub mod pending_modified_values {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type that this cluster or replication group is scaled to.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4376,6 +5145,7 @@ pub mod pending_modified_values {
             self.auth_token_status = Some(input);
             self
         }
+        /// <p>The auth token status</p>
         pub fn set_auth_token_status(
             mut self,
             input: std::option::Option<crate::model::AuthTokenUpdateStatus>,
@@ -4383,6 +5153,11 @@ pub mod pending_modified_values {
             self.auth_token_status = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>The log delivery configurations being modified </p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::PendingLogDeliveryConfiguration>,
@@ -4392,6 +5167,7 @@ pub mod pending_modified_values {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>The log delivery configurations being modified </p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -4423,6 +5199,8 @@ impl PendingModifiedValues {
 
 /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
 /// cluster automatically replicates updates to the secondary cluster.</p>
+///
+///
 /// <ul>
 /// <li>
 /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
@@ -4456,6 +5234,7 @@ pub struct GlobalReplicationGroup {
     /// </p>
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>A flag that enables in-transit encryption when set to true.
+    ///
     /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
     /// <p>
     /// <b>Required:</b>
@@ -4535,6 +5314,7 @@ pub mod global_replication_group {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4550,6 +5330,7 @@ pub mod global_replication_group {
             self.global_replication_group_description = Some(input.into());
             self
         }
+        /// <p>The optional description of the Global datastore</p>
         pub fn set_global_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4562,6 +5343,7 @@ pub mod global_replication_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the Global datastore</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4571,6 +5353,7 @@ pub mod global_replication_group {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type of the Global datastore</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4583,6 +5366,7 @@ pub mod global_replication_group {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The Elasticache engine. For Redis only.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -4592,6 +5376,7 @@ pub mod global_replication_group {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The Elasticache Redis engine version.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4599,6 +5384,11 @@ pub mod global_replication_group {
             self.engine_version = input;
             self
         }
+        /// Appends an item to `members`.
+        ///
+        /// To override the contents of this collection use [`set_members`](Self::set_members).
+        ///
+        /// <p>The replication groups that comprise the Global datastore.</p>
         pub fn members(
             mut self,
             input: impl Into<crate::model::GlobalReplicationGroupMember>,
@@ -4608,6 +5398,7 @@ pub mod global_replication_group {
             self.members = Some(v);
             self
         }
+        /// <p>The replication groups that comprise the Global datastore.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroupMember>>,
@@ -4620,10 +5411,16 @@ pub mod global_replication_group {
             self.cluster_enabled = Some(input);
             self
         }
+        /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
         pub fn set_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cluster_enabled = input;
             self
         }
+        /// Appends an item to `global_node_groups`.
+        ///
+        /// To override the contents of this collection use [`set_global_node_groups`](Self::set_global_node_groups).
+        ///
+        /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
         pub fn global_node_groups(
             mut self,
             input: impl Into<crate::model::GlobalNodeGroup>,
@@ -4633,6 +5430,7 @@ pub mod global_replication_group {
             self.global_node_groups = Some(v);
             self
         }
+        /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
         pub fn set_global_node_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalNodeGroup>>,
@@ -4648,11 +5446,16 @@ pub mod global_replication_group {
             self.auth_token_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables using an <code>AuthToken</code> (password)
+        /// when issuing Redis commands.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_auth_token_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auth_token_enabled = input;
             self
         }
         /// <p>A flag that enables in-transit encryption when set to true.
+        ///
         /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
         /// <p>
         /// <b>Required:</b>
@@ -4661,6 +5464,12 @@ pub mod global_replication_group {
             self.transit_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables in-transit encryption when set to true.
+        ///
+        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -4677,6 +5486,14 @@ pub mod global_replication_group {
             self.at_rest_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication
+        /// group is created.
+        /// To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+        /// <code>true</code> when you create the replication group. </p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.at_rest_encryption_enabled = input;
             self
@@ -4686,6 +5503,7 @@ pub mod global_replication_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4749,6 +5567,7 @@ pub mod global_node_group {
             self.global_node_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the global node group</p>
         pub fn set_global_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4761,6 +5580,7 @@ pub mod global_node_group {
             self.slots = Some(input.into());
             self
         }
+        /// <p>The keyspace for this node group</p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
@@ -4825,6 +5645,7 @@ pub mod global_replication_group_member {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The replication group id of the Global datastore member.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4837,6 +5658,7 @@ pub mod global_replication_group_member {
             self.replication_group_region = Some(input.into());
             self
         }
+        /// <p>The Amazon region of the Global datastore member.</p>
         pub fn set_replication_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4849,6 +5671,7 @@ pub mod global_replication_group_member {
             self.role = Some(input.into());
             self
         }
+        /// <p>Indicates the role of the replication group, primary or secondary.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -4858,6 +5681,7 @@ pub mod global_replication_group_member {
             self.automatic_failover = Some(input);
             self
         }
+        /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
         pub fn set_automatic_failover(
             mut self,
             input: std::option::Option<crate::model::AutomaticFailoverStatus>,
@@ -4870,6 +5694,7 @@ pub mod global_replication_group_member {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the membership of the replication group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4902,6 +5727,7 @@ pub struct ReservedCacheNode {
     /// <p>The offering identifier.</p>
     pub reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
     /// <p>The cache node type for the reserved cache nodes.</p>        
+    ///
     /// <p>The following node types are supported by ElastiCache.
     /// Generally speaking, the current generation types provide more memory and computational power
     /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -4911,6 +5737,7 @@ pub struct ReservedCacheNode {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -4921,11 +5748,17 @@ pub struct ReservedCacheNode {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -4934,7 +5767,11 @@ pub struct ReservedCacheNode {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -4949,12 +5786,18 @@ pub struct ReservedCacheNode {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -4962,6 +5805,7 @@ pub struct ReservedCacheNode {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -4969,6 +5813,7 @@ pub struct ReservedCacheNode {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -4976,11 +5821,13 @@ pub struct ReservedCacheNode {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -4998,6 +5845,10 @@ pub struct ReservedCacheNode {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -5006,6 +5857,12 @@ pub struct ReservedCacheNode {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -5020,6 +5877,7 @@ pub struct ReservedCacheNode {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -5029,6 +5887,17 @@ pub struct ReservedCacheNode {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -5038,6 +5907,7 @@ pub struct ReservedCacheNode {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -5046,10 +5916,12 @@ pub struct ReservedCacheNode {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -5070,7 +5942,7 @@ pub struct ReservedCacheNode {
     /// </ul>
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The time the reservation started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The duration of the reservation in seconds.</p>
     pub duration: i32,
     /// <p>The fixed price charged for this reserved cache node.</p>
@@ -5123,7 +5995,7 @@ pub mod reserved_cache_node {
         pub(crate) reserved_cache_node_id: std::option::Option<std::string::String>,
         pub(crate) reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_type: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) fixed_price: std::option::Option<f64>,
         pub(crate) usage_price: std::option::Option<f64>,
@@ -5141,6 +6013,7 @@ pub mod reserved_cache_node {
             self.reserved_cache_node_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the reservation.</p>
         pub fn set_reserved_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5156,6 +6029,7 @@ pub mod reserved_cache_node {
             self.reserved_cache_nodes_offering_id = Some(input.into());
             self
         }
+        /// <p>The offering identifier.</p>
         pub fn set_reserved_cache_nodes_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5164,6 +6038,7 @@ pub mod reserved_cache_node {
             self
         }
         /// <p>The cache node type for the reserved cache nodes.</p>        
+        ///
         /// <p>The following node types are supported by ElastiCache.
         /// Generally speaking, the current generation types provide more memory and computational power
         /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -5173,6 +6048,7 @@ pub mod reserved_cache_node {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -5183,11 +6059,17 @@ pub mod reserved_cache_node {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -5196,7 +6078,11 @@ pub mod reserved_cache_node {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -5211,12 +6097,18 @@ pub mod reserved_cache_node {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -5224,6 +6116,7 @@ pub mod reserved_cache_node {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -5231,6 +6124,7 @@ pub mod reserved_cache_node {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -5238,11 +6132,13 @@ pub mod reserved_cache_node {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -5260,6 +6156,10 @@ pub mod reserved_cache_node {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -5268,6 +6168,12 @@ pub mod reserved_cache_node {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -5282,6 +6188,7 @@ pub mod reserved_cache_node {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -5291,6 +6198,17 @@ pub mod reserved_cache_node {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -5300,6 +6218,7 @@ pub mod reserved_cache_node {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -5308,10 +6227,12 @@ pub mod reserved_cache_node {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -5334,6 +6255,220 @@ pub mod reserved_cache_node {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type for the reserved cache nodes.</p>        
+        ///
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5342,11 +6477,15 @@ pub mod reserved_cache_node {
             self
         }
         /// <p>The time the reservation started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the reservation started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -5355,6 +6494,7 @@ pub mod reserved_cache_node {
             self.duration = Some(input);
             self
         }
+        /// <p>The duration of the reservation in seconds.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -5364,6 +6504,7 @@ pub mod reserved_cache_node {
             self.fixed_price = Some(input);
             self
         }
+        /// <p>The fixed price charged for this reserved cache node.</p>
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -5373,6 +6514,7 @@ pub mod reserved_cache_node {
             self.usage_price = Some(input);
             self
         }
+        /// <p>The hourly price charged for this reserved cache node.</p>
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -5382,6 +6524,7 @@ pub mod reserved_cache_node {
             self.cache_node_count = Some(input);
             self
         }
+        /// <p>The number of cache nodes that have been reserved.</p>
         pub fn set_cache_node_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cache_node_count = input;
             self
@@ -5391,6 +6534,7 @@ pub mod reserved_cache_node {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The description of the reserved cache node.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5403,6 +6547,7 @@ pub mod reserved_cache_node {
             self.offering_type = Some(input.into());
             self
         }
+        /// <p>The offering type of this reserved cache node.</p>
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5415,10 +6560,16 @@ pub mod reserved_cache_node {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state of the reserved cache node.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `recurring_charges`.
+        ///
+        /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
+        ///
+        /// <p>The recurring price charged to run this reserved cache node.</p>
         pub fn recurring_charges(
             mut self,
             input: impl Into<crate::model::RecurringCharge>,
@@ -5428,6 +6579,7 @@ pub mod reserved_cache_node {
             self.recurring_charges = Some(v);
             self
         }
+        /// <p>The recurring price charged to run this reserved cache node.</p>
         pub fn set_recurring_charges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
@@ -5442,6 +6594,9 @@ pub mod reserved_cache_node {
             self.reservation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
+        /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+        /// </p>
         pub fn set_reservation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5512,6 +6667,7 @@ pub mod recurring_charge {
             self.recurring_charge_amount = Some(input);
             self
         }
+        /// <p>The monetary amount of the recurring charge.</p>
         pub fn set_recurring_charge_amount(mut self, input: std::option::Option<f64>) -> Self {
             self.recurring_charge_amount = input;
             self
@@ -5521,6 +6677,7 @@ pub mod recurring_charge {
             self.recurring_charge_frequency = Some(input.into());
             self
         }
+        /// <p>The frequency of the recurring charge.</p>
         pub fn set_recurring_charge_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5571,12 +6728,18 @@ pub mod user_group_pending_changes {
         pub(crate) user_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `user_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids_to_remove`](Self::set_user_ids_to_remove).
+        ///
+        /// <p>The list of user IDs to remove.</p>
         pub fn user_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.user_ids_to_remove = Some(v);
             self
         }
+        /// <p>The list of user IDs to remove.</p>
         pub fn set_user_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5584,12 +6747,18 @@ pub mod user_group_pending_changes {
             self.user_ids_to_remove = input;
             self
         }
+        /// Appends an item to `user_ids_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
+        ///
+        /// <p>The list of user IDs to add.</p>
         pub fn user_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids_to_add.unwrap_or_default();
             v.push(input.into());
             self.user_ids_to_add = Some(v);
             self
         }
+        /// <p>The list of user IDs to add.</p>
         pub fn set_user_ids_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5645,6 +6814,7 @@ pub mod authentication {
             self.r#type = Some(input);
             self
         }
+        /// <p>Indicates whether the user requires a password to authenticate.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -5657,6 +6827,7 @@ pub mod authentication {
             self.password_count = Some(input);
             self
         }
+        /// <p>The number of passwords belonging to the user. The maximum is two.</p>
         pub fn set_password_count(mut self, input: std::option::Option<i32>) -> Self {
             self.password_count = input;
             self
@@ -5677,6 +6848,7 @@ impl Authentication {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5688,7 +6860,9 @@ impl Authentication {
     std::hash::Hash,
 )]
 pub enum AuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassword,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5710,6 +6884,7 @@ impl std::str::FromStr for AuthenticationType {
     }
 }
 impl AuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationType::NoPassword => "no-password",
@@ -5717,6 +6892,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["no-password", "password"]
     }
@@ -5766,6 +6942,8 @@ pub mod resharding_configuration {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these
+        /// configuration values apply to.</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5773,6 +6951,11 @@ pub mod resharding_configuration {
             self.node_group_id = input;
             self
         }
+        /// Appends an item to `preferred_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
+        ///
+        /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
         pub fn preferred_availability_zones(
             mut self,
             input: impl Into<std::string::String>,
@@ -5782,6 +6965,7 @@ pub mod resharding_configuration {
             self.preferred_availability_zones = Some(v);
             self
         }
+        /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
         pub fn set_preferred_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5849,6 +7033,7 @@ pub mod log_delivery_configuration_request {
             self.log_type = Some(input);
             self
         }
+        /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -5858,6 +7043,7 @@ pub mod log_delivery_configuration_request {
             self.destination_type = Some(input);
             self
         }
+        /// <p>Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the destination type.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -5870,6 +7056,7 @@ pub mod log_delivery_configuration_request {
             self.destination_details = Some(input);
             self
         }
+        /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
         pub fn set_destination_details(
             mut self,
             input: std::option::Option<crate::model::DestinationDetails>,
@@ -5882,6 +7069,7 @@ pub mod log_delivery_configuration_request {
             self.log_format = Some(input);
             self
         }
+        /// <p>Specifies either JSON or TEXT</p>
         pub fn set_log_format(
             mut self,
             input: std::option::Option<crate::model::LogFormat>,
@@ -5894,6 +7082,7 @@ pub mod log_delivery_configuration_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -5917,6 +7106,7 @@ impl LogDeliveryConfigurationRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5928,8 +7118,11 @@ impl LogDeliveryConfigurationRequest {
     std::hash::Hash,
 )]
 pub enum AuthTokenUpdateStrategyType {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Rotate,
+    #[allow(missing_docs)] // documentation missing in model
     Set,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5952,6 +7145,7 @@ impl std::str::FromStr for AuthTokenUpdateStrategyType {
     }
 }
 impl AuthTokenUpdateStrategyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthTokenUpdateStrategyType::Delete => "DELETE",
@@ -5960,6 +7154,7 @@ impl AuthTokenUpdateStrategyType {
             AuthTokenUpdateStrategyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "ROTATE", "SET"]
     }
@@ -6029,6 +7224,7 @@ pub mod cache_subnet_group {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group.</p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6044,6 +7240,7 @@ pub mod cache_subnet_group {
             self.cache_subnet_group_description = Some(input.into());
             self
         }
+        /// <p>The description of the cache subnet group.</p>
         pub fn set_cache_subnet_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6056,16 +7253,23 @@ pub mod cache_subnet_group {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of subnets associated with the cache subnet group.</p>
         pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>A list of subnets associated with the cache subnet group.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
@@ -6078,6 +7282,7 @@ pub mod cache_subnet_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6138,6 +7343,7 @@ pub mod subnet {
             self.subnet_identifier = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the subnet.</p>
         pub fn set_subnet_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6150,6 +7356,7 @@ pub mod subnet {
             self.subnet_availability_zone = Some(input);
             self
         }
+        /// <p>The Availability Zone associated with the subnet.</p>
         pub fn set_subnet_availability_zone(
             mut self,
             input: std::option::Option<crate::model::AvailabilityZone>,
@@ -6162,6 +7369,7 @@ pub mod subnet {
             self.subnet_outpost = Some(input);
             self
         }
+        /// <p>The outpost ARN of the subnet.</p>
         pub fn set_subnet_outpost(
             mut self,
             input: std::option::Option<crate::model::SubnetOutpost>,
@@ -6214,6 +7422,7 @@ pub mod subnet_outpost {
             self.subnet_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The outpost ARN of the subnet.</p>
         pub fn set_subnet_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6264,6 +7473,7 @@ pub mod availability_zone {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6281,6 +7491,7 @@ impl AvailabilityZone {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6292,7 +7503,9 @@ impl AvailabilityZone {
     std::hash::Hash,
 )]
 pub enum AzMode {
+    #[allow(missing_docs)] // documentation missing in model
     CrossAz,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6314,6 +7527,7 @@ impl std::str::FromStr for AzMode {
     }
 }
 impl AzMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AzMode::CrossAz => "cross-az",
@@ -6321,6 +7535,7 @@ impl AzMode {
             AzMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cross-az", "single-az"]
     }
@@ -6403,6 +7618,9 @@ pub mod configure_shard {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled)
+        /// replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s
+        /// node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6434,10 +7652,39 @@ pub mod configure_shard {
             self.new_replica_count = Some(input);
             self
         }
+        /// <p>The number of replicas you want  in this node group at the end of this operation.
+        /// The maximum value for <code>NewReplicaCount</code> is 5.
+        /// The minimum value depends upon the type of Redis replication group you are working with.</p>
+        /// <p>The minimum number of replicas in a shard or replication group is:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Redis (cluster mode disabled)</p>
+        /// <ul>
+        /// <li>
+        /// <p>If Multi-AZ: 1</p>
+        /// </li>
+        /// <li>
+        /// <p>If Multi-AZ: 0</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p>
+        /// </li>
+        /// </ul>
         pub fn set_new_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.new_replica_count = input;
             self
         }
+        /// Appends an item to `preferred_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
+        ///
+        /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the
+        /// replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must
+        /// equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of
+        /// <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for  
+        /// each of the replicas.</p>
         pub fn preferred_availability_zones(
             mut self,
             input: impl Into<std::string::String>,
@@ -6447,6 +7694,11 @@ pub mod configure_shard {
             self.preferred_availability_zones = Some(v);
             self
         }
+        /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the
+        /// replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must
+        /// equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of
+        /// <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for  
+        /// each of the replicas.</p>
         pub fn set_preferred_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6454,12 +7706,18 @@ pub mod configure_shard {
             self.preferred_availability_zones = input;
             self
         }
+        /// Appends an item to `preferred_outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
+        ///
+        /// <p>The outpost ARNs in which the cache cluster is created.</p>
         pub fn preferred_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.preferred_outpost_arns.unwrap_or_default();
             v.push(input.into());
             self.preferred_outpost_arns = Some(v);
             self
         }
+        /// <p>The outpost ARNs in which the cache cluster is created.</p>
         pub fn set_preferred_outpost_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6523,6 +7781,7 @@ pub mod regional_configuration {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the secondary cluster</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6535,6 +7794,7 @@ pub mod regional_configuration {
             self.replication_group_region = Some(input.into());
             self
         }
+        /// <p>The Amazon region where the cluster is stored</p>
         pub fn set_replication_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6542,6 +7802,11 @@ pub mod regional_configuration {
             self.replication_group_region = input;
             self
         }
+        /// Appends an item to `resharding_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_resharding_configuration`](Self::set_resharding_configuration).
+        ///
+        /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
         pub fn resharding_configuration(
             mut self,
             input: impl Into<crate::model::ReshardingConfiguration>,
@@ -6551,6 +7816,7 @@ pub mod regional_configuration {
             self.resharding_configuration = Some(v);
             self
         }
+        /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
         pub fn set_resharding_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReshardingConfiguration>>,
@@ -6575,6 +7841,7 @@ impl RegionalConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
@@ -6630,6 +7897,7 @@ pub mod user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -6639,6 +7907,7 @@ pub mod user {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The username of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -6648,6 +7917,7 @@ pub mod user {
             self.status = Some(input.into());
             self
         }
+        /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -6657,6 +7927,7 @@ pub mod user {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -6666,6 +7937,7 @@ pub mod user {
             self.access_string = Some(input.into());
             self
         }
+        /// <p>Access permissions string used for this user.</p>
         pub fn set_access_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6673,12 +7945,18 @@ pub mod user {
             self.access_string = input;
             self
         }
+        /// Appends an item to `user_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
+        ///
+        /// <p>Returns a list of the user group IDs the user belongs to.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids = Some(v);
             self
         }
+        /// <p>Returns a list of the user group IDs the user belongs to.</p>
         pub fn set_user_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6691,6 +7969,7 @@ pub mod user {
             self.authentication = Some(input);
             self
         }
+        /// <p>Denotes whether the user requires a password to authenticate.</p>
         pub fn set_authentication(
             mut self,
             input: std::option::Option<crate::model::Authentication>,
@@ -6703,6 +7982,7 @@ pub mod user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6761,16 +8041,23 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The property being filtered. For example, UserId.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The property values to filter on. For example, "user-123".</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The property values to filter on. For example, "user-123".</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6794,6 +8081,7 @@ impl Filter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroup {
@@ -6845,6 +8133,7 @@ pub mod user_group {
             self.user_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_user_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6857,6 +8146,7 @@ pub mod user_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -6866,16 +8156,23 @@ pub mod user_group {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>The list of user IDs that belong to the user group.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
+        /// <p>The list of user IDs that belong to the user group.</p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6888,6 +8185,7 @@ pub mod user_group {
             self.pending_changes = Some(input);
             self
         }
+        /// <p>A list of updates being applied to the user group.</p>
         pub fn set_pending_changes(
             mut self,
             input: std::option::Option<crate::model::UserGroupPendingChanges>,
@@ -6895,12 +8193,18 @@ pub mod user_group {
             self.pending_changes = input;
             self
         }
+        /// Appends an item to `replication_groups`.
+        ///
+        /// To override the contents of this collection use [`set_replication_groups`](Self::set_replication_groups).
+        ///
+        /// <p>A list of replication groups that the user group can access.</p>
         pub fn replication_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
             v.push(input.into());
             self.replication_groups = Some(v);
             self
         }
+        /// <p>A list of replication groups that the user group can access.</p>
         pub fn set_replication_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6913,6 +8217,7 @@ pub mod user_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6949,23 +8254,23 @@ pub struct UpdateAction {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date the update is first available</p>
-    pub service_update_release_date: std::option::Option<smithy_types::Instant>,
+    pub service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The severity of the service update</p>
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The status of the service update</p>
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub service_update_recommended_apply_by_date: std::option::Option<smithy_types::Instant>,
+    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Reflects the nature of the service update  </p>
     pub service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
     /// <p>The date that the service update is available to a replication group</p>
-    pub update_action_available_date: std::option::Option<smithy_types::Instant>,
+    pub update_action_available_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the update action</p>
     pub update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
     /// <p>The progress of the service update on the replication group</p>
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date when the UpdateActionStatus was last modified</p>
-    pub update_action_status_modified_date: std::option::Option<smithy_types::Instant>,
+    pub update_action_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the
     /// recommended apply-by date.</p>
     pub sla_met: std::option::Option<crate::model::SlaMet>,
@@ -7024,17 +8329,18 @@ pub mod update_action {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) service_update_release_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_update_severity:
             std::option::Option<crate::model::ServiceUpdateSeverity>,
         pub(crate) service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) service_update_recommended_apply_by_date:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
-        pub(crate) update_action_available_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_action_available_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
         pub(crate) nodes_updated: std::option::Option<std::string::String>,
-        pub(crate) update_action_status_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_action_status_modified_date:
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) sla_met: std::option::Option<crate::model::SlaMet>,
         pub(crate) node_group_update_status:
             std::option::Option<std::vec::Vec<crate::model::NodeGroupUpdateStatus>>,
@@ -7049,6 +8355,7 @@ pub mod update_action {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the replication group</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7061,6 +8368,7 @@ pub mod update_action {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the cache cluster</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7073,6 +8381,7 @@ pub mod update_action {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7081,13 +8390,14 @@ pub mod update_action {
             self
         }
         /// <p>The date the update is first available</p>
-        pub fn service_update_release_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn service_update_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.service_update_release_date = Some(input);
             self
         }
+        /// <p>The date the update is first available</p>
         pub fn set_service_update_release_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.service_update_release_date = input;
             self
@@ -7100,6 +8410,7 @@ pub mod update_action {
             self.service_update_severity = Some(input);
             self
         }
+        /// <p>The severity of the service update</p>
         pub fn set_service_update_severity(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateSeverity>,
@@ -7112,6 +8423,7 @@ pub mod update_action {
             self.service_update_status = Some(input);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_service_update_status(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateStatus>,
@@ -7122,14 +8434,15 @@ pub mod update_action {
         /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn service_update_recommended_apply_by_date(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.service_update_recommended_apply_by_date = Some(input);
             self
         }
+        /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn set_service_update_recommended_apply_by_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.service_update_recommended_apply_by_date = input;
             self
@@ -7139,6 +8452,7 @@ pub mod update_action {
             self.service_update_type = Some(input);
             self
         }
+        /// <p>Reflects the nature of the service update  </p>
         pub fn set_service_update_type(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateType>,
@@ -7147,13 +8461,14 @@ pub mod update_action {
             self
         }
         /// <p>The date that the service update is available to a replication group</p>
-        pub fn update_action_available_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_action_available_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_action_available_date = Some(input);
             self
         }
+        /// <p>The date that the service update is available to a replication group</p>
         pub fn set_update_action_available_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_action_available_date = input;
             self
@@ -7163,6 +8478,7 @@ pub mod update_action {
             self.update_action_status = Some(input);
             self
         }
+        /// <p>The status of the update action</p>
         pub fn set_update_action_status(
             mut self,
             input: std::option::Option<crate::model::UpdateActionStatus>,
@@ -7175,6 +8491,7 @@ pub mod update_action {
             self.nodes_updated = Some(input.into());
             self
         }
+        /// <p>The progress of the service update on the replication group</p>
         pub fn set_nodes_updated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7183,13 +8500,17 @@ pub mod update_action {
             self
         }
         /// <p>The date when the UpdateActionStatus was last modified</p>
-        pub fn update_action_status_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_action_status_modified_date(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
             self.update_action_status_modified_date = Some(input);
             self
         }
+        /// <p>The date when the UpdateActionStatus was last modified</p>
         pub fn set_update_action_status_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_action_status_modified_date = input;
             self
@@ -7200,10 +8521,17 @@ pub mod update_action {
             self.sla_met = Some(input);
             self
         }
+        /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the
+        /// recommended apply-by date.</p>
         pub fn set_sla_met(mut self, input: std::option::Option<crate::model::SlaMet>) -> Self {
             self.sla_met = input;
             self
         }
+        /// Appends an item to `node_group_update_status`.
+        ///
+        /// To override the contents of this collection use [`set_node_group_update_status`](Self::set_node_group_update_status).
+        ///
+        /// <p>The status of the service update on the node group</p>
         pub fn node_group_update_status(
             mut self,
             input: impl Into<crate::model::NodeGroupUpdateStatus>,
@@ -7213,6 +8541,7 @@ pub mod update_action {
             self.node_group_update_status = Some(v);
             self
         }
+        /// <p>The status of the service update on the node group</p>
         pub fn set_node_group_update_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeGroupUpdateStatus>>,
@@ -7220,6 +8549,11 @@ pub mod update_action {
             self.node_group_update_status = input;
             self
         }
+        /// Appends an item to `cache_node_update_status`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_update_status`](Self::set_cache_node_update_status).
+        ///
+        /// <p>The status of the service update on the cache node</p>
         pub fn cache_node_update_status(
             mut self,
             input: impl Into<crate::model::CacheNodeUpdateStatus>,
@@ -7229,6 +8563,7 @@ pub mod update_action {
             self.cache_node_update_status = Some(v);
             self
         }
+        /// <p>The status of the service update on the cache node</p>
         pub fn set_cache_node_update_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheNodeUpdateStatus>>,
@@ -7241,6 +8576,7 @@ pub mod update_action {
             self.estimated_update_time = Some(input.into());
             self
         }
+        /// <p>The estimated length of time for the update to complete</p>
         pub fn set_estimated_update_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7253,6 +8589,7 @@ pub mod update_action {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -7298,17 +8635,17 @@ pub struct CacheNodeUpdateStatus {
     /// <p>The update status of the node</p>
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
-    pub node_deletion_date: std::option::Option<smithy_types::Instant>,
+    pub node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The start date of the update for a node</p>
-    pub node_update_start_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end date of the update for a node</p>
-    pub node_update_end_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
-    pub node_update_initiated_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the NodeUpdateStatus was last modified></p>
-    pub node_update_status_modified_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CacheNodeUpdateStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7338,13 +8675,13 @@ pub mod cache_node_update_status {
     pub struct Builder {
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
-        pub(crate) node_deletion_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_end_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) node_update_initiated_by:
             std::option::Option<crate::model::NodeUpdateInitiatedBy>,
-        pub(crate) node_update_initiated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_status_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The node ID of the cache cluster</p>
@@ -7352,6 +8689,7 @@ pub mod cache_node_update_status {
             self.cache_node_id = Some(input.into());
             self
         }
+        /// <p>The node ID of the cache cluster</p>
         pub fn set_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7364,6 +8702,7 @@ pub mod cache_node_update_status {
             self.node_update_status = Some(input);
             self
         }
+        /// <p>The update status of the node</p>
         pub fn set_node_update_status(
             mut self,
             input: std::option::Option<crate::model::NodeUpdateStatus>,
@@ -7372,37 +8711,40 @@ pub mod cache_node_update_status {
             self
         }
         /// <p>The deletion date of the node</p>
-        pub fn node_deletion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_deletion_date = Some(input);
             self
         }
+        /// <p>The deletion date of the node</p>
         pub fn set_node_deletion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_deletion_date = input;
             self
         }
         /// <p>The start date of the update for a node</p>
-        pub fn node_update_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_start_date = Some(input);
             self
         }
+        /// <p>The start date of the update for a node</p>
         pub fn set_node_update_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_start_date = input;
             self
         }
         /// <p>The end date of the update for a node</p>
-        pub fn node_update_end_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_end_date = Some(input);
             self
         }
+        /// <p>The end date of the update for a node</p>
         pub fn set_node_update_end_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_end_date = input;
             self
@@ -7415,6 +8757,7 @@ pub mod cache_node_update_status {
             self.node_update_initiated_by = Some(input);
             self
         }
+        /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
         pub fn set_node_update_initiated_by(
             mut self,
             input: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
@@ -7423,25 +8766,30 @@ pub mod cache_node_update_status {
             self
         }
         /// <p>The date when the update is triggered</p>
-        pub fn node_update_initiated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_initiated_date = Some(input);
             self
         }
+        /// <p>The date when the update is triggered</p>
         pub fn set_node_update_initiated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_initiated_date = input;
             self
         }
         /// <p>The date when the NodeUpdateStatus was last modified></p>
-        pub fn node_update_status_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_status_modified_date(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
             self.node_update_status_modified_date = Some(input);
             self
         }
+        /// <p>The date when the NodeUpdateStatus was last modified></p>
         pub fn set_node_update_status_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_status_modified_date = input;
             self
@@ -7468,6 +8816,7 @@ impl CacheNodeUpdateStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7479,7 +8828,9 @@ impl CacheNodeUpdateStatus {
     std::hash::Hash,
 )]
 pub enum NodeUpdateInitiatedBy {
+    #[allow(missing_docs)] // documentation missing in model
     Customer,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7501,6 +8852,7 @@ impl std::str::FromStr for NodeUpdateInitiatedBy {
     }
 }
 impl NodeUpdateInitiatedBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodeUpdateInitiatedBy::Customer => "customer",
@@ -7508,6 +8860,7 @@ impl NodeUpdateInitiatedBy {
             NodeUpdateInitiatedBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["customer", "system"]
     }
@@ -7518,6 +8871,7 @@ impl AsRef<str> for NodeUpdateInitiatedBy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7529,11 +8883,17 @@ impl AsRef<str> for NodeUpdateInitiatedBy {
     std::hash::Hash,
 )]
 pub enum NodeUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplied,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingToStart,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7559,6 +8919,7 @@ impl std::str::FromStr for NodeUpdateStatus {
     }
 }
 impl NodeUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodeUpdateStatus::Complete => "complete",
@@ -7570,6 +8931,7 @@ impl NodeUpdateStatus {
             NodeUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "complete",
@@ -7624,6 +8986,7 @@ pub mod node_group_update_status {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the node group</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7631,6 +8994,11 @@ pub mod node_group_update_status {
             self.node_group_id = input;
             self
         }
+        /// Appends an item to `node_group_member_update_status`.
+        ///
+        /// To override the contents of this collection use [`set_node_group_member_update_status`](Self::set_node_group_member_update_status).
+        ///
+        /// <p>The status of the service update on the node group member</p>
         pub fn node_group_member_update_status(
             mut self,
             input: impl Into<crate::model::NodeGroupMemberUpdateStatus>,
@@ -7640,6 +9008,7 @@ pub mod node_group_update_status {
             self.node_group_member_update_status = Some(v);
             self
         }
+        /// <p>The status of the service update on the node group member</p>
         pub fn set_node_group_member_update_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeGroupMemberUpdateStatus>>,
@@ -7674,17 +9043,17 @@ pub struct NodeGroupMemberUpdateStatus {
     /// <p>The update status of the node</p>
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
-    pub node_deletion_date: std::option::Option<smithy_types::Instant>,
+    pub node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The start date of the update for a node</p>
-    pub node_update_start_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end date of the update for a node</p>
-    pub node_update_end_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
-    pub node_update_initiated_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the NodeUpdateStatus was last modified</p>
-    pub node_update_status_modified_date: std::option::Option<smithy_types::Instant>,
+    pub node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for NodeGroupMemberUpdateStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7716,13 +9085,13 @@ pub mod node_group_member_update_status {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_id: std::option::Option<std::string::String>,
         pub(crate) node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
-        pub(crate) node_deletion_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_end_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) node_deletion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_end_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) node_update_initiated_by:
             std::option::Option<crate::model::NodeUpdateInitiatedBy>,
-        pub(crate) node_update_initiated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) node_update_status_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) node_update_initiated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) node_update_status_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The cache cluster ID</p>
@@ -7730,6 +9099,7 @@ pub mod node_group_member_update_status {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cache cluster ID</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7742,6 +9112,7 @@ pub mod node_group_member_update_status {
             self.cache_node_id = Some(input.into());
             self
         }
+        /// <p>The node ID of the cache cluster</p>
         pub fn set_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7754,6 +9125,7 @@ pub mod node_group_member_update_status {
             self.node_update_status = Some(input);
             self
         }
+        /// <p>The update status of the node</p>
         pub fn set_node_update_status(
             mut self,
             input: std::option::Option<crate::model::NodeUpdateStatus>,
@@ -7762,37 +9134,40 @@ pub mod node_group_member_update_status {
             self
         }
         /// <p>The deletion date of the node</p>
-        pub fn node_deletion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_deletion_date = Some(input);
             self
         }
+        /// <p>The deletion date of the node</p>
         pub fn set_node_deletion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_deletion_date = input;
             self
         }
         /// <p>The start date of the update for a node</p>
-        pub fn node_update_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_start_date = Some(input);
             self
         }
+        /// <p>The start date of the update for a node</p>
         pub fn set_node_update_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_start_date = input;
             self
         }
         /// <p>The end date of the update for a node</p>
-        pub fn node_update_end_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_end_date = Some(input);
             self
         }
+        /// <p>The end date of the update for a node</p>
         pub fn set_node_update_end_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_end_date = input;
             self
@@ -7805,6 +9180,7 @@ pub mod node_group_member_update_status {
             self.node_update_initiated_by = Some(input);
             self
         }
+        /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
         pub fn set_node_update_initiated_by(
             mut self,
             input: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
@@ -7813,25 +9189,30 @@ pub mod node_group_member_update_status {
             self
         }
         /// <p>The date when the update is triggered</p>
-        pub fn node_update_initiated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_initiated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_update_initiated_date = Some(input);
             self
         }
+        /// <p>The date when the update is triggered</p>
         pub fn set_node_update_initiated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_initiated_date = input;
             self
         }
         /// <p>The date when the NodeUpdateStatus was last modified</p>
-        pub fn node_update_status_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_update_status_modified_date(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
             self.node_update_status_modified_date = Some(input);
             self
         }
+        /// <p>The date when the NodeUpdateStatus was last modified</p>
         pub fn set_node_update_status_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_update_status_modified_date = input;
             self
@@ -7859,6 +9240,7 @@ impl NodeGroupMemberUpdateStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7870,8 +9252,11 @@ impl NodeGroupMemberUpdateStatus {
     std::hash::Hash,
 )]
 pub enum SlaMet {
+    #[allow(missing_docs)] // documentation missing in model
     Na,
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7894,6 +9279,7 @@ impl std::str::FromStr for SlaMet {
     }
 }
 impl SlaMet {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlaMet::Na => "n/a",
@@ -7902,6 +9288,7 @@ impl SlaMet {
             SlaMet::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["n/a", "no", "yes"]
     }
@@ -7912,6 +9299,7 @@ impl AsRef<str> for SlaMet {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7923,14 +9311,23 @@ impl AsRef<str> for SlaMet {
     std::hash::Hash,
 )]
 pub enum UpdateActionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplied,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduling,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingToStart,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7959,6 +9356,7 @@ impl std::str::FromStr for UpdateActionStatus {
     }
 }
 impl UpdateActionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateActionStatus::Complete => "complete",
@@ -7973,6 +9371,7 @@ impl UpdateActionStatus {
             UpdateActionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "complete",
@@ -7993,6 +9392,7 @@ impl AsRef<str> for UpdateActionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8004,6 +9404,7 @@ impl AsRef<str> for UpdateActionStatus {
     std::hash::Hash,
 )]
 pub enum ServiceUpdateType {
+    #[allow(missing_docs)] // documentation missing in model
     SecurityUpdate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8024,12 +9425,14 @@ impl std::str::FromStr for ServiceUpdateType {
     }
 }
 impl ServiceUpdateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceUpdateType::SecurityUpdate => "security-update",
             ServiceUpdateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["security-update"]
     }
@@ -8040,6 +9443,7 @@ impl AsRef<str> for ServiceUpdateType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8051,8 +9455,11 @@ impl AsRef<str> for ServiceUpdateType {
     std::hash::Hash,
 )]
 pub enum ServiceUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8075,6 +9482,7 @@ impl std::str::FromStr for ServiceUpdateStatus {
     }
 }
 impl ServiceUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceUpdateStatus::Available => "available",
@@ -8083,6 +9491,7 @@ impl ServiceUpdateStatus {
             ServiceUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "cancelled", "expired"]
     }
@@ -8093,6 +9502,7 @@ impl AsRef<str> for ServiceUpdateStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8104,9 +9514,13 @@ impl AsRef<str> for ServiceUpdateStatus {
     std::hash::Hash,
 )]
 pub enum ServiceUpdateSeverity {
+    #[allow(missing_docs)] // documentation missing in model
     Critical,
+    #[allow(missing_docs)] // documentation missing in model
     Important,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8130,6 +9544,7 @@ impl std::str::FromStr for ServiceUpdateSeverity {
     }
 }
 impl ServiceUpdateSeverity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceUpdateSeverity::Critical => "critical",
@@ -8139,6 +9554,7 @@ impl ServiceUpdateSeverity {
             ServiceUpdateSeverity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["critical", "important", "low", "medium"]
     }
@@ -8154,9 +9570,9 @@ impl AsRef<str> for ServiceUpdateSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the time range filter</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimeRangeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8172,25 +9588,33 @@ pub mod time_range_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start time of the time range filter</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the time range filter</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the time range filter</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the time range filter</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -8231,6 +9655,7 @@ pub struct Snapshot {
     /// or was created manually (<code>manual</code>).</p>
     pub snapshot_source: std::option::Option<std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
+    ///
     /// <p>The following node types are supported by ElastiCache.
     /// Generally speaking, the current generation types provide more memory and computational power
     /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -8240,6 +9665,7 @@ pub struct Snapshot {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -8250,11 +9676,17 @@ pub struct Snapshot {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -8263,7 +9695,11 @@ pub struct Snapshot {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -8278,12 +9714,18 @@ pub struct Snapshot {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -8291,6 +9733,7 @@ pub struct Snapshot {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -8298,6 +9741,7 @@ pub struct Snapshot {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -8305,11 +9749,13 @@ pub struct Snapshot {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -8327,6 +9773,10 @@ pub struct Snapshot {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -8335,6 +9785,12 @@ pub struct Snapshot {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -8349,6 +9805,7 @@ pub struct Snapshot {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -8358,6 +9815,17 @@ pub struct Snapshot {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -8367,6 +9835,7 @@ pub struct Snapshot {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -8375,10 +9844,12 @@ pub struct Snapshot {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -8412,7 +9883,7 @@ pub struct Snapshot {
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the source cluster was created.</p>
-    pub cache_cluster_create_time: std::option::Option<smithy_types::Instant>,
+    pub cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the weekly time range during which maintenance
     /// on the cluster is performed. It is specified as a range in
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -8560,7 +10031,7 @@ pub mod snapshot {
         pub(crate) num_cache_nodes: std::option::Option<i32>,
         pub(crate) preferred_availability_zone: std::option::Option<std::string::String>,
         pub(crate) preferred_outpost_arn: std::option::Option<std::string::String>,
-        pub(crate) cache_cluster_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) cache_cluster_create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -8584,6 +10055,9 @@ pub mod snapshot {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The name of a snapshot.
+        /// For an automatic snapshot, the name is system-generated.  
+        /// For a manual snapshot, this is the user-provided name.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8596,6 +10070,7 @@ pub mod snapshot {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the source replication group.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8611,6 +10086,7 @@ pub mod snapshot {
             self.replication_group_description = Some(input.into());
             self
         }
+        /// <p>A description of the source replication group.</p>
         pub fn set_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8623,6 +10099,7 @@ pub mod snapshot {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The user-supplied identifier of the source cluster.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8636,6 +10113,8 @@ pub mod snapshot {
             self.snapshot_status = Some(input.into());
             self
         }
+        /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code>
+        /// | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
         pub fn set_snapshot_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8649,6 +10128,8 @@ pub mod snapshot {
             self.snapshot_source = Some(input.into());
             self
         }
+        /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>)
+        /// or was created manually (<code>manual</code>).</p>
         pub fn set_snapshot_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8657,6 +10138,7 @@ pub mod snapshot {
             self
         }
         /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
+        ///
         /// <p>The following node types are supported by ElastiCache.
         /// Generally speaking, the current generation types provide more memory and computational power
         /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -8666,6 +10148,7 @@ pub mod snapshot {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -8676,11 +10159,17 @@ pub mod snapshot {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -8689,7 +10178,11 @@ pub mod snapshot {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -8704,12 +10197,18 @@ pub mod snapshot {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8717,6 +10216,7 @@ pub mod snapshot {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -8724,6 +10224,7 @@ pub mod snapshot {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -8731,11 +10232,13 @@ pub mod snapshot {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8753,6 +10256,10 @@ pub mod snapshot {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -8761,6 +10268,12 @@ pub mod snapshot {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -8775,6 +10288,7 @@ pub mod snapshot {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -8784,6 +10298,17 @@ pub mod snapshot {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8793,6 +10318,7 @@ pub mod snapshot {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -8801,10 +10327,12 @@ pub mod snapshot {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -8827,6 +10355,220 @@ pub mod snapshot {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
+        ///
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8840,6 +10582,8 @@ pub mod snapshot {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The name of the cache engine (<code>memcached</code> or
+        /// <code>redis</code>) used by the source cluster.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -8849,6 +10593,7 @@ pub mod snapshot {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version of the cache engine version that is used by the source cluster.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8863,6 +10608,9 @@ pub mod snapshot {
             self.num_cache_nodes = Some(input);
             self
         }
+        /// <p>The number of cache nodes in the source cluster.</p>
+        /// <p>For clusters running Redis, this value must be 1.
+        /// For clusters running Memcached, this value must be between 1 and 40.</p>
         pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_nodes = input;
             self
@@ -8875,6 +10623,7 @@ pub mod snapshot {
             self.preferred_availability_zone = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone in which the source cluster is located.</p>
         pub fn set_preferred_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8887,6 +10636,7 @@ pub mod snapshot {
             self.preferred_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
         pub fn set_preferred_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8895,13 +10645,14 @@ pub mod snapshot {
             self
         }
         /// <p>The date and time when the source cluster was created.</p>
-        pub fn cache_cluster_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn cache_cluster_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.cache_cluster_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the source cluster was created.</p>
         pub fn set_cache_cluster_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.cache_cluster_create_time = input;
             self
@@ -8957,6 +10708,50 @@ pub mod snapshot {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sun</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tue</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>wed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>thu</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sat</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code>
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8969,6 +10764,7 @@ pub mod snapshot {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -8978,6 +10774,7 @@ pub mod snapshot {
             self.port = Some(input);
             self
         }
+        /// <p>The port number used by each cache nodes in the source cluster.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -8987,6 +10784,7 @@ pub mod snapshot {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The cache parameter group that is associated with the source cluster.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8999,6 +10797,7 @@ pub mod snapshot {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group associated with the source cluster.</p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9011,6 +10810,7 @@ pub mod snapshot {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -9020,6 +10820,7 @@ pub mod snapshot {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -9036,6 +10837,14 @@ pub mod snapshot {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
+        /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the
+        /// source cluster when the snapshot was created. This field is otherwise ignored:
+        /// Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
+        /// operation. </p>
+        /// <p>
+        /// <b>Important</b>
+        /// If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -9045,6 +10854,7 @@ pub mod snapshot {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9059,6 +10869,9 @@ pub mod snapshot {
             self.num_node_groups = Some(input);
             self
         }
+        /// <p>The number of node groups (shards) in this snapshot.
+        /// When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored
+        /// replication group must be the same.</p>
         pub fn set_num_node_groups(mut self, input: std::option::Option<i32>) -> Self {
             self.num_node_groups = input;
             self
@@ -9068,6 +10881,7 @@ pub mod snapshot {
             self.automatic_failover = Some(input);
             self
         }
+        /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
         pub fn set_automatic_failover(
             mut self,
             input: std::option::Option<crate::model::AutomaticFailoverStatus>,
@@ -9075,12 +10889,18 @@ pub mod snapshot {
             self.automatic_failover = input;
             self
         }
+        /// Appends an item to `node_snapshots`.
+        ///
+        /// To override the contents of this collection use [`set_node_snapshots`](Self::set_node_snapshots).
+        ///
+        /// <p>A list of the cache nodes in the source cluster.</p>
         pub fn node_snapshots(mut self, input: impl Into<crate::model::NodeSnapshot>) -> Self {
             let mut v = self.node_snapshots.unwrap_or_default();
             v.push(input.into());
             self.node_snapshots = Some(v);
             self
         }
+        /// <p>A list of the cache nodes in the source cluster.</p>
         pub fn set_node_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeSnapshot>>,
@@ -9093,6 +10913,7 @@ pub mod snapshot {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -9102,6 +10923,7 @@ pub mod snapshot {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9162,9 +10984,9 @@ pub struct NodeSnapshot {
     /// <p>The size of the cache on the source cache node.</p>
     pub cache_size: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created in the source cluster.</p>
-    pub cache_node_create_time: std::option::Option<smithy_types::Instant>,
+    pub cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-    pub snapshot_create_time: std::option::Option<smithy_types::Instant>,
+    pub snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for NodeSnapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9191,8 +11013,8 @@ pub mod node_snapshot {
         pub(crate) node_group_configuration:
             std::option::Option<crate::model::NodeGroupConfiguration>,
         pub(crate) cache_size: std::option::Option<std::string::String>,
-        pub(crate) cache_node_create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) snapshot_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) snapshot_create_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique identifier for the source cluster.</p>
@@ -9200,6 +11022,7 @@ pub mod node_snapshot {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the source cluster.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9212,6 +11035,7 @@ pub mod node_snapshot {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the source node group (shard).</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9224,6 +11048,7 @@ pub mod node_snapshot {
             self.cache_node_id = Some(input.into());
             self
         }
+        /// <p>The cache node identifier for the node in the source cluster.</p>
         pub fn set_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9239,6 +11064,7 @@ pub mod node_snapshot {
             self.node_group_configuration = Some(input);
             self
         }
+        /// <p>The configuration for the source node group (shard).</p>
         pub fn set_node_group_configuration(
             mut self,
             input: std::option::Option<crate::model::NodeGroupConfiguration>,
@@ -9251,30 +11077,33 @@ pub mod node_snapshot {
             self.cache_size = Some(input.into());
             self
         }
+        /// <p>The size of the cache on the source cache node.</p>
         pub fn set_cache_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cache_size = input;
             self
         }
         /// <p>The date and time when the cache node was created in the source cluster.</p>
-        pub fn cache_node_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn cache_node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.cache_node_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the cache node was created in the source cluster.</p>
         pub fn set_cache_node_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.cache_node_create_time = input;
             self
         }
         /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-        pub fn snapshot_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn snapshot_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.snapshot_create_time = Some(input);
             self
         }
+        /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
         pub fn set_snapshot_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.snapshot_create_time = input;
             self
@@ -9365,6 +11194,8 @@ pub mod node_group_configuration {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these
+        /// configuration values apply to.</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9381,6 +11212,11 @@ pub mod node_group_configuration {
             self.slots = Some(input.into());
             self
         }
+        /// <p>A string that specifies the keyspace for a particular node group.
+        /// Keyspaces range from 0 to 16,383.
+        /// The string is in the format <code>startkey-endkey</code>.</p>
+        /// <p>Example: <code>"0-3999"</code>
+        /// </p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
@@ -9390,6 +11226,7 @@ pub mod node_group_configuration {
             self.replica_count = Some(input);
             self
         }
+        /// <p>The number of read replica nodes in this node group (shard).</p>
         pub fn set_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.replica_count = input;
             self
@@ -9399,6 +11236,7 @@ pub mod node_group_configuration {
             self.primary_availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
         pub fn set_primary_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9406,12 +11244,22 @@ pub mod node_group_configuration {
             self.primary_availability_zone = input;
             self
         }
+        /// Appends an item to `replica_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_replica_availability_zones`](Self::set_replica_availability_zones).
+        ///
+        /// <p>A list of Availability Zones to be used for the read replicas.
+        /// The number of Availability Zones in this list must match the value of <code>ReplicaCount</code>
+        /// or <code>ReplicasPerNodeGroup</code> if not specified.</p>
         pub fn replica_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replica_availability_zones.unwrap_or_default();
             v.push(input.into());
             self.replica_availability_zones = Some(v);
             self
         }
+        /// <p>A list of Availability Zones to be used for the read replicas.
+        /// The number of Availability Zones in this list must match the value of <code>ReplicaCount</code>
+        /// or <code>ReplicasPerNodeGroup</code> if not specified.</p>
         pub fn set_replica_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9424,6 +11272,7 @@ pub mod node_group_configuration {
             self.primary_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The outpost ARN of the primary node.</p>
         pub fn set_primary_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9431,12 +11280,18 @@ pub mod node_group_configuration {
             self.primary_outpost_arn = input;
             self
         }
+        /// Appends an item to `replica_outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_replica_outpost_arns`](Self::set_replica_outpost_arns).
+        ///
+        /// <p>The outpost ARN of the node replicas.</p>
         pub fn replica_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replica_outpost_arns.unwrap_or_default();
             v.push(input.into());
             self.replica_outpost_arns = Some(v);
             self
         }
+        /// <p>The outpost ARN of the node replicas.</p>
         pub fn set_replica_outpost_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9472,13 +11327,13 @@ pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    pub service_update_release_date: std::option::Option<smithy_types::Instant>,
+    pub service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date after which the service update is no longer available</p>
-    pub service_update_end_date: std::option::Option<smithy_types::Instant>,
+    pub service_update_end_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The severity of the service update</p>
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    pub service_update_recommended_apply_by_date: std::option::Option<smithy_types::Instant>,
+    pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the service update</p>
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>Provides details of the service update</p>
@@ -9531,12 +11386,12 @@ pub mod service_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) service_update_release_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) service_update_end_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) service_update_release_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) service_update_end_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_update_severity:
             std::option::Option<crate::model::ServiceUpdateSeverity>,
         pub(crate) service_update_recommended_apply_by_date:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) service_update_description: std::option::Option<std::string::String>,
         pub(crate) service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
@@ -9551,6 +11406,7 @@ pub mod service_update {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9559,25 +11415,27 @@ pub mod service_update {
             self
         }
         /// <p>The date when the service update is initially available</p>
-        pub fn service_update_release_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn service_update_release_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.service_update_release_date = Some(input);
             self
         }
+        /// <p>The date when the service update is initially available</p>
         pub fn set_service_update_release_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.service_update_release_date = input;
             self
         }
         /// <p>The date after which the service update is no longer available</p>
-        pub fn service_update_end_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn service_update_end_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.service_update_end_date = Some(input);
             self
         }
+        /// <p>The date after which the service update is no longer available</p>
         pub fn set_service_update_end_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.service_update_end_date = input;
             self
@@ -9590,6 +11448,7 @@ pub mod service_update {
             self.service_update_severity = Some(input);
             self
         }
+        /// <p>The severity of the service update</p>
         pub fn set_service_update_severity(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateSeverity>,
@@ -9600,14 +11459,15 @@ pub mod service_update {
         /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn service_update_recommended_apply_by_date(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.service_update_recommended_apply_by_date = Some(input);
             self
         }
+        /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
         pub fn set_service_update_recommended_apply_by_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.service_update_recommended_apply_by_date = input;
             self
@@ -9617,6 +11477,7 @@ pub mod service_update {
             self.service_update_status = Some(input);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_service_update_status(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateStatus>,
@@ -9629,6 +11490,7 @@ pub mod service_update {
             self.service_update_description = Some(input.into());
             self
         }
+        /// <p>Provides details of the service update</p>
         pub fn set_service_update_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9641,6 +11503,7 @@ pub mod service_update {
             self.service_update_type = Some(input);
             self
         }
+        /// <p>Reflects the nature of the service update</p>
         pub fn set_service_update_type(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateType>,
@@ -9653,6 +11516,7 @@ pub mod service_update {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -9662,6 +11526,7 @@ pub mod service_update {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9674,6 +11539,7 @@ pub mod service_update {
             self.auto_update_after_recommended_apply_by_date = Some(input);
             self
         }
+        /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
         pub fn set_auto_update_after_recommended_apply_by_date(
             mut self,
             input: std::option::Option<bool>,
@@ -9686,6 +11552,7 @@ pub mod service_update {
             self.estimated_update_time = Some(input.into());
             self
         }
+        /// <p>The estimated length of time the service update will take</p>
         pub fn set_estimated_update_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9737,6 +11604,7 @@ pub struct ReservedCacheNodesOffering {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -9747,11 +11615,17 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -9760,7 +11634,11 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -9775,12 +11653,18 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -9788,6 +11672,7 @@ pub struct ReservedCacheNodesOffering {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -9795,6 +11680,7 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -9802,11 +11688,13 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -9824,6 +11712,10 @@ pub struct ReservedCacheNodesOffering {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -9832,6 +11724,12 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -9846,6 +11744,7 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -9855,6 +11754,17 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -9864,6 +11774,7 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -9872,10 +11783,12 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -9950,6 +11863,7 @@ pub mod reserved_cache_nodes_offering {
             self.reserved_cache_nodes_offering_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the reserved cache node offering.</p>
         pub fn set_reserved_cache_nodes_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9967,6 +11881,7 @@ pub mod reserved_cache_nodes_offering {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -9977,11 +11892,17 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -9990,7 +11911,11 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -10005,12 +11930,18 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -10018,6 +11949,7 @@ pub mod reserved_cache_nodes_offering {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -10025,6 +11957,7 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -10032,11 +11965,13 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -10054,6 +11989,10 @@ pub mod reserved_cache_nodes_offering {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -10062,6 +12001,12 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -10076,6 +12021,7 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -10085,6 +12031,17 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -10094,6 +12051,7 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -10102,10 +12060,12 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -10128,6 +12088,219 @@ pub mod reserved_cache_nodes_offering {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type for the reserved cache node.</p>
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10140,6 +12313,7 @@ pub mod reserved_cache_nodes_offering {
             self.duration = Some(input);
             self
         }
+        /// <p>The duration of the offering. in seconds.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -10149,6 +12323,7 @@ pub mod reserved_cache_nodes_offering {
             self.fixed_price = Some(input);
             self
         }
+        /// <p>The fixed price charged for this offering.</p>
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -10158,6 +12333,7 @@ pub mod reserved_cache_nodes_offering {
             self.usage_price = Some(input);
             self
         }
+        /// <p>The hourly price charged for this offering.</p>
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -10167,6 +12343,7 @@ pub mod reserved_cache_nodes_offering {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The cache engine used by the offering.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10179,6 +12356,7 @@ pub mod reserved_cache_nodes_offering {
             self.offering_type = Some(input.into());
             self
         }
+        /// <p>The offering type.</p>
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10186,6 +12364,11 @@ pub mod reserved_cache_nodes_offering {
             self.offering_type = input;
             self
         }
+        /// Appends an item to `recurring_charges`.
+        ///
+        /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
+        ///
+        /// <p>The recurring price charged to run this reserved cache node.</p>
         pub fn recurring_charges(
             mut self,
             input: impl Into<crate::model::RecurringCharge>,
@@ -10195,6 +12378,7 @@ pub mod reserved_cache_nodes_offering {
             self.recurring_charges = Some(v);
             self
         }
+        /// <p>The recurring price charged to run this reserved cache node.</p>
         pub fn set_recurring_charges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
@@ -10238,7 +12422,7 @@ pub struct Event {
     /// <p>The text of the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10259,7 +12443,7 @@ pub mod event {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier for the source of the event.
@@ -10269,6 +12453,9 @@ pub mod event {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier for the source of the event.
+        /// For example, if the event occurred at the cluster level,
+        /// the identifier would be the name of the cluster.</p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10281,6 +12468,7 @@ pub mod event {
             self.source_type = Some(input);
             self
         }
+        /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -10293,16 +12481,18 @@ pub mod event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The text of the event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the event occurred.</p>
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.date = input;
             self
         }
@@ -10324,6 +12514,7 @@ impl Event {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10335,12 +12526,19 @@ impl Event {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     CacheCluster,
+    #[allow(missing_docs)] // documentation missing in model
     CacheParameterGroup,
+    #[allow(missing_docs)] // documentation missing in model
     CacheSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     CacheSubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
     ReplicationGroup,
+    #[allow(missing_docs)] // documentation missing in model
     User,
+    #[allow(missing_docs)] // documentation missing in model
     UserGroup,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10367,6 +12565,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::CacheCluster => "cache-cluster",
@@ -10379,6 +12578,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "cache-cluster",
@@ -10470,6 +12670,18 @@ pub mod engine_defaults {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10482,16 +12694,23 @@ pub mod engine_defaults {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Contains a list of engine default parameters.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>Contains a list of engine default parameters.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -10499,6 +12718,11 @@ pub mod engine_defaults {
             self.parameters = input;
             self
         }
+        /// Appends an item to `cache_node_type_specific_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_type_specific_parameters`](Self::set_cache_node_type_specific_parameters).
+        ///
+        /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
         pub fn cache_node_type_specific_parameters(
             mut self,
             input: impl Into<crate::model::CacheNodeTypeSpecificParameter>,
@@ -10508,6 +12732,7 @@ pub mod engine_defaults {
             self.cache_node_type_specific_parameters = Some(v);
             self
         }
+        /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
         pub fn set_cache_node_type_specific_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
@@ -10605,6 +12830,7 @@ pub mod cache_node_type_specific_parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10617,6 +12843,7 @@ pub mod cache_node_type_specific_parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10626,6 +12853,7 @@ pub mod cache_node_type_specific_parameter {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source of the parameter value.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -10635,6 +12863,7 @@ pub mod cache_node_type_specific_parameter {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The valid data type for the parameter.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -10644,6 +12873,7 @@ pub mod cache_node_type_specific_parameter {
             self.allowed_values = Some(input.into());
             self
         }
+        /// <p>The valid range of values for the parameter.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10658,6 +12888,9 @@ pub mod cache_node_type_specific_parameter {
             self.is_modifiable = Some(input);
             self
         }
+        /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be
+        /// modified. Some parameters have security or operational implications that prevent them
+        /// from being changed.</p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_modifiable = input;
             self
@@ -10667,6 +12900,7 @@ pub mod cache_node_type_specific_parameter {
             self.minimum_engine_version = Some(input.into());
             self
         }
+        /// <p>The earliest cache engine version to which the parameter can apply.</p>
         pub fn set_minimum_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10674,6 +12908,11 @@ pub mod cache_node_type_specific_parameter {
             self.minimum_engine_version = input;
             self
         }
+        /// Appends an item to `cache_node_type_specific_values`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_type_specific_values`](Self::set_cache_node_type_specific_values).
+        ///
+        /// <p>A list of cache node types and their corresponding values for this parameter.</p>
         pub fn cache_node_type_specific_values(
             mut self,
             input: impl Into<crate::model::CacheNodeTypeSpecificValue>,
@@ -10683,6 +12922,7 @@ pub mod cache_node_type_specific_parameter {
             self.cache_node_type_specific_values = Some(v);
             self
         }
+        /// <p>A list of cache node types and their corresponding values for this parameter.</p>
         pub fn set_cache_node_type_specific_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificValue>>,
@@ -10698,6 +12938,10 @@ pub mod cache_node_type_specific_parameter {
             self.change_type = Some(input);
             self
         }
+        /// <p>Indicates whether a change to the parameter is applied immediately
+        /// or requires a reboot for the change to be applied.
+        /// You can force a reboot or wait until the next maintenance window's reboot.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::ChangeType>,
@@ -10728,6 +12972,7 @@ impl CacheNodeTypeSpecificParameter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10739,7 +12984,9 @@ impl CacheNodeTypeSpecificParameter {
     std::hash::Hash,
 )]
 pub enum ChangeType {
+    #[allow(missing_docs)] // documentation missing in model
     Immediate,
+    #[allow(missing_docs)] // documentation missing in model
     RequiresReboot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10761,6 +13008,7 @@ impl std::str::FromStr for ChangeType {
     }
 }
 impl ChangeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeType::Immediate => "immediate",
@@ -10768,6 +13016,7 @@ impl ChangeType {
             ChangeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["immediate", "requires-reboot"]
     }
@@ -10810,6 +13059,7 @@ pub mod cache_node_type_specific_value {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type for which this value applies.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10822,6 +13072,7 @@ pub mod cache_node_type_specific_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the cache node type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -10906,6 +13157,7 @@ pub mod parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10918,6 +13170,7 @@ pub mod parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value of the parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10930,6 +13183,7 @@ pub mod parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10939,6 +13193,7 @@ pub mod parameter {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source of the parameter.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -10948,6 +13203,7 @@ pub mod parameter {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The valid data type for the parameter.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -10957,6 +13213,7 @@ pub mod parameter {
             self.allowed_values = Some(input.into());
             self
         }
+        /// <p>The valid range of values for the parameter.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10970,6 +13227,8 @@ pub mod parameter {
             self.is_modifiable = Some(input);
             self
         }
+        /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified.
+        /// Some parameters have security or operational implications that prevent them from being changed.</p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_modifiable = input;
             self
@@ -10979,6 +13238,7 @@ pub mod parameter {
             self.minimum_engine_version = Some(input.into());
             self
         }
+        /// <p>The earliest cache engine version to which the parameter can apply.</p>
         pub fn set_minimum_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10994,6 +13254,10 @@ pub mod parameter {
             self.change_type = Some(input);
             self
         }
+        /// <p>Indicates whether a change to the parameter is applied immediately
+        /// or requires a reboot for the change to be applied.
+        /// You can force a reboot or wait until the next maintenance window's reboot.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::ChangeType>,
@@ -11085,6 +13349,7 @@ pub mod cache_parameter_group {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11111,6 +13376,18 @@ pub mod cache_parameter_group {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11123,6 +13400,7 @@ pub mod cache_parameter_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for this cache parameter group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11132,6 +13410,7 @@ pub mod cache_parameter_group {
             self.is_global = Some(input);
             self
         }
+        /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
         pub fn set_is_global(mut self, input: std::option::Option<bool>) -> Self {
             self.is_global = input;
             self
@@ -11141,6 +13420,7 @@ pub mod cache_parameter_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11225,6 +13505,7 @@ pub mod cache_engine_version {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The name of the cache engine.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -11234,6 +13515,7 @@ pub mod cache_engine_version {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version number of the cache engine.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11260,6 +13542,18 @@ pub mod cache_engine_version {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group family associated with this cache engine.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11272,6 +13566,7 @@ pub mod cache_engine_version {
             self.cache_engine_description = Some(input.into());
             self
         }
+        /// <p>The description of the cache engine.</p>
         pub fn set_cache_engine_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11287,6 +13582,7 @@ pub mod cache_engine_version {
             self.cache_engine_version_description = Some(input.into());
             self
         }
+        /// <p>The description of the cache engine version.</p>
         pub fn set_cache_engine_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11313,6 +13609,7 @@ impl CacheEngineVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11324,7 +13621,9 @@ impl CacheEngineVersion {
     std::hash::Hash,
 )]
 pub enum OutpostMode {
+    #[allow(missing_docs)] // documentation missing in model
     CrossOutpost,
+    #[allow(missing_docs)] // documentation missing in model
     SingleOutpost,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11346,6 +13645,7 @@ impl std::str::FromStr for OutpostMode {
     }
 }
 impl OutpostMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutpostMode::CrossOutpost => "cross-outpost",
@@ -11353,6 +13653,7 @@ impl OutpostMode {
             OutpostMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cross-outpost", "single-outpost"]
     }
@@ -11407,6 +13708,7 @@ pub mod unprocessed_update_action {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The replication group ID</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11419,6 +13721,7 @@ pub mod unprocessed_update_action {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the cache cluster</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11431,6 +13734,7 @@ pub mod unprocessed_update_action {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11443,6 +13747,7 @@ pub mod unprocessed_update_action {
             self.error_type = Some(input.into());
             self
         }
+        /// <p>The error type for requests that are not processed</p>
         pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_type = input;
             self
@@ -11452,6 +13757,7 @@ pub mod unprocessed_update_action {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message that describes the reason the request was not processed</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11518,6 +13824,7 @@ pub mod processed_update_action {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the replication group</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11530,6 +13837,7 @@ pub mod processed_update_action {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the cache cluster</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11542,6 +13850,7 @@ pub mod processed_update_action {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11554,6 +13863,7 @@ pub mod processed_update_action {
             self.update_action_status = Some(input);
             self
         }
+        /// <p>The status of the update action on the Redis cluster</p>
         pub fn set_update_action_status(
             mut self,
             input: std::option::Option<crate::model::UpdateActionStatus>,

@@ -43,6 +43,7 @@ pub mod subscriber {
             self.subscription_type = Some(input);
             self
         }
+        /// <p>The type of notification that AWS sends to a subscriber.</p>
         pub fn set_subscription_type(
             mut self,
             input: std::option::Option<crate::model::SubscriptionType>,
@@ -56,6 +57,8 @@ pub mod subscriber {
             self.address = Some(input.into());
             self
         }
+        /// <p>The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+        /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -88,7 +91,9 @@ impl Subscriber {
     std::hash::Hash,
 )]
 pub enum SubscriptionType {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Sns,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -110,6 +115,7 @@ impl std::str::FromStr for SubscriptionType {
     }
 }
 impl SubscriptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionType::Email => "EMAIL",
@@ -117,6 +123,7 @@ impl SubscriptionType {
             SubscriptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL", "SNS"]
     }
@@ -191,6 +198,7 @@ pub mod notification {
             self.notification_type = Some(input);
             self
         }
+        /// <p>Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -203,6 +211,7 @@ pub mod notification {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>The comparison that is used for this notification.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -215,6 +224,7 @@ pub mod notification {
             self.threshold = Some(input);
             self
         }
+        /// <p>The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -224,6 +234,7 @@ pub mod notification {
             self.threshold_type = Some(input);
             self
         }
+        /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.</p>
         pub fn set_threshold_type(
             mut self,
             input: std::option::Option<crate::model::ThresholdType>,
@@ -236,6 +247,7 @@ pub mod notification {
             self.notification_state = Some(input);
             self
         }
+        /// <p>Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.</p>
         pub fn set_notification_state(
             mut self,
             input: std::option::Option<crate::model::NotificationState>,
@@ -262,6 +274,7 @@ impl Notification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -273,7 +286,9 @@ impl Notification {
     std::hash::Hash,
 )]
 pub enum NotificationState {
+    #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
     Ok,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -295,6 +310,7 @@ impl std::str::FromStr for NotificationState {
     }
 }
 impl NotificationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationState::Alarm => "ALARM",
@@ -302,6 +318,7 @@ impl NotificationState {
             NotificationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALARM", "OK"]
     }
@@ -324,7 +341,9 @@ impl AsRef<str> for NotificationState {
     std::hash::Hash,
 )]
 pub enum ThresholdType {
+    #[allow(missing_docs)] // documentation missing in model
     AbsoluteValue,
+    #[allow(missing_docs)] // documentation missing in model
     Percentage,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -346,6 +365,7 @@ impl std::str::FromStr for ThresholdType {
     }
 }
 impl ThresholdType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThresholdType::AbsoluteValue => "ABSOLUTE_VALUE",
@@ -353,6 +373,7 @@ impl ThresholdType {
             ThresholdType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABSOLUTE_VALUE", "PERCENTAGE"]
     }
@@ -378,8 +399,11 @@ impl AsRef<str> for ThresholdType {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -402,6 +426,7 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::EqualTo => "EQUAL_TO",
@@ -410,6 +435,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUAL_TO", "GREATER_THAN", "LESS_THAN"]
     }
@@ -432,7 +458,9 @@ impl AsRef<str> for ComparisonOperator {
     std::hash::Hash,
 )]
 pub enum NotificationType {
+    #[allow(missing_docs)] // documentation missing in model
     Actual,
+    #[allow(missing_docs)] // documentation missing in model
     Forecasted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -454,6 +482,7 @@ impl std::str::FromStr for NotificationType {
     }
 }
 impl NotificationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationType::Actual => "ACTUAL",
@@ -461,6 +490,7 @@ impl NotificationType {
             NotificationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTUAL", "FORECASTED"]
     }
@@ -553,6 +583,9 @@ pub mod action {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -562,6 +595,7 @@ pub mod action {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -571,6 +605,7 @@ pub mod action {
             self.notification_type = Some(input);
             self
         }
+        /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -585,6 +620,9 @@ pub mod action {
             self.action_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
+        /// </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -599,6 +637,9 @@ pub mod action {
             self.action_threshold = Some(input);
             self
         }
+        /// <p>
+        /// The trigger threshold of the action.
+        /// </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -613,6 +654,9 @@ pub mod action {
             self.definition = Some(input);
             self
         }
+        /// <p>
+        /// Where you specify all of the type-specific parameters.
+        /// </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -627,6 +671,9 @@ pub mod action {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+        /// </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -641,6 +688,9 @@ pub mod action {
             self.approval_model = Some(input);
             self
         }
+        /// <p>
+        /// This specifies if the action needs manual or automatic approval.
+        /// </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -655,6 +705,9 @@ pub mod action {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of action.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ActionStatus>,
@@ -662,12 +715,18 @@ pub mod action {
             self.status = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p> A list of subscribers.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p> A list of subscribers.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -699,6 +758,7 @@ impl Action {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -710,15 +770,25 @@ impl Action {
     std::hash::Hash,
 )]
 pub enum ActionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionFailure,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     ResetFailure,
+    #[allow(missing_docs)] // documentation missing in model
     ResetInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ReverseFailure,
+    #[allow(missing_docs)] // documentation missing in model
     ReverseInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ReverseSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     Standby,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -748,6 +818,7 @@ impl std::str::FromStr for ActionStatus {
     }
 }
 impl ActionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActionStatus::ExecutionFailure => "EXECUTION_FAILURE",
@@ -763,6 +834,7 @@ impl ActionStatus {
             ActionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EXECUTION_FAILURE",
@@ -784,6 +856,7 @@ impl AsRef<str> for ActionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -795,7 +868,9 @@ impl AsRef<str> for ActionStatus {
     std::hash::Hash,
 )]
 pub enum ApprovalModel {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -817,6 +892,7 @@ impl std::str::FromStr for ApprovalModel {
     }
 }
 impl ApprovalModel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApprovalModel::Auto => "AUTOMATIC",
@@ -824,6 +900,7 @@ impl ApprovalModel {
             ApprovalModel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "MANUAL"]
     }
@@ -880,6 +957,9 @@ pub mod definition {
             self.iam_action_definition = Some(input);
             self
         }
+        /// <p>
+        /// The AWS Identity and Access Management (IAM) action definition details.
+        /// </p>
         pub fn set_iam_action_definition(
             mut self,
             input: std::option::Option<crate::model::IamActionDefinition>,
@@ -894,6 +974,9 @@ pub mod definition {
             self.scp_action_definition = Some(input);
             self
         }
+        /// <p>
+        /// The service control policies (SCPs) action definition details.
+        /// </p>
         pub fn set_scp_action_definition(
             mut self,
             input: std::option::Option<crate::model::ScpActionDefinition>,
@@ -908,6 +991,9 @@ pub mod definition {
             self.ssm_action_definition = Some(input);
             self
         }
+        /// <p>
+        /// The AWS Systems Manager (SSM) action definition details.
+        /// </p>
         pub fn set_ssm_action_definition(
             mut self,
             input: std::option::Option<crate::model::SsmActionDefinition>,
@@ -978,6 +1064,9 @@ pub mod ssm_action_definition {
             self.action_sub_type = Some(input);
             self
         }
+        /// <p>
+        /// The action subType.
+        /// </p>
         pub fn set_action_sub_type(
             mut self,
             input: std::option::Option<crate::model::ActionSubType>,
@@ -992,16 +1081,29 @@ pub mod ssm_action_definition {
             self.region = Some(input.into());
             self
         }
+        /// <p>
+        /// The Region to run the SSM document.
+        /// </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>
+        /// The EC2 and RDS instance IDs.
+        /// </p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>
+        /// The EC2 and RDS instance IDs.
+        /// </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1026,6 +1128,7 @@ impl SsmActionDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1037,7 +1140,9 @@ impl SsmActionDefinition {
     std::hash::Hash,
 )]
 pub enum ActionSubType {
+    #[allow(missing_docs)] // documentation missing in model
     StopEc2,
+    #[allow(missing_docs)] // documentation missing in model
     StopRds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1059,6 +1164,7 @@ impl std::str::FromStr for ActionSubType {
     }
 }
 impl ActionSubType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActionSubType::StopEc2 => "STOP_EC2_INSTANCES",
@@ -1066,6 +1172,7 @@ impl ActionSubType {
             ActionSubType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STOP_EC2_INSTANCES", "STOP_RDS_INSTANCES"]
     }
@@ -1116,16 +1223,29 @@ pub mod scp_action_definition {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The policy ID attached.
+        /// </p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
         }
+        /// Appends an item to `target_ids`.
+        ///
+        /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
+        ///
+        /// <p>
+        /// A list of target IDs.
+        /// </p>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_ids.unwrap_or_default();
             v.push(input.into());
             self.target_ids = Some(v);
             self
         }
+        /// <p>
+        /// A list of target IDs.
+        /// </p>
         pub fn set_target_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1201,16 +1321,29 @@ pub mod iam_action_definition {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the policy to be attached.
+        /// </p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
         }
+        /// Appends an item to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>
+        /// A list of roles to be attached. There must be at least one role.
+        /// </p>
         pub fn roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.roles.unwrap_or_default();
             v.push(input.into());
             self.roles = Some(v);
             self
         }
+        /// <p>
+        /// A list of roles to be attached. There must be at least one role.
+        /// </p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1218,12 +1351,22 @@ pub mod iam_action_definition {
             self.roles = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>
+        /// A list of groups to be attached. There must be at least one group.
+        /// </p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>
+        /// A list of groups to be attached. There must be at least one group.
+        /// </p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1231,12 +1374,22 @@ pub mod iam_action_definition {
             self.groups = input;
             self
         }
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>
+        /// A list of users to be attached. There must be at least one user.
+        /// </p>
         pub fn users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>
+        /// A list of users to be attached. There must be at least one user.
+        /// </p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1296,6 +1449,7 @@ pub mod action_threshold {
             self.action_threshold_value = Some(input);
             self
         }
+        /// <p> The threshold of a notification.</p>
         pub fn set_action_threshold_value(mut self, input: std::option::Option<f64>) -> Self {
             self.action_threshold_value = input;
             self
@@ -1305,6 +1459,7 @@ pub mod action_threshold {
             self.action_threshold_type = Some(input);
             self
         }
+        /// <p> The type of threshold for a notification.</p>
         pub fn set_action_threshold_type(
             mut self,
             input: std::option::Option<crate::model::ThresholdType>,
@@ -1328,6 +1483,7 @@ impl ActionThreshold {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1339,8 +1495,11 @@ impl ActionThreshold {
     std::hash::Hash,
 )]
 pub enum ActionType {
+    #[allow(missing_docs)] // documentation missing in model
     Iam,
+    #[allow(missing_docs)] // documentation missing in model
     Scp,
+    #[allow(missing_docs)] // documentation missing in model
     Ssm,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1363,6 +1522,7 @@ impl std::str::FromStr for ActionType {
     }
 }
 impl ActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActionType::Iam => "APPLY_IAM_POLICY",
@@ -1371,6 +1531,7 @@ impl ActionType {
             ActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLY_IAM_POLICY", "APPLY_SCP_POLICY", "RUN_SSM_DOCUMENTS"]
     }
@@ -1445,7 +1606,7 @@ pub struct Budget {
     /// <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The last time that you updated this budget.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Budget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1482,7 +1643,7 @@ pub mod budget {
         pub(crate) time_period: std::option::Option<crate::model::TimePeriod>,
         pub(crate) calculated_spend: std::option::Option<crate::model::CalculatedSpend>,
         pub(crate) budget_type: std::option::Option<crate::model::BudgetType>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
@@ -1490,6 +1651,7 @@ pub mod budget {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1501,10 +1663,27 @@ pub mod budget {
             self.budget_limit = Some(input);
             self
         }
+        /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
+        /// <p>
+        /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
         pub fn set_budget_limit(mut self, input: std::option::Option<crate::model::Spend>) -> Self {
             self.budget_limit = input;
             self
         }
+        /// Adds a key-value pair to `planned_budget_limits`.
+        ///
+        /// To override the contents of this collection use [`set_planned_budget_limits`](Self::set_planned_budget_limits).
+        ///
+        /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+        /// <p>
+        /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+        /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
+        /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
+        /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+        /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+        /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
+        /// <p>
+        /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
         pub fn planned_budget_limits(
             mut self,
             k: impl Into<std::string::String>,
@@ -1515,6 +1694,16 @@ pub mod budget {
             self.planned_budget_limits = Some(hash_map);
             self
         }
+        /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+        /// <p>
+        /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+        /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
+        /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
+        /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+        /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+        /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
+        /// <p>
+        /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
         pub fn set_planned_budget_limits(
             mut self,
             input: std::option::Option<
@@ -1524,6 +1713,29 @@ pub mod budget {
             self.planned_budget_limits = input;
             self
         }
+        /// Adds a key-value pair to `cost_filters`.
+        ///
+        /// To override the contents of this collection use [`set_cost_filters`](Self::set_cost_filters).
+        ///
+        /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+        /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Elastic Compute Cloud - Compute</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Redshift</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Relational Database Service</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Elasticsearch Service</p>
+        /// </li>
+        /// </ul>
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1534,6 +1746,25 @@ pub mod budget {
             self.cost_filters = Some(hash_map);
             self
         }
+        /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+        /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Elastic Compute Cloud - Compute</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Redshift</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Relational Database Service</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Elasticsearch Service</p>
+        /// </li>
+        /// </ul>
         pub fn set_cost_filters(
             mut self,
             input: std::option::Option<
@@ -1550,6 +1781,9 @@ pub mod budget {
             self.cost_types = Some(input);
             self
         }
+        /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
+        /// <p>
+        /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
         pub fn set_cost_types(
             mut self,
             input: std::option::Option<crate::model::CostTypes>,
@@ -1562,6 +1796,7 @@ pub mod budget {
             self.time_unit = Some(input);
             self
         }
+        /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
         pub fn set_time_unit(mut self, input: std::option::Option<crate::model::TimeUnit>) -> Self {
             self.time_unit = input;
             self
@@ -1574,6 +1809,10 @@ pub mod budget {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p>
+        /// <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p>
+        /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+        /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -1586,6 +1825,7 @@ pub mod budget {
             self.calculated_spend = Some(input);
             self
         }
+        /// <p>The actual and forecasted cost or usage that the budget tracks.</p>
         pub fn set_calculated_spend(
             mut self,
             input: std::option::Option<crate::model::CalculatedSpend>,
@@ -1598,6 +1838,7 @@ pub mod budget {
             self.budget_type = Some(input);
             self
         }
+        /// <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
         pub fn set_budget_type(
             mut self,
             input: std::option::Option<crate::model::BudgetType>,
@@ -1606,13 +1847,14 @@ pub mod budget {
             self
         }
         /// <p>The last time that you updated this budget.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The last time that you updated this budget.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1655,11 +1897,17 @@ impl Budget {
     std::hash::Hash,
 )]
 pub enum BudgetType {
+    #[allow(missing_docs)] // documentation missing in model
     Cost,
+    #[allow(missing_docs)] // documentation missing in model
     RiCoverage,
+    #[allow(missing_docs)] // documentation missing in model
     RiUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     SpCoverage,
+    #[allow(missing_docs)] // documentation missing in model
     SpUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     Usage,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1685,6 +1933,7 @@ impl std::str::FromStr for BudgetType {
     }
 }
 impl BudgetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BudgetType::Cost => "COST",
@@ -1696,6 +1945,7 @@ impl BudgetType {
             BudgetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COST",
@@ -1746,6 +1996,7 @@ pub mod calculated_spend {
             self.actual_spend = Some(input);
             self
         }
+        /// <p>The amount of cost, usage, RI units, or Savings Plans units that you have used.</p>
         pub fn set_actual_spend(mut self, input: std::option::Option<crate::model::Spend>) -> Self {
             self.actual_spend = input;
             self
@@ -1755,6 +2006,7 @@ pub mod calculated_spend {
             self.forecasted_spend = Some(input);
             self
         }
+        /// <p>The amount of cost, usage, RI units, or Savings Plans units that you are forecasted to use.</p>
         pub fn set_forecasted_spend(
             mut self,
             input: std::option::Option<crate::model::Spend>,
@@ -1821,6 +2073,7 @@ pub mod spend {
             self.amount = Some(input.into());
             self
         }
+        /// <p>The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.</p>
         pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amount = input;
             self
@@ -1830,6 +2083,7 @@ pub mod spend {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1856,10 +2110,10 @@ impl Spend {
 pub struct TimePeriod {
     /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-    pub start: std::option::Option<smithy_types::Instant>,
+    pub start: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
     /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-    pub end: std::option::Option<smithy_types::Instant>,
+    pub end: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimePeriod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1875,27 +2129,31 @@ pub mod time_period {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start: std::option::Option<smithy_types::Instant>,
-        pub(crate) end: std::option::Option<smithy_types::Instant>,
+        pub(crate) start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
-        pub fn start(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start = Some(input);
             self
         }
-        pub fn set_start(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
+        /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
+        pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.start = input;
             self
         }
         /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
         /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
-        pub fn end(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end = Some(input);
             self
         }
-        pub fn set_end(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p>
+        /// <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
+        pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.end = input;
             self
         }
@@ -1927,9 +2185,13 @@ impl TimePeriod {
     std::hash::Hash,
 )]
 pub enum TimeUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Annually,
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
+    #[allow(missing_docs)] // documentation missing in model
     Quarterly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1953,6 +2215,7 @@ impl std::str::FromStr for TimeUnit {
     }
 }
 impl TimeUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimeUnit::Annually => "ANNUALLY",
@@ -1962,6 +2225,7 @@ impl TimeUnit {
             TimeUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ANNUALLY", "DAILY", "MONTHLY", "QUARTERLY"]
     }
@@ -2057,6 +2321,8 @@ pub mod cost_types {
             self.include_tax = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes taxes.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_tax(mut self, input: std::option::Option<bool>) -> Self {
             self.include_tax = input;
             self
@@ -2067,6 +2333,8 @@ pub mod cost_types {
             self.include_subscription = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes subscriptions.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_subscription(mut self, input: std::option::Option<bool>) -> Self {
             self.include_subscription = input;
             self
@@ -2077,6 +2345,8 @@ pub mod cost_types {
             self.use_blended = Some(input);
             self
         }
+        /// <p>Specifies whether a budget uses a blended rate.</p>
+        /// <p>The default value is <code>false</code>.</p>
         pub fn set_use_blended(mut self, input: std::option::Option<bool>) -> Self {
             self.use_blended = input;
             self
@@ -2087,6 +2357,8 @@ pub mod cost_types {
             self.include_refund = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes refunds.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_refund(mut self, input: std::option::Option<bool>) -> Self {
             self.include_refund = input;
             self
@@ -2097,6 +2369,8 @@ pub mod cost_types {
             self.include_credit = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes credits.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_credit(mut self, input: std::option::Option<bool>) -> Self {
             self.include_credit = input;
             self
@@ -2107,6 +2381,8 @@ pub mod cost_types {
             self.include_upfront = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes upfront RI costs.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_upfront(mut self, input: std::option::Option<bool>) -> Self {
             self.include_upfront = input;
             self
@@ -2117,6 +2393,8 @@ pub mod cost_types {
             self.include_recurring = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_recurring(mut self, input: std::option::Option<bool>) -> Self {
             self.include_recurring = input;
             self
@@ -2127,6 +2405,8 @@ pub mod cost_types {
             self.include_other_subscription = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_other_subscription(mut self, input: std::option::Option<bool>) -> Self {
             self.include_other_subscription = input;
             self
@@ -2137,6 +2417,8 @@ pub mod cost_types {
             self.include_support = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes support subscription fees.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_support(mut self, input: std::option::Option<bool>) -> Self {
             self.include_support = input;
             self
@@ -2147,6 +2429,8 @@ pub mod cost_types {
             self.include_discount = Some(input);
             self
         }
+        /// <p>Specifies whether a budget includes discounts.</p>
+        /// <p>The default value is <code>true</code>.</p>
         pub fn set_include_discount(mut self, input: std::option::Option<bool>) -> Self {
             self.include_discount = input;
             self
@@ -2157,6 +2441,8 @@ pub mod cost_types {
             self.use_amortized = Some(input);
             self
         }
+        /// <p>Specifies whether a budget uses the amortized rate.</p>
+        /// <p>The default value is <code>false</code>.</p>
         pub fn set_use_amortized(mut self, input: std::option::Option<bool>) -> Self {
             self.use_amortized = input;
             self
@@ -2186,6 +2472,7 @@ impl CostTypes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2197,9 +2484,13 @@ impl CostTypes {
     std::hash::Hash,
 )]
 pub enum ExecutionType {
+    #[allow(missing_docs)] // documentation missing in model
     ApproveBudgetAction,
+    #[allow(missing_docs)] // documentation missing in model
     ResetBudgetAction,
+    #[allow(missing_docs)] // documentation missing in model
     RetryBudgetAction,
+    #[allow(missing_docs)] // documentation missing in model
     ReverseBudgetAction,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2223,6 +2514,7 @@ impl std::str::FromStr for ExecutionType {
     }
 }
 impl ExecutionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionType::ApproveBudgetAction => "APPROVE_BUDGET_ACTION",
@@ -2232,6 +2524,7 @@ impl ExecutionType {
             ExecutionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPROVE_BUDGET_ACTION",
@@ -2306,6 +2599,7 @@ pub mod budget_performance_history {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -2317,6 +2611,9 @@ pub mod budget_performance_history {
             self.budget_type = Some(input);
             self
         }
+        /// <p> The type of a budget. It must be one of the following types: </p>
+        /// <p>
+        /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
         pub fn set_budget_type(
             mut self,
             input: std::option::Option<crate::model::BudgetType>,
@@ -2324,6 +2621,11 @@ pub mod budget_performance_history {
             self.budget_type = input;
             self
         }
+        /// Adds a key-value pair to `cost_filters`.
+        ///
+        /// To override the contents of this collection use [`set_cost_filters`](Self::set_cost_filters).
+        ///
+        /// <p>The history of the cost filters for a budget during the specified time period.</p>
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2334,6 +2636,7 @@ pub mod budget_performance_history {
             self.cost_filters = Some(hash_map);
             self
         }
+        /// <p>The history of the cost filters for a budget during the specified time period.</p>
         pub fn set_cost_filters(
             mut self,
             input: std::option::Option<
@@ -2348,6 +2651,7 @@ pub mod budget_performance_history {
             self.cost_types = Some(input);
             self
         }
+        /// <p>The history of the cost types for a budget during the specified time period.</p>
         pub fn set_cost_types(
             mut self,
             input: std::option::Option<crate::model::CostTypes>,
@@ -2360,10 +2664,16 @@ pub mod budget_performance_history {
             self.time_unit = Some(input);
             self
         }
+        /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
         pub fn set_time_unit(mut self, input: std::option::Option<crate::model::TimeUnit>) -> Self {
             self.time_unit = input;
             self
         }
+        /// Appends an item to `budgeted_and_actual_amounts_list`.
+        ///
+        /// To override the contents of this collection use [`set_budgeted_and_actual_amounts_list`](Self::set_budgeted_and_actual_amounts_list).
+        ///
+        /// <p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>
         pub fn budgeted_and_actual_amounts_list(
             mut self,
             input: impl Into<crate::model::BudgetedAndActualAmounts>,
@@ -2373,6 +2683,7 @@ pub mod budget_performance_history {
             self.budgeted_and_actual_amounts_list = Some(v);
             self
         }
+        /// <p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>
         pub fn set_budgeted_and_actual_amounts_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BudgetedAndActualAmounts>>,
@@ -2436,6 +2747,7 @@ pub mod budgeted_and_actual_amounts {
             self.budgeted_amount = Some(input);
             self
         }
+        /// <p>The amount of cost or usage that you created the budget for.</p>
         pub fn set_budgeted_amount(
             mut self,
             input: std::option::Option<crate::model::Spend>,
@@ -2448,6 +2760,7 @@ pub mod budgeted_and_actual_amounts {
             self.actual_amount = Some(input);
             self
         }
+        /// <p>Your actual costs or usage for a budget period.</p>
         pub fn set_actual_amount(
             mut self,
             input: std::option::Option<crate::model::Spend>,
@@ -2460,6 +2773,7 @@ pub mod budgeted_and_actual_amounts {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period covered by this budget comparison.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -2491,7 +2805,7 @@ impl BudgetedAndActualAmounts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistory {
     /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The status of action at the time of the event.
     /// </p>
@@ -2521,18 +2835,22 @@ pub mod action_history {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ActionStatus>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
         pub(crate) action_history_details: std::option::Option<crate::model::ActionHistoryDetails>,
     }
     impl Builder {
         /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -2543,6 +2861,9 @@ pub mod action_history {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of action at the time of the event.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ActionStatus>,
@@ -2557,6 +2878,9 @@ pub mod action_history {
             self.event_type = Some(input);
             self
         }
+        /// <p>
+        /// This distinguishes between whether the events are triggered by the user or generated by the system.
+        /// </p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -2571,6 +2895,9 @@ pub mod action_history {
             self.action_history_details = Some(input);
             self
         }
+        /// <p>
+        /// The description of details of the event.
+        /// </p>
         pub fn set_action_history_details(
             mut self,
             input: std::option::Option<crate::model::ActionHistoryDetails>,
@@ -2632,6 +2959,7 @@ pub mod action_history_details {
             self.message = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2643,6 +2971,9 @@ pub mod action_history_details {
             self.action = Some(input);
             self
         }
+        /// <p>
+        /// The budget action resource.
+        /// </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -2663,6 +2994,7 @@ impl ActionHistoryDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2674,10 +3006,15 @@ impl ActionHistoryDetails {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     CreateAction,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteAction,
+    #[allow(missing_docs)] // documentation missing in model
     ExecuteAction,
+    #[allow(missing_docs)] // documentation missing in model
     System,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateAction,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2702,6 +3039,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::CreateAction => "CREATE_ACTION",
@@ -2712,6 +3050,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_ACTION",
@@ -2760,6 +3099,7 @@ pub mod notification_with_subscribers {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification that is associated with a budget.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -2767,12 +3107,18 @@ pub mod notification_with_subscribers {
             self.notification = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p>A list of subscribers who are subscribed to this notification.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p>A list of subscribers who are subscribed to this notification.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,

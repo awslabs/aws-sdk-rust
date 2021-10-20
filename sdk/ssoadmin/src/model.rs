@@ -26,6 +26,12 @@ pub mod instance_access_control_attribute_configuration {
             std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
     }
     impl Builder {
+        /// Appends an item to `access_control_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_attributes`](Self::set_access_control_attributes).
+        ///
+        /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO
+        /// instance.</p>
         pub fn access_control_attributes(
             mut self,
             input: impl Into<crate::model::AccessControlAttribute>,
@@ -35,6 +41,8 @@ pub mod instance_access_control_attribute_configuration {
             self.access_control_attributes = Some(v);
             self
         }
+        /// <p>Lists the attributes that are configured for ABAC in the specified Amazon Web Services SSO
+        /// instance.</p>
         pub fn set_access_control_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
@@ -97,6 +105,9 @@ pub mod access_control_attribute {
             self.key = Some(input.into());
             self
         }
+        /// <p>The name of the attribute associated with your identities in your identity source. This is
+        /// used to map a specified attribute in your identity source with an attribute in Amazon Web Services
+        /// SSO.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -106,6 +117,7 @@ pub mod access_control_attribute {
             self.value = Some(input);
             self
         }
+        /// <p>The value used for mapping a specified attribute to an identity source.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::AccessControlAttributeValue>,
@@ -152,12 +164,18 @@ pub mod access_control_attribute_value {
         pub(crate) source: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `source`.
+        ///
+        /// To override the contents of this collection use [`set_source`](Self::set_source).
+        ///
+        /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source.unwrap_or_default();
             v.push(input.into());
             self.source = Some(v);
             self
         }
+        /// <p>The identity source to use when mapping a specified attribute to Amazon Web Services SSO.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -214,6 +232,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -223,6 +242,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -261,7 +281,7 @@ pub struct PermissionSetProvisioningStatus {
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PermissionSetProvisioningStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -286,7 +306,7 @@ pub mod permission_set_provisioning_status {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -294,6 +314,7 @@ pub mod permission_set_provisioning_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the permission set provisioning process.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusValues>,
@@ -307,6 +328,8 @@ pub mod permission_set_provisioning_status {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The identifier for tracking the request operation that is generated by the universally
+        /// unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -316,6 +339,7 @@ pub mod permission_set_provisioning_status {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -326,6 +350,8 @@ pub mod permission_set_provisioning_status {
             self.permission_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -338,6 +364,7 @@ pub mod permission_set_provisioning_status {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The message that contains an error or exception in case of an operation failure.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -346,13 +373,14 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -377,6 +405,7 @@ impl PermissionSetProvisioningStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -388,8 +417,11 @@ impl PermissionSetProvisioningStatus {
     std::hash::Hash,
 )]
 pub enum StatusValues {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -412,6 +444,7 @@ impl std::str::FromStr for StatusValues {
     }
 }
 impl StatusValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusValues::Failed => "FAILED",
@@ -420,6 +453,7 @@ impl StatusValues {
             StatusValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -430,6 +464,7 @@ impl AsRef<str> for StatusValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -441,7 +476,9 @@ impl AsRef<str> for StatusValues {
     std::hash::Hash,
 )]
 pub enum ProvisionTargetType {
+    #[allow(missing_docs)] // documentation missing in model
     AllProvisionedAccounts,
+    #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -463,6 +500,7 @@ impl std::str::FromStr for ProvisionTargetType {
     }
 }
 impl ProvisionTargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionTargetType::AllProvisionedAccounts => "ALL_PROVISIONED_ACCOUNTS",
@@ -470,6 +508,7 @@ impl ProvisionTargetType {
             ProvisionTargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL_PROVISIONED_ACCOUNTS", "AWS_ACCOUNT"]
     }
@@ -480,6 +519,7 @@ impl AsRef<str> for ProvisionTargetType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -491,7 +531,9 @@ impl AsRef<str> for ProvisionTargetType {
     std::hash::Hash,
 )]
 pub enum ProvisioningStatus {
+    #[allow(missing_docs)] // documentation missing in model
     LatestPermissionSetNotProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     LatestPermissionSetProvisioned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -517,6 +559,7 @@ impl std::str::FromStr for ProvisioningStatus {
     }
 }
 impl ProvisioningStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningStatus::LatestPermissionSetNotProvisioned => {
@@ -528,6 +571,7 @@ impl ProvisioningStatus {
             ProvisioningStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "LATEST_PERMISSION_SET_NOT_PROVISIONED",
@@ -551,7 +595,7 @@ pub struct PermissionSetProvisioningStatusMetadata {
     /// unique identifier (UUID) workflow.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PermissionSetProvisioningStatusMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -570,7 +614,7 @@ pub mod permission_set_provisioning_status_metadata {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -578,6 +622,7 @@ pub mod permission_set_provisioning_status_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the permission set provisioning process.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusValues>,
@@ -591,18 +636,21 @@ pub mod permission_set_provisioning_status_metadata {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The identifier for tracking the request operation that is generated by the universally
+        /// unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -652,6 +700,7 @@ pub mod operation_status_filter {
             self.status = Some(input);
             self
         }
+        /// <p>Filters the list operations result based on the status attribute.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusValues>,
@@ -707,6 +756,7 @@ pub mod attached_managed_policy {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM managed policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -717,6 +767,8 @@ pub mod attached_managed_policy {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -771,6 +823,8 @@ pub mod instance_metadata {
             self.instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
@@ -780,6 +834,7 @@ pub mod instance_metadata {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the identity store that is connected to the SSO instance.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -849,6 +904,7 @@ pub mod account_assignment {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -859,6 +915,8 @@ pub mod account_assignment {
             self.permission_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -871,6 +929,7 @@ pub mod account_assignment {
             self.principal_type = Some(input);
             self
         }
+        /// <p>The entity type for which the assignment will be created.</p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -883,6 +942,7 @@ pub mod account_assignment {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -905,6 +965,7 @@ impl AccountAssignment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -916,7 +977,9 @@ impl AccountAssignment {
     std::hash::Hash,
 )]
 pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -938,6 +1001,7 @@ impl std::str::FromStr for PrincipalType {
     }
 }
 impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Group => "GROUP",
@@ -945,6 +1009,7 @@ impl PrincipalType {
             PrincipalType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
@@ -966,7 +1031,7 @@ pub struct AccountAssignmentOperationStatusMetadata {
     /// unique identifier (UUID) workflow.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AccountAssignmentOperationStatusMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -985,7 +1050,7 @@ pub mod account_assignment_operation_status_metadata {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -993,6 +1058,7 @@ pub mod account_assignment_operation_status_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the permission set provisioning process.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusValues>,
@@ -1006,18 +1072,21 @@ pub mod account_assignment_operation_status_metadata {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The identifier for tracking the request operation that is generated by the universally
+        /// unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1051,7 +1120,7 @@ pub struct PermissionSet {
     /// <p>The description of the <a>PermissionSet</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601
     /// standard.</p>
     pub session_duration: std::option::Option<std::string::String>,
@@ -1080,7 +1149,7 @@ pub mod permission_set {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) session_duration: std::option::Option<std::string::String>,
         pub(crate) relay_state: std::option::Option<std::string::String>,
     }
@@ -1090,6 +1159,7 @@ pub mod permission_set {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the permission set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1100,6 +1170,8 @@ pub mod permission_set {
             self.permission_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1112,18 +1184,20 @@ pub mod permission_set {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the <a>PermissionSet</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1134,6 +1208,8 @@ pub mod permission_set {
             self.session_duration = Some(input.into());
             self
         }
+        /// <p>The length of time that the application user sessions are valid for in the ISO-8601
+        /// standard.</p>
         pub fn set_session_duration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1147,6 +1223,8 @@ pub mod permission_set {
             self.relay_state = Some(input.into());
             self
         }
+        /// <p>Used to redirect users within the application during the federation authentication
+        /// process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.relay_state = input;
             self
@@ -1171,6 +1249,7 @@ impl PermissionSet {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1182,8 +1261,11 @@ impl PermissionSet {
     std::hash::Hash,
 )]
 pub enum InstanceAccessControlAttributeConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1208,6 +1290,7 @@ impl std::str::FromStr for InstanceAccessControlAttributeConfigurationStatus {
     }
 }
 impl InstanceAccessControlAttributeConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAccessControlAttributeConfigurationStatus::CreationFailed => "CREATION_FAILED",
@@ -1218,6 +1301,7 @@ impl InstanceAccessControlAttributeConfigurationStatus {
             InstanceAccessControlAttributeConfigurationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATION_FAILED", "CREATION_IN_PROGRESS", "ENABLED"]
     }
@@ -1252,7 +1336,7 @@ pub struct AccountAssignmentOperationStatus {
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The date that the permission set was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AccountAssignmentOperationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1283,7 +1367,7 @@ pub mod account_assignment_operation_status {
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
         pub(crate) principal_type: std::option::Option<crate::model::PrincipalType>,
         pub(crate) principal_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of the permission set provisioning process.</p>
@@ -1291,6 +1375,7 @@ pub mod account_assignment_operation_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the permission set provisioning process.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusValues>,
@@ -1304,6 +1389,8 @@ pub mod account_assignment_operation_status {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The identifier for tracking the request operation that is generated by the universally
+        /// unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -1313,6 +1400,7 @@ pub mod account_assignment_operation_status {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The message that contains an error or exception in case of an operation failure.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1325,6 +1413,7 @@ pub mod account_assignment_operation_status {
             self.target_id = Some(input.into());
             self
         }
+        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -1334,6 +1423,7 @@ pub mod account_assignment_operation_status {
             self.target_type = Some(input);
             self
         }
+        /// <p>The entity type for which the assignment will be created.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetType>,
@@ -1347,6 +1437,8 @@ pub mod account_assignment_operation_status {
             self.permission_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1359,6 +1451,7 @@ pub mod account_assignment_operation_status {
             self.principal_type = Some(input);
             self
         }
+        /// <p>The entity type for which the assignment will be created.</p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -1371,18 +1464,20 @@ pub mod account_assignment_operation_status {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the permission set was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1410,6 +1505,7 @@ impl AccountAssignmentOperationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1421,6 +1517,7 @@ impl AccountAssignmentOperationStatus {
     std::hash::Hash,
 )]
 pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1441,12 +1538,14 @@ impl std::str::FromStr for TargetType {
     }
 }
 impl TargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::AwsAccount => "AWS_ACCOUNT",
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_ACCOUNT"]
     }

@@ -16,6 +16,9 @@ pub mod bulk_publish_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26,8 +29,10 @@ pub mod bulk_publish_input {
         /// Consumes the builder and constructs a [`BulkPublishInput`](crate::input::BulkPublishInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::BulkPublishInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BulkPublishInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BulkPublishInput {
                 identity_pool_id: self.identity_pool_id,
             })
@@ -45,27 +50,27 @@ impl BulkPublishInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BulkPublish,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BulkPublishInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.identity_pool_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_1, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_1, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -82,7 +87,7 @@ impl BulkPublishInput {
         fn update_http_builder(
             input: &crate::input::BulkPublishInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -91,23 +96,23 @@ impl BulkPublishInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BulkPublishInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -130,25 +135,27 @@ impl BulkPublishInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::BulkPublish::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "BulkPublish",
-                    "cognitosync",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BulkPublish::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BulkPublish",
+            "cognitosync",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -180,6 +187,9 @@ pub mod delete_dataset_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -194,6 +204,9 @@ pub mod delete_dataset_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -205,6 +218,9 @@ pub mod delete_dataset_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// A string of up to 128 characters.
+        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+        /// (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -212,8 +228,10 @@ pub mod delete_dataset_input {
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteDatasetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDatasetInput {
                 identity_pool_id: self.identity_pool_id,
                 identity_id: self.identity_id,
@@ -233,27 +251,27 @@ impl DeleteDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.identity_pool_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_2, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_2, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -262,13 +280,13 @@ impl DeleteDatasetInput {
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_3, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_3, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -277,13 +295,13 @@ impl DeleteDatasetInput {
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_4, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_4, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -302,7 +320,7 @@ impl DeleteDatasetInput {
         fn update_http_builder(
             input: &crate::input::DeleteDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -311,23 +329,23 @@ impl DeleteDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -350,25 +368,27 @@ impl DeleteDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteDataset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteDataset",
-                    "cognitosync",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataset",
+            "cognitosync",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -400,6 +420,9 @@ pub mod describe_dataset_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -414,6 +437,9 @@ pub mod describe_dataset_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -425,6 +451,9 @@ pub mod describe_dataset_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// A string of up to 128 characters.
+        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+        /// (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -434,7 +463,7 @@ pub mod describe_dataset_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDatasetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDatasetInput {
                 identity_pool_id: self.identity_pool_id,
@@ -455,27 +484,27 @@ impl DescribeDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.identity_pool_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_5, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_5, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -484,13 +513,13 @@ impl DescribeDatasetInput {
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_6, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_6, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -499,13 +528,13 @@ impl DescribeDatasetInput {
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_7, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_7, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -524,7 +553,7 @@ impl DescribeDatasetInput {
         fn update_http_builder(
             input: &crate::input::DescribeDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -533,23 +562,23 @@ impl DescribeDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -572,15 +601,15 @@ impl DescribeDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDataset::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDataset",
             "cognitosync",
         ));
@@ -589,10 +618,10 @@ impl DescribeDatasetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -622,6 +651,9 @@ pub mod describe_identity_pool_usage_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for
+        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+        /// generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -634,7 +666,7 @@ pub mod describe_identity_pool_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIdentityPoolUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIdentityPoolUsageInput {
                 identity_pool_id: self.identity_pool_id,
@@ -654,27 +686,27 @@ impl DescribeIdentityPoolUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityPoolUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIdentityPoolUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.identity_pool_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_8, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_8, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -691,7 +723,7 @@ impl DescribeIdentityPoolUsageInput {
         fn update_http_builder(
             input: &crate::input::DescribeIdentityPoolUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -700,23 +732,23 @@ impl DescribeIdentityPoolUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIdentityPoolUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -739,15 +771,15 @@ impl DescribeIdentityPoolUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIdentityPoolUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIdentityPoolUsage",
             "cognitosync",
         ));
@@ -756,10 +788,10 @@ impl DescribeIdentityPoolUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -790,6 +822,9 @@ pub mod describe_identity_usage_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for
+        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+        /// generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -804,6 +839,9 @@ pub mod describe_identity_usage_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -813,7 +851,7 @@ pub mod describe_identity_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIdentityUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIdentityUsageInput {
                 identity_pool_id: self.identity_pool_id,
@@ -833,27 +871,27 @@ impl DescribeIdentityUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIdentityUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.identity_pool_id;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_9, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_9, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -862,13 +900,13 @@ impl DescribeIdentityUsageInput {
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_10, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_10, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -886,7 +924,7 @@ impl DescribeIdentityUsageInput {
         fn update_http_builder(
             input: &crate::input::DescribeIdentityUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -895,23 +933,23 @@ impl DescribeIdentityUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIdentityUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -934,15 +972,15 @@ impl DescribeIdentityUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIdentityUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIdentityUsage",
             "cognitosync",
         ));
@@ -951,10 +989,10 @@ impl DescribeIdentityUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -984,6 +1022,9 @@ pub mod get_bulk_publish_details_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -996,7 +1037,7 @@ pub mod get_bulk_publish_details_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBulkPublishDetailsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBulkPublishDetailsInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1015,27 +1056,27 @@ impl GetBulkPublishDetailsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBulkPublishDetails,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBulkPublishDetailsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.identity_pool_id;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_11, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_11, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -1052,7 +1093,7 @@ impl GetBulkPublishDetailsInput {
         fn update_http_builder(
             input: &crate::input::GetBulkPublishDetailsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1061,23 +1102,23 @@ impl GetBulkPublishDetailsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBulkPublishDetailsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1100,15 +1141,15 @@ impl GetBulkPublishDetailsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBulkPublishDetails::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBulkPublishDetails",
             "cognitosync",
         ));
@@ -1117,10 +1158,10 @@ impl GetBulkPublishDetailsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1148,6 +1189,7 @@ pub mod get_cognito_events_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>The Cognito Identity Pool ID for the request</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1160,7 +1202,7 @@ pub mod get_cognito_events_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCognitoEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCognitoEventsInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1179,27 +1221,27 @@ impl GetCognitoEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCognitoEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCognitoEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.identity_pool_id;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_12, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_12, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -1216,7 +1258,7 @@ impl GetCognitoEventsInput {
         fn update_http_builder(
             input: &crate::input::GetCognitoEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1225,23 +1267,23 @@ impl GetCognitoEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCognitoEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1264,15 +1306,15 @@ impl GetCognitoEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCognitoEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCognitoEvents",
             "cognitosync",
         ));
@@ -1281,10 +1323,10 @@ impl GetCognitoEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1313,6 +1355,8 @@ pub mod get_identity_pool_configuration_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1325,7 +1369,7 @@ pub mod get_identity_pool_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityPoolConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityPoolConfigurationInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1345,27 +1389,27 @@ impl GetIdentityPoolConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPoolConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityPoolConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.identity_pool_id;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_13, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_13, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -1382,7 +1426,7 @@ impl GetIdentityPoolConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityPoolConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1391,23 +1435,23 @@ impl GetIdentityPoolConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityPoolConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1430,15 +1474,15 @@ impl GetIdentityPoolConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityPoolConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityPoolConfiguration",
             "cognitosync",
         ));
@@ -1447,10 +1491,10 @@ impl GetIdentityPoolConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1483,6 +1527,9 @@ pub mod list_datasets_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1497,6 +1544,9 @@ pub mod list_datasets_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1507,6 +1557,8 @@ pub mod list_datasets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining the next
+        /// page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1517,6 +1569,8 @@ pub mod list_datasets_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to be
+        /// returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1524,8 +1578,10 @@ pub mod list_datasets_input {
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDatasetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDatasetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDatasetsInput {
                 identity_pool_id: self.identity_pool_id,
                 identity_id: self.identity_id,
@@ -1546,27 +1602,27 @@ impl ListDatasetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDatasetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.identity_pool_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_14, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_14, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -1575,13 +1631,13 @@ impl ListDatasetsInput {
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_15, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_15, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -1596,14 +1652,14 @@ impl ListDatasetsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListDatasetsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_16) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -1611,7 +1667,7 @@ impl ListDatasetsInput {
         fn update_http_builder(
             input: &crate::input::ListDatasetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1621,23 +1677,23 @@ impl ListDatasetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDatasetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1660,25 +1716,27 @@ impl ListDatasetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDatasets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDatasets",
-                    "cognitosync",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasets",
+            "cognitosync",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1708,6 +1766,8 @@ pub mod list_identity_pool_usage_input {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining
+        /// the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1718,6 +1778,8 @@ pub mod list_identity_pool_usage_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to
+        /// be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1727,7 +1789,7 @@ pub mod list_identity_pool_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentityPoolUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentityPoolUsageInput {
                 next_token: self.next_token,
@@ -1747,28 +1809,28 @@ impl ListIdentityPoolUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPoolUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentityPoolUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/identitypools").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListIdentityPoolUsageInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_17) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -1776,7 +1838,7 @@ impl ListIdentityPoolUsageInput {
         fn update_http_builder(
             input: &crate::input::ListIdentityPoolUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1786,23 +1848,23 @@ impl ListIdentityPoolUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentityPoolUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1825,15 +1887,15 @@ impl ListIdentityPoolUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentityPoolUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentityPoolUsage",
             "cognitosync",
         ));
@@ -1842,10 +1904,10 @@ impl ListIdentityPoolUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1881,6 +1943,9 @@ pub mod list_records_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1895,6 +1960,9 @@ pub mod list_records_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1905,6 +1973,8 @@ pub mod list_records_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// A string of up to 128 characters. Allowed
+        /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -1915,6 +1985,8 @@ pub mod list_records_input {
             self.last_sync_count = Some(input);
             self
         }
+        /// The last server sync count for this
+        /// record.
         pub fn set_last_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.last_sync_count = input;
             self
@@ -1925,6 +1997,8 @@ pub mod list_records_input {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining the next
+        /// page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1935,6 +2009,8 @@ pub mod list_records_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to be
+        /// returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1945,6 +2021,8 @@ pub mod list_records_input {
             self.sync_session_token = Some(input.into());
             self
         }
+        /// A token containing a session ID,
+        /// identity ID, and expiration.
         pub fn set_sync_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1955,8 +2033,10 @@ pub mod list_records_input {
         /// Consumes the builder and constructs a [`ListRecordsInput`](crate::input::ListRecordsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListRecordsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListRecordsInput {
                 identity_pool_id: self.identity_pool_id,
                 identity_id: self.identity_id,
@@ -1980,27 +2060,27 @@ impl ListRecordsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecords,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecordsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.identity_pool_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_18, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_18, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -2009,13 +2089,13 @@ impl ListRecordsInput {
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_19, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_19, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -2024,13 +2104,13 @@ impl ListRecordsInput {
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_20, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_20, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -2039,26 +2119,26 @@ impl ListRecordsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListRecordsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_21) = &_input.last_sync_count {
                 query.push_kv(
                     "lastSyncCount",
-                    &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
             if let Some(inner_22) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_23) = &_input.sync_session_token {
                 query.push_kv(
                     "syncSessionToken",
-                    &smithy_http::query::fmt_string(&inner_23),
+                    &aws_smithy_http::query::fmt_string(&inner_23),
                 );
             }
         }
@@ -2066,7 +2146,7 @@ impl ListRecordsInput {
         fn update_http_builder(
             input: &crate::input::ListRecordsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2076,23 +2156,23 @@ impl ListRecordsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecordsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2115,25 +2195,27 @@ impl ListRecordsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListRecords::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListRecords",
-                    "cognitosync",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRecords",
+            "cognitosync",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2165,6 +2247,8 @@ pub mod register_device_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2177,6 +2261,7 @@ pub mod register_device_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -2186,6 +2271,7 @@ pub mod register_device_input {
             self.platform = Some(input);
             self
         }
+        /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -2195,6 +2281,7 @@ pub mod register_device_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>The push token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -2204,7 +2291,7 @@ pub mod register_device_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterDeviceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterDeviceInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2226,27 +2313,27 @@ impl RegisterDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.identity_pool_id;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_24, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_24, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -2255,13 +2342,13 @@ impl RegisterDeviceInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_25, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_25, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -2279,7 +2366,7 @@ impl RegisterDeviceInput {
         fn update_http_builder(
             input: &crate::input::RegisterDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2288,24 +2375,26 @@ impl RegisterDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_device(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2328,15 +2417,15 @@ impl RegisterDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterDevice::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterDevice",
             "cognitosync",
         ));
@@ -2345,10 +2434,10 @@ impl RegisterDeviceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2379,6 +2468,7 @@ pub mod set_cognito_events_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2386,6 +2476,11 @@ pub mod set_cognito_events_input {
             self.identity_pool_id = input;
             self
         }
+        /// Adds a key-value pair to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The events to configure</p>
         pub fn events(
             mut self,
             k: impl Into<std::string::String>,
@@ -2396,6 +2491,7 @@ pub mod set_cognito_events_input {
             self.events = Some(hash_map);
             self
         }
+        /// <p>The events to configure</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<
@@ -2410,7 +2506,7 @@ pub mod set_cognito_events_input {
             self,
         ) -> std::result::Result<
             crate::input::SetCognitoEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetCognitoEventsInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2430,27 +2526,27 @@ impl SetCognitoEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetCognitoEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetCognitoEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.identity_pool_id;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_26, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_26, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -2467,7 +2563,7 @@ impl SetCognitoEventsInput {
         fn update_http_builder(
             input: &crate::input::SetCognitoEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2476,27 +2572,27 @@ impl SetCognitoEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetCognitoEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_cognito_events(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2519,15 +2615,15 @@ impl SetCognitoEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetCognitoEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetCognitoEvents",
             "cognitosync",
         ));
@@ -2536,10 +2632,10 @@ impl SetCognitoEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2570,6 +2666,8 @@ pub mod set_identity_pool_configuration_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito. This is the ID of the pool to modify.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2582,6 +2680,7 @@ pub mod set_identity_pool_configuration_input {
             self.push_sync = Some(input);
             self
         }
+        /// <p>Options to apply to this identity pool for push synchronization.</p>
         pub fn set_push_sync(mut self, input: std::option::Option<crate::model::PushSync>) -> Self {
             self.push_sync = input;
             self
@@ -2591,6 +2690,7 @@ pub mod set_identity_pool_configuration_input {
             self.cognito_streams = Some(input);
             self
         }
+        /// Options to apply to this identity pool for Amazon Cognito streams.
         pub fn set_cognito_streams(
             mut self,
             input: std::option::Option<crate::model::CognitoStreams>,
@@ -2603,7 +2703,7 @@ pub mod set_identity_pool_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityPoolConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityPoolConfigurationInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2625,27 +2725,27 @@ impl SetIdentityPoolConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityPoolConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityPoolConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.identity_pool_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_27, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_27, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -2662,7 +2762,7 @@ impl SetIdentityPoolConfigurationInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityPoolConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2671,25 +2771,25 @@ impl SetIdentityPoolConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityPoolConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2712,15 +2812,15 @@ impl SetIdentityPoolConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityPoolConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityPoolConfiguration",
             "cognitosync",
         ));
@@ -2729,10 +2829,10 @@ impl SetIdentityPoolConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2764,6 +2864,8 @@ pub mod subscribe_to_dataset_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2776,6 +2878,7 @@ pub mod subscribe_to_dataset_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>Unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -2785,6 +2888,7 @@ pub mod subscribe_to_dataset_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset to subcribe to.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -2794,6 +2898,7 @@ pub mod subscribe_to_dataset_input {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -2803,7 +2908,7 @@ pub mod subscribe_to_dataset_input {
             self,
         ) -> std::result::Result<
             crate::input::SubscribeToDatasetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SubscribeToDatasetInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2825,27 +2930,27 @@ impl SubscribeToDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SubscribeToDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubscribeToDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_28 = &_input.identity_pool_id;
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_28, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_28, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -2854,13 +2959,13 @@ impl SubscribeToDatasetInput {
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_29, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_29, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -2869,13 +2974,13 @@ impl SubscribeToDatasetInput {
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_30, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_30, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -2884,13 +2989,13 @@ impl SubscribeToDatasetInput {
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = smithy_http::label::fmt_string(input_31, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_31, false);
             if device_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 });
@@ -2902,7 +3007,7 @@ impl SubscribeToDatasetInput {
         fn update_http_builder(
             input: &crate::input::SubscribeToDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2911,23 +3016,23 @@ impl SubscribeToDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubscribeToDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2950,15 +3055,15 @@ impl SubscribeToDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SubscribeToDataset::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SubscribeToDataset",
             "cognitosync",
         ));
@@ -2967,10 +3072,10 @@ impl SubscribeToDatasetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3002,6 +3107,8 @@ pub mod unsubscribe_from_dataset_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3014,6 +3121,7 @@ pub mod unsubscribe_from_dataset_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>Unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -3023,6 +3131,7 @@ pub mod unsubscribe_from_dataset_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset from which to unsubcribe.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -3032,6 +3141,7 @@ pub mod unsubscribe_from_dataset_input {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -3041,7 +3151,7 @@ pub mod unsubscribe_from_dataset_input {
             self,
         ) -> std::result::Result<
             crate::input::UnsubscribeFromDatasetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnsubscribeFromDatasetInput {
                 identity_pool_id: self.identity_pool_id,
@@ -3063,27 +3173,27 @@ impl UnsubscribeFromDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnsubscribeFromDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnsubscribeFromDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.identity_pool_id;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_32, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_32, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -3092,13 +3202,13 @@ impl UnsubscribeFromDatasetInput {
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_33, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_33, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -3107,13 +3217,13 @@ impl UnsubscribeFromDatasetInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_34, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_34, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -3122,13 +3232,13 @@ impl UnsubscribeFromDatasetInput {
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = smithy_http::label::fmt_string(input_35, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_35, false);
             if device_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 });
@@ -3140,7 +3250,7 @@ impl UnsubscribeFromDatasetInput {
         fn update_http_builder(
             input: &crate::input::UnsubscribeFromDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3149,23 +3259,23 @@ impl UnsubscribeFromDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnsubscribeFromDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3188,15 +3298,15 @@ impl UnsubscribeFromDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnsubscribeFromDataset::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnsubscribeFromDataset",
             "cognitosync",
         ));
@@ -3205,10 +3315,10 @@ impl UnsubscribeFromDatasetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3244,6 +3354,9 @@ pub mod update_records_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3258,6 +3371,9 @@ pub mod update_records_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -3269,6 +3385,9 @@ pub mod update_records_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// A string of up to 128 characters.
+        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+        /// (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -3278,16 +3397,25 @@ pub mod update_records_input {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
         }
+        /// Appends an item to `record_patches`.
+        ///
+        /// To override the contents of this collection use [`set_record_patches`](Self::set_record_patches).
+        ///
+        /// A list of patch
+        /// operations.
         pub fn record_patches(mut self, input: impl Into<crate::model::RecordPatch>) -> Self {
             let mut v = self.record_patches.unwrap_or_default();
             v.push(input.into());
             self.record_patches = Some(v);
             self
         }
+        /// A list of patch
+        /// operations.
         pub fn set_record_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>,
@@ -3301,6 +3429,8 @@ pub mod update_records_input {
             self.sync_session_token = Some(input.into());
             self
         }
+        /// The SyncSessionToken returned by a
+        /// previous call to ListRecords for this dataset and identity.
         pub fn set_sync_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3315,6 +3445,9 @@ pub mod update_records_input {
             self.client_context = Some(input.into());
             self
         }
+        /// Intended to supply a device ID that
+        /// will populate the lastModifiedBy field referenced in other methods. The
+        /// ClientContext field is not yet implemented.
         pub fn set_client_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3325,8 +3458,10 @@ pub mod update_records_input {
         /// Consumes the builder and constructs a [`UpdateRecordsInput`](crate::input::UpdateRecordsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateRecordsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateRecordsInput {
                 identity_pool_id: self.identity_pool_id,
                 identity_id: self.identity_id,
@@ -3350,27 +3485,27 @@ impl UpdateRecordsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecords,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRecordsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.identity_pool_id;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_pool_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_pool_id = smithy_http::label::fmt_string(input_36, false);
+            let identity_pool_id = aws_smithy_http::label::fmt_string(input_36, false);
             if identity_pool_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_pool_id",
                     details: "cannot be empty or unset",
                 });
@@ -3379,13 +3514,13 @@ impl UpdateRecordsInput {
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identity_id",
                         details: "cannot be empty or unset",
                     })?;
-            let identity_id = smithy_http::label::fmt_string(input_37, false);
+            let identity_id = aws_smithy_http::label::fmt_string(input_37, false);
             if identity_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identity_id",
                     details: "cannot be empty or unset",
                 });
@@ -3394,13 +3529,13 @@ impl UpdateRecordsInput {
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_name",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_name = smithy_http::label::fmt_string(input_38, false);
+            let dataset_name = aws_smithy_http::label::fmt_string(input_38, false);
             if dataset_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_name",
                     details: "cannot be empty or unset",
                 });
@@ -3418,7 +3553,7 @@ impl UpdateRecordsInput {
         fn add_headers(
             _input: &crate::input::UpdateRecordsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_39) = &_input.client_context {
                 let formatted_40 = AsRef::<str>::as_ref(inner_39);
@@ -3426,7 +3561,7 @@ impl UpdateRecordsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_40;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_context",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3442,7 +3577,7 @@ impl UpdateRecordsInput {
         fn update_http_builder(
             input: &crate::input::UpdateRecordsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3452,24 +3587,26 @@ impl UpdateRecordsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRecordsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_records(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3492,25 +3629,27 @@ impl UpdateRecordsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateRecords::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateRecords",
-                    "cognitosync",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRecords",
+            "cognitosync",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

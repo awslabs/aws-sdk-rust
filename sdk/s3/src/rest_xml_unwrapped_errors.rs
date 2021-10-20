@@ -7,7 +7,7 @@
 //! Error abstractions for `noErrorWrapping`. Code generators should either inline this file
 //! or its companion `rest_xml_wrapped_errors.rs` for code generation
 
-use smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
+use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
 use std::convert::TryFrom;
 
 #[allow(unused)]
@@ -25,10 +25,10 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
     Ok(scoped)
 }
 
-pub fn parse_generic_error(body: &[u8]) -> Result<smithy_types::Error, XmlError> {
+pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;
-    let mut err = smithy_types::Error::builder();
+    let mut err = aws_smithy_types::Error::builder();
     while let Some(mut tag) = root.next_tag() {
         match tag.start_el().local() {
             "Code" => {

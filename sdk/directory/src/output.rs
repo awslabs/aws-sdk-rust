@@ -27,6 +27,7 @@ pub mod verify_trust_output {
             self.trust_id = Some(input.into());
             self
         }
+        /// <p>The unique Trust ID of the trust relationship that was verified.</p>
         pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trust_id = input;
             self
@@ -46,6 +47,7 @@ impl VerifyTrustOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustOutput {
@@ -77,6 +79,7 @@ pub mod update_trust_output {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -86,6 +89,7 @@ pub mod update_trust_output {
             self.trust_id = Some(input.into());
             self
         }
+        /// <p>Identifier of the trust relationship.</p>
         pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trust_id = input;
             self
@@ -136,6 +140,7 @@ impl UpdateRadiusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNumberOfDomainControllersOutput {}
@@ -195,6 +200,7 @@ impl UpdateConditionalForwarderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareDirectoryOutput {
@@ -224,6 +230,8 @@ pub mod unshare_directory_output {
             self.shared_directory_id = Some(input.into());
             self
         }
+        /// <p>Identifier of the directory stored in the directory consumer account that is to be
+        /// unshared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -246,6 +254,7 @@ impl UnshareDirectoryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaExtensionOutput {
@@ -273,6 +282,7 @@ pub mod start_schema_extension_output {
             self.schema_extension_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the schema extension that will be applied.</p>
         pub fn set_schema_extension_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -295,6 +305,7 @@ impl StartSchemaExtensionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareDirectoryOutput {
@@ -324,6 +335,8 @@ pub mod share_directory_output {
             self.shared_directory_id = Some(input.into());
             self
         }
+        /// <p>Identifier of the directory that is stored in the directory consumer account that is
+        /// shared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -376,6 +389,7 @@ impl RestoreFromSnapshotOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetUserPasswordOutput {}
@@ -405,6 +419,7 @@ impl ResetUserPasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceOutput {}
@@ -434,6 +449,7 @@ impl RemoveTagsFromResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRegionOutput {}
@@ -463,6 +479,7 @@ impl RemoveRegionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveIpRoutesOutput {}
@@ -492,6 +509,7 @@ impl RemoveIpRoutesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectSharedDirectoryOutput {
@@ -519,6 +537,7 @@ pub mod reject_shared_directory_output {
             self.shared_directory_id = Some(input.into());
             self
         }
+        /// <p>Identifier of the shared directory in the directory consumer account.</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -571,6 +590,7 @@ impl RegisterEventTopicOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCertificateOutput {
@@ -598,6 +618,7 @@ pub mod register_certificate_output {
             self.certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the certificate.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -620,6 +641,7 @@ impl RegisterCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -646,12 +668,18 @@ pub mod list_tags_for_resource_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>List of tags returned by the ListTagsForResource operation.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>List of tags returned by the ListTagsForResource operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -664,6 +692,7 @@ pub mod list_tags_for_resource_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -684,6 +713,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaExtensionsOutput {
@@ -714,6 +744,11 @@ pub mod list_schema_extensions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `schema_extensions_info`.
+        ///
+        /// To override the contents of this collection use [`set_schema_extensions_info`](Self::set_schema_extensions_info).
+        ///
+        /// <p>Information about the schema extensions applied to the directory.</p>
         pub fn schema_extensions_info(
             mut self,
             input: impl Into<crate::model::SchemaExtensionInfo>,
@@ -723,6 +758,7 @@ pub mod list_schema_extensions_output {
             self.schema_extensions_info = Some(v);
             self
         }
+        /// <p>Information about the schema extensions applied to the directory.</p>
         pub fn set_schema_extensions_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaExtensionInfo>>,
@@ -737,6 +773,9 @@ pub mod list_schema_extensions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
+        /// of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -757,6 +796,7 @@ impl ListSchemaExtensionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsOutput {
@@ -784,6 +824,11 @@ pub mod list_log_subscriptions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `log_subscriptions`.
+        ///
+        /// To override the contents of this collection use [`set_log_subscriptions`](Self::set_log_subscriptions).
+        ///
+        /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
         pub fn log_subscriptions(
             mut self,
             input: impl Into<crate::model::LogSubscription>,
@@ -793,6 +838,7 @@ pub mod list_log_subscriptions_output {
             self.log_subscriptions = Some(v);
             self
         }
+        /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
         pub fn set_log_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogSubscription>>,
@@ -805,6 +851,7 @@ pub mod list_log_subscriptions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -825,6 +872,7 @@ impl ListLogSubscriptionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpRoutesOutput {
@@ -852,12 +900,18 @@ pub mod list_ip_routes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `ip_routes_info`.
+        ///
+        /// To override the contents of this collection use [`set_ip_routes_info`](Self::set_ip_routes_info).
+        ///
+        /// <p>A list of <a>IpRoute</a>s.</p>
         pub fn ip_routes_info(mut self, input: impl Into<crate::model::IpRouteInfo>) -> Self {
             let mut v = self.ip_routes_info.unwrap_or_default();
             v.push(input.into());
             self.ip_routes_info = Some(v);
             self
         }
+        /// <p>A list of <a>IpRoute</a>s.</p>
         pub fn set_ip_routes_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpRouteInfo>>,
@@ -871,6 +925,8 @@ pub mod list_ip_routes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the
+        /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -891,6 +947,7 @@ impl ListIpRoutesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
@@ -926,10 +983,18 @@ pub mod list_certificates_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Indicates whether another page of certificates is available when the number of available
+        /// certificates exceeds the page limit.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `certificates_info`.
+        ///
+        /// To override the contents of this collection use [`set_certificates_info`](Self::set_certificates_info).
+        ///
+        /// <p>A list of certificates with basic details including certificate ID, certificate common
+        /// name, certificate state.</p>
         pub fn certificates_info(
             mut self,
             input: impl Into<crate::model::CertificateInfo>,
@@ -939,6 +1004,8 @@ pub mod list_certificates_output {
             self.certificates_info = Some(v);
             self
         }
+        /// <p>A list of certificates with basic details including certificate ID, certificate common
+        /// name, certificate state.</p>
         pub fn set_certificates_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
@@ -992,6 +1059,8 @@ pub mod get_snapshot_limits_output {
             self.snapshot_limits = Some(input);
             self
         }
+        /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
+        /// directory.</p>
         pub fn set_snapshot_limits(
             mut self,
             input: std::option::Option<crate::model::SnapshotLimits>,
@@ -1044,6 +1113,8 @@ pub mod get_directory_limits_output {
             self.directory_limits = Some(input);
             self
         }
+        /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
+        /// current Region.</p>
         pub fn set_directory_limits(
             mut self,
             input: std::option::Option<crate::model::DirectoryLimits>,
@@ -1126,6 +1197,7 @@ impl EnableRadiusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableLdapsOutput {}
@@ -1155,6 +1227,7 @@ impl EnableLdapsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableClientAuthenticationOutput {}
@@ -1244,6 +1317,7 @@ impl DisableRadiusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableLdapsOutput {}
@@ -1273,6 +1347,7 @@ impl DisableLdapsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableClientAuthenticationOutput {}
@@ -1334,12 +1409,26 @@ pub mod describe_trusts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `trusts`.
+        ///
+        /// To override the contents of this collection use [`set_trusts`](Self::set_trusts).
+        ///
+        /// <p>The list of Trust objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <i>Limit</i> member of the request. This occurs if there are less than the
+        /// requested number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn trusts(mut self, input: impl Into<crate::model::Trust>) -> Self {
             let mut v = self.trusts.unwrap_or_default();
             v.push(input.into());
             self.trusts = Some(v);
             self
         }
+        /// <p>The list of Trust objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <i>Limit</i> member of the request. This occurs if there are less than the
+        /// requested number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn set_trusts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Trust>>,
@@ -1353,6 +1442,8 @@ pub mod describe_trusts_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the
+        /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1405,12 +1496,26 @@ pub mod describe_snapshots_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `snapshots`.
+        ///
+        /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
+        ///
+        /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <i>Limit</i> member of the request. This occurs if there are less than the requested
+        /// number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
             v.push(input.into());
             self.snapshots = Some(v);
             self
         }
+        /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <i>Limit</i> member of the request. This occurs if there are less than the requested
+        /// number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn set_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -1424,6 +1529,8 @@ pub mod describe_snapshots_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
+        /// a subsequent call to <a>DescribeSnapshots</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1444,6 +1551,7 @@ impl DescribeSnapshotsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSharedDirectoriesOutput {
@@ -1472,6 +1580,11 @@ pub mod describe_shared_directories_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `shared_directories`.
+        ///
+        /// To override the contents of this collection use [`set_shared_directories`](Self::set_shared_directories).
+        ///
+        /// <p>A list of all shared directories in your account.</p>
         pub fn shared_directories(
             mut self,
             input: impl Into<crate::model::SharedDirectory>,
@@ -1481,6 +1594,7 @@ pub mod describe_shared_directories_output {
             self.shared_directories = Some(v);
             self
         }
+        /// <p>A list of all shared directories in your account.</p>
         pub fn set_shared_directories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SharedDirectory>>,
@@ -1494,6 +1608,8 @@ pub mod describe_shared_directories_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, token that indicates that more results are available. Pass this value for the
+        /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1514,6 +1630,7 @@ impl DescribeSharedDirectoriesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionsOutput {
@@ -1543,6 +1660,11 @@ pub mod describe_regions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `regions_description`.
+        ///
+        /// To override the contents of this collection use [`set_regions_description`](Self::set_regions_description).
+        ///
+        /// <p>List of Region information related to the directory for each replicated Region.</p>
         pub fn regions_description(
             mut self,
             input: impl Into<crate::model::RegionDescription>,
@@ -1552,6 +1674,7 @@ pub mod describe_regions_output {
             self.regions_description = Some(v);
             self
         }
+        /// <p>List of Region information related to the directory for each replicated Region.</p>
         pub fn set_regions_description(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegionDescription>>,
@@ -1566,6 +1689,9 @@ pub mod describe_regions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
+        /// of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1586,6 +1712,7 @@ impl DescribeRegionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLdapsSettingsOutput {
@@ -1615,6 +1742,12 @@ pub mod describe_ldaps_settings_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `ldaps_settings_info`.
+        ///
+        /// To override the contents of this collection use [`set_ldaps_settings_info`](Self::set_ldaps_settings_info).
+        ///
+        /// <p>Information about LDAP security for the specified directory, including status of
+        /// enablement, state last updated date time, and the reason for the state.</p>
         pub fn ldaps_settings_info(
             mut self,
             input: impl Into<crate::model::LdapsSettingInfo>,
@@ -1624,6 +1757,8 @@ pub mod describe_ldaps_settings_output {
             self.ldaps_settings_info = Some(v);
             self
         }
+        /// <p>Information about LDAP security for the specified directory, including status of
+        /// enablement, state last updated date time, and the reason for the state.</p>
         pub fn set_ldaps_settings_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LdapsSettingInfo>>,
@@ -1637,6 +1772,8 @@ pub mod describe_ldaps_settings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
+        /// page limit and there is another page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1681,12 +1818,20 @@ pub mod describe_event_topics_output {
         pub(crate) event_topics: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
     }
     impl Builder {
+        /// Appends an item to `event_topics`.
+        ///
+        /// To override the contents of this collection use [`set_event_topics`](Self::set_event_topics).
+        ///
+        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
+        /// ID.</p>
         pub fn event_topics(mut self, input: impl Into<crate::model::EventTopic>) -> Self {
             let mut v = self.event_topics.unwrap_or_default();
             v.push(input.into());
             self.event_topics = Some(v);
             self
         }
+        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
+        /// ID.</p>
         pub fn set_event_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
@@ -1709,6 +1854,7 @@ impl DescribeEventTopicsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainControllersOutput {
@@ -1738,6 +1884,11 @@ pub mod describe_domain_controllers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_controllers`.
+        ///
+        /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
+        ///
+        /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
         pub fn domain_controllers(
             mut self,
             input: impl Into<crate::model::DomainController>,
@@ -1747,6 +1898,7 @@ pub mod describe_domain_controllers_output {
             self.domain_controllers = Some(v);
             self
         }
+        /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
         pub fn set_domain_controllers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainController>>,
@@ -1761,6 +1913,9 @@ pub mod describe_domain_controllers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
+        /// next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1816,6 +1971,15 @@ pub mod describe_directories_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `directory_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_directory_descriptions`](Self::set_directory_descriptions).
+        ///
+        /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <code>Limit</code> member of the request. This occurs if there are less than the requested
+        /// number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn directory_descriptions(
             mut self,
             input: impl Into<crate::model::DirectoryDescription>,
@@ -1825,6 +1989,11 @@ pub mod describe_directories_output {
             self.directory_descriptions = Some(v);
             self
         }
+        /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the
+        /// <code>Limit</code> member of the request. This occurs if there are less than the requested
+        /// number of items left to retrieve, or if the limitations of the operation have been
+        /// exceeded.</p>
         pub fn set_directory_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DirectoryDescription>>,
@@ -1839,6 +2008,9 @@ pub mod describe_directories_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
+        /// set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1884,6 +2056,11 @@ pub mod describe_conditional_forwarders_output {
             std::option::Option<std::vec::Vec<crate::model::ConditionalForwarder>>,
     }
     impl Builder {
+        /// Appends an item to `conditional_forwarders`.
+        ///
+        /// To override the contents of this collection use [`set_conditional_forwarders`](Self::set_conditional_forwarders).
+        ///
+        /// <p>The list of conditional forwarders that have been created.</p>
         pub fn conditional_forwarders(
             mut self,
             input: impl Into<crate::model::ConditionalForwarder>,
@@ -1893,6 +2070,7 @@ pub mod describe_conditional_forwarders_output {
             self.conditional_forwarders = Some(v);
             self
         }
+        /// <p>The list of conditional forwarders that have been created.</p>
         pub fn set_conditional_forwarders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConditionalForwarder>>,
@@ -1915,6 +2093,7 @@ impl DescribeConditionalForwardersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientAuthenticationSettingsOutput {
@@ -1947,6 +2126,11 @@ pub mod describe_client_authentication_settings_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `client_authentication_settings_info`.
+        ///
+        /// To override the contents of this collection use [`set_client_authentication_settings_info`](Self::set_client_authentication_settings_info).
+        ///
+        /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
         pub fn client_authentication_settings_info(
             mut self,
             input: impl Into<crate::model::ClientAuthenticationSettingInfo>,
@@ -1956,6 +2140,7 @@ pub mod describe_client_authentication_settings_output {
             self.client_authentication_settings_info = Some(v);
             self
         }
+        /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
         pub fn set_client_authentication_settings_info(
             mut self,
             input: std::option::Option<
@@ -1971,6 +2156,8 @@ pub mod describe_client_authentication_settings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
+        /// page limit and there is another page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1991,6 +2178,7 @@ impl DescribeClientAuthenticationSettingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
@@ -2020,6 +2208,8 @@ pub mod describe_certificate_output {
             self.certificate = Some(input);
             self
         }
+        /// <p>Information about the certificate, including registered date time, certificate state, the
+        /// reason for the state, expiration date time, and certificate common name.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -2072,6 +2262,7 @@ impl DeregisterEventTopicOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterCertificateOutput {}
@@ -2129,6 +2320,7 @@ pub mod delete_trust_output {
             self.trust_id = Some(input.into());
             self
         }
+        /// <p>The Trust ID of the trust relationship that was deleted.</p>
         pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trust_id = input;
             self
@@ -2176,6 +2368,7 @@ pub mod delete_snapshot_output {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory snapshot that was deleted.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -2195,6 +2388,7 @@ impl DeleteSnapshotOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLogSubscriptionOutput {}
@@ -2252,6 +2446,7 @@ pub mod delete_directory_output {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The directory identifier.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2329,6 +2524,7 @@ pub mod create_trust_output {
             self.trust_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the trust relationship that was created.</p>
         pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trust_id = input;
             self
@@ -2376,6 +2572,7 @@ pub mod create_snapshot_output {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the snapshot that was created.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -2423,6 +2620,7 @@ pub mod create_microsoft_ad_output {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory that was created.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2442,6 +2640,7 @@ impl CreateMicrosoftAdOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLogSubscriptionOutput {}
@@ -2499,6 +2698,7 @@ pub mod create_directory_output {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory that was created.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2576,6 +2776,7 @@ pub mod create_computer_output {
             self.computer = Some(input);
             self
         }
+        /// <p>A <a>Computer</a> object that represents the computer account.</p>
         pub fn set_computer(mut self, input: std::option::Option<crate::model::Computer>) -> Self {
             self.computer = input;
             self
@@ -2627,6 +2828,7 @@ pub mod create_alias_output {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2636,6 +2838,7 @@ pub mod create_alias_output {
             self.alias = Some(input.into());
             self
         }
+        /// <p>The alias for the directory.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -2684,6 +2887,7 @@ pub mod connect_directory_output {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the new directory.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2703,6 +2907,7 @@ impl ConnectDirectoryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSchemaExtensionOutput {}
@@ -2732,6 +2937,7 @@ impl CancelSchemaExtensionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceOutput {}
@@ -2761,6 +2967,7 @@ impl AddTagsToResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRegionOutput {}
@@ -2790,6 +2997,7 @@ impl AddRegionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddIpRoutesOutput {}
@@ -2819,6 +3027,7 @@ impl AddIpRoutesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptSharedDirectoryOutput {
@@ -2846,6 +3055,7 @@ pub mod accept_shared_directory_output {
             self.shared_directory = Some(input);
             self
         }
+        /// <p>The shared directory in the directory consumer account.</p>
         pub fn set_shared_directory(
             mut self,
             input: std::option::Option<crate::model::SharedDirectory>,

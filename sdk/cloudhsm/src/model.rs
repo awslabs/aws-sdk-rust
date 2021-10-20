@@ -32,6 +32,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -41,6 +42,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -61,6 +63,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -72,7 +75,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum ClientVersion {
+    #[allow(missing_docs)] // documentation missing in model
     FiveOne,
+    #[allow(missing_docs)] // documentation missing in model
     FiveThree,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -94,6 +99,7 @@ impl std::str::FromStr for ClientVersion {
     }
 }
 impl ClientVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientVersion::FiveOne => "5.1",
@@ -101,6 +107,7 @@ impl ClientVersion {
             ClientVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["5.1", "5.3"]
     }
@@ -135,6 +142,7 @@ impl AsRef<str> for ClientVersion {
     std::hash::Hash,
 )]
 pub enum SubscriptionType {
+    #[allow(missing_docs)] // documentation missing in model
     Production,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -155,12 +163,14 @@ impl std::str::FromStr for SubscriptionType {
     }
 }
 impl SubscriptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionType::Production => "PRODUCTION",
             SubscriptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRODUCTION"]
     }
@@ -171,6 +181,7 @@ impl AsRef<str> for SubscriptionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -182,12 +193,19 @@ impl AsRef<str> for SubscriptionType {
     std::hash::Hash,
 )]
 pub enum HsmStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     Terminating,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -214,6 +232,7 @@ impl std::str::FromStr for HsmStatus {
     }
 }
 impl HsmStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HsmStatus::Degraded => "DEGRADED",
@@ -226,6 +245,7 @@ impl HsmStatus {
             HsmStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEGRADED",
@@ -244,6 +264,7 @@ impl AsRef<str> for HsmStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -255,8 +276,11 @@ impl AsRef<str> for HsmStatus {
     std::hash::Hash,
 )]
 pub enum CloudHsmObjectState {
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -279,6 +303,7 @@ impl std::str::FromStr for CloudHsmObjectState {
     }
 }
 impl CloudHsmObjectState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudHsmObjectState::Degraded => "DEGRADED",
@@ -287,6 +312,7 @@ impl CloudHsmObjectState {
             CloudHsmObjectState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEGRADED", "READY", "UPDATING"]
     }

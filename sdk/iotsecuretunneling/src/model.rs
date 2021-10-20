@@ -32,6 +32,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -41,6 +42,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -96,6 +98,9 @@ pub mod timeout_config {
             self.max_lifetime_timeout_minutes = Some(input);
             self
         }
+        /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified,
+        /// maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12
+        /// hours (720 minutes) </p>
         pub fn set_max_lifetime_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.max_lifetime_timeout_minutes = input;
             self
@@ -150,16 +155,29 @@ pub mod destination_config {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing to which you want to connect.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
         }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads
+        /// this value and uses it to look up a port or an IP address and a port. The AWS IoT client
+        /// instantiates the local proxy which uses this information to connect to the destination
+        /// application.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads
+        /// this value and uses it to look up a port or an IP address and a port. The AWS IoT client
+        /// instantiates the local proxy which uses this information to connect to the destination
+        /// application.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -198,9 +216,9 @@ pub struct TunnelSummary {
     /// <p>A description of the tunnel.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The time the tunnel was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the tunnel was last updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TunnelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -224,8 +242,8 @@ pub mod tunnel_summary {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TunnelStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique alpha-numeric identifier for the tunnel.</p>
@@ -233,6 +251,7 @@ pub mod tunnel_summary {
             self.tunnel_id = Some(input.into());
             self
         }
+        /// <p>The unique alpha-numeric identifier for the tunnel.</p>
         pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_id = input;
             self
@@ -244,6 +263,9 @@ pub mod tunnel_summary {
             self.tunnel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
+        /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
+        /// </p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self
@@ -253,6 +275,7 @@ pub mod tunnel_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TunnelStatus>,
@@ -265,27 +288,33 @@ pub mod tunnel_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the tunnel.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The time the tunnel was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the tunnel was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time the tunnel was last updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time the tunnel was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -310,6 +339,7 @@ impl TunnelSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -321,7 +351,9 @@ impl TunnelSummary {
     std::hash::Hash,
 )]
 pub enum TunnelStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -343,6 +375,7 @@ impl std::str::FromStr for TunnelStatus {
     }
 }
 impl TunnelStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TunnelStatus::Closed => "CLOSED",
@@ -350,6 +383,7 @@ impl TunnelStatus {
             TunnelStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
@@ -387,9 +421,9 @@ pub struct Tunnel {
     /// <p>A list of tag metadata associated with the secure tunnel.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the tunnel was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the tunnel was updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Tunnel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -426,8 +460,8 @@ pub mod tunnel {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
@@ -435,6 +469,7 @@ pub mod tunnel {
             self.tunnel_id = Some(input.into());
             self
         }
+        /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
         pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_id = input;
             self
@@ -446,6 +481,9 @@ pub mod tunnel {
             self.tunnel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is
+        /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
+        /// </p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self
@@ -455,6 +493,7 @@ pub mod tunnel {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TunnelStatus>,
@@ -467,6 +506,7 @@ pub mod tunnel {
             self.source_connection_state = Some(input);
             self
         }
+        /// <p>The connection state of the source application.</p>
         pub fn set_source_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -482,6 +522,7 @@ pub mod tunnel {
             self.destination_connection_state = Some(input);
             self
         }
+        /// <p>The connection state of the destination application.</p>
         pub fn set_destination_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -494,6 +535,7 @@ pub mod tunnel {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the tunnel.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -505,6 +547,9 @@ pub mod tunnel {
             self.destination_config = Some(input);
             self
         }
+        /// <p>The destination configuration that specifies the thing name of the destination
+        /// device and a service name that the local proxy uses to connect to the destination
+        /// application.</p>
         pub fn set_destination_config(
             mut self,
             input: std::option::Option<crate::model::DestinationConfig>,
@@ -517,6 +562,7 @@ pub mod tunnel {
             self.timeout_config = Some(input);
             self
         }
+        /// <p>Timeout configuration for the tunnel.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -524,12 +570,18 @@ pub mod tunnel {
             self.timeout_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tag metadata associated with the secure tunnel.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tag metadata associated with the secure tunnel.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -538,22 +590,27 @@ pub mod tunnel {
             self
         }
         /// <p>The time when the tunnel was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the tunnel was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The last time the tunnel was updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The last time the tunnel was updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -591,7 +648,7 @@ pub struct ConnectionState {
     /// <code>DISCONNECTED</code>.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The last time the connection status was updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConnectionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -608,7 +665,7 @@ pub mod connection_state {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and
@@ -617,6 +674,8 @@ pub mod connection_state {
             self.status = Some(input);
             self
         }
+        /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and
+        /// <code>DISCONNECTED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -625,13 +684,14 @@ pub mod connection_state {
             self
         }
         /// <p>The last time the connection status was updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The last time the connection status was updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -652,6 +712,7 @@ impl ConnectionState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -663,7 +724,9 @@ impl ConnectionState {
     std::hash::Hash,
 )]
 pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -685,6 +748,7 @@ impl std::str::FromStr for ConnectionStatus {
     }
 }
 impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Connected => "CONNECTED",
@@ -692,6 +756,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }

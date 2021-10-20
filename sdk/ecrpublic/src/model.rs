@@ -35,6 +35,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -45,6 +47,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
+        /// descriptor within a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -128,16 +132,31 @@ pub mod repository_catalog_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The short description of the repository.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `architectures`.
+        ///
+        /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
+        ///
+        /// <p>The architecture tags that are associated with the repository.</p>
+        /// <note>
+        /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+        /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+        /// </note>
         pub fn architectures(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input.into());
             self.architectures = Some(v);
             self
         }
+        /// <p>The architecture tags that are associated with the repository.</p>
+        /// <note>
+        /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+        /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+        /// </note>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -145,12 +164,26 @@ pub mod repository_catalog_data {
             self.architectures = input;
             self
         }
+        /// Appends an item to `operating_systems`.
+        ///
+        /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
+        ///
+        /// <p>The operating system tags that are associated with the repository.</p>
+        /// <note>
+        /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+        /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+        /// </note>
         pub fn operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
             v.push(input.into());
             self.operating_systems = Some(v);
             self
         }
+        /// <p>The operating system tags that are associated with the repository.</p>
+        /// <note>
+        /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+        /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+        /// </note>
         pub fn set_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -163,6 +196,7 @@ pub mod repository_catalog_data {
             self.logo_url = Some(input.into());
             self
         }
+        /// <p>The URL containing the logo associated with the repository.</p>
         pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logo_url = input;
             self
@@ -173,6 +207,8 @@ pub mod repository_catalog_data {
             self.about_text = Some(input.into());
             self
         }
+        /// <p>The longform description of the contents of the repository. This text appears in the
+        /// repository details on the Amazon ECR Public Gallery.</p>
         pub fn set_about_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.about_text = input;
             self
@@ -183,6 +219,8 @@ pub mod repository_catalog_data {
             self.usage_text = Some(input.into());
             self
         }
+        /// <p>The longform usage details of the contents of the repository. The usage text provides
+        /// context for users of the repository.</p>
         pub fn set_usage_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_text = input;
             self
@@ -192,6 +230,7 @@ pub mod repository_catalog_data {
             self.marketplace_certified = Some(input);
             self
         }
+        /// <p>Whether or not the repository is certified by AWS Marketplace.</p>
         pub fn set_marketplace_certified(mut self, input: std::option::Option<bool>) -> Self {
             self.marketplace_certified = input;
             self
@@ -282,7 +321,7 @@ pub struct RepositoryCatalogDataInput {
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified
     /// accounts.</p>
     /// </note>
-    pub logo_image_blob: std::option::Option<smithy_types::Blob>,
+    pub logo_image_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A detailed description of the contents of the repository. It is publicly visible in the
     /// Amazon ECR Public Gallery. The text must be in markdown format.</p>
     pub about_text: std::option::Option<std::string::String>,
@@ -313,7 +352,7 @@ pub mod repository_catalog_data_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) logo_image_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) logo_image_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) about_text: std::option::Option<std::string::String>,
         pub(crate) usage_text: std::option::Option<std::string::String>,
     }
@@ -324,16 +363,62 @@ pub mod repository_catalog_data_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A short description of the contents of the repository. This text appears in both the
+        /// image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `architectures`.
+        ///
+        /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
+        ///
+        /// <p>The system architecture that the images in the repository are compatible with. On the
+        /// Amazon ECR Public Gallery, the following supported architectures will appear as badges on the
+        /// repository and are used as search filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Linux</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Windows</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+        /// with the repository and can be retrieved using the API but will not be discoverable in
+        /// the Amazon ECR Public Gallery.</p>
+        /// </note>
         pub fn architectures(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input.into());
             self.architectures = Some(v);
             self
         }
+        /// <p>The system architecture that the images in the repository are compatible with. On the
+        /// Amazon ECR Public Gallery, the following supported architectures will appear as badges on the
+        /// repository and are used as search filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Linux</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Windows</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+        /// with the repository and can be retrieved using the API but will not be discoverable in
+        /// the Amazon ECR Public Gallery.</p>
+        /// </note>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -341,12 +426,76 @@ pub mod repository_catalog_data_input {
             self.architectures = input;
             self
         }
+        /// Appends an item to `operating_systems`.
+        ///
+        /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
+        ///
+        /// <p>The operating systems that the images in the repository are compatible with. On the
+        /// Amazon ECR Public Gallery, the following supported operating systems will appear as badges on
+        /// the repository and are used as search filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ARM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ARM 64</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>x86</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>x86-64</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+        /// with the repository and can be retrieved using the API but will not be discoverable in
+        /// the Amazon ECR Public Gallery.</p>
+        /// </note>
         pub fn operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
             v.push(input.into());
             self.operating_systems = Some(v);
             self
         }
+        /// <p>The operating systems that the images in the repository are compatible with. On the
+        /// Amazon ECR Public Gallery, the following supported operating systems will appear as badges on
+        /// the repository and are used as search filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ARM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ARM 64</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>x86</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>x86-64</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+        /// with the repository and can be retrieved using the API but will not be discoverable in
+        /// the Amazon ECR Public Gallery.</p>
+        /// </note>
         pub fn set_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -359,13 +508,18 @@ pub mod repository_catalog_data_input {
         /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified
         /// accounts.</p>
         /// </note>
-        pub fn logo_image_blob(mut self, input: smithy_types::Blob) -> Self {
+        pub fn logo_image_blob(mut self, input: aws_smithy_types::Blob) -> Self {
             self.logo_image_blob = Some(input);
             self
         }
+        /// <p>The base64-encoded repository logo payload.</p>
+        /// <note>
+        /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified
+        /// accounts.</p>
+        /// </note>
         pub fn set_logo_image_blob(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.logo_image_blob = input;
             self
@@ -376,6 +530,8 @@ pub mod repository_catalog_data_input {
             self.about_text = Some(input.into());
             self
         }
+        /// <p>A detailed description of the contents of the repository. It is publicly visible in the
+        /// Amazon ECR Public Gallery. The text must be in markdown format.</p>
         pub fn set_about_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.about_text = input;
             self
@@ -388,6 +544,10 @@ pub mod repository_catalog_data_input {
             self.usage_text = Some(input.into());
             self
         }
+        /// <p>Detailed information on how to use the contents of the repository. It is publicly
+        /// visible in the Amazon ECR Public Gallery. The usage text provides context, support information,
+        /// and additional usage details for users of the repository. The text must be in markdown
+        /// format.</p>
         pub fn set_usage_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_text = input;
             self
@@ -448,6 +608,11 @@ pub mod registry_catalog_data {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p>
+        /// <important>
+        /// <p>Only accounts that have the verified account badge can have a registry display
+        /// name.</p>
+        /// </important>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -511,6 +676,7 @@ pub mod image {
             self.registry_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID associated with the registry containing the image.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -520,6 +686,7 @@ pub mod image {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository associated with the image.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -532,6 +699,7 @@ pub mod image {
             self.image_id = Some(input);
             self
         }
+        /// <p>An object containing the image tag and image digest associated with an image.</p>
         pub fn set_image_id(
             mut self,
             input: std::option::Option<crate::model::ImageIdentifier>,
@@ -544,6 +712,7 @@ pub mod image {
             self.image_manifest = Some(input.into());
             self
         }
+        /// <p>The image manifest associated with the image.</p>
         pub fn set_image_manifest(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -556,6 +725,7 @@ pub mod image {
             self.image_manifest_media_type = Some(input.into());
             self
         }
+        /// <p>The manifest media type of the image.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -614,6 +784,7 @@ pub mod image_identifier {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The <code>sha256</code> digest of the image manifest.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -623,6 +794,7 @@ pub mod image_identifier {
             self.image_tag = Some(input.into());
             self
         }
+        /// <p>The tag used for the image.</p>
         pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_tag = input;
             self
@@ -653,7 +825,7 @@ pub struct AuthorizationData {
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
-    pub expires_at: std::option::Option<smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AuthorizationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -670,7 +842,7 @@ pub mod authorization_data {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry.
@@ -680,6 +852,9 @@ pub mod authorization_data {
             self.authorization_token = Some(input.into());
             self
         }
+        /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry.
+        /// When the string is decoded, it is presented in the format <code>user:password</code> for
+        /// public registry authentication using <code>docker login</code>.</p>
         pub fn set_authorization_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -689,11 +864,16 @@ pub mod authorization_data {
         }
         /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
         /// Authorization tokens are valid for 12 hours.</p>
-        pub fn expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expires_at = Some(input);
             self
         }
-        pub fn set_expires_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
+        /// Authorization tokens are valid for 12 hours.</p>
+        pub fn set_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expires_at = input;
             self
         }
@@ -728,7 +908,7 @@ pub struct Repository {
     /// and <code>pull</code> operations.</p>
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Repository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -751,7 +931,7 @@ pub mod repository {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_uri: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
@@ -759,6 +939,7 @@ pub mod repository {
             self.repository_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
         pub fn set_repository_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -772,6 +953,8 @@ pub mod repository {
             self.registry_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID associated with the public registry that contains the
+        /// repository.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -781,6 +964,7 @@ pub mod repository {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -794,6 +978,8 @@ pub mod repository {
             self.repository_uri = Some(input.into());
             self
         }
+        /// <p>The URI for the repository. You can use this URI for container image <code>push</code>
+        /// and <code>pull</code> operations.</p>
         pub fn set_repository_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -802,11 +988,15 @@ pub mod repository {
             self
         }
         /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -876,6 +1066,7 @@ pub mod registry {
             self.registry_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -885,6 +1076,7 @@ pub mod registry {
             self.registry_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_arn = input;
             self
@@ -895,6 +1087,8 @@ pub mod registry {
             self.registry_uri = Some(input.into());
             self
         }
+        /// <p>The URI of a public registry. The URI contains a universal prefix and the registry
+        /// alias.</p>
         pub fn set_registry_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_uri = input;
             self
@@ -906,16 +1100,25 @@ pub mod registry {
             self.verified = Some(input);
             self
         }
+        /// <p>Whether the account is verified. This indicates whether the account is an AWS
+        /// Marketplace vendor. If an account is verified, each public repository will received a
+        /// verified account badge on the Amazon ECR Public Gallery.</p>
         pub fn set_verified(mut self, input: std::option::Option<bool>) -> Self {
             self.verified = input;
             self
         }
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>An array of objects representing the aliases for a public registry.</p>
         pub fn aliases(mut self, input: impl Into<crate::model::RegistryAlias>) -> Self {
             let mut v = self.aliases.unwrap_or_default();
             v.push(input.into());
             self.aliases = Some(v);
             self
         }
+        /// <p>An array of objects representing the aliases for a public registry.</p>
         pub fn set_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegistryAlias>>,
@@ -993,6 +1196,7 @@ pub mod registry_alias {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the registry alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1002,6 +1206,7 @@ pub mod registry_alias {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the registry alias.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegistryAliasStatus>,
@@ -1020,6 +1225,13 @@ pub mod registry_alias {
             self.primary_registry_alias = Some(input);
             self
         }
+        /// <p>Whether or not the registry alias is the primary alias for the registry. If true, the
+        /// alias is the primary registry alias and is displayed in both the repository URL and the
+        /// image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p>
+        /// <note>
+        /// <p>A registry alias that is not the primary registry alias can be used in the repository
+        /// URI in a <code>docker pull</code> command.</p>
+        /// </note>
         pub fn set_primary_registry_alias(mut self, input: std::option::Option<bool>) -> Self {
             self.primary_registry_alias = input;
             self
@@ -1031,6 +1243,9 @@ pub mod registry_alias {
             self.default_registry_alias = Some(input);
             self
         }
+        /// <p>Whether or not the registry alias is the default alias for the registry. When the first
+        /// public repository is created, your public registry is assigned a default registry
+        /// alias.</p>
         pub fn set_default_registry_alias(mut self, input: std::option::Option<bool>) -> Self {
             self.default_registry_alias = input;
             self
@@ -1053,6 +1268,7 @@ impl RegistryAlias {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1064,8 +1280,11 @@ impl RegistryAlias {
     std::hash::Hash,
 )]
 pub enum RegistryAliasStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1088,6 +1307,7 @@ impl std::str::FromStr for RegistryAliasStatus {
     }
 }
 impl RegistryAliasStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegistryAliasStatus::Active => "ACTIVE",
@@ -1096,6 +1316,7 @@ impl RegistryAliasStatus {
             RegistryAliasStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "REJECTED"]
     }
@@ -1113,7 +1334,7 @@ pub struct ImageTagDetail {
     /// <p>The tag associated with the image.</p>
     pub image_tag: std::option::Option<std::string::String>,
     /// <p>The time stamp indicating when the image tag was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that describes the details of an image.</p>
     pub image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
 }
@@ -1133,7 +1354,7 @@ pub mod image_tag_detail {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tag: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
     }
     impl Builder {
@@ -1142,16 +1363,21 @@ pub mod image_tag_detail {
             self.image_tag = Some(input.into());
             self
         }
+        /// <p>The tag associated with the image.</p>
         pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_tag = input;
             self
         }
         /// <p>The time stamp indicating when the image tag was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time stamp indicating when the image tag was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1160,6 +1386,7 @@ pub mod image_tag_detail {
             self.image_detail = Some(input);
             self
         }
+        /// <p>An object that describes the details of an image.</p>
         pub fn set_image_detail(
             mut self,
             input: std::option::Option<crate::model::ReferencedImageDetail>,
@@ -1202,7 +1429,7 @@ pub struct ReferencedImageDetail {
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image tag was pushed to the repository.</p>
-    pub image_pushed_at: std::option::Option<smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The media type of the image manifest.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
@@ -1227,7 +1454,7 @@ pub mod referenced_image_detail {
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
-        pub(crate) image_pushed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) image_manifest_media_type: std::option::Option<std::string::String>,
         pub(crate) artifact_media_type: std::option::Option<std::string::String>,
     }
@@ -1237,6 +1464,7 @@ pub mod referenced_image_detail {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The <code>sha256</code> digest of the image manifest.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -1254,19 +1482,30 @@ pub mod referenced_image_detail {
             self.image_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of the image in the repository.</p>
+        /// <p>If the image is a manifest list, this will be the max size of all manifests in the
+        /// list.</p>
+        /// <note>
+        /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before
+        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+        /// command shows the uncompressed image size, so it may return a larger image size than the
+        /// image sizes returned by <a>DescribeImages</a>.</p>
+        /// </note>
         pub fn set_image_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.image_size_in_bytes = input;
             self
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image tag was pushed to the repository.</p>
-        pub fn image_pushed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
+        /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+        /// image tag was pushed to the repository.</p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.image_pushed_at = input;
             self
@@ -1276,6 +1515,7 @@ pub mod referenced_image_detail {
             self.image_manifest_media_type = Some(input.into());
             self
         }
+        /// <p>The media type of the image manifest.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1288,6 +1528,7 @@ pub mod referenced_image_detail {
             self.artifact_media_type = Some(input.into());
             self
         }
+        /// <p>The artifact media type of the image.</p>
         pub fn set_artifact_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1340,7 +1581,7 @@ pub struct ImageDetail {
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current
     /// image was pushed to the repository. </p>
-    pub image_pushed_at: std::option::Option<smithy_types::Instant>,
+    pub image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The media type of the image manifest.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
@@ -1371,7 +1612,7 @@ pub mod image_detail {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
-        pub(crate) image_pushed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) image_pushed_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) image_manifest_media_type: std::option::Option<std::string::String>,
         pub(crate) artifact_media_type: std::option::Option<std::string::String>,
     }
@@ -1382,6 +1623,8 @@ pub mod image_detail {
             self.registry_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID associated with the public registry to which this image
+        /// belongs.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1391,6 +1634,7 @@ pub mod image_detail {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository to which this image belongs.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1403,16 +1647,23 @@ pub mod image_detail {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The <code>sha256</code> digest of the image manifest.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
         }
+        /// Appends an item to `image_tags`.
+        ///
+        /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+        ///
+        /// <p>The list of tags associated with this image.</p>
         pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.image_tags.unwrap_or_default();
             v.push(input.into());
             self.image_tags = Some(v);
             self
         }
+        /// <p>The list of tags associated with this image.</p>
         pub fn set_image_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1433,19 +1684,30 @@ pub mod image_detail {
             self.image_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of the image in the repository.</p>
+        /// <p>If the image is a manifest list, this will be the max size of all manifests in the
+        /// list.</p>
+        /// <note>
+        /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before
+        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+        /// command shows the uncompressed image size, so it may return a larger image size than the
+        /// image sizes returned by <a>DescribeImages</a>.</p>
+        /// </note>
         pub fn set_image_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.image_size_in_bytes = input;
             self
         }
         /// <p>The date and time, expressed in standard JavaScript date format, at which the current
         /// image was pushed to the repository. </p>
-        pub fn image_pushed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn image_pushed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.image_pushed_at = Some(input);
             self
         }
+        /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+        /// image was pushed to the repository. </p>
         pub fn set_image_pushed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.image_pushed_at = input;
             self
@@ -1455,6 +1717,7 @@ pub mod image_detail {
             self.image_manifest_media_type = Some(input.into());
             self
         }
+        /// <p>The media type of the image manifest.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1467,6 +1730,7 @@ pub mod image_detail {
             self.artifact_media_type = Some(input.into());
             self
         }
+        /// <p>The artifact media type of the image.</p>
         pub fn set_artifact_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1532,6 +1796,7 @@ pub mod image_failure {
             self.image_id = Some(input);
             self
         }
+        /// <p>The image ID associated with the failure.</p>
         pub fn set_image_id(
             mut self,
             input: std::option::Option<crate::model::ImageIdentifier>,
@@ -1544,6 +1809,7 @@ pub mod image_failure {
             self.failure_code = Some(input);
             self
         }
+        /// <p>The code associated with the failure.</p>
         pub fn set_failure_code(
             mut self,
             input: std::option::Option<crate::model::ImageFailureCode>,
@@ -1556,6 +1822,7 @@ pub mod image_failure {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason for the failure.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1580,6 +1847,7 @@ impl ImageFailure {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1591,12 +1859,19 @@ impl ImageFailure {
     std::hash::Hash,
 )]
 pub enum ImageFailureCode {
+    #[allow(missing_docs)] // documentation missing in model
     ImageNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     ImageReferencedByManifestList,
+    #[allow(missing_docs)] // documentation missing in model
     ImageTagDoesNotMatchDigest,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidImageDigest,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidImageTag,
+    #[allow(missing_docs)] // documentation missing in model
     KmsError,
+    #[allow(missing_docs)] // documentation missing in model
     MissingDigestAndTag,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1623,6 +1898,7 @@ impl std::str::FromStr for ImageFailureCode {
     }
 }
 impl ImageFailureCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageFailureCode::ImageNotFound => "ImageNotFound",
@@ -1635,6 +1911,7 @@ impl ImageFailureCode {
             ImageFailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ImageNotFound",
@@ -1689,6 +1966,7 @@ pub mod layer_failure {
             self.layer_digest = Some(input.into());
             self
         }
+        /// <p>The layer digest associated with the failure.</p>
         pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_digest = input;
             self
@@ -1698,6 +1976,7 @@ pub mod layer_failure {
             self.failure_code = Some(input);
             self
         }
+        /// <p>The failure code associated with the failure.</p>
         pub fn set_failure_code(
             mut self,
             input: std::option::Option<crate::model::LayerFailureCode>,
@@ -1710,6 +1989,7 @@ pub mod layer_failure {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason for the failure.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,6 +2014,7 @@ impl LayerFailure {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1745,7 +2026,9 @@ impl LayerFailure {
     std::hash::Hash,
 )]
 pub enum LayerFailureCode {
+    #[allow(missing_docs)] // documentation missing in model
     InvalidLayerDigest,
+    #[allow(missing_docs)] // documentation missing in model
     MissingLayerDigest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1767,6 +2050,7 @@ impl std::str::FromStr for LayerFailureCode {
     }
 }
 impl LayerFailureCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LayerFailureCode::InvalidLayerDigest => "InvalidLayerDigest",
@@ -1774,6 +2058,7 @@ impl LayerFailureCode {
             LayerFailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["InvalidLayerDigest", "MissingLayerDigest"]
     }
@@ -1826,6 +2111,7 @@ pub mod layer {
             self.layer_digest = Some(input.into());
             self
         }
+        /// <p>The <code>sha256</code> digest of the image layer.</p>
         pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_digest = input;
             self
@@ -1835,6 +2121,7 @@ pub mod layer {
             self.layer_availability = Some(input);
             self
         }
+        /// <p>The availability status of the image layer.</p>
         pub fn set_layer_availability(
             mut self,
             input: std::option::Option<crate::model::LayerAvailability>,
@@ -1847,6 +2134,7 @@ pub mod layer {
             self.layer_size = Some(input);
             self
         }
+        /// <p>The size, in bytes, of the image layer.</p>
         pub fn set_layer_size(mut self, input: std::option::Option<i64>) -> Self {
             self.layer_size = input;
             self
@@ -1858,6 +2146,9 @@ pub mod layer {
             self.media_type = Some(input.into());
             self
         }
+        /// <p>The media type of the layer, such as
+        /// <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+        /// <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
@@ -1880,6 +2171,7 @@ impl Layer {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1891,7 +2183,9 @@ impl Layer {
     std::hash::Hash,
 )]
 pub enum LayerAvailability {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1913,6 +2207,7 @@ impl std::str::FromStr for LayerAvailability {
     }
 }
 impl LayerAvailability {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LayerAvailability::Available => "AVAILABLE",
@@ -1920,6 +2215,7 @@ impl LayerAvailability {
             LayerAvailability::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }

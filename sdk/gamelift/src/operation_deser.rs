@@ -20,7 +20,7 @@ pub fn parse_accept_match_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -37,7 +37,7 @@ pub fn parse_accept_match_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -46,25 +46,23 @@ pub fn parse_accept_match_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::AcceptMatchError {
-                meta: generic,
-                kind: crate::error::AcceptMatchErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::AcceptMatchError {
+            meta: generic,
+            kind: crate::error::AcceptMatchErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::AcceptMatchError {
             meta: generic,
             kind: crate::error::AcceptMatchErrorKind::UnsupportedRegionException({
@@ -73,7 +71,7 @@ pub fn parse_accept_match_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptMatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -120,7 +118,7 @@ pub fn parse_claim_game_server_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -138,7 +136,7 @@ pub fn parse_claim_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -155,7 +153,7 @@ pub fn parse_claim_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -164,25 +162,23 @@ pub fn parse_claim_game_server_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::ClaimGameServerError {
-                meta: generic,
-                kind: crate::error::ClaimGameServerErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::ClaimGameServerError {
+            meta: generic,
+            kind: crate::error::ClaimGameServerErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OutOfCapacityException" => crate::error::ClaimGameServerError {
             meta: generic,
             kind: crate::error::ClaimGameServerErrorKind::OutOfCapacityException({
@@ -191,7 +187,7 @@ pub fn parse_claim_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::out_of_capacity_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_out_of_capacity_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_out_of_capacity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -208,7 +204,7 @@ pub fn parse_claim_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -260,7 +256,7 @@ pub fn parse_create_alias_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -278,7 +274,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -295,7 +291,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -312,7 +308,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -329,7 +325,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -346,7 +342,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -398,7 +394,7 @@ pub fn parse_create_build_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -416,7 +412,7 @@ pub fn parse_create_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -433,7 +429,7 @@ pub fn parse_create_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -450,7 +446,7 @@ pub fn parse_create_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -467,7 +463,7 @@ pub fn parse_create_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -519,7 +515,7 @@ pub fn parse_create_fleet_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -537,7 +533,7 @@ pub fn parse_create_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -554,7 +550,7 @@ pub fn parse_create_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -571,7 +567,7 @@ pub fn parse_create_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -580,25 +576,23 @@ pub fn parse_create_fleet_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateFleetError {
-                meta: generic,
-                kind: crate::error::CreateFleetErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateFleetError {
+            meta: generic,
+            kind: crate::error::CreateFleetErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::CreateFleetError {
             meta: generic,
             kind: crate::error::CreateFleetErrorKind::TaggingFailedException({
@@ -607,7 +601,7 @@ pub fn parse_create_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -624,7 +618,7 @@ pub fn parse_create_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -678,7 +672,7 @@ pub fn parse_create_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -696,7 +690,7 @@ pub fn parse_create_fleet_locations_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -713,7 +707,7 @@ pub fn parse_create_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -722,25 +716,23 @@ pub fn parse_create_fleet_locations_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateFleetLocationsError {
-                meta: generic,
-                kind: crate::error::CreateFleetLocationsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateFleetLocationsError {
+            meta: generic,
+            kind: crate::error::CreateFleetLocationsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateFleetLocationsError {
             meta: generic,
             kind: crate::error::CreateFleetLocationsErrorKind::UnauthorizedException({
@@ -749,7 +741,7 @@ pub fn parse_create_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -807,7 +799,7 @@ pub fn parse_create_game_server_group_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -825,7 +817,7 @@ pub fn parse_create_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -842,7 +834,7 @@ pub fn parse_create_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -859,7 +851,7 @@ pub fn parse_create_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -876,7 +868,7 @@ pub fn parse_create_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -932,7 +924,7 @@ pub fn parse_create_game_session_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -951,7 +943,7 @@ pub fn parse_create_game_session_error(
                     let mut output =
                         crate::error::fleet_capacity_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_fleet_capacity_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_fleet_capacity_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -969,7 +961,7 @@ pub fn parse_create_game_session_error(
                     let mut output =
                         crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -986,7 +978,7 @@ pub fn parse_create_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1004,7 +996,7 @@ pub fn parse_create_game_session_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1021,7 +1013,7 @@ pub fn parse_create_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1038,7 +1030,7 @@ pub fn parse_create_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1047,25 +1039,23 @@ pub fn parse_create_game_session_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateGameSessionError {
-                meta: generic,
-                kind: crate::error::CreateGameSessionErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateGameSessionError {
+            meta: generic,
+            kind: crate::error::CreateGameSessionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::CreateGameSessionError {
             meta: generic,
             kind: crate::error::CreateGameSessionErrorKind::TerminalRoutingStrategyException({
@@ -1075,7 +1065,7 @@ pub fn parse_create_game_session_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1092,7 +1082,7 @@ pub fn parse_create_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1151,7 +1141,7 @@ pub fn parse_create_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1168,7 +1158,7 @@ pub fn parse_create_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1185,7 +1175,7 @@ pub fn parse_create_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1194,25 +1184,23 @@ pub fn parse_create_game_session_queue_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateGameSessionQueueError {
-                meta: generic,
-                kind: crate::error::CreateGameSessionQueueErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateGameSessionQueueError {
+            meta: generic,
+            kind: crate::error::CreateGameSessionQueueErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::CreateGameSessionQueueError {
             meta: generic,
             kind: crate::error::CreateGameSessionQueueErrorKind::TaggingFailedException({
@@ -1221,7 +1209,7 @@ pub fn parse_create_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1238,7 +1226,7 @@ pub fn parse_create_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1297,7 +1285,7 @@ pub fn parse_create_matchmaking_configuration_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1315,7 +1303,7 @@ pub fn parse_create_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1332,7 +1320,7 @@ pub fn parse_create_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1341,25 +1329,23 @@ pub fn parse_create_matchmaking_configuration_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateMatchmakingConfigurationError {
-                meta: generic,
-                kind: crate::error::CreateMatchmakingConfigurationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateMatchmakingConfigurationError {
+            meta: generic,
+            kind: crate::error::CreateMatchmakingConfigurationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::CreateMatchmakingConfigurationError {
             meta: generic,
             kind: crate::error::CreateMatchmakingConfigurationErrorKind::TaggingFailedException({
@@ -1368,7 +1354,7 @@ pub fn parse_create_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1387,7 +1373,7 @@ pub fn parse_create_matchmaking_configuration_error(
                         let mut output =
                             crate::error::unsupported_region_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1450,7 +1436,7 @@ pub fn parse_create_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1467,7 +1453,7 @@ pub fn parse_create_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1484,7 +1470,7 @@ pub fn parse_create_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1501,7 +1487,7 @@ pub fn parse_create_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1558,7 +1544,7 @@ pub fn parse_create_player_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::game_session_full_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_game_session_full_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_game_session_full_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1575,7 +1561,7 @@ pub fn parse_create_player_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1593,7 +1579,7 @@ pub fn parse_create_player_session_error(
                     let mut output =
                         crate::error::invalid_game_session_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1610,7 +1596,7 @@ pub fn parse_create_player_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1619,25 +1605,23 @@ pub fn parse_create_player_session_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreatePlayerSessionError {
-                meta: generic,
-                kind: crate::error::CreatePlayerSessionErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreatePlayerSessionError {
+            meta: generic,
+            kind: crate::error::CreatePlayerSessionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::CreatePlayerSessionError {
             meta: generic,
             kind: crate::error::CreatePlayerSessionErrorKind::TerminalRoutingStrategyException({
@@ -1647,7 +1631,7 @@ pub fn parse_create_player_session_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1664,7 +1648,7 @@ pub fn parse_create_player_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1721,7 +1705,7 @@ pub fn parse_create_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::game_session_full_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_game_session_full_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_game_session_full_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1738,7 +1722,7 @@ pub fn parse_create_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1756,7 +1740,7 @@ pub fn parse_create_player_sessions_error(
                     let mut output =
                         crate::error::invalid_game_session_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1773,7 +1757,7 @@ pub fn parse_create_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1782,25 +1766,23 @@ pub fn parse_create_player_sessions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreatePlayerSessionsError {
-                meta: generic,
-                kind: crate::error::CreatePlayerSessionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreatePlayerSessionsError {
+            meta: generic,
+            kind: crate::error::CreatePlayerSessionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::CreatePlayerSessionsError {
             meta: generic,
             kind: crate::error::CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException({
@@ -1810,7 +1792,7 @@ pub fn parse_create_player_sessions_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1827,7 +1809,7 @@ pub fn parse_create_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1882,7 +1864,7 @@ pub fn parse_create_script_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1900,7 +1882,7 @@ pub fn parse_create_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1917,7 +1899,7 @@ pub fn parse_create_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1934,7 +1916,7 @@ pub fn parse_create_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1951,7 +1933,7 @@ pub fn parse_create_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2009,7 +1991,7 @@ pub fn parse_create_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2026,7 +2008,7 @@ pub fn parse_create_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2035,25 +2017,23 @@ pub fn parse_create_vpc_peering_authorization_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateVpcPeeringAuthorizationError {
-                meta: generic,
-                kind: crate::error::CreateVpcPeeringAuthorizationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateVpcPeeringAuthorizationError {
+            meta: generic,
+            kind: crate::error::CreateVpcPeeringAuthorizationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateVpcPeeringAuthorizationError {
             meta: generic,
             kind: crate::error::CreateVpcPeeringAuthorizationErrorKind::UnauthorizedException({
@@ -2062,7 +2042,7 @@ pub fn parse_create_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2124,7 +2104,7 @@ pub fn parse_create_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2141,7 +2121,7 @@ pub fn parse_create_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2150,25 +2130,23 @@ pub fn parse_create_vpc_peering_connection_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::CreateVpcPeeringConnectionError {
-                meta: generic,
-                kind: crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::CreateVpcPeeringConnectionError {
+            meta: generic,
+            kind: crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::CreateVpcPeeringConnectionError {
             meta: generic,
             kind: crate::error::CreateVpcPeeringConnectionErrorKind::UnauthorizedException({
@@ -2177,7 +2155,7 @@ pub fn parse_create_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2226,7 +2204,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2243,7 +2221,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2252,25 +2230,23 @@ pub fn parse_delete_alias_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteAliasError {
-                meta: generic,
-                kind: crate::error::DeleteAliasErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteAliasError {
+            meta: generic,
+            kind: crate::error::DeleteAliasErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteAliasError {
             meta: generic,
             kind: crate::error::DeleteAliasErrorKind::TaggingFailedException({
@@ -2279,7 +2255,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2296,7 +2272,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2342,7 +2318,7 @@ pub fn parse_delete_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2359,7 +2335,7 @@ pub fn parse_delete_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2368,25 +2344,23 @@ pub fn parse_delete_build_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteBuildError {
-                meta: generic,
-                kind: crate::error::DeleteBuildErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteBuildError {
+            meta: generic,
+            kind: crate::error::DeleteBuildErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteBuildError {
             meta: generic,
             kind: crate::error::DeleteBuildErrorKind::TaggingFailedException({
@@ -2395,7 +2369,7 @@ pub fn parse_delete_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2412,7 +2386,7 @@ pub fn parse_delete_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2458,7 +2432,7 @@ pub fn parse_delete_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2476,7 +2450,7 @@ pub fn parse_delete_fleet_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2493,7 +2467,7 @@ pub fn parse_delete_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2502,25 +2476,23 @@ pub fn parse_delete_fleet_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteFleetError {
-                meta: generic,
-                kind: crate::error::DeleteFleetErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteFleetError {
+            meta: generic,
+            kind: crate::error::DeleteFleetErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteFleetError {
             meta: generic,
             kind: crate::error::DeleteFleetErrorKind::TaggingFailedException({
@@ -2529,7 +2501,7 @@ pub fn parse_delete_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2546,7 +2518,7 @@ pub fn parse_delete_fleet_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2595,7 +2567,7 @@ pub fn parse_delete_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2612,7 +2584,7 @@ pub fn parse_delete_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2621,25 +2593,23 @@ pub fn parse_delete_fleet_locations_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteFleetLocationsError {
-                meta: generic,
-                kind: crate::error::DeleteFleetLocationsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteFleetLocationsError {
+            meta: generic,
+            kind: crate::error::DeleteFleetLocationsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteFleetLocationsError {
             meta: generic,
             kind: crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException({
@@ -2648,7 +2618,7 @@ pub fn parse_delete_fleet_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2705,7 +2675,7 @@ pub fn parse_delete_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2722,7 +2692,7 @@ pub fn parse_delete_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2731,25 +2701,23 @@ pub fn parse_delete_game_server_group_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteGameServerGroupError {
-                meta: generic,
-                kind: crate::error::DeleteGameServerGroupErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteGameServerGroupError {
+            meta: generic,
+            kind: crate::error::DeleteGameServerGroupErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteGameServerGroupError {
             meta: generic,
             kind: crate::error::DeleteGameServerGroupErrorKind::UnauthorizedException({
@@ -2758,7 +2726,7 @@ pub fn parse_delete_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2819,7 +2787,7 @@ pub fn parse_delete_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2836,7 +2804,7 @@ pub fn parse_delete_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2845,25 +2813,23 @@ pub fn parse_delete_game_session_queue_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteGameSessionQueueError {
-                meta: generic,
-                kind: crate::error::DeleteGameSessionQueueErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteGameSessionQueueError {
+            meta: generic,
+            kind: crate::error::DeleteGameSessionQueueErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteGameSessionQueueError {
             meta: generic,
             kind: crate::error::DeleteGameSessionQueueErrorKind::TaggingFailedException({
@@ -2872,7 +2838,7 @@ pub fn parse_delete_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2889,7 +2855,7 @@ pub fn parse_delete_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2943,7 +2909,7 @@ pub fn parse_delete_matchmaking_configuration_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2961,7 +2927,7 @@ pub fn parse_delete_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2970,25 +2936,23 @@ pub fn parse_delete_matchmaking_configuration_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteMatchmakingConfigurationError {
-                meta: generic,
-                kind: crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteMatchmakingConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteMatchmakingConfigurationError {
             meta: generic,
             kind: crate::error::DeleteMatchmakingConfigurationErrorKind::TaggingFailedException({
@@ -2997,7 +2961,7 @@ pub fn parse_delete_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3016,7 +2980,7 @@ pub fn parse_delete_matchmaking_configuration_error(
                         let mut output =
                             crate::error::unsupported_region_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3073,7 +3037,7 @@ pub fn parse_delete_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3090,7 +3054,7 @@ pub fn parse_delete_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3099,25 +3063,23 @@ pub fn parse_delete_matchmaking_rule_set_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteMatchmakingRuleSetError {
-                meta: generic,
-                kind: crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteMatchmakingRuleSetError {
+            meta: generic,
+            kind: crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteMatchmakingRuleSetError {
             meta: generic,
             kind: crate::error::DeleteMatchmakingRuleSetErrorKind::TaggingFailedException({
@@ -3126,7 +3088,7 @@ pub fn parse_delete_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3143,7 +3105,7 @@ pub fn parse_delete_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3195,7 +3157,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3212,7 +3174,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3221,25 +3183,23 @@ pub fn parse_delete_scaling_policy_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteScalingPolicyError {
-                meta: generic,
-                kind: crate::error::DeleteScalingPolicyErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteScalingPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteScalingPolicyErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteScalingPolicyError {
             meta: generic,
             kind: crate::error::DeleteScalingPolicyErrorKind::UnauthorizedException({
@@ -3248,7 +3208,7 @@ pub fn parse_delete_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3297,7 +3257,7 @@ pub fn parse_delete_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3314,7 +3274,7 @@ pub fn parse_delete_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3323,25 +3283,23 @@ pub fn parse_delete_script_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteScriptError {
-                meta: generic,
-                kind: crate::error::DeleteScriptErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteScriptError {
+            meta: generic,
+            kind: crate::error::DeleteScriptErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::DeleteScriptError {
             meta: generic,
             kind: crate::error::DeleteScriptErrorKind::TaggingFailedException({
@@ -3350,7 +3308,7 @@ pub fn parse_delete_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3367,7 +3325,7 @@ pub fn parse_delete_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3420,7 +3378,7 @@ pub fn parse_delete_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3437,7 +3395,7 @@ pub fn parse_delete_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3446,25 +3404,23 @@ pub fn parse_delete_vpc_peering_authorization_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteVpcPeeringAuthorizationError {
-                meta: generic,
-                kind: crate::error::DeleteVpcPeeringAuthorizationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteVpcPeeringAuthorizationError {
+            meta: generic,
+            kind: crate::error::DeleteVpcPeeringAuthorizationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteVpcPeeringAuthorizationError {
             meta: generic,
             kind: crate::error::DeleteVpcPeeringAuthorizationErrorKind::UnauthorizedException({
@@ -3473,7 +3429,7 @@ pub fn parse_delete_vpc_peering_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3529,7 +3485,7 @@ pub fn parse_delete_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3546,7 +3502,7 @@ pub fn parse_delete_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3555,25 +3511,23 @@ pub fn parse_delete_vpc_peering_connection_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeleteVpcPeeringConnectionError {
-                meta: generic,
-                kind: crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeleteVpcPeeringConnectionError {
+            meta: generic,
+            kind: crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeleteVpcPeeringConnectionError {
             meta: generic,
             kind: crate::error::DeleteVpcPeeringConnectionErrorKind::UnauthorizedException({
@@ -3582,7 +3536,7 @@ pub fn parse_delete_vpc_peering_connection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3634,7 +3588,7 @@ pub fn parse_deregister_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3651,7 +3605,7 @@ pub fn parse_deregister_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3660,25 +3614,23 @@ pub fn parse_deregister_game_server_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DeregisterGameServerError {
-                meta: generic,
-                kind: crate::error::DeregisterGameServerErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DeregisterGameServerError {
+            meta: generic,
+            kind: crate::error::DeregisterGameServerErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DeregisterGameServerError {
             meta: generic,
             kind: crate::error::DeregisterGameServerErrorKind::UnauthorizedException({
@@ -3687,7 +3639,7 @@ pub fn parse_deregister_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3736,7 +3688,7 @@ pub fn parse_describe_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3753,7 +3705,7 @@ pub fn parse_describe_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3762,25 +3714,23 @@ pub fn parse_describe_alias_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeAliasError {
-                meta: generic,
-                kind: crate::error::DescribeAliasErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeAliasError {
+            meta: generic,
+            kind: crate::error::DescribeAliasErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeAliasError {
             meta: generic,
             kind: crate::error::DescribeAliasErrorKind::UnauthorizedException({
@@ -3789,7 +3739,7 @@ pub fn parse_describe_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3840,7 +3790,7 @@ pub fn parse_describe_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3857,7 +3807,7 @@ pub fn parse_describe_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3866,25 +3816,23 @@ pub fn parse_describe_build_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeBuildError {
-                meta: generic,
-                kind: crate::error::DescribeBuildErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeBuildError {
+            meta: generic,
+            kind: crate::error::DescribeBuildErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeBuildError {
             meta: generic,
             kind: crate::error::DescribeBuildErrorKind::UnauthorizedException({
@@ -3893,7 +3841,7 @@ pub fn parse_describe_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3951,7 +3899,7 @@ pub fn parse_describe_ec2_instance_limits_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3968,7 +3916,7 @@ pub fn parse_describe_ec2_instance_limits_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3985,7 +3933,7 @@ pub fn parse_describe_ec2_instance_limits_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4046,7 +3994,7 @@ pub fn parse_describe_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4063,7 +4011,7 @@ pub fn parse_describe_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4072,25 +4020,23 @@ pub fn parse_describe_fleet_attributes_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetAttributesError {
-                meta: generic,
-                kind: crate::error::DescribeFleetAttributesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetAttributesError {
+            meta: generic,
+            kind: crate::error::DescribeFleetAttributesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetAttributesError {
             meta: generic,
             kind: crate::error::DescribeFleetAttributesErrorKind::UnauthorizedException({
@@ -4099,7 +4045,7 @@ pub fn parse_describe_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4156,7 +4102,7 @@ pub fn parse_describe_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4173,7 +4119,7 @@ pub fn parse_describe_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4182,25 +4128,23 @@ pub fn parse_describe_fleet_capacity_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetCapacityError {
-                meta: generic,
-                kind: crate::error::DescribeFleetCapacityErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetCapacityError {
+            meta: generic,
+            kind: crate::error::DescribeFleetCapacityErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetCapacityError {
             meta: generic,
             kind: crate::error::DescribeFleetCapacityErrorKind::UnauthorizedException({
@@ -4209,7 +4153,7 @@ pub fn parse_describe_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4266,7 +4210,7 @@ pub fn parse_describe_fleet_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4283,7 +4227,7 @@ pub fn parse_describe_fleet_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4292,25 +4236,23 @@ pub fn parse_describe_fleet_events_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetEventsError {
-                meta: generic,
-                kind: crate::error::DescribeFleetEventsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetEventsError {
+            meta: generic,
+            kind: crate::error::DescribeFleetEventsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetEventsError {
             meta: generic,
             kind: crate::error::DescribeFleetEventsErrorKind::UnauthorizedException({
@@ -4319,7 +4261,7 @@ pub fn parse_describe_fleet_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4378,7 +4320,7 @@ pub fn parse_describe_fleet_location_attributes_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4398,7 +4340,7 @@ pub fn parse_describe_fleet_location_attributes_error(
                         let mut output =
                             crate::error::invalid_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4408,25 +4350,23 @@ pub fn parse_describe_fleet_location_attributes_error(
                 },
             ),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetLocationAttributesError {
-                meta: generic,
-                kind: crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetLocationAttributesError {
+            meta: generic,
+            kind: crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetLocationAttributesError {
             meta: generic,
             kind: crate::error::DescribeFleetLocationAttributesErrorKind::UnauthorizedException({
@@ -4435,7 +4375,7 @@ pub fn parse_describe_fleet_location_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4498,7 +4438,7 @@ pub fn parse_describe_fleet_location_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4515,7 +4455,7 @@ pub fn parse_describe_fleet_location_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4524,25 +4464,23 @@ pub fn parse_describe_fleet_location_capacity_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetLocationCapacityError {
-                meta: generic,
-                kind: crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetLocationCapacityError {
+            meta: generic,
+            kind: crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetLocationCapacityError {
             meta: generic,
             kind: crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException({
@@ -4551,7 +4489,7 @@ pub fn parse_describe_fleet_location_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4613,7 +4551,7 @@ pub fn parse_describe_fleet_location_utilization_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4633,7 +4571,7 @@ pub fn parse_describe_fleet_location_utilization_error(
                         let mut output =
                             crate::error::invalid_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4643,25 +4581,23 @@ pub fn parse_describe_fleet_location_utilization_error(
                 },
             ),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetLocationUtilizationError {
-                meta: generic,
-                kind: crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetLocationUtilizationError {
+            meta: generic,
+            kind: crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetLocationUtilizationError {
             meta: generic,
             kind: crate::error::DescribeFleetLocationUtilizationErrorKind::UnauthorizedException({
@@ -4670,7 +4606,7 @@ pub fn parse_describe_fleet_location_utilization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4733,7 +4669,7 @@ pub fn parse_describe_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4750,7 +4686,7 @@ pub fn parse_describe_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4759,25 +4695,23 @@ pub fn parse_describe_fleet_port_settings_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetPortSettingsError {
-                meta: generic,
-                kind: crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetPortSettingsError {
+            meta: generic,
+            kind: crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetPortSettingsError {
             meta: generic,
             kind: crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException({
@@ -4786,7 +4720,7 @@ pub fn parse_describe_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4847,7 +4781,7 @@ pub fn parse_describe_fleet_utilization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4864,7 +4798,7 @@ pub fn parse_describe_fleet_utilization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4873,25 +4807,23 @@ pub fn parse_describe_fleet_utilization_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeFleetUtilizationError {
-                meta: generic,
-                kind: crate::error::DescribeFleetUtilizationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeFleetUtilizationError {
+            meta: generic,
+            kind: crate::error::DescribeFleetUtilizationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeFleetUtilizationError {
             meta: generic,
             kind: crate::error::DescribeFleetUtilizationErrorKind::UnauthorizedException({
@@ -4900,7 +4832,7 @@ pub fn parse_describe_fleet_utilization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetUtilizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4957,7 +4889,7 @@ pub fn parse_describe_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4974,7 +4906,7 @@ pub fn parse_describe_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4983,25 +4915,23 @@ pub fn parse_describe_game_server_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameServerError {
-                meta: generic,
-                kind: crate::error::DescribeGameServerErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameServerError {
+            meta: generic,
+            kind: crate::error::DescribeGameServerErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeGameServerError {
             meta: generic,
             kind: crate::error::DescribeGameServerErrorKind::UnauthorizedException({
@@ -5010,7 +4940,7 @@ pub fn parse_describe_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5071,7 +5001,7 @@ pub fn parse_describe_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5088,7 +5018,7 @@ pub fn parse_describe_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5097,25 +5027,23 @@ pub fn parse_describe_game_server_group_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameServerGroupError {
-                meta: generic,
-                kind: crate::error::DescribeGameServerGroupErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameServerGroupError {
+            meta: generic,
+            kind: crate::error::DescribeGameServerGroupErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeGameServerGroupError {
             meta: generic,
             kind: crate::error::DescribeGameServerGroupErrorKind::UnauthorizedException({
@@ -5124,7 +5052,7 @@ pub fn parse_describe_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5185,7 +5113,7 @@ pub fn parse_describe_game_server_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5202,7 +5130,7 @@ pub fn parse_describe_game_server_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5211,25 +5139,23 @@ pub fn parse_describe_game_server_instances_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameServerInstancesError {
-                meta: generic,
-                kind: crate::error::DescribeGameServerInstancesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameServerInstancesError {
+            meta: generic,
+            kind: crate::error::DescribeGameServerInstancesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeGameServerInstancesError {
             meta: generic,
             kind: crate::error::DescribeGameServerInstancesErrorKind::UnauthorizedException({
@@ -5238,7 +5164,7 @@ pub fn parse_describe_game_server_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameServerInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5299,7 +5225,7 @@ pub fn parse_describe_game_session_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5316,7 +5242,7 @@ pub fn parse_describe_game_session_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5325,25 +5251,23 @@ pub fn parse_describe_game_session_details_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameSessionDetailsError {
-                meta: generic,
-                kind: crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameSessionDetailsError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::DescribeGameSessionDetailsError {
             meta: generic,
             kind:
@@ -5356,7 +5280,7 @@ pub fn parse_describe_game_session_details_error(
                                 crate::error::terminal_routing_strategy_exception::Builder::default(
                                 );
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -5374,7 +5298,7 @@ pub fn parse_describe_game_session_details_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5435,7 +5359,7 @@ pub fn parse_describe_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5452,7 +5376,7 @@ pub fn parse_describe_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5461,25 +5385,23 @@ pub fn parse_describe_game_session_placement_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameSessionPlacementError {
-                meta: generic,
-                kind: crate::error::DescribeGameSessionPlacementErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameSessionPlacementError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionPlacementErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeGameSessionPlacementError {
             meta: generic,
             kind: crate::error::DescribeGameSessionPlacementErrorKind::UnauthorizedException({
@@ -5488,7 +5410,7 @@ pub fn parse_describe_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5550,7 +5472,7 @@ pub fn parse_describe_game_session_queues_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5567,7 +5489,7 @@ pub fn parse_describe_game_session_queues_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5576,25 +5498,23 @@ pub fn parse_describe_game_session_queues_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameSessionQueuesError {
-                meta: generic,
-                kind: crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameSessionQueuesError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeGameSessionQueuesError {
             meta: generic,
             kind: crate::error::DescribeGameSessionQueuesErrorKind::UnauthorizedException({
@@ -5603,7 +5523,7 @@ pub fn parse_describe_game_session_queues_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionQueuesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5660,7 +5580,7 @@ pub fn parse_describe_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5677,7 +5597,7 @@ pub fn parse_describe_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5686,25 +5606,23 @@ pub fn parse_describe_game_sessions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeGameSessionsError {
-                meta: generic,
-                kind: crate::error::DescribeGameSessionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeGameSessionsError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::DescribeGameSessionsError {
             meta: generic,
             kind: crate::error::DescribeGameSessionsErrorKind::TerminalRoutingStrategyException({
@@ -5714,7 +5632,7 @@ pub fn parse_describe_game_sessions_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5731,7 +5649,7 @@ pub fn parse_describe_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5786,7 +5704,7 @@ pub fn parse_describe_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5803,7 +5721,7 @@ pub fn parse_describe_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5812,25 +5730,23 @@ pub fn parse_describe_instances_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeInstancesError {
-                meta: generic,
-                kind: crate::error::DescribeInstancesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeInstancesError {
+            meta: generic,
+            kind: crate::error::DescribeInstancesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeInstancesError {
             meta: generic,
             kind: crate::error::DescribeInstancesErrorKind::UnauthorizedException({
@@ -5839,7 +5755,7 @@ pub fn parse_describe_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5894,7 +5810,7 @@ pub fn parse_describe_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5911,7 +5827,7 @@ pub fn parse_describe_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5928,7 +5844,7 @@ pub fn parse_describe_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5990,7 +5906,7 @@ pub fn parse_describe_matchmaking_configurations_error(
                             let mut output =
                                 crate::error::internal_service_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6010,7 +5926,7 @@ pub fn parse_describe_matchmaking_configurations_error(
                         let mut output =
                             crate::error::invalid_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6031,7 +5947,7 @@ pub fn parse_describe_matchmaking_configurations_error(
                             let mut output =
                                 crate::error::unsupported_region_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingConfigurationsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6095,7 +6011,7 @@ pub fn parse_describe_matchmaking_rule_sets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6112,7 +6028,7 @@ pub fn parse_describe_matchmaking_rule_sets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6121,25 +6037,23 @@ pub fn parse_describe_matchmaking_rule_sets_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeMatchmakingRuleSetsError {
-                meta: generic,
-                kind: crate::error::DescribeMatchmakingRuleSetsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeMatchmakingRuleSetsError {
+            meta: generic,
+            kind: crate::error::DescribeMatchmakingRuleSetsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::DescribeMatchmakingRuleSetsError {
             meta: generic,
             kind: crate::error::DescribeMatchmakingRuleSetsErrorKind::UnsupportedRegionException({
@@ -6148,7 +6062,7 @@ pub fn parse_describe_matchmaking_rule_sets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMatchmakingRuleSetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6209,7 +6123,7 @@ pub fn parse_describe_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6226,7 +6140,7 @@ pub fn parse_describe_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6235,25 +6149,23 @@ pub fn parse_describe_player_sessions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribePlayerSessionsError {
-                meta: generic,
-                kind: crate::error::DescribePlayerSessionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribePlayerSessionsError {
+            meta: generic,
+            kind: crate::error::DescribePlayerSessionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribePlayerSessionsError {
             meta: generic,
             kind: crate::error::DescribePlayerSessionsErrorKind::UnauthorizedException({
@@ -6262,7 +6174,7 @@ pub fn parse_describe_player_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePlayerSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6323,7 +6235,7 @@ pub fn parse_describe_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6340,7 +6252,7 @@ pub fn parse_describe_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6349,25 +6261,23 @@ pub fn parse_describe_runtime_configuration_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeRuntimeConfigurationError {
-                meta: generic,
-                kind: crate::error::DescribeRuntimeConfigurationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeRuntimeConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeRuntimeConfigurationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeRuntimeConfigurationError {
             meta: generic,
             kind: crate::error::DescribeRuntimeConfigurationErrorKind::UnauthorizedException({
@@ -6376,7 +6286,7 @@ pub fn parse_describe_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6437,7 +6347,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6454,7 +6364,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6463,25 +6373,23 @@ pub fn parse_describe_scaling_policies_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeScalingPoliciesError {
-                meta: generic,
-                kind: crate::error::DescribeScalingPoliciesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeScalingPoliciesError {
+            meta: generic,
+            kind: crate::error::DescribeScalingPoliciesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeScalingPoliciesError {
             meta: generic,
             kind: crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException({
@@ -6490,7 +6398,7 @@ pub fn parse_describe_scaling_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6544,7 +6452,7 @@ pub fn parse_describe_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6561,7 +6469,7 @@ pub fn parse_describe_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6570,25 +6478,23 @@ pub fn parse_describe_script_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeScriptError {
-                meta: generic,
-                kind: crate::error::DescribeScriptErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeScriptError {
+            meta: generic,
+            kind: crate::error::DescribeScriptErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeScriptError {
             meta: generic,
             kind: crate::error::DescribeScriptErrorKind::UnauthorizedException({
@@ -6597,7 +6503,7 @@ pub fn parse_describe_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6655,7 +6561,7 @@ pub fn parse_describe_vpc_peering_authorizations_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6675,7 +6581,7 @@ pub fn parse_describe_vpc_peering_authorizations_error(
                         let mut output =
                             crate::error::invalid_request_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6693,7 +6599,7 @@ pub fn parse_describe_vpc_peering_authorizations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6756,7 +6662,7 @@ pub fn parse_describe_vpc_peering_connections_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6773,7 +6679,7 @@ pub fn parse_describe_vpc_peering_connections_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6782,25 +6688,23 @@ pub fn parse_describe_vpc_peering_connections_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::DescribeVpcPeeringConnectionsError {
-                meta: generic,
-                kind: crate::error::DescribeVpcPeeringConnectionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::DescribeVpcPeeringConnectionsError {
+            meta: generic,
+            kind: crate::error::DescribeVpcPeeringConnectionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::DescribeVpcPeeringConnectionsError {
             meta: generic,
             kind: crate::error::DescribeVpcPeeringConnectionsErrorKind::UnauthorizedException({
@@ -6809,7 +6713,7 @@ pub fn parse_describe_vpc_peering_connections_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6867,7 +6771,7 @@ pub fn parse_get_game_session_log_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6884,7 +6788,7 @@ pub fn parse_get_game_session_log_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6893,25 +6797,23 @@ pub fn parse_get_game_session_log_url_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::GetGameSessionLogUrlError {
-                meta: generic,
-                kind: crate::error::GetGameSessionLogUrlErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::GetGameSessionLogUrlError {
+            meta: generic,
+            kind: crate::error::GetGameSessionLogUrlErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::GetGameSessionLogUrlError {
             meta: generic,
             kind: crate::error::GetGameSessionLogUrlErrorKind::UnauthorizedException({
@@ -6920,7 +6822,7 @@ pub fn parse_get_game_session_log_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGameSessionLogUrlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6975,7 +6877,7 @@ pub fn parse_get_instance_access_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6992,7 +6894,7 @@ pub fn parse_get_instance_access_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7001,25 +6903,23 @@ pub fn parse_get_instance_access_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::GetInstanceAccessError {
-                meta: generic,
-                kind: crate::error::GetInstanceAccessErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::GetInstanceAccessError {
+            meta: generic,
+            kind: crate::error::GetInstanceAccessErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::GetInstanceAccessError {
             meta: generic,
             kind: crate::error::GetInstanceAccessErrorKind::UnauthorizedException({
@@ -7028,7 +6928,7 @@ pub fn parse_get_instance_access_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceAccessError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7080,7 +6980,7 @@ pub fn parse_list_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7097,7 +6997,7 @@ pub fn parse_list_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7114,7 +7014,7 @@ pub fn parse_list_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7165,7 +7065,7 @@ pub fn parse_list_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7182,7 +7082,7 @@ pub fn parse_list_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7199,7 +7099,7 @@ pub fn parse_list_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7250,7 +7150,7 @@ pub fn parse_list_fleets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7267,7 +7167,7 @@ pub fn parse_list_fleets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7276,25 +7176,23 @@ pub fn parse_list_fleets_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::ListFleetsError {
-                meta: generic,
-                kind: crate::error::ListFleetsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::ListFleetsError {
+            meta: generic,
+            kind: crate::error::ListFleetsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::ListFleetsError {
             meta: generic,
             kind: crate::error::ListFleetsErrorKind::UnauthorizedException({
@@ -7303,7 +7201,7 @@ pub fn parse_list_fleets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFleetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7357,7 +7255,7 @@ pub fn parse_list_game_server_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7374,7 +7272,7 @@ pub fn parse_list_game_server_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7391,7 +7289,7 @@ pub fn parse_list_game_server_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServerGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7445,7 +7343,7 @@ pub fn parse_list_game_servers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7462,7 +7360,7 @@ pub fn parse_list_game_servers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7479,7 +7377,7 @@ pub fn parse_list_game_servers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGameServersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7530,7 +7428,7 @@ pub fn parse_list_scripts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7547,7 +7445,7 @@ pub fn parse_list_scripts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7564,7 +7462,7 @@ pub fn parse_list_scripts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListScriptsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7618,7 +7516,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7635,7 +7533,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7644,25 +7542,23 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::TaggingFailedException({
@@ -7671,7 +7567,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7726,7 +7622,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7743,7 +7639,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7752,25 +7648,23 @@ pub fn parse_put_scaling_policy_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::PutScalingPolicyError {
-                meta: generic,
-                kind: crate::error::PutScalingPolicyErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::PutScalingPolicyError {
+            meta: generic,
+            kind: crate::error::PutScalingPolicyErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::PutScalingPolicyError {
             meta: generic,
             kind: crate::error::PutScalingPolicyErrorKind::UnauthorizedException({
@@ -7779,7 +7673,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7835,7 +7729,7 @@ pub fn parse_register_game_server_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7853,7 +7747,7 @@ pub fn parse_register_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7870,7 +7764,7 @@ pub fn parse_register_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7887,7 +7781,7 @@ pub fn parse_register_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7904,7 +7798,7 @@ pub fn parse_register_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7965,7 +7859,7 @@ pub fn parse_request_upload_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7982,7 +7876,7 @@ pub fn parse_request_upload_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7991,25 +7885,23 @@ pub fn parse_request_upload_credentials_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::RequestUploadCredentialsError {
-                meta: generic,
-                kind: crate::error::RequestUploadCredentialsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::RequestUploadCredentialsError {
+            meta: generic,
+            kind: crate::error::RequestUploadCredentialsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::RequestUploadCredentialsError {
             meta: generic,
             kind: crate::error::RequestUploadCredentialsErrorKind::UnauthorizedException({
@@ -8018,7 +7910,7 @@ pub fn parse_request_upload_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestUploadCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8072,7 +7964,7 @@ pub fn parse_resolve_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8089,7 +7981,7 @@ pub fn parse_resolve_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8098,25 +7990,23 @@ pub fn parse_resolve_alias_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::ResolveAliasError {
-                meta: generic,
-                kind: crate::error::ResolveAliasErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::ResolveAliasError {
+            meta: generic,
+            kind: crate::error::ResolveAliasErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::ResolveAliasError {
             meta: generic,
             kind: crate::error::ResolveAliasErrorKind::TerminalRoutingStrategyException({
@@ -8126,7 +8016,7 @@ pub fn parse_resolve_alias_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8143,7 +8033,7 @@ pub fn parse_resolve_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8197,7 +8087,7 @@ pub fn parse_resume_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8214,7 +8104,7 @@ pub fn parse_resume_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8223,25 +8113,23 @@ pub fn parse_resume_game_server_group_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::ResumeGameServerGroupError {
-                meta: generic,
-                kind: crate::error::ResumeGameServerGroupErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::ResumeGameServerGroupError {
+            meta: generic,
+            kind: crate::error::ResumeGameServerGroupErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::ResumeGameServerGroupError {
             meta: generic,
             kind: crate::error::ResumeGameServerGroupErrorKind::UnauthorizedException({
@@ -8250,7 +8138,7 @@ pub fn parse_resume_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResumeGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8307,7 +8195,7 @@ pub fn parse_search_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8324,7 +8212,7 @@ pub fn parse_search_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8333,25 +8221,23 @@ pub fn parse_search_game_sessions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::SearchGameSessionsError {
-                meta: generic,
-                kind: crate::error::SearchGameSessionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::SearchGameSessionsError {
+            meta: generic,
+            kind: crate::error::SearchGameSessionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TerminalRoutingStrategyException" => crate::error::SearchGameSessionsError {
             meta: generic,
             kind: crate::error::SearchGameSessionsErrorKind::TerminalRoutingStrategyException({
@@ -8361,7 +8247,7 @@ pub fn parse_search_game_sessions_error(
                     let mut output =
                         crate::error::terminal_routing_strategy_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_terminal_routing_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8378,7 +8264,7 @@ pub fn parse_search_game_sessions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8433,7 +8319,7 @@ pub fn parse_start_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8450,7 +8336,7 @@ pub fn parse_start_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8459,25 +8345,23 @@ pub fn parse_start_fleet_actions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StartFleetActionsError {
-                meta: generic,
-                kind: crate::error::StartFleetActionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StartFleetActionsError {
+            meta: generic,
+            kind: crate::error::StartFleetActionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::StartFleetActionsError {
             meta: generic,
             kind: crate::error::StartFleetActionsErrorKind::UnauthorizedException({
@@ -8486,7 +8370,7 @@ pub fn parse_start_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8545,7 +8429,7 @@ pub fn parse_start_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8562,7 +8446,7 @@ pub fn parse_start_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8571,25 +8455,23 @@ pub fn parse_start_game_session_placement_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StartGameSessionPlacementError {
-                meta: generic,
-                kind: crate::error::StartGameSessionPlacementErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StartGameSessionPlacementError {
+            meta: generic,
+            kind: crate::error::StartGameSessionPlacementErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::StartGameSessionPlacementError {
             meta: generic,
             kind: crate::error::StartGameSessionPlacementErrorKind::UnauthorizedException({
@@ -8598,7 +8480,7 @@ pub fn parse_start_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8655,7 +8537,7 @@ pub fn parse_start_match_backfill_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8672,7 +8554,7 @@ pub fn parse_start_match_backfill_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8681,25 +8563,23 @@ pub fn parse_start_match_backfill_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StartMatchBackfillError {
-                meta: generic,
-                kind: crate::error::StartMatchBackfillErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StartMatchBackfillError {
+            meta: generic,
+            kind: crate::error::StartMatchBackfillErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::StartMatchBackfillError {
             meta: generic,
             kind: crate::error::StartMatchBackfillErrorKind::UnsupportedRegionException({
@@ -8708,7 +8588,7 @@ pub fn parse_start_match_backfill_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchBackfillError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8763,7 +8643,7 @@ pub fn parse_start_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8780,7 +8660,7 @@ pub fn parse_start_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8789,25 +8669,23 @@ pub fn parse_start_matchmaking_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StartMatchmakingError {
-                meta: generic,
-                kind: crate::error::StartMatchmakingErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StartMatchmakingError {
+            meta: generic,
+            kind: crate::error::StartMatchmakingErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::StartMatchmakingError {
             meta: generic,
             kind: crate::error::StartMatchmakingErrorKind::UnsupportedRegionException({
@@ -8816,7 +8694,7 @@ pub fn parse_start_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8869,7 +8747,7 @@ pub fn parse_stop_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8886,7 +8764,7 @@ pub fn parse_stop_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8895,25 +8773,23 @@ pub fn parse_stop_fleet_actions_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StopFleetActionsError {
-                meta: generic,
-                kind: crate::error::StopFleetActionsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StopFleetActionsError {
+            meta: generic,
+            kind: crate::error::StopFleetActionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::StopFleetActionsError {
             meta: generic,
             kind: crate::error::StopFleetActionsErrorKind::UnauthorizedException({
@@ -8922,7 +8798,7 @@ pub fn parse_stop_fleet_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8981,7 +8857,7 @@ pub fn parse_stop_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8998,7 +8874,7 @@ pub fn parse_stop_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9007,25 +8883,23 @@ pub fn parse_stop_game_session_placement_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StopGameSessionPlacementError {
-                meta: generic,
-                kind: crate::error::StopGameSessionPlacementErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StopGameSessionPlacementError {
+            meta: generic,
+            kind: crate::error::StopGameSessionPlacementErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::StopGameSessionPlacementError {
             meta: generic,
             kind: crate::error::StopGameSessionPlacementErrorKind::UnauthorizedException({
@@ -9034,7 +8908,7 @@ pub fn parse_stop_game_session_placement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopGameSessionPlacementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9088,7 +8962,7 @@ pub fn parse_stop_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9105,7 +8979,7 @@ pub fn parse_stop_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9114,25 +8988,23 @@ pub fn parse_stop_matchmaking_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::StopMatchmakingError {
-                meta: generic,
-                kind: crate::error::StopMatchmakingErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::StopMatchmakingError {
+            meta: generic,
+            kind: crate::error::StopMatchmakingErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::StopMatchmakingError {
             meta: generic,
             kind: crate::error::StopMatchmakingErrorKind::UnsupportedRegionException({
@@ -9141,7 +9013,7 @@ pub fn parse_stop_matchmaking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopMatchmakingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9194,7 +9066,7 @@ pub fn parse_suspend_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9211,7 +9083,7 @@ pub fn parse_suspend_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9220,25 +9092,23 @@ pub fn parse_suspend_game_server_group_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::SuspendGameServerGroupError {
-                meta: generic,
-                kind: crate::error::SuspendGameServerGroupErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::SuspendGameServerGroupError {
+            meta: generic,
+            kind: crate::error::SuspendGameServerGroupErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::SuspendGameServerGroupError {
             meta: generic,
             kind: crate::error::SuspendGameServerGroupErrorKind::UnauthorizedException({
@@ -9247,7 +9117,7 @@ pub fn parse_suspend_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuspendGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9301,7 +9171,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9318,7 +9188,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9327,25 +9197,23 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::TaggingFailedException({
@@ -9354,7 +9222,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9400,7 +9268,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9417,7 +9285,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9426,25 +9294,23 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaggingFailedException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::TaggingFailedException({
@@ -9453,7 +9319,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::tagging_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9499,7 +9365,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9516,7 +9382,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9525,25 +9391,23 @@ pub fn parse_update_alias_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateAliasError {
-                meta: generic,
-                kind: crate::error::UpdateAliasErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateAliasError {
+            meta: generic,
+            kind: crate::error::UpdateAliasErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateAliasError {
             meta: generic,
             kind: crate::error::UpdateAliasErrorKind::UnauthorizedException({
@@ -9552,7 +9416,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9603,7 +9467,7 @@ pub fn parse_update_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9620,7 +9484,7 @@ pub fn parse_update_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9629,25 +9493,23 @@ pub fn parse_update_build_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateBuildError {
-                meta: generic,
-                kind: crate::error::UpdateBuildErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateBuildError {
+            meta: generic,
+            kind: crate::error::UpdateBuildErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateBuildError {
             meta: generic,
             kind: crate::error::UpdateBuildErrorKind::UnauthorizedException({
@@ -9656,7 +9518,7 @@ pub fn parse_update_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9711,7 +9573,7 @@ pub fn parse_update_fleet_attributes_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -9729,7 +9591,7 @@ pub fn parse_update_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9747,7 +9609,7 @@ pub fn parse_update_fleet_attributes_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9764,7 +9626,7 @@ pub fn parse_update_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9781,7 +9643,7 @@ pub fn parse_update_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9790,25 +9652,23 @@ pub fn parse_update_fleet_attributes_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateFleetAttributesError {
-                meta: generic,
-                kind: crate::error::UpdateFleetAttributesErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateFleetAttributesError {
+            meta: generic,
+            kind: crate::error::UpdateFleetAttributesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateFleetAttributesError {
             meta: generic,
             kind: crate::error::UpdateFleetAttributesErrorKind::UnauthorizedException({
@@ -9817,7 +9677,7 @@ pub fn parse_update_fleet_attributes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetAttributesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9875,7 +9735,7 @@ pub fn parse_update_fleet_capacity_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -9893,7 +9753,7 @@ pub fn parse_update_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9911,7 +9771,7 @@ pub fn parse_update_fleet_capacity_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9928,7 +9788,7 @@ pub fn parse_update_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9945,7 +9805,7 @@ pub fn parse_update_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9954,25 +9814,23 @@ pub fn parse_update_fleet_capacity_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateFleetCapacityError {
-                meta: generic,
-                kind: crate::error::UpdateFleetCapacityErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateFleetCapacityError {
+            meta: generic,
+            kind: crate::error::UpdateFleetCapacityErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateFleetCapacityError {
             meta: generic,
             kind: crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException({
@@ -9981,7 +9839,7 @@ pub fn parse_update_fleet_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10043,7 +9901,7 @@ pub fn parse_update_fleet_port_settings_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -10061,7 +9919,7 @@ pub fn parse_update_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10079,7 +9937,7 @@ pub fn parse_update_fleet_port_settings_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10096,7 +9954,7 @@ pub fn parse_update_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10113,7 +9971,7 @@ pub fn parse_update_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10122,25 +9980,23 @@ pub fn parse_update_fleet_port_settings_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateFleetPortSettingsError {
-                meta: generic,
-                kind: crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateFleetPortSettingsError {
+            meta: generic,
+            kind: crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateFleetPortSettingsError {
             meta: generic,
             kind: crate::error::UpdateFleetPortSettingsErrorKind::UnauthorizedException({
@@ -10149,7 +10005,7 @@ pub fn parse_update_fleet_port_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetPortSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10204,7 +10060,7 @@ pub fn parse_update_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10221,7 +10077,7 @@ pub fn parse_update_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10230,25 +10086,23 @@ pub fn parse_update_game_server_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateGameServerError {
-                meta: generic,
-                kind: crate::error::UpdateGameServerErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateGameServerError {
+            meta: generic,
+            kind: crate::error::UpdateGameServerErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateGameServerError {
             meta: generic,
             kind: crate::error::UpdateGameServerErrorKind::UnauthorizedException({
@@ -10257,7 +10111,7 @@ pub fn parse_update_game_server_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10312,7 +10166,7 @@ pub fn parse_update_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10329,7 +10183,7 @@ pub fn parse_update_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10338,25 +10192,23 @@ pub fn parse_update_game_server_group_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateGameServerGroupError {
-                meta: generic,
-                kind: crate::error::UpdateGameServerGroupErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateGameServerGroupError {
+            meta: generic,
+            kind: crate::error::UpdateGameServerGroupErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateGameServerGroupError {
             meta: generic,
             kind: crate::error::UpdateGameServerGroupErrorKind::UnauthorizedException({
@@ -10365,7 +10217,7 @@ pub fn parse_update_game_server_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameServerGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10421,7 +10273,7 @@ pub fn parse_update_game_session_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -10439,7 +10291,7 @@ pub fn parse_update_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10457,7 +10309,7 @@ pub fn parse_update_game_session_error(
                     let mut output =
                         crate::error::invalid_game_session_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_game_session_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10474,7 +10326,7 @@ pub fn parse_update_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10483,25 +10335,23 @@ pub fn parse_update_game_session_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateGameSessionError {
-                meta: generic,
-                kind: crate::error::UpdateGameSessionErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateGameSessionError {
+            meta: generic,
+            kind: crate::error::UpdateGameSessionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateGameSessionError {
             meta: generic,
             kind: crate::error::UpdateGameSessionErrorKind::UnauthorizedException({
@@ -10510,7 +10360,7 @@ pub fn parse_update_game_session_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10569,7 +10419,7 @@ pub fn parse_update_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10586,7 +10436,7 @@ pub fn parse_update_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10595,25 +10445,23 @@ pub fn parse_update_game_session_queue_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateGameSessionQueueError {
-                meta: generic,
-                kind: crate::error::UpdateGameSessionQueueErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateGameSessionQueueError {
+            meta: generic,
+            kind: crate::error::UpdateGameSessionQueueErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateGameSessionQueueError {
             meta: generic,
             kind: crate::error::UpdateGameSessionQueueErrorKind::UnauthorizedException({
@@ -10622,7 +10470,7 @@ pub fn parse_update_game_session_queue_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGameSessionQueueError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10681,7 +10529,7 @@ pub fn parse_update_matchmaking_configuration_error(
                         let mut output =
                             crate::error::internal_service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -10699,7 +10547,7 @@ pub fn parse_update_matchmaking_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10708,25 +10556,23 @@ pub fn parse_update_matchmaking_configuration_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateMatchmakingConfigurationError {
-                meta: generic,
-                kind: crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateMatchmakingConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedRegionException" => crate::error::UpdateMatchmakingConfigurationError {
             meta: generic,
             kind: crate::error::UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException(
@@ -10737,7 +10583,7 @@ pub fn parse_update_matchmaking_configuration_error(
                         let mut output =
                             crate::error::unsupported_region_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMatchmakingConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -10800,7 +10646,7 @@ pub fn parse_update_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10818,7 +10664,7 @@ pub fn parse_update_runtime_configuration_error(
                     let mut output =
                         crate::error::invalid_fleet_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_fleet_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10835,7 +10681,7 @@ pub fn parse_update_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10844,25 +10690,23 @@ pub fn parse_update_runtime_configuration_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateRuntimeConfigurationError {
-                meta: generic,
-                kind: crate::error::UpdateRuntimeConfigurationErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateRuntimeConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateRuntimeConfigurationErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateRuntimeConfigurationError {
             meta: generic,
             kind: crate::error::UpdateRuntimeConfigurationErrorKind::UnauthorizedException({
@@ -10871,7 +10715,7 @@ pub fn parse_update_runtime_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuntimeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10925,7 +10769,7 @@ pub fn parse_update_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10942,7 +10786,7 @@ pub fn parse_update_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10951,25 +10795,23 @@ pub fn parse_update_script_error(
                 tmp
             }),
         },
-        "NotFoundException" => {
-            crate::error::UpdateScriptError {
-                meta: generic,
-                kind: crate::error::UpdateScriptErrorKind::NotFoundException({
+        "NotFoundException" => crate::error::UpdateScriptError {
+            meta: generic,
+            kind: crate::error::UpdateScriptErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedException" => crate::error::UpdateScriptError {
             meta: generic,
             kind: crate::error::UpdateScriptErrorKind::UnauthorizedException({
@@ -10978,7 +10820,7 @@ pub fn parse_update_script_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScriptError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -11036,7 +10878,7 @@ pub fn parse_validate_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -11053,7 +10895,7 @@ pub fn parse_validate_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -11070,7 +10912,7 @@ pub fn parse_validate_matchmaking_rule_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateMatchmakingRuleSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

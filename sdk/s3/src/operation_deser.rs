@@ -1471,7 +1471,7 @@ pub fn parse_get_bucket_website_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object(
-    op_response: &mut smithy_http::operation::Response,
+    op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
     let response = op_response.http_mut();
     Ok({
@@ -1995,7 +1995,7 @@ pub fn parse_get_object_tagging_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_torrent(
-    op_response: &mut smithy_http::operation::Response,
+    op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
 {
     let response = op_response.http_mut();
@@ -3623,7 +3623,7 @@ pub fn parse_restore_object_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_select_object_content(
-    op_response: &mut smithy_http::operation::Response,
+    op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<
     crate::output::SelectObjectContentOutput,
     crate::error::SelectObjectContentError,

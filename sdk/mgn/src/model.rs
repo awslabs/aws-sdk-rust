@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>Validate exception field name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>Validate exception field message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "cannotParse",
@@ -106,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -121,6 +130,7 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -132,7 +142,9 @@ impl AsRef<str> for ValidationExceptionReason {
     std::hash::Hash,
 )]
 pub enum ReplicationConfigurationDataPlaneRouting {
+    #[allow(missing_docs)] // documentation missing in model
     PrivateIp,
+    #[allow(missing_docs)] // documentation missing in model
     PublicIp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -154,6 +166,7 @@ impl std::str::FromStr for ReplicationConfigurationDataPlaneRouting {
     }
 }
 impl ReplicationConfigurationDataPlaneRouting {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationDataPlaneRouting::PrivateIp => "PRIVATE_IP",
@@ -161,6 +174,7 @@ impl ReplicationConfigurationDataPlaneRouting {
             ReplicationConfigurationDataPlaneRouting::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE_IP", "PUBLIC_IP"]
     }
@@ -171,6 +185,7 @@ impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -182,7 +197,9 @@ impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
     std::hash::Hash,
 )]
 pub enum ReplicationConfigurationEbsEncryption {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -204,6 +221,7 @@ impl std::str::FromStr for ReplicationConfigurationEbsEncryption {
     }
 }
 impl ReplicationConfigurationEbsEncryption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
@@ -211,6 +229,7 @@ impl ReplicationConfigurationEbsEncryption {
             ReplicationConfigurationEbsEncryption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
@@ -264,6 +283,7 @@ pub mod replication_configuration_replicated_disk {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>Replication Configuration replicated disk device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -273,6 +293,7 @@ pub mod replication_configuration_replicated_disk {
             self.is_boot_disk = Some(input);
             self
         }
+        /// <p>Replication Configuration replicated disk boot disk.</p>
         pub fn set_is_boot_disk(mut self, input: std::option::Option<bool>) -> Self {
             self.is_boot_disk = input;
             self
@@ -285,6 +306,7 @@ pub mod replication_configuration_replicated_disk {
             self.staging_disk_type = Some(input);
             self
         }
+        /// <p>Replication Configuration replicated disk staging disk type.</p>
         pub fn set_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -299,6 +321,7 @@ pub mod replication_configuration_replicated_disk {
             self.iops = Some(input);
             self
         }
+        /// <p>Replication Configuration replicated disk IOPs.</p>
         pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
             self.iops = input;
             self
@@ -321,6 +344,7 @@ impl ReplicationConfigurationReplicatedDisk {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -332,11 +356,17 @@ impl ReplicationConfigurationReplicatedDisk {
     std::hash::Hash,
 )]
 pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Gp2,
+    #[allow(missing_docs)] // documentation missing in model
     Io1,
+    #[allow(missing_docs)] // documentation missing in model
     Sc1,
+    #[allow(missing_docs)] // documentation missing in model
     St1,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -366,6 +396,7 @@ impl std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType
     }
 }
 impl ReplicationConfigurationReplicatedDiskStagingDiskType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
@@ -377,6 +408,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "IO1", "SC1", "ST1", "STANDARD"]
     }
@@ -387,6 +419,7 @@ impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -398,7 +431,9 @@ impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
     std::hash::Hash,
 )]
 pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
+    #[allow(missing_docs)] // documentation missing in model
     Gp2,
+    #[allow(missing_docs)] // documentation missing in model
     St1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -420,6 +455,7 @@ impl std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
     }
 }
 impl ReplicationConfigurationDefaultLargeStagingDiskType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => "GP2",
@@ -427,6 +463,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
             ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GP2", "ST1"]
     }
@@ -465,6 +502,7 @@ pub mod licensing {
             self.os_byol = Some(input);
             self
         }
+        /// <p>Configure BYOL OS licensing.</p>
         pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
             self.os_byol = input;
             self
@@ -484,6 +522,7 @@ impl Licensing {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -495,7 +534,9 @@ impl Licensing {
     std::hash::Hash,
 )]
 pub enum TargetInstanceTypeRightSizingMethod {
+    #[allow(missing_docs)] // documentation missing in model
     Basic,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -517,6 +558,7 @@ impl std::str::FromStr for TargetInstanceTypeRightSizingMethod {
     }
 }
 impl TargetInstanceTypeRightSizingMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetInstanceTypeRightSizingMethod::Basic => "BASIC",
@@ -524,6 +566,7 @@ impl TargetInstanceTypeRightSizingMethod {
             TargetInstanceTypeRightSizingMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BASIC", "NONE"]
     }
@@ -534,6 +577,7 @@ impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -545,7 +589,9 @@ impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
     std::hash::Hash,
 )]
 pub enum LaunchDisposition {
+    #[allow(missing_docs)] // documentation missing in model
     Started,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -567,6 +613,7 @@ impl std::str::FromStr for LaunchDisposition {
     }
 }
 impl LaunchDisposition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchDisposition::Started => "STARTED",
@@ -574,6 +621,7 @@ impl LaunchDisposition {
             LaunchDisposition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
@@ -641,6 +689,7 @@ pub mod source_properties {
             self.last_updated_date_time = Some(input.into());
             self
         }
+        /// <p>Source server last update date and time.</p>
         pub fn set_last_updated_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -653,6 +702,7 @@ pub mod source_properties {
             self.recommended_instance_type = Some(input.into());
             self
         }
+        /// <p>Source server recommended instance type.</p>
         pub fn set_recommended_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -665,6 +715,7 @@ pub mod source_properties {
             self.identification_hints = Some(input);
             self
         }
+        /// <p>Source server identification hints.</p>
         pub fn set_identification_hints(
             mut self,
             input: std::option::Option<crate::model::IdentificationHints>,
@@ -672,6 +723,11 @@ pub mod source_properties {
             self.identification_hints = input;
             self
         }
+        /// Appends an item to `network_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
+        ///
+        /// <p>Source server network interfaces.</p>
         pub fn network_interfaces(
             mut self,
             input: impl Into<crate::model::NetworkInterface>,
@@ -681,6 +737,7 @@ pub mod source_properties {
             self.network_interfaces = Some(v);
             self
         }
+        /// <p>Source server network interfaces.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -688,12 +745,18 @@ pub mod source_properties {
             self.network_interfaces = input;
             self
         }
+        /// Appends an item to `disks`.
+        ///
+        /// To override the contents of this collection use [`set_disks`](Self::set_disks).
+        ///
+        /// <p>Source Server disks.</p>
         pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
             let mut v = self.disks.unwrap_or_default();
             v.push(input.into());
             self.disks = Some(v);
             self
         }
+        /// <p>Source Server disks.</p>
         pub fn set_disks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Disk>>,
@@ -701,12 +764,18 @@ pub mod source_properties {
             self.disks = input;
             self
         }
+        /// Appends an item to `cpus`.
+        ///
+        /// To override the contents of this collection use [`set_cpus`](Self::set_cpus).
+        ///
+        /// <p>Source Server CPUs.</p>
         pub fn cpus(mut self, input: impl Into<crate::model::Cpu>) -> Self {
             let mut v = self.cpus.unwrap_or_default();
             v.push(input.into());
             self.cpus = Some(v);
             self
         }
+        /// <p>Source Server CPUs.</p>
         pub fn set_cpus(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
@@ -719,6 +788,7 @@ pub mod source_properties {
             self.ram_bytes = Some(input);
             self
         }
+        /// <p>Source server RAM in bytes.</p>
         pub fn set_ram_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.ram_bytes = input;
             self
@@ -728,6 +798,7 @@ pub mod source_properties {
             self.os = Some(input);
             self
         }
+        /// <p>Source server OS.</p>
         pub fn set_os(mut self, input: std::option::Option<crate::model::Os>) -> Self {
             self.os = input;
             self
@@ -782,6 +853,7 @@ pub mod os {
             self.full_string = Some(input.into());
             self
         }
+        /// <p>OS full string.</p>
         pub fn set_full_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.full_string = input;
             self
@@ -833,6 +905,7 @@ pub mod cpu {
             self.cores = Some(input);
             self
         }
+        /// <p>The number of CPU cores on the source server.</p>
         pub fn set_cores(mut self, input: std::option::Option<i64>) -> Self {
             self.cores = input;
             self
@@ -842,6 +915,7 @@ pub mod cpu {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The source server's CPU model name.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -894,6 +968,7 @@ pub mod disk {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The disk or device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -903,6 +978,7 @@ pub mod disk {
             self.bytes = Some(input);
             self
         }
+        /// <p>The amount of storage on the disk in bytes.</p>
         pub fn set_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.bytes = input;
             self
@@ -959,16 +1035,23 @@ pub mod network_interface {
             self.mac_address = Some(input.into());
             self
         }
+        /// <p>Network interface Mac address.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
         }
+        /// Appends an item to `ips`.
+        ///
+        /// To override the contents of this collection use [`set_ips`](Self::set_ips).
+        ///
+        /// <p>Network interface IPs.</p>
         pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ips.unwrap_or_default();
             v.push(input.into());
             self.ips = Some(v);
             self
         }
+        /// <p>Network interface IPs.</p>
         pub fn set_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -981,6 +1064,7 @@ pub mod network_interface {
             self.is_primary = Some(input);
             self
         }
+        /// <p>Network interface primary IP.</p>
         pub fn set_is_primary(mut self, input: std::option::Option<bool>) -> Self {
             self.is_primary = input;
             self
@@ -1042,6 +1126,7 @@ pub mod identification_hints {
             self.fqdn = Some(input.into());
             self
         }
+        /// <p>FQDN address identification hint.</p>
         pub fn set_fqdn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fqdn = input;
             self
@@ -1051,6 +1136,7 @@ pub mod identification_hints {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>Hostname identification hint.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -1060,6 +1146,7 @@ pub mod identification_hints {
             self.vm_ware_uuid = Some(input.into());
             self
         }
+        /// <p>vmWare UUID identification hint.</p>
         pub fn set_vm_ware_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vm_ware_uuid = input;
             self
@@ -1069,6 +1156,7 @@ pub mod identification_hints {
             self.aws_instance_id = Some(input.into());
             self
         }
+        /// <p>AWS Instance ID identification hint.</p>
         pub fn set_aws_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1155,6 +1243,7 @@ pub mod life_cycle {
             self.added_to_service_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle added to service data and time.</p>
         pub fn set_added_to_service_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1167,6 +1256,7 @@ pub mod life_cycle {
             self.first_byte_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle replication initiation date and time.</p>
         pub fn set_first_byte_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1182,6 +1272,7 @@ pub mod life_cycle {
             self.elapsed_replication_duration = Some(input.into());
             self
         }
+        /// <p>Lifecycle elapsed time and duration.</p>
         pub fn set_elapsed_replication_duration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1197,6 +1288,7 @@ pub mod life_cycle {
             self.last_seen_by_service_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle last seen date and time.</p>
         pub fn set_last_seen_by_service_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1209,6 +1301,7 @@ pub mod life_cycle {
             self.last_test = Some(input);
             self
         }
+        /// <p>Lifecycle last Test.</p>
         pub fn set_last_test(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastTest>,
@@ -1221,6 +1314,7 @@ pub mod life_cycle {
             self.last_cutover = Some(input);
             self
         }
+        /// <p>Lifecycle last Cutover.</p>
         pub fn set_last_cutover(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastCutover>,
@@ -1233,6 +1327,7 @@ pub mod life_cycle {
             self.state = Some(input);
             self
         }
+        /// <p>Lifecycle state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::LifeCycleState>,
@@ -1261,6 +1356,7 @@ impl LifeCycle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1272,13 +1368,21 @@ impl LifeCycle {
     std::hash::Hash,
 )]
 pub enum LifeCycleState {
+    #[allow(missing_docs)] // documentation missing in model
     Cutover,
+    #[allow(missing_docs)] // documentation missing in model
     CuttingOver,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
+    #[allow(missing_docs)] // documentation missing in model
     NotReady,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForCutover,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForTest,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Testing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1306,6 +1410,7 @@ impl std::str::FromStr for LifeCycleState {
     }
 }
 impl LifeCycleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LifeCycleState::Cutover => "CUTOVER",
@@ -1319,6 +1424,7 @@ impl LifeCycleState {
             LifeCycleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CUTOVER",
@@ -1374,6 +1480,7 @@ pub mod life_cycle_last_cutover {
             self.initiated = Some(input);
             self
         }
+        /// <p>Lifecycle last Cutover initiated.</p>
         pub fn set_initiated(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastCutoverInitiated>,
@@ -1386,6 +1493,7 @@ pub mod life_cycle_last_cutover {
             self.reverted = Some(input);
             self
         }
+        /// <p>Lifecycle last Cutover reverted.</p>
         pub fn set_reverted(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastCutoverReverted>,
@@ -1398,6 +1506,7 @@ pub mod life_cycle_last_cutover {
             self.finalized = Some(input);
             self
         }
+        /// <p>Lifecycle Cutover finalized date and time.</p>
         pub fn set_finalized(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastCutoverFinalized>,
@@ -1450,6 +1559,7 @@ pub mod life_cycle_last_cutover_finalized {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle Cutover finalized date and time.</p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1500,6 +1610,7 @@ pub mod life_cycle_last_cutover_reverted {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle last Cutover reverted API call date time.</p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1554,6 +1665,7 @@ pub mod life_cycle_last_cutover_initiated {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p/>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1566,6 +1678,7 @@ pub mod life_cycle_last_cutover_initiated {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Lifecycle last Cutover initiated by Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1622,6 +1735,7 @@ pub mod life_cycle_last_test {
             self.initiated = Some(input);
             self
         }
+        /// <p>Lifecycle last Test initiated.</p>
         pub fn set_initiated(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastTestInitiated>,
@@ -1634,6 +1748,7 @@ pub mod life_cycle_last_test {
             self.reverted = Some(input);
             self
         }
+        /// <p>Lifecycle last Test reverted.</p>
         pub fn set_reverted(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastTestReverted>,
@@ -1646,6 +1761,7 @@ pub mod life_cycle_last_test {
             self.finalized = Some(input);
             self
         }
+        /// <p>Lifecycle last Test finlized.</p>
         pub fn set_finalized(
             mut self,
             input: std::option::Option<crate::model::LifeCycleLastTestFinalized>,
@@ -1698,6 +1814,7 @@ pub mod life_cycle_last_test_finalized {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle Test failed API call date and time.</p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1748,6 +1865,7 @@ pub mod life_cycle_last_test_reverted {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle last Test reverted API call date and time.</p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1802,6 +1920,7 @@ pub mod life_cycle_last_test_initiated {
             self.api_call_date_time = Some(input.into());
             self
         }
+        /// <p>Lifecycle last Test initiated API call date and time.</p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1814,6 +1933,7 @@ pub mod life_cycle_last_test_initiated {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Lifecycle last Test initiated Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1888,6 +2008,7 @@ pub mod data_replication_info {
             self.lag_duration = Some(input.into());
             self
         }
+        /// <p>Request to query data replication lag durating.</p>
         pub fn set_lag_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lag_duration = input;
             self
@@ -1897,6 +2018,7 @@ pub mod data_replication_info {
             self.eta_date_time = Some(input.into());
             self
         }
+        /// <p>Request to query the time when data replication will be complete.</p>
         pub fn set_eta_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1904,6 +2026,11 @@ pub mod data_replication_info {
             self.eta_date_time = input;
             self
         }
+        /// Appends an item to `replicated_disks`.
+        ///
+        /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
+        ///
+        /// <p>Request to query disks replicated.</p>
         pub fn replicated_disks(
             mut self,
             input: impl Into<crate::model::DataReplicationInfoReplicatedDisk>,
@@ -1913,6 +2040,7 @@ pub mod data_replication_info {
             self.replicated_disks = Some(v);
             self
         }
+        /// <p>Request to query disks replicated.</p>
         pub fn set_replicated_disks(
             mut self,
             input: std::option::Option<
@@ -1927,6 +2055,7 @@ pub mod data_replication_info {
             self.data_replication_state = Some(input);
             self
         }
+        /// <p>Request to query the data replication state.</p>
         pub fn set_data_replication_state(
             mut self,
             input: std::option::Option<crate::model::DataReplicationState>,
@@ -1942,6 +2071,7 @@ pub mod data_replication_info {
             self.data_replication_initiation = Some(input);
             self
         }
+        /// <p>Request to query whether data replication has been initiated.</p>
         pub fn set_data_replication_initiation(
             mut self,
             input: std::option::Option<crate::model::DataReplicationInitiation>,
@@ -1954,6 +2084,7 @@ pub mod data_replication_info {
             self.data_replication_error = Some(input);
             self
         }
+        /// <p>Error in obtaining data replication info.</p>
         pub fn set_data_replication_error(
             mut self,
             input: std::option::Option<crate::model::DataReplicationError>,
@@ -2013,6 +2144,7 @@ pub mod data_replication_error {
             self.error = Some(input);
             self
         }
+        /// <p>Error in data replication.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::DataReplicationErrorString>,
@@ -2025,6 +2157,7 @@ pub mod data_replication_error {
             self.raw_error = Some(input.into());
             self
         }
+        /// <p>Error in data replication.</p>
         pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_error = input;
             self
@@ -2045,6 +2178,7 @@ impl DataReplicationError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2056,19 +2190,33 @@ impl DataReplicationError {
     std::hash::Hash,
 )]
 pub enum DataReplicationErrorString {
+    #[allow(missing_docs)] // documentation missing in model
     AgentNotSeen,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToAttachStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToAuthenticateWithService,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToBootReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToConnectAgentToReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToCreateSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToCreateStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToDownloadReplicationSoftware,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToLaunchReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToPairReplicationServerWithAgent,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToStartDataTransfer,
+    #[allow(missing_docs)] // documentation missing in model
     NotConverging,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotsFailure,
+    #[allow(missing_docs)] // documentation missing in model
     UnstableNetwork,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2122,6 +2270,7 @@ impl std::str::FromStr for DataReplicationErrorString {
     }
 }
 impl DataReplicationErrorString {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationErrorString::AgentNotSeen => "AGENT_NOT_SEEN",
@@ -2161,6 +2310,7 @@ impl DataReplicationErrorString {
             DataReplicationErrorString::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
@@ -2223,6 +2373,7 @@ pub mod data_replication_initiation {
             self.start_date_time = Some(input.into());
             self
         }
+        /// <p>Request to query data initiation start date and time.</p>
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2235,6 +2386,7 @@ pub mod data_replication_initiation {
             self.next_attempt_date_time = Some(input.into());
             self
         }
+        /// <p>Request to query next data initiation date and time.</p>
         pub fn set_next_attempt_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2242,6 +2394,11 @@ pub mod data_replication_initiation {
             self.next_attempt_date_time = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>Request to query data initiation steps.</p>
         pub fn steps(
             mut self,
             input: impl Into<crate::model::DataReplicationInitiationStep>,
@@ -2251,6 +2408,7 @@ pub mod data_replication_initiation {
             self.steps = Some(v);
             self
         }
+        /// <p>Request to query data initiation steps.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
@@ -2307,6 +2465,7 @@ pub mod data_replication_initiation_step {
             self.name = Some(input);
             self
         }
+        /// <p>Request to query data initiation step name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::DataReplicationInitiationStepName>,
@@ -2319,6 +2478,7 @@ pub mod data_replication_initiation_step {
             self.status = Some(input);
             self
         }
+        /// <p>Request to query data initiation status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataReplicationInitiationStepStatus>,
@@ -2342,6 +2502,7 @@ impl DataReplicationInitiationStep {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2353,10 +2514,15 @@ impl DataReplicationInitiationStep {
     std::hash::Hash,
 )]
 pub enum DataReplicationInitiationStepStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2381,6 +2547,7 @@ impl std::str::FromStr for DataReplicationInitiationStepStatus {
     }
 }
 impl DataReplicationInitiationStepStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationInitiationStepStatus::Failed => "FAILED",
@@ -2391,6 +2558,7 @@ impl DataReplicationInitiationStepStatus {
             DataReplicationInitiationStepStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -2407,6 +2575,7 @@ impl AsRef<str> for DataReplicationInitiationStepStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2418,16 +2587,27 @@ impl AsRef<str> for DataReplicationInitiationStepStatus {
     std::hash::Hash,
 )]
 pub enum DataReplicationInitiationStepName {
+    #[allow(missing_docs)] // documentation missing in model
     AttachStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
     AuthenticateWithService,
+    #[allow(missing_docs)] // documentation missing in model
     BootReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectAgentToReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     CreateStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
     DownloadReplicationSoftware,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     PairReplicationServerWithAgent,
+    #[allow(missing_docs)] // documentation missing in model
     StartDataTransfer,
+    #[allow(missing_docs)] // documentation missing in model
     Wait,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2468,6 +2648,7 @@ impl std::str::FromStr for DataReplicationInitiationStepName {
     }
 }
 impl DataReplicationInitiationStepName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
@@ -2494,6 +2675,7 @@ impl DataReplicationInitiationStepName {
             DataReplicationInitiationStepName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ATTACH_STAGING_DISKS",
@@ -2516,6 +2698,7 @@ impl AsRef<str> for DataReplicationInitiationStepName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2527,15 +2710,25 @@ impl AsRef<str> for DataReplicationInitiationStepName {
     std::hash::Hash,
 )]
 pub enum DataReplicationState {
+    #[allow(missing_docs)] // documentation missing in model
     Backlog,
+    #[allow(missing_docs)] // documentation missing in model
     Continuous,
+    #[allow(missing_docs)] // documentation missing in model
     CreatingSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
+    #[allow(missing_docs)] // documentation missing in model
     InitialSync,
+    #[allow(missing_docs)] // documentation missing in model
     Initiating,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Rescan,
+    #[allow(missing_docs)] // documentation missing in model
     Stalled,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2565,6 +2758,7 @@ impl std::str::FromStr for DataReplicationState {
     }
 }
 impl DataReplicationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationState::Backlog => "BACKLOG",
@@ -2580,6 +2774,7 @@ impl DataReplicationState {
             DataReplicationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
@@ -2645,6 +2840,7 @@ pub mod data_replication_info_replicated_disk {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>Request to query device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -2654,6 +2850,7 @@ pub mod data_replication_info_replicated_disk {
             self.total_storage_bytes = Some(input);
             self
         }
+        /// <p>Request to query total amount of data replicated in bytes.</p>
         pub fn set_total_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.total_storage_bytes = input;
             self
@@ -2663,6 +2860,7 @@ pub mod data_replication_info_replicated_disk {
             self.replicated_storage_bytes = Some(input);
             self
         }
+        /// <p>Request to query amount of data replicated in bytes.</p>
         pub fn set_replicated_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.replicated_storage_bytes = input;
             self
@@ -2672,6 +2870,7 @@ pub mod data_replication_info_replicated_disk {
             self.rescanned_storage_bytes = Some(input);
             self
         }
+        /// <p>Request to query amount of data rescanned in bytes.</p>
         pub fn set_rescanned_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.rescanned_storage_bytes = input;
             self
@@ -2681,6 +2880,7 @@ pub mod data_replication_info_replicated_disk {
             self.backlogged_storage_bytes = Some(input);
             self
         }
+        /// <p>Request to query data replication backlog size in bytes.</p>
         pub fn set_backlogged_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backlogged_storage_bytes = input;
             self
@@ -2740,6 +2940,7 @@ pub mod launched_instance {
             self.ec2_instance_id = Some(input.into());
             self
         }
+        /// <p>Configure launced instance EC2 ID.</p>
         pub fn set_ec2_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2752,6 +2953,7 @@ pub mod launched_instance {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Configure launced instance Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2761,6 +2963,7 @@ pub mod launched_instance {
             self.first_boot = Some(input);
             self
         }
+        /// <p>Configure launced instance first boot.</p>
         pub fn set_first_boot(
             mut self,
             input: std::option::Option<crate::model::FirstBoot>,
@@ -2785,7 +2988,7 @@ impl LaunchedInstance {
     }
 }
 
-/// **NOTE:** `FirstBoot::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `FirstBoot::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2797,10 +3000,13 @@ impl LaunchedInstance {
     std::hash::Hash,
 )]
 pub enum FirstBoot {
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2824,6 +3030,7 @@ impl std::str::FromStr for FirstBoot {
     }
 }
 impl FirstBoot {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FirstBoot::Stopped => "STOPPED",
@@ -2833,6 +3040,7 @@ impl FirstBoot {
             FirstBoot::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STOPPED", "SUCCEEDED", "UNKNOWN", "WAITING"]
     }
@@ -2876,6 +3084,7 @@ pub mod change_server_life_cycle_state_source_server_lifecycle {
             self.state = Some(input);
             self
         }
+        /// <p>The request to change the source server migration lifecycle state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<
@@ -2899,6 +3108,7 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2910,8 +3120,11 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
     std::hash::Hash,
 )]
 pub enum ChangeServerLifeCycleStateSourceServerLifecycleState {
+    #[allow(missing_docs)] // documentation missing in model
     Cutover,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForCutover,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForTest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2940,6 +3153,7 @@ impl std::str::FromStr for ChangeServerLifeCycleStateSourceServerLifecycleState 
     }
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover => "CUTOVER",
@@ -2950,6 +3164,7 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleState {
             ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUTOVER", "READY_FOR_CUTOVER", "READY_FOR_TEST"]
     }
@@ -3025,6 +3240,7 @@ pub mod job {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3034,6 +3250,7 @@ pub mod job {
             self.arn = Some(input.into());
             self
         }
+        /// <p>the ARN of the specific Job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3043,6 +3260,7 @@ pub mod job {
             self.r#type = Some(input);
             self
         }
+        /// <p>Job type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.r#type = input;
             self
@@ -3052,6 +3270,7 @@ pub mod job {
             self.initiated_by = Some(input);
             self
         }
+        /// <p>Job initiated by field.</p>
         pub fn set_initiated_by(
             mut self,
             input: std::option::Option<crate::model::InitiatedBy>,
@@ -3064,6 +3283,7 @@ pub mod job {
             self.creation_date_time = Some(input.into());
             self
         }
+        /// <p>Job creation time.</p>
         pub fn set_creation_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3076,6 +3296,7 @@ pub mod job {
             self.end_date_time = Some(input.into());
             self
         }
+        /// <p>Job end time.</p>
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3088,10 +3309,16 @@ pub mod job {
             self.status = Some(input);
             self
         }
+        /// <p>Job status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `participating_servers`.
+        ///
+        /// To override the contents of this collection use [`set_participating_servers`](Self::set_participating_servers).
+        ///
+        /// <p>Servers participating in a specific Job.</p>
         pub fn participating_servers(
             mut self,
             input: impl Into<crate::model::ParticipatingServer>,
@@ -3101,6 +3328,7 @@ pub mod job {
             self.participating_servers = Some(v);
             self
         }
+        /// <p>Servers participating in a specific Job.</p>
         pub fn set_participating_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
@@ -3108,6 +3336,11 @@ pub mod job {
             self.participating_servers = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags associated with spcific Job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3118,6 +3351,7 @@ pub mod job {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags associated with spcific Job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3182,6 +3416,7 @@ pub mod participating_server {
             self.source_server_id = Some(input.into());
             self
         }
+        /// <p>Participating server Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3194,6 +3429,7 @@ pub mod participating_server {
             self.launch_status = Some(input);
             self
         }
+        /// <p>Participating server launch status.</p>
         pub fn set_launch_status(
             mut self,
             input: std::option::Option<crate::model::LaunchStatus>,
@@ -3217,6 +3453,7 @@ impl ParticipatingServer {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3228,10 +3465,15 @@ impl ParticipatingServer {
     std::hash::Hash,
 )]
 pub enum LaunchStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Launched,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3256,6 +3498,7 @@ impl std::str::FromStr for LaunchStatus {
     }
 }
 impl LaunchStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchStatus::Failed => "FAILED",
@@ -3266,6 +3509,7 @@ impl LaunchStatus {
             LaunchStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"]
     }
@@ -3276,6 +3520,7 @@ impl AsRef<str> for LaunchStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3287,8 +3532,11 @@ impl AsRef<str> for LaunchStatus {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Started,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3311,6 +3559,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Completed => "COMPLETED",
@@ -3319,6 +3568,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "PENDING", "STARTED"]
     }
@@ -3329,6 +3579,7 @@ impl AsRef<str> for JobStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3340,9 +3591,13 @@ impl AsRef<str> for JobStatus {
     std::hash::Hash,
 )]
 pub enum InitiatedBy {
+    #[allow(missing_docs)] // documentation missing in model
     Diagnostic,
+    #[allow(missing_docs)] // documentation missing in model
     StartCutover,
+    #[allow(missing_docs)] // documentation missing in model
     StartTest,
+    #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3366,6 +3621,7 @@ impl std::str::FromStr for InitiatedBy {
     }
 }
 impl InitiatedBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InitiatedBy::Diagnostic => "DIAGNOSTIC",
@@ -3375,6 +3631,7 @@ impl InitiatedBy {
             InitiatedBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DIAGNOSTIC", "START_CUTOVER", "START_TEST", "TERMINATE"]
     }
@@ -3385,6 +3642,7 @@ impl AsRef<str> for InitiatedBy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3396,7 +3654,9 @@ impl AsRef<str> for InitiatedBy {
     std::hash::Hash,
 )]
 pub enum JobType {
+    #[allow(missing_docs)] // documentation missing in model
     Launch,
+    #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3418,6 +3678,7 @@ impl std::str::FromStr for JobType {
     }
 }
 impl JobType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobType::Launch => "LAUNCH",
@@ -3425,6 +3686,7 @@ impl JobType {
             JobType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LAUNCH", "TERMINATE"]
     }
@@ -3435,6 +3697,7 @@ impl AsRef<str> for JobType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceServer {
@@ -3493,6 +3756,7 @@ pub mod source_server {
             self.source_server_id = Some(input.into());
             self
         }
+        /// <p>Source server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3505,6 +3769,7 @@ pub mod source_server {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3514,10 +3779,16 @@ pub mod source_server {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Source server Tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3528,6 +3799,7 @@ pub mod source_server {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Source server Tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3542,6 +3814,7 @@ pub mod source_server {
             self.launched_instance = Some(input);
             self
         }
+        /// <p>Source server launched instance.</p>
         pub fn set_launched_instance(
             mut self,
             input: std::option::Option<crate::model::LaunchedInstance>,
@@ -3554,6 +3827,7 @@ pub mod source_server {
             self.data_replication_info = Some(input);
             self
         }
+        /// <p>Source server data replication info.</p>
         pub fn set_data_replication_info(
             mut self,
             input: std::option::Option<crate::model::DataReplicationInfo>,
@@ -3566,6 +3840,7 @@ pub mod source_server {
             self.life_cycle = Some(input);
             self
         }
+        /// <p>Source server lifecycle state.</p>
         pub fn set_life_cycle(
             mut self,
             input: std::option::Option<crate::model::LifeCycle>,
@@ -3578,6 +3853,7 @@ pub mod source_server {
             self.source_properties = Some(input);
             self
         }
+        /// <p>Source server properties.</p>
         pub fn set_source_properties(
             mut self,
             input: std::option::Option<crate::model::SourceProperties>,
@@ -3634,12 +3910,18 @@ pub mod describe_source_servers_request_filters {
         pub(crate) is_archived: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `source_server_i_ds`.
+        ///
+        /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+        ///
+        /// <p>Request to filter Source Servers list by Source Server ID.</p>
         pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_server_i_ds.unwrap_or_default();
             v.push(input.into());
             self.source_server_i_ds = Some(v);
             self
         }
+        /// <p>Request to filter Source Servers list by Source Server ID.</p>
         pub fn set_source_server_i_ds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3652,6 +3934,7 @@ pub mod describe_source_servers_request_filters {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Request to filter Source Servers list by archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -3672,6 +3955,7 @@ impl DescribeSourceServersRequestFilters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationTemplate {
@@ -3789,6 +4073,7 @@ pub mod replication_configuration_template {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
+        /// <p>Replication Configuration template template ID.</p>
         pub fn set_replication_configuration_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3801,6 +4086,7 @@ pub mod replication_configuration_template {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Replication Configuration template ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3810,6 +4096,7 @@ pub mod replication_configuration_template {
             self.staging_area_subnet_id = Some(input.into());
             self
         }
+        /// <p>Replication Configuration template Staging Area subnet ID.</p>
         pub fn set_staging_area_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3822,6 +4109,7 @@ pub mod replication_configuration_template {
             self.associate_default_security_group = Some(input);
             self
         }
+        /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
         pub fn set_associate_default_security_group(
             mut self,
             input: std::option::Option<bool>,
@@ -3829,6 +4117,11 @@ pub mod replication_configuration_template {
             self.associate_default_security_group = input;
             self
         }
+        /// Appends an item to `replication_servers_security_groups_i_ds`.
+        ///
+        /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
+        ///
+        /// <p>Replication Configuration template server Security Groups IDs.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
             input: impl Into<std::string::String>,
@@ -3840,6 +4133,7 @@ pub mod replication_configuration_template {
             self.replication_servers_security_groups_i_ds = Some(v);
             self
         }
+        /// <p>Replication Configuration template server Security Groups IDs.</p>
         pub fn set_replication_servers_security_groups_i_ds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3855,6 +4149,7 @@ pub mod replication_configuration_template {
             self.replication_server_instance_type = Some(input.into());
             self
         }
+        /// <p>Replication Configuration template server instance type.</p>
         pub fn set_replication_server_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3867,6 +4162,7 @@ pub mod replication_configuration_template {
             self.use_dedicated_replication_server = Some(input);
             self
         }
+        /// <p>Replication Configuration template use Dedicated Replication Server.</p>
         pub fn set_use_dedicated_replication_server(
             mut self,
             input: std::option::Option<bool>,
@@ -3882,6 +4178,7 @@ pub mod replication_configuration_template {
             self.default_large_staging_disk_type = Some(input);
             self
         }
+        /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
         pub fn set_default_large_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -3899,6 +4196,7 @@ pub mod replication_configuration_template {
             self.ebs_encryption = Some(input);
             self
         }
+        /// <p>Replication Configuration template EBS encryption.</p>
         pub fn set_ebs_encryption(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -3911,6 +4209,7 @@ pub mod replication_configuration_template {
             self.ebs_encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>Replication Configuration template EBS encryption key ARN.</p>
         pub fn set_ebs_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3923,6 +4222,7 @@ pub mod replication_configuration_template {
             self.bandwidth_throttling = Some(input);
             self
         }
+        /// <p>Replication Configuration template bandwidth throtting.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
             self.bandwidth_throttling = input;
             self
@@ -3935,6 +4235,7 @@ pub mod replication_configuration_template {
             self.data_plane_routing = Some(input);
             self
         }
+        /// <p>Replication Configuration template data plane routing.</p>
         pub fn set_data_plane_routing(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
@@ -3947,10 +4248,16 @@ pub mod replication_configuration_template {
             self.create_public_ip = Some(input);
             self
         }
+        /// <p>Replication Configuration template create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.create_public_ip = input;
             self
         }
+        /// Adds a key-value pair to `staging_area_tags`.
+        ///
+        /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
+        ///
+        /// <p>Replication Configuration template Staging Area Tags.</p>
         pub fn staging_area_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3961,6 +4268,7 @@ pub mod replication_configuration_template {
             self.staging_area_tags = Some(hash_map);
             self
         }
+        /// <p>Replication Configuration template Staging Area Tags.</p>
         pub fn set_staging_area_tags(
             mut self,
             input: std::option::Option<
@@ -3970,6 +4278,11 @@ pub mod replication_configuration_template {
             self.staging_area_tags = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Replication Configuration template Tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3980,6 +4293,7 @@ pub mod replication_configuration_template {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Replication Configuration template Tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4055,6 +4369,7 @@ pub mod job_log {
             self.log_date_time = Some(input.into());
             self
         }
+        /// <p>Job log event date and time.</p>
         pub fn set_log_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4067,6 +4382,7 @@ pub mod job_log {
             self.event = Some(input);
             self
         }
+        /// <p>Job log event.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::JobLogEvent>) -> Self {
             self.event = input;
             self
@@ -4076,6 +4392,7 @@ pub mod job_log {
             self.event_data = Some(input);
             self
         }
+        /// <p>Job event data</p>
         pub fn set_event_data(
             mut self,
             input: std::option::Option<crate::model::JobLogEventData>,
@@ -4140,6 +4457,7 @@ pub mod job_log_event_data {
             self.source_server_id = Some(input.into());
             self
         }
+        /// <p>Job Event Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4152,6 +4470,7 @@ pub mod job_log_event_data {
             self.conversion_server_id = Some(input.into());
             self
         }
+        /// <p>Job Event conversion Server ID.</p>
         pub fn set_conversion_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4164,6 +4483,7 @@ pub mod job_log_event_data {
             self.target_instance_id = Some(input.into());
             self
         }
+        /// <p>Job Event Target instance ID.</p>
         pub fn set_target_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4176,6 +4496,7 @@ pub mod job_log_event_data {
             self.raw_error = Some(input.into());
             self
         }
+        /// <p>Job error.</p>
         pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_error = input;
             self
@@ -4198,6 +4519,7 @@ impl JobLogEventData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4209,21 +4531,37 @@ impl JobLogEventData {
     std::hash::Hash,
 )]
 pub enum JobLogEvent {
+    #[allow(missing_docs)] // documentation missing in model
     CleanupEnd,
+    #[allow(missing_docs)] // documentation missing in model
     CleanupFail,
+    #[allow(missing_docs)] // documentation missing in model
     CleanupStart,
+    #[allow(missing_docs)] // documentation missing in model
     ConversionEnd,
+    #[allow(missing_docs)] // documentation missing in model
     ConversionFail,
+    #[allow(missing_docs)] // documentation missing in model
     ConversionStart,
+    #[allow(missing_docs)] // documentation missing in model
     JobCancel,
+    #[allow(missing_docs)] // documentation missing in model
     JobEnd,
+    #[allow(missing_docs)] // documentation missing in model
     JobStart,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchStart,
+    #[allow(missing_docs)] // documentation missing in model
     ServerSkipped,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotEnd,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotFail,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotStart,
+    #[allow(missing_docs)] // documentation missing in model
     UsingPreviousSnapshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4259,6 +4597,7 @@ impl std::str::FromStr for JobLogEvent {
     }
 }
 impl JobLogEvent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobLogEvent::CleanupEnd => "CLEANUP_END",
@@ -4280,6 +4619,7 @@ impl JobLogEvent {
             JobLogEvent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLEANUP_END",
@@ -4338,12 +4678,18 @@ pub mod describe_jobs_request_filters {
         pub(crate) to_date: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `job_i_ds`.
+        ///
+        /// To override the contents of this collection use [`set_job_i_ds`](Self::set_job_i_ds).
+        ///
+        /// <p>Request to describe Job log filters by job ID.</p>
         pub fn job_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_i_ds.unwrap_or_default();
             v.push(input.into());
             self.job_i_ds = Some(v);
             self
         }
+        /// <p>Request to describe Job log filters by job ID.</p>
         pub fn set_job_i_ds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4356,6 +4702,7 @@ pub mod describe_jobs_request_filters {
             self.from_date = Some(input.into());
             self
         }
+        /// <p>Request to describe Job log filters by date.</p>
         pub fn set_from_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_date = input;
             self
@@ -4365,6 +4712,7 @@ pub mod describe_jobs_request_filters {
             self.to_date = Some(input.into());
             self
         }
+        /// <p>Request to describe Job log by last date.</p>
         pub fn set_to_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.to_date = input;
             self

@@ -12,12 +12,28 @@ pub mod describe_recommendation_export_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `job_ids`.
+        ///
+        /// To override the contents of this collection use [`set_job_ids`](Self::set_job_ids).
+        ///
+        /// <p>The identification numbers of the export jobs to return.</p>
+        ///
+        /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
+        ///
+        /// <p>All export jobs created in the last seven days are returned if this parameter is
+        /// omitted.</p>
         pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_ids.unwrap_or_default();
             v.push(input.into());
             self.job_ids = Some(v);
             self
         }
+        /// <p>The identification numbers of the export jobs to return.</p>
+        ///
+        /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
+        ///
+        /// <p>All export jobs created in the last seven days are returned if this parameter is
+        /// omitted.</p>
         pub fn set_job_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25,12 +41,20 @@ pub mod describe_recommendation_export_jobs_input {
             self.job_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of export
+        /// jobs.</p>
         pub fn filters(mut self, input: impl Into<crate::model::JobFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of export
+        /// jobs.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobFilter>>,
@@ -43,17 +67,23 @@ pub mod describe_recommendation_export_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of export jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of export jobs to return with a single request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of export jobs to return with a single request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -63,7 +93,7 @@ pub mod describe_recommendation_export_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRecommendationExportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRecommendationExportJobsInput {
                 job_ids: self.job_ids,
@@ -86,16 +116,16 @@ impl DescribeRecommendationExportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecommendationExportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRecommendationExportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -103,7 +133,7 @@ impl DescribeRecommendationExportJobsInput {
         fn update_http_builder(
             input: &crate::input::DescribeRecommendationExportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -112,30 +142,30 @@ impl DescribeRecommendationExportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRecommendationExportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.DescribeRecommendationExportJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_recommendation_export_jobs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_recommendation_export_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -158,15 +188,15 @@ impl DescribeRecommendationExportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRecommendationExportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRecommendationExportJobs",
             "computeoptimizer",
         ));
@@ -175,10 +205,10 @@ impl DescribeRecommendationExportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -209,12 +239,42 @@ pub mod export_auto_scaling_group_recommendations_input {
             std::option::Option<crate::model::RecommendationPreferences>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -222,12 +282,18 @@ pub mod export_auto_scaling_group_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -235,6 +301,13 @@ pub mod export_auto_scaling_group_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `fields_to_export`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
             input: impl Into<crate::model::ExportableAutoScalingGroupField>,
@@ -244,6 +317,9 @@ pub mod export_auto_scaling_group_recommendations_input {
             self.fields_to_export = Some(v);
             self
         }
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn set_fields_to_export(
             mut self,
             input: std::option::Option<
@@ -255,6 +331,7 @@ pub mod export_auto_scaling_group_recommendations_input {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
+        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
@@ -266,6 +343,16 @@ pub mod export_auto_scaling_group_recommendations_input {
             self.s3_destination_config = Some(input);
             self
         }
+        /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
+        /// name and key prefix for the export job.</p>
+        ///
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations
+        /// export before you create the export job. Compute Optimizer does not create the S3 bucket
+        /// for you. After you create the S3 bucket, ensure that it has the required permissions
+        /// policy  to allow Compute Optimizer to write the export file to it. If you plan to
+        /// specify an object prefix when you create the export job, you must include the object
+        /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfig>,
@@ -274,11 +361,15 @@ pub mod export_auto_scaling_group_recommendations_input {
             self
         }
         /// <p>The format of the export file.</p>
+        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
+        /// <p>The format of the export file.</p>
+        ///
+        /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FileFormat>,
@@ -288,20 +379,40 @@ pub mod export_auto_scaling_group_recommendations_input {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
+        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
+        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
+        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, input: bool) -> Self {
             self.include_member_accounts = Some(input);
             self
         }
+        /// <p>Indicates whether to include recommendations for resources in all member accounts of
+        /// the organization if your account is the management account of an organization.</p>
+        ///
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
+        /// Compute Optimizer must be enabled in the organization account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
+        /// <p>Recommendations for member accounts of the organization are not included in the export
+        /// file if this parameter is omitted.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the account IDs parameter. The
+        /// parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_member_accounts = input;
             self
@@ -315,6 +426,8 @@ pub mod export_auto_scaling_group_recommendations_input {
             self.recommendation_preferences = Some(input);
             self
         }
+        /// <p>An object to specify the preferences for the Auto Scaling group recommendations
+        /// to export.</p>
         pub fn set_recommendation_preferences(
             mut self,
             input: std::option::Option<crate::model::RecommendationPreferences>,
@@ -327,7 +440,7 @@ pub mod export_auto_scaling_group_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportAutoScalingGroupRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportAutoScalingGroupRecommendationsInput {
                 account_ids: self.account_ids,
@@ -354,16 +467,16 @@ impl ExportAutoScalingGroupRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportAutoScalingGroupRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -371,7 +484,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -380,30 +493,30 @@ impl ExportAutoScalingGroupRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.ExportAutoScalingGroupRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_auto_scaling_group_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_export_auto_scaling_group_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -426,15 +539,15 @@ impl ExportAutoScalingGroupRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportAutoScalingGroupRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
@@ -443,10 +556,10 @@ impl ExportAutoScalingGroupRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -475,12 +588,42 @@ pub mod export_ebs_volume_recommendations_input {
         pub(crate) include_member_accounts: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
+        /// volume recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
+        /// volume recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -488,12 +631,18 @@ pub mod export_ebs_volume_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::EbsFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
@@ -501,6 +650,13 @@ pub mod export_ebs_volume_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `fields_to_export`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
             input: impl Into<crate::model::ExportableVolumeField>,
@@ -510,6 +666,9 @@ pub mod export_ebs_volume_recommendations_input {
             self.fields_to_export = Some(v);
             self
         }
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn set_fields_to_export(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportableVolumeField>>,
@@ -519,6 +678,7 @@ pub mod export_ebs_volume_recommendations_input {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
+        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -530,6 +690,16 @@ pub mod export_ebs_volume_recommendations_input {
             self.s3_destination_config = Some(input);
             self
         }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+        /// key prefix for a recommendations export job.</p>
+        ///
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations
+        /// export before you create the export job. Compute Optimizer does not create the S3 bucket
+        /// for you. After you create the S3 bucket, ensure that it has the required permission
+        /// policy to allow Compute Optimizer to write the export file to it. If you plan to specify
+        /// an object prefix when you create the export job, you must include the object prefix in
+        /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfig>,
@@ -538,11 +708,15 @@ pub mod export_ebs_volume_recommendations_input {
             self
         }
         /// <p>The format of the export file.</p>
+        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
+        /// <p>The format of the export file.</p>
+        ///
+        /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FileFormat>,
@@ -552,20 +726,40 @@ pub mod export_ebs_volume_recommendations_input {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
+        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
+        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
+        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, input: bool) -> Self {
             self.include_member_accounts = Some(input);
             self
         }
+        /// <p>Indicates whether to include recommendations for resources in all member accounts of
+        /// the organization if your account is the management account of an organization.</p>
+        ///
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
+        /// Compute Optimizer must be enabled in the organization account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
+        /// <p>Recommendations for member accounts of the organization are not included in the export
+        /// file if this parameter is omitted.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the account IDs parameter. The
+        /// parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_member_accounts = input;
             self
@@ -575,7 +769,7 @@ pub mod export_ebs_volume_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportEbsVolumeRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportEbsVolumeRecommendationsInput {
                 account_ids: self.account_ids,
@@ -600,16 +794,16 @@ impl ExportEbsVolumeRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportEBSVolumeRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportEbsVolumeRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -617,7 +811,7 @@ impl ExportEbsVolumeRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::ExportEbsVolumeRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -626,30 +820,30 @@ impl ExportEbsVolumeRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportEbsVolumeRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.ExportEBSVolumeRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_ebs_volume_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_export_ebs_volume_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -672,15 +866,15 @@ impl ExportEbsVolumeRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportEBSVolumeRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportEBSVolumeRecommendations",
             "computeoptimizer",
         ));
@@ -689,10 +883,10 @@ impl ExportEbsVolumeRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -723,12 +917,42 @@ pub mod export_ec2_instance_recommendations_input {
             std::option::Option<crate::model::RecommendationPreferences>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts for which to export instance
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts for which to export instance
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -736,12 +960,20 @@ pub mod export_ec2_instance_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that exports a more specific set of instance
+        /// recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that exports a more specific set of instance
+        /// recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -749,6 +981,13 @@ pub mod export_ec2_instance_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `fields_to_export`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
             input: impl Into<crate::model::ExportableInstanceField>,
@@ -758,6 +997,9 @@ pub mod export_ec2_instance_recommendations_input {
             self.fields_to_export = Some(v);
             self
         }
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn set_fields_to_export(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportableInstanceField>>,
@@ -767,6 +1009,7 @@ pub mod export_ec2_instance_recommendations_input {
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
         /// name and key prefix for the export job.</p>
+        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permissions
@@ -778,6 +1021,16 @@ pub mod export_ec2_instance_recommendations_input {
             self.s3_destination_config = Some(input);
             self
         }
+        /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
+        /// name and key prefix for the export job.</p>
+        ///
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations
+        /// export before you create the export job. Compute Optimizer does not create the S3 bucket
+        /// for you. After you create the S3 bucket, ensure that it has the required permissions
+        /// policy policy to allow Compute Optimizer to write the export file to it. If you plan to
+        /// specify an object prefix when you create the export job, you must include the object
+        /// prefix in the  that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfig>,
@@ -786,11 +1039,15 @@ pub mod export_ec2_instance_recommendations_input {
             self
         }
         /// <p>The format of the export file.</p>
+        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
+        /// <p>The format of the export file.</p>
+        ///
+        /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FileFormat>,
@@ -800,18 +1057,34 @@ pub mod export_ec2_instance_recommendations_input {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
+        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
+        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, input: bool) -> Self {
             self.include_member_accounts = Some(input);
             self
         }
+        /// <p>Indicates whether to include recommendations for resources in all member accounts of
+        /// the organization if your account is the management account of an organization.</p>
+        ///
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
+        /// Compute Optimizer must be enabled in the organization account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
+        /// <p>Recommendations for member accounts of the organization are not included in the export
+        /// file if this parameter is omitted.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_member_accounts = input;
             self
@@ -825,6 +1098,8 @@ pub mod export_ec2_instance_recommendations_input {
             self.recommendation_preferences = Some(input);
             self
         }
+        /// <p>An object to specify the preferences for the Amazon EC2 instance
+        /// recommendations to export.</p>
         pub fn set_recommendation_preferences(
             mut self,
             input: std::option::Option<crate::model::RecommendationPreferences>,
@@ -837,7 +1112,7 @@ pub mod export_ec2_instance_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportEc2InstanceRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportEc2InstanceRecommendationsInput {
                 account_ids: self.account_ids,
@@ -863,16 +1138,16 @@ impl ExportEc2InstanceRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportEC2InstanceRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportEc2InstanceRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -880,7 +1155,7 @@ impl ExportEc2InstanceRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::ExportEc2InstanceRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -889,30 +1164,30 @@ impl ExportEc2InstanceRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportEc2InstanceRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.ExportEC2InstanceRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_ec2_instance_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_export_ec2_instance_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -935,15 +1210,15 @@ impl ExportEc2InstanceRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportEC2InstanceRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportEC2InstanceRecommendations",
             "computeoptimizer",
         ));
@@ -952,10 +1227,10 @@ impl ExportEc2InstanceRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -985,12 +1260,42 @@ pub mod export_lambda_function_recommendations_input {
         pub(crate) include_member_accounts: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
+        /// function recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
+        /// function recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to export recommendations.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the include member accounts
+        /// parameter. The parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the include member accounts parameter, is omitted.</p>
+        ///
+        /// <p>You can specify multiple account IDs per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -998,6 +1303,11 @@ pub mod export_lambda_function_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
@@ -1007,6 +1317,7 @@ pub mod export_lambda_function_recommendations_input {
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -1016,6 +1327,13 @@ pub mod export_lambda_function_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `fields_to_export`.
+        ///
+        /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).
+        ///
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
             input: impl Into<crate::model::ExportableLambdaFunctionField>,
@@ -1025,6 +1343,9 @@ pub mod export_lambda_function_recommendations_input {
             self.fields_to_export = Some(v);
             self
         }
+        /// <p>The recommendations data to include in the export file. For more information about the
+        /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
+        /// Guide</i>.</p>
         pub fn set_fields_to_export(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportableLambdaFunctionField>>,
@@ -1034,6 +1355,7 @@ pub mod export_lambda_function_recommendations_input {
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
         /// key prefix for a recommendations export job.</p>
+        ///
         /// <p>You must create the destination Amazon S3 bucket for your recommendations
         /// export before you create the export job. Compute Optimizer does not create the S3 bucket
         /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -1045,6 +1367,16 @@ pub mod export_lambda_function_recommendations_input {
             self.s3_destination_config = Some(input);
             self
         }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+        /// key prefix for a recommendations export job.</p>
+        ///
+        /// <p>You must create the destination Amazon S3 bucket for your recommendations
+        /// export before you create the export job. Compute Optimizer does not create the S3 bucket
+        /// for you. After you create the S3 bucket, ensure that it has the required permission
+        /// policy to allow Compute Optimizer to write the export file to it. If you plan to specify
+        /// an object prefix when you create the export job, you must include the object prefix in
+        /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_s3_destination_config(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfig>,
@@ -1053,11 +1385,15 @@ pub mod export_lambda_function_recommendations_input {
             self
         }
         /// <p>The format of the export file.</p>
+        ///
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
+        /// <p>The format of the export file.</p>
+        ///
+        /// <p>The only export file format currently supported is <code>Csv</code>.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FileFormat>,
@@ -1067,20 +1403,40 @@ pub mod export_lambda_function_recommendations_input {
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
         /// the organization if your account is the management account of an organization.</p>
+        ///
         /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
         /// Compute Optimizer must be enabled in the organization account. For more information,
         /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
         /// <p>Recommendations for member accounts of the organization are not included in the export
         /// file if this parameter is omitted.</p>
+        ///
         /// <p>This parameter cannot be specified together with the account IDs parameter. The
         /// parameters are mutually exclusive.</p>
+        ///
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
         pub fn include_member_accounts(mut self, input: bool) -> Self {
             self.include_member_accounts = Some(input);
             self
         }
+        /// <p>Indicates whether to include recommendations for resources in all member accounts of
+        /// the organization if your account is the management account of an organization.</p>
+        ///
+        /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
+        /// Compute Optimizer must be enabled in the organization account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
+        /// <i>Compute Optimizer User Guide</i>.</p>
+        ///
+        /// <p>Recommendations for member accounts of the organization are not included in the export
+        /// file if this parameter is omitted.</p>
+        ///
+        /// <p>This parameter cannot be specified together with the account IDs parameter. The
+        /// parameters are mutually exclusive.</p>
+        ///
+        /// <p>Recommendations for member accounts are not included in the export if this parameter,
+        /// or the account IDs parameter, is omitted.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_member_accounts = input;
             self
@@ -1090,7 +1446,7 @@ pub mod export_lambda_function_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportLambdaFunctionRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportLambdaFunctionRecommendationsInput {
                 account_ids: self.account_ids,
@@ -1116,16 +1472,16 @@ impl ExportLambdaFunctionRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportLambdaFunctionRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportLambdaFunctionRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1133,7 +1489,7 @@ impl ExportLambdaFunctionRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::ExportLambdaFunctionRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1142,30 +1498,30 @@ impl ExportLambdaFunctionRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportLambdaFunctionRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.ExportLambdaFunctionRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_lambda_function_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_export_lambda_function_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1188,15 +1544,15 @@ impl ExportLambdaFunctionRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportLambdaFunctionRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
@@ -1205,10 +1561,10 @@ impl ExportLambdaFunctionRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1237,12 +1593,32 @@ pub mod get_auto_scaling_group_recommendations_input {
             std::option::Option<crate::model::RecommendationPreferences>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return Auto Scaling group
+        /// recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1250,12 +1626,20 @@ pub mod get_auto_scaling_group_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `auto_scaling_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
+        ///
+        /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
+        /// recommendations.</p>
         pub fn auto_scaling_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_group_arns.unwrap_or_default();
             v.push(input.into());
             self.auto_scaling_group_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
+        /// recommendations.</p>
         pub fn set_auto_scaling_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1269,28 +1653,42 @@ pub mod get_auto_scaling_group_recommendations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of Auto Scaling group
+        /// recommendations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of Auto Scaling group recommendations to return with a single
         /// request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of Auto Scaling group recommendations to return with a single
+        /// request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1307,6 +1705,8 @@ pub mod get_auto_scaling_group_recommendations_input {
             self.recommendation_preferences = Some(input);
             self
         }
+        /// <p>An object to specify the preferences for the Auto Scaling group recommendations
+        /// to return in the response.</p>
         pub fn set_recommendation_preferences(
             mut self,
             input: std::option::Option<crate::model::RecommendationPreferences>,
@@ -1319,7 +1719,7 @@ pub mod get_auto_scaling_group_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAutoScalingGroupRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAutoScalingGroupRecommendationsInput {
                 account_ids: self.account_ids,
@@ -1344,16 +1744,16 @@ impl GetAutoScalingGroupRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAutoScalingGroupRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAutoScalingGroupRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1361,7 +1761,7 @@ impl GetAutoScalingGroupRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::GetAutoScalingGroupRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1370,30 +1770,30 @@ impl GetAutoScalingGroupRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAutoScalingGroupRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetAutoScalingGroupRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_auto_scaling_group_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_auto_scaling_group_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1416,15 +1816,15 @@ impl GetAutoScalingGroupRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAutoScalingGroupRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAutoScalingGroupRecommendations",
             "computeoptimizer",
         ));
@@ -1433,10 +1833,10 @@ impl GetAutoScalingGroupRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1463,12 +1863,20 @@ pub mod get_ebs_volume_recommendations_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `volume_arns`.
+        ///
+        /// To override the contents of this collection use [`set_volume_arns`](Self::set_volume_arns).
+        ///
+        /// <p>The Amazon Resource Name (ARN) of the volumes for which to return
+        /// recommendations.</p>
         pub fn volume_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.volume_arns.unwrap_or_default();
             v.push(input.into());
             self.volume_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the volumes for which to return
+        /// recommendations.</p>
         pub fn set_volume_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1481,27 +1889,41 @@ pub mod get_ebs_volume_recommendations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of volume recommendations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of volume recommendations to return with a single request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of volume
+        /// recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::EbsFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of volume
+        /// recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
@@ -1509,12 +1931,30 @@ pub mod get_ebs_volume_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account for which to return volume
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return volume recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The ID of the Amazon Web Services account for which to return volume
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return volume recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1527,7 +1967,7 @@ pub mod get_ebs_volume_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEbsVolumeRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEbsVolumeRecommendationsInput {
                 volume_arns: self.volume_arns,
@@ -1551,16 +1991,16 @@ impl GetEbsVolumeRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEBSVolumeRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEbsVolumeRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1568,7 +2008,7 @@ impl GetEbsVolumeRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::GetEbsVolumeRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1577,30 +2017,30 @@ impl GetEbsVolumeRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEbsVolumeRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetEBSVolumeRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ebs_volume_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_ebs_volume_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1623,15 +2063,15 @@ impl GetEbsVolumeRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEBSVolumeRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEBSVolumeRecommendations",
             "computeoptimizer",
         ));
@@ -1640,10 +2080,10 @@ impl GetEbsVolumeRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1672,12 +2112,20 @@ pub mod get_ec2_instance_recommendations_input {
             std::option::Option<crate::model::RecommendationPreferences>,
     }
     impl Builder {
+        /// Appends an item to `instance_arns`.
+        ///
+        /// To override the contents of this collection use [`set_instance_arns`](Self::set_instance_arns).
+        ///
+        /// <p>The Amazon Resource Name (ARN) of the instances for which to return
+        /// recommendations.</p>
         pub fn instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_arns.unwrap_or_default();
             v.push(input.into());
             self.instance_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instances for which to return
+        /// recommendations.</p>
         pub fn set_instance_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1690,27 +2138,41 @@ pub mod get_ec2_instance_recommendations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of instance recommendations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of instance recommendations to return with a single request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of instance
+        /// recommendations.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of instance
+        /// recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1718,12 +2180,30 @@ pub mod get_ec2_instance_recommendations_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account for which to return instance
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return instance recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The ID of the Amazon Web Services account for which to return instance
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return instance recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1740,6 +2220,8 @@ pub mod get_ec2_instance_recommendations_input {
             self.recommendation_preferences = Some(input);
             self
         }
+        /// <p>An object to specify the preferences for the Amazon EC2 instance
+        /// recommendations to return in the response.</p>
         pub fn set_recommendation_preferences(
             mut self,
             input: std::option::Option<crate::model::RecommendationPreferences>,
@@ -1752,7 +2234,7 @@ pub mod get_ec2_instance_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEc2InstanceRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEc2InstanceRecommendationsInput {
                 instance_arns: self.instance_arns,
@@ -1777,16 +2259,16 @@ impl GetEc2InstanceRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEC2InstanceRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEc2InstanceRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1794,7 +2276,7 @@ impl GetEc2InstanceRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::GetEc2InstanceRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1803,30 +2285,30 @@ impl GetEc2InstanceRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEc2InstanceRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetEC2InstanceRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ec2_instance_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_ec2_instance_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1849,15 +2331,15 @@ impl GetEc2InstanceRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEC2InstanceRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEC2InstanceRecommendations",
             "computeoptimizer",
         ));
@@ -1866,10 +2348,10 @@ impl GetEc2InstanceRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1892,8 +2374,8 @@ pub mod get_ec2_recommendation_projected_metrics_input {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) stat: std::option::Option<crate::model::MetricStatistic>,
         pub(crate) period: std::option::Option<i32>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recommendation_preferences:
             std::option::Option<crate::model::RecommendationPreferences>,
     }
@@ -1904,6 +2386,8 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self.instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation
+        /// projected metrics.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
@@ -1913,6 +2397,7 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self.stat = Some(input);
             self
         }
+        /// <p>The statistic of the projected metrics.</p>
         pub fn set_stat(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -1925,25 +2410,34 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self.period = Some(input);
             self
         }
+        /// <p>The granularity, in seconds, of the projected metrics data points.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of the first projected metrics data point to return.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of the last projected metrics data point to return.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1956,6 +2450,8 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self.recommendation_preferences = Some(input);
             self
         }
+        /// <p>An object to specify the preferences for the Amazon EC2 recommendation
+        /// projected metrics to return in the response.</p>
         pub fn set_recommendation_preferences(
             mut self,
             input: std::option::Option<crate::model::RecommendationPreferences>,
@@ -1968,7 +2464,7 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEc2RecommendationProjectedMetricsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEc2RecommendationProjectedMetricsInput {
                 instance_arn: self.instance_arn,
@@ -1994,16 +2490,16 @@ impl GetEc2RecommendationProjectedMetricsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEC2RecommendationProjectedMetrics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2011,7 +2507,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
         fn update_http_builder(
             input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2020,30 +2516,30 @@ impl GetEc2RecommendationProjectedMetricsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetEC2RecommendationProjectedMetrics",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ec2_recommendation_projected_metrics(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_ec2_recommendation_projected_metrics(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2066,15 +2562,15 @@ impl GetEc2RecommendationProjectedMetricsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEC2RecommendationProjectedMetrics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEC2RecommendationProjectedMetrics",
             "computeoptimizer",
         ));
@@ -2083,10 +2579,10 @@ impl GetEc2RecommendationProjectedMetricsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2112,7 +2608,7 @@ pub mod get_enrollment_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEnrollmentStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEnrollmentStatusInput {})
         }
@@ -2129,16 +2625,16 @@ impl GetEnrollmentStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEnrollmentStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2146,7 +2642,7 @@ impl GetEnrollmentStatusInput {
         fn update_http_builder(
             input: &crate::input::GetEnrollmentStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2155,32 +2651,32 @@ impl GetEnrollmentStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEnrollmentStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetEnrollmentStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_enrollment_status(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2203,15 +2699,15 @@ impl GetEnrollmentStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEnrollmentStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEnrollmentStatus",
             "computeoptimizer",
         ));
@@ -2220,10 +2716,10 @@ impl GetEnrollmentStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2248,12 +2744,20 @@ pub mod get_enrollment_statuses_for_organization_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of account
+        /// enrollment statuses.</p>
         pub fn filters(mut self, input: impl Into<crate::model::EnrollmentFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of account
+        /// enrollment statuses.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnrollmentFilter>>,
@@ -2266,18 +2770,25 @@ pub mod get_enrollment_statuses_for_organization_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of account enrollment statuses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of account enrollment statuses to return with a single request. You
         /// can specify up to 100 statuses to return with each request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of account enrollment statuses to return with a single request. You
+        /// can specify up to 100 statuses to return with each request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2287,7 +2798,7 @@ pub mod get_enrollment_statuses_for_organization_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEnrollmentStatusesForOrganizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEnrollmentStatusesForOrganizationInput {
                 filters: self.filters,
@@ -2310,16 +2821,16 @@ impl GetEnrollmentStatusesForOrganizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEnrollmentStatusesForOrganization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2327,7 +2838,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
         fn update_http_builder(
             input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2336,30 +2847,30 @@ impl GetEnrollmentStatusesForOrganizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetEnrollmentStatusesForOrganization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_enrollment_statuses_for_organization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_enrollment_statuses_for_organization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2382,15 +2893,15 @@ impl GetEnrollmentStatusesForOrganizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEnrollmentStatusesForOrganization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEnrollmentStatusesForOrganization",
             "computeoptimizer",
         ));
@@ -2399,10 +2910,10 @@ impl GetEnrollmentStatusesForOrganizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2430,12 +2941,36 @@ pub mod get_lambda_function_recommendations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `function_arns`.
+        ///
+        /// To override the contents of this collection use [`set_function_arns`](Self::set_function_arns).
+        ///
+        /// <p>The Amazon Resource Name (ARN) of the functions for which to return
+        /// recommendations.</p>
+        ///
+        /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
+        /// without a function version suffix, Compute Optimizer will return recommendations for the
+        /// latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN
+        /// with a version suffix, Compute Optimizer will return recommendations for the specified
+        /// function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
+        /// versions</a> in the <i>Lambda Developer
+        /// Guide</i>.</p>
         pub fn function_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.function_arns.unwrap_or_default();
             v.push(input.into());
             self.function_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the functions for which to return
+        /// recommendations.</p>
+        ///
+        /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
+        /// without a function version suffix, Compute Optimizer will return recommendations for the
+        /// latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN
+        /// with a version suffix, Compute Optimizer will return recommendations for the specified
+        /// function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
+        /// versions</a> in the <i>Lambda Developer
+        /// Guide</i>.</p>
         pub fn set_function_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2443,12 +2978,30 @@ pub mod get_lambda_function_recommendations_input {
             self.function_arns = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account for which to return function
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return function recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The ID of the Amazon Web Services account for which to return function
+        /// recommendations.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return function recommendations.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2456,6 +3009,12 @@ pub mod get_lambda_function_recommendations_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of objects to specify a filter that returns a more specific list of function
+        /// recommendations.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
@@ -2465,6 +3024,8 @@ pub mod get_lambda_function_recommendations_input {
             self.filters = Some(v);
             self
         }
+        /// <p>An array of objects to specify a filter that returns a more specific list of function
+        /// recommendations.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -2479,17 +3040,23 @@ pub mod get_lambda_function_recommendations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of function recommendations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of function recommendations to return with a single request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of function recommendations to return with a single request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2499,7 +3066,7 @@ pub mod get_lambda_function_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLambdaFunctionRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLambdaFunctionRecommendationsInput {
                 function_arns: self.function_arns,
@@ -2523,16 +3090,16 @@ impl GetLambdaFunctionRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLambdaFunctionRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLambdaFunctionRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2540,7 +3107,7 @@ impl GetLambdaFunctionRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::GetLambdaFunctionRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2549,30 +3116,30 @@ impl GetLambdaFunctionRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLambdaFunctionRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetLambdaFunctionRecommendations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_lambda_function_recommendations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_lambda_function_recommendations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2595,15 +3162,15 @@ impl GetLambdaFunctionRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLambdaFunctionRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLambdaFunctionRecommendations",
             "computeoptimizer",
         ));
@@ -2612,10 +3179,10 @@ impl GetLambdaFunctionRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2640,12 +3207,30 @@ pub mod get_recommendation_summaries_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The ID of the Amazon Web Services account for which to return recommendation
+        /// summaries.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return recommendation summaries.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The ID of the Amazon Web Services account for which to return recommendation
+        /// summaries.</p>
+        ///
+        /// <p>If your account is the management account of an organization, use this parameter to
+        /// specify the member account for which you want to return recommendation summaries.</p>
+        ///
+        /// <p>Only one account ID can be specified per request.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2658,17 +3243,23 @@ pub mod get_recommendation_summaries_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to advance to the next page of recommendation summaries.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
+        ///
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of recommendation summaries to return with a single request.</p>
+        ///
+        /// <p>To retrieve the remaining results, make another request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2678,7 +3269,7 @@ pub mod get_recommendation_summaries_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRecommendationSummariesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRecommendationSummariesInput {
                 account_ids: self.account_ids,
@@ -2700,16 +3291,16 @@ impl GetRecommendationSummariesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationSummaries,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecommendationSummariesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2717,7 +3308,7 @@ impl GetRecommendationSummariesInput {
         fn update_http_builder(
             input: &crate::input::GetRecommendationSummariesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2726,32 +3317,34 @@ impl GetRecommendationSummariesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecommendationSummariesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.GetRecommendationSummaries",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_recommendation_summaries(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2774,15 +3367,15 @@ impl GetRecommendationSummariesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRecommendationSummaries::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRecommendationSummaries",
             "computeoptimizer",
         ));
@@ -2791,10 +3384,10 @@ impl GetRecommendationSummariesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2819,7 +3412,9 @@ pub mod update_enrollment_status_input {
     }
     impl Builder {
         /// <p>The new enrollment status of the account.</p>
+        ///
         /// <p>The following status options are available:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2835,6 +3430,7 @@ pub mod update_enrollment_status_input {
         /// from Compute Optimizer after you opt out.</p>
         /// </li>
         /// </ul>
+        ///
         /// <note>
         /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
         /// the enrollment status of an account. They are returned in the response of a request
@@ -2844,6 +3440,31 @@ pub mod update_enrollment_status_input {
             self.status = Some(input);
             self
         }
+        /// <p>The new enrollment status of the account.</p>
+        ///
+        /// <p>The following status options are available:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Active</code> - Opts in your account to the Compute Optimizer service.
+        /// Compute Optimizer begins analyzing the configuration and utilization metrics
+        /// of your Amazon Web Services resources after you opt in. For more information, see
+        /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Inactive</code> - Opts out your account from the Compute Optimizer
+        /// service. Your account's recommendations and related metrics data will be deleted
+        /// from Compute Optimizer after you opt out.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
+        /// the enrollment status of an account. They are returned in the response of a request
+        /// to update the enrollment status of an account.</p>
+        /// </note>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -2854,6 +3475,8 @@ pub mod update_enrollment_status_input {
             self.include_member_accounts = Some(input);
             self
         }
+        /// <p>Indicates whether to enroll member accounts of the organization if the account is the
+        /// management account of an organization.</p>
         pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_member_accounts = input;
             self
@@ -2863,7 +3486,7 @@ pub mod update_enrollment_status_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateEnrollmentStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateEnrollmentStatusInput {
                 status: self.status,
@@ -2883,16 +3506,16 @@ impl UpdateEnrollmentStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnrollmentStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateEnrollmentStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2900,7 +3523,7 @@ impl UpdateEnrollmentStatusInput {
         fn update_http_builder(
             input: &crate::input::UpdateEnrollmentStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2909,32 +3532,34 @@ impl UpdateEnrollmentStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateEnrollmentStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ComputeOptimizerService.UpdateEnrollmentStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_enrollment_status(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2957,15 +3582,15 @@ impl UpdateEnrollmentStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateEnrollmentStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateEnrollmentStatus",
             "computeoptimizer",
         ));
@@ -2974,10 +3599,10 @@ impl UpdateEnrollmentStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2991,11 +3616,14 @@ impl UpdateEnrollmentStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnrollmentStatusInput {
     /// <p>The new enrollment status of the account.</p>
+    ///
     /// <p>The following status options are available:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3011,6 +3639,7 @@ pub struct UpdateEnrollmentStatusInput {
     /// from Compute Optimizer after you opt out.</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
     /// the enrollment status of an account. They are returned in the response of a request
@@ -3030,18 +3659,22 @@ impl std::fmt::Debug for UpdateEnrollmentStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation
     /// summaries.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to return recommendation summaries.</p>
+    ///
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3056,11 +3689,13 @@ impl std::fmt::Debug for GetRecommendationSummariesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return
     /// recommendations.</p>
+    ///
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
     /// without a function version suffix, Compute Optimizer will return recommendations for the
     /// latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN
@@ -3071,8 +3706,10 @@ pub struct GetLambdaFunctionRecommendationsInput {
     pub function_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon Web Services account for which to return function
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to return function recommendations.</p>
+    ///
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of function
@@ -3082,6 +3719,7 @@ pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of function recommendations to return with a single request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3098,6 +3736,7 @@ impl std::fmt::Debug for GetLambdaFunctionRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusesForOrganizationInput {
@@ -3108,6 +3747,7 @@ pub struct GetEnrollmentStatusesForOrganizationInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of account enrollment statuses to return with a single request. You
     /// can specify up to 100 statuses to return with each request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3122,6 +3762,7 @@ impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusInput {}
@@ -3132,6 +3773,7 @@ impl std::fmt::Debug for GetEnrollmentStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2RecommendationProjectedMetricsInput {
@@ -3143,9 +3785,9 @@ pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub period: i32,
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation
     /// projected metrics to return in the response.</p>
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
@@ -3166,6 +3808,7 @@ impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2InstanceRecommendationsInput {
@@ -3175,6 +3818,7 @@ pub struct GetEc2InstanceRecommendationsInput {
     /// <p>The token to advance to the next page of instance recommendations.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of instance recommendations to return with a single request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3183,8 +3827,10 @@ pub struct GetEc2InstanceRecommendationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The ID of the Amazon Web Services account for which to return instance
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to return instance recommendations.</p>
+    ///
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object to specify the preferences for the Amazon EC2 instance
@@ -3207,6 +3853,7 @@ impl std::fmt::Debug for GetEc2InstanceRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsVolumeRecommendationsInput {
@@ -3216,6 +3863,7 @@ pub struct GetEbsVolumeRecommendationsInput {
     /// <p>The token to advance to the next page of volume recommendations.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of volume recommendations to return with a single request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3224,8 +3872,10 @@ pub struct GetEbsVolumeRecommendationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
     /// <p>The ID of the Amazon Web Services account for which to return volume
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to return volume recommendations.</p>
+    ///
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3241,14 +3891,17 @@ impl std::fmt::Debug for GetEbsVolumeRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoScalingGroupRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to return Auto Scaling group
     /// recommendations.</p>
+    ///
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
@@ -3259,6 +3912,7 @@ pub struct GetAutoScalingGroupRecommendationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of Auto Scaling group recommendations to return with a single
     /// request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
@@ -3284,17 +3938,22 @@ impl std::fmt::Debug for GetAutoScalingGroupRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLambdaFunctionRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
     /// function recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to export recommendations.</p>
+    ///
     /// <p>This parameter cannot be specified together with the include member accounts
     /// parameter. The parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the include member accounts parameter, is omitted.</p>
+    ///
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
@@ -3307,6 +3966,7 @@ pub struct ExportLambdaFunctionRecommendationsInput {
         std::option::Option<std::vec::Vec<crate::model::ExportableLambdaFunctionField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
     /// key prefix for a recommendations export job.</p>
+    ///
     /// <p>You must create the destination Amazon S3 bucket for your recommendations
     /// export before you create the export job. Compute Optimizer does not create the S3 bucket
     /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -3316,18 +3976,23 @@ pub struct ExportLambdaFunctionRecommendationsInput {
     /// <i>Compute Optimizer User Guide</i>.</p>
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
+    ///
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of
     /// the organization if your account is the management account of an organization.</p>
+    ///
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
     /// Compute Optimizer must be enabled in the organization account. For more information,
     /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
     /// <i>Compute Optimizer User Guide</i>.</p>
+    ///
     /// <p>Recommendations for member accounts of the organization are not included in the export
     /// file if this parameter is omitted.</p>
+    ///
     /// <p>This parameter cannot be specified together with the account IDs parameter. The
     /// parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the account IDs parameter, is omitted.</p>
     pub include_member_accounts: bool,
@@ -3345,17 +4010,22 @@ impl std::fmt::Debug for ExportLambdaFunctionRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEc2InstanceRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export instance
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to export recommendations.</p>
+    ///
     /// <p>This parameter cannot be specified together with the include member accounts
     /// parameter. The parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the include member accounts parameter, is omitted.</p>
+    ///
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of instance
@@ -3367,6 +4037,7 @@ pub struct ExportEc2InstanceRecommendationsInput {
     pub fields_to_export: std::option::Option<std::vec::Vec<crate::model::ExportableInstanceField>>,
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
     /// name and key prefix for the export job.</p>
+    ///
     /// <p>You must create the destination Amazon S3 bucket for your recommendations
     /// export before you create the export job. Compute Optimizer does not create the S3 bucket
     /// for you. After you create the S3 bucket, ensure that it has the required permissions
@@ -3376,16 +4047,20 @@ pub struct ExportEc2InstanceRecommendationsInput {
     /// <i>Compute Optimizer User Guide</i>.</p>
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
+    ///
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of
     /// the organization if your account is the management account of an organization.</p>
+    ///
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
     /// Compute Optimizer must be enabled in the organization account. For more information,
     /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
     /// <i>Compute Optimizer User Guide</i>.</p>
+    ///
     /// <p>Recommendations for member accounts of the organization are not included in the export
     /// file if this parameter is omitted.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the account IDs parameter, is omitted.</p>
     pub include_member_accounts: bool,
@@ -3410,17 +4085,22 @@ impl std::fmt::Debug for ExportEc2InstanceRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEbsVolumeRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
     /// volume recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to export recommendations.</p>
+    ///
     /// <p>This parameter cannot be specified together with the include member accounts
     /// parameter. The parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the include member accounts parameter, is omitted.</p>
+    ///
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
@@ -3431,6 +4111,7 @@ pub struct ExportEbsVolumeRecommendationsInput {
     pub fields_to_export: std::option::Option<std::vec::Vec<crate::model::ExportableVolumeField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
     /// key prefix for a recommendations export job.</p>
+    ///
     /// <p>You must create the destination Amazon S3 bucket for your recommendations
     /// export before you create the export job. Compute Optimizer does not create the S3 bucket
     /// for you. After you create the S3 bucket, ensure that it has the required permission
@@ -3440,18 +4121,23 @@ pub struct ExportEbsVolumeRecommendationsInput {
     /// <i>Compute Optimizer User Guide</i>.</p>
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
+    ///
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of
     /// the organization if your account is the management account of an organization.</p>
+    ///
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
     /// Compute Optimizer must be enabled in the organization account. For more information,
     /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
     /// <i>Compute Optimizer User Guide</i>.</p>
+    ///
     /// <p>Recommendations for member accounts of the organization are not included in the export
     /// file if this parameter is omitted.</p>
+    ///
     /// <p>This parameter cannot be specified together with the account IDs parameter. The
     /// parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the account IDs parameter, is omitted.</p>
     pub include_member_accounts: bool,
@@ -3469,17 +4155,22 @@ impl std::fmt::Debug for ExportEbsVolumeRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
     /// recommendations.</p>
+    ///
     /// <p>If your account is the management account of an organization, use this parameter to
     /// specify the member account for which you want to export recommendations.</p>
+    ///
     /// <p>This parameter cannot be specified together with the include member accounts
     /// parameter. The parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the include member accounts parameter, is omitted.</p>
+    ///
     /// <p>You can specify multiple account IDs per request.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
@@ -3491,6 +4182,7 @@ pub struct ExportAutoScalingGroupRecommendationsInput {
         std::option::Option<std::vec::Vec<crate::model::ExportableAutoScalingGroupField>>,
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
     /// name and key prefix for the export job.</p>
+    ///
     /// <p>You must create the destination Amazon S3 bucket for your recommendations
     /// export before you create the export job. Compute Optimizer does not create the S3 bucket
     /// for you. After you create the S3 bucket, ensure that it has the required permissions
@@ -3500,18 +4192,23 @@ pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <i>Compute Optimizer User Guide</i>.</p>
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
+    ///
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of
     /// the organization if your account is the management account of an organization.</p>
+    ///
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for
     /// Compute Optimizer must be enabled in the organization account. For more information,
     /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the
     /// <i>Compute Optimizer User Guide</i>.</p>
+    ///
     /// <p>Recommendations for member accounts of the organization are not included in the export
     /// file if this parameter is omitted.</p>
+    ///
     /// <p>This parameter cannot be specified together with the account IDs parameter. The
     /// parameters are mutually exclusive.</p>
+    ///
     /// <p>Recommendations for member accounts are not included in the export if this parameter,
     /// or the account IDs parameter, is omitted.</p>
     pub include_member_accounts: bool,
@@ -3536,11 +4233,14 @@ impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
+    ///
     /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
+    ///
     /// <p>All export jobs created in the last seven days are returned if this parameter is
     /// omitted.</p>
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3550,6 +4250,7 @@ pub struct DescribeRecommendationExportJobsInput {
     /// <p>The token to advance to the next page of export jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of export jobs to return with a single request.</p>
+    ///
     /// <p>To retrieve the remaining results, make another request with the returned
     /// <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,

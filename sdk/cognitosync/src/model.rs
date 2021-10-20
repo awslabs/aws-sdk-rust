@@ -11,13 +11,13 @@ pub struct Record {
     pub sync_count: std::option::Option<i64>,
     /// The date on which the record was last
     /// modified.
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// The user/device that made the last change to this
     /// record.
     pub last_modified_by: std::option::Option<std::string::String>,
     /// The last modified date of the client
     /// device.
-    pub device_last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40,9 +40,9 @@ pub mod record {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) sync_count: std::option::Option<i64>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
-        pub(crate) device_last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// The key for the record.
@@ -50,6 +50,7 @@ pub mod record {
             self.key = Some(input.into());
             self
         }
+        /// The key for the record.
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -59,6 +60,7 @@ pub mod record {
             self.value = Some(input.into());
             self
         }
+        /// The value for the record.
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -68,19 +70,22 @@ pub mod record {
             self.sync_count = Some(input);
             self
         }
+        /// The server sync count for this record.
         pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.sync_count = input;
             self
         }
         /// The date on which the record was last
         /// modified.
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// The date on which the record was last
+        /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -91,6 +96,8 @@ pub mod record {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// The user/device that made the last change to this
+        /// record.
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -100,13 +107,15 @@ pub mod record {
         }
         /// The last modified date of the client
         /// device.
-        pub fn device_last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn device_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
+        /// The last modified date of the client
+        /// device.
         pub fn set_device_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.device_last_modified_date = input;
             self
@@ -147,7 +156,7 @@ pub struct RecordPatch {
     pub sync_count: std::option::Option<i64>,
     /// The last modified date of the client
     /// device.
-    pub device_last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RecordPatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -170,7 +179,7 @@ pub mod record_patch {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) sync_count: std::option::Option<i64>,
-        pub(crate) device_last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// An operation, either replace or remove.
@@ -178,6 +187,7 @@ pub mod record_patch {
             self.op = Some(input);
             self
         }
+        /// An operation, either replace or remove.
         pub fn set_op(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
             self.op = input;
             self
@@ -187,6 +197,7 @@ pub mod record_patch {
             self.key = Some(input.into());
             self
         }
+        /// The key associated with the record patch.
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -197,6 +208,8 @@ pub mod record_patch {
             self.value = Some(input.into());
             self
         }
+        /// The value associated with the record
+        /// patch.
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -207,19 +220,23 @@ pub mod record_patch {
             self.sync_count = Some(input);
             self
         }
+        /// Last known server sync count for this record. Set
+        /// to 0 if unknown.
         pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.sync_count = input;
             self
         }
         /// The last modified date of the client
         /// device.
-        pub fn device_last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn device_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
+        /// The last modified date of the client
+        /// device.
         pub fn set_device_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.device_last_modified_date = input;
             self
@@ -243,6 +260,7 @@ impl RecordPatch {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -254,7 +272,9 @@ impl RecordPatch {
     std::hash::Hash,
 )]
 pub enum Operation {
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
+    #[allow(missing_docs)] // documentation missing in model
     Replace,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -276,6 +296,7 @@ impl std::str::FromStr for Operation {
     }
 }
 impl Operation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operation::Remove => "remove",
@@ -283,6 +304,7 @@ impl Operation {
             Operation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["remove", "replace"]
     }
@@ -331,6 +353,7 @@ pub mod cognito_streams {
             self.stream_name = Some(input.into());
             self
         }
+        /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -340,6 +363,7 @@ pub mod cognito_streams {
             self.role_arn = Some(input.into());
             self
         }
+        /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -351,6 +375,9 @@ pub mod cognito_streams {
             self.streaming_status = Some(input);
             self
         }
+        /// Status of the Cognito streams. Valid values are:
+        /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+        /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
         pub fn set_streaming_status(
             mut self,
             input: std::option::Option<crate::model::StreamingStatus>,
@@ -375,6 +402,7 @@ impl CognitoStreams {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -386,7 +414,9 @@ impl CognitoStreams {
     std::hash::Hash,
 )]
 pub enum StreamingStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -408,6 +438,7 @@ impl std::str::FromStr for StreamingStatus {
     }
 }
 impl StreamingStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingStatus::Disabled => "DISABLED",
@@ -415,6 +446,7 @@ impl StreamingStatus {
             StreamingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -452,12 +484,18 @@ pub mod push_sync {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `application_arns`.
+        ///
+        /// To override the contents of this collection use [`set_application_arns`](Self::set_application_arns).
+        ///
+        /// <p>List of SNS platform application ARNs that could be used by clients.</p>
         pub fn application_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_arns.unwrap_or_default();
             v.push(input.into());
             self.application_arns = Some(v);
             self
         }
+        /// <p>List of SNS platform application ARNs that could be used by clients.</p>
         pub fn set_application_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -470,6 +508,7 @@ pub mod push_sync {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -490,6 +529,7 @@ impl PushSync {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -501,9 +541,13 @@ impl PushSync {
     std::hash::Hash,
 )]
 pub enum Platform {
+    #[allow(missing_docs)] // documentation missing in model
     Adm,
+    #[allow(missing_docs)] // documentation missing in model
     Apns,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsSandbox,
+    #[allow(missing_docs)] // documentation missing in model
     Gcm,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -527,6 +571,7 @@ impl std::str::FromStr for Platform {
     }
 }
 impl Platform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Adm => "ADM",
@@ -536,6 +581,7 @@ impl Platform {
             Platform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADM", "APNS", "APNS_SANDBOX", "GCM"]
     }
@@ -563,7 +609,7 @@ pub struct IdentityPoolUsage {
     pub data_storage: std::option::Option<i64>,
     /// Date on which the identity pool was
     /// last modified.
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for IdentityPoolUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -584,7 +630,7 @@ pub mod identity_pool_usage {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) sync_sessions_count: std::option::Option<i64>,
         pub(crate) data_storage: std::option::Option<i64>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// A name-spaced GUID (for example,
@@ -594,6 +640,9 @@ pub mod identity_pool_usage {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -607,6 +656,8 @@ pub mod identity_pool_usage {
             self.sync_sessions_count = Some(input);
             self
         }
+        /// Number of sync sessions for the
+        /// identity pool.
         pub fn set_sync_sessions_count(mut self, input: std::option::Option<i64>) -> Self {
             self.sync_sessions_count = input;
             self
@@ -617,19 +668,23 @@ pub mod identity_pool_usage {
             self.data_storage = Some(input);
             self
         }
+        /// Data storage information for the identity
+        /// pool.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self
         }
         /// Date on which the identity pool was
         /// last modified.
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// Date on which the identity pool was
+        /// last modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -669,10 +724,10 @@ pub struct Dataset {
     pub dataset_name: std::option::Option<std::string::String>,
     /// Date on which the dataset was
     /// created.
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// Date when the dataset was last
     /// modified.
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// The device that made the last change to this
     /// dataset.
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -703,8 +758,8 @@ pub mod dataset {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) data_storage: std::option::Option<i64>,
         pub(crate) num_records: std::option::Option<i64>,
@@ -717,6 +772,9 @@ pub mod dataset {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -727,32 +785,38 @@ pub mod dataset {
             self.dataset_name = Some(input.into());
             self
         }
+        /// A string of up to 128 characters. Allowed characters
+        /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
         }
         /// Date on which the dataset was
         /// created.
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// Date on which the dataset was
+        /// created.
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// Date when the dataset was last
         /// modified.
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// Date when the dataset was last
+        /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -763,6 +827,8 @@ pub mod dataset {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// The device that made the last change to this
+        /// dataset.
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -776,6 +842,8 @@ pub mod dataset {
             self.data_storage = Some(input);
             self
         }
+        /// Total size in bytes of the records in this
+        /// dataset.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self
@@ -785,6 +853,7 @@ pub mod dataset {
             self.num_records = Some(input);
             self
         }
+        /// Number of records in this dataset.
         pub fn set_num_records(mut self, input: std::option::Option<i64>) -> Self {
             self.num_records = input;
             self
@@ -810,6 +879,7 @@ impl Dataset {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -821,9 +891,13 @@ impl Dataset {
     std::hash::Hash,
 )]
 pub enum BulkPublishStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -847,6 +921,7 @@ impl std::str::FromStr for BulkPublishStatus {
     }
 }
 impl BulkPublishStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BulkPublishStatus::Failed => "FAILED",
@@ -856,6 +931,7 @@ impl BulkPublishStatus {
             BulkPublishStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
@@ -880,7 +956,7 @@ pub struct IdentityUsage {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// Date on which the identity was last
     /// modified.
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// Number of datasets for the
     /// identity.
     pub dataset_count: i32,
@@ -907,7 +983,7 @@ pub mod identity_usage {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) dataset_count: std::option::Option<i32>,
         pub(crate) data_storage: std::option::Option<i64>,
     }
@@ -919,6 +995,9 @@ pub mod identity_usage {
             self.identity_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -930,6 +1009,9 @@ pub mod identity_usage {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -939,13 +1021,15 @@ pub mod identity_usage {
         }
         /// Date on which the identity was last
         /// modified.
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// Date on which the identity was last
+        /// modified.
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -956,6 +1040,8 @@ pub mod identity_usage {
             self.dataset_count = Some(input);
             self
         }
+        /// Number of datasets for the
+        /// identity.
         pub fn set_dataset_count(mut self, input: std::option::Option<i32>) -> Self {
             self.dataset_count = input;
             self
@@ -966,6 +1052,8 @@ pub mod identity_usage {
             self.data_storage = Some(input);
             self
         }
+        /// Total data storage for this
+        /// identity.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self

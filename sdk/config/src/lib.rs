@@ -6,7 +6,9 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>Config</fullname>
+//!
 //! <p>Config provides a way to keep track of the configurations
 //! of all the Amazon Web Services resources associated with your Amazon Web Services account. You can
 //! use Config to get the current and historical configurations of
@@ -15,6 +17,7 @@
 //! Cloud (Amazon EC2) instance, an Elastic Block Store (EBS) volume, an
 //! elastic network Interface (ENI), or a security group. For a complete
 //! list of resources currently supported by Config, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resources</a>.</p>
+//!
 //! <p>You can access and manage Config through the Amazon Web Services Management
 //! Console, the Amazon Web Services Command Line Interface (Amazon Web Services CLI), the Config
 //! API, or the Amazon Web Services SDKs for Config. This reference guide contains
@@ -34,30 +37,38 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("configservice", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

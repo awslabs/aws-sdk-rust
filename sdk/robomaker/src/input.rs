@@ -9,12 +9,18 @@ pub mod batch_delete_worlds_input {
         pub(crate) worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `worlds`.
+        ///
+        /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
+        ///
+        /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
         pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worlds.unwrap_or_default();
             v.push(input.into());
             self.worlds = Some(v);
             self
         }
+        /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
         pub fn set_worlds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -27,7 +33,7 @@ pub mod batch_delete_worlds_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDeleteWorldsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDeleteWorldsInput {
                 worlds: self.worlds,
@@ -46,16 +52,16 @@ impl BatchDeleteWorldsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteWorlds,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDeleteWorldsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/batchDeleteWorlds").expect("formatting should succeed");
             Ok(())
         }
@@ -63,7 +69,7 @@ impl BatchDeleteWorldsInput {
         fn update_http_builder(
             input: &crate::input::BatchDeleteWorldsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -72,27 +78,27 @@ impl BatchDeleteWorldsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDeleteWorldsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_worlds(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -115,15 +121,15 @@ impl BatchDeleteWorldsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDeleteWorlds::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDeleteWorlds",
             "robomaker",
         ));
@@ -132,10 +138,10 @@ impl BatchDeleteWorldsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -158,12 +164,18 @@ pub mod batch_describe_simulation_job_input {
         pub(crate) jobs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `jobs`.
+        ///
+        /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
+        ///
+        /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
         pub fn jobs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
             v.push(input.into());
             self.jobs = Some(v);
             self
         }
+        /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -176,7 +188,7 @@ pub mod batch_describe_simulation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDescribeSimulationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDescribeSimulationJobInput { jobs: self.jobs })
         }
@@ -194,16 +206,16 @@ impl BatchDescribeSimulationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDescribeSimulationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDescribeSimulationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/batchDescribeSimulationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -211,7 +223,7 @@ impl BatchDescribeSimulationJobInput {
         fn update_http_builder(
             input: &crate::input::BatchDescribeSimulationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -220,25 +232,25 @@ impl BatchDescribeSimulationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDescribeSimulationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_describe_simulation_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_describe_simulation_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -261,15 +273,15 @@ impl BatchDescribeSimulationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDescribeSimulationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDescribeSimulationJob",
             "robomaker",
         ));
@@ -278,10 +290,10 @@ impl BatchDescribeSimulationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -309,6 +321,7 @@ pub mod cancel_deployment_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The deployment job ARN to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -318,7 +331,7 @@ pub mod cancel_deployment_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelDeploymentJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelDeploymentJobInput { job: self.job })
         }
@@ -335,16 +348,16 @@ impl CancelDeploymentJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelDeploymentJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelDeploymentJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/cancelDeploymentJob").expect("formatting should succeed");
             Ok(())
         }
@@ -352,7 +365,7 @@ impl CancelDeploymentJobInput {
         fn update_http_builder(
             input: &crate::input::CancelDeploymentJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -361,27 +374,27 @@ impl CancelDeploymentJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelDeploymentJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_deployment_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -404,15 +417,15 @@ impl CancelDeploymentJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelDeploymentJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelDeploymentJob",
             "robomaker",
         ));
@@ -421,10 +434,10 @@ impl CancelDeploymentJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -452,6 +465,7 @@ pub mod cancel_simulation_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The simulation job ARN to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -461,7 +475,7 @@ pub mod cancel_simulation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelSimulationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelSimulationJobInput { job: self.job })
         }
@@ -478,16 +492,16 @@ impl CancelSimulationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelSimulationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelSimulationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/cancelSimulationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -495,7 +509,7 @@ impl CancelSimulationJobInput {
         fn update_http_builder(
             input: &crate::input::CancelSimulationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -504,27 +518,27 @@ impl CancelSimulationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelSimulationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -547,15 +561,15 @@ impl CancelSimulationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelSimulationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelSimulationJob",
             "robomaker",
         ));
@@ -564,10 +578,10 @@ impl CancelSimulationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -595,6 +609,7 @@ pub mod cancel_simulation_job_batch_input {
             self.batch = Some(input.into());
             self
         }
+        /// <p>The id of the batch to cancel.</p>
         pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.batch = input;
             self
@@ -604,7 +619,7 @@ pub mod cancel_simulation_job_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelSimulationJobBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelSimulationJobBatchInput { batch: self.batch })
         }
@@ -622,16 +637,16 @@ impl CancelSimulationJobBatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelSimulationJobBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelSimulationJobBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/cancelSimulationJobBatch").expect("formatting should succeed");
             Ok(())
         }
@@ -639,7 +654,7 @@ impl CancelSimulationJobBatchInput {
         fn update_http_builder(
             input: &crate::input::CancelSimulationJobBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -648,27 +663,29 @@ impl CancelSimulationJobBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelSimulationJobBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job_batch(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -691,15 +708,15 @@ impl CancelSimulationJobBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelSimulationJobBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelSimulationJobBatch",
             "robomaker",
         ));
@@ -708,10 +725,10 @@ impl CancelSimulationJobBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -739,6 +756,7 @@ pub mod cancel_world_export_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -748,7 +766,7 @@ pub mod cancel_world_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelWorldExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelWorldExportJobInput { job: self.job })
         }
@@ -765,16 +783,16 @@ impl CancelWorldExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelWorldExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelWorldExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/cancelWorldExportJob").expect("formatting should succeed");
             Ok(())
         }
@@ -782,7 +800,7 @@ impl CancelWorldExportJobInput {
         fn update_http_builder(
             input: &crate::input::CancelWorldExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -791,27 +809,29 @@ impl CancelWorldExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelWorldExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_world_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -834,15 +854,15 @@ impl CancelWorldExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelWorldExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelWorldExportJob",
             "robomaker",
         ));
@@ -851,10 +871,10 @@ impl CancelWorldExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -882,6 +902,7 @@ pub mod cancel_world_generation_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -891,7 +912,7 @@ pub mod cancel_world_generation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelWorldGenerationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelWorldGenerationJobInput { job: self.job })
         }
@@ -909,16 +930,16 @@ impl CancelWorldGenerationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelWorldGenerationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelWorldGenerationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/cancelWorldGenerationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -926,7 +947,7 @@ impl CancelWorldGenerationJobInput {
         fn update_http_builder(
             input: &crate::input::CancelWorldGenerationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -935,27 +956,29 @@ impl CancelWorldGenerationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelWorldGenerationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_world_generation_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -978,15 +1001,15 @@ impl CancelWorldGenerationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelWorldGenerationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelWorldGenerationJob",
             "robomaker",
         ));
@@ -995,10 +1018,10 @@ impl CancelWorldGenerationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1033,6 +1056,7 @@ pub mod create_deployment_job_input {
             self.deployment_config = Some(input);
             self
         }
+        /// <p>The requested deployment configuration.</p>
         pub fn set_deployment_config(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfig>,
@@ -1046,6 +1070,8 @@ pub mod create_deployment_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1058,10 +1084,16 @@ pub mod create_deployment_job_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
         }
+        /// Appends an item to `deployment_application_configs`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
+        ///
+        /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
             input: impl Into<crate::model::DeploymentApplicationConfig>,
@@ -1071,6 +1103,7 @@ pub mod create_deployment_job_input {
             self.deployment_application_configs = Some(v);
             self
         }
+        /// <p>The deployment application configuration.</p>
         pub fn set_deployment_application_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
@@ -1078,6 +1111,12 @@ pub mod create_deployment_job_input {
             self.deployment_application_configs = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment
+        /// job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1088,6 +1127,8 @@ pub mod create_deployment_job_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment
+        /// job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1102,7 +1143,7 @@ pub mod create_deployment_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDeploymentJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDeploymentJobInput {
                 deployment_config: self.deployment_config,
@@ -1125,16 +1166,16 @@ impl CreateDeploymentJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDeploymentJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDeploymentJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createDeploymentJob").expect("formatting should succeed");
             Ok(())
         }
@@ -1142,7 +1183,7 @@ impl CreateDeploymentJobInput {
         fn update_http_builder(
             input: &crate::input::CreateDeploymentJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1151,10 +1192,10 @@ impl CreateDeploymentJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDeploymentJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1164,17 +1205,17 @@ impl CreateDeploymentJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1197,15 +1238,15 @@ impl CreateDeploymentJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDeploymentJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDeploymentJob",
             "robomaker",
         ));
@@ -1214,10 +1255,10 @@ impl CreateDeploymentJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1248,10 +1289,16 @@ pub mod create_fleet_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1262,6 +1309,7 @@ pub mod create_fleet_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1274,8 +1322,10 @@ pub mod create_fleet_input {
         /// Consumes the builder and constructs a [`CreateFleetInput`](crate::input::CreateFleetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateFleetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateFleetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateFleetInput {
                 name: self.name,
                 tags: self.tags,
@@ -1294,16 +1344,16 @@ impl CreateFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createFleet").expect("formatting should succeed");
             Ok(())
         }
@@ -1311,7 +1361,7 @@ impl CreateFleetInput {
         fn update_http_builder(
             input: &crate::input::CreateFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1320,24 +1370,26 @@ impl CreateFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1360,25 +1412,27 @@ impl CreateFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateFleet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateFleet",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1411,6 +1465,7 @@ pub mod create_robot_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the robot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1420,6 +1475,7 @@ pub mod create_robot_input {
             self.architecture = Some(input);
             self
         }
+        /// <p>The target architecture of the robot.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -1432,6 +1488,7 @@ pub mod create_robot_input {
             self.greengrass_group_id = Some(input.into());
             self
         }
+        /// <p>The Greengrass group id.</p>
         pub fn set_greengrass_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1439,6 +1496,11 @@ pub mod create_robot_input {
             self.greengrass_group_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1449,6 +1511,7 @@ pub mod create_robot_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1461,8 +1524,10 @@ pub mod create_robot_input {
         /// Consumes the builder and constructs a [`CreateRobotInput`](crate::input::CreateRobotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateRobotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateRobotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateRobotInput {
                 name: self.name,
                 architecture: self.architecture,
@@ -1483,16 +1548,16 @@ impl CreateRobotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRobot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRobotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createRobot").expect("formatting should succeed");
             Ok(())
         }
@@ -1500,7 +1565,7 @@ impl CreateRobotInput {
         fn update_http_builder(
             input: &crate::input::CreateRobotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1509,24 +1574,26 @@ impl CreateRobotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRobotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_robot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1549,25 +1616,27 @@ impl CreateRobotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateRobot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateRobot",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1601,16 +1670,23 @@ pub mod create_robot_application_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the robot application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The sources of the robot application.</p>
         pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// <p>The sources of the robot application.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
@@ -1623,6 +1699,7 @@ pub mod create_robot_application_input {
             self.robot_software_suite = Some(input);
             self
         }
+        /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
         pub fn set_robot_software_suite(
             mut self,
             input: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -1630,6 +1707,12 @@ pub mod create_robot_application_input {
             self.robot_software_suite = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the robot
+        /// application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1640,6 +1723,8 @@ pub mod create_robot_application_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the robot
+        /// application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1655,6 +1740,8 @@ pub mod create_robot_application_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The object that contains that URI of the Docker image that you use for your robot
+        /// application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1667,7 +1754,7 @@ pub mod create_robot_application_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRobotApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRobotApplicationInput {
                 name: self.name,
@@ -1690,16 +1777,16 @@ impl CreateRobotApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRobotApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRobotApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createRobotApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -1707,7 +1794,7 @@ impl CreateRobotApplicationInput {
         fn update_http_builder(
             input: &crate::input::CreateRobotApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1716,27 +1803,29 @@ impl CreateRobotApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRobotApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_robot_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1759,15 +1848,15 @@ impl CreateRobotApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRobotApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRobotApplication",
             "robomaker",
         ));
@@ -1776,10 +1865,10 @@ impl CreateRobotApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1810,6 +1899,7 @@ pub mod create_robot_application_version_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -1820,6 +1910,8 @@ pub mod create_robot_application_version_input {
             self.current_revision_id = Some(input.into());
             self
         }
+        /// <p>The current revision id for the robot application. If you provide a value and it matches
+        /// the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1827,12 +1919,20 @@ pub mod create_robot_application_version_input {
             self.current_revision_id = input;
             self
         }
+        /// Appends an item to `s3_etags`.
+        ///
+        /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
+        ///
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
+        /// application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
             v.push(input.into());
             self.s3_etags = Some(v);
             self
         }
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
+        /// application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1845,6 +1945,7 @@ pub mod create_robot_application_version_input {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -1854,7 +1955,7 @@ pub mod create_robot_application_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRobotApplicationVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRobotApplicationVersionInput {
                 application: self.application,
@@ -1877,16 +1978,16 @@ impl CreateRobotApplicationVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRobotApplicationVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRobotApplicationVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createRobotApplicationVersion").expect("formatting should succeed");
             Ok(())
         }
@@ -1894,7 +1995,7 @@ impl CreateRobotApplicationVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateRobotApplicationVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1903,25 +2004,25 @@ impl CreateRobotApplicationVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRobotApplicationVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_robot_application_version(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_robot_application_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1944,15 +2045,15 @@ impl CreateRobotApplicationVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRobotApplicationVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRobotApplicationVersion",
             "robomaker",
         ));
@@ -1961,10 +2062,10 @@ impl CreateRobotApplicationVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2001,16 +2102,23 @@ pub mod create_simulation_application_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the simulation application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The sources of the simulation application.</p>
         pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// <p>The sources of the simulation application.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
@@ -2026,6 +2134,7 @@ pub mod create_simulation_application_input {
             self.simulation_software_suite = Some(input);
             self
         }
+        /// <p>The simulation software suite used by the simulation application.</p>
         pub fn set_simulation_software_suite(
             mut self,
             input: std::option::Option<crate::model::SimulationSoftwareSuite>,
@@ -2038,6 +2147,7 @@ pub mod create_simulation_application_input {
             self.robot_software_suite = Some(input);
             self
         }
+        /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
         pub fn set_robot_software_suite(
             mut self,
             input: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -2050,6 +2160,7 @@ pub mod create_simulation_application_input {
             self.rendering_engine = Some(input);
             self
         }
+        /// <p>The rendering engine for the simulation application.</p>
         pub fn set_rendering_engine(
             mut self,
             input: std::option::Option<crate::model::RenderingEngine>,
@@ -2057,6 +2168,12 @@ pub mod create_simulation_application_input {
             self.rendering_engine = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation
+        /// application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2067,6 +2184,8 @@ pub mod create_simulation_application_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation
+        /// application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2082,6 +2201,8 @@ pub mod create_simulation_application_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The object that contains the Docker image URI used to create your simulation
+        /// application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -2094,7 +2215,7 @@ pub mod create_simulation_application_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSimulationApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSimulationApplicationInput {
                 name: self.name,
@@ -2120,16 +2241,16 @@ impl CreateSimulationApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSimulationApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createSimulationApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -2137,7 +2258,7 @@ impl CreateSimulationApplicationInput {
         fn update_http_builder(
             input: &crate::input::CreateSimulationApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2146,25 +2267,25 @@ impl CreateSimulationApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSimulationApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2187,15 +2308,15 @@ impl CreateSimulationApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSimulationApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSimulationApplication",
             "robomaker",
         ));
@@ -2204,10 +2325,10 @@ impl CreateSimulationApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2238,6 +2359,7 @@ pub mod create_simulation_application_version_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -2248,6 +2370,8 @@ pub mod create_simulation_application_version_input {
             self.current_revision_id = Some(input.into());
             self
         }
+        /// <p>The current revision id for the simulation application. If you provide a value and it
+        /// matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2255,12 +2379,20 @@ pub mod create_simulation_application_version_input {
             self.current_revision_id = input;
             self
         }
+        /// Appends an item to `s3_etags`.
+        ///
+        /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
+        ///
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
+        /// simulation application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
             v.push(input.into());
             self.s3_etags = Some(v);
             self
         }
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
+        /// simulation application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2274,6 +2406,8 @@ pub mod create_simulation_application_version_input {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
+        /// application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -2283,7 +2417,7 @@ pub mod create_simulation_application_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSimulationApplicationVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSimulationApplicationVersionInput {
                 application: self.application,
@@ -2306,16 +2440,16 @@ impl CreateSimulationApplicationVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationApplicationVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSimulationApplicationVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createSimulationApplicationVersion")
                 .expect("formatting should succeed");
             Ok(())
@@ -2324,7 +2458,7 @@ impl CreateSimulationApplicationVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateSimulationApplicationVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2333,25 +2467,25 @@ impl CreateSimulationApplicationVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSimulationApplicationVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application_version(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2374,15 +2508,15 @@ impl CreateSimulationApplicationVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSimulationApplicationVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSimulationApplicationVersion",
             "robomaker",
         ));
@@ -2391,10 +2525,10 @@ impl CreateSimulationApplicationVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2438,6 +2572,8 @@ pub mod create_simulation_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2450,6 +2586,7 @@ pub mod create_simulation_job_input {
             self.output_location = Some(input);
             self
         }
+        /// <p>Location for output files generated by the simulation job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::OutputLocation>,
@@ -2462,6 +2599,7 @@ pub mod create_simulation_job_input {
             self.logging_config = Some(input);
             self
         }
+        /// <p>The logging configuration.</p>
         pub fn set_logging_config(
             mut self,
             input: std::option::Option<crate::model::LoggingConfig>,
@@ -2476,6 +2614,9 @@ pub mod create_simulation_job_input {
             self.max_job_duration_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
+        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
+        /// transition to <code>Completed</code>.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.max_job_duration_in_seconds = input;
             self
@@ -2487,6 +2628,9 @@ pub mod create_simulation_job_input {
             self.iam_role = Some(input.into());
             self
         }
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
+        /// specified in its associated policies on your behalf. This is how credentials are passed in
+        /// to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -2507,6 +2651,18 @@ pub mod create_simulation_job_input {
             self.failure_behavior = Some(input);
             self
         }
+        /// <p>The failure behavior the simulation job.</p>
+        /// <dl>
+        /// <dt>Continue</dt>
+        /// <dd>
+        /// <p>Leaves the instance running for its maximum timeout duration after a
+        /// <code>4XX</code> error code.</p>
+        /// </dd>
+        /// <dt>Fail</dt>
+        /// <dd>
+        /// <p>Stop the simulation job and terminate the instance.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_failure_behavior(
             mut self,
             input: std::option::Option<crate::model::FailureBehavior>,
@@ -2514,6 +2670,11 @@ pub mod create_simulation_job_input {
             self.failure_behavior = input;
             self
         }
+        /// Appends an item to `robot_applications`.
+        ///
+        /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
+        ///
+        /// <p>The robot application to use in the simulation job.</p>
         pub fn robot_applications(
             mut self,
             input: impl Into<crate::model::RobotApplicationConfig>,
@@ -2523,6 +2684,7 @@ pub mod create_simulation_job_input {
             self.robot_applications = Some(v);
             self
         }
+        /// <p>The robot application to use in the simulation job.</p>
         pub fn set_robot_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
@@ -2530,6 +2692,11 @@ pub mod create_simulation_job_input {
             self.robot_applications = input;
             self
         }
+        /// Appends an item to `simulation_applications`.
+        ///
+        /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
+        ///
+        /// <p>The simulation application to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
             input: impl Into<crate::model::SimulationApplicationConfig>,
@@ -2539,6 +2706,7 @@ pub mod create_simulation_job_input {
             self.simulation_applications = Some(v);
             self
         }
+        /// <p>The simulation application to use in the simulation job.</p>
         pub fn set_simulation_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
@@ -2546,12 +2714,28 @@ pub mod create_simulation_job_input {
             self.simulation_applications = input;
             self
         }
+        /// Appends an item to `data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
+        ///
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
+        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
+        /// <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all
+        /// <code>DataSourceConfig</code> objects. </p>
+        /// </note>
         pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceConfig>) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
             v.push(input.into());
             self.data_sources = Some(v);
             self
         }
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
+        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
+        /// <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all
+        /// <code>DataSourceConfig</code> objects. </p>
+        /// </note>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
@@ -2559,6 +2743,12 @@ pub mod create_simulation_job_input {
             self.data_sources = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation
+        /// job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2569,6 +2759,8 @@ pub mod create_simulation_job_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation
+        /// job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2585,6 +2777,9 @@ pub mod create_simulation_job_input {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
+        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
+        /// VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2597,6 +2792,7 @@ pub mod create_simulation_job_input {
             self.compute = Some(input);
             self
         }
+        /// <p>Compute information for the simulation job.</p>
         pub fn set_compute(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
             self.compute = input;
             self
@@ -2606,7 +2802,7 @@ pub mod create_simulation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSimulationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSimulationJobInput {
                 client_request_token: self.client_request_token,
@@ -2636,16 +2832,16 @@ impl CreateSimulationJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSimulationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createSimulationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -2653,7 +2849,7 @@ impl CreateSimulationJobInput {
         fn update_http_builder(
             input: &crate::input::CreateSimulationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2662,10 +2858,10 @@ impl CreateSimulationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSimulationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2675,17 +2871,17 @@ impl CreateSimulationJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_simulation_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2708,15 +2904,15 @@ impl CreateSimulationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSimulationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSimulationJob",
             "robomaker",
         ));
@@ -2725,10 +2921,10 @@ impl CreateSimulationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2763,6 +2959,8 @@ pub mod create_world_export_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2770,12 +2968,18 @@ pub mod create_world_export_job_input {
             self.client_request_token = input;
             self
         }
+        /// Appends an item to `worlds`.
+        ///
+        /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
+        ///
+        /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
         pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worlds.unwrap_or_default();
             v.push(input.into());
             self.worlds = Some(v);
             self
         }
+        /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
         pub fn set_worlds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2788,6 +2992,7 @@ pub mod create_world_export_job_input {
             self.output_location = Some(input);
             self
         }
+        /// <p>The output location.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::OutputLocation>,
@@ -2801,10 +3006,18 @@ pub mod create_world_export_job_input {
             self.iam_role = Some(input.into());
             self
         }
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
+        /// the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the world export
+        /// job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2815,6 +3028,8 @@ pub mod create_world_export_job_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the world export
+        /// job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2829,7 +3044,7 @@ pub mod create_world_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorldExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorldExportJobInput {
                 client_request_token: self.client_request_token,
@@ -2852,16 +3067,16 @@ impl CreateWorldExportJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorldExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createWorldExportJob").expect("formatting should succeed");
             Ok(())
         }
@@ -2869,7 +3084,7 @@ impl CreateWorldExportJobInput {
         fn update_http_builder(
             input: &crate::input::CreateWorldExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2878,10 +3093,10 @@ impl CreateWorldExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorldExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2891,17 +3106,19 @@ impl CreateWorldExportJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_world_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2924,15 +3141,15 @@ impl CreateWorldExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorldExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorldExportJob",
             "robomaker",
         ));
@@ -2941,10 +3158,10 @@ impl CreateWorldExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2981,6 +3198,8 @@ pub mod create_world_generation_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2994,6 +3213,8 @@ pub mod create_world_generation_job_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
+        /// create.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -3003,6 +3224,7 @@ pub mod create_world_generation_job_input {
             self.world_count = Some(input);
             self
         }
+        /// <p>Information about the world count.</p>
         pub fn set_world_count(
             mut self,
             input: std::option::Option<crate::model::WorldCount>,
@@ -3010,6 +3232,12 @@ pub mod create_world_generation_job_input {
             self.world_count = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator
+        /// job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3020,6 +3248,8 @@ pub mod create_world_generation_job_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator
+        /// job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3029,6 +3259,12 @@ pub mod create_world_generation_job_input {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `world_tags`.
+        ///
+        /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the generated
+        /// worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3039,6 +3275,8 @@ pub mod create_world_generation_job_input {
             self.world_tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the generated
+        /// worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -3053,7 +3291,7 @@ pub mod create_world_generation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorldGenerationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorldGenerationJobInput {
                 client_request_token: self.client_request_token,
@@ -3077,16 +3315,16 @@ impl CreateWorldGenerationJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldGenerationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorldGenerationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createWorldGenerationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -3094,7 +3332,7 @@ impl CreateWorldGenerationJobInput {
         fn update_http_builder(
             input: &crate::input::CreateWorldGenerationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3103,10 +3341,10 @@ impl CreateWorldGenerationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorldGenerationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3116,17 +3354,19 @@ impl CreateWorldGenerationJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_world_generation_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3149,15 +3389,15 @@ impl CreateWorldGenerationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorldGenerationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorldGenerationJob",
             "robomaker",
         ));
@@ -3166,10 +3406,10 @@ impl CreateWorldGenerationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3204,6 +3444,8 @@ pub mod create_world_template_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3216,6 +3458,7 @@ pub mod create_world_template_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the world template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3225,6 +3468,7 @@ pub mod create_world_template_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>The world template body.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3237,6 +3481,7 @@ pub mod create_world_template_input {
             self.template_location = Some(input);
             self
         }
+        /// <p>The location of the world template.</p>
         pub fn set_template_location(
             mut self,
             input: std::option::Option<crate::model::TemplateLocation>,
@@ -3244,6 +3489,12 @@ pub mod create_world_template_input {
             self.template_location = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the world
+        /// template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3254,6 +3505,8 @@ pub mod create_world_template_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the world
+        /// template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3268,7 +3521,7 @@ pub mod create_world_template_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorldTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorldTemplateInput {
                 client_request_token: self.client_request_token,
@@ -3291,16 +3544,16 @@ impl CreateWorldTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorldTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createWorldTemplate").expect("formatting should succeed");
             Ok(())
         }
@@ -3308,7 +3561,7 @@ impl CreateWorldTemplateInput {
         fn update_http_builder(
             input: &crate::input::CreateWorldTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3317,27 +3570,27 @@ impl CreateWorldTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorldTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_world_template(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3360,15 +3613,15 @@ impl CreateWorldTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorldTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorldTemplate",
             "robomaker",
         ));
@@ -3377,10 +3630,10 @@ impl CreateWorldTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3408,6 +3661,7 @@ pub mod delete_fleet_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
@@ -3415,8 +3669,10 @@ pub mod delete_fleet_input {
         /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::input::DeleteFleetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteFleetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteFleetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteFleetInput { fleet: self.fleet })
         }
     }
@@ -3432,16 +3688,16 @@ impl DeleteFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteFleet").expect("formatting should succeed");
             Ok(())
         }
@@ -3449,7 +3705,7 @@ impl DeleteFleetInput {
         fn update_http_builder(
             input: &crate::input::DeleteFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3458,24 +3714,26 @@ impl DeleteFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3498,25 +3756,27 @@ impl DeleteFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteFleet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteFleet",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3544,6 +3804,7 @@ pub mod delete_robot_input {
             self.robot = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.robot = input;
             self
@@ -3551,8 +3812,10 @@ pub mod delete_robot_input {
         /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::input::DeleteRobotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteRobotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteRobotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteRobotInput { robot: self.robot })
         }
     }
@@ -3568,16 +3831,16 @@ impl DeleteRobotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRobot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRobotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteRobot").expect("formatting should succeed");
             Ok(())
         }
@@ -3585,7 +3848,7 @@ impl DeleteRobotInput {
         fn update_http_builder(
             input: &crate::input::DeleteRobotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3594,24 +3857,26 @@ impl DeleteRobotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRobotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_robot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3634,25 +3899,27 @@ impl DeleteRobotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteRobot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteRobot",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3681,6 +3948,7 @@ pub mod delete_robot_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -3690,6 +3958,7 @@ pub mod delete_robot_application_input {
             self.application_version = Some(input.into());
             self
         }
+        /// <p>The version of the robot application to delete.</p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3702,7 +3971,7 @@ pub mod delete_robot_application_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRobotApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRobotApplicationInput {
                 application: self.application,
@@ -3722,16 +3991,16 @@ impl DeleteRobotApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRobotApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRobotApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteRobotApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -3739,7 +4008,7 @@ impl DeleteRobotApplicationInput {
         fn update_http_builder(
             input: &crate::input::DeleteRobotApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3748,27 +4017,29 @@ impl DeleteRobotApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRobotApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_robot_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3791,15 +4062,15 @@ impl DeleteRobotApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRobotApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRobotApplication",
             "robomaker",
         ));
@@ -3808,10 +4079,10 @@ impl DeleteRobotApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3840,6 +4111,7 @@ pub mod delete_simulation_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the simulation application to delete.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -3849,6 +4121,7 @@ pub mod delete_simulation_application_input {
             self.application_version = Some(input.into());
             self
         }
+        /// <p>The version of the simulation application to delete.</p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3861,7 +4134,7 @@ pub mod delete_simulation_application_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSimulationApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSimulationApplicationInput {
                 application: self.application,
@@ -3882,16 +4155,16 @@ impl DeleteSimulationApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSimulationApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSimulationApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteSimulationApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -3899,7 +4172,7 @@ impl DeleteSimulationApplicationInput {
         fn update_http_builder(
             input: &crate::input::DeleteSimulationApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3908,25 +4181,25 @@ impl DeleteSimulationApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSimulationApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_simulation_application(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3949,15 +4222,15 @@ impl DeleteSimulationApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSimulationApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSimulationApplication",
             "robomaker",
         ));
@@ -3966,10 +4239,10 @@ impl DeleteSimulationApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3997,6 +4270,7 @@ pub mod delete_world_template_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -4006,7 +4280,7 @@ pub mod delete_world_template_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorldTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorldTemplateInput {
                 template: self.template,
@@ -4025,16 +4299,16 @@ impl DeleteWorldTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorldTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorldTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteWorldTemplate").expect("formatting should succeed");
             Ok(())
         }
@@ -4042,7 +4316,7 @@ impl DeleteWorldTemplateInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorldTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4051,27 +4325,27 @@ impl DeleteWorldTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorldTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_world_template(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4094,15 +4368,15 @@ impl DeleteWorldTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorldTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorldTemplate",
             "robomaker",
         ));
@@ -4111,10 +4385,10 @@ impl DeleteWorldTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4143,6 +4417,7 @@ pub mod deregister_robot_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
@@ -4152,6 +4427,7 @@ pub mod deregister_robot_input {
             self.robot = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.robot = input;
             self
@@ -4161,7 +4437,7 @@ pub mod deregister_robot_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterRobotInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterRobotInput {
                 fleet: self.fleet,
@@ -4181,16 +4457,16 @@ impl DeregisterRobotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterRobot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterRobotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deregisterRobot").expect("formatting should succeed");
             Ok(())
         }
@@ -4198,7 +4474,7 @@ impl DeregisterRobotInput {
         fn update_http_builder(
             input: &crate::input::DeregisterRobotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4207,27 +4483,27 @@ impl DeregisterRobotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterRobotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_robot(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4250,15 +4526,15 @@ impl DeregisterRobotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterRobot::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterRobot",
             "robomaker",
         ));
@@ -4267,10 +4543,10 @@ impl DeregisterRobotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4298,6 +4574,7 @@ pub mod describe_deployment_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -4307,7 +4584,7 @@ pub mod describe_deployment_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDeploymentJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDeploymentJobInput { job: self.job })
         }
@@ -4324,16 +4601,16 @@ impl DescribeDeploymentJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeploymentJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDeploymentJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeDeploymentJob").expect("formatting should succeed");
             Ok(())
         }
@@ -4341,7 +4618,7 @@ impl DescribeDeploymentJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeDeploymentJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4350,27 +4627,29 @@ impl DescribeDeploymentJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDeploymentJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_deployment_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4393,15 +4672,15 @@ impl DescribeDeploymentJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDeploymentJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDeploymentJob",
             "robomaker",
         ));
@@ -4410,10 +4689,10 @@ impl DescribeDeploymentJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4441,6 +4720,7 @@ pub mod describe_fleet_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
@@ -4448,8 +4728,10 @@ pub mod describe_fleet_input {
         /// Consumes the builder and constructs a [`DescribeFleetInput`](crate::input::DescribeFleetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeFleetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeFleetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeFleetInput { fleet: self.fleet })
         }
     }
@@ -4465,16 +4747,16 @@ impl DescribeFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeFleet").expect("formatting should succeed");
             Ok(())
         }
@@ -4482,7 +4764,7 @@ impl DescribeFleetInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4491,24 +4773,26 @@ impl DescribeFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_fleet(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4531,25 +4815,27 @@ impl DescribeFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeFleet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeFleet",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4577,6 +4863,7 @@ pub mod describe_robot_input {
             self.robot = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.robot = input;
             self
@@ -4584,8 +4871,10 @@ pub mod describe_robot_input {
         /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::input::DescribeRobotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeRobotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeRobotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeRobotInput { robot: self.robot })
         }
     }
@@ -4601,16 +4890,16 @@ impl DescribeRobotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRobot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRobotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeRobot").expect("formatting should succeed");
             Ok(())
         }
@@ -4618,7 +4907,7 @@ impl DescribeRobotInput {
         fn update_http_builder(
             input: &crate::input::DescribeRobotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4627,24 +4916,26 @@ impl DescribeRobotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRobotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_robot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4667,25 +4958,27 @@ impl DescribeRobotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeRobot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeRobot",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4714,6 +5007,7 @@ pub mod describe_robot_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -4723,6 +5017,7 @@ pub mod describe_robot_application_input {
             self.application_version = Some(input.into());
             self
         }
+        /// <p>The version of the robot application to describe.</p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4735,7 +5030,7 @@ pub mod describe_robot_application_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRobotApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRobotApplicationInput {
                 application: self.application,
@@ -4756,16 +5051,16 @@ impl DescribeRobotApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRobotApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRobotApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeRobotApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -4773,7 +5068,7 @@ impl DescribeRobotApplicationInput {
         fn update_http_builder(
             input: &crate::input::DescribeRobotApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4782,27 +5077,29 @@ impl DescribeRobotApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRobotApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_robot_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4825,15 +5122,15 @@ impl DescribeRobotApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRobotApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRobotApplication",
             "robomaker",
         ));
@@ -4842,10 +5139,10 @@ impl DescribeRobotApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4874,6 +5171,7 @@ pub mod describe_simulation_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
@@ -4883,6 +5181,7 @@ pub mod describe_simulation_application_input {
             self.application_version = Some(input.into());
             self
         }
+        /// <p>The version of the simulation application to describe.</p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4895,7 +5194,7 @@ pub mod describe_simulation_application_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSimulationApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSimulationApplicationInput {
                 application: self.application,
@@ -4916,16 +5215,16 @@ impl DescribeSimulationApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSimulationApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeSimulationApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -4933,7 +5232,7 @@ impl DescribeSimulationApplicationInput {
         fn update_http_builder(
             input: &crate::input::DescribeSimulationApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4942,25 +5241,25 @@ impl DescribeSimulationApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSimulationApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_application(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4983,15 +5282,15 @@ impl DescribeSimulationApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSimulationApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSimulationApplication",
             "robomaker",
         ));
@@ -5000,10 +5299,10 @@ impl DescribeSimulationApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5031,6 +5330,7 @@ pub mod describe_simulation_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -5040,7 +5340,7 @@ pub mod describe_simulation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSimulationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSimulationJobInput { job: self.job })
         }
@@ -5057,16 +5357,16 @@ impl DescribeSimulationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSimulationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeSimulationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -5074,7 +5374,7 @@ impl DescribeSimulationJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeSimulationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5083,27 +5383,29 @@ impl DescribeSimulationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSimulationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5126,15 +5428,15 @@ impl DescribeSimulationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSimulationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSimulationJob",
             "robomaker",
         ));
@@ -5143,10 +5445,10 @@ impl DescribeSimulationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5174,6 +5476,7 @@ pub mod describe_simulation_job_batch_input {
             self.batch = Some(input.into());
             self
         }
+        /// <p>The id of the batch to describe.</p>
         pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.batch = input;
             self
@@ -5183,7 +5486,7 @@ pub mod describe_simulation_job_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSimulationJobBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSimulationJobBatchInput { batch: self.batch })
         }
@@ -5201,16 +5504,16 @@ impl DescribeSimulationJobBatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationJobBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSimulationJobBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeSimulationJobBatch").expect("formatting should succeed");
             Ok(())
         }
@@ -5218,7 +5521,7 @@ impl DescribeSimulationJobBatchInput {
         fn update_http_builder(
             input: &crate::input::DescribeSimulationJobBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5227,25 +5530,25 @@ impl DescribeSimulationJobBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSimulationJobBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job_batch(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job_batch(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5268,15 +5571,15 @@ impl DescribeSimulationJobBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSimulationJobBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSimulationJobBatch",
             "robomaker",
         ));
@@ -5285,10 +5588,10 @@ impl DescribeSimulationJobBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5316,6 +5619,7 @@ pub mod describe_world_input {
             self.world = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
         pub fn set_world(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.world = input;
             self
@@ -5323,8 +5627,10 @@ pub mod describe_world_input {
         /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::input::DescribeWorldInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeWorldInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeWorldInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeWorldInput { world: self.world })
         }
     }
@@ -5340,16 +5646,16 @@ impl DescribeWorldInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorld,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorldInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeWorld").expect("formatting should succeed");
             Ok(())
         }
@@ -5357,7 +5663,7 @@ impl DescribeWorldInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorldInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5366,24 +5672,26 @@ impl DescribeWorldInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorldInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_world(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5406,25 +5714,27 @@ impl DescribeWorldInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeWorld::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeWorld",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorld::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorld",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5452,6 +5762,7 @@ pub mod describe_world_export_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -5461,7 +5772,7 @@ pub mod describe_world_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorldExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorldExportJobInput { job: self.job })
         }
@@ -5478,16 +5789,16 @@ impl DescribeWorldExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorldExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeWorldExportJob").expect("formatting should succeed");
             Ok(())
         }
@@ -5495,7 +5806,7 @@ impl DescribeWorldExportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorldExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5504,27 +5815,29 @@ impl DescribeWorldExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorldExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_world_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5547,15 +5860,15 @@ impl DescribeWorldExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorldExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorldExportJob",
             "robomaker",
         ));
@@ -5564,10 +5877,10 @@ impl DescribeWorldExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5595,6 +5908,7 @@ pub mod describe_world_generation_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -5604,7 +5918,7 @@ pub mod describe_world_generation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorldGenerationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorldGenerationJobInput { job: self.job })
         }
@@ -5622,16 +5936,16 @@ impl DescribeWorldGenerationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldGenerationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorldGenerationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeWorldGenerationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -5639,7 +5953,7 @@ impl DescribeWorldGenerationJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorldGenerationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5648,25 +5962,25 @@ impl DescribeWorldGenerationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorldGenerationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_world_generation_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_world_generation_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5689,15 +6003,15 @@ impl DescribeWorldGenerationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorldGenerationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorldGenerationJob",
             "robomaker",
         ));
@@ -5706,10 +6020,10 @@ impl DescribeWorldGenerationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5737,6 +6051,7 @@ pub mod describe_world_template_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -5746,7 +6061,7 @@ pub mod describe_world_template_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorldTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorldTemplateInput {
                 template: self.template,
@@ -5765,16 +6080,16 @@ impl DescribeWorldTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorldTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeWorldTemplate").expect("formatting should succeed");
             Ok(())
         }
@@ -5782,7 +6097,7 @@ impl DescribeWorldTemplateInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorldTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5791,27 +6106,29 @@ impl DescribeWorldTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorldTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_world_template(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5834,15 +6151,15 @@ impl DescribeWorldTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorldTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorldTemplate",
             "robomaker",
         ));
@@ -5851,10 +6168,10 @@ impl DescribeWorldTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5883,6 +6200,7 @@ pub mod get_world_template_body_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -5892,6 +6210,7 @@ pub mod get_world_template_body_input {
             self.generation_job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
         pub fn set_generation_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5904,7 +6223,7 @@ pub mod get_world_template_body_input {
             self,
         ) -> std::result::Result<
             crate::input::GetWorldTemplateBodyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetWorldTemplateBodyInput {
                 template: self.template,
@@ -5924,16 +6243,16 @@ impl GetWorldTemplateBodyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWorldTemplateBody,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWorldTemplateBodyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getWorldTemplateBody").expect("formatting should succeed");
             Ok(())
         }
@@ -5941,7 +6260,7 @@ impl GetWorldTemplateBodyInput {
         fn update_http_builder(
             input: &crate::input::GetWorldTemplateBodyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5950,27 +6269,29 @@ impl GetWorldTemplateBodyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWorldTemplateBodyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_world_template_body(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5993,15 +6314,15 @@ impl GetWorldTemplateBodyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetWorldTemplateBody::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetWorldTemplateBody",
             "robomaker",
         ));
@@ -6010,10 +6331,10 @@ impl GetWorldTemplateBodyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6038,12 +6359,26 @@ pub mod list_deployment_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+        /// filtering, you must use the complete value of the filtered item. You can use up to three
+        /// filters, but they must be for the same named item. For example, if you are looking for
+        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+        /// filtering, you must use the complete value of the filtered item. You can use up to three
+        /// filters, but they must be for the same named item. For example, if you are looking for
+        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6060,6 +6395,11 @@ pub mod list_deployment_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
+        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6075,6 +6415,13 @@ pub mod list_deployment_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 200. If this parameter is not used, then
+        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
+        /// value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6084,7 +6431,7 @@ pub mod list_deployment_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDeploymentJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDeploymentJobsInput {
                 filters: self.filters,
@@ -6105,16 +6452,16 @@ impl ListDeploymentJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDeploymentJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDeploymentJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listDeploymentJobs").expect("formatting should succeed");
             Ok(())
         }
@@ -6122,7 +6469,7 @@ impl ListDeploymentJobsInput {
         fn update_http_builder(
             input: &crate::input::ListDeploymentJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6131,25 +6478,27 @@ impl ListDeploymentJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDeploymentJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_deployment_jobs(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6172,15 +6521,15 @@ impl ListDeploymentJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDeploymentJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDeploymentJobs",
             "robomaker",
         ));
@@ -6189,10 +6538,10 @@ impl ListDeploymentJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6230,6 +6579,15 @@ pub mod list_fleets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListFleets</code> again and assign that token to the
+        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+        /// previous response object's NextToken parameter is set to null. </p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6245,16 +6603,33 @@ pub mod list_fleets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 200. If this parameter is not used, then
+        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
+        /// applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6265,8 +6640,10 @@ pub mod list_fleets_input {
         /// Consumes the builder and constructs a [`ListFleetsInput`](crate::input::ListFleetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFleetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListFleetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListFleetsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -6286,16 +6663,16 @@ impl ListFleetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFleetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listFleets").expect("formatting should succeed");
             Ok(())
         }
@@ -6303,7 +6680,7 @@ impl ListFleetsInput {
         fn update_http_builder(
             input: &crate::input::ListFleetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6312,24 +6689,26 @@ impl ListFleetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFleetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6352,25 +6731,27 @@ impl ListFleetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFleets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListFleets",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFleets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFleets",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6401,6 +6782,7 @@ pub mod list_robot_applications_input {
             self.version_qualifier = Some(input.into());
             self
         }
+        /// <p>The version qualifier of the robot application.</p>
         pub fn set_version_qualifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6417,6 +6799,11 @@ pub mod list_robot_applications_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
+        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6432,16 +6819,33 @@ pub mod list_robot_applications_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this parameter is not used, then
+        /// <code>ListRobotApplications</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6454,7 +6858,7 @@ pub mod list_robot_applications_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRobotApplicationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRobotApplicationsInput {
                 version_qualifier: self.version_qualifier,
@@ -6476,16 +6880,16 @@ impl ListRobotApplicationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRobotApplications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRobotApplicationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listRobotApplications").expect("formatting should succeed");
             Ok(())
         }
@@ -6493,7 +6897,7 @@ impl ListRobotApplicationsInput {
         fn update_http_builder(
             input: &crate::input::ListRobotApplicationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6502,27 +6906,29 @@ impl ListRobotApplicationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRobotApplicationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_robot_applications(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6545,15 +6951,15 @@ impl ListRobotApplicationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRobotApplications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRobotApplications",
             "robomaker",
         ));
@@ -6562,10 +6968,10 @@ impl ListRobotApplicationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6599,6 +7005,11 @@ pub mod list_robots_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListRobots</code> again and assign that token to the
+        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+        /// previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6614,16 +7025,37 @@ pub mod list_robots_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 200. If this parameter is not used, then
+        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
+        /// applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+        /// filtering, you must use the complete value of the filtered item. You can use up to three
+        /// filters, but they must be for the same named item. For example, if you are looking for
+        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+        /// filtering, you must use the complete value of the filtered item. You can use up to three
+        /// filters, but they must be for the same named item. For example, if you are looking for
+        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6634,8 +7066,10 @@ pub mod list_robots_input {
         /// Consumes the builder and constructs a [`ListRobotsInput`](crate::input::ListRobotsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListRobotsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListRobotsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListRobotsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -6655,16 +7089,16 @@ impl ListRobotsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRobots,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRobotsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listRobots").expect("formatting should succeed");
             Ok(())
         }
@@ -6672,7 +7106,7 @@ impl ListRobotsInput {
         fn update_http_builder(
             input: &crate::input::ListRobotsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6681,24 +7115,26 @@ impl ListRobotsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRobotsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_robots(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6721,25 +7157,27 @@ impl ListRobotsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListRobots::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListRobots",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRobots::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRobots",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6770,6 +7208,7 @@ pub mod list_simulation_applications_input {
             self.version_qualifier = Some(input.into());
             self
         }
+        /// <p>The version qualifier of the simulation application.</p>
         pub fn set_version_qualifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6786,6 +7225,11 @@ pub mod list_simulation_applications_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
+        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6801,16 +7245,33 @@ pub mod list_simulation_applications_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSimulationApplications</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
+        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional list of filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional list of filters to limit results.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6823,7 +7284,7 @@ pub mod list_simulation_applications_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSimulationApplicationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSimulationApplicationsInput {
                 version_qualifier: self.version_qualifier,
@@ -6846,16 +7307,16 @@ impl ListSimulationApplicationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationApplications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSimulationApplicationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listSimulationApplications").expect("formatting should succeed");
             Ok(())
         }
@@ -6863,7 +7324,7 @@ impl ListSimulationApplicationsInput {
         fn update_http_builder(
             input: &crate::input::ListSimulationApplicationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6872,27 +7333,29 @@ impl ListSimulationApplicationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSimulationApplicationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_simulation_applications(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6915,15 +7378,15 @@ impl ListSimulationApplicationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSimulationApplications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSimulationApplications",
             "robomaker",
         ));
@@ -6932,10 +7395,10 @@ impl ListSimulationApplicationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6969,6 +7432,11 @@ pub mod list_simulation_job_batches_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
+        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6982,16 +7450,27 @@ pub mod list_simulation_job_batches_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSimulationJobBatches</code> request with the returned
+        /// <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7004,7 +7483,7 @@ pub mod list_simulation_job_batches_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSimulationJobBatchesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSimulationJobBatchesInput {
                 next_token: self.next_token,
@@ -7026,16 +7505,16 @@ impl ListSimulationJobBatchesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationJobBatches,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSimulationJobBatchesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listSimulationJobBatches").expect("formatting should succeed");
             Ok(())
         }
@@ -7043,7 +7522,7 @@ impl ListSimulationJobBatchesInput {
         fn update_http_builder(
             input: &crate::input::ListSimulationJobBatchesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7052,27 +7531,29 @@ impl ListSimulationJobBatchesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSimulationJobBatchesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_simulation_job_batches(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7095,15 +7576,15 @@ impl ListSimulationJobBatchesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSimulationJobBatches::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSimulationJobBatches",
             "robomaker",
         ));
@@ -7112,10 +7593,10 @@ impl ListSimulationJobBatchesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7149,6 +7630,11 @@ pub mod list_simulation_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
+        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7164,16 +7650,39 @@ pub mod list_simulation_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 1000. If this parameter is not used, then
+        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
+        /// value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
+        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters, but they must be for
+        /// the same named item. For example, if you are looking for items with the status
+        /// <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
+        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
+        /// complete value of the filtered item. You can use up to three filters, but they must be for
+        /// the same named item. For example, if you are looking for items with the status
+        /// <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7186,7 +7695,7 @@ pub mod list_simulation_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSimulationJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSimulationJobsInput {
                 next_token: self.next_token,
@@ -7207,16 +7716,16 @@ impl ListSimulationJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSimulationJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listSimulationJobs").expect("formatting should succeed");
             Ok(())
         }
@@ -7224,7 +7733,7 @@ impl ListSimulationJobsInput {
         fn update_http_builder(
             input: &crate::input::ListSimulationJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7233,25 +7742,27 @@ impl ListSimulationJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSimulationJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_simulation_jobs(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7274,15 +7785,15 @@ impl ListSimulationJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSimulationJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSimulationJobs",
             "robomaker",
         ));
@@ -7291,10 +7802,10 @@ impl ListSimulationJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7322,6 +7833,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7331,7 +7843,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -7350,27 +7862,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.resource_arn;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_1, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_1, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -7383,7 +7895,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7392,23 +7904,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7431,15 +7943,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "robomaker",
         ));
@@ -7448,10 +7960,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7485,6 +7997,11 @@ pub mod list_world_export_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
+        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7500,16 +8017,31 @@ pub mod list_world_export_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this parameter is not used, then
+        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
+        /// value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
+        /// <code>templateId</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
+        /// <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7522,7 +8054,7 @@ pub mod list_world_export_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorldExportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorldExportJobsInput {
                 next_token: self.next_token,
@@ -7543,16 +8075,16 @@ impl ListWorldExportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorldExportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorldExportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listWorldExportJobs").expect("formatting should succeed");
             Ok(())
         }
@@ -7560,7 +8092,7 @@ impl ListWorldExportJobsInput {
         fn update_http_builder(
             input: &crate::input::ListWorldExportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7569,27 +8101,27 @@ impl ListWorldExportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorldExportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_world_export_jobs(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7612,15 +8144,15 @@ impl ListWorldExportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorldExportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorldExportJobs",
             "robomaker",
         ));
@@ -7629,10 +8161,10 @@ impl ListWorldExportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7666,6 +8198,11 @@ pub mod list_world_generation_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
+        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7681,16 +8218,31 @@ pub mod list_world_generation_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListWorldGeneratorJobs</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
+        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results. You can use <code>status</code> and
+        /// <code>templateId</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results. You can use <code>status</code> and
+        /// <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7703,7 +8255,7 @@ pub mod list_world_generation_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorldGenerationJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorldGenerationJobsInput {
                 next_token: self.next_token,
@@ -7725,16 +8277,16 @@ impl ListWorldGenerationJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorldGenerationJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorldGenerationJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listWorldGenerationJobs").expect("formatting should succeed");
             Ok(())
         }
@@ -7742,7 +8294,7 @@ impl ListWorldGenerationJobsInput {
         fn update_http_builder(
             input: &crate::input::ListWorldGenerationJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7751,27 +8303,29 @@ impl ListWorldGenerationJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorldGenerationJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_world_generation_jobs(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7794,15 +8348,15 @@ impl ListWorldGenerationJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorldGenerationJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorldGenerationJobs",
             "robomaker",
         ));
@@ -7811,10 +8365,10 @@ impl ListWorldGenerationJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7848,6 +8402,11 @@ pub mod list_worlds_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
+        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+        /// previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7863,16 +8422,29 @@ pub mod list_worlds_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If this parameter is not used, then
+        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
+        /// applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7883,8 +8455,10 @@ pub mod list_worlds_input {
         /// Consumes the builder and constructs a [`ListWorldsInput`](crate::input::ListWorldsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListWorldsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListWorldsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListWorldsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -7904,16 +8478,16 @@ impl ListWorldsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorlds,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorldsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listWorlds").expect("formatting should succeed");
             Ok(())
         }
@@ -7921,7 +8495,7 @@ impl ListWorldsInput {
         fn update_http_builder(
             input: &crate::input::ListWorldsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7930,24 +8504,26 @@ impl ListWorldsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorldsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_worlds(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7970,25 +8546,27 @@ impl ListWorldsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListWorlds::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListWorlds",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorlds::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorlds",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8021,6 +8599,11 @@ pub mod list_world_templates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results, the
+        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
+        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8036,6 +8619,13 @@ pub mod list_world_templates_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this parameter is not used, then
+        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
+        /// value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8045,7 +8635,7 @@ pub mod list_world_templates_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorldTemplatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorldTemplatesInput {
                 next_token: self.next_token,
@@ -8065,16 +8655,16 @@ impl ListWorldTemplatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorldTemplates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorldTemplatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listWorldTemplates").expect("formatting should succeed");
             Ok(())
         }
@@ -8082,7 +8672,7 @@ impl ListWorldTemplatesInput {
         fn update_http_builder(
             input: &crate::input::ListWorldTemplatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8091,25 +8681,27 @@ impl ListWorldTemplatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorldTemplatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_world_templates(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8132,15 +8724,15 @@ impl ListWorldTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorldTemplates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorldTemplates",
             "robomaker",
         ));
@@ -8149,10 +8741,10 @@ impl ListWorldTemplatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8181,6 +8773,7 @@ pub mod register_robot_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
@@ -8190,6 +8783,7 @@ pub mod register_robot_input {
             self.robot = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.robot = input;
             self
@@ -8197,8 +8791,10 @@ pub mod register_robot_input {
         /// Consumes the builder and constructs a [`RegisterRobotInput`](crate::input::RegisterRobotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RegisterRobotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RegisterRobotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RegisterRobotInput {
                 fleet: self.fleet,
                 robot: self.robot,
@@ -8217,16 +8813,16 @@ impl RegisterRobotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterRobot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterRobotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/registerRobot").expect("formatting should succeed");
             Ok(())
         }
@@ -8234,7 +8830,7 @@ impl RegisterRobotInput {
         fn update_http_builder(
             input: &crate::input::RegisterRobotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8243,24 +8839,26 @@ impl RegisterRobotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterRobotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_robot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8283,25 +8881,27 @@ impl RegisterRobotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RegisterRobot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RegisterRobot",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8329,6 +8929,7 @@ pub mod restart_simulation_job_input {
             self.job = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job = input;
             self
@@ -8338,7 +8939,7 @@ pub mod restart_simulation_job_input {
             self,
         ) -> std::result::Result<
             crate::input::RestartSimulationJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RestartSimulationJobInput { job: self.job })
         }
@@ -8355,16 +8956,16 @@ impl RestartSimulationJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RestartSimulationJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RestartSimulationJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/restartSimulationJob").expect("formatting should succeed");
             Ok(())
         }
@@ -8372,7 +8973,7 @@ impl RestartSimulationJobInput {
         fn update_http_builder(
             input: &crate::input::RestartSimulationJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8381,27 +8982,27 @@ impl RestartSimulationJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RestartSimulationJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_restart_simulation_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8424,15 +9025,15 @@ impl RestartSimulationJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RestartSimulationJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RestartSimulationJob",
             "robomaker",
         ));
@@ -8441,10 +9042,10 @@ impl RestartSimulationJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8479,6 +9080,8 @@ pub mod start_simulation_job_batch_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8491,6 +9094,7 @@ pub mod start_simulation_job_batch_input {
             self.batch_policy = Some(input);
             self
         }
+        /// <p>The batch policy.</p>
         pub fn set_batch_policy(
             mut self,
             input: std::option::Option<crate::model::BatchPolicy>,
@@ -8498,6 +9102,11 @@ pub mod start_simulation_job_batch_input {
             self.batch_policy = input;
             self
         }
+        /// Appends an item to `create_simulation_job_requests`.
+        ///
+        /// To override the contents of this collection use [`set_create_simulation_job_requests`](Self::set_create_simulation_job_requests).
+        ///
+        /// <p>A list of simulation job requests to create in the batch.</p>
         pub fn create_simulation_job_requests(
             mut self,
             input: impl Into<crate::model::SimulationJobRequest>,
@@ -8507,6 +9116,7 @@ pub mod start_simulation_job_batch_input {
             self.create_simulation_job_requests = Some(v);
             self
         }
+        /// <p>A list of simulation job requests to create in the batch.</p>
         pub fn set_create_simulation_job_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
@@ -8514,6 +9124,12 @@ pub mod start_simulation_job_batch_input {
             self.create_simulation_job_requests = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
+        /// batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8524,6 +9140,8 @@ pub mod start_simulation_job_batch_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
+        /// batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8538,7 +9156,7 @@ pub mod start_simulation_job_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::StartSimulationJobBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartSimulationJobBatchInput {
                 client_request_token: self.client_request_token,
@@ -8561,16 +9179,16 @@ impl StartSimulationJobBatchInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartSimulationJobBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartSimulationJobBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/startSimulationJobBatch").expect("formatting should succeed");
             Ok(())
         }
@@ -8578,7 +9196,7 @@ impl StartSimulationJobBatchInput {
         fn update_http_builder(
             input: &crate::input::StartSimulationJobBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8587,10 +9205,10 @@ impl StartSimulationJobBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartSimulationJobBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8600,17 +9218,19 @@ impl StartSimulationJobBatchInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_simulation_job_batch(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8633,15 +9253,15 @@ impl StartSimulationJobBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartSimulationJobBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartSimulationJobBatch",
             "robomaker",
         ));
@@ -8650,10 +9270,10 @@ impl StartSimulationJobBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8683,6 +9303,8 @@ pub mod sync_deployment_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8695,6 +9317,7 @@ pub mod sync_deployment_job_input {
             self.fleet = Some(input.into());
             self
         }
+        /// <p>The target fleet for the synchronization.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet = input;
             self
@@ -8704,7 +9327,7 @@ pub mod sync_deployment_job_input {
             self,
         ) -> std::result::Result<
             crate::input::SyncDeploymentJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SyncDeploymentJobInput {
                 client_request_token: self.client_request_token,
@@ -8724,16 +9347,16 @@ impl SyncDeploymentJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SyncDeploymentJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SyncDeploymentJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/syncDeploymentJob").expect("formatting should succeed");
             Ok(())
         }
@@ -8741,7 +9364,7 @@ impl SyncDeploymentJobInput {
         fn update_http_builder(
             input: &crate::input::SyncDeploymentJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8750,10 +9373,10 @@ impl SyncDeploymentJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SyncDeploymentJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8763,17 +9386,17 @@ impl SyncDeploymentJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_sync_deployment_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8796,15 +9419,15 @@ impl SyncDeploymentJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SyncDeploymentJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SyncDeploymentJob",
             "robomaker",
         ));
@@ -8813,10 +9436,10 @@ impl SyncDeploymentJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8847,10 +9470,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8861,6 +9490,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8873,8 +9503,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -8893,27 +9525,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.resource_arn;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_2, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_2, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -8926,7 +9558,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8935,24 +9567,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8975,25 +9609,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9023,16 +9659,26 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
+        /// tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A map that contains tag keys and tag values that will be unattached from the
+        /// resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A map that contains tag keys and tag values that will be unattached from the
+        /// resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9043,8 +9689,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -9063,27 +9711,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.resource_arn;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_3, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_3, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -9093,10 +9741,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_4) = &_input.tag_keys {
                 for inner_5 in inner_4 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_5));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
             }
         }
@@ -9104,7 +9752,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9114,23 +9762,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9153,25 +9801,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "robomaker",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "robomaker",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9203,16 +9853,23 @@ pub mod update_robot_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The sources of the robot application.</p>
         pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// <p>The sources of the robot application.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
@@ -9225,6 +9882,7 @@ pub mod update_robot_application_input {
             self.robot_software_suite = Some(input);
             self
         }
+        /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
         pub fn set_robot_software_suite(
             mut self,
             input: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -9237,6 +9895,7 @@ pub mod update_robot_application_input {
             self.current_revision_id = Some(input.into());
             self
         }
+        /// <p>The revision id for the robot application.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9249,6 +9908,7 @@ pub mod update_robot_application_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The object that contains the Docker image URI for your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -9261,7 +9921,7 @@ pub mod update_robot_application_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRobotApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRobotApplicationInput {
                 application: self.application,
@@ -9284,16 +9944,16 @@ impl UpdateRobotApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRobotApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRobotApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateRobotApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -9301,7 +9961,7 @@ impl UpdateRobotApplicationInput {
         fn update_http_builder(
             input: &crate::input::UpdateRobotApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9310,27 +9970,29 @@ impl UpdateRobotApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRobotApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_robot_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9353,15 +10015,15 @@ impl UpdateRobotApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRobotApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRobotApplication",
             "robomaker",
         ));
@@ -9370,10 +10032,10 @@ impl UpdateRobotApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9408,16 +10070,23 @@ pub mod update_simulation_application_input {
             self.application = Some(input.into());
             self
         }
+        /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The sources of the simulation application.</p>
         pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// <p>The sources of the simulation application.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
@@ -9433,6 +10102,7 @@ pub mod update_simulation_application_input {
             self.simulation_software_suite = Some(input);
             self
         }
+        /// <p>The simulation software suite used by the simulation application.</p>
         pub fn set_simulation_software_suite(
             mut self,
             input: std::option::Option<crate::model::SimulationSoftwareSuite>,
@@ -9445,6 +10115,7 @@ pub mod update_simulation_application_input {
             self.robot_software_suite = Some(input);
             self
         }
+        /// <p>Information about the robot software suite (ROS distribution).</p>
         pub fn set_robot_software_suite(
             mut self,
             input: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -9457,6 +10128,7 @@ pub mod update_simulation_application_input {
             self.rendering_engine = Some(input);
             self
         }
+        /// <p>The rendering engine for the simulation application.</p>
         pub fn set_rendering_engine(
             mut self,
             input: std::option::Option<crate::model::RenderingEngine>,
@@ -9469,6 +10141,7 @@ pub mod update_simulation_application_input {
             self.current_revision_id = Some(input.into());
             self
         }
+        /// <p>The revision id for the robot application.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9481,6 +10154,7 @@ pub mod update_simulation_application_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The object that contains the Docker image URI for your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -9493,7 +10167,7 @@ pub mod update_simulation_application_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateSimulationApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateSimulationApplicationInput {
                 application: self.application,
@@ -9519,16 +10193,16 @@ impl UpdateSimulationApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSimulationApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSimulationApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateSimulationApplication").expect("formatting should succeed");
             Ok(())
         }
@@ -9536,7 +10210,7 @@ impl UpdateSimulationApplicationInput {
         fn update_http_builder(
             input: &crate::input::UpdateSimulationApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9545,25 +10219,25 @@ impl UpdateSimulationApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSimulationApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_simulation_application(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9586,15 +10260,15 @@ impl UpdateSimulationApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateSimulationApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateSimulationApplication",
             "robomaker",
         ));
@@ -9603,10 +10277,10 @@ impl UpdateSimulationApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9637,6 +10311,7 @@ pub mod update_world_template_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -9646,6 +10321,7 @@ pub mod update_world_template_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9655,6 +10331,7 @@ pub mod update_world_template_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>The world template body.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9667,6 +10344,7 @@ pub mod update_world_template_input {
             self.template_location = Some(input);
             self
         }
+        /// <p>The location of the world template.</p>
         pub fn set_template_location(
             mut self,
             input: std::option::Option<crate::model::TemplateLocation>,
@@ -9679,7 +10357,7 @@ pub mod update_world_template_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorldTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorldTemplateInput {
                 template: self.template,
@@ -9701,16 +10379,16 @@ impl UpdateWorldTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorldTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorldTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateWorldTemplate").expect("formatting should succeed");
             Ok(())
         }
@@ -9718,7 +10396,7 @@ impl UpdateWorldTemplateInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorldTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9727,27 +10405,27 @@ impl UpdateWorldTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorldTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_world_template(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9770,15 +10448,15 @@ impl UpdateWorldTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorldTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorldTemplate",
             "robomaker",
         ));
@@ -9787,10 +10465,10 @@ impl UpdateWorldTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9804,6 +10482,7 @@ impl UpdateWorldTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorldTemplateInput {
@@ -9827,6 +10506,7 @@ impl std::fmt::Debug for UpdateWorldTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSimulationApplicationInput {
@@ -9859,6 +10539,7 @@ impl std::fmt::Debug for UpdateSimulationApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRobotApplicationInput {
@@ -9885,6 +10566,7 @@ impl std::fmt::Debug for UpdateRobotApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -9904,6 +10586,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -9922,6 +10605,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncDeploymentJobInput {
@@ -9940,6 +10624,7 @@ impl std::fmt::Debug for SyncDeploymentJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSimulationJobBatchInput {
@@ -9970,6 +10655,7 @@ impl std::fmt::Debug for StartSimulationJobBatchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestartSimulationJobInput {
@@ -9984,6 +10670,7 @@ impl std::fmt::Debug for RestartSimulationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRobotInput {
@@ -10001,6 +10688,7 @@ impl std::fmt::Debug for RegisterRobotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldTemplatesInput {
@@ -10028,6 +10716,7 @@ impl std::fmt::Debug for ListWorldTemplatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldsInput {
@@ -10058,6 +10747,7 @@ impl std::fmt::Debug for ListWorldsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldGenerationJobsInput {
@@ -10089,6 +10779,7 @@ impl std::fmt::Debug for ListWorldGenerationJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldExportJobsInput {
@@ -10120,6 +10811,7 @@ impl std::fmt::Debug for ListWorldExportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -10134,6 +10826,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobsInput {
@@ -10169,6 +10862,7 @@ impl std::fmt::Debug for ListSimulationJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobBatchesInput {
@@ -10197,6 +10891,7 @@ impl std::fmt::Debug for ListSimulationJobBatchesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationApplicationsInput {
@@ -10232,6 +10927,7 @@ impl std::fmt::Debug for ListSimulationApplicationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotsInput {
@@ -10266,6 +10962,7 @@ impl std::fmt::Debug for ListRobotsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotApplicationsInput {
@@ -10301,6 +10998,7 @@ impl std::fmt::Debug for ListRobotApplicationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
@@ -10337,6 +11035,7 @@ impl std::fmt::Debug for ListFleetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentJobsInput {
@@ -10371,6 +11070,7 @@ impl std::fmt::Debug for ListDeploymentJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorldTemplateBodyInput {
@@ -10388,6 +11088,7 @@ impl std::fmt::Debug for GetWorldTemplateBodyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldTemplateInput {
@@ -10402,6 +11103,7 @@ impl std::fmt::Debug for DescribeWorldTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldGenerationJobInput {
@@ -10416,6 +11118,7 @@ impl std::fmt::Debug for DescribeWorldGenerationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldExportJobInput {
@@ -10430,6 +11133,7 @@ impl std::fmt::Debug for DescribeWorldExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldInput {
@@ -10444,6 +11148,7 @@ impl std::fmt::Debug for DescribeWorldInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobBatchInput {
@@ -10458,6 +11163,7 @@ impl std::fmt::Debug for DescribeSimulationJobBatchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobInput {
@@ -10472,6 +11178,7 @@ impl std::fmt::Debug for DescribeSimulationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationApplicationInput {
@@ -10489,6 +11196,7 @@ impl std::fmt::Debug for DescribeSimulationApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotApplicationInput {
@@ -10506,6 +11214,7 @@ impl std::fmt::Debug for DescribeRobotApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotInput {
@@ -10520,6 +11229,7 @@ impl std::fmt::Debug for DescribeRobotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInput {
@@ -10534,6 +11244,7 @@ impl std::fmt::Debug for DescribeFleetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentJobInput {
@@ -10548,6 +11259,7 @@ impl std::fmt::Debug for DescribeDeploymentJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRobotInput {
@@ -10565,6 +11277,7 @@ impl std::fmt::Debug for DeregisterRobotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorldTemplateInput {
@@ -10579,6 +11292,7 @@ impl std::fmt::Debug for DeleteWorldTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSimulationApplicationInput {
@@ -10596,6 +11310,7 @@ impl std::fmt::Debug for DeleteSimulationApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRobotApplicationInput {
@@ -10613,6 +11328,7 @@ impl std::fmt::Debug for DeleteRobotApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRobotInput {
@@ -10627,6 +11343,7 @@ impl std::fmt::Debug for DeleteRobotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetInput {
@@ -10641,6 +11358,7 @@ impl std::fmt::Debug for DeleteFleetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldTemplateInput {
@@ -10670,6 +11388,7 @@ impl std::fmt::Debug for CreateWorldTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldGenerationJobInput {
@@ -10702,6 +11421,7 @@ impl std::fmt::Debug for CreateWorldGenerationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldExportJobInput {
@@ -10732,6 +11452,7 @@ impl std::fmt::Debug for CreateWorldExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationJobInput {
@@ -10809,6 +11530,7 @@ impl std::fmt::Debug for CreateSimulationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationVersionInput {
@@ -10835,6 +11557,7 @@ impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationInput {
@@ -10870,6 +11593,7 @@ impl std::fmt::Debug for CreateSimulationApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationVersionInput {
@@ -10895,6 +11619,7 @@ impl std::fmt::Debug for CreateRobotApplicationVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationInput {
@@ -10924,6 +11649,7 @@ impl std::fmt::Debug for CreateRobotApplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotInput {
@@ -10948,6 +11674,7 @@ impl std::fmt::Debug for CreateRobotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetInput {
@@ -10966,6 +11693,7 @@ impl std::fmt::Debug for CreateFleetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentJobInput {
@@ -10999,6 +11727,7 @@ impl std::fmt::Debug for CreateDeploymentJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelWorldGenerationJobInput {
@@ -11013,6 +11742,7 @@ impl std::fmt::Debug for CancelWorldGenerationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelWorldExportJobInput {
@@ -11027,6 +11757,7 @@ impl std::fmt::Debug for CancelWorldExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSimulationJobBatchInput {
@@ -11041,6 +11772,7 @@ impl std::fmt::Debug for CancelSimulationJobBatchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSimulationJobInput {
@@ -11055,6 +11787,7 @@ impl std::fmt::Debug for CancelSimulationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDeploymentJobInput {
@@ -11069,6 +11802,7 @@ impl std::fmt::Debug for CancelDeploymentJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeSimulationJobInput {
@@ -11083,6 +11817,7 @@ impl std::fmt::Debug for BatchDescribeSimulationJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteWorldsInput {
