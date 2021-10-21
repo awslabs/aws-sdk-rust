@@ -5,6 +5,7 @@
 
 use crate::subcommand::fix_manifests::subcommand_fix_manifests;
 use crate::subcommand::publish::subcommand_publish;
+use crate::subcommand::yank_category::subcommand_yank_category;
 use anyhow::Result;
 use clap::{crate_authors, crate_description, crate_name, crate_version};
 
@@ -32,6 +33,10 @@ async fn main() -> Result<()> {
         subcommand_publish(continue_from).await?;
     } else if let Some(_matches) = matches.subcommand_matches("fix-manifests") {
         subcommand_fix_manifests().await?;
+    } else if let Some(matches) = matches.subcommand_matches("yank-category") {
+        let category = matches.value_of("category").unwrap();
+        let version = matches.value_of("version").unwrap();
+        subcommand_yank_category(category, version).await?;
     } else {
         clap_app().print_long_help().unwrap();
     }
@@ -60,6 +65,24 @@ fn clap_app() -> clap::App<'static, 'static> {
                             "Crate name to continue publishing from, if, for example, \
                             publishing failed half way through previously.",
                         ),
+                ),
+        )
+        .subcommand(
+            clap::SubCommand::with_name("yank-category")
+                .about("yanks a category of packages with the given version number")
+                .arg(
+                    clap::Arg::with_name("category")
+                        .long("category")
+                        .required(true)
+                        .takes_value(true)
+                        .help("package category to yank (smithy-runtime, aws-runtime, or aws-sdk)"),
+                )
+                .arg(
+                    clap::Arg::with_name("version")
+                        .long("version")
+                        .required(true)
+                        .takes_value(true)
+                        .help("version number to yank"),
                 ),
         )
 }

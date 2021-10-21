@@ -7,9 +7,11 @@
 
 mod check_published;
 mod publish;
+mod yank;
 
 pub use check_published::CheckPublished;
 pub use publish::Publish;
+pub use yank::Yank;
 
 use anyhow::{Context, Result};
 use async_trait::async_trait;

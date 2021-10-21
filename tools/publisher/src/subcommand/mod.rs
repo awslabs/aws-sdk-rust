@@ -5,3 +5,4 @@
 
 pub mod fix_manifests;
 pub mod publish;
+pub mod yank_category;

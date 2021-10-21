@@ -12,15 +12,16 @@ use std::path::Path;
 use std::process::Command;
 use tracing::info;
 
-pub struct Publish<'a> {
+/// Yanks a package version from crates.io
+pub struct Yank<'a> {
     program: &'static str,
     package_handle: &'a PackageHandle,
     package_path: &'a Path,
 }
 
-impl<'a> Publish<'a> {
-    pub fn new(package_handle: &'a PackageHandle, package_path: &'a Path) -> Publish<'a> {
-        Publish {
+impl<'a> Yank<'a> {
+    pub fn new(package_handle: &'a PackageHandle, package_path: &'a Path) -> Yank<'a> {
+        Yank {
             program: "cargo",
             package_handle,
             package_path,
@@ -29,30 +30,31 @@ impl<'a> Publish<'a> {
 }
 
 #[async_trait]
-impl<'a> CargoOperation for Publish<'a> {
+impl<'a> CargoOperation for Yank<'a> {
     type Output = ();
 
     async fn spawn(&self) -> Result<()> {
         let mut command = Command::new(self.program);
         command
             .current_dir(self.package_path)
-            .arg("publish")
-            .arg("--jobs")
-            .arg("1");
+            .arg("yank")
+            .arg("--vers")
+            .arg(format!("{}", self.package_handle.version))
+            .arg(&self.package_handle.name);
         let output = tokio::task::spawn_blocking(move || command.output()).await??;
         if !output.status.success() {
-            let (stdout, stderr) = output_text(&output);
-            let already_uploaded_msg = format!(
-                "error: crate version `{}` is already uploaded",
-                self.package_handle.version
+            let (_, stderr) = output_text(&output);
+            let no_such_version = format!(
+                "error: crate `{}` does not have a version `{}`",
+                self.package_handle.name, self.package_handle.version
             );
-            if stdout.contains(&already_uploaded_msg) || stderr.contains(&already_uploaded_msg) {
+            if stderr.contains(&no_such_version) {
                 info!(
-                    "{}-{} has already been published to crates.io.",
+                    "{} never had a version {}.",
                     self.package_handle.name, self.package_handle.version
                 );
             } else {
-                return Err(capture_error("cargo publish", &output));
+                return Err(capture_error("cargo yank", &output));
             }
         }
         Ok(())
@@ -60,8 +62,8 @@ impl<'a> CargoOperation for Publish<'a> {
 
     fn plan(&self) -> Option<Cow<'static, str>> {
         Some(Cow::Owned(format!(
-            "[in {:?}]: cargo publish --jobs 1",
-            self.package_path
+            "[in {:?}] cargo yank --vers {} {}",
+            self.package_path, self.package_handle.version, self.package_handle.name
         )))
     }
 }
@@ -73,8 +75,8 @@ mod tests {
     use std::env;
 
     #[tokio::test]
-    async fn publish_succeeds() {
-        Publish {
+    async fn yank_succeeds() {
+        Yank {
             program: "./fake_cargo/cargo_success",
             package_handle: &PackageHandle::new(
                 "aws-sdk-dynamodb",
@@ -88,8 +90,8 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn publish_fails() {
-        let result = Publish {
+    async fn yank_fails() {
+        let result = Yank {
             program: "./fake_cargo/cargo_fails",
             package_handle: &PackageHandle::new(
                 "something",
@@ -101,7 +103,7 @@ mod tests {
         .await;
         assert!(result.is_err(), "expected error, got {:?}", result);
         assert_eq!(
-            "Failed to cargo publish:\n\
+            "Failed to cargo yank:\n\
             Status: 1\n\
             Stdout: some stdout failure message\n\n\
             Stderr: some stderr failure message\n\n",
@@ -110,13 +112,10 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn publish_fails_already_uploaded() {
-        Publish {
-            program: "./fake_cargo/cargo_publish_already_published",
-            package_handle: &PackageHandle::new(
-                "aws-sdk-dynamodb",
-                Version::parse("0.0.22-alpha").unwrap(),
-            ),
+    async fn yank_no_such_version() {
+        Yank {
+            program: "./fake_cargo/cargo_yank_not_found",
+            package_handle: &PackageHandle::new("aws-sigv4", Version::parse("0.0.0").unwrap()),
             package_path: &env::current_dir().unwrap(),
         }
         .spawn()
