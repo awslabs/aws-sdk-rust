@@ -58,9 +58,11 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
                     // to become available after publish. If we proceed too quickly, then
                     // the next package publish can fail if it depends on this package.
                     wait_for_eventual_consistency(&package).await?;
+                    info!("Successfully published `{}`", package.handle);
+                } else {
+                    info!("`{}` was already published", package.handle);
                 }
                 drop(permit);
-                info!("Successfully published `{}`", package.handle);
                 Ok::<_, anyhow::Error>(())
             }));
         }
@@ -80,6 +82,13 @@ async fn is_published(package: &Package) -> Result<bool> {
 
 /// Waits for the given package to show up on crates.io
 async fn wait_for_eventual_consistency(package: &Package) -> Result<()> {
+    // HACK: the correct version of aws-sigv4 won't ever be shown by search unless
+    // we yank the original version by David or get out of alpha/dev preview.
+    // Just skip it on this check for now.
+    if package.handle.name == "aws-sigv4" {
+        return Ok(());
+    }
+
     let max_wait_time = 10usize;
     for _ in 0..max_wait_time {
         if !is_published(package).await? {
