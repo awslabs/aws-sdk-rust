@@ -33,7 +33,7 @@ impl PackageHandle {
 }
 
 /// Represents a crate (called Package since crate is a reserved word).
-#[derive(Debug, Eq, PartialEq)]
+#[derive(Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Package {
     pub handle: PackageHandle,
     pub crate_path: PathBuf,
@@ -289,14 +289,14 @@ fn batch_packages(packages: Vec<Package>) -> Result<Vec<PackageBatch>> {
         break;
     }
 
-    // Sort packages within batches so that `--continue-from` work consistently
-    for batch in batches.iter_mut() {
-        batch.sort_by(|a, b| a.handle.cmp(&b.handle));
-    }
-
     // Push the final batch
     if !packages.is_empty() {
         batches.push(packages);
+    }
+
+    // Sort packages within batches so that `--continue-from` work consistently
+    for batch in batches.iter_mut() {
+        batch.sort();
     }
     Ok(batches)
 }
@@ -427,6 +427,23 @@ mod tests {
                     package("D", &["A", "B"]),
                     package("F", &["B"]),
                     package("E", &["C", "D", "F"]),
+                ])
+                .unwrap()
+            )
+        );
+        assert_eq!(
+            "A,F;B;C;E,G;D,H,I;",
+            fmt_batches(
+                batch_packages(vec![
+                    package("F", &[]),
+                    package("G", &["C"]),
+                    package("I", &["G"]),
+                    package("H", &["G"]),
+                    package("D", &["B", "C"]),
+                    package("E", &["C"]),
+                    package("C", &["B"]),
+                    package("A", &[]),
+                    package("B", &["A"]),
                 ])
                 .unwrap()
             )
