@@ -28,7 +28,7 @@ version = "0.0.22-alpha"
 
 [dev-dependencies]
 async-trait = "0.1.50"
-env_logger = "*"
+env_logger = "0.9"
 http = "0.2.3"
 
 [dev-dependencies.aws-smithy-async]
