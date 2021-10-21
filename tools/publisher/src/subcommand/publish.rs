@@ -9,7 +9,7 @@ use crate::package::{
     continue_batches_from, discover_package_batches, Package, PackageBatch, PackageStats,
 };
 use crate::repo::discover_repository;
-use crate::{REPO_CRATE_PATH, REPO_NAME};
+use crate::{CRATE_OWNER, REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
 use dialoguer::Confirm;
 use std::sync::Arc;
@@ -58,6 +58,7 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
                     // to become available after publish. If we proceed too quickly, then
                     // the next package publish can fail if it depends on this package.
                     wait_for_eventual_consistency(&package).await?;
+                    correct_owner(&package).await?;
                     info!("Successfully published `{}`", package.handle);
                 } else {
                     info!("`{}` was already published", package.handle);
@@ -102,6 +103,18 @@ async fn wait_for_eventual_consistency(package: &Package) -> Result<()> {
             "package wasn't found on crates.io {} seconds after publish",
             max_wait_time
         )));
+    }
+    Ok(())
+}
+
+/// Corrects the crate ownership.
+async fn correct_owner(package: &Package) -> Result<()> {
+    let owners = cargo::GetOwners::new(&package.handle.name).spawn().await?;
+    if !owners.iter().any(|owner| owner == CRATE_OWNER) {
+        cargo::AddOwner::new(&package.handle.name, CRATE_OWNER)
+            .spawn()
+            .await?;
+        info!("Corrected crate ownership of `{}`", package.handle);
     }
     Ok(())
 }

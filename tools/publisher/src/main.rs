@@ -18,6 +18,7 @@ mod subcommand;
 
 pub const REPO_NAME: &str = "aws-sdk-rust";
 pub const REPO_CRATE_PATH: &str = "sdk";
+pub const CRATE_OWNER: &str = "github:awslabs:rust-sdk-owners";
 
 #[tokio::main]
 async fn main() -> Result<()> {
