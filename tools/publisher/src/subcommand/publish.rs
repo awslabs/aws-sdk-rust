@@ -3,9 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::cargo;
+use crate::cargo::{self, CargoOperation};
 use crate::fs::Fs;
-use crate::package::{continue_batches_from, discover_package_batches, PackageBatch, PackageStats};
+use crate::package::{
+    continue_batches_from, discover_package_batches, Package, PackageBatch, PackageStats,
+};
 use crate::repo::discover_repository;
 use crate::{REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
@@ -15,11 +17,9 @@ use std::time::Duration;
 use tokio::sync::Semaphore;
 use tracing::info;
 
-const BACKOFF: Duration = Duration::from_millis(30);
-
 pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
     // Make sure cargo exists
-    cargo::confirm_installed_on_path().await?;
+    cargo::confirm_installed_on_path()?;
 
     info!("Discovering crates to publish...");
     let repo = discover_repository(REPO_NAME, REPO_CRATE_PATH)?;
@@ -48,41 +48,20 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
         for package in batch {
             let permit = semaphore.clone().acquire_owned().await.unwrap();
             tasks.push(tokio::spawn(async move {
-                let task = cargo::publish_task(&package.crate_path);
-                let plan = task.plan();
-                info!("Executing `{}`...", plan);
-                let output = task.spawn().await?;
-                if !output.status.success() {
-                    let already_uploaded_msg = format!(
-                        "error: crate version `{}` is already uploaded",
-                        package.handle.version
-                    );
-                    let (stdout, stderr) = (
-                        String::from_utf8_lossy(&output.stdout),
-                        String::from_utf8_lossy(&output.stderr),
-                    );
-                    if stdout.contains(&already_uploaded_msg)
-                        || stderr.contains(&already_uploaded_msg)
-                    {
-                        info!(
-                            "{}-{} has already been published to crates.io.",
-                            package.handle.name, package.handle.version
-                        );
-                    } else {
-                        let message = format!(
-                            "Cargo publish failed:\nPlan: {}\nStatus: {}\nStdout: {}\nStderr: {}\n",
-                            plan,
-                            output.status,
-                            String::from_utf8_lossy(&output.stdout),
-                            String::from_utf8_lossy(&output.stderr)
-                        );
-                        return Err(anyhow::Error::msg(message));
-                    }
+                // Only publish if it hasn't been published yet.
+                if !is_published(&package).await? {
+                    info!("Publishing `{}`...", package.handle);
+                    cargo::Publish::new(&package.handle, &package.crate_path)
+                        .spawn()
+                        .await?;
+                    // Sometimes it takes a little bit of time for the new package version
+                    // to become available after publish. If we proceed too quickly, then
+                    // the next package publish can fail if it depends on this package.
+                    wait_for_eventual_consistency(&package).await?;
                 }
-                tokio::time::sleep(BACKOFF).await;
                 drop(permit);
-                info!("Success: `{}`", plan);
-                Ok(())
+                info!("Successfully published `{}`", package.handle);
+                Ok::<_, anyhow::Error>(())
             }));
         }
         for task in tasks {
@@ -93,11 +72,40 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
     Ok(())
 }
 
+async fn is_published(package: &Package) -> Result<bool> {
+    cargo::CheckPublished::new(&package.handle, &package.crate_path)
+        .spawn()
+        .await
+}
+
+/// Waits for the given package to show up on crates.io
+async fn wait_for_eventual_consistency(package: &Package) -> Result<()> {
+    let max_wait_time = 10usize;
+    for _ in 0..max_wait_time {
+        if !is_published(package).await? {
+            tokio::time::sleep(Duration::from_secs(1)).await;
+        } else {
+            return Ok(());
+        }
+    }
+    if !is_published(package).await? {
+        return Err(anyhow::Error::msg(format!(
+            "package wasn't found on crates.io {} seconds after publish",
+            max_wait_time
+        )));
+    }
+    Ok(())
+}
+
 fn confirm_plan(batches: &[PackageBatch], stats: PackageStats) -> Result<()> {
     let mut full_plan = Vec::new();
     for batch in batches {
         for package in batch {
-            full_plan.push(cargo::publish_task(&package.crate_path).plan());
+            full_plan.push(
+                cargo::Publish::new(&package.handle, &package.crate_path)
+                    .plan()
+                    .unwrap(),
+            );
         }
         full_plan.push("wait".into());
     }

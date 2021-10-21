@@ -12,9 +12,18 @@ use cargo_toml::{Dependency, DepsSet, Manifest};
 use semver::Version;
 use std::collections::{BTreeMap, BTreeSet};
 use std::error::Error as StdError;
+use std::fmt;
 use std::path::{Path, PathBuf};
 use tokio::fs;
 use tracing::warn;
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd)]
+pub enum PackageCategory {
+    SmithyRuntime,
+    AwsRuntime,
+    AwsSdk,
+    Unknown,
+}
 
 /// Information required to identify a package (crate).
 #[derive(Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
@@ -32,10 +41,17 @@ impl PackageHandle {
     }
 }
 
+impl fmt::Display for PackageHandle {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}-{}", self.name, self.version)
+    }
+}
+
 /// Represents a crate (called Package since crate is a reserved word).
 #[derive(Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Package {
     pub handle: PackageHandle,
+    pub category: PackageCategory,
     pub crate_path: PathBuf,
     pub manifest_path: PathBuf,
     pub local_dependencies: BTreeSet<PackageHandle>,
@@ -48,8 +64,18 @@ impl Package {
         local_dependencies: BTreeSet<PackageHandle>,
     ) -> Self {
         let manifest_path = manifest_path.into();
+        let category = if handle.name.starts_with("aws-smithy-") {
+            PackageCategory::SmithyRuntime
+        } else if handle.name.starts_with("aws-sdk-") {
+            PackageCategory::AwsSdk
+        } else if handle.name.starts_with("aws-") {
+            PackageCategory::AwsRuntime
+        } else {
+            PackageCategory::Unknown
+        };
         Self {
             handle,
+            category,
             crate_path: manifest_path.parent().unwrap().into(),
             manifest_path,
             local_dependencies,
@@ -85,14 +111,13 @@ impl PackageStats {
         let mut stats = PackageStats::default();
         for batch in batches {
             for package in batch {
-                if package.handle.name.starts_with("aws-smithy-") {
-                    stats.smithy_runtime_crates += 1;
-                } else if package.handle.name.starts_with("aws-sdk-") {
-                    stats.aws_sdk_crates += 1;
-                } else if package.handle.name.starts_with("aws-") {
-                    stats.aws_runtime_crates += 1;
-                } else {
-                    warn!("Unrecognized crate name: {}", package.handle.name);
+                match package.category {
+                    PackageCategory::SmithyRuntime => stats.smithy_runtime_crates += 1,
+                    PackageCategory::AwsRuntime => stats.aws_runtime_crates += 1,
+                    PackageCategory::AwsSdk => stats.aws_sdk_crates += 1,
+                    PackageCategory::Unknown => {
+                        warn!("Unrecognized crate: {}", package.handle.name);
+                    }
                 }
             }
         }
