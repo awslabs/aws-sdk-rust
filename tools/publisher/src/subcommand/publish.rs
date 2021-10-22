@@ -58,11 +58,11 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
                     // to become available after publish. If we proceed too quickly, then
                     // the next package publish can fail if it depends on this package.
                     wait_for_eventual_consistency(&package).await?;
-                    correct_owner(&package).await?;
                     info!("Successfully published `{}`", package.handle);
                 } else {
                     info!("`{}` was already published", package.handle);
                 }
+                correct_owner(&package).await?;
                 drop(permit);
                 Ok::<_, anyhow::Error>(())
             }));
