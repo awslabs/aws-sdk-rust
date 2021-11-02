@@ -3,7 +3,7 @@ on:
     paths: 'tools/**'
 
 env:
-  # The publisher tool can use the latest Rust since it isn't published
+  # The publisher tool can use the latest Rust since it isn't published.
   # Build with a minimum of Rust 1.56.1 to check for CVE-2021-42574.
   rust_version: 1.56.1
   rust_toolchain_components: clippy,rustfmt
