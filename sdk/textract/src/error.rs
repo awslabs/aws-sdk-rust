@@ -45,7 +45,7 @@ pub enum AnalyzeDocumentErrorKind {
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
     /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AnalyzeDocumentError {
@@ -119,64 +119,64 @@ impl AnalyzeDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::BadDocumentException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::BadDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::DocumentTooLargeException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::DocumentTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException`.
     pub fn is_human_loop_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AnalyzeDocumentErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AnalyzeDocumentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `AnalyzeDocumentErrorKind::UnsupportedDocumentException`.
+    /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -248,7 +248,7 @@ pub enum AnalyzeExpenseErrorKind {
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
     /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AnalyzeExpenseError {
@@ -321,54 +321,54 @@ impl AnalyzeExpenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeExpenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::BadDocumentException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
         matches!(&self.kind, AnalyzeExpenseErrorKind::BadDocumentException(_))
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::DocumentTooLargeException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeExpenseErrorKind::DocumentTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AnalyzeExpenseErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeExpenseErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeExpenseErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AnalyzeExpenseErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `AnalyzeExpenseErrorKind::UnsupportedDocumentException`.
+    /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -437,7 +437,7 @@ pub enum DetectDocumentTextErrorKind {
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
     /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectDocumentTextError {
@@ -510,63 +510,63 @@ impl DetectDocumentTextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::BadDocumentException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::BadDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::DocumentTooLargeException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::DocumentTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectDocumentTextErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DetectDocumentTextErrorKind::UnsupportedDocumentException`.
+    /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -633,7 +633,7 @@ pub enum GetDocumentAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentAnalysisError {
@@ -705,56 +705,56 @@ impl GetDocumentAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::InvalidJobIdException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::InvalidJobIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::InvalidKmsKeyException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -820,7 +820,7 @@ pub enum GetDocumentTextDetectionErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentTextDetectionError {
@@ -892,56 +892,56 @@ impl GetDocumentTextDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::InvalidJobIdException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::InvalidJobIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentTextDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -963,6 +963,193 @@ impl std::error::Error for GetDocumentTextDetectionError {
             }
             GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetExpenseAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetExpenseAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: GetExpenseAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetExpenseAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetExpenseAnalysisErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
+    /// of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
+    /// <a>GetDocumentAnalysis</a>.</p>
+    InvalidJobIdException(crate::error::InvalidJobIdException),
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
+    /// was entered incorrectly. </p>
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
+    /// an <code>InvalidParameterException</code> exception occurs
+    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
+    /// request parameter.
+    /// Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
+    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
+    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+    /// </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
+    /// contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetExpenseAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetExpenseAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetExpenseAnalysisError {
+    fn code(&self) -> Option<&str> {
+        GetExpenseAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetExpenseAnalysisError {
+    /// Creates a new `GetExpenseAnalysisError`.
+    pub fn new(kind: GetExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetExpenseAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetExpenseAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidJobIdException`.
+    pub fn is_invalid_job_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::InvalidJobIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidKmsKeyException`.
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExpenseAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetExpenseAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1024,7 +1211,7 @@ pub enum StartDocumentAnalysisErrorKind {
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
     /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDocumentAnalysisError {
@@ -1102,84 +1289,84 @@ impl StartDocumentAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::BadDocumentException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::BadDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::DocumentTooLargeException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::DocumentTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::InvalidKmsKeyException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentAnalysisErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentAnalysisErrorKind::UnsupportedDocumentException`.
+    /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1268,7 +1455,7 @@ pub enum StartDocumentTextDetectionErrorKind {
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
     /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDocumentTextDetectionError {
@@ -1348,84 +1535,84 @@ impl StartDocumentTextDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::BadDocumentException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::BadDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::DocumentTooLargeException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDocumentTextDetectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartDocumentTextDetectionErrorKind::UnsupportedDocumentException`.
+    /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1455,6 +1642,250 @@ impl std::error::Error for StartDocumentTextDetectionError {
                 Some(_inner)
             }
             StartDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartExpenseAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartExpenseAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: StartExpenseAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartExpenseAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartExpenseAnalysisErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
+    /// of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document
+    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    BadDocumentException(crate::error::BadDocumentException),
+    /// <p>The document can't be processed because it's too large. The maximum document size for
+    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
+    /// MB for PDF files.</p>
+    DocumentTooLargeException(crate::error::DocumentTooLargeException),
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
+    /// least one of the other input parameters is different from the previous call to the
+    /// operation. </p>
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
+    /// was entered incorrectly. </p>
+    InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
+    /// an <code>InvalidParameterException</code> exception occurs
+    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
+    /// request parameter.
+    /// Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
+    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
+    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+    /// </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
+    /// asynchronous jobs concurrently, calls to start operations
+    /// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
+    /// exception (HTTP status code: 400) until the number of concurrently running jobs is below
+    /// the Amazon Textract service limit. </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
+    /// contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
+    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartExpenseAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartExpenseAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
+            StartExpenseAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartExpenseAnalysisError {
+    fn code(&self) -> Option<&str> {
+        StartExpenseAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartExpenseAnalysisError {
+    /// Creates a new `StartExpenseAnalysisError`.
+    pub fn new(kind: StartExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartExpenseAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartExpenseAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::BadDocumentException`.
+    pub fn is_bad_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::BadDocumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::DocumentTooLargeException`.
+    pub fn is_document_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException`.
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidKmsKeyException`.
+    pub fn is_invalid_kms_key_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::UnsupportedDocumentException`.
+    pub fn is_unsupported_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_)
+        )
+    }
+}
+impl std::error::Error for StartExpenseAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
+            StartExpenseAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
+            StartExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -39,12 +39,14 @@ pub mod create_replication_set_input {
             self.regions = input;
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -70,7 +72,7 @@ pub type CreateReplicationSetInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationSet`](crate::operation::CreateReplicationSet)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -102,6 +104,7 @@ impl CreateReplicationSetInput {
             input: &crate::input::CreateReplicationSetInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -162,9 +165,10 @@ impl CreateReplicationSetInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -198,12 +202,14 @@ pub mod create_response_plan_input {
         >,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -241,16 +247,14 @@ pub mod create_response_plan_input {
             self.incident_template = input;
             self
         }
-        /// <p>The
-        /// AWS Chatbot
-        /// chat channel used for collaboration during an incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an
+        /// incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The
-        /// AWS Chatbot
-        /// chat channel used for collaboration during an incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an
+        /// incident.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -344,7 +348,7 @@ pub type CreateResponsePlanInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateResponsePlan`](crate::operation::CreateResponsePlan)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -376,6 +380,7 @@ impl CreateResponsePlanInput {
             input: &crate::input::CreateResponsePlanInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -436,9 +441,10 @@ impl CreateResponsePlanInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -467,24 +473,26 @@ pub mod create_timeline_event_input {
         pub(crate) event_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are adding the event
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+        /// added.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are adding the event
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+        /// added.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -517,12 +525,14 @@ pub mod create_timeline_event_input {
             self.event_type = input;
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema
+        /// imposed.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_data = Some(input.into());
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema
+        /// imposed.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_data = input;
             self
@@ -551,7 +561,7 @@ pub type CreateTimelineEventInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`CreateTimelineEvent`](crate::operation::CreateTimelineEvent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -583,6 +593,7 @@ impl CreateTimelineEventInput {
             input: &crate::input::CreateTimelineEventInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -643,9 +654,10 @@ impl CreateTimelineEventInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -698,7 +710,7 @@ pub type DeleteIncidentRecordInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIncidentRecord`](crate::operation::DeleteIncidentRecord)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -730,6 +742,7 @@ impl DeleteIncidentRecordInput {
             input: &crate::input::DeleteIncidentRecordInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -787,9 +800,10 @@ impl DeleteIncidentRecordInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -842,7 +856,7 @@ pub type DeleteReplicationSetInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationSet`](crate::operation::DeleteReplicationSet)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -881,12 +895,8 @@ impl DeleteReplicationSetInput {
             input: &crate::input::DeleteReplicationSetInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -934,16 +944,9 @@ impl DeleteReplicationSetInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteReplicationSetInput`](crate::input::DeleteReplicationSetInput)
@@ -1003,7 +1006,7 @@ pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1035,6 +1038,7 @@ impl DeleteResourcePolicyInput {
             input: &crate::input::DeleteResourcePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1092,9 +1096,10 @@ impl DeleteResourcePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1147,7 +1152,7 @@ pub type DeleteResponsePlanInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResponsePlan`](crate::operation::DeleteResponsePlan)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1179,6 +1184,7 @@ impl DeleteResponsePlanInput {
             input: &crate::input::DeleteResponsePlanInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1236,9 +1242,10 @@ impl DeleteResponsePlanInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1264,12 +1271,14 @@ pub mod delete_timeline_event_input {
         pub(crate) event_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1277,12 +1286,14 @@ pub mod delete_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -1308,7 +1319,7 @@ pub type DeleteTimelineEventInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTimelineEvent`](crate::operation::DeleteTimelineEvent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1340,6 +1351,7 @@ impl DeleteTimelineEventInput {
             input: &crate::input::DeleteTimelineEventInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1397,9 +1409,10 @@ impl DeleteTimelineEventInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1452,7 +1465,7 @@ pub type GetIncidentRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`GetIncidentRecord`](crate::operation::GetIncidentRecord)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1491,12 +1504,8 @@ impl GetIncidentRecordInput {
             input: &crate::input::GetIncidentRecordInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1544,16 +1553,9 @@ impl GetIncidentRecordInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetIncidentRecordInput`](crate::input::GetIncidentRecordInput)
@@ -1599,7 +1601,7 @@ pub type GetReplicationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationSet`](crate::operation::GetReplicationSet)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1638,12 +1640,8 @@ impl GetReplicationSetInput {
             input: &crate::input::GetReplicationSetInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1691,16 +1689,9 @@ impl GetReplicationSetInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetReplicationSetInput`](crate::input::GetReplicationSetInput)
@@ -1772,7 +1763,7 @@ pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1811,6 +1802,7 @@ impl GetResourcePoliciesInput {
             input: &crate::input::GetResourcePoliciesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1868,9 +1860,10 @@ impl GetResourcePoliciesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1923,7 +1916,7 @@ pub type GetResponsePlanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`GetResponsePlan`](crate::operation::GetResponsePlan)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1962,12 +1955,8 @@ impl GetResponsePlanInput {
             input: &crate::input::GetResponsePlanInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2015,16 +2004,9 @@ impl GetResponsePlanInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetResponsePlanInput`](crate::input::GetResponsePlanInput)
@@ -2043,12 +2025,14 @@ pub mod get_timeline_event_input {
         pub(crate) event_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2056,12 +2040,14 @@ pub mod get_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -2087,7 +2073,7 @@ pub type GetTimelineEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`GetTimelineEvent`](crate::operation::GetTimelineEvent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2132,12 +2118,8 @@ impl GetTimelineEventInput {
             input: &crate::input::GetTimelineEventInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2185,16 +2167,9 @@ impl GetTimelineEventInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetTimelineEventInput`](crate::input::GetTimelineEventInput)
@@ -2218,8 +2193,8 @@ pub mod list_incident_records_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filter the list of incident records you are searching through. You can filter on the
-        /// following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter
+        /// on the following keys:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2242,14 +2217,29 @@ pub mod list_incident_records_input {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all incident
+        /// records.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// incident records that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// incident records that match any of the values provided.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
-        /// <p>Filter the list of incident records you are searching through. You can filter on the
-        /// following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter
+        /// on the following keys:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2270,6 +2260,21 @@ pub mod list_incident_records_input {
         /// <p>
         /// <code>createdBy</code>
         /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all incident
+        /// records.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// incident records that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// incident records that match any of the values provided.</p>
         /// </li>
         /// </ul>
         pub fn set_filters(
@@ -2321,7 +2326,7 @@ pub type ListIncidentRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListIncidentRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListIncidentRecords`](crate::operation::ListIncidentRecords)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2353,6 +2358,7 @@ impl ListIncidentRecordsInput {
             input: &crate::input::ListIncidentRecordsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2410,9 +2416,10 @@ impl ListIncidentRecordsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2439,12 +2446,14 @@ pub mod list_related_items_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident record that you are listing related items for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+        /// items.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record that you are listing related items for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+        /// items.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2494,7 +2503,7 @@ pub type ListRelatedItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListRelatedItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListRelatedItems`](crate::operation::ListRelatedItems)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2526,6 +2535,7 @@ impl ListRelatedItemsInput {
             input: &crate::input::ListRelatedItemsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2583,9 +2593,10 @@ impl ListRelatedItemsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2652,7 +2663,7 @@ pub type ListReplicationSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListReplicationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListReplicationSets`](crate::operation::ListReplicationSets)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2684,6 +2695,7 @@ impl ListReplicationSetsInput {
             input: &crate::input::ListReplicationSetsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2741,9 +2753,10 @@ impl ListReplicationSetsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2810,7 +2823,7 @@ pub type ListResponsePlansInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListResponsePlansInput {
     /// Consumes the builder and constructs an Operation<[`ListResponsePlans`](crate::operation::ListResponsePlans)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2842,6 +2855,7 @@ impl ListResponsePlansInput {
             input: &crate::input::ListResponsePlansInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2899,9 +2913,10 @@ impl ListResponsePlansInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2956,7 +2971,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3004,12 +3019,8 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3057,16 +3068,9 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -3089,12 +3093,14 @@ pub mod list_timeline_events_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3120,6 +3126,21 @@ pub mod list_timeline_events_input {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all timeline
+        /// events.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// timeline events that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// timeline events that match any of the values provided.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
@@ -3138,6 +3159,21 @@ pub mod list_timeline_events_input {
         /// <p>
         /// <code>eventType</code>
         /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all timeline
+        /// events.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// timeline events that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// timeline events that match any of the values provided.</p>
         /// </li>
         /// </ul>
         pub fn set_filters(
@@ -3220,7 +3256,7 @@ pub type ListTimelineEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListTimelineEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListTimelineEvents`](crate::operation::ListTimelineEvents)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3252,6 +3288,7 @@ impl ListTimelineEventsInput {
             input: &crate::input::ListTimelineEventsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3309,9 +3346,10 @@ impl ListTimelineEventsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3380,7 +3418,7 @@ pub type PutResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3412,6 +3450,7 @@ impl PutResourcePolicyInput {
             input: &crate::input::PutResourcePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3469,9 +3508,10 @@ impl PutResourcePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3501,24 +3541,26 @@ pub mod start_incident_input {
         pub(crate) related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, SNS topics, runbooks, title, and impact of the incident. </p>
+        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn response_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.response_plan_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, SNS topics, runbooks, title, and impact of the incident. </p>
+        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn set_response_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3628,7 +3670,7 @@ pub mod start_incident_input {
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an S3 bucket. </p>
+        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn related_items(mut self, input: impl Into<crate::model::RelatedItem>) -> Self {
             let mut v = self.related_items.unwrap_or_default();
             v.push(input.into());
@@ -3636,7 +3678,7 @@ pub mod start_incident_input {
             self
         }
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an S3 bucket. </p>
+        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn set_related_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
@@ -3669,7 +3711,7 @@ pub type StartIncidentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartIncidentInput {
     /// Consumes the builder and constructs an Operation<[`StartIncident`](crate::operation::StartIncident)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3701,6 +3743,7 @@ impl StartIncidentInput {
             input: &crate::input::StartIncidentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3760,9 +3803,10 @@ impl StartIncidentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3846,7 +3890,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3894,6 +3938,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3950,9 +3995,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4028,7 +4074,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4085,12 +4131,8 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4138,16 +4180,9 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
@@ -4187,12 +4222,14 @@ pub mod update_deletion_protection_input {
             self.deletion_protected = input;
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4220,7 +4257,7 @@ pub type UpdateDeletionProtectionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateDeletionProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeletionProtection`](crate::operation::UpdateDeletionProtection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4252,6 +4289,7 @@ impl UpdateDeletionProtectionInput {
             input: &crate::input::UpdateDeletionProtectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4314,9 +4352,10 @@ impl UpdateDeletionProtectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4349,12 +4388,14 @@ pub mod update_incident_record_input {
             std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4369,36 +4410,36 @@ pub mod update_incident_record_input {
             self.arn = input;
             self
         }
-        /// <p>The title of the incident is a brief and easily recognizable.</p>
+        /// <p>A brief description of the incident.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>The title of the incident is a brief and easily recognizable.</p>
+        /// <p>A brief description of the incident.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
         }
-        /// <p>The summary describes what has happened during the incident.</p>
+        /// <p>A longer description of what occurred during the incident.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.summary = Some(input.into());
             self
         }
-        /// <p>The summary describes what has happened during the incident.</p>
+        /// <p>A longer description of what occurred during the incident.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.summary = input;
             self
         }
-        /// <p>Defines the impact to customers and applications. Providing an impact overwrites the
-        /// impact provided by the response plan.</p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+        /// overwrites the impact provided by the response plan.</p>
         /// <p class="title">
         /// <b>Possible impacts:</b>
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
+        /// <code>1</code> - Critical impact, full application failure that impacts many
+        /// to all customers. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -4407,12 +4448,12 @@ pub mod update_incident_record_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
+        /// <code>3</code> - Medium impact, the application is providing reduced service
         /// to customers.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+        /// <code>4</code> - Low impact, customer aren't impacted by the problem
         /// yet.</p>
         /// </li>
         /// <li>
@@ -4425,16 +4466,16 @@ pub mod update_incident_record_input {
             self.impact = Some(input);
             self
         }
-        /// <p>Defines the impact to customers and applications. Providing an impact overwrites the
-        /// impact provided by the response plan.</p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+        /// overwrites the impact provided by the response plan.</p>
         /// <p class="title">
         /// <b>Possible impacts:</b>
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
+        /// <code>1</code> - Critical impact, full application failure that impacts many
+        /// to all customers. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -4443,12 +4484,12 @@ pub mod update_incident_record_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
+        /// <code>3</code> - Medium impact, the application is providing reduced service
         /// to customers.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+        /// <code>4</code> - Low impact, customer aren't impacted by the problem
         /// yet.</p>
         /// </li>
         /// <li>
@@ -4461,12 +4502,14 @@ pub mod update_incident_record_input {
             self.impact = input;
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or
+        /// <code>Resolved</code>.</p>
         pub fn status(mut self, input: crate::model::IncidentRecordStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or
+        /// <code>Resolved</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -4474,12 +4517,12 @@ pub mod update_incident_record_input {
             self.status = input;
             self
         }
-        /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+        /// <p>The Chatbot chat channel where responders can collaborate.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+        /// <p>The Chatbot chat channel where responders can collaborate.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -4491,8 +4534,9 @@ pub mod update_incident_record_input {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
         pub fn notification_targets(
             mut self,
@@ -4503,8 +4547,9 @@ pub mod update_incident_record_input {
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
         pub fn set_notification_targets(
             mut self,
@@ -4540,7 +4585,7 @@ pub type UpdateIncidentRecordInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIncidentRecord`](crate::operation::UpdateIncidentRecord)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4572,6 +4617,7 @@ impl UpdateIncidentRecordInput {
             input: &crate::input::UpdateIncidentRecordInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4632,9 +4678,10 @@ impl UpdateIncidentRecordInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4661,24 +4708,26 @@ pub mod update_related_items_input {
         pub(crate) related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are updating related items
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+        /// are updating.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are updating related items
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+        /// are updating.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4721,7 +4770,7 @@ pub type UpdateRelatedItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateRelatedItemsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRelatedItems`](crate::operation::UpdateRelatedItems)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4753,6 +4802,7 @@ impl UpdateRelatedItemsInput {
             input: &crate::input::UpdateRelatedItemsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4813,9 +4863,10 @@ impl UpdateRelatedItemsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4875,12 +4926,14 @@ pub mod update_replication_set_input {
             self.actions = input;
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4907,7 +4960,7 @@ pub type UpdateReplicationSetInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationSet`](crate::operation::UpdateReplicationSet)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4939,6 +4992,7 @@ impl UpdateReplicationSetInput {
             input: &crate::input::UpdateReplicationSetInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4999,9 +5053,10 @@ impl UpdateReplicationSetInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5037,12 +5092,14 @@ pub mod update_response_plan_input {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5057,22 +5114,24 @@ pub mod update_response_plan_input {
             self.arn = input;
             self
         }
-        /// <p>The long format name of the response plan. Can't contain spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain
+        /// spaces.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The long format name of the response plan. Can't contain spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain
+        /// spaces.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>The short format name of the incident. Can't contain spaces.</p>
+        /// <p>The short format name of the incident. The title can't contain spaces.</p>
         pub fn incident_template_title(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_template_title = Some(input.into());
             self
         }
-        /// <p>The short format name of the incident. Can't contain spaces.</p>
+        /// <p>The short format name of the incident. The title can't contain spaces.</p>
         pub fn set_incident_template_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5157,7 +5216,8 @@ pub mod update_response_plan_input {
             self.incident_template_summary = input;
             self
         }
-        /// <p>Used to create only one incident record for an incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+        /// same incident in the same account.</p>
         pub fn incident_template_dedupe_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -5165,7 +5225,8 @@ pub mod update_response_plan_input {
             self.incident_template_dedupe_string = Some(input.into());
             self
         }
-        /// <p>Used to create only one incident record for an incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+        /// same incident in the same account.</p>
         pub fn set_incident_template_dedupe_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5177,7 +5238,8 @@ pub mod update_response_plan_input {
         ///
         /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
             input: impl Into<crate::model::NotificationTargetItem>,
@@ -5189,7 +5251,8 @@ pub mod update_response_plan_input {
             self.incident_template_notification_targets = Some(v);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn set_incident_template_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -5197,18 +5260,14 @@ pub mod update_response_plan_input {
             self.incident_template_notification_targets = input;
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn set_chat_channel(
@@ -5280,7 +5339,7 @@ pub type UpdateResponsePlanInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResponsePlan`](crate::operation::UpdateResponsePlan)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5312,6 +5371,7 @@ impl UpdateResponsePlanInput {
             input: &crate::input::UpdateResponsePlanInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5372,9 +5432,10 @@ impl UpdateResponsePlanInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5404,24 +5465,26 @@ pub mod update_timeline_event_input {
         pub(crate) event_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part
-        /// of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part
-        /// of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5429,12 +5492,14 @@ pub mod update_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -5497,7 +5562,7 @@ pub type UpdateTimelineEventInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTimelineEvent`](crate::operation::UpdateTimelineEvent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5529,6 +5594,7 @@ impl UpdateTimelineEventInput {
             input: &crate::input::UpdateTimelineEventInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5589,9 +5655,10 @@ impl UpdateTimelineEventInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5611,12 +5678,14 @@ impl UpdateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part
-    /// of.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using
+    /// <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     pub event_time: std::option::Option<aws_smithy_types::Instant>,
@@ -5642,13 +5711,15 @@ impl std::fmt::Debug for UpdateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResponsePlanInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The long format name of the response plan. Can't contain spaces.</p>
+    /// <p>The long format name of the response plan. The display name can't contain
+    /// spaces.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The short format name of the incident. Can't contain spaces.</p>
+    /// <p>The short format name of the incident. The title can't contain spaces.</p>
     pub incident_template_title: std::option::Option<std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
     /// provided by a response plan.</p>
@@ -5681,14 +5752,14 @@ pub struct UpdateResponsePlanInput {
     /// <p>A brief summary of the incident. This typically contains what has happened, what's
     /// currently happening, and next steps.</p>
     pub incident_template_summary: std::option::Option<std::string::String>,
-    /// <p>Used to create only one incident record for an incident.</p>
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+    /// same incident in the same account.</p>
     pub incident_template_dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
     pub incident_template_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-    /// <p>The
-    /// AWS
-    /// Chatbot chat channel used for collaboration during an
+    /// <p>The Chatbot chat channel used for collaboration during an
     /// incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
@@ -5729,7 +5800,8 @@ pub struct UpdateReplicationSetInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>An action to add or delete a Region.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::UpdateReplicationSetAction>>,
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateReplicationSetInput {
@@ -5746,10 +5818,11 @@ impl std::fmt::Debug for UpdateReplicationSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelatedItemsInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record you are updating related items
-    /// in.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+    /// are updating.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Details about the item you are adding or deleting.</p>
     pub related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
@@ -5768,24 +5841,25 @@ impl std::fmt::Debug for UpdateRelatedItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIncidentRecordInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The title of the incident is a brief and easily recognizable.</p>
+    /// <p>A brief description of the incident.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>The summary describes what has happened during the incident.</p>
+    /// <p>A longer description of what occurred during the incident.</p>
     pub summary: std::option::Option<std::string::String>,
-    /// <p>Defines the impact to customers and applications. Providing an impact overwrites the
-    /// impact provided by the response plan.</p>
+    /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+    /// overwrites the impact provided by the response plan.</p>
     /// <p class="title">
     /// <b>Possible impacts:</b>
     /// </p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>1</code> - Critical impact, this typically relates to full application
-    /// failure that impacts many to all customers. </p>
+    /// <code>1</code> - Critical impact, full application failure that impacts many
+    /// to all customers. </p>
     /// </li>
     /// <li>
     /// <p>
@@ -5794,12 +5868,12 @@ pub struct UpdateIncidentRecordInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>3</code> -  Medium impact, the application is providing reduced service
+    /// <code>3</code> - Medium impact, the application is providing reduced service
     /// to customers.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+    /// <code>4</code> - Low impact, customer aren't impacted by the problem
     /// yet.</p>
     /// </li>
     /// <li>
@@ -5809,12 +5883,14 @@ pub struct UpdateIncidentRecordInput {
     /// </li>
     /// </ul>
     pub impact: std::option::Option<i32>,
-    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    /// <p>The status of the incident. An incident can be <code>Open</code> or
+    /// <code>Resolved</code>.</p>
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
-    /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+    /// <p>The Chatbot chat channel where responders can collaborate.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
-    /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
+    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
     /// the incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -5842,7 +5918,8 @@ pub struct UpdateDeletionProtectionInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Details if deletion protection is enabled or disabled in your account.</p>
     pub deletion_protected: std::option::Option<bool>,
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateDeletionProtectionInput {
@@ -5896,10 +5973,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartIncidentInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-    /// channels, SNS topics, runbooks, title, and impact of the incident. </p>
+    /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub response_plan_arn: std::option::Option<std::string::String>,
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
     /// the response plan. </p>
@@ -5940,7 +6018,7 @@ pub struct StartIncidentInput {
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
     /// <p>Add related items to the incident for other responders to use. Related items are AWS
-    /// resources, external links, or files uploaded to an S3 bucket. </p>
+    /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
 }
 impl std::fmt::Debug for StartIncidentInput {
@@ -5979,7 +6057,8 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimelineEventsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter
     /// timeline events using the following keys:</p>
@@ -5993,6 +6072,21 @@ pub struct ListTimelineEventsInput {
     /// <p>
     /// <code>eventType</code>
     /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Note the following when deciding how to use Filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you don't specify a Filter, the response includes all timeline
+    /// events.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns
+    /// timeline events that match all filters.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify a filter with more than one value, the response returns
+    /// timeline events that match any of the values provided.</p>
     /// </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6074,7 +6168,8 @@ impl std::fmt::Debug for ListReplicationSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRelatedItemsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident record that you are listing related items for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+    /// items.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of related items per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6095,8 +6190,8 @@ impl std::fmt::Debug for ListRelatedItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncidentRecordsInput {
-    /// <p>Filter the list of incident records you are searching through. You can filter on the
-    /// following keys:</p>
+    /// <p>Filters the list of incident records through which you are searching. You can filter
+    /// on the following keys:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6119,6 +6214,21 @@ pub struct ListIncidentRecordsInput {
     /// </p>
     /// </li>
     /// </ul>
+    /// <p>Note the following when deciding how to use Filters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you don't specify a Filter, the response includes all incident
+    /// records.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns
+    /// incident records that match all filters.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you specify a filter with more than one value, the response returns
+    /// incident records that match any of the values provided.</p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6139,9 +6249,11 @@ impl std::fmt::Debug for ListIncidentRecordsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part of.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+    /// <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetTimelineEventInput {
@@ -6223,9 +6335,11 @@ impl std::fmt::Debug for GetIncidentRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+    /// event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using
+    /// <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteTimelineEventInput {
@@ -6304,17 +6418,19 @@ impl std::fmt::Debug for DeleteIncidentRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the action is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record you are adding the event
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+    /// added.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     pub event_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of the event. You can create timeline events of type <code>Custom
     /// Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
+    /// <p>A short description of the event as a valid JSON string. There is no other schema
+    /// imposed.</p>
     pub event_data: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTimelineEventInput {
@@ -6333,7 +6449,8 @@ impl std::fmt::Debug for CreateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponsePlanInput {
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
     pub name: std::option::Option<std::string::String>,
@@ -6341,9 +6458,8 @@ pub struct CreateResponsePlanInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create an incident when using this response plan.</p>
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
-    /// <p>The
-    /// AWS Chatbot
-    /// chat channel used for collaboration during an incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an
+    /// incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that the response plan engages during an
     /// incident.</p>
@@ -6378,7 +6494,8 @@ pub struct CreateReplicationSetInput {
     pub regions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
     >,
-    /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified
+    /// details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateReplicationSetInput {

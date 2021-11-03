@@ -21,7 +21,7 @@ pub enum AddPermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPermissionError {
@@ -87,28 +87,28 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddPermissionErrorKind::NotFoundException(_))
     }
@@ -148,7 +148,7 @@ pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckIfPhoneNumberIsOptedOutError {
@@ -218,28 +218,28 @@ impl CheckIfPhoneNumberIsOptedOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -292,7 +292,7 @@ pub enum ConfirmSubscriptionErrorKind {
     /// <p>Indicates that the customer already owns the maximum allowed number of
     /// subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmSubscriptionError {
@@ -364,42 +364,42 @@ impl ConfirmSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSubscriptionErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException`.
     pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSubscriptionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSubscriptionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException`.
+    /// Returns `true` if the error kind is `ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException`.
     pub fn is_subscription_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -445,7 +445,7 @@ pub enum CreatePlatformApplicationErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlatformApplicationError {
@@ -512,21 +512,21 @@ impl CreatePlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlatformApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreatePlatformApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformApplicationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreatePlatformApplicationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreatePlatformApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -567,7 +567,7 @@ pub enum CreatePlatformEndpointErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlatformEndpointError {
@@ -633,28 +633,28 @@ impl CreatePlatformEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlatformEndpointErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreatePlatformEndpointErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformEndpointErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformEndpointErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreatePlatformEndpointErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformEndpointErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreatePlatformEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePlatformEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -703,7 +703,7 @@ pub enum CreateSMSSandboxPhoneNumberErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSMSSandboxPhoneNumberError {
@@ -775,42 +775,42 @@ impl CreateSMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::OptedOutException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::OptedOutException`.
     pub fn is_opted_out_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMSSandboxPhoneNumberErrorKind::OptedOutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::UserErrorException`.
+    /// Returns `true` if the error kind is `CreateSMSSandboxPhoneNumberErrorKind::UserErrorException`.
     pub fn is_user_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -870,7 +870,7 @@ pub enum CreateTopicErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
     TopicLimitExceededException(crate::error::TopicLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTopicError {
@@ -941,54 +941,54 @@ impl CreateTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTopicErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTopicErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, CreateTopicErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTopicErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTopicErrorKind::InvalidSecurityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::StaleTagException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::StaleTagException`.
     pub fn is_stale_tag_exception(&self) -> bool {
         matches!(&self.kind, CreateTopicErrorKind::StaleTagException(_))
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTopicErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, CreateTopicErrorKind::TagPolicyException(_))
     }
-    /// Returns true if the error kind is `CreateTopicErrorKind::TopicLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTopicErrorKind::TopicLimitExceededException`.
     pub fn is_topic_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1033,7 +1033,7 @@ pub enum DeleteEndpointErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -1098,21 +1098,21 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1151,7 +1151,7 @@ pub enum DeletePlatformApplicationErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlatformApplicationError {
@@ -1218,21 +1218,21 @@ impl DeletePlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePlatformApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeletePlatformApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlatformApplicationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeletePlatformApplicationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlatformApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeletePlatformApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1280,7 +1280,7 @@ pub enum DeleteSMSSandboxPhoneNumberErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSMSSandboxPhoneNumberError {
@@ -1354,42 +1354,42 @@ impl DeleteSMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException`.
+    /// Returns `true` if the error kind is `DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException`.
     pub fn is_user_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1444,7 +1444,7 @@ pub enum DeleteTopicErrorKind {
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
     /// retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTopicError {
@@ -1513,40 +1513,40 @@ impl DeleteTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTopicErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTopicErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, DeleteTopicErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTopicErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTopicErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::StaleTagException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::StaleTagException`.
     pub fn is_stale_tag_exception(&self) -> bool {
         matches!(&self.kind, DeleteTopicErrorKind::StaleTagException(_))
     }
-    /// Returns true if the error kind is `DeleteTopicErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `DeleteTopicErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, DeleteTopicErrorKind::TagPolicyException(_))
     }
@@ -1588,7 +1588,7 @@ pub enum GetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEndpointAttributesError {
@@ -1654,28 +1654,28 @@ impl GetEndpointAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEndpointAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetEndpointAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetEndpointAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetEndpointAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEndpointAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1717,7 +1717,7 @@ pub enum GetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPlatformApplicationAttributesError {
@@ -1792,28 +1792,28 @@ impl GetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPlatformApplicationAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetPlatformApplicationAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPlatformApplicationAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPlatformApplicationAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetPlatformApplicationAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPlatformApplicationAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetPlatformApplicationAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPlatformApplicationAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1862,7 +1862,7 @@ pub enum GetSMSAttributesErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSMSAttributesError {
@@ -1928,28 +1928,28 @@ impl GetSMSAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSMSAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetSMSAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSMSAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSMSAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetSMSAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSMSAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSMSAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSMSAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSMSAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSMSAttributesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetSMSAttributesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetSMSAttributesErrorKind::ThrottledException(_))
     }
@@ -1986,7 +1986,7 @@ pub enum GetSMSSandboxAccountStatusErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSMSSandboxAccountStatusError {
@@ -2053,21 +2053,21 @@ impl GetSMSSandboxAccountStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSMSSandboxAccountStatusErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetSMSSandboxAccountStatusErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSMSSandboxAccountStatusErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSMSSandboxAccountStatusErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetSMSSandboxAccountStatusErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2110,7 +2110,7 @@ pub enum GetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubscriptionAttributesError {
@@ -2178,28 +2178,28 @@ impl GetSubscriptionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSubscriptionAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetSubscriptionAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSubscriptionAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSubscriptionAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetSubscriptionAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSubscriptionAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSubscriptionAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSubscriptionAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSubscriptionAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSubscriptionAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSubscriptionAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2244,7 +2244,7 @@ pub enum GetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTopicAttributesError {
@@ -2311,35 +2311,35 @@ impl GetTopicAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTopicAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetTopicAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTopicAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetTopicAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetTopicAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTopicAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetTopicAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetTopicAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTopicAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetTopicAttributesErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `GetTopicAttributesErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTopicAttributesErrorKind::InvalidSecurityException(_)
         )
     }
-    /// Returns true if the error kind is `GetTopicAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTopicAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2382,7 +2382,7 @@ pub enum ListEndpointsByPlatformApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointsByPlatformApplicationError {
@@ -2457,28 +2457,28 @@ impl ListEndpointsByPlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointsByPlatformApplicationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListEndpointsByPlatformApplicationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointsByPlatformApplicationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointsByPlatformApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListEndpointsByPlatformApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2529,7 +2529,7 @@ pub enum ListOriginationNumbersErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOriginationNumbersError {
@@ -2596,35 +2596,35 @@ impl ListOriginationNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOriginationNumbersErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListOriginationNumbersErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginationNumbersErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginationNumbersErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListOriginationNumbersErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginationNumbersErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginationNumbersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListOriginationNumbersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginationNumbersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginationNumbersErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `ListOriginationNumbersErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginationNumbersErrorKind::ThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginationNumbersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListOriginationNumbersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2668,7 +2668,7 @@ pub enum ListPhoneNumbersOptedOutErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPhoneNumbersOptedOutError {
@@ -2734,28 +2734,28 @@ impl ListPhoneNumbersOptedOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersOptedOutErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersOptedOutErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersOptedOutErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersOptedOutErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersOptedOutErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersOptedOutErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersOptedOutErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersOptedOutErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2795,7 +2795,7 @@ pub enum ListPlatformApplicationsErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlatformApplicationsError {
@@ -2860,21 +2860,21 @@ impl ListPlatformApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPlatformApplicationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListPlatformApplicationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlatformApplicationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlatformApplicationsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListPlatformApplicationsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlatformApplicationsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlatformApplicationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListPlatformApplicationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2919,7 +2919,7 @@ pub enum ListSMSSandboxPhoneNumbersErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSMSSandboxPhoneNumbersError {
@@ -2988,35 +2988,35 @@ impl ListSMSSandboxPhoneNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `ListSMSSandboxPhoneNumbersErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3059,7 +3059,7 @@ pub enum ListSubscriptionsErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionsError {
@@ -3124,21 +3124,21 @@ impl ListSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSubscriptionsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscriptionsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscriptionsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscriptionsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscriptionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3179,7 +3179,7 @@ pub enum ListSubscriptionsByTopicErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionsByTopicError {
@@ -3245,28 +3245,28 @@ impl ListSubscriptionsByTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSubscriptionsByTopicErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsByTopicErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscriptionsByTopicErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscriptionsByTopicErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsByTopicErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscriptionsByTopicErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscriptionsByTopicErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsByTopicErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscriptionsByTopicErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscriptionsByTopicErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListSubscriptionsByTopicErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3313,7 +3313,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
     /// retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3380,35 +3380,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3449,7 +3449,7 @@ pub enum ListTopicsErrorKind {
     /// <p>Indicates that a request parameter does not comply with the associated
     /// constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTopicsError {
@@ -3514,18 +3514,18 @@ impl ListTopicsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTopicsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListTopicsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTopicsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTopicsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListTopicsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListTopicsErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListTopicsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTopicsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3567,7 +3567,7 @@ pub enum OptInPhoneNumberErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for OptInPhoneNumberError {
@@ -3633,28 +3633,28 @@ impl OptInPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `OptInPhoneNumberErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `OptInPhoneNumberErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             OptInPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `OptInPhoneNumberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `OptInPhoneNumberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             OptInPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `OptInPhoneNumberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `OptInPhoneNumberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             OptInPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `OptInPhoneNumberErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `OptInPhoneNumberErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, OptInPhoneNumberErrorKind::ThrottledException(_))
     }
@@ -3724,7 +3724,7 @@ pub enum PublishErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishError {
@@ -3800,62 +3800,62 @@ impl PublishError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::AuthorizationErrorException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::EndpointDisabledException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::EndpointDisabledException`.
     pub fn is_endpoint_disabled_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::EndpointDisabledException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PublishErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::InvalidSecurityException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsDisabledException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsNotFoundException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsOptInRequired`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsOptInRequired`.
     pub fn is_kms_opt_in_required(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsOptInRequired(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::KmsThrottlingException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::KmsThrottlingException`.
     pub fn is_kms_throttling_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::KmsThrottlingException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::PlatformApplicationDisabledException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::PlatformApplicationDisabledException`.
     pub fn is_platform_application_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3907,7 +3907,7 @@ pub enum RemovePermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
@@ -3973,28 +3973,28 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemovePermissionErrorKind::NotFoundException(_))
     }
@@ -4033,7 +4033,7 @@ pub enum SetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetEndpointAttributesError {
@@ -4099,28 +4099,28 @@ impl SetEndpointAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetEndpointAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SetEndpointAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetEndpointAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetEndpointAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetEndpointAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetEndpointAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetEndpointAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetEndpointAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetEndpointAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetEndpointAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetEndpointAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4162,7 +4162,7 @@ pub enum SetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetPlatformApplicationAttributesError {
@@ -4237,28 +4237,28 @@ impl SetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetPlatformApplicationAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetPlatformApplicationAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPlatformApplicationAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetPlatformApplicationAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetPlatformApplicationAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPlatformApplicationAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetPlatformApplicationAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetPlatformApplicationAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4307,7 +4307,7 @@ pub enum SetSMSAttributesErrorKind {
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds
     /// the limit for your account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSMSAttributesError {
@@ -4373,28 +4373,28 @@ impl SetSMSAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSMSAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SetSMSAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSMSAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetSMSAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetSMSAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSMSAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetSMSAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetSMSAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSMSAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetSMSAttributesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `SetSMSAttributesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, SetSMSAttributesErrorKind::ThrottledException(_))
     }
@@ -4437,7 +4437,7 @@ pub enum SetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSubscriptionAttributesError {
@@ -4508,35 +4508,35 @@ impl SetSubscriptionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSubscriptionAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SetSubscriptionAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubscriptionAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException`.
+    /// Returns `true` if the error kind is `SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException`.
     pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubscriptionAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetSubscriptionAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubscriptionAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubscriptionAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetSubscriptionAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubscriptionAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubscriptionAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetSubscriptionAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4584,7 +4584,7 @@ pub enum SetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTopicAttributesError {
@@ -4651,35 +4651,35 @@ impl SetTopicAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTopicAttributesErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SetTopicAttributesErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTopicAttributesErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetTopicAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetTopicAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTopicAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetTopicAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetTopicAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTopicAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetTopicAttributesErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `SetTopicAttributesErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTopicAttributesErrorKind::InvalidSecurityException(_)
         )
     }
-    /// Returns true if the error kind is `SetTopicAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetTopicAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4732,7 +4732,7 @@ pub enum SubscribeErrorKind {
     /// <p>Indicates that the customer already owns the maximum allowed number of
     /// subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubscribeError {
@@ -4801,37 +4801,37 @@ impl SubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::FilterPolicyLimitExceededException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::FilterPolicyLimitExceededException`.
     pub fn is_filter_policy_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeErrorKind::FilterPolicyLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::InvalidSecurityException(_))
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::SubscriptionLimitExceededException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::SubscriptionLimitExceededException`.
     pub fn is_subscription_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4886,7 +4886,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
     /// retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4955,46 +4955,46 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::StaleTagException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::StaleTagException`.
     pub fn is_stale_tag_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::StaleTagException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagPolicyException(_))
     }
@@ -5039,7 +5039,7 @@ pub enum UnsubscribeErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnsubscribeError {
@@ -5106,32 +5106,32 @@ impl UnsubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, UnsubscribeErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::InvalidSecurityException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::InvalidSecurityException`.
     pub fn is_invalid_security_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeErrorKind::InvalidSecurityException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UnsubscribeErrorKind::NotFoundException(_))
     }
@@ -5181,7 +5181,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
     /// retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5250,46 +5250,46 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::StaleTagException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::StaleTagException`.
     pub fn is_stale_tag_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::StaleTagException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagPolicyException(_))
     }
@@ -5337,7 +5337,7 @@ pub enum VerifySMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
     VerificationException(crate::error::VerificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifySMSSandboxPhoneNumberError {
@@ -5411,42 +5411,42 @@ impl VerifySMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySMSSandboxPhoneNumberErrorKind::ThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::VerificationException`.
+    /// Returns `true` if the error kind is `VerifySMSSandboxPhoneNumberErrorKind::VerificationException`.
     pub fn is_verification_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -17,6 +17,7 @@ use std::cmp::Ordering;
 use std::convert::TryFrom;
 use std::fmt;
 use std::fmt::Formatter;
+use std::str::FromStr;
 
 pub(crate) mod header {
     pub(crate) const X_AMZ_CONTENT_SHA_256: &str = "x-amz-content-sha256";
@@ -181,13 +182,22 @@ impl<'a> CanonicalRequest<'a> {
         date_time: &str,
     ) -> Result<(Vec<CanonicalHeaderName>, HeaderMap), Error> {
         // Header computation:
-        // The canonical request will include headers not present in the input. We need to clone
-        // the headers from the original request and add:
+        // The canonical request will include headers not present in the input. We need to clone and
+        // normalize the headers from the original request and add:
         // - host
         // - x-amz-date
         // - x-amz-security-token (if provided)
         // - x-amz-content-sha256 (if requested by signing settings)
-        let mut canonical_headers = req.headers().clone();
+        let mut canonical_headers = HeaderMap::with_capacity(req.headers().len());
+        for (name, value) in req.headers().iter() {
+            // Header names and values need to be normalized according to Step 4 of https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html
+            // Using append instead of insert means this will not clobber headers that have the same lowercased name
+            canonical_headers.append(
+                HeaderName::from_str(&name.as_str().to_lowercase())?,
+                normalize_header_value(&value),
+            );
+        }
+
         Self::insert_host_header(&mut canonical_headers, req.uri());
 
         if params.settings.signature_location == SignatureLocation::Headers {
@@ -333,6 +343,68 @@ impl<'a> fmt::Display for CanonicalRequest<'a> {
         write!(f, "{}", self.values.content_sha256())?;
         Ok(())
     }
+}
+
+/// A regex for matching on 2 or more spaces that acts on bytes.
+static MULTIPLE_SPACES: once_cell::sync::Lazy<regex::bytes::Regex> =
+    once_cell::sync::Lazy::new(|| regex::bytes::Regex::new(r" {2,}").unwrap());
+
+/// Removes excess spaces before and after a given byte string, and converts multiple sequential
+/// spaces to a single space e.g. "  Some  example   text  " -> "Some example text".
+///
+/// This function ONLY affects spaces and not other kinds of whitespace.
+fn trim_all(text: &[u8]) -> Cow<'_, [u8]> {
+    // The normal trim function will trim non-breaking spaces and other various whitespace chars.
+    // S3 ONLY trims spaces so we use trim_matches to trim spaces only
+    let text = trim_spaces_from_byte_string(text);
+    MULTIPLE_SPACES.replace_all(text, " ".as_bytes())
+}
+
+/// Removes excess spaces before and after a given byte string by returning a subset of those bytes.
+/// Will return an empty slice if a string is composed entirely of whitespace.
+fn trim_spaces_from_byte_string(bytes: &[u8]) -> &[u8] {
+    if bytes.is_empty() {
+        return bytes;
+    }
+
+    let mut starting_index = 0;
+
+    for i in 0..bytes.len() {
+        // If we get to the end of the array without hitting a non-whitespace char, return empty slice
+        if i == bytes.len() - 1 {
+            // This range equates to an empty slice
+            return &bytes[0..0];
+        // otherwise, skip over each instance of whitespace
+        } else if bytes[i] == b' ' {
+            continue;
+        }
+
+        // return the index of the first non-whitespace character
+        starting_index = i;
+        break;
+    }
+
+    // Now we do the same but in reverse
+    let mut ending_index = 0;
+    for i in (0..bytes.len()).rev() {
+        // skip over each instance of whitespace
+        if bytes[i] == b' ' {
+            continue;
+        }
+
+        // return the index of the first non-whitespace character
+        ending_index = i;
+        break;
+    }
+
+    &bytes[starting_index..=ending_index]
+}
+
+/// Works just like [trim_all] but acts on HeaderValues instead of bytes
+fn normalize_header_value(header_value: &HeaderValue) -> HeaderValue {
+    let trimmed_value = trim_all(header_value.as_bytes());
+    // This can't fail because we started with a valid HeaderValue and then only trimmed spaces
+    HeaderValue::from_bytes(&trimmed_value).unwrap()
 }
 
 #[derive(Debug, PartialEq, Default)]
@@ -490,7 +562,9 @@ impl<'a> fmt::Display for StringToSign<'a> {
 #[cfg(test)]
 mod tests {
     use crate::date_fmt::parse_date_time;
-    use crate::http_request::canonical_request::{CanonicalRequest, SigningScope, StringToSign};
+    use crate::http_request::canonical_request::{
+        normalize_header_value, trim_all, CanonicalRequest, SigningScope, StringToSign,
+    };
     use crate::http_request::test::{test_canonical_request, test_request, test_sts};
     use crate::http_request::{
         PayloadChecksumKind, SignableBody, SignableRequest, SigningSettings,
@@ -498,6 +572,7 @@ mod tests {
     use crate::http_request::{SignatureLocation, SigningParams};
     use crate::sign::sha256_hex_string;
     use pretty_assertions::assert_eq;
+    use proptest::{proptest, strategy::Strategy};
     use std::convert::TryFrom;
     use std::time::Duration;
 
@@ -661,5 +736,40 @@ mod tests {
 
         let values = canonical.values.into_query_params().unwrap();
         assert_eq!("host", values.signed_headers.as_str());
+    }
+
+    #[test]
+    fn test_trim_all_handles_spaces_correctly() {
+        // Can't compare a byte array to a Cow so we convert both to slices before comparing
+        let expected = &b"Some example text"[..];
+        let actual = &trim_all(b"  Some  example   text  ")[..];
+
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn test_trim_all_ignores_other_forms_of_whitespace() {
+        // Can't compare a byte array to a Cow so we convert both to slices before comparing
+        let expected = &b"\t\xA0Some\xA0 example \xA0text\xA0\n"[..];
+        // \xA0 is a non-breaking space character
+        let actual = &trim_all(b"\t\xA0Some\xA0     example   \xA0text\xA0\n")[..];
+
+        assert_eq!(expected, actual);
+    }
+
+    proptest! {
+        #[test]
+        fn test_trim_all_doesnt_elongate_strings(s in ".*") {
+            assert!(trim_all(s.as_bytes()).len() <= s.len())
+        }
+
+        // TODO: Using filter map is not ideal here but I wasn't sure how to define a range that covers
+        //       the extended ASCII chars above \x7F. It would be better to define a generator for
+        //       chars in the range of [\x21-\x7E\x80-\xFF] and then prop_map those into HeaderValues.
+        //       _(\x7F is the largest value accepted currently)_
+        #[test]
+        fn test_normalize_header_value_doesnt_panic(v in (".*").prop_filter_map("Must be a valid HeaderValue", |v| http::HeaderValue::from_maybe_shared(v).ok())) {
+            let _ = normalize_header_value(&v);
+        }
     }
 }

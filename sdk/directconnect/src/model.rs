@@ -914,7 +914,7 @@ impl AsRef<str> for HasLogicalRedundancy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -960,7 +960,7 @@ pub struct Connection {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -1058,12 +1058,12 @@ pub mod connection {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1186,12 +1186,12 @@ pub mod connection {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1629,7 +1629,7 @@ impl AsRef<str> for LagState {
 pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the associated gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
@@ -1662,9 +1662,9 @@ pub struct DirectConnectGatewayAssociation {
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub virtual_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The Region where the virtual private gateway is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
     pub virtual_gateway_region: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the virtual private gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     pub virtual_gateway_owner_account: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectConnectGatewayAssociation {
@@ -1725,7 +1725,7 @@ pub mod direct_connect_gateway_association {
             self.direct_connect_gateway_id = input;
             self
         }
-        /// <p>The ID of the account that owns the associated gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
         pub fn direct_connect_gateway_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -1733,7 +1733,7 @@ pub mod direct_connect_gateway_association {
             self.direct_connect_gateway_owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the associated gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
         pub fn set_direct_connect_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1869,12 +1869,12 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_id = input;
             self
         }
-        /// <p>The Region where the virtual private gateway is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
         pub fn virtual_gateway_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_gateway_region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual private gateway is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
         pub fn set_virtual_gateway_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1882,7 +1882,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_region = input;
             self
         }
-        /// <p>The ID of the account that owns the virtual private gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
         pub fn virtual_gateway_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -1890,7 +1890,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual private gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
         pub fn set_virtual_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1931,7 +1931,7 @@ pub struct AssociatedGateway {
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of associated gateway.</p>
     pub r#type: std::option::Option<crate::model::GatewayType>,
-    /// <p>The ID of the account that owns the associated virtual private gateway or transit gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The Region where the associated gateway is located.</p>
     pub region: std::option::Option<std::string::String>,
@@ -1978,12 +1978,12 @@ pub mod associated_gateway {
             self.r#type = input;
             self
         }
-        /// <p>The ID of the account that owns the associated virtual private gateway or transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the associated virtual private gateway or transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2142,6 +2142,274 @@ impl DirectConnectGatewayAssociationState {
     }
 }
 impl AsRef<str> for DirectConnectGatewayAssociationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DirectConnectGateway {
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub direct_connect_gateway_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Direct Connect gateway.</p>
+    pub direct_connect_gateway_name: std::option::Option<std::string::String>,
+    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    pub amazon_side_asn: std::option::Option<i64>,
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    pub owner_account: std::option::Option<std::string::String>,
+    /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
+    /// </li>
+    /// </ul>
+    pub direct_connect_gateway_state: std::option::Option<crate::model::DirectConnectGatewayState>,
+    /// <p>The error message if the state of an object failed to advance.</p>
+    pub state_change_error: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DirectConnectGateway {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DirectConnectGateway");
+        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
+        formatter.field(
+            "direct_connect_gateway_name",
+            &self.direct_connect_gateway_name,
+        );
+        formatter.field("amazon_side_asn", &self.amazon_side_asn);
+        formatter.field("owner_account", &self.owner_account);
+        formatter.field(
+            "direct_connect_gateway_state",
+            &self.direct_connect_gateway_state,
+        );
+        formatter.field("state_change_error", &self.state_change_error);
+        formatter.finish()
+    }
+}
+/// See [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+pub mod direct_connect_gateway {
+    /// A builder for [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
+        pub(crate) direct_connect_gateway_name: std::option::Option<std::string::String>,
+        pub(crate) amazon_side_asn: std::option::Option<i64>,
+        pub(crate) owner_account: std::option::Option<std::string::String>,
+        pub(crate) direct_connect_gateway_state:
+            std::option::Option<crate::model::DirectConnectGatewayState>,
+        pub(crate) state_change_error: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Direct Connect gateway.</p>
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Direct Connect gateway.</p>
+        pub fn set_direct_connect_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.direct_connect_gateway_id = input;
+            self
+        }
+        /// <p>The name of the Direct Connect gateway.</p>
+        pub fn direct_connect_gateway_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.direct_connect_gateway_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Direct Connect gateway.</p>
+        pub fn set_direct_connect_gateway_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.direct_connect_gateway_name = input;
+            self
+        }
+        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+        pub fn amazon_side_asn(mut self, input: i64) -> Self {
+            self.amazon_side_asn = Some(input);
+            self
+        }
+        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+        pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
+            self.amazon_side_asn = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_account = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+        pub fn set_owner_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owner_account = input;
+            self
+        }
+        /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
+        /// </li>
+        /// </ul>
+        pub fn direct_connect_gateway_state(
+            mut self,
+            input: crate::model::DirectConnectGatewayState,
+        ) -> Self {
+            self.direct_connect_gateway_state = Some(input);
+            self
+        }
+        /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_direct_connect_gateway_state(
+            mut self,
+            input: std::option::Option<crate::model::DirectConnectGatewayState>,
+        ) -> Self {
+            self.direct_connect_gateway_state = input;
+            self
+        }
+        /// <p>The error message if the state of an object failed to advance.</p>
+        pub fn state_change_error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_change_error = Some(input.into());
+            self
+        }
+        /// <p>The error message if the state of an object failed to advance.</p>
+        pub fn set_state_change_error(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_change_error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+        pub fn build(self) -> crate::model::DirectConnectGateway {
+            crate::model::DirectConnectGateway {
+                direct_connect_gateway_id: self.direct_connect_gateway_id,
+                direct_connect_gateway_name: self.direct_connect_gateway_name,
+                amazon_side_asn: self.amazon_side_asn,
+                owner_account: self.owner_account,
+                direct_connect_gateway_state: self.direct_connect_gateway_state,
+                state_change_error: self.state_change_error,
+            }
+        }
+    }
+}
+impl DirectConnectGateway {
+    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+    pub fn builder() -> crate::model::direct_connect_gateway::Builder {
+        crate::model::direct_connect_gateway::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DirectConnectGatewayState {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DirectConnectGatewayState {
+    fn from(s: &str) -> Self {
+        match s {
+            "available" => DirectConnectGatewayState::Available,
+            "deleted" => DirectConnectGatewayState::Deleted,
+            "deleting" => DirectConnectGatewayState::Deleting,
+            "pending" => DirectConnectGatewayState::Pending,
+            other => DirectConnectGatewayState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DirectConnectGatewayState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DirectConnectGatewayState::from(s))
+    }
+}
+impl DirectConnectGatewayState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DirectConnectGatewayState::Available => "available",
+            DirectConnectGatewayState::Deleted => "deleted",
+            DirectConnectGatewayState::Deleting => "deleting",
+            DirectConnectGatewayState::Pending => "pending",
+            DirectConnectGatewayState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["available", "deleted", "deleting", "pending"]
+    }
+}
+impl AsRef<str> for DirectConnectGatewayState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -2325,7 +2593,7 @@ impl VirtualInterfaceTestHistory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualInterface {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -2406,7 +2674,7 @@ pub struct VirtualInterface {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -2482,12 +2750,12 @@ pub mod virtual_interface {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2830,12 +3098,12 @@ pub mod virtual_interface {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3121,6 +3389,144 @@ impl ResourceTag {
     }
 }
 
+/// <p>Information about the virtual router.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouterType {
+    /// <p>The vendor for the virtual interface's router.</p>
+    pub vendor: std::option::Option<std::string::String>,
+    /// <p>The virtual interface router platform.</p>
+    pub platform: std::option::Option<std::string::String>,
+    /// <p>The router software. </p>
+    pub software: std::option::Option<std::string::String>,
+    /// <p>The template for the virtual interface's router.</p>
+    pub xslt_template_name: std::option::Option<std::string::String>,
+    /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+    pub xslt_template_name_for_mac_sec: std::option::Option<std::string::String>,
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub router_type_identifier: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RouterType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouterType");
+        formatter.field("vendor", &self.vendor);
+        formatter.field("platform", &self.platform);
+        formatter.field("software", &self.software);
+        formatter.field("xslt_template_name", &self.xslt_template_name);
+        formatter.field(
+            "xslt_template_name_for_mac_sec",
+            &self.xslt_template_name_for_mac_sec,
+        );
+        formatter.field("router_type_identifier", &self.router_type_identifier);
+        formatter.finish()
+    }
+}
+/// See [`RouterType`](crate::model::RouterType)
+pub mod router_type {
+    /// A builder for [`RouterType`](crate::model::RouterType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vendor: std::option::Option<std::string::String>,
+        pub(crate) platform: std::option::Option<std::string::String>,
+        pub(crate) software: std::option::Option<std::string::String>,
+        pub(crate) xslt_template_name: std::option::Option<std::string::String>,
+        pub(crate) xslt_template_name_for_mac_sec: std::option::Option<std::string::String>,
+        pub(crate) router_type_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The vendor for the virtual interface's router.</p>
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor = Some(input.into());
+            self
+        }
+        /// <p>The vendor for the virtual interface's router.</p>
+        pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vendor = input;
+            self
+        }
+        /// <p>The virtual interface router platform.</p>
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform = Some(input.into());
+            self
+        }
+        /// <p>The virtual interface router platform.</p>
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The router software. </p>
+        pub fn software(mut self, input: impl Into<std::string::String>) -> Self {
+            self.software = Some(input.into());
+            self
+        }
+        /// <p>The router software. </p>
+        pub fn set_software(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software = input;
+            self
+        }
+        /// <p>The template for the virtual interface's router.</p>
+        pub fn xslt_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.xslt_template_name = Some(input.into());
+            self
+        }
+        /// <p>The template for the virtual interface's router.</p>
+        pub fn set_xslt_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.xslt_template_name = input;
+            self
+        }
+        /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+        pub fn xslt_template_name_for_mac_sec(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.xslt_template_name_for_mac_sec = Some(input.into());
+            self
+        }
+        /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+        pub fn set_xslt_template_name_for_mac_sec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.xslt_template_name_for_mac_sec = input;
+            self
+        }
+        /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+        pub fn router_type_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.router_type_identifier = Some(input.into());
+            self
+        }
+        /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+        pub fn set_router_type_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.router_type_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouterType`](crate::model::RouterType)
+        pub fn build(self) -> crate::model::RouterType {
+            crate::model::RouterType {
+                vendor: self.vendor,
+                platform: self.platform,
+                software: self.software,
+                xslt_template_name: self.xslt_template_name,
+                xslt_template_name_for_mac_sec: self.xslt_template_name_for_mac_sec,
+                router_type_identifier: self.router_type_identifier,
+            }
+        }
+    }
+}
+impl RouterType {
+    /// Creates a new builder-style object to manufacture [`RouterType`](crate::model::RouterType)
+    pub fn builder() -> crate::model::router_type::Builder {
+        crate::model::router_type::Builder::default()
+    }
+}
+
 /// <p>Information about an Direct Connect location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3129,7 +3535,7 @@ pub struct Location {
     pub location_code: std::option::Option<std::string::String>,
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
     pub location_name: std::option::Option<std::string::String>,
-    /// <p>The Region for the location.</p>
+    /// <p>The Amazon Web Services Region for the location.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The available port speeds for the location.</p>
     pub available_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3194,12 +3600,12 @@ pub mod location {
             self.location_name = input;
             self
         }
-        /// <p>The Region for the location.</p>
+        /// <p>The Amazon Web Services Region for the location.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region for the location.</p>
+        /// <p>The Amazon Web Services Region for the location.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3346,7 +3752,7 @@ pub struct Lag {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the LAG.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -3385,7 +3791,7 @@ pub struct Lag {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
@@ -3507,12 +3913,12 @@ pub mod lag {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3612,12 +4018,12 @@ pub mod lag {
             self.location = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3874,7 +4280,7 @@ pub struct Interconnect {
     /// </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -4045,12 +4451,12 @@ pub mod interconnect {
             self.interconnect_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -4372,274 +4778,6 @@ impl Loa {
     }
 }
 
-/// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DirectConnectGateway {
-    /// <p>The ID of the Direct Connect gateway.</p>
-    pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Direct Connect gateway.</p>
-    pub direct_connect_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
-    pub amazon_side_asn: std::option::Option<i64>,
-    /// <p>The ID of the account that owns the Direct Connect gateway.</p>
-    pub owner_account: std::option::Option<std::string::String>,
-    /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-    /// </li>
-    /// </ul>
-    pub direct_connect_gateway_state: std::option::Option<crate::model::DirectConnectGatewayState>,
-    /// <p>The error message if the state of an object failed to advance.</p>
-    pub state_change_error: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DirectConnectGateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectGateway");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_name",
-            &self.direct_connect_gateway_name,
-        );
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "direct_connect_gateway_state",
-            &self.direct_connect_gateway_state,
-        );
-        formatter.field("state_change_error", &self.state_change_error);
-        formatter.finish()
-    }
-}
-/// See [`DirectConnectGateway`](crate::model::DirectConnectGateway)
-pub mod direct_connect_gateway {
-    /// A builder for [`DirectConnectGateway`](crate::model::DirectConnectGateway)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) direct_connect_gateway_name: std::option::Option<std::string::String>,
-        pub(crate) amazon_side_asn: std::option::Option<i64>,
-        pub(crate) owner_account: std::option::Option<std::string::String>,
-        pub(crate) direct_connect_gateway_state:
-            std::option::Option<crate::model::DirectConnectGatewayState>,
-        pub(crate) state_change_error: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.direct_connect_gateway_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
-        }
-        /// <p>The name of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_name = input;
-            self
-        }
-        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
-        pub fn amazon_side_asn(mut self, input: i64) -> Self {
-            self.amazon_side_asn = Some(input);
-            self
-        }
-        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
-        pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
-        }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
-        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
-            self.owner_account = Some(input.into());
-            self
-        }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
-        }
-        /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-        /// </li>
-        /// </ul>
-        pub fn direct_connect_gateway_state(
-            mut self,
-            input: crate::model::DirectConnectGatewayState,
-        ) -> Self {
-            self.direct_connect_gateway_state = Some(input);
-            self
-        }
-        /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-        /// </li>
-        /// </ul>
-        pub fn set_direct_connect_gateway_state(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayState>,
-        ) -> Self {
-            self.direct_connect_gateway_state = input;
-            self
-        }
-        /// <p>The error message if the state of an object failed to advance.</p>
-        pub fn state_change_error(mut self, input: impl Into<std::string::String>) -> Self {
-            self.state_change_error = Some(input.into());
-            self
-        }
-        /// <p>The error message if the state of an object failed to advance.</p>
-        pub fn set_state_change_error(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_change_error = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::model::DirectConnectGateway)
-        pub fn build(self) -> crate::model::DirectConnectGateway {
-            crate::model::DirectConnectGateway {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                direct_connect_gateway_name: self.direct_connect_gateway_name,
-                amazon_side_asn: self.amazon_side_asn,
-                owner_account: self.owner_account,
-                direct_connect_gateway_state: self.direct_connect_gateway_state,
-                state_change_error: self.state_change_error,
-            }
-        }
-    }
-}
-impl DirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway)
-    pub fn builder() -> crate::model::direct_connect_gateway::Builder {
-        crate::model::direct_connect_gateway::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum DirectConnectGatewayState {
-    #[allow(missing_docs)] // documentation missing in model
-    Available,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleted,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleting,
-    #[allow(missing_docs)] // documentation missing in model
-    Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for DirectConnectGatewayState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => DirectConnectGatewayState::Available,
-            "deleted" => DirectConnectGatewayState::Deleted,
-            "deleting" => DirectConnectGatewayState::Deleting,
-            "pending" => DirectConnectGatewayState::Pending,
-            other => DirectConnectGatewayState::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for DirectConnectGatewayState {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectConnectGatewayState::from(s))
-    }
-}
-impl DirectConnectGatewayState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayState::Available => "available",
-            DirectConnectGatewayState::Deleted => "deleted",
-            DirectConnectGatewayState::Deleting => "deleting",
-            DirectConnectGatewayState::Pending => "pending",
-            DirectConnectGatewayState::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["available", "deleted", "deleting", "pending"]
-    }
-}
-impl AsRef<str> for DirectConnectGatewayState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Information about an attachment between a Direct Connect gateway and a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4648,9 +4786,9 @@ pub struct DirectConnectGatewayAttachment {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub virtual_interface_region: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub virtual_interface_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
@@ -4736,12 +4874,12 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_id = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn virtual_interface_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_interface_region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_virtual_interface_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4749,7 +4887,7 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_region = input;
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn virtual_interface_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -4757,7 +4895,7 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_virtual_interface_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5001,7 +5139,7 @@ pub struct DirectConnectGatewayAssociationProposal {
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the Direct Connect gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
@@ -5092,7 +5230,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.direct_connect_gateway_id = input;
             self
         }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_owner_account(
             mut self,
             input: impl Into<std::string::String>,
@@ -5100,7 +5238,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.direct_connect_gateway_owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5292,6 +5430,134 @@ impl DirectConnectGatewayAssociationProposalState {
 impl AsRef<str> for DirectConnectGatewayAssociationProposalState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NniPartnerType {
+    #[allow(missing_docs)] // documentation missing in model
+    NonPartner,
+    #[allow(missing_docs)] // documentation missing in model
+    V1,
+    #[allow(missing_docs)] // documentation missing in model
+    V2,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NniPartnerType {
+    fn from(s: &str) -> Self {
+        match s {
+            "nonPartner" => NniPartnerType::NonPartner,
+            "v1" => NniPartnerType::V1,
+            "v2" => NniPartnerType::V2,
+            other => NniPartnerType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NniPartnerType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NniPartnerType::from(s))
+    }
+}
+impl NniPartnerType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NniPartnerType::NonPartner => "nonPartner",
+            NniPartnerType::V1 => "v1",
+            NniPartnerType::V2 => "v2",
+            NniPartnerType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["nonPartner", "v1", "v2"]
+    }
+}
+impl AsRef<str> for NniPartnerType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The name and status of a customer agreement. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomerAgreement {
+    /// <p>The name of the agreement.</p>
+    pub agreement_name: std::option::Option<std::string::String>,
+    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
+    /// </p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CustomerAgreement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomerAgreement");
+        formatter.field("agreement_name", &self.agreement_name);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`CustomerAgreement`](crate::model::CustomerAgreement)
+pub mod customer_agreement {
+    /// A builder for [`CustomerAgreement`](crate::model::CustomerAgreement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the agreement.</p>
+        pub fn agreement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the agreement.</p>
+        pub fn set_agreement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agreement_name = input;
+            self
+        }
+        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
+        /// </p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
+        /// </p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomerAgreement`](crate::model::CustomerAgreement)
+        pub fn build(self) -> crate::model::CustomerAgreement {
+            crate::model::CustomerAgreement {
+                agreement_name: self.agreement_name,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CustomerAgreement {
+    /// Creates a new builder-style object to manufacture [`CustomerAgreement`](crate::model::CustomerAgreement)
+    pub fn builder() -> crate::model::customer_agreement::Builder {
+        crate::model::customer_agreement::Builder::default()
     }
 }
 

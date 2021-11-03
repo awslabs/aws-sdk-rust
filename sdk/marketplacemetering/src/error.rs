@@ -34,7 +34,7 @@ pub enum BatchMeterUsageErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchMeterUsageError {
@@ -105,57 +105,57 @@ impl BatchMeterUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::DisabledApiException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::DisabledApiException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InvalidCustomerIdentifierException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidCustomerIdentifierException`.
     pub fn is_invalid_customer_identifier_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InvalidProductCodeException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::InvalidProductCodeException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(&self.kind, BatchMeterUsageErrorKind::InvalidTagException(_))
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InvalidUsageAllocationsException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidUsageAllocationsException`.
     pub fn is_invalid_usage_allocations_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::InvalidUsageDimensionException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidUsageDimensionException`.
     pub fn is_invalid_usage_dimension_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchMeterUsageErrorKind::InvalidUsageDimensionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, BatchMeterUsageErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `BatchMeterUsageErrorKind::TimestampOutOfBoundsException`.
+    /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::TimestampOutOfBoundsException`.
     pub fn is_timestamp_out_of_bounds_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -222,7 +222,7 @@ pub enum MeterUsageErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MeterUsageError {
@@ -294,64 +294,64 @@ impl MeterUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::CustomerNotEntitledException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::CustomerNotEntitledException`.
     pub fn is_customer_not_entitled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::CustomerNotEntitledException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::DuplicateRequestException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::DuplicateRequestException`.
     pub fn is_duplicate_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::DuplicateRequestException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InvalidEndpointRegionException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidEndpointRegionException`.
     pub fn is_invalid_endpoint_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::InvalidEndpointRegionException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InvalidProductCodeException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::InvalidProductCodeException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(&self.kind, MeterUsageErrorKind::InvalidTagException(_))
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InvalidUsageAllocationsException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidUsageAllocationsException`.
     pub fn is_invalid_usage_allocations_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::InvalidUsageAllocationsException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::InvalidUsageDimensionException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidUsageDimensionException`.
     pub fn is_invalid_usage_dimension_exception(&self) -> bool {
         matches!(
             &self.kind,
             MeterUsageErrorKind::InvalidUsageDimensionException(_)
         )
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, MeterUsageErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `MeterUsageErrorKind::TimestampOutOfBoundsException`.
+    /// Returns `true` if the error kind is `MeterUsageErrorKind::TimestampOutOfBoundsException`.
     pub fn is_timestamp_out_of_bounds_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -412,7 +412,7 @@ pub enum RegisterUsageErrorKind {
     PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterUsageError {
@@ -482,53 +482,53 @@ impl RegisterUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::CustomerNotEntitledException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::CustomerNotEntitledException`.
     pub fn is_customer_not_entitled_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::CustomerNotEntitledException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::DisabledApiException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
         matches!(&self.kind, RegisterUsageErrorKind::DisabledApiException(_))
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::InvalidProductCodeException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::InvalidProductCodeException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::InvalidPublicKeyVersionException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidPublicKeyVersionException`.
     pub fn is_invalid_public_key_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::InvalidPublicKeyVersionException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::InvalidRegionException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidRegionException`.
     pub fn is_invalid_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::InvalidRegionException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::PlatformNotSupportedException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::PlatformNotSupportedException`.
     pub fn is_platform_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUsageErrorKind::PlatformNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUsageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RegisterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, RegisterUsageErrorKind::ThrottlingException(_))
     }
@@ -577,7 +577,7 @@ pub enum ResolveCustomerErrorKind {
     InvalidTokenException(crate::error::InvalidTokenException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResolveCustomerError {
@@ -644,35 +644,35 @@ impl ResolveCustomerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResolveCustomerErrorKind::DisabledApiException`.
+    /// Returns `true` if the error kind is `ResolveCustomerErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveCustomerErrorKind::DisabledApiException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveCustomerErrorKind::ExpiredTokenException`.
+    /// Returns `true` if the error kind is `ResolveCustomerErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveCustomerErrorKind::ExpiredTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveCustomerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ResolveCustomerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveCustomerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveCustomerErrorKind::InvalidTokenException`.
+    /// Returns `true` if the error kind is `ResolveCustomerErrorKind::InvalidTokenException`.
     pub fn is_invalid_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveCustomerErrorKind::InvalidTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveCustomerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ResolveCustomerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ResolveCustomerErrorKind::ThrottlingException(_))
     }

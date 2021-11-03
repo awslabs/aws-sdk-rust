@@ -29,7 +29,7 @@ pub enum DescribeRecommendationExportJobsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRecommendationExportJobsError {
@@ -116,56 +116,56 @@ impl DescribeRecommendationExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecommendationExportJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -233,7 +233,7 @@ pub enum ExportAutoScalingGroupRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportAutoScalingGroupRecommendationsError {
@@ -322,56 +322,56 @@ impl ExportAutoScalingGroupRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -443,7 +443,7 @@ pub enum ExportEBSVolumeRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportEBSVolumeRecommendationsError {
@@ -528,56 +528,56 @@ impl ExportEBSVolumeRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -639,7 +639,7 @@ pub enum ExportEC2InstanceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportEC2InstanceRecommendationsError {
@@ -726,56 +726,56 @@ impl ExportEC2InstanceRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -843,7 +843,7 @@ pub enum ExportLambdaFunctionRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportLambdaFunctionRecommendationsError {
@@ -932,56 +932,56 @@ impl ExportLambdaFunctionRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1053,7 +1053,7 @@ pub enum GetAutoScalingGroupRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAutoScalingGroupRecommendationsError {
@@ -1142,56 +1142,56 @@ impl GetAutoScalingGroupRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1261,7 +1261,7 @@ pub enum GetEBSVolumeRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEBSVolumeRecommendationsError {
@@ -1339,56 +1339,56 @@ impl GetEBSVolumeRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEBSVolumeRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1448,7 +1448,7 @@ pub enum GetEC2InstanceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEC2InstanceRecommendationsError {
@@ -1531,56 +1531,56 @@ impl GetEC2InstanceRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2InstanceRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1642,7 +1642,7 @@ pub enum GetEC2RecommendationProjectedMetricsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEC2RecommendationProjectedMetricsError {
@@ -1731,56 +1731,56 @@ impl GetEC2RecommendationProjectedMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1848,7 +1848,7 @@ pub enum GetEnrollmentStatusErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEnrollmentStatusError {
@@ -1916,42 +1916,42 @@ impl GetEnrollmentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1999,7 +1999,7 @@ pub enum GetEnrollmentStatusesForOrganizationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEnrollmentStatusesForOrganizationError {
@@ -2082,42 +2082,42 @@ impl GetEnrollmentStatusesForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2183,7 +2183,7 @@ pub enum GetLambdaFunctionRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLambdaFunctionRecommendationsError {
@@ -2270,56 +2270,56 @@ impl GetLambdaFunctionRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2385,7 +2385,7 @@ pub enum GetRecommendationSummariesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecommendationSummariesError {
@@ -2460,49 +2460,49 @@ impl GetRecommendationSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::OptInRequiredException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::OptInRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationSummariesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationSummariesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2555,7 +2555,7 @@ pub enum UpdateEnrollmentStatusErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnrollmentStatusError {
@@ -2625,42 +2625,42 @@ impl UpdateEnrollmentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnrollmentStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnrollmentStatusErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnrollmentStatusErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

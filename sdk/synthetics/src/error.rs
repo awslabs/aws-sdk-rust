@@ -16,7 +16,7 @@ pub enum CreateCanaryErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCanaryError {
@@ -80,14 +80,14 @@ impl CreateCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCanaryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateCanaryErrorKind::ValidationException(_))
     }
@@ -123,7 +123,7 @@ pub enum DeleteCanaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCanaryError {
@@ -189,25 +189,25 @@ impl DeleteCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCanaryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteCanaryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteCanaryErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCanaryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCanaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCanaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCanaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteCanaryErrorKind::ValidationException(_))
     }
@@ -241,7 +241,7 @@ pub enum DescribeCanariesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCanariesError {
@@ -305,14 +305,14 @@ impl DescribeCanariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCanariesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeCanariesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCanariesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCanariesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeCanariesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -347,7 +347,7 @@ pub enum DescribeCanariesLastRunErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCanariesLastRunError {
@@ -411,14 +411,14 @@ impl DescribeCanariesLastRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCanariesLastRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeCanariesLastRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCanariesLastRunErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCanariesLastRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeCanariesLastRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -453,7 +453,7 @@ pub enum DescribeRuntimeVersionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRuntimeVersionsError {
@@ -517,14 +517,14 @@ impl DescribeRuntimeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRuntimeVersionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeVersionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuntimeVersionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuntimeVersionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeVersionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -559,7 +559,7 @@ pub enum GetCanaryErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCanaryError {
@@ -623,11 +623,11 @@ impl GetCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetCanaryErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetCanaryErrorKind::ValidationException(_))
     }
@@ -661,7 +661,7 @@ pub enum GetCanaryRunsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCanaryRunsError {
@@ -726,21 +726,21 @@ impl GetCanaryRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCanaryRunsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetCanaryRunsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCanaryRunsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetCanaryRunsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCanaryRunsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCanaryRunsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCanaryRunsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetCanaryRunsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetCanaryRunsErrorKind::ValidationException(_))
     }
@@ -775,7 +775,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -840,21 +840,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -894,7 +894,7 @@ pub enum StartCanaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCanaryError {
@@ -960,22 +960,22 @@ impl StartCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCanaryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartCanaryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartCanaryErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StartCanaryErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StartCanaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartCanaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCanaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartCanaryErrorKind::ValidationException(_))
     }
@@ -1013,7 +1013,7 @@ pub enum StopCanaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopCanaryError {
@@ -1079,22 +1079,22 @@ impl StopCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopCanaryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopCanaryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StopCanaryErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StopCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StopCanaryErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StopCanaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopCanaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCanaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopCanaryErrorKind::ValidationException(_))
     }
@@ -1130,7 +1130,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1195,18 +1195,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1241,7 +1241,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1306,21 +1306,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -1357,7 +1357,7 @@ pub enum UpdateCanaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCanaryError {
@@ -1423,25 +1423,25 @@ impl UpdateCanaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCanaryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateCanaryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateCanaryErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateCanaryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateCanaryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCanaryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCanaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCanaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCanaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCanaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateCanaryErrorKind::ValidationException(_))
     }

@@ -156,6 +156,46 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDatasetError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateDatasetErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::CreateDatasetErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::InvalidS3ObjectException(inner) => {
+                    Error::InvalidS3ObjectException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::CreateDatasetErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -269,6 +309,43 @@ where
                 crate::error::DeleteCollectionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteDatasetErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::DeleteDatasetErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -402,6 +479,37 @@ where
                 crate::error::DescribeCollectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeCollectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeDatasetErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribeDatasetErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DescribeDatasetErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DescribeDatasetErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::DescribeDatasetErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeDatasetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -668,6 +776,29 @@ where
                 }
                 crate::error::DetectTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DistributeDatasetEntriesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DistributeDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1002,6 +1133,54 @@ where
                 }
                 crate::error::ListCollectionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDatasetEntriesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListDatasetEntriesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ListDatasetEntriesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+                crate::error::ListDatasetEntriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::ListDatasetEntriesErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::ListDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListDatasetEntriesErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+                crate::error::ListDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDatasetLabelsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListDatasetLabelsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ListDatasetLabelsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+                crate::error::ListDatasetLabelsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::ListDatasetLabelsErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::ListDatasetLabelsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListDatasetLabelsErrorKind::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+                crate::error::ListDatasetLabelsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListDatasetLabelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1527,6 +1706,30 @@ where
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateDatasetEntriesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

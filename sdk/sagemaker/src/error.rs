@@ -17,7 +17,7 @@ pub enum AddAssociationErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddAssociationError {
@@ -81,14 +81,14 @@ impl AddAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddAssociationErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `AddAssociationErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AddAssociationErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AddAssociationErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `AddAssociationErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, AddAssociationErrorKind::ResourceNotFound(_))
     }
@@ -116,7 +116,7 @@ pub struct AddTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -205,7 +205,7 @@ pub enum AssociateTrialComponentErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTrialComponentError {
@@ -269,14 +269,14 @@ impl AssociateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateTrialComponentErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `AssociateTrialComponentErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTrialComponentErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTrialComponentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `AssociateTrialComponentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -290,6 +290,90 @@ impl std::error::Error for AssociateTrialComponentError {
             AssociateTrialComponentErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
             AssociateTrialComponentErrorKind::ResourceNotFound(_inner) => Some(_inner),
             AssociateTrialComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `BatchDescribeModelPackage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchDescribeModelPackageError {
+    /// Kind of error that occurred.
+    pub kind: BatchDescribeModelPackageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchDescribeModelPackage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchDescribeModelPackageErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchDescribeModelPackageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchDescribeModelPackageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchDescribeModelPackageError {
+    fn code(&self) -> Option<&str> {
+        BatchDescribeModelPackageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchDescribeModelPackageError {
+    /// Creates a new `BatchDescribeModelPackageError`.
+    pub fn new(kind: BatchDescribeModelPackageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchDescribeModelPackageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchDescribeModelPackageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchDescribeModelPackageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchDescribeModelPackageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for BatchDescribeModelPackageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchDescribeModelPackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -310,7 +394,7 @@ pub enum CreateActionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateActionError {
@@ -373,7 +457,7 @@ impl CreateActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateActionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateActionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateActionErrorKind::ResourceLimitExceeded(_))
     }
@@ -400,7 +484,7 @@ pub struct CreateAlgorithmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAlgorithmErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAlgorithmError {
@@ -489,7 +573,7 @@ pub enum CreateAppErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppError {
@@ -553,11 +637,11 @@ impl CreateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::ResourceLimitExceeded(_))
     }
@@ -587,7 +671,7 @@ pub struct CreateAppImageConfigError {
 pub enum CreateAppImageConfigErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppImageConfigError {
@@ -650,7 +734,7 @@ impl CreateAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppImageConfigErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateAppImageConfigErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateAppImageConfigErrorKind::ResourceInUse(_))
     }
@@ -680,7 +764,7 @@ pub enum CreateArtifactErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateArtifactError {
@@ -743,7 +827,7 @@ impl CreateArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateArtifactErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateArtifactErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -778,7 +862,7 @@ pub enum CreateAutoMLJobErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAutoMLJobError {
@@ -842,11 +926,11 @@ impl CreateAutoMLJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAutoMLJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateAutoMLJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateAutoMLJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateAutoMLJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateAutoMLJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -877,7 +961,7 @@ pub struct CreateCodeRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCodeRepositoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCodeRepositoryError {
@@ -966,7 +1050,7 @@ pub enum CreateCompilationJobErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCompilationJobError {
@@ -1030,11 +1114,11 @@ impl CreateCompilationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCompilationJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateCompilationJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateCompilationJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateCompilationJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateCompilationJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1068,7 +1152,7 @@ pub enum CreateContextErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContextError {
@@ -1131,7 +1215,7 @@ impl CreateContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContextErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateContextErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateContextErrorKind::ResourceLimitExceeded(_))
     }
@@ -1163,7 +1247,7 @@ pub enum CreateDataQualityJobDefinitionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataQualityJobDefinitionError {
@@ -1230,14 +1314,14 @@ impl CreateDataQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataQualityJobDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateDataQualityJobDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataQualityJobDefinitionErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataQualityJobDefinitionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateDataQualityJobDefinitionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1273,7 +1357,7 @@ pub enum CreateDeviceFleetErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeviceFleetError {
@@ -1337,11 +1421,11 @@ impl CreateDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeviceFleetErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateDeviceFleetErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateDeviceFleetErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateDeviceFleetErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateDeviceFleetErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1377,7 +1461,7 @@ pub enum CreateDomainErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainError {
@@ -1441,11 +1525,11 @@ impl CreateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::ResourceLimitExceeded(_))
     }
@@ -1476,7 +1560,7 @@ pub enum CreateEdgePackagingJobErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEdgePackagingJobError {
@@ -1539,7 +1623,7 @@ impl CreateEdgePackagingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEdgePackagingJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateEdgePackagingJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1572,7 +1656,7 @@ pub enum CreateEndpointErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointError {
@@ -1635,7 +1719,7 @@ impl CreateEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1668,7 +1752,7 @@ pub enum CreateEndpointConfigErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointConfigError {
@@ -1731,7 +1815,7 @@ impl CreateEndpointConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointConfigErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateEndpointConfigErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1764,7 +1848,7 @@ pub enum CreateExperimentErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExperimentError {
@@ -1827,7 +1911,7 @@ impl CreateExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExperimentErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateExperimentErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1862,7 +1946,7 @@ pub enum CreateFeatureGroupErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFeatureGroupError {
@@ -1926,11 +2010,11 @@ impl CreateFeatureGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFeatureGroupErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateFeatureGroupErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateFeatureGroupErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateFeatureGroupErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFeatureGroupErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1966,7 +2050,7 @@ pub enum CreateFlowDefinitionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFlowDefinitionError {
@@ -2030,11 +2114,11 @@ impl CreateFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFlowDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateFlowDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateFlowDefinitionErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateFlowDefinitionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFlowDefinitionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2070,7 +2154,7 @@ pub enum CreateHumanTaskUiErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHumanTaskUiError {
@@ -2134,11 +2218,11 @@ impl CreateHumanTaskUiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHumanTaskUiErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateHumanTaskUiErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateHumanTaskUiErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateHumanTaskUiErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateHumanTaskUiErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2174,7 +2258,7 @@ pub enum CreateHyperParameterTuningJobErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHyperParameterTuningJobError {
@@ -2241,14 +2325,14 @@ impl CreateHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHyperParameterTuningJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateHyperParameterTuningJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateHyperParameterTuningJobErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateHyperParameterTuningJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateHyperParameterTuningJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2284,7 +2368,7 @@ pub enum CreateImageErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageError {
@@ -2348,11 +2432,11 @@ impl CreateImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ResourceLimitExceeded(_))
     }
@@ -2387,7 +2471,7 @@ pub enum CreateImageVersionErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageVersionError {
@@ -2452,18 +2536,18 @@ impl CreateImageVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageVersionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateImageVersionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateImageVersionErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateImageVersionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateImageVersionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageVersionErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageVersionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreateImageVersionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, CreateImageVersionErrorKind::ResourceNotFound(_))
     }
@@ -2497,7 +2581,7 @@ pub enum CreateLabelingJobErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLabelingJobError {
@@ -2561,11 +2645,11 @@ impl CreateLabelingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLabelingJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateLabelingJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateLabelingJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateLabelingJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateLabelingJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2599,7 +2683,7 @@ pub enum CreateModelErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelError {
@@ -2662,7 +2746,7 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ResourceLimitExceeded(_))
     }
@@ -2694,7 +2778,7 @@ pub enum CreateModelBiasJobDefinitionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelBiasJobDefinitionError {
@@ -2758,14 +2842,14 @@ impl CreateModelBiasJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelBiasJobDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateModelBiasJobDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelBiasJobDefinitionErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelBiasJobDefinitionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelBiasJobDefinitionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2801,7 +2885,7 @@ pub enum CreateModelExplainabilityJobDefinitionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelExplainabilityJobDefinitionError {
@@ -2870,14 +2954,14 @@ impl CreateModelExplainabilityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelExplainabilityJobDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateModelExplainabilityJobDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelExplainabilityJobDefinitionErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelExplainabilityJobDefinitionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelExplainabilityJobDefinitionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2918,7 +3002,7 @@ pub enum CreateModelPackageErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelPackageError {
@@ -2982,14 +3066,14 @@ impl CreateModelPackageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelPackageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateModelPackageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelPackageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelPackageErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelPackageErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3023,7 +3107,7 @@ pub enum CreateModelPackageGroupErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelPackageGroupError {
@@ -3086,7 +3170,7 @@ impl CreateModelPackageGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelPackageGroupErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelPackageGroupErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3121,7 +3205,7 @@ pub enum CreateModelQualityJobDefinitionErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelQualityJobDefinitionError {
@@ -3190,14 +3274,14 @@ impl CreateModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelQualityJobDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateModelQualityJobDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelQualityJobDefinitionErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelQualityJobDefinitionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateModelQualityJobDefinitionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3233,7 +3317,7 @@ pub enum CreateMonitoringScheduleErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMonitoringScheduleError {
@@ -3297,14 +3381,14 @@ impl CreateMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMonitoringScheduleErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateMonitoringScheduleErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             CreateMonitoringScheduleErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `CreateMonitoringScheduleErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateMonitoringScheduleErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3338,7 +3422,7 @@ pub enum CreateNotebookInstanceErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNotebookInstanceError {
@@ -3401,7 +3485,7 @@ impl CreateNotebookInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNotebookInstanceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateNotebookInstanceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3434,7 +3518,7 @@ pub enum CreateNotebookInstanceLifecycleConfigErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNotebookInstanceLifecycleConfigError {
@@ -3502,7 +3586,7 @@ impl CreateNotebookInstanceLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -3541,7 +3625,7 @@ pub enum CreatePipelineErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePipelineError {
@@ -3605,14 +3689,14 @@ impl CreatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::ResourceNotFound(_))
     }
@@ -3642,7 +3726,7 @@ pub struct CreatePresignedDomainUrlError {
 pub enum CreatePresignedDomainUrlErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePresignedDomainUrlError {
@@ -3705,7 +3789,7 @@ impl CreatePresignedDomainUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePresignedDomainUrlErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreatePresignedDomainUrlErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -3735,7 +3819,7 @@ pub struct CreatePresignedNotebookInstanceUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePresignedNotebookInstanceUrlErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePresignedNotebookInstanceUrlError {
@@ -3829,7 +3913,7 @@ pub enum CreateProcessingJobErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProcessingJobError {
@@ -3894,18 +3978,18 @@ impl CreateProcessingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProcessingJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateProcessingJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateProcessingJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateProcessingJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateProcessingJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateProcessingJobErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateProcessingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreateProcessingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -3940,7 +4024,7 @@ pub enum CreateProjectErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -4003,7 +4087,7 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ResourceLimitExceeded(_))
     }
@@ -4032,7 +4116,7 @@ pub struct CreateStudioLifecycleConfigError {
 pub enum CreateStudioLifecycleConfigErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStudioLifecycleConfigError {
@@ -4095,7 +4179,7 @@ impl CreateStudioLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStudioLifecycleConfigErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateStudioLifecycleConfigErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -4132,7 +4216,7 @@ pub enum CreateTrainingJobErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrainingJobError {
@@ -4197,18 +4281,18 @@ impl CreateTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrainingJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateTrainingJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateTrainingJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateTrainingJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateTrainingJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrainingJobErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrainingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreateTrainingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, CreateTrainingJobErrorKind::ResourceNotFound(_))
     }
@@ -4244,7 +4328,7 @@ pub enum CreateTransformJobErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransformJobError {
@@ -4309,18 +4393,18 @@ impl CreateTransformJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTransformJobErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateTransformJobErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateTransformJobErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateTransformJobErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateTransformJobErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateTransformJobErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateTransformJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreateTransformJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, CreateTransformJobErrorKind::ResourceNotFound(_))
     }
@@ -4354,7 +4438,7 @@ pub enum CreateTrialErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrialError {
@@ -4418,11 +4502,11 @@ impl CreateTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrialErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateTrialErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateTrialErrorKind::ResourceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `CreateTrialErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `CreateTrialErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, CreateTrialErrorKind::ResourceNotFound(_))
     }
@@ -4453,7 +4537,7 @@ pub enum CreateTrialComponentErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrialComponentError {
@@ -4516,7 +4600,7 @@ impl CreateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrialComponentErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateTrialComponentErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -4551,7 +4635,7 @@ pub enum CreateUserProfileErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserProfileError {
@@ -4615,11 +4699,11 @@ impl CreateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserProfileErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateUserProfileErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateUserProfileErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateUserProfileErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateUserProfileErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -4650,7 +4734,7 @@ pub struct CreateWorkforceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorkforceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkforceError {
@@ -4739,7 +4823,7 @@ pub enum CreateWorkteamErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkteamError {
@@ -4803,11 +4887,11 @@ impl CreateWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkteamErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `CreateWorkteamErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, CreateWorkteamErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `CreateWorkteamErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateWorkteamErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -4840,7 +4924,7 @@ pub struct DeleteActionError {
 pub enum DeleteActionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteActionError {
@@ -4903,7 +4987,7 @@ impl DeleteActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteActionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteActionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteActionErrorKind::ResourceNotFound(_))
     }
@@ -4930,7 +5014,7 @@ pub struct DeleteAlgorithmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAlgorithmErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlgorithmError {
@@ -5018,7 +5102,7 @@ pub enum DeleteAppErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppError {
@@ -5082,11 +5166,11 @@ impl DeleteAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::ResourceNotFound(_))
     }
@@ -5116,7 +5200,7 @@ pub struct DeleteAppImageConfigError {
 pub enum DeleteAppImageConfigErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppImageConfigError {
@@ -5179,7 +5263,7 @@ impl DeleteAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppImageConfigErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteAppImageConfigErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -5211,7 +5295,7 @@ pub struct DeleteArtifactError {
 pub enum DeleteArtifactErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteArtifactError {
@@ -5274,7 +5358,7 @@ impl DeleteArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteArtifactErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteArtifactErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteArtifactErrorKind::ResourceNotFound(_))
     }
@@ -5303,7 +5387,7 @@ pub struct DeleteAssociationError {
 pub enum DeleteAssociationErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssociationError {
@@ -5366,7 +5450,7 @@ impl DeleteAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteAssociationErrorKind::ResourceNotFound(_))
     }
@@ -5393,7 +5477,7 @@ pub struct DeleteCodeRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCodeRepositoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCodeRepositoryError {
@@ -5479,7 +5563,7 @@ pub struct DeleteContextError {
 pub enum DeleteContextErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContextError {
@@ -5542,7 +5626,7 @@ impl DeleteContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContextErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteContextErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteContextErrorKind::ResourceNotFound(_))
     }
@@ -5571,7 +5655,7 @@ pub struct DeleteDataQualityJobDefinitionError {
 pub enum DeleteDataQualityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataQualityJobDefinitionError {
@@ -5637,7 +5721,7 @@ impl DeleteDataQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataQualityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteDataQualityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -5669,7 +5753,7 @@ pub struct DeleteDeviceFleetError {
 pub enum DeleteDeviceFleetErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceFleetError {
@@ -5732,7 +5816,7 @@ impl DeleteDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceFleetErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteDeviceFleetErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteDeviceFleetErrorKind::ResourceInUse(_))
     }
@@ -5763,7 +5847,7 @@ pub enum DeleteDomainErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainError {
@@ -5827,11 +5911,11 @@ impl DeleteDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::ResourceNotFound(_))
     }
@@ -5859,7 +5943,7 @@ pub struct DeleteEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -5943,7 +6027,7 @@ pub struct DeleteEndpointConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEndpointConfigErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointConfigError {
@@ -6029,7 +6113,7 @@ pub struct DeleteExperimentError {
 pub enum DeleteExperimentErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteExperimentError {
@@ -6092,7 +6176,7 @@ impl DeleteExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteExperimentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteExperimentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteExperimentErrorKind::ResourceNotFound(_))
     }
@@ -6121,7 +6205,7 @@ pub struct DeleteFeatureGroupError {
 pub enum DeleteFeatureGroupErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFeatureGroupError {
@@ -6184,7 +6268,7 @@ impl DeleteFeatureGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFeatureGroupErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteFeatureGroupErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteFeatureGroupErrorKind::ResourceNotFound(_))
     }
@@ -6215,7 +6299,7 @@ pub enum DeleteFlowDefinitionErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFlowDefinitionError {
@@ -6279,11 +6363,11 @@ impl DeleteFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFlowDefinitionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteFlowDefinitionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteFlowDefinitionErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteFlowDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteFlowDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -6316,7 +6400,7 @@ pub struct DeleteHumanTaskUiError {
 pub enum DeleteHumanTaskUiErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHumanTaskUiError {
@@ -6379,7 +6463,7 @@ impl DeleteHumanTaskUiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHumanTaskUiErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteHumanTaskUiErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteHumanTaskUiErrorKind::ResourceNotFound(_))
     }
@@ -6410,7 +6494,7 @@ pub enum DeleteImageErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageError {
@@ -6474,11 +6558,11 @@ impl DeleteImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ResourceNotFound(_))
     }
@@ -6510,7 +6594,7 @@ pub enum DeleteImageVersionErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageVersionError {
@@ -6574,11 +6658,11 @@ impl DeleteImageVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageVersionErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteImageVersionErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteImageVersionErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteImageVersionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteImageVersionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteImageVersionErrorKind::ResourceNotFound(_))
     }
@@ -6606,7 +6690,7 @@ pub struct DeleteModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelError {
@@ -6692,7 +6776,7 @@ pub struct DeleteModelBiasJobDefinitionError {
 pub enum DeleteModelBiasJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelBiasJobDefinitionError {
@@ -6755,7 +6839,7 @@ impl DeleteModelBiasJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelBiasJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteModelBiasJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -6787,7 +6871,7 @@ pub struct DeleteModelExplainabilityJobDefinitionError {
 pub enum DeleteModelExplainabilityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelExplainabilityJobDefinitionError {
@@ -6855,7 +6939,7 @@ impl DeleteModelExplainabilityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelExplainabilityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteModelExplainabilityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -6892,7 +6976,7 @@ pub enum DeleteModelPackageErrorKind {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
     /// <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelPackageError {
@@ -6955,7 +7039,7 @@ impl DeleteModelPackageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelPackageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteModelPackageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6988,7 +7072,7 @@ pub enum DeleteModelPackageGroupErrorKind {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
     /// <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelPackageGroupError {
@@ -7051,7 +7135,7 @@ impl DeleteModelPackageGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelPackageGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteModelPackageGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7081,7 +7165,7 @@ pub struct DeleteModelPackageGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelPackageGroupPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelPackageGroupPolicyError {
@@ -7170,7 +7254,7 @@ pub struct DeleteModelQualityJobDefinitionError {
 pub enum DeleteModelQualityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelQualityJobDefinitionError {
@@ -7236,7 +7320,7 @@ impl DeleteModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelQualityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteModelQualityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -7268,7 +7352,7 @@ pub struct DeleteMonitoringScheduleError {
 pub enum DeleteMonitoringScheduleErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMonitoringScheduleError {
@@ -7331,7 +7415,7 @@ impl DeleteMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMonitoringScheduleErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteMonitoringScheduleErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -7361,7 +7445,7 @@ pub struct DeleteNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotebookInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotebookInstanceError {
@@ -7445,7 +7529,7 @@ pub struct DeleteNotebookInstanceLifecycleConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotebookInstanceLifecycleConfigErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotebookInstanceLifecycleConfigError {
@@ -7536,7 +7620,7 @@ pub struct DeletePipelineError {
 pub enum DeletePipelineErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePipelineError {
@@ -7599,7 +7683,7 @@ impl DeletePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeletePipelineErrorKind::ResourceNotFound(_))
     }
@@ -7629,7 +7713,7 @@ pub enum DeleteProjectErrorKind {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
     /// <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -7692,7 +7776,7 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ConflictException(_))
     }
@@ -7723,7 +7807,7 @@ pub enum DeleteStudioLifecycleConfigErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioLifecycleConfigError {
@@ -7787,14 +7871,14 @@ impl DeleteStudioLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioLifecycleConfigErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteStudioLifecycleConfigErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioLifecycleConfigErrorKind::ResourceInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioLifecycleConfigErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteStudioLifecycleConfigErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -7825,7 +7909,7 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -7911,7 +7995,7 @@ pub struct DeleteTrialError {
 pub enum DeleteTrialErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrialError {
@@ -7974,7 +8058,7 @@ impl DeleteTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrialErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteTrialErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteTrialErrorKind::ResourceNotFound(_))
     }
@@ -8003,7 +8087,7 @@ pub struct DeleteTrialComponentError {
 pub enum DeleteTrialComponentErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrialComponentError {
@@ -8066,7 +8150,7 @@ impl DeleteTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrialComponentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteTrialComponentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -8100,7 +8184,7 @@ pub enum DeleteUserProfileErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserProfileError {
@@ -8164,11 +8248,11 @@ impl DeleteUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserProfileErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteUserProfileErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteUserProfileErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteUserProfileErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteUserProfileErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteUserProfileErrorKind::ResourceNotFound(_))
     }
@@ -8196,7 +8280,7 @@ pub struct DeleteWorkforceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWorkforceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkforceError {
@@ -8283,7 +8367,7 @@ pub enum DeleteWorkteamErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkteamError {
@@ -8346,7 +8430,7 @@ impl DeleteWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkteamErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `DeleteWorkteamErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -8376,7 +8460,7 @@ pub struct DeregisterDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterDevicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterDevicesError {
@@ -8462,7 +8546,7 @@ pub struct DescribeActionError {
 pub enum DescribeActionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActionError {
@@ -8525,7 +8609,7 @@ impl DescribeActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeActionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeActionErrorKind::ResourceNotFound(_))
     }
@@ -8552,7 +8636,7 @@ pub struct DescribeAlgorithmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAlgorithmErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlgorithmError {
@@ -8638,7 +8722,7 @@ pub struct DescribeAppError {
 pub enum DescribeAppErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppError {
@@ -8701,7 +8785,7 @@ impl DescribeAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeAppErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeAppErrorKind::ResourceNotFound(_))
     }
@@ -8730,7 +8814,7 @@ pub struct DescribeAppImageConfigError {
 pub enum DescribeAppImageConfigErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppImageConfigError {
@@ -8793,7 +8877,7 @@ impl DescribeAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppImageConfigErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeAppImageConfigErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -8825,7 +8909,7 @@ pub struct DescribeArtifactError {
 pub enum DescribeArtifactErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeArtifactError {
@@ -8888,7 +8972,7 @@ impl DescribeArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeArtifactErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeArtifactErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeArtifactErrorKind::ResourceNotFound(_))
     }
@@ -8917,7 +9001,7 @@ pub struct DescribeAutoMLJobError {
 pub enum DescribeAutoMLJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutoMLJobError {
@@ -8980,7 +9064,7 @@ impl DescribeAutoMLJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutoMLJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeAutoMLJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeAutoMLJobErrorKind::ResourceNotFound(_))
     }
@@ -9007,7 +9091,7 @@ pub struct DescribeCodeRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCodeRepositoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCodeRepositoryError {
@@ -9093,7 +9177,7 @@ pub struct DescribeCompilationJobError {
 pub enum DescribeCompilationJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCompilationJobError {
@@ -9156,7 +9240,7 @@ impl DescribeCompilationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCompilationJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeCompilationJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9188,7 +9272,7 @@ pub struct DescribeContextError {
 pub enum DescribeContextErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContextError {
@@ -9251,7 +9335,7 @@ impl DescribeContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContextErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeContextErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeContextErrorKind::ResourceNotFound(_))
     }
@@ -9280,7 +9364,7 @@ pub struct DescribeDataQualityJobDefinitionError {
 pub enum DescribeDataQualityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataQualityJobDefinitionError {
@@ -9346,7 +9430,7 @@ impl DescribeDataQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataQualityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeDataQualityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9378,7 +9462,7 @@ pub struct DescribeDeviceError {
 pub enum DescribeDeviceErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeviceError {
@@ -9441,7 +9525,7 @@ impl DescribeDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeDeviceErrorKind::ResourceNotFound(_))
     }
@@ -9470,7 +9554,7 @@ pub struct DescribeDeviceFleetError {
 pub enum DescribeDeviceFleetErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeviceFleetError {
@@ -9533,7 +9617,7 @@ impl DescribeDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeviceFleetErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeDeviceFleetErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9565,7 +9649,7 @@ pub struct DescribeDomainError {
 pub enum DescribeDomainErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainError {
@@ -9628,7 +9712,7 @@ impl DescribeDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeDomainErrorKind::ResourceNotFound(_))
     }
@@ -9657,7 +9741,7 @@ pub struct DescribeEdgePackagingJobError {
 pub enum DescribeEdgePackagingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEdgePackagingJobError {
@@ -9720,7 +9804,7 @@ impl DescribeEdgePackagingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEdgePackagingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeEdgePackagingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9750,7 +9834,7 @@ pub struct DescribeEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointError {
@@ -9834,7 +9918,7 @@ pub struct DescribeEndpointConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointConfigErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointConfigError {
@@ -9920,7 +10004,7 @@ pub struct DescribeExperimentError {
 pub enum DescribeExperimentErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExperimentError {
@@ -9983,7 +10067,7 @@ impl DescribeExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExperimentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeExperimentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeExperimentErrorKind::ResourceNotFound(_))
     }
@@ -10012,7 +10096,7 @@ pub struct DescribeFeatureGroupError {
 pub enum DescribeFeatureGroupErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFeatureGroupError {
@@ -10075,7 +10159,7 @@ impl DescribeFeatureGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFeatureGroupErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeFeatureGroupErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10107,7 +10191,7 @@ pub struct DescribeFlowDefinitionError {
 pub enum DescribeFlowDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFlowDefinitionError {
@@ -10170,7 +10254,7 @@ impl DescribeFlowDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFlowDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeFlowDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10202,7 +10286,7 @@ pub struct DescribeHumanTaskUiError {
 pub enum DescribeHumanTaskUiErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHumanTaskUiError {
@@ -10265,7 +10349,7 @@ impl DescribeHumanTaskUiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHumanTaskUiErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeHumanTaskUiErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10297,7 +10381,7 @@ pub struct DescribeHyperParameterTuningJobError {
 pub enum DescribeHyperParameterTuningJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHyperParameterTuningJobError {
@@ -10363,7 +10447,7 @@ impl DescribeHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHyperParameterTuningJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeHyperParameterTuningJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10395,7 +10479,7 @@ pub struct DescribeImageError {
 pub enum DescribeImageErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageError {
@@ -10458,7 +10542,7 @@ impl DescribeImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImageErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeImageErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeImageErrorKind::ResourceNotFound(_))
     }
@@ -10487,7 +10571,7 @@ pub struct DescribeImageVersionError {
 pub enum DescribeImageVersionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageVersionError {
@@ -10550,7 +10634,7 @@ impl DescribeImageVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImageVersionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeImageVersionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10582,7 +10666,7 @@ pub struct DescribeLabelingJobError {
 pub enum DescribeLabelingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLabelingJobError {
@@ -10645,7 +10729,7 @@ impl DescribeLabelingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLabelingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeLabelingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10675,7 +10759,7 @@ pub struct DescribeModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeModelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelError {
@@ -10761,7 +10845,7 @@ pub struct DescribeModelBiasJobDefinitionError {
 pub enum DescribeModelBiasJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelBiasJobDefinitionError {
@@ -10827,7 +10911,7 @@ impl DescribeModelBiasJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeModelBiasJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeModelBiasJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10859,7 +10943,7 @@ pub struct DescribeModelExplainabilityJobDefinitionError {
 pub enum DescribeModelExplainabilityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelExplainabilityJobDefinitionError {
@@ -10927,7 +11011,7 @@ impl DescribeModelExplainabilityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeModelExplainabilityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeModelExplainabilityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10961,7 +11045,7 @@ pub struct DescribeModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeModelPackageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelPackageError {
@@ -11045,7 +11129,7 @@ pub struct DescribeModelPackageGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeModelPackageGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelPackageGroupError {
@@ -11131,7 +11215,7 @@ pub struct DescribeModelQualityJobDefinitionError {
 pub enum DescribeModelQualityJobDefinitionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelQualityJobDefinitionError {
@@ -11197,7 +11281,7 @@ impl DescribeModelQualityJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeModelQualityJobDefinitionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeModelQualityJobDefinitionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -11229,7 +11313,7 @@ pub struct DescribeMonitoringScheduleError {
 pub enum DescribeMonitoringScheduleErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMonitoringScheduleError {
@@ -11292,7 +11376,7 @@ impl DescribeMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMonitoringScheduleErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeMonitoringScheduleErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -11322,7 +11406,7 @@ pub struct DescribeNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNotebookInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotebookInstanceError {
@@ -11406,7 +11490,7 @@ pub struct DescribeNotebookInstanceLifecycleConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNotebookInstanceLifecycleConfigErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotebookInstanceLifecycleConfigError {
@@ -11497,7 +11581,7 @@ pub struct DescribePipelineError {
 pub enum DescribePipelineErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePipelineError {
@@ -11560,7 +11644,7 @@ impl DescribePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePipelineErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribePipelineErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribePipelineErrorKind::ResourceNotFound(_))
     }
@@ -11589,7 +11673,7 @@ pub struct DescribePipelineDefinitionForExecutionError {
 pub enum DescribePipelineDefinitionForExecutionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePipelineDefinitionForExecutionError {
@@ -11657,7 +11741,7 @@ impl DescribePipelineDefinitionForExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePipelineDefinitionForExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribePipelineDefinitionForExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -11693,7 +11777,7 @@ pub struct DescribePipelineExecutionError {
 pub enum DescribePipelineExecutionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePipelineExecutionError {
@@ -11756,7 +11840,7 @@ impl DescribePipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePipelineExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribePipelineExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -11788,7 +11872,7 @@ pub struct DescribeProcessingJobError {
 pub enum DescribeProcessingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProcessingJobError {
@@ -11851,7 +11935,7 @@ impl DescribeProcessingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProcessingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeProcessingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -11881,7 +11965,7 @@ pub struct DescribeProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProjectErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -11967,7 +12051,7 @@ pub struct DescribeStudioLifecycleConfigError {
 pub enum DescribeStudioLifecycleConfigErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStudioLifecycleConfigError {
@@ -12033,7 +12117,7 @@ impl DescribeStudioLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStudioLifecycleConfigErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeStudioLifecycleConfigErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12063,7 +12147,7 @@ pub struct DescribeSubscribedWorkteamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSubscribedWorkteamErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubscribedWorkteamError {
@@ -12149,7 +12233,7 @@ pub struct DescribeTrainingJobError {
 pub enum DescribeTrainingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrainingJobError {
@@ -12212,7 +12296,7 @@ impl DescribeTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrainingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeTrainingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12244,7 +12328,7 @@ pub struct DescribeTransformJobError {
 pub enum DescribeTransformJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransformJobError {
@@ -12307,7 +12391,7 @@ impl DescribeTransformJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTransformJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeTransformJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12339,7 +12423,7 @@ pub struct DescribeTrialError {
 pub enum DescribeTrialErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrialError {
@@ -12402,7 +12486,7 @@ impl DescribeTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrialErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeTrialErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DescribeTrialErrorKind::ResourceNotFound(_))
     }
@@ -12431,7 +12515,7 @@ pub struct DescribeTrialComponentError {
 pub enum DescribeTrialComponentErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrialComponentError {
@@ -12494,7 +12578,7 @@ impl DescribeTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrialComponentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeTrialComponentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12526,7 +12610,7 @@ pub struct DescribeUserProfileError {
 pub enum DescribeUserProfileErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserProfileError {
@@ -12589,7 +12673,7 @@ impl DescribeUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserProfileErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DescribeUserProfileErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12619,7 +12703,7 @@ pub struct DescribeWorkforceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeWorkforceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkforceError {
@@ -12703,7 +12787,7 @@ pub struct DescribeWorkteamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeWorkteamErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkteamError {
@@ -12787,7 +12871,7 @@ pub struct DisableSagemakerServicecatalogPortfolioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableSagemakerServicecatalogPortfolioErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableSagemakerServicecatalogPortfolioError {
@@ -12878,7 +12962,7 @@ pub struct DisassociateTrialComponentError {
 pub enum DisassociateTrialComponentErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTrialComponentError {
@@ -12941,7 +13025,7 @@ impl DisassociateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateTrialComponentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DisassociateTrialComponentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -12971,7 +13055,7 @@ pub struct EnableSagemakerServicecatalogPortfolioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableSagemakerServicecatalogPortfolioErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSagemakerServicecatalogPortfolioError {
@@ -13060,7 +13144,7 @@ pub struct GetDeviceFleetReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeviceFleetReportErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceFleetReportError {
@@ -13144,7 +13228,7 @@ pub struct GetModelPackageGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetModelPackageGroupPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelPackageGroupPolicyError {
@@ -13228,7 +13312,7 @@ pub struct GetSagemakerServicecatalogPortfolioStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSagemakerServicecatalogPortfolioStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSagemakerServicecatalogPortfolioStatusError {
@@ -13317,7 +13401,7 @@ pub struct GetSearchSuggestionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSearchSuggestionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSearchSuggestionsError {
@@ -13403,7 +13487,7 @@ pub struct ListActionsError {
 pub enum ListActionsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActionsError {
@@ -13466,7 +13550,7 @@ impl ListActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActionsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListActionsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListActionsErrorKind::ResourceNotFound(_))
     }
@@ -13493,7 +13577,7 @@ pub struct ListAlgorithmsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAlgorithmsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlgorithmsError {
@@ -13577,7 +13661,7 @@ pub struct ListAppImageConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppImageConfigsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppImageConfigsError {
@@ -13661,7 +13745,7 @@ pub struct ListAppsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppsError {
@@ -13747,7 +13831,7 @@ pub struct ListArtifactsError {
 pub enum ListArtifactsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListArtifactsError {
@@ -13810,7 +13894,7 @@ impl ListArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListArtifactsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListArtifactsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListArtifactsErrorKind::ResourceNotFound(_))
     }
@@ -13839,7 +13923,7 @@ pub struct ListAssociationsError {
 pub enum ListAssociationsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociationsError {
@@ -13902,7 +13986,7 @@ impl ListAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociationsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListAssociationsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListAssociationsErrorKind::ResourceNotFound(_))
     }
@@ -13929,7 +14013,7 @@ pub struct ListAutoMLJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAutoMLJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAutoMLJobsError {
@@ -14015,7 +14099,7 @@ pub struct ListCandidatesForAutoMLJobError {
 pub enum ListCandidatesForAutoMLJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCandidatesForAutoMLJobError {
@@ -14078,7 +14162,7 @@ impl ListCandidatesForAutoMLJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCandidatesForAutoMLJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListCandidatesForAutoMLJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -14108,7 +14192,7 @@ pub struct ListCodeRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCodeRepositoriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCodeRepositoriesError {
@@ -14192,7 +14276,7 @@ pub struct ListCompilationJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCompilationJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCompilationJobsError {
@@ -14278,7 +14362,7 @@ pub struct ListContextsError {
 pub enum ListContextsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContextsError {
@@ -14341,7 +14425,7 @@ impl ListContextsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContextsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListContextsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListContextsErrorKind::ResourceNotFound(_))
     }
@@ -14368,7 +14452,7 @@ pub struct ListDataQualityJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataQualityJobDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataQualityJobDefinitionsError {
@@ -14455,7 +14539,7 @@ pub struct ListDeviceFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeviceFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceFleetsError {
@@ -14539,7 +14623,7 @@ pub struct ListDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDevicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicesError {
@@ -14623,7 +14707,7 @@ pub struct ListDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainsError {
@@ -14707,7 +14791,7 @@ pub struct ListEdgePackagingJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEdgePackagingJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEdgePackagingJobsError {
@@ -14791,7 +14875,7 @@ pub struct ListEndpointConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEndpointConfigsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointConfigsError {
@@ -14875,7 +14959,7 @@ pub struct ListEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEndpointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointsError {
@@ -14959,7 +15043,7 @@ pub struct ListExperimentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExperimentsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExperimentsError {
@@ -15043,7 +15127,7 @@ pub struct ListFeatureGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFeatureGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFeatureGroupsError {
@@ -15127,7 +15211,7 @@ pub struct ListFlowDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFlowDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFlowDefinitionsError {
@@ -15211,7 +15295,7 @@ pub struct ListHumanTaskUisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListHumanTaskUisErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHumanTaskUisError {
@@ -15295,7 +15379,7 @@ pub struct ListHyperParameterTuningJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListHyperParameterTuningJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHyperParameterTuningJobsError {
@@ -15379,7 +15463,7 @@ pub struct ListImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImagesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagesError {
@@ -15465,7 +15549,7 @@ pub struct ListImageVersionsError {
 pub enum ListImageVersionsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImageVersionsError {
@@ -15528,7 +15612,7 @@ impl ListImageVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImageVersionsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListImageVersionsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListImageVersionsErrorKind::ResourceNotFound(_))
     }
@@ -15555,7 +15639,7 @@ pub struct ListLabelingJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLabelingJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLabelingJobsError {
@@ -15641,7 +15725,7 @@ pub struct ListLabelingJobsForWorkteamError {
 pub enum ListLabelingJobsForWorkteamErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLabelingJobsForWorkteamError {
@@ -15704,7 +15788,7 @@ impl ListLabelingJobsForWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLabelingJobsForWorkteamErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListLabelingJobsForWorkteamErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -15734,7 +15818,7 @@ pub struct ListModelBiasJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelBiasJobDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelBiasJobDefinitionsError {
@@ -15818,7 +15902,7 @@ pub struct ListModelExplainabilityJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelExplainabilityJobDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelExplainabilityJobDefinitionsError {
@@ -15907,7 +15991,7 @@ pub struct ListModelPackageGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelPackageGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelPackageGroupsError {
@@ -15991,7 +16075,7 @@ pub struct ListModelPackagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelPackagesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelPackagesError {
@@ -16075,7 +16159,7 @@ pub struct ListModelQualityJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelQualityJobDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelQualityJobDefinitionsError {
@@ -16162,7 +16246,7 @@ pub struct ListModelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelsError {
@@ -16246,7 +16330,7 @@ pub struct ListMonitoringExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMonitoringExecutionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMonitoringExecutionsError {
@@ -16330,7 +16414,7 @@ pub struct ListMonitoringSchedulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMonitoringSchedulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMonitoringSchedulesError {
@@ -16414,7 +16498,7 @@ pub struct ListNotebookInstanceLifecycleConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotebookInstanceLifecycleConfigsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNotebookInstanceLifecycleConfigsError {
@@ -16503,7 +16587,7 @@ pub struct ListNotebookInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotebookInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNotebookInstancesError {
@@ -16589,7 +16673,7 @@ pub struct ListPipelineExecutionsError {
 pub enum ListPipelineExecutionsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelineExecutionsError {
@@ -16652,7 +16736,7 @@ impl ListPipelineExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelineExecutionsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListPipelineExecutionsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -16684,7 +16768,7 @@ pub struct ListPipelineExecutionStepsError {
 pub enum ListPipelineExecutionStepsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelineExecutionStepsError {
@@ -16747,7 +16831,7 @@ impl ListPipelineExecutionStepsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelineExecutionStepsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListPipelineExecutionStepsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -16779,7 +16863,7 @@ pub struct ListPipelineParametersForExecutionError {
 pub enum ListPipelineParametersForExecutionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelineParametersForExecutionError {
@@ -16845,7 +16929,7 @@ impl ListPipelineParametersForExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelineParametersForExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListPipelineParametersForExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -16875,7 +16959,7 @@ pub struct ListPipelinesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPipelinesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelinesError {
@@ -16959,7 +17043,7 @@ pub struct ListProcessingJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProcessingJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProcessingJobsError {
@@ -17043,7 +17127,7 @@ pub struct ListProjectsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProjectsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -17129,7 +17213,7 @@ pub struct ListStudioLifecycleConfigsError {
 pub enum ListStudioLifecycleConfigsErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudioLifecycleConfigsError {
@@ -17192,7 +17276,7 @@ impl ListStudioLifecycleConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudioLifecycleConfigsErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `ListStudioLifecycleConfigsErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -17222,7 +17306,7 @@ pub struct ListSubscribedWorkteamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSubscribedWorkteamsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscribedWorkteamsError {
@@ -17306,7 +17390,7 @@ pub struct ListTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -17390,7 +17474,7 @@ pub struct ListTrainingJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTrainingJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrainingJobsError {
@@ -17476,7 +17560,7 @@ pub struct ListTrainingJobsForHyperParameterTuningJobError {
 pub enum ListTrainingJobsForHyperParameterTuningJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrainingJobsForHyperParameterTuningJobError {
@@ -17544,7 +17628,7 @@ impl ListTrainingJobsForHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrainingJobsForHyperParameterTuningJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListTrainingJobsForHyperParameterTuningJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -17578,7 +17662,7 @@ pub struct ListTransformJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTransformJobsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTransformJobsError {
@@ -17664,7 +17748,7 @@ pub struct ListTrialComponentsError {
 pub enum ListTrialComponentsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrialComponentsError {
@@ -17727,7 +17811,7 @@ impl ListTrialComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrialComponentsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListTrialComponentsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -17759,7 +17843,7 @@ pub struct ListTrialsError {
 pub enum ListTrialsErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrialsError {
@@ -17822,7 +17906,7 @@ impl ListTrialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrialsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListTrialsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, ListTrialsErrorKind::ResourceNotFound(_))
     }
@@ -17849,7 +17933,7 @@ pub struct ListUserProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserProfilesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserProfilesError {
@@ -17933,7 +18017,7 @@ pub struct ListWorkforcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListWorkforcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkforcesError {
@@ -18017,7 +18101,7 @@ pub struct ListWorkteamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListWorkteamsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkteamsError {
@@ -18101,7 +18185,7 @@ pub struct PutModelPackageGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutModelPackageGroupPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutModelPackageGroupPolicyError {
@@ -18188,7 +18272,7 @@ pub enum RegisterDevicesErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDevicesError {
@@ -18251,7 +18335,7 @@ impl RegisterDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDevicesErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `RegisterDevicesErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -18283,7 +18367,7 @@ pub struct RenderUiTemplateError {
 pub enum RenderUiTemplateErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RenderUiTemplateError {
@@ -18346,7 +18430,7 @@ impl RenderUiTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RenderUiTemplateErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `RenderUiTemplateErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, RenderUiTemplateErrorKind::ResourceNotFound(_))
     }
@@ -18381,7 +18465,7 @@ pub enum RetryPipelineExecutionErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetryPipelineExecutionError {
@@ -18446,21 +18530,21 @@ impl RetryPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetryPipelineExecutionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RetryPipelineExecutionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryPipelineExecutionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RetryPipelineExecutionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `RetryPipelineExecutionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             RetryPipelineExecutionErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `RetryPipelineExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `RetryPipelineExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -18492,7 +18576,7 @@ pub struct SearchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchError {
@@ -18581,7 +18665,7 @@ pub enum SendPipelineExecutionStepFailureErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendPipelineExecutionStepFailureError {
@@ -18650,14 +18734,14 @@ impl SendPipelineExecutionStepFailureError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendPipelineExecutionStepFailureErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `SendPipelineExecutionStepFailureErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             SendPipelineExecutionStepFailureErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `SendPipelineExecutionStepFailureErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `SendPipelineExecutionStepFailureErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -18695,7 +18779,7 @@ pub enum SendPipelineExecutionStepSuccessErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendPipelineExecutionStepSuccessError {
@@ -18764,14 +18848,14 @@ impl SendPipelineExecutionStepSuccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendPipelineExecutionStepSuccessErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `SendPipelineExecutionStepSuccessErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             SendPipelineExecutionStepSuccessErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `SendPipelineExecutionStepSuccessErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `SendPipelineExecutionStepSuccessErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -18806,7 +18890,7 @@ pub struct StartMonitoringScheduleError {
 pub enum StartMonitoringScheduleErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMonitoringScheduleError {
@@ -18869,7 +18953,7 @@ impl StartMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMonitoringScheduleErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StartMonitoringScheduleErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -18902,7 +18986,7 @@ pub enum StartNotebookInstanceErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartNotebookInstanceError {
@@ -18965,7 +19049,7 @@ impl StartNotebookInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartNotebookInstanceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `StartNotebookInstanceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -19000,7 +19084,7 @@ pub enum StartPipelineExecutionErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartPipelineExecutionError {
@@ -19064,14 +19148,14 @@ impl StartPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartPipelineExecutionErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `StartPipelineExecutionErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             StartPipelineExecutionErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `StartPipelineExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StartPipelineExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -19104,7 +19188,7 @@ pub struct StopAutoMLJobError {
 pub enum StopAutoMLJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopAutoMLJobError {
@@ -19167,7 +19251,7 @@ impl StopAutoMLJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopAutoMLJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopAutoMLJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopAutoMLJobErrorKind::ResourceNotFound(_))
     }
@@ -19196,7 +19280,7 @@ pub struct StopCompilationJobError {
 pub enum StopCompilationJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopCompilationJobError {
@@ -19259,7 +19343,7 @@ impl StopCompilationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopCompilationJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopCompilationJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopCompilationJobErrorKind::ResourceNotFound(_))
     }
@@ -19286,7 +19370,7 @@ pub struct StopEdgePackagingJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopEdgePackagingJobErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopEdgePackagingJobError {
@@ -19372,7 +19456,7 @@ pub struct StopHyperParameterTuningJobError {
 pub enum StopHyperParameterTuningJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopHyperParameterTuningJobError {
@@ -19435,7 +19519,7 @@ impl StopHyperParameterTuningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopHyperParameterTuningJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopHyperParameterTuningJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -19467,7 +19551,7 @@ pub struct StopLabelingJobError {
 pub enum StopLabelingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopLabelingJobError {
@@ -19530,7 +19614,7 @@ impl StopLabelingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopLabelingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopLabelingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopLabelingJobErrorKind::ResourceNotFound(_))
     }
@@ -19559,7 +19643,7 @@ pub struct StopMonitoringScheduleError {
 pub enum StopMonitoringScheduleErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMonitoringScheduleError {
@@ -19622,7 +19706,7 @@ impl StopMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopMonitoringScheduleErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopMonitoringScheduleErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -19652,7 +19736,7 @@ pub struct StopNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopNotebookInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopNotebookInstanceError {
@@ -19738,7 +19822,7 @@ pub struct StopPipelineExecutionError {
 pub enum StopPipelineExecutionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopPipelineExecutionError {
@@ -19801,7 +19885,7 @@ impl StopPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -19833,7 +19917,7 @@ pub struct StopProcessingJobError {
 pub enum StopProcessingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopProcessingJobError {
@@ -19896,7 +19980,7 @@ impl StopProcessingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopProcessingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopProcessingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopProcessingJobErrorKind::ResourceNotFound(_))
     }
@@ -19925,7 +20009,7 @@ pub struct StopTrainingJobError {
 pub enum StopTrainingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTrainingJobError {
@@ -19988,7 +20072,7 @@ impl StopTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopTrainingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopTrainingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopTrainingJobErrorKind::ResourceNotFound(_))
     }
@@ -20017,7 +20101,7 @@ pub struct StopTransformJobError {
 pub enum StopTransformJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTransformJobError {
@@ -20080,7 +20164,7 @@ impl StopTransformJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopTransformJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `StopTransformJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, StopTransformJobErrorKind::ResourceNotFound(_))
     }
@@ -20112,7 +20196,7 @@ pub enum UpdateActionErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateActionError {
@@ -20176,11 +20260,11 @@ impl UpdateActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateActionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateActionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateActionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateActionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateActionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateActionErrorKind::ResourceNotFound(_))
     }
@@ -20210,7 +20294,7 @@ pub struct UpdateAppImageConfigError {
 pub enum UpdateAppImageConfigErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAppImageConfigError {
@@ -20273,7 +20357,7 @@ impl UpdateAppImageConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAppImageConfigErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateAppImageConfigErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -20308,7 +20392,7 @@ pub enum UpdateArtifactErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateArtifactError {
@@ -20372,11 +20456,11 @@ impl UpdateArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateArtifactErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateArtifactErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateArtifactErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateArtifactErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateArtifactErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateArtifactErrorKind::ResourceNotFound(_))
     }
@@ -20404,7 +20488,7 @@ pub struct UpdateCodeRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCodeRepositoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCodeRepositoryError {
@@ -20493,7 +20577,7 @@ pub enum UpdateContextErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContextError {
@@ -20557,11 +20641,11 @@ impl UpdateContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContextErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateContextErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateContextErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateContextErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateContextErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateContextErrorKind::ResourceNotFound(_))
     }
@@ -20591,7 +20675,7 @@ pub struct UpdateDeviceFleetError {
 pub enum UpdateDeviceFleetErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceFleetError {
@@ -20654,7 +20738,7 @@ impl UpdateDeviceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceFleetErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdateDeviceFleetErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, UpdateDeviceFleetErrorKind::ResourceInUse(_))
     }
@@ -20681,7 +20765,7 @@ pub struct UpdateDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDevicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDevicesError {
@@ -20772,7 +20856,7 @@ pub enum UpdateDomainErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainError {
@@ -20837,15 +20921,15 @@ impl UpdateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::ResourceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::ResourceNotFound(_))
     }
@@ -20877,7 +20961,7 @@ pub enum UpdateEndpointErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEndpointError {
@@ -20940,7 +21024,7 @@ impl UpdateEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -20973,7 +21057,7 @@ pub enum UpdateEndpointWeightsAndCapacitiesErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEndpointWeightsAndCapacitiesError {
@@ -21041,7 +21125,7 @@ impl UpdateEndpointWeightsAndCapacitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEndpointWeightsAndCapacitiesErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateEndpointWeightsAndCapacitiesErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -21078,7 +21162,7 @@ pub enum UpdateExperimentErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateExperimentError {
@@ -21142,11 +21226,11 @@ impl UpdateExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateExperimentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateExperimentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateExperimentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateExperimentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateExperimentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateExperimentErrorKind::ResourceNotFound(_))
     }
@@ -21178,7 +21262,7 @@ pub enum UpdateImageErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateImageError {
@@ -21242,11 +21326,11 @@ impl UpdateImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateImageErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdateImageErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, UpdateImageErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `UpdateImageErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateImageErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateImageErrorKind::ResourceNotFound(_))
     }
@@ -21274,7 +21358,7 @@ pub struct UpdateModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateModelPackageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateModelPackageError {
@@ -21363,7 +21447,7 @@ pub enum UpdateMonitoringScheduleErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMonitoringScheduleError {
@@ -21427,14 +21511,14 @@ impl UpdateMonitoringScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMonitoringScheduleErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateMonitoringScheduleErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMonitoringScheduleErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMonitoringScheduleErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateMonitoringScheduleErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -21468,7 +21552,7 @@ pub enum UpdateNotebookInstanceErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNotebookInstanceError {
@@ -21531,7 +21615,7 @@ impl UpdateNotebookInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNotebookInstanceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateNotebookInstanceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -21564,7 +21648,7 @@ pub enum UpdateNotebookInstanceLifecycleConfigErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNotebookInstanceLifecycleConfigError {
@@ -21632,7 +21716,7 @@ impl UpdateNotebookInstanceLifecycleConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateNotebookInstanceLifecycleConfigErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -21668,7 +21752,7 @@ pub struct UpdatePipelineError {
 pub enum UpdatePipelineErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineError {
@@ -21731,7 +21815,7 @@ impl UpdatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdatePipelineErrorKind::ResourceNotFound(_))
     }
@@ -21760,7 +21844,7 @@ pub struct UpdatePipelineExecutionError {
 pub enum UpdatePipelineExecutionErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineExecutionError {
@@ -21823,7 +21907,7 @@ impl UpdatePipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineExecutionErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdatePipelineExecutionErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -21836,6 +21920,90 @@ impl std::error::Error for UpdatePipelineExecutionError {
         match &self.kind {
             UpdatePipelineExecutionErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdatePipelineExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateProject` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateProjectError {
+    /// Kind of error that occurred.
+    pub kind: UpdateProjectErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateProject` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateProjectErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateProjectError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateProjectErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateProjectError {
+    fn code(&self) -> Option<&str> {
+        UpdateProjectError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateProjectError {
+    /// Creates a new `UpdateProjectError`.
+    pub fn new(kind: UpdateProjectErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateProjectError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateProjectError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for UpdateProjectError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -21855,7 +22023,7 @@ pub struct UpdateTrainingJobError {
 pub enum UpdateTrainingJobErrorKind {
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrainingJobError {
@@ -21918,7 +22086,7 @@ impl UpdateTrainingJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrainingJobErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateTrainingJobErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateTrainingJobErrorKind::ResourceNotFound(_))
     }
@@ -21950,7 +22118,7 @@ pub enum UpdateTrialErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrialError {
@@ -22014,11 +22182,11 @@ impl UpdateTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrialErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTrialErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrialErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateTrialErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateTrialErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateTrialErrorKind::ResourceNotFound(_))
     }
@@ -22051,7 +22219,7 @@ pub enum UpdateTrialComponentErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrialComponentError {
@@ -22115,14 +22283,14 @@ impl UpdateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrialComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTrialComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrialComponentErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrialComponentErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateTrialComponentErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -22160,7 +22328,7 @@ pub enum UpdateUserProfileErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserProfileError {
@@ -22225,18 +22393,18 @@ impl UpdateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, UpdateUserProfileErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserProfileErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateUserProfileErrorKind::ResourceNotFound(_))
     }
@@ -22265,7 +22433,7 @@ pub struct UpdateWorkforceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWorkforceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkforceError {
@@ -22352,7 +22520,7 @@ pub enum UpdateWorkteamErrorKind {
     /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
     /// training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkteamError {
@@ -22415,7 +22583,7 @@ impl UpdateWorkteamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkteamErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateWorkteamErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,

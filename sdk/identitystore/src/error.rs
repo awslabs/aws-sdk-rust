@@ -22,7 +22,7 @@ pub enum DescribeGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGroupError {
@@ -89,29 +89,29 @@ impl DescribeGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeGroupErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeGroupErrorKind::ValidationException(_))
     }
@@ -152,7 +152,7 @@ pub enum DescribeUserErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserError {
@@ -219,29 +219,29 @@ impl DescribeUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::ValidationException(_))
     }
@@ -282,7 +282,7 @@ pub enum ListGroupsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -349,26 +349,26 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::ValidationException(_))
     }
@@ -409,7 +409,7 @@ pub enum ListUsersErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -476,23 +476,23 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ValidationException(_))
     }

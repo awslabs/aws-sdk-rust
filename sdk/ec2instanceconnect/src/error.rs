@@ -38,7 +38,7 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again.
     /// To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
@@ -122,63 +122,63 @@ impl SendSerialConsoleSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::AuthException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::AuthException`.
     pub fn is_auth_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
     pub fn is_ec2_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException`.
     pub fn is_ec2_instance_type_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException`.
     pub fn is_serial_console_access_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException`.
     pub fn is_serial_console_session_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException`.
     pub fn is_serial_console_session_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -237,7 +237,7 @@ pub enum SendSSHPublicKeyErrorKind {
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again.
     /// To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendSSHPublicKeyError {
@@ -304,29 +304,29 @@ impl SendSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendSSHPublicKeyErrorKind::AuthException`.
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::AuthException`.
     pub fn is_auth_exception(&self) -> bool {
         matches!(&self.kind, SendSSHPublicKeyErrorKind::AuthException(_))
     }
-    /// Returns true if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
     pub fn is_ec2_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendSSHPublicKeyErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendSSHPublicKeyErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `SendSSHPublicKeyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, SendSSHPublicKeyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `SendSSHPublicKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

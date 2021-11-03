@@ -827,15 +827,13 @@ impl GetTimelineEventOutput {
 pub struct GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The short format name of the response plan. Can't contain spaces.</p>
+    /// <p>The short format name of the response plan. The name can't contain spaces.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create the incident when using this response plan.</p>
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
-    /// <p>The
-    /// AWS
-    /// Chatbot chat channel used for collaboration during an
+    /// <p>The Chatbot chat channel used for collaboration during an
     /// incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that the response plan engages during an
@@ -882,12 +880,12 @@ pub mod get_response_plan_output {
             self.arn = input;
             self
         }
-        /// <p>The short format name of the response plan. Can't contain spaces.</p>
+        /// <p>The short format name of the response plan. The name can't contain spaces.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The short format name of the response plan. Can't contain spaces.</p>
+        /// <p>The short format name of the response plan. The name can't contain spaces.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -915,17 +913,13 @@ pub mod get_response_plan_output {
             self.incident_template = input;
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         pub fn set_chat_channel(
             mut self,
@@ -1117,7 +1111,7 @@ impl GetReplicationSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIncidentRecordOutput {
-    /// <p>Details structure of the incident record.</p>
+    /// <p>Details the structure of the incident record.</p>
     pub incident_record: std::option::Option<crate::model::IncidentRecord>,
 }
 impl std::fmt::Debug for GetIncidentRecordOutput {
@@ -1136,12 +1130,12 @@ pub mod get_incident_record_output {
         pub(crate) incident_record: std::option::Option<crate::model::IncidentRecord>,
     }
     impl Builder {
-        /// <p>Details structure of the incident record.</p>
+        /// <p>Details the structure of the incident record.</p>
         pub fn incident_record(mut self, input: crate::model::IncidentRecord) -> Self {
             self.incident_record = Some(input);
             self
         }
-        /// <p>Details structure of the incident record.</p>
+        /// <p>Details the structure of the incident record.</p>
         pub fn set_incident_record(
             mut self,
             input: std::option::Option<crate::model::IncidentRecord>,

@@ -44,7 +44,7 @@ pub enum ErrorKind {
 pub trait ProvideErrorKind {
     /// Returns the `ErrorKind` when the error is modeled as retryable
     ///
-    /// If the error kind cannot be determined (eg. the error is unmodeled at the error kind depends
+    /// If the error kind cannot be determined (e.g. the error is unmodeled at the error kind depends
     /// on an HTTP status code, return `None`.
     fn retryable_error_kind(&self) -> Option<ErrorKind>;
 
@@ -66,7 +66,7 @@ pub enum RetryKind {
     /// Retry the associated request due to a known `ErrorKind`.
     Error(ErrorKind),
 
-    /// An Explicit retry (eg. from `x-amz-retry-after`).
+    /// An Explicit retry (e.g. from `x-amz-retry-after`).
     ///
     /// Note: The specified `Duration` is considered a suggestion and may be replaced or ignored.
     Explicit(Duration),

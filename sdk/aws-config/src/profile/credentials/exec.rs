@@ -55,6 +55,7 @@ impl AssumeRoleProvider {
             .build()
             .expect("operation is valid")
             .make_operation(&config)
+            .await
             .expect("valid operation");
         let assume_role_creds = client_config
             .core_client

@@ -237,6 +237,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateActionTarget {
     }
 }
 
+/// Operation shape for `CreateFindingAggregator`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_finding_aggregator`](crate::client::Client::create_finding_aggregator).
+///
+/// See [`crate::client::fluent_builders::CreateFindingAggregator`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateFindingAggregator {
+    _private: (),
+}
+impl CreateFindingAggregator {
+    /// Creates a new builder-style object to manufacture [`CreateFindingAggregatorInput`](crate::input::CreateFindingAggregatorInput)
+    pub fn builder() -> crate::input::create_finding_aggregator_input::Builder {
+        crate::input::create_finding_aggregator_input::Builder::default()
+    }
+    /// Creates a new `CreateFindingAggregator` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateFindingAggregator {
+    type Output = std::result::Result<
+        crate::output::CreateFindingAggregatorOutput,
+        crate::error::CreateFindingAggregatorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_finding_aggregator_error(response)
+        } else {
+            crate::operation_deser::parse_create_finding_aggregator_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateInsight`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -365,6 +399,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteActionTarget {
             crate::operation_deser::parse_delete_action_target_error(response)
         } else {
             crate::operation_deser::parse_delete_action_target_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteFindingAggregator`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_finding_aggregator`](crate::client::Client::delete_finding_aggregator).
+///
+/// See [`crate::client::fluent_builders::DeleteFindingAggregator`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFindingAggregator {
+    _private: (),
+}
+impl DeleteFindingAggregator {
+    /// Creates a new builder-style object to manufacture [`DeleteFindingAggregatorInput`](crate::input::DeleteFindingAggregatorInput)
+    pub fn builder() -> crate::input::delete_finding_aggregator_input::Builder {
+        crate::input::delete_finding_aggregator_input::Builder::default()
+    }
+    /// Creates a new `DeleteFindingAggregator` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFindingAggregator {
+    type Output = std::result::Result<
+        crate::output::DeleteFindingAggregatorOutput,
+        crate::error::DeleteFindingAggregatorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_finding_aggregator_error(response)
+        } else {
+            crate::operation_deser::parse_delete_finding_aggregator_response(response)
         }
     }
 }
@@ -1043,6 +1111,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnabledStandards {
     }
 }
 
+/// Operation shape for `GetFindingAggregator`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_finding_aggregator`](crate::client::Client::get_finding_aggregator).
+///
+/// See [`crate::client::fluent_builders::GetFindingAggregator`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetFindingAggregator {
+    _private: (),
+}
+impl GetFindingAggregator {
+    /// Creates a new builder-style object to manufacture [`GetFindingAggregatorInput`](crate::input::GetFindingAggregatorInput)
+    pub fn builder() -> crate::input::get_finding_aggregator_input::Builder {
+        crate::input::get_finding_aggregator_input::Builder::default()
+    }
+    /// Creates a new `GetFindingAggregator` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetFindingAggregator {
+    type Output = std::result::Result<
+        crate::output::GetFindingAggregatorOutput,
+        crate::error::GetFindingAggregatorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_finding_aggregator_error(response)
+        } else {
+            crate::operation_deser::parse_get_finding_aggregator_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetFindings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1307,6 +1409,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnabledProductsForIm
     }
 }
 
+/// Operation shape for `ListFindingAggregators`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_finding_aggregators`](crate::client::Client::list_finding_aggregators).
+///
+/// See [`crate::client::fluent_builders::ListFindingAggregators`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListFindingAggregators {
+    _private: (),
+}
+impl ListFindingAggregators {
+    /// Creates a new builder-style object to manufacture [`ListFindingAggregatorsInput`](crate::input::ListFindingAggregatorsInput)
+    pub fn builder() -> crate::input::list_finding_aggregators_input::Builder {
+        crate::input::list_finding_aggregators_input::Builder::default()
+    }
+    /// Creates a new `ListFindingAggregators` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListFindingAggregators {
+    type Output = std::result::Result<
+        crate::output::ListFindingAggregatorsOutput,
+        crate::error::ListFindingAggregatorsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_finding_aggregators_error(response)
+        } else {
+            crate::operation_deser::parse_list_finding_aggregators_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListInvitations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1535,6 +1671,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateActionTarget {
             crate::operation_deser::parse_update_action_target_error(response)
         } else {
             crate::operation_deser::parse_update_action_target_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateFindingAggregator`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_finding_aggregator`](crate::client::Client::update_finding_aggregator).
+///
+/// See [`crate::client::fluent_builders::UpdateFindingAggregator`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFindingAggregator {
+    _private: (),
+}
+impl UpdateFindingAggregator {
+    /// Creates a new builder-style object to manufacture [`UpdateFindingAggregatorInput`](crate::input::UpdateFindingAggregatorInput)
+    pub fn builder() -> crate::input::update_finding_aggregator_input::Builder {
+        crate::input::update_finding_aggregator_input::Builder::default()
+    }
+    /// Creates a new `UpdateFindingAggregator` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFindingAggregator {
+    type Output = std::result::Result<
+        crate::output::UpdateFindingAggregatorOutput,
+        crate::error::UpdateFindingAggregatorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_finding_aggregator_error(response)
+        } else {
+            crate::operation_deser::parse_update_finding_aggregator_response(response)
         }
     }
 }

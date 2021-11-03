@@ -20,7 +20,7 @@ pub enum CreateActivityErrorKind {
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
     /// AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateActivityError {
@@ -85,18 +85,18 @@ impl CreateActivityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateActivityErrorKind::ActivityLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateActivityErrorKind::ActivityLimitExceeded`.
     pub fn is_activity_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateActivityErrorKind::ActivityLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateActivityErrorKind::InvalidName`.
+    /// Returns `true` if the error kind is `CreateActivityErrorKind::InvalidName`.
     pub fn is_invalid_name(&self) -> bool {
         matches!(&self.kind, CreateActivityErrorKind::InvalidName(_))
     }
-    /// Returns true if the error kind is `CreateActivityErrorKind::TooManyTags`.
+    /// Returns `true` if the error kind is `CreateActivityErrorKind::TooManyTags`.
     pub fn is_too_many_tags(&self) -> bool {
         matches!(&self.kind, CreateActivityErrorKind::TooManyTags(_))
     }
@@ -148,7 +148,7 @@ pub enum CreateStateMachineErrorKind {
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
     /// AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStateMachineError {
@@ -220,64 +220,64 @@ impl CreateStateMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, CreateStateMachineErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::InvalidDefinition`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::InvalidDefinition`.
     pub fn is_invalid_definition(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::InvalidDefinition(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::InvalidLoggingConfiguration`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::InvalidLoggingConfiguration`.
     pub fn is_invalid_logging_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::InvalidLoggingConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::InvalidName`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::InvalidName`.
     pub fn is_invalid_name(&self) -> bool {
         matches!(&self.kind, CreateStateMachineErrorKind::InvalidName(_))
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::InvalidTracingConfiguration`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::InvalidTracingConfiguration`.
     pub fn is_invalid_tracing_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::InvalidTracingConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::StateMachineAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::StateMachineAlreadyExists`.
     pub fn is_state_machine_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::StateMachineAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::StateMachineDeleting`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::StateMachineDeleting(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::StateMachineLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::StateMachineLimitExceeded`.
     pub fn is_state_machine_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::StateMachineLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::StateMachineTypeNotSupported`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::StateMachineTypeNotSupported`.
     pub fn is_state_machine_type_not_supported(&self) -> bool {
         matches!(
             &self.kind,
             CreateStateMachineErrorKind::StateMachineTypeNotSupported(_)
         )
     }
-    /// Returns true if the error kind is `CreateStateMachineErrorKind::TooManyTags`.
+    /// Returns `true` if the error kind is `CreateStateMachineErrorKind::TooManyTags`.
     pub fn is_too_many_tags(&self) -> bool {
         matches!(&self.kind, CreateStateMachineErrorKind::TooManyTags(_))
     }
@@ -315,7 +315,7 @@ pub struct DeleteActivityError {
 pub enum DeleteActivityErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteActivityError {
@@ -378,7 +378,7 @@ impl DeleteActivityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteActivityErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DeleteActivityErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, DeleteActivityErrorKind::InvalidArn(_))
     }
@@ -407,7 +407,7 @@ pub struct DeleteStateMachineError {
 pub enum DeleteStateMachineErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStateMachineError {
@@ -470,7 +470,7 @@ impl DeleteStateMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStateMachineErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DeleteStateMachineErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, DeleteStateMachineErrorKind::InvalidArn(_))
     }
@@ -501,7 +501,7 @@ pub enum DescribeActivityErrorKind {
     ActivityDoesNotExist(crate::error::ActivityDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActivityError {
@@ -565,14 +565,14 @@ impl DescribeActivityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActivityErrorKind::ActivityDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeActivityErrorKind::ActivityDoesNotExist`.
     pub fn is_activity_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivityErrorKind::ActivityDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivityErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DescribeActivityErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, DescribeActivityErrorKind::InvalidArn(_))
     }
@@ -604,7 +604,7 @@ pub enum DescribeExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExecutionError {
@@ -668,14 +668,14 @@ impl DescribeExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::ExecutionDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::ExecutionDoesNotExist`.
     pub fn is_execution_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExecutionErrorKind::ExecutionDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, DescribeExecutionErrorKind::InvalidArn(_))
     }
@@ -707,7 +707,7 @@ pub enum DescribeStateMachineErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStateMachineError {
@@ -771,11 +771,11 @@ impl DescribeStateMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStateMachineErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DescribeStateMachineErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, DescribeStateMachineErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `DescribeStateMachineErrorKind::StateMachineDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeStateMachineErrorKind::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -810,7 +810,7 @@ pub enum DescribeStateMachineForExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStateMachineForExecutionError {
@@ -879,14 +879,14 @@ impl DescribeStateMachineForExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist`.
     pub fn is_execution_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStateMachineForExecutionErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `DescribeStateMachineForExecutionErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(
             &self.kind,
@@ -926,7 +926,7 @@ pub enum GetActivityTaskErrorKind {
     ActivityWorkerLimitExceeded(crate::error::ActivityWorkerLimitExceeded),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetActivityTaskError {
@@ -991,21 +991,21 @@ impl GetActivityTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetActivityTaskErrorKind::ActivityDoesNotExist`.
+    /// Returns `true` if the error kind is `GetActivityTaskErrorKind::ActivityDoesNotExist`.
     pub fn is_activity_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             GetActivityTaskErrorKind::ActivityDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `GetActivityTaskErrorKind::ActivityWorkerLimitExceeded`.
+    /// Returns `true` if the error kind is `GetActivityTaskErrorKind::ActivityWorkerLimitExceeded`.
     pub fn is_activity_worker_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             GetActivityTaskErrorKind::ActivityWorkerLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `GetActivityTaskErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `GetActivityTaskErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, GetActivityTaskErrorKind::InvalidArn(_))
     }
@@ -1040,7 +1040,7 @@ pub enum GetExecutionHistoryErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExecutionHistoryError {
@@ -1105,18 +1105,18 @@ impl GetExecutionHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExecutionHistoryErrorKind::ExecutionDoesNotExist`.
+    /// Returns `true` if the error kind is `GetExecutionHistoryErrorKind::ExecutionDoesNotExist`.
     pub fn is_execution_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             GetExecutionHistoryErrorKind::ExecutionDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `GetExecutionHistoryErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `GetExecutionHistoryErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, GetExecutionHistoryErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `GetExecutionHistoryErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `GetExecutionHistoryErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, GetExecutionHistoryErrorKind::InvalidToken(_))
     }
@@ -1147,7 +1147,7 @@ pub struct ListActivitiesError {
 pub enum ListActivitiesErrorKind {
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActivitiesError {
@@ -1210,7 +1210,7 @@ impl ListActivitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActivitiesErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `ListActivitiesErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, ListActivitiesErrorKind::InvalidToken(_))
     }
@@ -1245,7 +1245,7 @@ pub enum ListExecutionsErrorKind {
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExecutionsError {
@@ -1311,22 +1311,22 @@ impl ListExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, ListExecutionsErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, ListExecutionsErrorKind::InvalidToken(_))
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::StateMachineDoesNotExist`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             ListExecutionsErrorKind::StateMachineDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::StateMachineTypeNotSupported`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::StateMachineTypeNotSupported`.
     pub fn is_state_machine_type_not_supported(&self) -> bool {
         matches!(
             &self.kind,
@@ -1361,7 +1361,7 @@ pub struct ListStateMachinesError {
 pub enum ListStateMachinesErrorKind {
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStateMachinesError {
@@ -1424,7 +1424,7 @@ impl ListStateMachinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStateMachinesErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `ListStateMachinesErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, ListStateMachinesErrorKind::InvalidToken(_))
     }
@@ -1456,7 +1456,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
     /// supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1520,11 +1520,11 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -1561,7 +1561,7 @@ pub enum SendTaskFailureErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendTaskFailureError {
@@ -1626,15 +1626,15 @@ impl SendTaskFailureError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendTaskFailureErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `SendTaskFailureErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, SendTaskFailureErrorKind::InvalidToken(_))
     }
-    /// Returns true if the error kind is `SendTaskFailureErrorKind::TaskDoesNotExist`.
+    /// Returns `true` if the error kind is `SendTaskFailureErrorKind::TaskDoesNotExist`.
     pub fn is_task_does_not_exist(&self) -> bool {
         matches!(&self.kind, SendTaskFailureErrorKind::TaskDoesNotExist(_))
     }
-    /// Returns true if the error kind is `SendTaskFailureErrorKind::TaskTimedOut`.
+    /// Returns `true` if the error kind is `SendTaskFailureErrorKind::TaskTimedOut`.
     pub fn is_task_timed_out(&self) -> bool {
         matches!(&self.kind, SendTaskFailureErrorKind::TaskTimedOut(_))
     }
@@ -1669,7 +1669,7 @@ pub enum SendTaskHeartbeatErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendTaskHeartbeatError {
@@ -1734,15 +1734,15 @@ impl SendTaskHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendTaskHeartbeatErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `SendTaskHeartbeatErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, SendTaskHeartbeatErrorKind::InvalidToken(_))
     }
-    /// Returns true if the error kind is `SendTaskHeartbeatErrorKind::TaskDoesNotExist`.
+    /// Returns `true` if the error kind is `SendTaskHeartbeatErrorKind::TaskDoesNotExist`.
     pub fn is_task_does_not_exist(&self) -> bool {
         matches!(&self.kind, SendTaskHeartbeatErrorKind::TaskDoesNotExist(_))
     }
-    /// Returns true if the error kind is `SendTaskHeartbeatErrorKind::TaskTimedOut`.
+    /// Returns `true` if the error kind is `SendTaskHeartbeatErrorKind::TaskTimedOut`.
     pub fn is_task_timed_out(&self) -> bool {
         matches!(&self.kind, SendTaskHeartbeatErrorKind::TaskTimedOut(_))
     }
@@ -1779,7 +1779,7 @@ pub enum SendTaskSuccessErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendTaskSuccessError {
@@ -1845,19 +1845,19 @@ impl SendTaskSuccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendTaskSuccessErrorKind::InvalidOutput`.
+    /// Returns `true` if the error kind is `SendTaskSuccessErrorKind::InvalidOutput`.
     pub fn is_invalid_output(&self) -> bool {
         matches!(&self.kind, SendTaskSuccessErrorKind::InvalidOutput(_))
     }
-    /// Returns true if the error kind is `SendTaskSuccessErrorKind::InvalidToken`.
+    /// Returns `true` if the error kind is `SendTaskSuccessErrorKind::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(&self.kind, SendTaskSuccessErrorKind::InvalidToken(_))
     }
-    /// Returns true if the error kind is `SendTaskSuccessErrorKind::TaskDoesNotExist`.
+    /// Returns `true` if the error kind is `SendTaskSuccessErrorKind::TaskDoesNotExist`.
     pub fn is_task_does_not_exist(&self) -> bool {
         matches!(&self.kind, SendTaskSuccessErrorKind::TaskDoesNotExist(_))
     }
-    /// Returns true if the error kind is `SendTaskSuccessErrorKind::TaskTimedOut`.
+    /// Returns `true` if the error kind is `SendTaskSuccessErrorKind::TaskTimedOut`.
     pub fn is_task_timed_out(&self) -> bool {
         matches!(&self.kind, SendTaskSuccessErrorKind::TaskTimedOut(_))
     }
@@ -1907,7 +1907,7 @@ pub enum StartExecutionErrorKind {
     StateMachineDeleting(crate::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExecutionError {
@@ -1976,40 +1976,40 @@ impl StartExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::ExecutionAlreadyExists`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::ExecutionAlreadyExists`.
     pub fn is_execution_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             StartExecutionErrorKind::ExecutionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::ExecutionLimitExceeded`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::ExecutionLimitExceeded`.
     pub fn is_execution_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             StartExecutionErrorKind::ExecutionLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, StartExecutionErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::InvalidExecutionInput`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::InvalidExecutionInput`.
     pub fn is_invalid_execution_input(&self) -> bool {
         matches!(
             &self.kind,
             StartExecutionErrorKind::InvalidExecutionInput(_)
         )
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::InvalidName`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::InvalidName`.
     pub fn is_invalid_name(&self) -> bool {
         matches!(&self.kind, StartExecutionErrorKind::InvalidName(_))
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::StateMachineDeleting`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(&self.kind, StartExecutionErrorKind::StateMachineDeleting(_))
     }
-    /// Returns true if the error kind is `StartExecutionErrorKind::StateMachineDoesNotExist`.
+    /// Returns `true` if the error kind is `StartExecutionErrorKind::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -2057,7 +2057,7 @@ pub enum StartSyncExecutionErrorKind {
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSyncExecutionError {
@@ -2125,36 +2125,36 @@ impl StartSyncExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, StartSyncExecutionErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::InvalidExecutionInput`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::InvalidExecutionInput`.
     pub fn is_invalid_execution_input(&self) -> bool {
         matches!(
             &self.kind,
             StartSyncExecutionErrorKind::InvalidExecutionInput(_)
         )
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::InvalidName`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::InvalidName`.
     pub fn is_invalid_name(&self) -> bool {
         matches!(&self.kind, StartSyncExecutionErrorKind::InvalidName(_))
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::StateMachineDeleting`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(
             &self.kind,
             StartSyncExecutionErrorKind::StateMachineDeleting(_)
         )
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::StateMachineDoesNotExist`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             StartSyncExecutionErrorKind::StateMachineDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `StartSyncExecutionErrorKind::StateMachineTypeNotSupported`.
+    /// Returns `true` if the error kind is `StartSyncExecutionErrorKind::StateMachineTypeNotSupported`.
     pub fn is_state_machine_type_not_supported(&self) -> bool {
         matches!(
             &self.kind,
@@ -2193,7 +2193,7 @@ pub enum StopExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopExecutionError {
@@ -2257,11 +2257,11 @@ impl StopExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopExecutionErrorKind::ExecutionDoesNotExist`.
+    /// Returns `true` if the error kind is `StopExecutionErrorKind::ExecutionDoesNotExist`.
     pub fn is_execution_does_not_exist(&self) -> bool {
         matches!(&self.kind, StopExecutionErrorKind::ExecutionDoesNotExist(_))
     }
-    /// Returns true if the error kind is `StopExecutionErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `StopExecutionErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, StopExecutionErrorKind::InvalidArn(_))
     }
@@ -2297,7 +2297,7 @@ pub enum TagResourceErrorKind {
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
     /// AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2362,15 +2362,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ResourceNotFound(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTags`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTags`.
     pub fn is_too_many_tags(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTags(_))
     }
@@ -2404,7 +2404,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
     /// supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2468,11 +2468,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ResourceNotFound(_))
     }
@@ -2515,7 +2515,7 @@ pub enum UpdateStateMachineErrorKind {
     StateMachineDeleting(crate::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStateMachineError {
@@ -2584,46 +2584,46 @@ impl UpdateStateMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::InvalidArn`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(&self.kind, UpdateStateMachineErrorKind::InvalidArn(_))
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::InvalidDefinition`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::InvalidDefinition`.
     pub fn is_invalid_definition(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStateMachineErrorKind::InvalidDefinition(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::InvalidLoggingConfiguration`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::InvalidLoggingConfiguration`.
     pub fn is_invalid_logging_configuration(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStateMachineErrorKind::InvalidLoggingConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::InvalidTracingConfiguration`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::InvalidTracingConfiguration`.
     pub fn is_invalid_tracing_configuration(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStateMachineErrorKind::InvalidTracingConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::MissingRequiredParameter`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::MissingRequiredParameter`.
     pub fn is_missing_required_parameter(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStateMachineErrorKind::MissingRequiredParameter(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::StateMachineDeleting`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStateMachineErrorKind::StateMachineDeleting(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStateMachineErrorKind::StateMachineDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateStateMachineErrorKind::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,

@@ -97,7 +97,7 @@ pub type CreateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`CreateParallelData`](crate::operation::CreateParallelData)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -129,6 +129,7 @@ impl CreateParallelDataInput {
             input: &crate::input::CreateParallelDataInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -194,9 +195,10 @@ impl CreateParallelDataInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -249,7 +251,7 @@ pub type DeleteParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParallelData`](crate::operation::DeleteParallelData)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -281,6 +283,7 @@ impl DeleteParallelDataInput {
             input: &crate::input::DeleteParallelDataInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -343,9 +346,10 @@ impl DeleteParallelDataInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -398,7 +402,7 @@ pub type DeleteTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTerminology`](crate::operation::DeleteTerminology)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -430,6 +434,7 @@ impl DeleteTerminologyInput {
             input: &crate::input::DeleteTerminologyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -492,9 +497,10 @@ impl DeleteTerminologyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -552,7 +558,7 @@ pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::AwsError
 impl DescribeTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTextTranslationJob`](crate::operation::DescribeTextTranslationJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -584,6 +590,7 @@ impl DescribeTextTranslationJobInput {
             input: &crate::input::DescribeTextTranslationJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -644,9 +651,10 @@ impl DescribeTextTranslationJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -699,7 +707,7 @@ pub type GetParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`GetParallelData`](crate::operation::GetParallelData)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -731,6 +739,7 @@ impl GetParallelDataInput {
             input: &crate::input::GetParallelDataInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -793,9 +802,10 @@ impl GetParallelDataInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -869,7 +879,7 @@ pub type GetTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`GetTerminology`](crate::operation::GetTerminology)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -901,6 +911,7 @@ impl GetTerminologyInput {
             input: &crate::input::GetTerminologyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -962,9 +973,10 @@ impl GetTerminologyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1080,7 +1092,7 @@ pub type ImportTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ImportTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`ImportTerminology`](crate::operation::ImportTerminology)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1112,6 +1124,7 @@ impl ImportTerminologyInput {
             input: &crate::input::ImportTerminologyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1174,9 +1187,10 @@ impl ImportTerminologyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1243,7 +1257,7 @@ pub type ListParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`ListParallelData`](crate::operation::ListParallelData)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1275,6 +1289,7 @@ impl ListParallelDataInput {
             input: &crate::input::ListParallelDataInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1337,9 +1352,10 @@ impl ListParallelDataInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1408,7 +1424,7 @@ pub type ListTerminologiesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListTerminologiesInput {
     /// Consumes the builder and constructs an Operation<[`ListTerminologies`](crate::operation::ListTerminologies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1440,6 +1456,7 @@ impl ListTerminologiesInput {
             input: &crate::input::ListTerminologiesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1502,9 +1519,10 @@ impl ListTerminologiesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1589,7 +1607,7 @@ pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListTextTranslationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTextTranslationJobs`](crate::operation::ListTextTranslationJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1621,6 +1639,7 @@ impl ListTextTranslationJobsInput {
             input: &crate::input::ListTextTranslationJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1685,9 +1704,10 @@ impl ListTextTranslationJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1896,7 +1916,7 @@ pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StartTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTextTranslationJob`](crate::operation::StartTextTranslationJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1928,6 +1948,7 @@ impl StartTextTranslationJobInput {
             input: &crate::input::StartTextTranslationJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1995,9 +2016,10 @@ impl StartTextTranslationJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2052,7 +2074,7 @@ pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StopTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTextTranslationJob`](crate::operation::StopTextTranslationJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2084,6 +2106,7 @@ impl StopTextTranslationJobInput {
             input: &crate::input::StopTextTranslationJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2148,9 +2171,10 @@ impl StopTextTranslationJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2274,7 +2298,7 @@ pub type TranslateTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TranslateTextInput {
     /// Consumes the builder and constructs an Operation<[`TranslateText`](crate::operation::TranslateText)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2306,6 +2330,7 @@ impl TranslateTextInput {
             input: &crate::input::TranslateTextInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2367,9 +2392,10 @@ impl TranslateTextInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2465,7 +2491,7 @@ pub type UpdateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParallelData`](crate::operation::UpdateParallelData)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2497,6 +2523,7 @@ impl UpdateParallelDataInput {
             input: &crate::input::UpdateParallelDataInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2562,9 +2589,10 @@ impl UpdateParallelDataInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

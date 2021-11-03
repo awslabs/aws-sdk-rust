@@ -76,7 +76,7 @@ pub fn parse_delete_session_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSessionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_session_limit_exceeded_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -182,7 +182,7 @@ pub fn parse_get_session_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_session_limit_exceeded_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::GetSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::GetSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -296,7 +296,7 @@ pub fn parse_post_content(
         );
         output = output.set_encoded_input_transcript(
             crate::http_serde::deser_header_post_content_post_content_output_encoded_input_transcript(response.headers())
-                                        .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript"))?
+                                    .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript"))?
         );
         output = output.set_encoded_message(
             crate::http_serde::deser_header_post_content_post_content_output_encoded_message(
@@ -350,7 +350,7 @@ pub fn parse_post_content(
         );
         output = output.set_nlu_intent_confidence(
             crate::http_serde::deser_header_post_content_post_content_output_nlu_intent_confidence(response.headers())
-                                        .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence"))?
+                                    .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence"))?
         );
         output = output.set_sentiment_response(
             crate::http_serde::deser_header_post_content_post_content_output_sentiment_response(
@@ -517,7 +517,7 @@ pub fn parse_post_content_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostContentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_post_content_limit_exceeded_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::PostContentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -728,7 +728,7 @@ pub fn parse_post_text_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostTextError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_post_text_limit_exceeded_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::PostTextError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::PostTextError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1032,7 +1032,7 @@ pub fn parse_put_session_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSessionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_session_limit_exceeded_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::PutSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::PutSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };

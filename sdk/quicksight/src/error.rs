@@ -27,7 +27,7 @@ pub enum CancelIngestionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelIngestionError {
@@ -95,42 +95,42 @@ impl CancelIngestionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelIngestionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelIngestionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelIngestionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelIngestionErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelIngestionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelIngestionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelIngestionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CancelIngestionErrorKind::ThrottlingException(_))
     }
@@ -179,7 +179,7 @@ pub enum CreateAccountCustomizationErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccountCustomizationError {
@@ -252,49 +252,49 @@ impl CreateAccountCustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountCustomizationErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountCustomizationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -351,7 +351,7 @@ pub enum CreateAnalysisErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAnalysisError {
@@ -420,43 +420,43 @@ impl CreateAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAnalysisErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnalysisErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateAnalysisErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateAnalysisErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateAnalysisErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -509,7 +509,7 @@ pub enum CreateDashboardErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDashboardError {
@@ -578,43 +578,43 @@ impl CreateDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDashboardErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDashboardErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -674,7 +674,7 @@ pub enum CreateDataSetErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSetError {
@@ -745,54 +745,54 @@ impl CreateDataSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDataSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDataSetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSetErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSetErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDataSetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateDataSetErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateDataSetErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -849,7 +849,7 @@ pub enum CreateDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSourceError {
@@ -919,53 +919,53 @@ impl CreateDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDataSourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1026,7 +1026,7 @@ pub enum CreateFolderErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFolderError {
@@ -1097,51 +1097,51 @@ impl CreateFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateFolderErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateFolderErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFolderErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateFolderErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1201,7 +1201,7 @@ pub enum CreateFolderMembershipErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFolderMembershipError {
@@ -1275,56 +1275,56 @@ impl CreateFolderMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderMembershipErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderMembershipErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateFolderMembershipErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1384,7 +1384,7 @@ pub enum CreateGroupErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -1455,54 +1455,54 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ResourceExistsException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ThrottlingException(_))
     }
@@ -1554,7 +1554,7 @@ pub enum CreateGroupMembershipErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupMembershipError {
@@ -1623,49 +1623,49 @@ impl CreateGroupMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupMembershipErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupMembershipErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateGroupMembershipErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1719,7 +1719,7 @@ pub enum CreateIAMPolicyAssignmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIAMPolicyAssignmentError {
@@ -1792,49 +1792,49 @@ impl CreateIAMPolicyAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
     pub fn is_concurrent_updating_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIAMPolicyAssignmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateIAMPolicyAssignmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1889,7 +1889,7 @@ pub enum CreateIngestionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIngestionError {
@@ -1958,49 +1958,49 @@ impl CreateIngestionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIngestionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIngestionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateIngestionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateIngestionErrorKind::ThrottlingException(_))
     }
@@ -2056,7 +2056,7 @@ pub enum CreateNamespaceErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNamespaceError {
@@ -2128,67 +2128,67 @@ impl CreateNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateNamespaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamespaceErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateNamespaceErrorKind::ThrottlingException(_))
     }
@@ -2248,7 +2248,7 @@ pub enum CreateTemplateErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTemplateError {
@@ -2319,57 +2319,57 @@ impl CreateTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateTemplateErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2424,7 +2424,7 @@ pub enum CreateTemplateAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTemplateAliasError {
@@ -2493,49 +2493,49 @@ impl CreateTemplateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateTemplateAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2593,7 +2593,7 @@ pub enum CreateThemeErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateThemeError {
@@ -2663,44 +2663,44 @@ impl CreateThemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateThemeErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateThemeErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateThemeErrorKind::ResourceExistsException(_))
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateThemeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateThemeErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateThemeErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2756,7 +2756,7 @@ pub enum CreateThemeAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateThemeAliasError {
@@ -2826,53 +2826,53 @@ impl CreateThemeAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateThemeAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateThemeAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateThemeAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `CreateThemeAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2924,7 +2924,7 @@ pub enum DeleteAccountCustomizationErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountCustomizationError {
@@ -2996,42 +2996,42 @@ impl DeleteAccountCustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountCustomizationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountCustomizationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountCustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountCustomizationErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountCustomizationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3085,7 +3085,7 @@ pub enum DeleteAnalysisErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnalysisError {
@@ -3153,36 +3153,36 @@ impl DeleteAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteAnalysisErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteAnalysisErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteAnalysisErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3232,7 +3232,7 @@ pub enum DeleteDashboardErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDashboardError {
@@ -3300,36 +3300,36 @@ impl DeleteDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDashboardErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDashboardErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3377,7 +3377,7 @@ pub enum DeleteDataSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataSetError {
@@ -3444,32 +3444,32 @@ impl DeleteDataSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDataSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDataSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDataSetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDataSetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSetErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteDataSetErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSetErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDataSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDataSetErrorKind::ThrottlingException(_))
     }
@@ -3513,7 +3513,7 @@ pub enum DeleteDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataSourceError {
@@ -3580,35 +3580,35 @@ impl DeleteDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3664,7 +3664,7 @@ pub enum DeleteFolderErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFolderError {
@@ -3734,47 +3734,47 @@ impl DeleteFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteFolderErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteFolderErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteFolderErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3829,7 +3829,7 @@ pub enum DeleteFolderMembershipErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFolderMembershipError {
@@ -3901,42 +3901,42 @@ impl DeleteFolderMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderMembershipErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderMembershipErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderMembershipErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderMembershipErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderMembershipErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderMembershipErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteFolderMembershipErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3990,7 +3990,7 @@ pub enum DeleteGroupErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -4059,46 +4059,46 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::ThrottlingException(_))
     }
@@ -4148,7 +4148,7 @@ pub enum DeleteGroupMembershipErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupMembershipError {
@@ -4217,49 +4217,49 @@ impl DeleteGroupMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupMembershipErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupMembershipErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteGroupMembershipErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4313,7 +4313,7 @@ pub enum DeleteIAMPolicyAssignmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIAMPolicyAssignmentError {
@@ -4386,49 +4386,49 @@ impl DeleteIAMPolicyAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
     pub fn is_concurrent_updating_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteIAMPolicyAssignmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4483,7 +4483,7 @@ pub enum DeleteNamespaceErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNamespaceError {
@@ -4552,49 +4552,49 @@ impl DeleteNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamespaceErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteNamespaceErrorKind::ThrottlingException(_))
     }
@@ -4644,7 +4644,7 @@ pub enum DeleteTemplateErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTemplateError {
@@ -4713,43 +4713,43 @@ impl DeleteTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteTemplateErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteTemplateErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteTemplateErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4798,7 +4798,7 @@ pub enum DeleteTemplateAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTemplateAliasError {
@@ -4865,35 +4865,35 @@ impl DeleteTemplateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTemplateAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteTemplateAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateAliasErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteTemplateAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTemplateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteTemplateAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTemplateAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTemplateAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteTemplateAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4947,7 +4947,7 @@ pub enum DeleteThemeErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteThemeError {
@@ -5016,40 +5016,40 @@ impl DeleteThemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteThemeErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteThemeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteThemeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteThemeErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteThemeErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5100,7 +5100,7 @@ pub enum DeleteThemeAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteThemeAliasError {
@@ -5168,39 +5168,39 @@ impl DeleteThemeAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteThemeAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThemeAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThemeAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DeleteThemeAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5252,7 +5252,7 @@ pub enum DeleteUserErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -5321,43 +5321,43 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::ThrottlingException(_))
     }
@@ -5407,7 +5407,7 @@ pub enum DeleteUserByPrincipalIdErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserByPrincipalIdError {
@@ -5478,49 +5478,49 @@ impl DeleteUserByPrincipalIdError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserByPrincipalIdErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserByPrincipalIdErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteUserByPrincipalIdErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5573,7 +5573,7 @@ pub enum DescribeAccountCustomizationErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountCustomizationError {
@@ -5649,42 +5649,42 @@ impl DescribeAccountCustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountCustomizationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountCustomizationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountCustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountCustomizationErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountCustomizationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAccountCustomizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5740,7 +5740,7 @@ pub enum DescribeAccountSettingsErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountSettingsError {
@@ -5810,42 +5810,42 @@ impl DescribeAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountSettingsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountSettingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountSettingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountSettingsErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountSettingsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAccountSettingsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5900,7 +5900,7 @@ pub enum DescribeAnalysisErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnalysisError {
@@ -5968,42 +5968,42 @@ impl DescribeAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6051,7 +6051,7 @@ pub enum DescribeAnalysisPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnalysisPermissionsError {
@@ -6124,35 +6124,35 @@ impl DescribeAnalysisPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnalysisPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6208,7 +6208,7 @@ pub enum DescribeDashboardErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDashboardError {
@@ -6276,42 +6276,42 @@ impl DescribeDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6359,7 +6359,7 @@ pub enum DescribeDashboardPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDashboardPermissionsError {
@@ -6434,35 +6434,35 @@ impl DescribeDashboardPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDashboardPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDashboardPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDashboardPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDashboardPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDashboardPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeDashboardPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6515,7 +6515,7 @@ pub enum DescribeDataSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSetError {
@@ -6582,35 +6582,35 @@ impl DescribeDataSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDataSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDataSetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDataSetErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDataSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDataSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeDataSetErrorKind::ThrottlingException(_))
     }
@@ -6654,7 +6654,7 @@ pub enum DescribeDataSetPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSetPermissionsError {
@@ -6723,35 +6723,35 @@ impl DescribeDataSetPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSetPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDataSetPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDataSetPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDataSetPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDataSetPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSetPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSetPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDataSetPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6800,7 +6800,7 @@ pub enum DescribeDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSourceError {
@@ -6867,35 +6867,35 @@ impl DescribeDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDataSourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDataSourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDataSourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6942,7 +6942,7 @@ pub enum DescribeDataSourcePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSourcePermissionsError {
@@ -7018,35 +7018,35 @@ impl DescribeDataSourcePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSourcePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourcePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourcePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourcePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourcePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourcePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourcePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourcePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourcePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7104,7 +7104,7 @@ pub enum DescribeFolderErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFolderError {
@@ -7172,39 +7172,39 @@ impl DescribeFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeFolderErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeFolderErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeFolderErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7257,7 +7257,7 @@ pub enum DescribeFolderPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFolderPermissionsError {
@@ -7329,42 +7329,42 @@ impl DescribeFolderPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeFolderPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7421,7 +7421,7 @@ pub enum DescribeFolderResolvedPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFolderResolvedPermissionsError {
@@ -7504,42 +7504,42 @@ impl DescribeFolderResolvedPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderResolvedPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderResolvedPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderResolvedPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderResolvedPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderResolvedPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderResolvedPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7601,7 +7601,7 @@ pub enum DescribeGroupErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGroupError {
@@ -7670,46 +7670,46 @@ impl DescribeGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeGroupErrorKind::ThrottlingException(_))
     }
@@ -7757,7 +7757,7 @@ pub enum DescribeIAMPolicyAssignmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIAMPolicyAssignmentError {
@@ -7831,42 +7831,42 @@ impl DescribeIAMPolicyAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIAMPolicyAssignmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIAMPolicyAssignmentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIAMPolicyAssignmentErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIAMPolicyAssignmentErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIAMPolicyAssignmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeIAMPolicyAssignmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7918,7 +7918,7 @@ pub enum DescribeIngestionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIngestionError {
@@ -7986,42 +7986,42 @@ impl DescribeIngestionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIngestionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIngestionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIngestionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIngestionErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIngestionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIngestionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeIngestionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8069,7 +8069,7 @@ pub enum DescribeIpRestrictionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIpRestrictionError {
@@ -8136,35 +8136,35 @@ impl DescribeIpRestrictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIpRestrictionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeIpRestrictionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIpRestrictionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIpRestrictionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeIpRestrictionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIpRestrictionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIpRestrictionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeIpRestrictionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIpRestrictionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIpRestrictionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIpRestrictionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIpRestrictionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIpRestrictionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeIpRestrictionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8213,7 +8213,7 @@ pub enum DescribeNamespaceErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNamespaceError {
@@ -8281,42 +8281,42 @@ impl DescribeNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNamespaceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNamespaceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNamespaceErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8373,7 +8373,7 @@ pub enum DescribeTemplateErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTemplateError {
@@ -8443,53 +8443,53 @@ impl DescribeTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeTemplateErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8537,7 +8537,7 @@ pub enum DescribeTemplateAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTemplateAliasError {
@@ -8605,28 +8605,28 @@ impl DescribeTemplateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTemplateAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeTemplateAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTemplateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeTemplateAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplateAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplateAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeTemplateAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8674,7 +8674,7 @@ pub enum DescribeTemplatePermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTemplatePermissionsError {
@@ -8748,42 +8748,42 @@ impl DescribeTemplatePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplatePermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplatePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplatePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplatePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTemplatePermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTemplatePermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeTemplatePermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8842,7 +8842,7 @@ pub enum DescribeThemeErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeThemeError {
@@ -8911,43 +8911,43 @@ impl DescribeThemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeThemeErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeThemeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeThemeErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeThemeErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8998,7 +8998,7 @@ pub enum DescribeThemeAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeThemeAliasError {
@@ -9066,42 +9066,42 @@ impl DescribeThemeAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeAliasErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemeAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemeAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeThemeAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9154,7 +9154,7 @@ pub enum DescribeThemePermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeThemePermissionsError {
@@ -9226,42 +9226,42 @@ impl DescribeThemePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeThemePermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeThemePermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `DescribeThemePermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9317,7 +9317,7 @@ pub enum DescribeUserErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserError {
@@ -9386,46 +9386,46 @@ impl DescribeUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::ThrottlingException(_))
     }
@@ -9489,7 +9489,7 @@ pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateEmbedUrlForAnonymousUserError {
@@ -9576,56 +9576,56 @@ impl GenerateEmbedUrlForAnonymousUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException`.
     pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException`.
     pub fn is_unsupported_pricing_plan_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9711,7 +9711,7 @@ pub enum GenerateEmbedUrlForRegisteredUserErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateEmbedUrlForRegisteredUserError {
@@ -9805,63 +9805,63 @@ impl GenerateEmbedUrlForRegisteredUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException`.
     pub fn is_quick_sight_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException`.
     pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException`.
     pub fn is_unsupported_pricing_plan_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9962,7 +9962,7 @@ pub enum GetDashboardEmbedUrlErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDashboardEmbedUrlError {
@@ -10040,84 +10040,84 @@ impl GetDashboardEmbedUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::DomainNotWhitelistedException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::DomainNotWhitelistedException`.
     pub fn is_domain_not_whitelisted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::DomainNotWhitelistedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::IdentityTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::IdentityTypeNotSupportedException`.
     pub fn is_identity_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::IdentityTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::QuickSightUserNotFoundException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::QuickSightUserNotFoundException`.
     pub fn is_quick_sight_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::QuickSightUserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException`.
     pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException`.
     pub fn is_unsupported_pricing_plan_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException(_)
         )
     }
-    /// Returns true if the error kind is `GetDashboardEmbedUrlErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `GetDashboardEmbedUrlErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10191,7 +10191,7 @@ pub enum GetSessionEmbedUrlErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionEmbedUrlError {
@@ -10264,63 +10264,63 @@ impl GetSessionEmbedUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::QuickSightUserNotFoundException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::QuickSightUserNotFoundException`.
     pub fn is_quick_sight_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::QuickSightUserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException`.
     pub fn is_session_lifetime_in_minutes_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionEmbedUrlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionEmbedUrlErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `GetSessionEmbedUrlErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10371,7 +10371,7 @@ pub enum ListAnalysesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAnalysesError {
@@ -10437,25 +10437,25 @@ impl ListAnalysesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAnalysesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAnalysesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnalysesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnalysesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListAnalysesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnalysesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnalysesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAnalysesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListAnalysesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListAnalysesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListAnalysesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10499,7 +10499,7 @@ pub enum ListDashboardsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDashboardsError {
@@ -10565,25 +10565,25 @@ impl ListDashboardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDashboardsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10631,7 +10631,7 @@ pub enum ListDashboardVersionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDashboardVersionsError {
@@ -10701,42 +10701,42 @@ impl ListDashboardVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardVersionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardVersionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardVersionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListDashboardVersionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10784,7 +10784,7 @@ pub enum ListDataSetsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataSetsError {
@@ -10851,32 +10851,32 @@ impl ListDataSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataSetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDataSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListDataSetsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListDataSetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDataSetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDataSetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSetsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSetsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListDataSetsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSetsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDataSetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDataSetsErrorKind::ThrottlingException(_))
     }
@@ -10920,7 +10920,7 @@ pub enum ListDataSourcesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataSourcesError {
@@ -10987,35 +10987,35 @@ impl ListDataSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSourcesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSourcesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDataSourcesErrorKind::ThrottlingException(_))
     }
@@ -11066,7 +11066,7 @@ pub enum ListFolderMembersErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFolderMembersError {
@@ -11135,49 +11135,49 @@ impl ListFolderMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFolderMembersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFolderMembersErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListFolderMembersErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11233,7 +11233,7 @@ pub enum ListFoldersErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFoldersError {
@@ -11302,43 +11302,43 @@ impl ListFoldersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListFoldersErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFoldersErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFoldersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFoldersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFoldersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListFoldersErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListFoldersErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListFoldersErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11393,7 +11393,7 @@ pub enum ListGroupMembershipsErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupMembershipsError {
@@ -11463,56 +11463,56 @@ impl ListGroupMembershipsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembershipsErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembershipsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListGroupMembershipsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11568,7 +11568,7 @@ pub enum ListGroupsErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -11638,50 +11638,50 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::ThrottlingException(_))
     }
@@ -11730,7 +11730,7 @@ pub enum ListIAMPolicyAssignmentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIAMPolicyAssignmentsError {
@@ -11800,42 +11800,42 @@ impl ListIAMPolicyAssignmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11890,7 +11890,7 @@ pub enum ListIAMPolicyAssignmentsForUserErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIAMPolicyAssignmentsForUserError {
@@ -11974,49 +11974,49 @@ impl ListIAMPolicyAssignmentsForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ConcurrentUpdatingException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ConcurrentUpdatingException`.
     pub fn is_concurrent_updating_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::ConcurrentUpdatingException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIAMPolicyAssignmentsForUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIAMPolicyAssignmentsForUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12079,7 +12079,7 @@ pub enum ListIngestionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIngestionsError {
@@ -12148,49 +12148,49 @@ impl ListIngestionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIngestionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIngestionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIngestionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListIngestionsErrorKind::ThrottlingException(_))
     }
@@ -12242,7 +12242,7 @@ pub enum ListNamespacesErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNamespacesError {
@@ -12312,56 +12312,56 @@ impl ListNamespacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamespacesErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListNamespacesErrorKind::ThrottlingException(_))
     }
@@ -12408,7 +12408,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -12475,35 +12475,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12550,7 +12550,7 @@ pub enum ListTemplateAliasesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplateAliasesError {
@@ -12617,35 +12617,35 @@ impl ListTemplateAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTemplateAliasesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTemplateAliasesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateAliasesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateAliasesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTemplateAliasesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateAliasesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateAliasesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTemplateAliasesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateAliasesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateAliasesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTemplateAliasesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateAliasesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateAliasesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListTemplateAliasesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12694,7 +12694,7 @@ pub enum ListTemplatesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplatesError {
@@ -12762,39 +12762,39 @@ impl ListTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListTemplatesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12844,7 +12844,7 @@ pub enum ListTemplateVersionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplateVersionsError {
@@ -12912,42 +12912,42 @@ impl ListTemplateVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12999,7 +12999,7 @@ pub enum ListThemeAliasesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListThemeAliasesError {
@@ -13068,46 +13068,46 @@ impl ListThemeAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListThemeAliasesErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeAliasesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeAliasesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeAliasesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeAliasesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeAliasesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeAliasesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListThemeAliasesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13163,7 +13163,7 @@ pub enum ListThemesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListThemesError {
@@ -13232,40 +13232,40 @@ impl ListThemesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListThemesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListThemesErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListThemesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListThemesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListThemesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13321,7 +13321,7 @@ pub enum ListThemeVersionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListThemeVersionsError {
@@ -13390,49 +13390,49 @@ impl ListThemeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListThemeVersionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListThemeVersionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `ListThemeVersionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13485,7 +13485,7 @@ pub enum ListUserGroupsErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserGroupsError {
@@ -13554,49 +13554,49 @@ impl ListUserGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserGroupsErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserGroupsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListUserGroupsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListUserGroupsErrorKind::ThrottlingException(_))
     }
@@ -13648,7 +13648,7 @@ pub enum ListUsersErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -13718,44 +13718,44 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InvalidNextTokenException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ThrottlingException(_))
     }
@@ -13810,7 +13810,7 @@ pub enum RegisterUserErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterUserError {
@@ -13881,57 +13881,57 @@ impl RegisterUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RegisterUserErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, RegisterUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterUserErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RegisterUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, RegisterUserErrorKind::ThrottlingException(_))
     }
@@ -13981,7 +13981,7 @@ pub enum RestoreAnalysisErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreAnalysisError {
@@ -14049,36 +14049,36 @@ impl RestoreAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, RestoreAnalysisErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, RestoreAnalysisErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `RestoreAnalysisErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `RestoreAnalysisErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14128,7 +14128,7 @@ pub enum SearchAnalysesErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchAnalysesError {
@@ -14196,39 +14196,39 @@ impl SearchAnalysesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAnalysesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAnalysesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAnalysesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAnalysesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SearchAnalysesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `SearchAnalysesErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `SearchAnalysesErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14278,7 +14278,7 @@ pub enum SearchDashboardsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchDashboardsError {
@@ -14346,42 +14346,42 @@ impl SearchDashboardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDashboardsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDashboardsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDashboardsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDashboardsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDashboardsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDashboardsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `SearchDashboardsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14436,7 +14436,7 @@ pub enum SearchFoldersErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchFoldersError {
@@ -14505,43 +14505,43 @@ impl SearchFoldersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SearchFoldersErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFoldersErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFoldersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFoldersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFoldersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SearchFoldersErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `SearchFoldersErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `SearchFoldersErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14592,7 +14592,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -14660,36 +14660,36 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -14734,7 +14734,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -14801,32 +14801,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -14872,7 +14872,7 @@ pub enum UpdateAccountCustomizationErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountCustomizationError {
@@ -14944,42 +14944,42 @@ impl UpdateAccountCustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountCustomizationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountCustomizationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountCustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountCustomizationErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountCustomizationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15033,7 +15033,7 @@ pub enum UpdateAccountSettingsErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountSettingsError {
@@ -15101,42 +15101,42 @@ impl UpdateAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15188,7 +15188,7 @@ pub enum UpdateAnalysisErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAnalysisError {
@@ -15257,43 +15257,43 @@ impl UpdateAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateAnalysisErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateAnalysisErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateAnalysisErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15344,7 +15344,7 @@ pub enum UpdateAnalysisPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAnalysisPermissionsError {
@@ -15416,42 +15416,42 @@ impl UpdateAnalysisPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisPermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnalysisPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15507,7 +15507,7 @@ pub enum UpdateDashboardErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDashboardError {
@@ -15576,43 +15576,43 @@ impl UpdateDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDashboardErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateDashboardErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15663,7 +15663,7 @@ pub enum UpdateDashboardPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDashboardPermissionsError {
@@ -15735,42 +15735,42 @@ impl UpdateDashboardPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15824,7 +15824,7 @@ pub enum UpdateDashboardPublishedVersionErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDashboardPublishedVersionError {
@@ -15903,42 +15903,42 @@ impl UpdateDashboardPublishedVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPublishedVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPublishedVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPublishedVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPublishedVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardPublishedVersionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardPublishedVersionErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateDashboardPublishedVersionErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16003,7 +16003,7 @@ pub enum UpdateDataSetErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSetError {
@@ -16073,47 +16073,47 @@ impl UpdateDataSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateDataSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDataSetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateDataSetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateDataSetErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateDataSetErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16165,7 +16165,7 @@ pub enum UpdateDataSetPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSetPermissionsError {
@@ -16235,42 +16235,42 @@ impl UpdateDataSetPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetPermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSetPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSetPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDataSetPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16322,7 +16322,7 @@ pub enum UpdateDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSourceError {
@@ -16390,39 +16390,39 @@ impl UpdateDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDataSourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16472,7 +16472,7 @@ pub enum UpdateDataSourcePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSourcePermissionsError {
@@ -16544,42 +16544,42 @@ impl UpdateDataSourcePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourcePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourcePermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourcePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourcePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourcePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourcePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDataSourcePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16638,7 +16638,7 @@ pub enum UpdateFolderErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFolderError {
@@ -16708,47 +16708,47 @@ impl UpdateFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateFolderErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateFolderErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateFolderErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16805,7 +16805,7 @@ pub enum UpdateFolderPermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFolderPermissionsError {
@@ -16878,49 +16878,49 @@ impl UpdateFolderPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderPermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderPermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateFolderPermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16977,7 +16977,7 @@ pub enum UpdateGroupErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -17046,46 +17046,46 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::ThrottlingException(_))
     }
@@ -17136,7 +17136,7 @@ pub enum UpdateIAMPolicyAssignmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIAMPolicyAssignmentError {
@@ -17209,49 +17209,49 @@ impl UpdateIAMPolicyAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException`.
     pub fn is_concurrent_updating_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::ConcurrentUpdatingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateIAMPolicyAssignmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17304,7 +17304,7 @@ pub enum UpdateIpRestrictionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIpRestrictionError {
@@ -17372,42 +17372,42 @@ impl UpdateIpRestrictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIpRestrictionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIpRestrictionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIpRestrictionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIpRestrictionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIpRestrictionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIpRestrictionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateIpRestrictionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17461,7 +17461,7 @@ pub enum UpdateTemplateErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTemplateError {
@@ -17531,50 +17531,50 @@ impl UpdateTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateTemplateErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17624,7 +17624,7 @@ pub enum UpdateTemplateAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTemplateAliasError {
@@ -17691,35 +17691,35 @@ impl UpdateTemplateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTemplateAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTemplateAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateAliasErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateTemplateAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTemplateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateTemplateAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateTemplateAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17768,7 +17768,7 @@ pub enum UpdateTemplatePermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTemplatePermissionsError {
@@ -17840,42 +17840,42 @@ impl UpdateTemplatePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplatePermissionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplatePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplatePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplatePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplatePermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17936,7 +17936,7 @@ pub enum UpdateThemeErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateThemeError {
@@ -18006,44 +18006,44 @@ impl UpdateThemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateThemeErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateThemeErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(&self.kind, UpdateThemeErrorKind::ResourceExistsException(_))
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateThemeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateThemeErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateThemeErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18097,7 +18097,7 @@ pub enum UpdateThemeAliasErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateThemeAliasError {
@@ -18166,46 +18166,46 @@ impl UpdateThemeAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateThemeAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeAliasErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemeAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemeAliasErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateThemeAliasErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18259,7 +18259,7 @@ pub enum UpdateThemePermissionsErrorKind {
     /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
     /// capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateThemePermissionsError {
@@ -18331,42 +18331,42 @@ impl UpdateThemePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemePermissionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemePermissionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThemePermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThemePermissionsErrorKind::UnsupportedUserEditionException`.
+    /// Returns `true` if the error kind is `UpdateThemePermissionsErrorKind::UnsupportedUserEditionException`.
     pub fn is_unsupported_user_edition_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18420,7 +18420,7 @@ pub enum UpdateUserErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -18489,43 +18489,43 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ThrottlingException(_))
     }

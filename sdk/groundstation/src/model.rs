@@ -1470,8 +1470,8 @@ pub enum ConfigDetails {
     S3RecordingDetails(crate::model::S3RecordingDetails),
 }
 impl ConfigDetails {
-    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AntennaDemodDecodeDetails`](crate::model::ConfigDetails::AntennaDemodDecodeDetails), extracting the inner [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_demod_decode_details(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDemodDecodeDetails, &Self> {
@@ -1481,12 +1481,12 @@ impl ConfigDetails {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigDetails` variant.
+    /// Returns true if this is a [`AntennaDemodDecodeDetails`](crate::model::ConfigDetails::AntennaDemodDecodeDetails).
     pub fn is_antenna_demod_decode_details(&self) -> bool {
         self.as_antenna_demod_decode_details().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`EndpointDetails`](crate::model::ConfigDetails::EndpointDetails), extracting the inner [`EndpointDetails`](crate::model::EndpointDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_endpoint_details(
         &self,
     ) -> std::result::Result<&crate::model::EndpointDetails, &Self> {
@@ -1496,12 +1496,12 @@ impl ConfigDetails {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigDetails` variant.
+    /// Returns true if this is a [`EndpointDetails`](crate::model::ConfigDetails::EndpointDetails).
     pub fn is_endpoint_details(&self) -> bool {
         self.as_endpoint_details().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3RecordingDetails`](crate::model::ConfigDetails::S3RecordingDetails), extracting the inner [`S3RecordingDetails`](crate::model::S3RecordingDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_recording_details(
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingDetails, &Self> {
@@ -1511,7 +1511,7 @@ impl ConfigDetails {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigDetails` variant.
+    /// Returns true if this is a [`S3RecordingDetails`](crate::model::ConfigDetails::S3RecordingDetails).
     pub fn is_s3_recording_details(&self) -> bool {
         self.as_s3_recording_details().is_ok()
     }
@@ -1931,8 +1931,8 @@ pub enum ConfigTypeData {
     UplinkEchoConfig(crate::model::UplinkEchoConfig),
 }
 impl ConfigTypeData {
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AntennaDownlinkConfig`](crate::model::ConfigTypeData::AntennaDownlinkConfig), extracting the inner [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_downlink_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkConfig, &Self> {
@@ -1942,12 +1942,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`AntennaDownlinkConfig`](crate::model::ConfigTypeData::AntennaDownlinkConfig).
     pub fn is_antenna_downlink_config(&self) -> bool {
         self.as_antenna_downlink_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AntennaDownlinkDemodDecodeConfig`](crate::model::ConfigTypeData::AntennaDownlinkDemodDecodeConfig), extracting the inner [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_downlink_demod_decode_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkDemodDecodeConfig, &Self> {
@@ -1957,12 +1957,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`AntennaDownlinkDemodDecodeConfig`](crate::model::ConfigTypeData::AntennaDownlinkDemodDecodeConfig).
     pub fn is_antenna_downlink_demod_decode_config(&self) -> bool {
         self.as_antenna_downlink_demod_decode_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AntennaUplinkConfig`](crate::model::ConfigTypeData::AntennaUplinkConfig), extracting the inner [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_uplink_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaUplinkConfig, &Self> {
@@ -1972,12 +1972,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`AntennaUplinkConfig`](crate::model::ConfigTypeData::AntennaUplinkConfig).
     pub fn is_antenna_uplink_config(&self) -> bool {
         self.as_antenna_uplink_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DataflowEndpointConfig`](crate::model::ConfigTypeData::DataflowEndpointConfig), extracting the inner [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dataflow_endpoint_config(
         &self,
     ) -> std::result::Result<&crate::model::DataflowEndpointConfig, &Self> {
@@ -1987,12 +1987,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`DataflowEndpointConfig`](crate::model::ConfigTypeData::DataflowEndpointConfig).
     pub fn is_dataflow_endpoint_config(&self) -> bool {
         self.as_dataflow_endpoint_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3RecordingConfig`](crate::model::ConfigTypeData::S3RecordingConfig), extracting the inner [`S3RecordingConfig`](crate::model::S3RecordingConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_recording_config(
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingConfig, &Self> {
@@ -2002,12 +2002,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`S3RecordingConfig`](crate::model::ConfigTypeData::S3RecordingConfig).
     pub fn is_s3_recording_config(&self) -> bool {
         self.as_s3_recording_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TrackingConfig`](crate::model::ConfigTypeData::TrackingConfig), extracting the inner [`TrackingConfig`](crate::model::TrackingConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tracking_config(&self) -> std::result::Result<&crate::model::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
             Ok(&val)
@@ -2015,12 +2015,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`TrackingConfig`](crate::model::ConfigTypeData::TrackingConfig).
     pub fn is_tracking_config(&self) -> bool {
         self.as_tracking_config().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`UplinkEchoConfig`](crate::model::ConfigTypeData::UplinkEchoConfig), extracting the inner [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_uplink_echo_config(
         &self,
     ) -> std::result::Result<&crate::model::UplinkEchoConfig, &Self> {
@@ -2030,7 +2030,7 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ConfigTypeData` variant.
+    /// Returns true if this is a [`UplinkEchoConfig`](crate::model::ConfigTypeData::UplinkEchoConfig).
     pub fn is_uplink_echo_config(&self) -> bool {
         self.as_uplink_echo_config().is_ok()
     }

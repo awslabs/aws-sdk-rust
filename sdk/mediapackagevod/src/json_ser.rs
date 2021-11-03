@@ -251,6 +251,11 @@ pub fn serialize_structure_crate_model_hls_package(
         }
         array_61.finish();
     }
+    if input.include_dvb_subtitles {
+        object
+            .key("includeDvbSubtitles")
+            .boolean(input.include_dvb_subtitles);
+    }
     if input.segment_duration_seconds != 0 {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]

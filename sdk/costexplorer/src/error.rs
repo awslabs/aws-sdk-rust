@@ -14,7 +14,7 @@ pub struct CreateAnomalyMonitorError {
 pub enum CreateAnomalyMonitorErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAnomalyMonitorError {
@@ -77,7 +77,7 @@ impl CreateAnomalyMonitorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAnomalyMonitorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAnomalyMonitorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -112,7 +112,7 @@ pub enum CreateAnomalySubscriptionErrorKind {
     /// <p>The cost anomaly monitor does not exist for the account.
     /// </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAnomalySubscriptionError {
@@ -176,14 +176,14 @@ impl CreateAnomalySubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAnomalySubscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAnomalySubscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalySubscriptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalySubscriptionErrorKind::UnknownMonitorException`.
+    /// Returns `true` if the error kind is `CreateAnomalySubscriptionErrorKind::UnknownMonitorException`.
     pub fn is_unknown_monitor_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -219,7 +219,7 @@ pub enum CreateCostCategoryDefinitionErrorKind {
     /// <p> You've reached the limit on the number of resources you can create, or exceeded the
     /// size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCostCategoryDefinitionError {
@@ -285,14 +285,14 @@ impl CreateCostCategoryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCostCategoryDefinitionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCostCategoryDefinitionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCostCategoryDefinitionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -330,7 +330,7 @@ pub enum DeleteAnomalyMonitorErrorKind {
     /// <p>The cost anomaly monitor does not exist for the account.
     /// </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnomalyMonitorError {
@@ -394,14 +394,14 @@ impl DeleteAnomalyMonitorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnomalyMonitorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyMonitorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyMonitorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyMonitorErrorKind::UnknownMonitorException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyMonitorErrorKind::UnknownMonitorException`.
     pub fn is_unknown_monitor_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -437,7 +437,7 @@ pub enum DeleteAnomalySubscriptionErrorKind {
     /// <p>The cost anomaly subscription does not exist for the account.
     /// </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnomalySubscriptionError {
@@ -503,14 +503,14 @@ impl DeleteAnomalySubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnomalySubscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteAnomalySubscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalySubscriptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalySubscriptionErrorKind::UnknownSubscriptionException`.
+    /// Returns `true` if the error kind is `DeleteAnomalySubscriptionErrorKind::UnknownSubscriptionException`.
     pub fn is_unknown_subscription_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -549,7 +549,7 @@ pub enum DeleteCostCategoryDefinitionErrorKind {
     /// The specified ARN in the request doesn't exist.
     /// </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCostCategoryDefinitionError {
@@ -615,14 +615,14 @@ impl DeleteCostCategoryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCostCategoryDefinitionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteCostCategoryDefinitionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCostCategoryDefinitionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -661,7 +661,7 @@ pub enum DescribeCostCategoryDefinitionErrorKind {
     /// The specified ARN in the request doesn't exist.
     /// </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCostCategoryDefinitionError {
@@ -732,14 +732,14 @@ impl DescribeCostCategoryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCostCategoryDefinitionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeCostCategoryDefinitionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCostCategoryDefinitionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -776,7 +776,7 @@ pub enum GetAnomaliesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAnomaliesError {
@@ -840,14 +840,14 @@ impl GetAnomaliesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAnomaliesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAnomaliesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomaliesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomaliesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAnomaliesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetAnomaliesErrorKind::LimitExceededException(_))
     }
@@ -882,7 +882,7 @@ pub enum GetAnomalyMonitorsErrorKind {
     /// <p>The cost anomaly monitor does not exist for the account.
     /// </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAnomalyMonitorsError {
@@ -947,21 +947,21 @@ impl GetAnomalyMonitorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAnomalyMonitorsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAnomalyMonitorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyMonitorsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyMonitorsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAnomalyMonitorsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyMonitorsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyMonitorsErrorKind::UnknownMonitorException`.
+    /// Returns `true` if the error kind is `GetAnomalyMonitorsErrorKind::UnknownMonitorException`.
     pub fn is_unknown_monitor_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1000,7 +1000,7 @@ pub enum GetAnomalySubscriptionsErrorKind {
     /// <p>The cost anomaly subscription does not exist for the account.
     /// </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAnomalySubscriptionsError {
@@ -1065,21 +1065,21 @@ impl GetAnomalySubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAnomalySubscriptionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAnomalySubscriptionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalySubscriptionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalySubscriptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAnomalySubscriptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalySubscriptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalySubscriptionsErrorKind::UnknownSubscriptionException`.
+    /// Returns `true` if the error kind is `GetAnomalySubscriptionsErrorKind::UnknownSubscriptionException`.
     pub fn is_unknown_subscription_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1122,7 +1122,7 @@ pub enum GetCostAndUsageErrorKind {
     /// <p>Your request parameters changed between pages. Try again with the old parameters or
     /// without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCostAndUsageError {
@@ -1189,35 +1189,35 @@ impl GetCostAndUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCostAndUsageErrorKind::BillExpirationException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageErrorKind::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageErrorKind::BillExpirationException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageErrorKind::RequestChangedException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageErrorKind::RequestChangedException`.
     pub fn is_request_changed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1262,7 +1262,7 @@ pub enum GetCostAndUsageWithResourcesErrorKind {
     /// <p>Your request parameters changed between pages. Try again with the old parameters or
     /// without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCostAndUsageWithResourcesError {
@@ -1333,35 +1333,35 @@ impl GetCostAndUsageWithResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCostAndUsageWithResourcesErrorKind::BillExpirationException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageWithResourcesErrorKind::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageWithResourcesErrorKind::BillExpirationException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageWithResourcesErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageWithResourcesErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageWithResourcesErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageWithResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageWithResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageWithResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageWithResourcesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageWithResourcesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostAndUsageWithResourcesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostAndUsageWithResourcesErrorKind::RequestChangedException`.
+    /// Returns `true` if the error kind is `GetCostAndUsageWithResourcesErrorKind::RequestChangedException`.
     pub fn is_request_changed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1408,7 +1408,7 @@ pub enum GetCostCategoriesErrorKind {
     /// <p>Your request parameters changed between pages. Try again with the old parameters or
     /// without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCostCategoriesError {
@@ -1475,35 +1475,35 @@ impl GetCostCategoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCostCategoriesErrorKind::BillExpirationException`.
+    /// Returns `true` if the error kind is `GetCostCategoriesErrorKind::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostCategoriesErrorKind::BillExpirationException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostCategoriesErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetCostCategoriesErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostCategoriesErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostCategoriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetCostCategoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostCategoriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostCategoriesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCostCategoriesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostCategoriesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostCategoriesErrorKind::RequestChangedException`.
+    /// Returns `true` if the error kind is `GetCostCategoriesErrorKind::RequestChangedException`.
     pub fn is_request_changed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1541,7 +1541,7 @@ pub enum GetCostForecastErrorKind {
     DataUnavailableException(crate::error::DataUnavailableException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCostForecastError {
@@ -1605,14 +1605,14 @@ impl GetCostForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCostForecastErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetCostForecastErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCostForecastErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCostForecastErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCostForecastErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1654,7 +1654,7 @@ pub enum GetDimensionValuesErrorKind {
     /// <p>Your request parameters changed between pages. Try again with the old parameters or
     /// without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDimensionValuesError {
@@ -1721,35 +1721,35 @@ impl GetDimensionValuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDimensionValuesErrorKind::BillExpirationException`.
+    /// Returns `true` if the error kind is `GetDimensionValuesErrorKind::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionValuesErrorKind::BillExpirationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionValuesErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetDimensionValuesErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionValuesErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionValuesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetDimensionValuesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionValuesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionValuesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDimensionValuesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionValuesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionValuesErrorKind::RequestChangedException`.
+    /// Returns `true` if the error kind is `GetDimensionValuesErrorKind::RequestChangedException`.
     pub fn is_request_changed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1789,7 +1789,7 @@ pub enum GetReservationCoverageErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReservationCoverageError {
@@ -1854,21 +1854,21 @@ impl GetReservationCoverageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReservationCoverageErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetReservationCoverageErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationCoverageErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationCoverageErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetReservationCoverageErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationCoverageErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationCoverageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetReservationCoverageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1906,7 +1906,7 @@ pub enum GetReservationPurchaseRecommendationErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReservationPurchaseRecommendationError {
@@ -1980,21 +1980,21 @@ impl GetReservationPurchaseRecommendationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReservationPurchaseRecommendationErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetReservationPurchaseRecommendationErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationPurchaseRecommendationErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationPurchaseRecommendationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetReservationPurchaseRecommendationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationPurchaseRecommendationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationPurchaseRecommendationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetReservationPurchaseRecommendationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2040,7 +2040,7 @@ pub enum GetReservationUtilizationErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReservationUtilizationError {
@@ -2105,21 +2105,21 @@ impl GetReservationUtilizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReservationUtilizationErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetReservationUtilizationErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationUtilizationErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationUtilizationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetReservationUtilizationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReservationUtilizationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetReservationUtilizationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetReservationUtilizationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2155,7 +2155,7 @@ pub enum GetRightsizingRecommendationErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRightsizingRecommendationError {
@@ -2221,14 +2221,14 @@ impl GetRightsizingRecommendationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRightsizingRecommendationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetRightsizingRecommendationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRightsizingRecommendationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetRightsizingRecommendationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetRightsizingRecommendationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2267,7 +2267,7 @@ pub enum GetSavingsPlansCoverageErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSavingsPlansCoverageError {
@@ -2332,21 +2332,21 @@ impl GetSavingsPlansCoverageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSavingsPlansCoverageErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansCoverageErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansCoverageErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansCoverageErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansCoverageErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansCoverageErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansCoverageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansCoverageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2382,7 +2382,7 @@ pub enum GetSavingsPlansPurchaseRecommendationErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSavingsPlansPurchaseRecommendationError {
@@ -2453,14 +2453,14 @@ impl GetSavingsPlansPurchaseRecommendationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSavingsPlansPurchaseRecommendationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansPurchaseRecommendationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansPurchaseRecommendationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansPurchaseRecommendationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansPurchaseRecommendationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2501,7 +2501,7 @@ pub enum GetSavingsPlansUtilizationErrorKind {
     DataUnavailableException(crate::error::DataUnavailableException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSavingsPlansUtilizationError {
@@ -2565,14 +2565,14 @@ impl GetSavingsPlansUtilizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSavingsPlansUtilizationErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansUtilizationErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansUtilizationErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansUtilizationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansUtilizationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2609,7 +2609,7 @@ pub enum GetSavingsPlansUtilizationDetailsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSavingsPlansUtilizationDetailsError {
@@ -2683,21 +2683,21 @@ impl GetSavingsPlansUtilizationDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansUtilizationDetailsErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSavingsPlansUtilizationDetailsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSavingsPlansUtilizationDetailsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2746,7 +2746,7 @@ pub enum GetTagsErrorKind {
     /// <p>Your request parameters changed between pages. Try again with the old parameters or
     /// without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagsError {
@@ -2813,23 +2813,23 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::BillExpirationException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::BillExpirationException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::DataUnavailableException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::InvalidNextTokenException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::RequestChangedException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::RequestChangedException`.
     pub fn is_request_changed_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::RequestChangedException(_))
     }
@@ -2866,7 +2866,7 @@ pub enum GetUsageForecastErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections that contain matching units, for example: <code>hours</code>.</p>
     UnresolvableUsageUnitException(crate::error::UnresolvableUsageUnitException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsageForecastError {
@@ -2931,21 +2931,21 @@ impl GetUsageForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUsageForecastErrorKind::DataUnavailableException`.
+    /// Returns `true` if the error kind is `GetUsageForecastErrorKind::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUsageForecastErrorKind::DataUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetUsageForecastErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetUsageForecastErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUsageForecastErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetUsageForecastErrorKind::UnresolvableUsageUnitException`.
+    /// Returns `true` if the error kind is `GetUsageForecastErrorKind::UnresolvableUsageUnitException`.
     pub fn is_unresolvable_usage_unit_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2979,7 +2979,7 @@ pub struct ListCostCategoryDefinitionsError {
 pub enum ListCostCategoryDefinitionsErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCostCategoryDefinitionsError {
@@ -3042,7 +3042,7 @@ impl ListCostCategoryDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCostCategoryDefinitionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListCostCategoryDefinitionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3074,7 +3074,7 @@ pub struct ProvideAnomalyFeedbackError {
 pub enum ProvideAnomalyFeedbackErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ProvideAnomalyFeedbackError {
@@ -3137,7 +3137,7 @@ impl ProvideAnomalyFeedbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ProvideAnomalyFeedbackErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ProvideAnomalyFeedbackErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3172,7 +3172,7 @@ pub enum UpdateAnomalyMonitorErrorKind {
     /// <p>The cost anomaly monitor does not exist for the account.
     /// </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAnomalyMonitorError {
@@ -3236,14 +3236,14 @@ impl UpdateAnomalyMonitorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAnomalyMonitorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyMonitorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalyMonitorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalyMonitorErrorKind::UnknownMonitorException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyMonitorErrorKind::UnknownMonitorException`.
     pub fn is_unknown_monitor_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3282,7 +3282,7 @@ pub enum UpdateAnomalySubscriptionErrorKind {
     /// <p>The cost anomaly subscription does not exist for the account.
     /// </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAnomalySubscriptionError {
@@ -3349,21 +3349,21 @@ impl UpdateAnomalySubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAnomalySubscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAnomalySubscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalySubscriptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalySubscriptionErrorKind::UnknownMonitorException`.
+    /// Returns `true` if the error kind is `UpdateAnomalySubscriptionErrorKind::UnknownMonitorException`.
     pub fn is_unknown_monitor_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalySubscriptionErrorKind::UnknownMonitorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalySubscriptionErrorKind::UnknownSubscriptionException`.
+    /// Returns `true` if the error kind is `UpdateAnomalySubscriptionErrorKind::UnknownSubscriptionException`.
     pub fn is_unknown_subscription_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3406,7 +3406,7 @@ pub enum UpdateCostCategoryDefinitionErrorKind {
     /// <p> You've reached the limit on the number of resources you can create, or exceeded the
     /// size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCostCategoryDefinitionError {
@@ -3475,21 +3475,21 @@ impl UpdateCostCategoryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCostCategoryDefinitionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateCostCategoryDefinitionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCostCategoryDefinitionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCostCategoryDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCostCategoryDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,

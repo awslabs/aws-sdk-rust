@@ -179,6 +179,15 @@ where
     ) -> fluent_builders::CreateCustomAvailabilityZone<C, M, R> {
         fluent_builders::CreateCustomAvailabilityZone::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateCustomDBEngineVersion` operation.
+    ///
+    /// See [`CreateCustomDBEngineVersion`](crate::client::fluent_builders::CreateCustomDBEngineVersion) for more information about the
+    /// operation and its arguments.
+    pub fn create_custom_db_engine_version(
+        &self,
+    ) -> fluent_builders::CreateCustomDBEngineVersion<C, M, R> {
+        fluent_builders::CreateCustomDBEngineVersion::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateDBCluster` operation.
     ///
     /// See [`CreateDBCluster`](crate::client::fluent_builders::CreateDBCluster) for more information about the
@@ -296,6 +305,15 @@ where
         &self,
     ) -> fluent_builders::DeleteCustomAvailabilityZone<C, M, R> {
         fluent_builders::DeleteCustomAvailabilityZone::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteCustomDBEngineVersion` operation.
+    ///
+    /// See [`DeleteCustomDBEngineVersion`](crate::client::fluent_builders::DeleteCustomDBEngineVersion) for more information about the
+    /// operation and its arguments.
+    pub fn delete_custom_db_engine_version(
+        &self,
+    ) -> fluent_builders::DeleteCustomDBEngineVersion<C, M, R> {
+        fluent_builders::DeleteCustomDBEngineVersion::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteDBCluster` operation.
     ///
@@ -805,6 +823,15 @@ where
     ) -> fluent_builders::ModifyCurrentDBClusterCapacity<C, M, R> {
         fluent_builders::ModifyCurrentDBClusterCapacity::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ModifyCustomDBEngineVersion` operation.
+    ///
+    /// See [`ModifyCustomDBEngineVersion`](crate::client::fluent_builders::ModifyCustomDBEngineVersion) for more information about the
+    /// operation and its arguments.
+    pub fn modify_custom_db_engine_version(
+        &self,
+    ) -> fluent_builders::ModifyCustomDBEngineVersion<C, M, R> {
+        fluent_builders::ModifyCustomDBEngineVersion::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ModifyDBCluster` operation.
     ///
     /// See [`ModifyDBCluster`](crate::client::fluent_builders::ModifyDBCluster) for more information about the
@@ -1203,9 +1230,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
@@ -1234,13 +1264,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
         pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_name(inp);
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_feature_name(input);
             self
@@ -1252,6 +1282,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>To add a role to a DB instance, the status of the DB instance must be <code>available</code>.</p>
     /// </note>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct AddRoleToDBInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -1300,9 +1331,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to associate the IAM role with.</p>
@@ -1331,14 +1365,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
         pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_name(inp);
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_feature_name(input);
@@ -1396,9 +1430,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
@@ -1523,9 +1560,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about  
@@ -1616,9 +1656,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The RDS Amazon Resource Name (ARN) of the resource that the
@@ -1767,9 +1810,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to add authorization to.</p>
@@ -1924,9 +1970,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is
@@ -2110,9 +2159,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to cancel.</p>
@@ -2183,9 +2235,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
@@ -2348,7 +2403,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
+    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB
     /// cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
     /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
     /// </li>
@@ -2365,7 +2420,6 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see
-    ///
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
     /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
@@ -2447,9 +2501,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
@@ -2551,16 +2608,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>             
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS key.</p>             
         ///
-        /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web Services KMS CMK.
-        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same Amazon Web Services KMS key as the source DB cluster snapshot.
+        /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS key.
+        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
         /// </p>
         ///
         /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>. </p>
         ///
-        /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
-        /// in the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web Services Region
+        /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier
+        /// you want to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services
+        /// Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region
         /// in another Amazon Web Services Region.</p>
         ///
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
@@ -2570,16 +2628,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>             
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS key.</p>             
         ///
-        /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web Services KMS CMK.
-        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same Amazon Web Services KMS key as the source DB cluster snapshot.
+        /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS key.
+        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
         /// </p>
         ///
         /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>. </p>
         ///
-        /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
-        /// in the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web Services Region
+        /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier
+        /// you want to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services
+        /// Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region
         /// in another Amazon Web Services Region.</p>
         ///
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
@@ -2598,7 +2657,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB
         /// cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
         /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
@@ -2641,7 +2700,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB
         /// cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
         /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
@@ -2762,9 +2821,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -2903,6 +2965,8 @@ pub mod fluent_builders {
     /// where you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web Services Region for the
     /// DB snapshot copy. </p>     
     ///
+    /// <p>This command doesn't apply to RDS Custom.</p>
+    ///
     /// <p>For more information about copying snapshots, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
@@ -2954,9 +3018,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source DB snapshot.</p>
@@ -3094,11 +3161,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
         /// </p>
         ///
         /// <p>If you copy an encrypted DB snapshot from your Amazon Web Services account,
-        /// you can specify a value for this parameter to encrypt the copy with a new Amazon Web Services KMS CMK.
+        /// you can specify a value for this parameter to encrypt the copy with a new KMS key.
         /// If you don't specify a value for this parameter,
         /// then the copy of the DB snapshot is encrypted with the same Amazon Web Services KMS key as the source DB snapshot.
         /// </p>
@@ -3112,8 +3179,8 @@ pub mod fluent_builders {
         /// </p>
         ///
         /// <p>If you copy an encrypted snapshot to a different Amazon Web Services Region, then you must specify
-        /// a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region
-        /// that they are created in, and you can't use CMKs from one Amazon Web Services Region in another
+        /// an Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region
+        /// that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another
         /// Amazon Web Services Region.
         /// </p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -3121,11 +3188,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
         /// </p>
         ///
         /// <p>If you copy an encrypted DB snapshot from your Amazon Web Services account,
-        /// you can specify a value for this parameter to encrypt the copy with a new Amazon Web Services KMS CMK.
+        /// you can specify a value for this parameter to encrypt the copy with a new KMS key.
         /// If you don't specify a value for this parameter,
         /// then the copy of the DB snapshot is encrypted with the same Amazon Web Services KMS key as the source DB snapshot.
         /// </p>
@@ -3139,8 +3206,8 @@ pub mod fluent_builders {
         /// </p>
         ///
         /// <p>If you copy an encrypted snapshot to a different Amazon Web Services Region, then you must specify
-        /// a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region
-        /// that they are created in, and you can't use CMKs from one Amazon Web Services Region in another
+        /// an Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region
+        /// that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another
         /// Amazon Web Services Region.
         /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3207,7 +3274,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
         /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region,
         /// and the action contained in the presigned URL.
         /// </p>
@@ -3265,7 +3332,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
         /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region,
         /// and the action contained in the presigned URL.
         /// </p>
@@ -3396,9 +3463,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source option group.
@@ -3575,9 +3645,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom Availability Zone (AZ).</p>
@@ -3639,6 +3712,283 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vpn_tunnel_originator_ip(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateCustomDBEngineVersion`.
+    ///
+    /// <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and
+    /// specific AMI. The only supported engine is Oracle Database 19c Enterprise Edition with the January 2021
+    /// or later RU/RUR. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+    /// Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software.
+    /// The Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create
+    /// your database. With Amazon RDS Custom, you upload your database installation files in Amazon S3. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
+    /// Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>When you create a custom engine version, you specify the files in a JSON document called a CEV manifest.
+    /// This document describes installation .zip files stored in Amazon S3. RDS Custom creates your CEV from
+    /// the installation files that you provided. This service model is called Bring Your Own Media (BYOM).</p>
+    /// <p>Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code> with
+    /// the message <code>Creation failed for custom engine version</code>, and includes details about the failure.
+    /// For example, the event prints missing files. </p>
+    /// <p>After you create the CEV, it is available for use. You can create multiple CEVs, and create multiple
+    /// RDS Custom instances from any CEV. You can also change the status of a CEV to make it available or
+    /// inactive.</p>
+    /// <note>
+    /// <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with
+    /// Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the
+    /// <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the
+    /// API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for
+    /// the <code>CreateCustomDbEngineVersion</code> event.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
+    /// Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateCustomDBEngineVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_custom_db_engine_version_input::Builder,
+    }
+    impl<C, M, R> CreateCustomDBEngineVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateCustomDBEngineVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCustomDbEngineVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateCustomDBEngineVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateCustomDbEngineVersionInputOperationOutputAlias,
+                crate::output::CreateCustomDbEngineVersionOutput,
+                crate::error::CreateCustomDBEngineVersionError,
+                crate::input::CreateCustomDbEngineVersionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The database engine to use for your custom engine version (CEV). The only supported value is
+        /// <code>custom-oracle-ee</code>.</p>
+        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(inp);
+            self
+        }
+        /// <p>The database engine to use for your custom engine version (CEV). The only supported value is
+        /// <code>custom-oracle-ee</code>.</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
+            self
+        }
+        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
+        /// </code>. For example,
+        /// a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom, but optional for Amazon RDS.
+        /// The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(inp);
+            self
+        }
+        /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
+        /// </code>. For example,
+        /// a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom, but optional for Amazon RDS.
+        /// The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
+            self
+        }
+        /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid
+        /// bucket name is <code>my-custom-installation-files</code>.</p>
+        pub fn database_installation_files_s3_bucket_name(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.database_installation_files_s3_bucket_name(inp);
+            self
+        }
+        /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid
+        /// bucket name is <code>my-custom-installation-files</code>.</p>
+        pub fn set_database_installation_files_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_database_installation_files_s3_bucket_name(input);
+            self
+        }
+        /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid
+        /// bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
+        pub fn database_installation_files_s3_prefix(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.database_installation_files_s3_prefix(inp);
+            self
+        }
+        /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid
+        /// bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
+        pub fn set_database_installation_files_s3_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_installation_files_s3_prefix(input);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for
+        /// RDS Custom, but optional for Amazon RDS.</p>
+        /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom.
+        /// No further action is necessary. If you don't already have a symmetric KMS key in your account,
+        /// follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
+        /// Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service
+        /// Developer Guide</i>.</p>
+        /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for
+        /// RDS Custom, but optional for Amazon RDS.</p>
+        /// <p>If you have an existing symmetric KMS key in your account, you can use it with RDS Custom.
+        /// No further action is necessary. If you don't already have a symmetric KMS key in your account,
+        /// follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
+        /// Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service
+        /// Developer Guide</i>.</p>
+        /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+        /// <p>An optional description of your CEV.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>An optional description of your CEV.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3.
+        /// Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which
+        /// they are listed.</p>
+        /// <p>The following JSON fields are valid:</p>
+        /// <dl>
+        /// <dt>MediaImportTemplateVersion</dt>
+        /// <dd>
+        /// <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p>
+        /// </dd>
+        /// <dt>databaseInstallationFileNames</dt>
+        /// <dd>
+        /// <p>Ordered list of installation files for the CEV.</p>
+        /// </dd>
+        /// <dt>opatchFileNames</dt>
+        /// <dd>
+        /// <p>Ordered list of OPatch installers used for the Oracle DB engine.</p>
+        /// </dd>
+        /// <dt>psuRuPatchFileNames</dt>
+        /// <dd>
+        /// <p>The PSU and RU patches for this CEV.</p>
+        /// </dd>
+        /// <dt>OtherPatchFileNames</dt>
+        /// <dd>
+        /// <p>The patches that are not in the list of PSU and RU patches.
+        /// Amazon RDS applies these patches after applying the PSU and RU patches. </p>
+        /// </dd>
+        /// </dl>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+        /// Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn manifest(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest(inp);
+            self
+        }
+        /// <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3.
+        /// Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which
+        /// they are listed.</p>
+        /// <p>The following JSON fields are valid:</p>
+        /// <dl>
+        /// <dt>MediaImportTemplateVersion</dt>
+        /// <dd>
+        /// <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p>
+        /// </dd>
+        /// <dt>databaseInstallationFileNames</dt>
+        /// <dd>
+        /// <p>Ordered list of installation files for the CEV.</p>
+        /// </dd>
+        /// <dt>opatchFileNames</dt>
+        /// <dd>
+        /// <p>Ordered list of OPatch installers used for the Oracle DB engine.</p>
+        /// </dd>
+        /// <dt>psuRuPatchFileNames</dt>
+        /// <dd>
+        /// <p>The PSU and RU patches for this CEV.</p>
+        /// </dd>
+        /// <dt>OtherPatchFileNames</dt>
+        /// <dd>
+        /// <p>The patches that are not in the list of PSU and RU patches.
+        /// Amazon RDS applies these patches after applying the PSU and RU patches. </p>
+        /// </dd>
+        /// </dl>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+        /// Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn set_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_manifest(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+        /// </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>A list of tags.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+        /// </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3706,9 +4056,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AvailabilityZones`.
@@ -4197,51 +4550,51 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
-        /// <p>When a CMK isn't specified in <code>KmsKeyId</code>:</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
         /// <ul>
         /// <li>
         /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted
-        /// source, then Amazon RDS will use the CMK used to encrypt the
-        /// source. Otherwise, Amazon RDS will use your default CMK. </p>
+        /// source, then Amazon RDS will use the KMS key used to encrypt the
+        /// source. Otherwise, Amazon RDS will use your default KMS key. </p>
         /// </li>
         /// <li>
         /// <p>If the <code>StorageEncrypted</code> parameter is enabled and
         /// <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS
-        /// will use your default CMK.</p>
+        /// will use your default KMS key.</p>
         /// </li>
         /// </ul>
-        /// <p>There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
-        /// has a different default CMK for each Amazon Web Services Region.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account
+        /// has a different default KMS key for each Amazon Web Services Region.</p>
         /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
-        /// must set <code>KmsKeyId</code> to a Amazon Web Services KMS key identifier that is valid in the destination Amazon Web Services
-        /// Region. This CMK is used to encrypt the read replica in that Amazon Web Services Region.</p>
+        /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
+        /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
-        /// <p>When a CMK isn't specified in <code>KmsKeyId</code>:</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
         /// <ul>
         /// <li>
         /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted
-        /// source, then Amazon RDS will use the CMK used to encrypt the
-        /// source. Otherwise, Amazon RDS will use your default CMK. </p>
+        /// source, then Amazon RDS will use the KMS key used to encrypt the
+        /// source. Otherwise, Amazon RDS will use your default KMS key. </p>
         /// </li>
         /// <li>
         /// <p>If the <code>StorageEncrypted</code> parameter is enabled and
         /// <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS
-        /// will use your default CMK.</p>
+        /// will use your default KMS key.</p>
         /// </li>
         /// </ul>
-        /// <p>There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
-        /// has a different default CMK for each Amazon Web Services Region.</p>
+        /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account
+        /// has a different default KMS key for each Amazon Web Services Region.</p>
         /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
-        /// must set <code>KmsKeyId</code> to a Amazon Web Services KMS key identifier that is valid in the destination Amazon Web Services
-        /// Region. This CMK is used to encrypt the read replica in that Amazon Web Services Region.</p>
+        /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
+        /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -4256,8 +4609,8 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the copy of
-        /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same Amazon Web Services KMS CMK for both the <code>CreateDBCluster</code>
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+        /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
         /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
         /// <li>
@@ -4298,8 +4651,8 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the copy of
-        /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same Amazon Web Services KMS CMK for both the <code>CreateDBCluster</code>
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+        /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
         /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
         /// <li>
@@ -4711,9 +5064,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -4898,9 +5254,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -5111,9 +5470,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -5258,9 +5620,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -5326,6 +5691,26 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Can't be longer than 8 characters</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance.
+        /// If you don't specify a value, the default value is <code>ORCL</code>.
+        /// </p>
+        /// <p>Default: <code>ORCL</code>
+        /// </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It must contain 1 to 8 alphanumeric characters.</p>
+        /// </li>
+        /// <li>
+        /// <p>It must contain a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>It can't be a word reserved by the database engine.</p>
         /// </li>
         /// </ul>
         /// <p>
@@ -5438,6 +5823,26 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance.
+        /// If you don't specify a value, the default value is <code>ORCL</code>.
+        /// </p>
+        /// <p>Default: <code>ORCL</code>
+        /// </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It must contain 1 to 8 alphanumeric characters.</p>
+        /// </li>
+        /// <li>
+        /// <p>It must contain a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>It can't be a word reserved by the database engine.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
         /// <b>SQL Server</b>
         /// </p>
         /// <p>Not applicable. Must be null.</p>
@@ -5529,6 +5934,20 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. Aurora cluster volumes automatically grow as the amount of data in your
         /// database increases, though you are only charged for the space that you use in an Aurora cluster volume.</p>
+        ///
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>Constraints to the amount of storage for each storage type are the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+        /// </li>
+        /// <li>
+        /// <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536.</p>
+        /// </li>
+        /// </ul>
         ///
         /// <p>
         /// <b>MySQL</b>
@@ -5649,6 +6068,20 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. Aurora cluster volumes automatically grow as the amount of data in your
         /// database increases, though you are only charged for the space that you use in an Aurora cluster volume.</p>
+        ///
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>Constraints to the amount of storage for each storage type are the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+        /// </li>
+        /// <li>
+        /// <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536.</p>
+        /// </li>
+        /// </ul>
         ///
         /// <p>
         /// <b>MySQL</b>
@@ -5809,6 +6242,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>custom-oracle-ee (for RDS Custom instances)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>mariadb</code>
         /// </p>
         /// </li>
@@ -5887,6 +6325,11 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>aurora-postgresql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom-oracle-ee (for RDS Custom instances)</code>
         /// </p>
         /// </li>
         /// <li>
@@ -6396,6 +6839,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
         /// the default DB parameter group for the specified DB engine and version is used.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -6414,6 +6858,7 @@ pub mod fluent_builders {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
         /// the default DB parameter group for the specified DB engine and version is used.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -6433,12 +6878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_parameter_group_name(input);
             self
         }
-        /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
+        /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+        /// backups. Setting this parameter to 0 disables automated backups.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
-        /// <p>Not applicable. The retention period for automated backups is managed by the DB
-        /// cluster.</p>
+        /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.</p>
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -6447,18 +6892,21 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
+        /// </li>
+        /// <li>
+        /// <p>Can't be set to 0 or 35 for an RDS Custom DB instance</p>
         /// </li>
         /// </ul>
         pub fn backup_retention_period(mut self, inp: i32) -> Self {
             self.inner = self.inner.backup_retention_period(inp);
             self
         }
-        /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
+        /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+        /// backups. Setting this parameter to 0 disables automated backups.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
-        /// <p>Not applicable. The retention period for automated backups is managed by the DB
-        /// cluster.</p>
+        /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.</p>
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -6467,6 +6915,9 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
+        /// </li>
+        /// <li>
+        /// <p>Can't be set to 0 or 35 for an RDS Custom DB instance</p>
         /// </li>
         /// </ul>
         pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -6660,12 +7111,14 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn multi_az(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_az(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
@@ -6680,6 +7133,15 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB
         /// instance is managed by the DB cluster.</p>
+        ///
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom. The CEV
+        /// name has the following format: <code>19.<i>customized_string</i>
+        /// </code>. An example identifier is
+        /// <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+        /// Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
         ///
         /// <p>
         /// <b>MariaDB</b>
@@ -6736,6 +7198,15 @@ pub mod fluent_builders {
         /// instance is managed by the DB cluster.</p>
         ///
         /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>A custom engine version (CEV) that you have previously created. This setting is required for RDS Custom. The CEV
+        /// name has the following format: <code>19.<i>customized_string</i>
+        /// </code>. An example identifier is
+        /// <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+        /// Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        ///
+        /// <p>
         /// <b>MariaDB</b>
         /// </p>
         ///
@@ -6783,12 +7254,16 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+        /// <code>false</code>.</p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+        /// <code>false</code>.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -6797,6 +7272,7 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_model(inp);
             self
@@ -6805,6 +7281,7 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6833,13 +7310,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed
+        /// from an option group. Also, that option group can't be removed from a DB instance after it is
+        /// associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.option_group_name(inp);
             self
         }
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed
+        /// from an option group. Also, that option group can't be removed from a DB instance after it is
+        /// associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6847,8 +7330,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_option_group_name(input);
             self
         }
-        /// <p>For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.</p>
-        ///
+        /// <p>For supported engines, this value indicates that the DB instance should be associated with the
+        /// specified <code>CharacterSet</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set,
+        /// you can change it on the database itself.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -6858,8 +7343,10 @@ pub mod fluent_builders {
             self.inner = self.inner.character_set_name(inp);
             self
         }
-        /// <p>For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.</p>
-        ///
+        /// <p>For supported engines, this value indicates that the DB instance should be associated with the
+        /// specified <code>CharacterSet</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set,
+        /// you can change it on the database itself.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -6873,11 +7360,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+        /// <p>This parameter doesn't apply to RDS Custom.</p>
         pub fn nchar_character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.nchar_character_set_name(inp);
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+        /// <p>This parameter doesn't apply to RDS Custom.</p>
         pub fn set_nchar_character_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6959,11 +7448,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_cluster_identifier(inp);
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7004,11 +7495,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_arn(inp);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7017,11 +7510,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_password(inp);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7030,30 +7525,30 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
-        ///
+        /// <p>For RDS Custom Oracle instances, either set this parameter to <code>true</code> or leave it unset.
+        /// If you set this parameter to <code>false</code>, RDS reports an error.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
-        /// <p>Not applicable. The encryption for DB instances is managed by
-        /// the DB cluster.</p>
+        /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
         pub fn storage_encrypted(mut self, inp: bool) -> Self {
             self.inner = self.inner.storage_encrypted(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
-        ///
+        /// <p>For RDS Custom Oracle instances, either set this parameter to <code>true</code> or leave it unset.
+        /// If you set this parameter to <code>false</code>, RDS reports an error.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
-        /// <p>Not applicable. The encryption for DB instances is managed by
-        /// the DB cluster.</p>
+        /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
         pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_storage_encrypted(input);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -7061,16 +7556,22 @@ pub mod fluent_builders {
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>     
         /// <p>If <code>StorageEncrypted</code> is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
-        /// Amazon RDS uses your default CMK. There is a  
-        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
-        /// default CMK for each Amazon Web Services Region.</p>
+        /// Amazon RDS uses your default KMS key. There is a  
+        /// default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default KMS key for each Amazon Web Services Region.</p>
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>A KMS key is required for RDS Custom Oracle instances. For most RDS engines, if you leave this parameter empty
+        /// while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom for Oracle
+        /// doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -7078,9 +7579,15 @@ pub mod fluent_builders {
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>     
         /// <p>If <code>StorageEncrypted</code> is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
-        /// Amazon RDS uses your default CMK. There is a  
-        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
-        /// default CMK for each Amazon Web Services Region.</p>
+        /// Amazon RDS uses your default KMS key. There is a  
+        /// default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default KMS key for each Amazon Web Services Region.</p>
+        /// <p>
+        /// <b>Amazon RDS Custom</b>
+        /// </p>
+        /// <p>A KMS key is required for RDS Custom Oracle instances. For most RDS engines, if you leave this parameter empty
+        /// while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom for Oracle
+        /// doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -7089,6 +7596,7 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(inp);
             self
@@ -7097,6 +7605,7 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -7121,18 +7630,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
-        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
-        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for
+        /// the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
         /// to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn monitoring_interval(mut self, inp: i32) -> Self {
             self.inner = self.inner.monitoring_interval(inp);
             self
         }
-        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
-        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for
+        /// the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
         /// to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
@@ -7141,18 +7654,20 @@ pub mod fluent_builders {
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_role_arn(inp);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_monitoring_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7161,11 +7676,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_iam_role_name(inp);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7178,6 +7695,7 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
         pub fn promotion_tier(mut self, inp: i32) -> Self {
@@ -7189,6 +7707,7 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
         pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
@@ -7212,11 +7731,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
-        /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
-        /// cluster.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
+        /// to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
@@ -7226,11 +7743,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
-        /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
-        /// cluster.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
+        /// to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
@@ -7242,31 +7757,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
-        /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
-        /// </p>
-        /// <p>For more information, see
+        /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_performance_insights(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_performance_insights(inp);
             self
         }
-        /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
-        /// </p>
-        /// <p>For more information, see
+        /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             inp: impl Into<std::string::String>,
@@ -7275,10 +7789,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7286,12 +7801,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
             self.inner = self.inner.performance_insights_retention_period(inp);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -7304,13 +7821,18 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
         ///
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values
-        /// in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
+        /// in the list depend on the DB engine. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
         /// Service User Guide</i>.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
         /// <p>Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+        /// </p>
+        /// <p>
+        /// <b>RDS Custom</b>
+        /// </p>
+        /// <p>Not applicable.
         /// </p>
         /// <p>
         /// <b>MariaDB</b>
@@ -7346,13 +7868,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values
-        /// in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
+        /// in the list depend on the DB engine. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
         /// Service User Guide</i>.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
         /// <p>Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+        /// </p>
+        /// <p>
+        /// <b>RDS Custom</b>
+        /// </p>
+        /// <p>Not applicable.
         /// </p>
         /// <p>
         /// <b>MariaDB</b>
@@ -7392,6 +7919,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn processor_features(
             mut self,
             inp: impl Into<crate::model::ProcessorFeature>,
@@ -7400,6 +7928,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -7446,6 +7975,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn max_allocated_storage(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_allocated_storage(inp);
             self
@@ -7455,6 +7985,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_allocated_storage(input);
             self
@@ -7485,6 +8016,53 @@ pub mod fluent_builders {
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn custom_iam_instance_profile(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_iam_instance_profile(inp);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn set_custom_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_iam_instance_profile(input);
             self
         }
     }
@@ -7554,9 +8132,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key
@@ -7609,7 +8190,8 @@ pub mod fluent_builders {
         /// <li>
         /// <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a>
-        /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server, which doesn't support cross-region replicas.</p>
+        /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support
+        /// cross-Region replicas.</p>
         /// </li>
         /// </ul>
         pub fn source_db_instance_identifier(
@@ -7654,7 +8236,8 @@ pub mod fluent_builders {
         /// <li>
         /// <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a>
-        /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server, which doesn't support cross-region replicas.</p>
+        /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support
+        /// cross-Region replicas.</p>
         /// </li>
         /// </ul>
         pub fn set_source_db_instance_identifier(
@@ -7731,7 +8314,8 @@ pub mod fluent_builders {
         /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
         /// your replica in another Availability Zone for failover support for the replica. Creating
         /// your read replica as a Multi-AZ DB instance is independent of whether the source
-        /// database is a Multi-AZ DB instance. </p>
+        /// database is a Multi-AZ DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn multi_az(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_az(inp);
             self
@@ -7741,13 +8325,15 @@ pub mod fluent_builders {
         /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
         /// your replica in another Availability Zone for failover support for the replica. Creating
         /// your read replica as a Multi-AZ DB instance is independent of whether the source
-        /// database is a Multi-AZ DB instance. </p>
+        /// database is a Multi-AZ DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
         /// read replica during the maintenance window.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Inherits from the source DB instance</p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
@@ -7755,6 +8341,7 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
         /// read replica during the maintenance window.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Inherits from the source DB instance</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
@@ -7775,6 +8362,7 @@ pub mod fluent_builders {
         /// <p>For SQL Server, you must use the option group associated with the source
         /// instance.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.option_group_name(inp);
             self
@@ -7784,6 +8372,7 @@ pub mod fluent_builders {
         /// <p>For SQL Server, you must use the option group associated with the source
         /// instance.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7796,9 +8385,8 @@ pub mod fluent_builders {
         /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
         /// cross region read replica.</p>
-        /// <note>
-        /// <p>Currently, specifying a parameter group for this operation is only supported for Oracle DB instances.</p>
-        /// </note>
+        /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
+        /// isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -7820,9 +8408,8 @@ pub mod fluent_builders {
         /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
         /// cross region read replica.</p>
-        /// <note>
-        /// <p>Currently, specifying a parameter group for this operation is only supported for Oracle DB instances.</p>
-        /// </note>
+        /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
+        /// isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -7956,7 +8543,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p> A list of EC2 VPC security groups to associate with the read replica. </p>
+        /// <p> A list of Amazon EC2 VPC security groups to associate with the read replica. </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </p>
@@ -7964,7 +8552,8 @@ pub mod fluent_builders {
             self.inner = self.inner.vpc_security_group_ids(inp);
             self
         }
-        /// <p> A list of EC2 VPC security groups to associate with the read replica. </p>
+        /// <p> A list of Amazon EC2 VPC security groups to associate with the read replica. </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </p>
@@ -8024,6 +8613,7 @@ pub mod fluent_builders {
         /// specify 0. The default is 0.</p>
         /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
         /// to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn monitoring_interval(mut self, inp: i32) -> Self {
@@ -8035,6 +8625,7 @@ pub mod fluent_builders {
         /// specify 0. The default is 0.</p>
         /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
         /// to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
@@ -8045,7 +8636,9 @@ pub mod fluent_builders {
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must
+        /// supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_role_arn(inp);
             self
@@ -8054,7 +8647,9 @@ pub mod fluent_builders {
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
         /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
-        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must
+        /// supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_monitoring_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8063,29 +8658,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS CMK.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB
-        /// instance, then do not specify a value for this parameter. A read replica in the same Region
-        /// is always encrypted with the same Amazon Web Services KMS CMK as the source DB instance.</p>       
+        /// instance, then do not specify a value for this parameter. A read replica in the same Amazon Web Services Region
+        /// is always encrypted with the same KMS key as the source DB instance.</p>       
         /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must
-        /// specify a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to
-        /// the Amazon Web Services Region that they are created in, and you can't use CMKs from one
+        /// specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to
+        /// the Amazon Web Services Region that they are created in, and you can't use KMS keys from one
         /// Amazon Web Services Region in another Amazon Web Services Region.</p>       
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary
+        /// replica.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS CMK.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB
-        /// instance, then do not specify a value for this parameter. A read replica in the same Region
-        /// is always encrypted with the same Amazon Web Services KMS CMK as the source DB instance.</p>       
+        /// instance, then do not specify a value for this parameter. A read replica in the same Amazon Web Services Region
+        /// is always encrypted with the same KMS key as the source DB instance.</p>       
         /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must
-        /// specify a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to
-        /// the Amazon Web Services Region that they are created in, and you can't use CMKs from one
+        /// specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to
+        /// the Amazon Web Services Region that they are created in, and you can't use KMS keys from one
         /// Amazon Web Services Region in another Amazon Web Services Region.</p>       
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary
+        /// replica.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -8155,6 +8754,7 @@ pub mod fluent_builders {
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
         /// doesn't support cross-region read replicas.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pre_signed_url(inp);
             self
@@ -8224,6 +8824,7 @@ pub mod fluent_builders {
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
         /// doesn't support cross-region read replicas.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_pre_signed_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8238,6 +8839,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_iam_database_authentication(inp);
             self
@@ -8249,6 +8851,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -8256,27 +8859,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_iam_database_authentication(input);
             self
         }
-        /// <p>A value that indicates whether to enable Performance Insights for the read replica. </p>
+        /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_performance_insights(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_performance_insights(inp);
             self
         }
-        /// <p>A value that indicates whether to enable Performance Insights for the read replica. </p>
+        /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             inp: impl Into<std::string::String>,
@@ -8285,10 +8891,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8297,11 +8904,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
             self.inner = self.inner.performance_insights_retention_period(inp);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -8317,6 +8926,7 @@ pub mod fluent_builders {
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             inp: impl Into<std::string::String>,
@@ -8328,6 +8938,7 @@ pub mod fluent_builders {
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8340,6 +8951,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn processor_features(
             mut self,
             inp: impl Into<crate::model::ProcessorFeature>,
@@ -8348,6 +8960,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -8357,12 +8970,14 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn use_default_processor_features(mut self, inp: bool) -> Self {
             self.inner = self.inner.use_default_processor_features(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_use_default_processor_features(
             mut self,
             input: std::option::Option<bool>,
@@ -8394,6 +9009,7 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(inp);
             self
@@ -8402,16 +9018,19 @@ pub mod fluent_builders {
         /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_iam_role_name(inp);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8423,13 +9042,15 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only supported for Oracle DB instances.</p>
         /// </note>
-        /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for
+        /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for
         /// mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active
         /// Data Guard to transmit information to the mounted replica. Because it doesn't accept
         /// user connections, a mounted replica can't serve a read-only workload.</p>
         /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default.
+        /// After replica creation, you can manage the open mode manually.</p>
         pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
             self.inner = self.inner.replica_mode(inp);
             self
@@ -8438,13 +9059,15 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only supported for Oracle DB instances.</p>
         /// </note>
-        /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for
+        /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for
         /// mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active
         /// Data Guard to transmit information to the mounted replica. Because it doesn't accept
         /// user connections, a mounted replica can't serve a read-only workload.</p>
         /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default.
+        /// After replica creation, you can manage the open mode manually.</p>
         pub fn set_replica_mode(
             mut self,
             input: std::option::Option<crate::model::ReplicaMode>,
@@ -8470,6 +9093,53 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn custom_iam_instance_profile(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_iam_instance_profile(inp);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn set_custom_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_iam_instance_profile(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDBParameterGroup`.
     ///
@@ -8478,11 +9148,12 @@ pub mod fluent_builders {
     /// A DB parameter group is initially created with the default parameters for the
     /// database engine used by the DB instance. To provide custom values for any of the
     /// parameters, you must modify the group after creating it using
-    /// <i>ModifyDBParameterGroup</i>. Once you've created a DB parameter group, you need to
-    /// associate it with your DB instance using <i>ModifyDBInstance</i>. When you associate
+    /// <code>ModifyDBParameterGroup</code>. Once you've created a DB parameter group, you need to
+    /// associate it with your DB instance using <code>ModifyDBInstance</code>. When you associate
     /// a new DB parameter group with a running DB instance, you need to reboot the DB
     /// instance without failover for the new DB parameter group and associated settings to take effect.
     /// </p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     /// <important>
     /// <p>After you create a DB parameter group, you should wait at least 5 minutes
     /// before creating your first DB instance that uses that DB parameter group as the default parameter
@@ -8542,9 +9213,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group.</p>
@@ -8846,9 +9520,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -9061,9 +9738,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
@@ -9223,9 +9903,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
@@ -9361,9 +10044,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot.</p>
@@ -9511,9 +10197,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
@@ -9656,9 +10345,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the subscription.</p>
@@ -9902,9 +10594,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the new global database cluster.</p>
@@ -10015,6 +10710,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOptionGroup`.
     ///
     /// <p>Creates a new option group. You can create up to 20 option groups.</p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateOptionGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -10063,9 +10759,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies the name of the option group to be created.</p>
@@ -10337,9 +11036,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The custom AZ identifier.</p>
@@ -10353,6 +11055,113 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_custom_availability_zone_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteCustomDBEngineVersion`.
+    ///
+    /// <p>Deletes a custom engine version. To run this command, make sure you meet the following prerequisites:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CEV must not be the default for RDS Custom. If it is, change the default
+    /// before running this command.</p>
+    /// </li>
+    /// <li>
+    /// <p>The CEV must not be associated with an RDS Custom DB instance, RDS Custom instance snapshot,
+    /// or automated backup of your RDS Custom instance.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Typically, deletion takes a few minutes.</p>
+    /// <note>
+    /// <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with
+    /// Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the
+    /// <code>DeleteCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the
+    /// API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for
+    /// the <code>DeleteCustomDbEngineVersion</code> event.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
+    /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteCustomDBEngineVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_custom_db_engine_version_input::Builder,
+    }
+    impl<C, M, R> DeleteCustomDBEngineVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteCustomDBEngineVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCustomDbEngineVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCustomDBEngineVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteCustomDbEngineVersionInputOperationOutputAlias,
+                crate::output::DeleteCustomDbEngineVersionOutput,
+                crate::error::DeleteCustomDBEngineVersionError,
+                crate::input::DeleteCustomDbEngineVersionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The database engine. The only supported engine is <code>custom-oracle-ee</code>.</p>
+        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(inp);
+            self
+        }
+        /// <p>The database engine. The only supported engine is <code>custom-oracle-ee</code>.</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
+            self
+        }
+        /// <p>The custom engine version (CEV) for your DB instance. This option is required for
+        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
+        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(inp);
+            self
+        }
+        /// <p>The custom engine version (CEV) for your DB instance. This option is required for
+        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
+        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
             self
         }
     }
@@ -10417,9 +11226,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
@@ -10577,9 +11389,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
@@ -10657,9 +11472,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -10765,9 +11583,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB cluster snapshot to delete.</p>
@@ -10865,9 +11686,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
@@ -10895,26 +11719,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
-        /// <p>A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted.
-        /// If skip is specified, no DB snapshot is created. If skip isn't specified, a DB snapshot
-        /// is created before the DB instance is deleted. By default, skip isn't specified, and the DB snapshot is created.</p>
-        /// <p>When a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when skip is specified.</p>
-        /// <p>Specify skip when deleting a read replica.</p>
+        /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
+        /// If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter,
+        /// RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled,
+        /// and the DB snapshot is created.</p>
         /// <note>
-        /// <p>The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.</p>
+        /// <p>If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
         /// </note>
+        /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>,
+        /// or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
+        /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
+        /// <p>This setting is required for RDS Custom.</p>
         pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
             self.inner = self.inner.skip_final_snapshot(inp);
             self
         }
-        /// <p>A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted.
-        /// If skip is specified, no DB snapshot is created. If skip isn't specified, a DB snapshot
-        /// is created before the DB instance is deleted. By default, skip isn't specified, and the DB snapshot is created.</p>
-        /// <p>When a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when skip is specified.</p>
-        /// <p>Specify skip when deleting a read replica.</p>
+        /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
+        /// If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter,
+        /// RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled,
+        /// and the DB snapshot is created.</p>
         /// <note>
-        /// <p>The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.</p>
+        /// <p>If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
         /// </note>
+        /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>,
+        /// or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
+        /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
+        /// <p>This setting is required for RDS Custom.</p>
         pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_final_snapshot(input);
             self
@@ -10924,8 +11754,9 @@ pub mod fluent_builders {
         /// parameter is disabled.
         /// </p>
         /// <note>
-        /// <p>Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in an error.</p>
+        /// <p>If you enable this parameter and also enable SkipFinalShapshot, the command results in an error.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -10950,8 +11781,9 @@ pub mod fluent_builders {
         /// parameter is disabled.
         /// </p>
         /// <note>
-        /// <p>Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in an error.</p>
+        /// <p>If you enable this parameter and also enable SkipFinalShapshot, the command results in an error.</p>
         /// </note>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -11040,9 +11872,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
@@ -11060,6 +11895,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -11069,6 +11905,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_db_instance_automated_backups_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11128,9 +11965,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group.</p>
@@ -11222,9 +12062,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy to delete.</p>
@@ -11294,9 +12137,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy endpoint to delete.</p>
@@ -11367,9 +12213,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to delete.</p>
@@ -11477,9 +12326,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB snapshot identifier.</p>
@@ -11552,9 +12404,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the database subnet group to delete.</p>
@@ -11636,9 +12491,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to delete.</p>
@@ -11712,9 +12570,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -11787,9 +12648,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
@@ -11857,9 +12721,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the option group to be deleted.</p>
@@ -11933,9 +12800,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
@@ -12051,9 +12921,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
@@ -12108,9 +12981,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
@@ -12256,9 +13132,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
@@ -12386,9 +13265,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is
@@ -12655,9 +13537,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -12825,9 +13710,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific DB cluster parameter group to return details for.</p>
@@ -12978,9 +13866,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
@@ -13149,9 +14040,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
@@ -13366,9 +14260,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
@@ -13446,9 +14343,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
@@ -13774,9 +14674,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The database engine to return.</p>
@@ -14045,16 +14948,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
-        /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>,
-        /// the response includes a list of supported character sets for each engine version.
+        /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
+        /// <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine
+        /// version.</p>
+        /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code>
+        /// to <code>true</code>, RDS Custom returns no results.
         /// </p>
         pub fn list_supported_character_sets(mut self, inp: bool) -> Self {
             self.inner = self.inner.list_supported_character_sets(inp);
             self
         }
         /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
-        /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>,
-        /// the response includes a list of supported character sets for each engine version.
+        /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
+        /// <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine
+        /// version.</p>
+        /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code>
+        /// to <code>true</code>, RDS Custom returns no results.
         /// </p>
         pub fn set_list_supported_character_sets(
             mut self,
@@ -14067,6 +14976,9 @@ pub mod fluent_builders {
         /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported time zones for each engine version.
         /// </p>
+        /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
+        /// to <code>true</code>, RDS Custom returns no results.
+        /// </p>
         pub fn list_supported_timezones(mut self, inp: bool) -> Self {
             self.inner = self.inner.list_supported_timezones(inp);
             self
@@ -14074,6 +14986,9 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
         /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
         /// the response includes a list of supported time zones for each engine version.
+        /// </p>
+        /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
+        /// to <code>true</code>, RDS Custom returns no results.
         /// </p>
         pub fn set_list_supported_timezones(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_list_supported_timezones(input);
@@ -14149,9 +15064,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The resource ID of the DB instance that is the source of
@@ -14297,6 +15215,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -14306,6 +15225,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_db_instance_automated_backups_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14368,9 +15288,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
@@ -14525,6 +15448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBLogFiles`.
     ///
     /// <p>Returns a list of DB log files for the DB instance.</p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeDBLogFiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -14573,9 +15497,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -14728,9 +15655,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -14873,9 +15803,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -15034,9 +15967,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy. If you omit this parameter,
@@ -15161,9 +16097,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit
@@ -15305,9 +16244,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
@@ -15447,9 +16389,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
@@ -15592,9 +16537,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to return details for.</p>
@@ -15732,9 +16680,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
@@ -15802,9 +16753,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the DB instance to retrieve the list of DB snapshots for.
@@ -16080,6 +17034,7 @@ pub mod fluent_builders {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from
         /// another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn include_shared(mut self, inp: bool) -> Self {
             self.inner = self.inner.include_shared(inp);
             self
@@ -16089,6 +17044,7 @@ pub mod fluent_builders {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from
         /// another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_shared(input);
             self
@@ -16096,6 +17052,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn include_public(mut self, inp: bool) -> Self {
             self.inner = self.inner.include_public(inp);
             self
@@ -16103,6 +17060,7 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_public(input);
             self
@@ -16175,9 +17133,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB subnet group to return details for.</p>
@@ -16312,9 +17273,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
@@ -16443,9 +17407,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group family.</p>
@@ -16578,9 +17545,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The type of source that is generating the events.</p>
@@ -16671,9 +17641,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
@@ -16948,9 +17921,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to describe.</p>
@@ -17082,9 +18058,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to be described.</p>
@@ -17132,7 +18111,34 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.</p>
+        /// <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>canceled</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>canceling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>complete</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>failed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>starting</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         /// </li>
         /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
@@ -17157,7 +18163,34 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.</p>
+        /// <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>canceled</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>canceling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>complete</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>failed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>starting</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         /// </li>
         /// </ul>
         pub fn set_filters(
@@ -17270,9 +18303,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -17414,9 +18450,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
@@ -17561,9 +18600,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -17816,9 +18858,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
@@ -18090,9 +19135,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the engine to retrieve DB instance options for.</p>
@@ -18275,12 +19323,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_instance_class(input);
             self
         }
-        /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+        /// <p>The license model filter value. Specify this parameter to show only the available offerings
+        /// matching the specified license model.</p>
+        /// <p>RDS Custom supports only the BYOL licensing model.</p>
         pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_model(inp);
             self
         }
-        /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+        /// <p>The license model filter value. Specify this parameter to show only the available offerings
+        /// matching the specified license model.</p>
+        /// <p>RDS Custom supports only the BYOL licensing model.</p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18290,12 +19342,14 @@ pub mod fluent_builders {
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
         /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+        /// <p> This setting doesn't apply to RDS Custom.</p>
         pub fn availability_zone_group(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_group(inp);
             self
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
         /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+        /// <p> This setting doesn't apply to RDS Custom.</p>
         pub fn set_availability_zone_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18303,12 +19357,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_group(input);
             self
         }
-        /// <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+        /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports
+        /// only VPC offerings.</p>
+        /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output
+        /// shows VPC offerings.</p>
         pub fn vpc(mut self, inp: bool) -> Self {
             self.inner = self.inner.vpc(inp);
             self
         }
-        /// <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+        /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports
+        /// only VPC offerings.</p>
+        /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output
+        /// shows VPC offerings.</p>
         pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
@@ -18428,9 +19488,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
@@ -18591,9 +19654,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
@@ -18821,9 +19887,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
@@ -19031,9 +20100,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
@@ -19110,11 +20182,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeValidDBInstanceModifications`.
     ///
-    /// <p>You can call <code>DescribeValidDBInstanceModifications</code>
-    /// to learn what modifications you can make to your DB instance.
-    /// You can use this information when you call
-    /// <code>ModifyDBInstance</code>.
+    /// <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to
+    /// your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
     /// </p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeValidDBInstanceModifications<
         C = aws_smithy_client::erase::DynConnector,
@@ -19165,9 +20236,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The customer identifier or the ARN of your DB instance.
@@ -19189,6 +20263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DownloadDBLogFilePortion`.
     ///
     /// <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct DownloadDBLogFilePortion<
         C = aws_smithy_client::erase::DynConnector,
@@ -19237,9 +20312,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -19413,9 +20491,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
@@ -19529,9 +20610,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifier of the Aurora global database (<a>GlobalCluster</a>)
@@ -19639,9 +20723,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
@@ -19856,9 +20943,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about
@@ -19973,9 +21063,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The new default certificate identifier to override the current one with.</p>
@@ -20078,9 +21171,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -20176,6 +21272,160 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ModifyCustomDBEngineVersion`.
+    ///
+    /// <p>Modifies the status of a custom engine version (CEV). You can find CEVs to modify by calling
+    /// <code>DescribeDBEngineVersions</code>.</p>
+    /// <note>
+    /// <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with
+    /// Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the
+    /// <code>ModifyCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the
+    /// API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for
+    /// the <code>ModifyCustomDbEngineVersion</code> event.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying CEV status</a>
+    /// in the <i>Amazon RDS User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyCustomDBEngineVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_custom_db_engine_version_input::Builder,
+    }
+    impl<C, M, R> ModifyCustomDBEngineVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyCustomDBEngineVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyCustomDbEngineVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyCustomDBEngineVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyCustomDbEngineVersionInputOperationOutputAlias,
+                crate::output::ModifyCustomDbEngineVersionOutput,
+                crate::error::ModifyCustomDBEngineVersionError,
+                crate::input::ModifyCustomDbEngineVersionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(inp);
+            self
+        }
+        /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
+            self
+        }
+        /// <p>The custom engine version (CEV) that you want to modify. This option is required for
+        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
+        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(inp);
+            self
+        }
+        /// <p>The custom engine version (CEV) that you want to modify. This option is required for
+        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
+        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
+            self
+        }
+        /// <p>An optional description of your CEV.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>An optional description of your CEV.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
+        /// <dl>
+        /// <dt>available</dt>
+        /// <dd>
+        /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
+        /// </dd>
+        /// <dt>inactive</dt>
+        /// <dd>
+        /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV.
+        /// You can't patch or create new instances with this CEV.</p>
+        /// </dd>
+        /// </dl>
+        /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental
+        /// use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status
+        /// of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to
+        /// <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an
+        /// RDS Custom instance, snapshot, or automated backup.
+        /// </p>
+        pub fn status(mut self, inp: crate::model::CustomEngineVersionStatus) -> Self {
+            self.inner = self.inner.status(inp);
+            self
+        }
+        /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
+        /// <dl>
+        /// <dt>available</dt>
+        /// <dd>
+        /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
+        /// </dd>
+        /// <dt>inactive</dt>
+        /// <dd>
+        /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV.
+        /// You can't patch or create new instances with this CEV.</p>
+        /// </dd>
+        /// </dl>
+        /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental
+        /// use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status
+        /// of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to
+        /// <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an
+        /// RDS Custom instance, snapshot, or automated backup.
+        /// </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CustomEngineVersionStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ModifyDBCluster`.
     ///
     /// <p>Modify a setting for an Amazon Aurora DB cluster.
@@ -20236,9 +21486,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -20898,9 +22151,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
@@ -21049,9 +22305,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group to modify.</p>
@@ -21180,9 +22439,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
@@ -21339,9 +22601,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -21405,12 +22670,13 @@ pub mod fluent_builders {
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>If you modify the DB instance class, an outage occurs during the change.
         /// The change is applied during the next maintenance window,
         /// unless <code>ApplyImmediately</code> is enabled for this request.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
         pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_instance_class(inp);
@@ -21420,12 +22686,13 @@ pub mod fluent_builders {
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>If you modify the DB instance class, an outage occurs during the change.
         /// The change is applied during the next maintenance window,
         /// unless <code>ApplyImmediately</code> is enabled for this request.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
         pub fn set_db_instance_class(
             mut self,
@@ -21440,12 +22707,12 @@ pub mod fluent_builders {
         /// If your DB instance isn't in a VPC, you can also use this parameter to move your DB instance into a VPC.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working with a DB instance in a VPC</a>
-        /// in the <i>Amazon RDS User Guide.</i>
+        /// in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>Changing the subnet group causes an outage during the change.
         /// The change is applied during the next maintenance window,
-        /// unless you enable <code>ApplyImmediately</code>.
-        /// </p>
+        /// unless you enable <code>ApplyImmediately</code>.</p>
+        /// <p> This parameter doesn't apply to RDS Custom.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
@@ -21459,12 +22726,12 @@ pub mod fluent_builders {
         /// If your DB instance isn't in a VPC, you can also use this parameter to move your DB instance into a VPC.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working with a DB instance in a VPC</a>
-        /// in the <i>Amazon RDS User Guide.</i>
+        /// in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>Changing the subnet group causes an outage during the change.
         /// The change is applied during the next maintenance window,
-        /// unless you enable <code>ApplyImmediately</code>.
-        /// </p>
+        /// unless you enable <code>ApplyImmediately</code>.</p>
+        /// <p> This parameter doesn't apply to RDS Custom.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
@@ -21479,7 +22746,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_db_security_groups`](Self::set_db_security_groups).
         ///
-        /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't
+        /// result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -21490,7 +22759,9 @@ pub mod fluent_builders {
             self.inner = self.inner.db_security_groups(inp);
             self
         }
-        /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't
+        /// result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -21508,7 +22779,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>     
+        /// <p>A list of Amazon EC2 VPC security groups to authorize on this DB instance. This change is
+        /// asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -21524,7 +22797,9 @@ pub mod fluent_builders {
             self.inner = self.inner.vpc_security_group_ids(inp);
             self
         }
-        /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>     
+        /// <p>A list of Amazon EC2 VPC security groups to authorize on this DB instance. This change is
+        /// asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -21579,14 +22854,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_apply_immediately(input);
             self
         }
-        /// <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The new password for the master user. The password can include any printable ASCII
+        /// character except "/", """, or "@".</p>
         /// <p>
         /// Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
         /// Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the
         /// <code>PendingModifiedValues</code> element of the operation response.
         /// </p>
-        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -21631,14 +22907,15 @@ pub mod fluent_builders {
             self.inner = self.inner.master_user_password(inp);
             self
         }
-        /// <p>The new password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The new password for the master user. The password can include any printable ASCII
+        /// character except "/", """, or "@".</p>
         /// <p>
         /// Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
         /// Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the
         /// <code>PendingModifiedValues</code> element of the operation response.
         /// </p>
-        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -21686,24 +22963,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_master_user_password(input);
             self
         }
-        /// <p>The name of the DB parameter group to apply to the DB instance. Changing this
-        /// setting doesn't result in an outage. The parameter group name itself is changed
+        /// <p>The name of the DB parameter group to apply to the DB instance.</p>
+        /// <p>Changing this setting doesn't result in an outage. The parameter group name itself is changed
         /// immediately, but the actual parameter changes are not applied until you reboot the
-        /// instance without failover. In this case, the DB instance isn't rebooted automatically and the
-        /// parameter changes isn't applied during the next maintenance window.</p>
+        /// instance without failover. In this case, the DB instance isn't rebooted automatically, and the
+        /// parameter changes aren't applied during the next maintenance window. However, if you modify
+        /// dynamic parameters in the newly associated DB parameter group, these changes are applied
+        /// immediately without a reboot.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
-        /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
+        /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as the DB instance.</p>
         pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_parameter_group_name(inp);
             self
         }
-        /// <p>The name of the DB parameter group to apply to the DB instance. Changing this
-        /// setting doesn't result in an outage. The parameter group name itself is changed
+        /// <p>The name of the DB parameter group to apply to the DB instance.</p>
+        /// <p>Changing this setting doesn't result in an outage. The parameter group name itself is changed
         /// immediately, but the actual parameter changes are not applied until you reboot the
-        /// instance without failover. In this case, the DB instance isn't rebooted automatically and the
-        /// parameter changes isn't applied during the next maintenance window.</p>
+        /// instance without failover. In this case, the DB instance isn't rebooted automatically, and the
+        /// parameter changes aren't applied during the next maintenance window. However, if you modify
+        /// dynamic parameters in the newly associated DB parameter group, these changes are applied
+        /// immediately without a reboot.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
-        /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
+        /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as the DB instance.</p>
         pub fn set_db_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21727,18 +23010,16 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Must be a value from 0 to 35</p>
+        /// <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to
+        /// read replicas. It can't be set to 0 or 35 for an RDS Custom DB instance.</p>
         /// </li>
         /// <li>
-        /// <p>Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or
-        /// later</p>
+        /// <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or
+        /// later.</p>
         /// </li>
         /// <li>
-        /// <p>Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL
-        /// 9.3.5</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
+        /// <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL
+        /// 9.3.5.</p>
         /// </li>
         /// </ul>
         pub fn backup_retention_period(mut self, inp: i32) -> Self {
@@ -21761,18 +23042,16 @@ pub mod fluent_builders {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Must be a value from 0 to 35</p>
+        /// <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to
+        /// read replicas. It can't be set to 0 or 35 for an RDS Custom DB instance.</p>
         /// </li>
         /// <li>
-        /// <p>Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or
-        /// later</p>
+        /// <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or
+        /// later.</p>
         /// </li>
         /// <li>
-        /// <p>Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL
-        /// 9.3.5</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be set to 0 if the DB instance is a source to read replicas</p>
+        /// <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL
+        /// 9.3.5.</p>
         /// </li>
         /// </ul>
         pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -21889,22 +23168,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
-        /// Changing this parameter doesn't result in an outage and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is
-        /// enabled for this request.
+        /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result
+        /// in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// parameter is enabled for this request.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn multi_az(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_az(inp);
             self
         }
-        /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
-        /// Changing this parameter doesn't result in an outage and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is
-        /// enabled for this request.
+        /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result
+        /// in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// parameter is enabled for this request.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
@@ -21923,6 +23200,9 @@ pub mod fluent_builders {
         /// default minor version if the current minor version is lower.
         /// For information about valid engine versions, see <code>CreateDBInstance</code>,
         /// or call <code>DescribeDBEngineVersions</code>.</p>
+        /// <p>In RDS Custom, this parameter is supported for read replicas only if they are in the
+        /// <code>PATCH_DB_FAILURE</code> lifecycle.
+        /// </p>
         pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(inp);
             self
@@ -21941,6 +23221,9 @@ pub mod fluent_builders {
         /// default minor version if the current minor version is lower.
         /// For information about valid engine versions, see <code>CreateDBInstance</code>,
         /// or call <code>DescribeDBEngineVersions</code>.</p>
+        /// <p>In RDS Custom, this parameter is supported for read replicas only if they are in the
+        /// <code>PATCH_DB_FAILURE</code> lifecycle.
+        /// </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21948,43 +23231,68 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
-        /// <p>Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
+        /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't
+        /// result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>Constraints: Major version upgrades must be allowed when specifying a value
+        /// for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
         pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.allow_major_version_upgrade(inp);
             self
         }
-        /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
-        /// <p>Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
+        /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't
+        /// result in an outage and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>Constraints: Major version upgrades must be allowed when specifying a value
+        /// for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
         pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_major_version_upgrade(input);
             self
         }
-        /// <p>
-        /// A value that indicates whether minor version upgrades are applied automatically
-        /// to the DB instance during the maintenance window.
-        /// Changing this parameter doesn't result in an outage except in the following case
-        /// and the change is asynchronously applied as soon as possible.
-        /// An outage results if this parameter is enabled during the maintenance window,
-        /// and a newer minor version is available, and RDS has enabled auto patching for that engine version.
-        /// </p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
+        /// during the maintenance window. An outage occurs when all the following conditions are met:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The automatic upgrade is enabled for the maintenance window.</p>
+        /// </li>
+        /// <li>
+        /// <p>A newer minor version is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>RDS has enabled automatic patching for the engine version.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If any of the preceding conditions isn't met, RDS applies the change as soon as possible and
+        /// doesn't cause an outage.</p>
+        /// <p>For an RDS Custom DB instance, set <code>AutoMinorVersionUpgrade</code>
+        /// to <code>false</code>. Otherwise, the operation returns an error.</p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>
-        /// A value that indicates whether minor version upgrades are applied automatically
-        /// to the DB instance during the maintenance window.
-        /// Changing this parameter doesn't result in an outage except in the following case
-        /// and the change is asynchronously applied as soon as possible.
-        /// An outage results if this parameter is enabled during the maintenance window,
-        /// and a newer minor version is available, and RDS has enabled auto patching for that engine version.
-        /// </p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
+        /// during the maintenance window. An outage occurs when all the following conditions are met:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The automatic upgrade is enabled for the maintenance window.</p>
+        /// </li>
+        /// <li>
+        /// <p>A newer minor version is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>RDS has enabled automatic patching for the engine version.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If any of the preceding conditions isn't met, RDS applies the change as soon as possible and
+        /// doesn't cause an outage.</p>
+        /// <p>For an RDS Custom DB instance, set <code>AutoMinorVersionUpgrade</code>
+        /// to <code>false</code>. Otherwise, the operation returns an error.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>The license model for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
@@ -21993,6 +23301,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The license model for the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
@@ -22059,30 +23368,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iops(input);
             self
         }
-        /// <p>
-        /// A value that indicates the DB instance should be associated with the specified option group.
-        /// Changing this parameter doesn't result in an outage except in the following case and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is enabled
-        /// for this request. If the parameter change results in an option group that
-        /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-        /// are rejected but existing connections are not interrupted.
-        /// </p>
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>A value that indicates the DB instance should be associated with the specified option group.</p>
+        /// <p>Changing this parameter doesn't result in an outage, with one exception. If the parameter change results
+        /// in an option group that enables OEM, it can cause a brief period, lasting less than a second, during which
+        /// new connections are rejected but existing connections aren't interrupted.</p>
+        /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+        /// is enabled for this request.</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed
+        /// from an option group, and that option group can't be removed from a DB instance after
+        /// it is associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.option_group_name(inp);
             self
         }
-        /// <p>
-        /// A value that indicates the DB instance should be associated with the specified option group.
-        /// Changing this parameter doesn't result in an outage except in the following case and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is enabled
-        /// for this request. If the parameter change results in an option group that
-        /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-        /// are rejected but existing connections are not interrupted.
-        /// </p>
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>A value that indicates the DB instance should be associated with the specified option group.</p>
+        /// <p>Changing this parameter doesn't result in an outage, with one exception. If the parameter change results
+        /// in an option group that enables OEM, it can cause a brief period, lasting less than a second, during which
+        /// new connections are rejected but existing connections aren't interrupted.</p>
+        /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+        /// is enabled for this request.</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed
+        /// from an option group, and that option group can't be removed from a DB instance after
+        /// it is associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22090,14 +23399,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_option_group_name(input);
             self
         }
-        /// <p>
-        /// The new DB instance identifier for the DB instance when renaming a DB
-        /// instance. When you change the DB instance identifier, an instance
-        /// reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur
-        /// during the next maintenance window if you disable Apply Immediately. This value is stored
-        /// as a lowercase string.
+        /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance
+        /// identifier, an instance reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur
+        /// during the next maintenance window if you disable Apply Immediately. This value is stored as a lowercase string.
         /// </p>
-        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -22116,14 +23422,11 @@ pub mod fluent_builders {
             self.inner = self.inner.new_db_instance_identifier(inp);
             self
         }
-        /// <p>
-        /// The new DB instance identifier for the DB instance when renaming a DB
-        /// instance. When you change the DB instance identifier, an instance
-        /// reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur
-        /// during the next maintenance window if you disable Apply Immediately. This value is stored
-        /// as a lowercase string.
+        /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance
+        /// identifier, an instance reboot occurs immediately if you enable <code>ApplyImmediately</code>, or will occur
+        /// during the next maintenance window if you disable Apply Immediately. This value is stored as a lowercase string.
         /// </p>
-        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -22198,11 +23501,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_arn(inp);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22211,11 +23516,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_password(inp);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22223,12 +23530,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tde_credential_password(input);
             self
         }
-        /// <p>Indicates the certificate that needs to be associated with the instance.</p>
+        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ca_certificate_identifier(inp);
             self
         }
-        /// <p>Indicates the certificate that needs to be associated with the instance.</p>
+        /// <p>Specifies the certificate to associate with the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22238,20 +23547,22 @@ pub mod fluent_builders {
         }
         /// <p>The Active Directory directory ID to move the DB instance to.  
         /// Specify <code>none</code> to remove the instance from its current domain.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(inp);
             self
         }
         /// <p>The Active Directory directory ID to move the DB instance to.  
         /// Specify <code>none</code> to remove the instance from its current domain.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -22278,18 +23589,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
-        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
-        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
-        /// to a value other than 0.</p>
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0, which is the default.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, set <code>MonitoringInterval</code> to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn monitoring_interval(mut self, inp: i32) -> Self {
             self.inner = self.inner.monitoring_interval(inp);
             self
         }
-        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
-        /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
-        /// to a value other than 0.</p>
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0, which is the default.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, set <code>MonitoringInterval</code> to a value other than 0.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
@@ -22297,10 +23610,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
-        /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option
-        /// group for the DB instance.</p>
-        /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code>
-        /// parameter.</p>
+        /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values
+        /// specified for options in the option group for the DB instance.</p>
+        /// <p>If you change the <code>DBPortNumber</code> value, your database restarts regardless of
+        /// the value of the <code>ApplyImmediately</code> parameter.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>MySQL</b>
         /// </p>
@@ -22356,10 +23670,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
-        /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option
-        /// group for the DB instance.</p>
-        /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code>
-        /// parameter.</p>
+        /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values
+        /// specified for options in the option group for the DB instance.</p>
+        /// <p>If you change the <code>DBPortNumber</code> value, your database restarts regardless of
+        /// the value of the <code>ApplyImmediately</code> parameter.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>
         /// <b>MySQL</b>
         /// </p>
@@ -22421,12 +23736,12 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>
-        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC.
-        /// The DB instance must be part of a public subnet and
-        /// <code>PubliclyAccessible</code> must be enabled for it to be publicly accessible.
+        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
+        /// public subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly accessible.
         /// </p>
         /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn publicly_accessible(mut self, inp: bool) -> Self {
             self.inner = self.inner.publicly_accessible(inp);
             self
@@ -22438,32 +23753,36 @@ pub mod fluent_builders {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>
-        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC.
-        /// The DB instance must be part of a public subnet and
-        /// <code>PubliclyAccessible</code> must be enabled for it to be publicly accessible.
+        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
+        /// public subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly accessible.
         /// </p>
         /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code>
+        /// value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_role_arn(inp);
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
         /// example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code>
+        /// value.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_monitoring_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22472,11 +23791,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_iam_role_name(inp);
             self
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22487,7 +23808,8 @@ pub mod fluent_builders {
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
         /// after a failure of the existing primary instance. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
@@ -22498,7 +23820,8 @@ pub mod fluent_builders {
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
         /// after a failure of the existing primary instance. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
@@ -22507,29 +23830,27 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
         /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
-        /// cluster.</p>
-        ///
+        /// cluster.</p>      
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_iam_database_authentication(inp);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
         /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
-        /// cluster.</p>
-        ///
+        /// cluster.</p>      
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -22542,6 +23863,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_performance_insights(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_performance_insights(inp);
             self
@@ -22551,15 +23873,17 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_performance_insights(input);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             inp: impl Into<std::string::String>,
@@ -22568,10 +23892,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22579,12 +23904,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_performance_insights_kms_key_id(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
             self.inner = self.inner.performance_insights_retention_period(inp);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -22592,9 +23919,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_performance_insights_retention_period(input);
             self
         }
-        /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
+        /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a
+        /// specific DB instance.</p>
         /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance
         /// immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
             inp: crate::model::CloudwatchLogsExportConfiguration,
@@ -22602,9 +23931,11 @@ pub mod fluent_builders {
             self.inner = self.inner.cloudwatch_logs_export_configuration(inp);
             self
         }
-        /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
+        /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a
+        /// specific DB instance.</p>
         /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance
         /// immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
@@ -22617,6 +23948,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn processor_features(
             mut self,
             inp: impl Into<crate::model::ProcessorFeature>,
@@ -22625,6 +23957,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -22634,12 +23967,14 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn use_default_processor_features(mut self, inp: bool) -> Self {
             self.inner = self.inner.use_default_processor_features(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_use_default_processor_features(
             mut self,
             input: std::option::Option<bool>,
@@ -22672,6 +24007,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn max_allocated_storage(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_allocated_storage(inp);
             self
@@ -22681,6 +24017,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_allocated_storage(input);
             self
@@ -22707,7 +24044,8 @@ pub mod fluent_builders {
         /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// </li>
-        /// </ul>
+        /// </ul>       
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn certificate_rotation_restart(mut self, inp: bool) -> Self {
             self.inner = self.inner.certificate_rotation_restart(inp);
             self
@@ -22734,7 +24072,8 @@ pub mod fluent_builders {
         /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// </li>
-        /// </ul>
+        /// </ul>       
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_certificate_rotation_restart(
             mut self,
             input: std::option::Option<bool>,
@@ -22752,6 +24091,7 @@ pub mod fluent_builders {
         /// accept user connections, a mounted replica can't serve a read-only workload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
             self.inner = self.inner.replica_mode(inp);
             self
@@ -22766,6 +24106,7 @@ pub mod fluent_builders {
         /// accept user connections, a mounted replica can't serve a read-only workload.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_replica_mode(
             mut self,
             input: std::option::Option<crate::model::ReplicaMode>,
@@ -22800,6 +24141,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -22808,11 +24150,48 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_aws_backup_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_aws_backup_recovery_point_arn(input);
+            self
+        }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all paused</code>, the instance pauses automation for the duration set by
+        /// <code>ResumeFullAutomationModeMinutes</code>.</p>
+        pub fn automation_mode(mut self, inp: crate::model::AutomationMode) -> Self {
+            self.inner = self.inner.automation_mode(inp);
+            self
+        }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all paused</code>, the instance pauses automation for the duration set by
+        /// <code>ResumeFullAutomationModeMinutes</code>.</p>
+        pub fn set_automation_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomationMode>,
+        ) -> Self {
+            self.inner = self.inner.set_automation_mode(input);
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes
+        /// full automation. The minimum value is <code>60</code> (default). The maximum value is <code>1,440</code>.
+        /// </p>
+        pub fn resume_full_automation_mode_minutes(mut self, inp: i32) -> Self {
+            self.inner = self.inner.resume_full_automation_mode_minutes(inp);
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes
+        /// full automation. The minimum value is <code>60</code> (default). The maximum value is <code>1,440</code>.
+        /// </p>
+        pub fn set_resume_full_automation_mode_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_resume_full_automation_mode_minutes(input);
             self
         }
     }
@@ -22882,9 +24261,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group.</p>
@@ -23003,9 +24385,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
@@ -23176,9 +24561,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
@@ -23284,9 +24672,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the new target group to assign to the proxy.</p>
@@ -23349,7 +24740,8 @@ pub mod fluent_builders {
     ///
     /// </p>
     ///
-    /// <p>Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL.
+    /// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command
+    /// doesn't apply to RDS Custom.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct ModifyDBSnapshot<
@@ -23399,9 +24791,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB snapshot to modify.</p>
@@ -23611,9 +25006,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
@@ -23762,9 +25160,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.
@@ -23876,9 +25277,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription.</p>
@@ -24022,9 +25426,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -24237,9 +25644,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the option group to be modified.</p>
@@ -24321,7 +25731,7 @@ pub mod fluent_builders {
     /// promotion.</p>
     /// </li>
     /// <li>
-    /// <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
+    /// <p>This command doesn't apply to Aurora MySQL, Aurora PostgreSQL, or RDS Custom.</p>
     /// </li>
     /// </ul>
     ///
@@ -24374,9 +25784,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -24558,9 +25971,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't
@@ -24648,9 +26064,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Reserved DB instance offering to purchase.</p>
@@ -24736,6 +26155,8 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about rebooting, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB Instance</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
+    ///
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct RebootDBInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -24784,9 +26205,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -24882,9 +26306,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
@@ -25006,9 +26433,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -25102,9 +26532,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
@@ -25133,13 +26566,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
         pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_name(inp);
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_feature_name(input);
             self
@@ -25196,9 +26629,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to disassociate the IAM role from.</p>
@@ -25227,14 +26663,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <code>DBEngineVersion</code>.
+        /// For information about supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
         pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_name(inp);
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <code>DBEngineVersion</code>.
+        /// For information about supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_feature_name(input);
@@ -25294,9 +26730,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
@@ -25387,9 +26826,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about  
@@ -25501,9 +26943,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group to reset.</p>
@@ -25614,9 +27059,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group.</p>
@@ -25798,9 +27246,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AvailabilityZones`.
@@ -26263,25 +27714,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the StorageEncrypted parameter is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
-        /// Amazon RDS will use your default CMK. There is a  
-        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
-        /// default CMK for each Amazon Web Services Region.</p>
+        /// Amazon RDS will use your default KMS key. There is a  
+        /// default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default KMS key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the StorageEncrypted parameter is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
-        /// Amazon RDS will use your default CMK. There is a  
-        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
-        /// default CMK for each Amazon Web Services Region.</p>
+        /// Amazon RDS will use your default KMS key. There is a  
+        /// default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default KMS key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -26585,9 +28036,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AvailabilityZones`.
@@ -26855,15 +28309,15 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
         /// snapshot or DB cluster snapshot.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
         /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the
         /// following occurs:</p>
         /// <ul>
         /// <li>
         /// <p>If the DB snapshot or DB cluster snapshot in
         /// <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster
-        /// is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the DB snapshot or DB
+        /// is encrypted using the KMS key that was used to encrypt the DB snapshot or DB
         /// cluster snapshot.</p>
         /// </li>
         /// <li>
@@ -26878,15 +28332,15 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
         /// snapshot or DB cluster snapshot.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
         /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the
         /// following occurs:</p>
         /// <ul>
         /// <li>
         /// <p>If the DB snapshot or DB cluster snapshot in
         /// <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster
-        /// is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the DB snapshot or DB
+        /// is encrypted using the KMS key that was used to encrypt the DB snapshot or DB
         /// cluster snapshot.</p>
         /// </li>
         /// <li>
@@ -27191,9 +28645,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the new DB cluster to be created.</p>
@@ -27454,15 +28911,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
-        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is different than the
-        /// Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the Amazon Web Services KMS CMK
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the
+        /// KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key
         /// identified by the <code>KmsKeyId</code> parameter.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
         /// <li>
-        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the source DB cluster.</p>
+        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
         /// </li>
         /// <li>
         /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
@@ -27476,15 +28933,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
-        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is different than the
-        /// Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the Amazon Web Services KMS CMK
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the
+        /// KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key
         /// identified by the <code>KmsKeyId</code> parameter.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
         /// <li>
-        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the source DB cluster.</p>
+        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
         /// </li>
         /// <li>
         /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
@@ -27785,9 +29242,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -27946,12 +29406,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         pub fn multi_az(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_az(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
@@ -27977,17 +29439,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
-        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
+        /// during the maintenance window.</p>
+        /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
+        /// during the maintenance window.</p>
+        /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>License model information for the restored DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Same as source.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
@@ -27997,6 +29464,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>License model information for the restored DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Same as source.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
@@ -28009,22 +29477,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database name for the restored DB instance.</p>
-        /// <note>
-        /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p>
-        /// </note>
+        /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
+        /// Custom DB instances.</p>
         pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_name(inp);
             self
         }
         /// <p>The database name for the restored DB instance.</p>
-        /// <note>
-        /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p>
-        /// </note>
+        /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
+        /// Custom DB instances.</p>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The database engine to use for the new instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
         ///
@@ -28092,6 +29559,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database engine to use for the new instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
         ///
@@ -28190,14 +29658,18 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         ///
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+        /// group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.option_group_name(inp);
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         ///
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+        /// group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28259,11 +29731,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_arn(inp);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28272,11 +29746,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_password(inp);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28312,19 +29788,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(inp);
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -28340,11 +29818,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_iam_role_name(inp);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28359,6 +29839,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
             self.inner = self.inner.enable_iam_database_authentication(inp);
             self
@@ -28370,6 +29851,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -28384,6 +29866,7 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             inp: impl Into<std::string::String>,
@@ -28394,6 +29877,7 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28406,6 +29890,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn processor_features(
             mut self,
             inp: impl Into<crate::model::ProcessorFeature>,
@@ -28414,6 +29899,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -28423,12 +29909,14 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn use_default_processor_features(mut self, inp: bool) -> Self {
             self.inner = self.inner.use_default_processor_features(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_use_default_processor_features(
             mut self,
             input: std::option::Option<bool>,
@@ -28437,8 +29925,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
-        /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
-        /// for the specified DB engine is used.</p>
+        /// <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS uses the default <code>DBParameterGroup</code>
+        /// for the specified DB engine.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28459,8 +29948,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
-        /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
-        /// for the specified DB engine is used.</p>
+        /// <p>If you don't specify a value for <code>DBParameterGroupName</code>, then RDS uses the default <code>DBParameterGroup</code>
+        /// for the specified DB engine.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28508,6 +29998,7 @@ pub mod fluent_builders {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
@@ -28521,12 +30012,60 @@ pub mod fluent_builders {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn custom_iam_instance_profile(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_iam_instance_profile(inp);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn set_custom_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_iam_instance_profile(input);
             self
         }
     }
@@ -28540,6 +30079,7 @@ pub mod fluent_builders {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a>
     /// in the <i>Amazon RDS User Guide.</i>            
     /// </p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct RestoreDBInstanceFromS3<
         C = aws_smithy_client::erase::DynConnector,
@@ -28588,9 +30128,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the database to create when the DB instance is created.
@@ -29232,13 +30775,13 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the <code>StorageEncrypted</code> parameter is enabled,
         /// and you do not specify a value for the <code>KmsKeyId</code> parameter,
-        /// then Amazon RDS will use your default CMK.
-        /// There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
+        /// then Amazon RDS will use your default KMS key.
+        /// There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
         /// </p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
@@ -29246,13 +30789,13 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the <code>StorageEncrypted</code> parameter is enabled,
         /// and you do not specify a value for the <code>KmsKeyId</code> parameter,
-        /// then Amazon RDS will use your default CMK.
-        /// There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
+        /// then Amazon RDS will use your default KMS key.
+        /// There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
         /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
@@ -29465,10 +31008,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             inp: impl Into<std::string::String>,
@@ -29477,10 +31020,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
         pub fn set_performance_insights_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29659,9 +31202,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -29869,13 +31415,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-        /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
+        /// Multi-AZ deployment.</p>
         pub fn multi_az(mut self, inp: bool) -> Self {
             self.inner = self.inner.multi_az(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-        /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
+        /// Multi-AZ deployment.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
@@ -29900,17 +31450,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
-        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the
+        /// DB instance during the maintenance window.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+        /// <p>A value that indicates whether minor version upgrades are applied automatically to the
+        /// DB instance during the maintenance window.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
         /// <p>License model information for the restored DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Same as source.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
@@ -29920,6 +31475,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>License model information for the restored DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Same as source.</p>
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
@@ -29933,7 +31489,7 @@ pub mod fluent_builders {
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
-        /// <p>This parameter isn't used for the MySQL or MariaDB engines.</p>
+        /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
         /// </note>
         pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.db_name(inp);
@@ -29941,13 +31497,14 @@ pub mod fluent_builders {
         }
         /// <p>The database name for the restored DB instance.</p>
         /// <note>
-        /// <p>This parameter isn't used for the MySQL or MariaDB engines.</p>
+        /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
         /// </note>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_db_name(input);
             self
         }
         /// <p>The database engine to use for the new instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source</p>
         ///
@@ -30015,6 +31572,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database engine to use for the new instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source</p>
         ///
@@ -30103,14 +31661,18 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         ///
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+        /// option group, and that option group can't be removed from a DB instance after it is associated with a DB instance</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.option_group_name(inp);
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
         ///
-        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+        /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+        /// option group, and that option group can't be removed from a DB instance after it is associated with a DB instance</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30182,11 +31744,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_arn(inp);
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30195,11 +31759,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tde_credential_password(inp);
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_tde_credential_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30235,8 +31801,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// Create the domain before running this command. Currently, you can create only the MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -30244,8 +31811,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
-        /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// Create the domain before running this command. Currently, you can create only the MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -30253,11 +31821,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_iam_role_name(inp);
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30267,6 +31837,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -30278,6 +31850,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        ///
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -30297,6 +31871,7 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             inp: impl Into<std::string::String>,
@@ -30307,6 +31882,7 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values
         /// in the list depend on the DB engine being used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -30319,6 +31895,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn processor_features(
             mut self,
             inp: impl Into<crate::model::ProcessorFeature>,
@@ -30327,6 +31904,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -30335,11 +31913,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn use_default_processor_features(mut self, inp: bool) -> Self {
             self.inner = self.inner.use_default_processor_features(inp);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_use_default_processor_features(
             mut self,
             input: std::option::Option<bool>,
@@ -30350,6 +31930,7 @@ pub mod fluent_builders {
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
         /// for the specified DB engine is used.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -30372,6 +31953,7 @@ pub mod fluent_builders {
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
         /// for the specified DB engine is used.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -30432,6 +32014,7 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn max_allocated_storage(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_allocated_storage(inp);
             self
@@ -30441,12 +32024,14 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_allocated_storage(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
         /// <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn source_db_instance_automated_backups_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -30456,6 +32041,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
         /// <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_source_db_instance_automated_backups_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30470,6 +32056,7 @@ pub mod fluent_builders {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
@@ -30483,12 +32070,60 @@ pub mod fluent_builders {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_customer_owned_ip(input);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn custom_iam_instance_profile(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_iam_instance_profile(inp);
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        /// <p>This setting is required for RDS Custom.</p>
+        pub fn set_custom_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_iam_instance_profile(input);
             self
         }
     }
@@ -30543,9 +32178,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to revoke ingress from.</p>
@@ -30702,9 +32340,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
@@ -30739,13 +32380,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -30838,9 +32479,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as
@@ -30873,7 +32517,7 @@ pub mod fluent_builders {
     ///
     /// <note>
     /// <p>
-    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+    /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
     /// For Aurora DB clusters, use <code>StartDBCluster</code> instead.
     /// </p>
     /// </note>
@@ -30925,9 +32569,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -30951,6 +32598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDBInstanceAutomatedBackupsReplication`.
     ///
     /// <p>Enables replication of automated backups to a different Amazon Web Services Region.</p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
     /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
@@ -31004,9 +32652,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example,
@@ -31073,6 +32724,7 @@ pub mod fluent_builders {
     /// <p>Starts an export of a snapshot to Amazon S3.
     /// The provided IAM role must have access to the S3 bucket.
     /// </p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartExportTask<
         C = aws_smithy_client::erase::DynConnector,
@@ -31121,9 +32773,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
@@ -31176,10 +32831,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
-        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// The caller of this operation must be authorized to
-        /// execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
+        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// The caller of this operation must be authorized to execute the following operations.
+        /// These can be set in the Amazon Web Services KMS key policy: </p>
         /// <ul>
         /// <li>
         /// <p>GrantOperation.Encrypt</p>
@@ -31213,10 +32868,10 @@ pub mod fluent_builders {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
-        /// <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
-        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-        /// The caller of this operation must be authorized to
-        /// execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
+        /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
+        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
+        /// The caller of this operation must be authorized to execute the following operations.
+        /// These can be set in the Amazon Web Services KMS key policy: </p>
         /// <ul>
         /// <li>
         /// <p>GrantOperation.Encrypt</p>
@@ -31385,9 +33040,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
@@ -31480,9 +33138,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as
@@ -31517,7 +33178,7 @@ pub mod fluent_builders {
     ///
     /// <note>
     /// <p>
-    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+    /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
     /// For Aurora clusters, use <code>StopDBCluster</code> instead.
     /// </p>
     /// </note>
@@ -31569,9 +33230,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -31612,6 +33276,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDBInstanceAutomatedBackupsReplication`.
     ///
     /// <p>Stops automated backup replication for a DB instance.</p>
+    /// <p>This command doesn't apply to RDS Custom.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
     /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
@@ -31665,9 +33330,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example,

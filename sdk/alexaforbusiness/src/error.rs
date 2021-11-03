@@ -18,7 +18,7 @@ pub enum ApproveSkillErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApproveSkillError {
@@ -83,18 +83,18 @@ impl ApproveSkillError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApproveSkillErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ApproveSkillErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApproveSkillErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ApproveSkillErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ApproveSkillErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ApproveSkillErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ApproveSkillErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ApproveSkillErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ApproveSkillErrorKind::NotFoundException(_))
     }
@@ -125,7 +125,7 @@ pub struct AssociateContactWithAddressBookError {
 pub enum AssociateContactWithAddressBookErrorKind {
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateContactWithAddressBookError {
@@ -193,7 +193,7 @@ impl AssociateContactWithAddressBookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateContactWithAddressBookErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateContactWithAddressBookErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -231,7 +231,7 @@ pub enum AssociateDeviceWithNetworkProfileErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDeviceWithNetworkProfileError {
@@ -303,21 +303,21 @@ impl AssociateDeviceWithNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithNetworkProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithNetworkProfileErrorKind::DeviceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -359,7 +359,7 @@ pub enum AssociateDeviceWithRoomErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDeviceWithRoomError {
@@ -426,21 +426,21 @@ impl AssociateDeviceWithRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDeviceWithRoomErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithRoomErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithRoomErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithRoomErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithRoomErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithRoomErrorKind::DeviceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithRoomErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithRoomErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -476,7 +476,7 @@ pub struct AssociateSkillGroupWithRoomError {
 pub enum AssociateSkillGroupWithRoomErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSkillGroupWithRoomError {
@@ -541,7 +541,7 @@ impl AssociateSkillGroupWithRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateSkillGroupWithRoomErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateSkillGroupWithRoomErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -579,7 +579,7 @@ pub enum AssociateSkillWithSkillGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The skill must be linked to a third-party account.</p>
     SkillNotLinkedException(crate::error::SkillNotLinkedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSkillWithSkillGroupError {
@@ -646,21 +646,21 @@ impl AssociateSkillWithSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateSkillWithSkillGroupErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateSkillWithSkillGroupErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSkillWithSkillGroupErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSkillWithSkillGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociateSkillWithSkillGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSkillWithSkillGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSkillWithSkillGroupErrorKind::SkillNotLinkedException`.
+    /// Returns `true` if the error kind is `AssociateSkillWithSkillGroupErrorKind::SkillNotLinkedException`.
     pub fn is_skill_not_linked_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -698,7 +698,7 @@ pub enum AssociateSkillWithUsersErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSkillWithUsersError {
@@ -764,14 +764,14 @@ impl AssociateSkillWithUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateSkillWithUsersErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateSkillWithUsersErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSkillWithUsersErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSkillWithUsersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociateSkillWithUsersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -808,7 +808,7 @@ pub enum CreateAddressBookErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAddressBookError {
@@ -872,14 +872,14 @@ impl CreateAddressBookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAddressBookErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAddressBookErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAddressBookErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAddressBookErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAddressBookErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -912,7 +912,7 @@ pub struct CreateBusinessReportScheduleError {
 pub enum CreateBusinessReportScheduleErrorKind {
     /// <p>The resource being created already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBusinessReportScheduleError {
@@ -975,7 +975,7 @@ impl CreateBusinessReportScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBusinessReportScheduleErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateBusinessReportScheduleErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1007,7 +1007,7 @@ pub struct CreateConferenceProviderError {
 pub enum CreateConferenceProviderErrorKind {
     /// <p>The resource being created already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConferenceProviderError {
@@ -1070,7 +1070,7 @@ impl CreateConferenceProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConferenceProviderErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConferenceProviderErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1104,7 +1104,7 @@ pub enum CreateContactErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactError {
@@ -1168,14 +1168,14 @@ impl CreateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1210,7 +1210,7 @@ pub enum CreateGatewayGroupErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGatewayGroupError {
@@ -1274,14 +1274,14 @@ impl CreateGatewayGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGatewayGroupErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateGatewayGroupErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayGroupErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGatewayGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1322,7 +1322,7 @@ pub enum CreateNetworkProfileErrorKind {
     InvalidServiceLinkedRoleStateException(crate::error::InvalidServiceLinkedRoleStateException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkProfileError {
@@ -1393,35 +1393,35 @@ impl CreateNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::InvalidCertificateAuthorityException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::InvalidCertificateAuthorityException`.
     pub fn is_invalid_certificate_authority_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::InvalidCertificateAuthorityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::InvalidServiceLinkedRoleStateException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::InvalidServiceLinkedRoleStateException`.
     pub fn is_invalid_service_linked_role_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::InvalidServiceLinkedRoleStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1465,7 +1465,7 @@ pub enum CreateProfileErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProfileError {
@@ -1530,21 +1530,21 @@ impl CreateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1580,7 +1580,7 @@ pub enum CreateRoomErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoomError {
@@ -1644,11 +1644,11 @@ impl CreateRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::LimitExceededException(_))
     }
@@ -1682,7 +1682,7 @@ pub enum CreateSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSkillGroupError {
@@ -1747,21 +1747,21 @@ impl CreateSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSkillGroupErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSkillGroupErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSkillGroupErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSkillGroupErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateSkillGroupErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSkillGroupErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSkillGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSkillGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1799,7 +1799,7 @@ pub enum CreateUserErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource in the request is already in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -1864,18 +1864,18 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ResourceInUseException(_))
     }
@@ -1908,7 +1908,7 @@ pub enum DeleteAddressBookErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAddressBookError {
@@ -1972,14 +1972,14 @@ impl DeleteAddressBookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAddressBookErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteAddressBookErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAddressBookErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAddressBookErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAddressBookErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAddressBookErrorKind::NotFoundException(_))
     }
@@ -2011,7 +2011,7 @@ pub enum DeleteBusinessReportScheduleErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBusinessReportScheduleError {
@@ -2077,14 +2077,14 @@ impl DeleteBusinessReportScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBusinessReportScheduleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteBusinessReportScheduleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBusinessReportScheduleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBusinessReportScheduleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBusinessReportScheduleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2119,7 +2119,7 @@ pub struct DeleteConferenceProviderError {
 pub enum DeleteConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConferenceProviderError {
@@ -2182,7 +2182,7 @@ impl DeleteConferenceProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConferenceProviderErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConferenceProviderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2216,7 +2216,7 @@ pub enum DeleteContactErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactError {
@@ -2280,14 +2280,14 @@ impl DeleteContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::NotFoundException(_))
     }
@@ -2321,7 +2321,7 @@ pub enum DeleteDeviceErrorKind {
     InvalidCertificateAuthorityException(crate::error::InvalidCertificateAuthorityException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceError {
@@ -2386,21 +2386,21 @@ impl DeleteDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::InvalidCertificateAuthorityException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::InvalidCertificateAuthorityException`.
     pub fn is_invalid_certificate_authority_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceErrorKind::InvalidCertificateAuthorityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeviceErrorKind::NotFoundException(_))
     }
@@ -2435,7 +2435,7 @@ pub enum DeleteDeviceUsageDataErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceUsageDataError {
@@ -2500,21 +2500,21 @@ impl DeleteDeviceUsageDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceUsageDataErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `DeleteDeviceUsageDataErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceUsageDataErrorKind::DeviceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceUsageDataErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteDeviceUsageDataErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceUsageDataErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceUsageDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeviceUsageDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2548,7 +2548,7 @@ pub struct DeleteGatewayGroupError {
 pub enum DeleteGatewayGroupErrorKind {
     /// <p>Another resource is associated with the resource in the request.</p>
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGatewayGroupError {
@@ -2611,7 +2611,7 @@ impl DeleteGatewayGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGatewayGroupErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `DeleteGatewayGroupErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2647,7 +2647,7 @@ pub enum DeleteNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The resource in the request is already in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkProfileError {
@@ -2712,21 +2712,21 @@ impl DeleteNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNetworkProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNetworkProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2762,7 +2762,7 @@ pub enum DeleteProfileErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProfileError {
@@ -2826,14 +2826,14 @@ impl DeleteProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteProfileErrorKind::NotFoundException(_))
     }
@@ -2865,7 +2865,7 @@ pub enum DeleteRoomErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoomError {
@@ -2929,14 +2929,14 @@ impl DeleteRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::NotFoundException(_))
     }
@@ -2966,7 +2966,7 @@ pub struct DeleteRoomSkillParameterError {
 pub enum DeleteRoomSkillParameterErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoomSkillParameterError {
@@ -3031,7 +3031,7 @@ impl DeleteRoomSkillParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoomSkillParameterErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteRoomSkillParameterErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3067,7 +3067,7 @@ pub enum DeleteSkillAuthorizationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSkillAuthorizationError {
@@ -3133,14 +3133,14 @@ impl DeleteSkillAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSkillAuthorizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteSkillAuthorizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSkillAuthorizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSkillAuthorizationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSkillAuthorizationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3177,7 +3177,7 @@ pub enum DeleteSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSkillGroupError {
@@ -3241,14 +3241,14 @@ impl DeleteSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSkillGroupErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteSkillGroupErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSkillGroupErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSkillGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSkillGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSkillGroupErrorKind::NotFoundException(_))
     }
@@ -3280,7 +3280,7 @@ pub enum DeleteUserErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -3344,14 +3344,14 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::NotFoundException(_))
     }
@@ -3379,7 +3379,7 @@ pub struct DisassociateContactFromAddressBookError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateContactFromAddressBookErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateContactFromAddressBookError {
@@ -3470,7 +3470,7 @@ pub enum DisassociateDeviceFromRoomErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDeviceFromRoomError {
@@ -3538,14 +3538,14 @@ impl DisassociateDeviceFromRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromRoomErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromRoomErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDeviceFromRoomErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromRoomErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromRoomErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3584,7 +3584,7 @@ pub enum DisassociateSkillFromSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateSkillFromSkillGroupError {
@@ -3653,14 +3653,14 @@ impl DisassociateSkillFromSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateSkillFromSkillGroupErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateSkillFromSkillGroupErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSkillFromSkillGroupErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSkillFromSkillGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateSkillFromSkillGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3697,7 +3697,7 @@ pub enum DisassociateSkillFromUsersErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateSkillFromUsersError {
@@ -3763,14 +3763,14 @@ impl DisassociateSkillFromUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateSkillFromUsersErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateSkillFromUsersErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSkillFromUsersErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSkillFromUsersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateSkillFromUsersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3805,7 +3805,7 @@ pub struct DisassociateSkillGroupFromRoomError {
 pub enum DisassociateSkillGroupFromRoomErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateSkillGroupFromRoomError {
@@ -3873,7 +3873,7 @@ impl DisassociateSkillGroupFromRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateSkillGroupFromRoomErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateSkillGroupFromRoomErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3907,7 +3907,7 @@ pub struct ForgetSmartHomeAppliancesError {
 pub enum ForgetSmartHomeAppliancesErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ForgetSmartHomeAppliancesError {
@@ -3970,7 +3970,7 @@ impl ForgetSmartHomeAppliancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ForgetSmartHomeAppliancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ForgetSmartHomeAppliancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4002,7 +4002,7 @@ pub struct GetAddressBookError {
 pub enum GetAddressBookErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAddressBookError {
@@ -4065,7 +4065,7 @@ impl GetAddressBookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAddressBookErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAddressBookErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAddressBookErrorKind::NotFoundException(_))
     }
@@ -4094,7 +4094,7 @@ pub struct GetConferencePreferenceError {
 pub enum GetConferencePreferenceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConferencePreferenceError {
@@ -4157,7 +4157,7 @@ impl GetConferencePreferenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConferencePreferenceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetConferencePreferenceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4189,7 +4189,7 @@ pub struct GetConferenceProviderError {
 pub enum GetConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConferenceProviderError {
@@ -4252,7 +4252,7 @@ impl GetConferenceProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConferenceProviderErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetConferenceProviderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4284,7 +4284,7 @@ pub struct GetContactError {
 pub enum GetContactErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactError {
@@ -4347,7 +4347,7 @@ impl GetContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::NotFoundException(_))
     }
@@ -4376,7 +4376,7 @@ pub struct GetDeviceError {
 pub enum GetDeviceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceError {
@@ -4439,7 +4439,7 @@ impl GetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::NotFoundException(_))
     }
@@ -4468,7 +4468,7 @@ pub struct GetGatewayError {
 pub enum GetGatewayErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGatewayError {
@@ -4531,7 +4531,7 @@ impl GetGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGatewayErrorKind::NotFoundException(_))
     }
@@ -4560,7 +4560,7 @@ pub struct GetGatewayGroupError {
 pub enum GetGatewayGroupErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGatewayGroupError {
@@ -4623,7 +4623,7 @@ impl GetGatewayGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGatewayGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGatewayGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGatewayGroupErrorKind::NotFoundException(_))
     }
@@ -4652,7 +4652,7 @@ pub struct GetInvitationConfigurationError {
 pub enum GetInvitationConfigurationErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInvitationConfigurationError {
@@ -4715,7 +4715,7 @@ impl GetInvitationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInvitationConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInvitationConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4749,7 +4749,7 @@ pub enum GetNetworkProfileErrorKind {
     InvalidSecretsManagerResourceException(crate::error::InvalidSecretsManagerResourceException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetNetworkProfileError {
@@ -4815,14 +4815,14 @@ impl GetNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::InvalidSecretsManagerResourceException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::InvalidSecretsManagerResourceException`.
     pub fn is_invalid_secrets_manager_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetNetworkProfileErrorKind::InvalidSecretsManagerResourceException(_)
         )
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetNetworkProfileErrorKind::NotFoundException(_))
     }
@@ -4854,7 +4854,7 @@ pub struct GetProfileError {
 pub enum GetProfileErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProfileError {
@@ -4917,7 +4917,7 @@ impl GetProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetProfileErrorKind::NotFoundException(_))
     }
@@ -4946,7 +4946,7 @@ pub struct GetRoomError {
 pub enum GetRoomErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoomError {
@@ -5009,7 +5009,7 @@ impl GetRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::NotFoundException(_))
     }
@@ -5038,7 +5038,7 @@ pub struct GetRoomSkillParameterError {
 pub enum GetRoomSkillParameterErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoomSkillParameterError {
@@ -5101,7 +5101,7 @@ impl GetRoomSkillParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoomSkillParameterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRoomSkillParameterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5133,7 +5133,7 @@ pub struct GetSkillGroupError {
 pub enum GetSkillGroupErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSkillGroupError {
@@ -5196,7 +5196,7 @@ impl GetSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSkillGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSkillGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSkillGroupErrorKind::NotFoundException(_))
     }
@@ -5223,7 +5223,7 @@ pub struct ListBusinessReportSchedulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBusinessReportSchedulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBusinessReportSchedulesError {
@@ -5307,7 +5307,7 @@ pub struct ListConferenceProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConferenceProvidersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConferenceProvidersError {
@@ -5393,7 +5393,7 @@ pub struct ListDeviceEventsError {
 pub enum ListDeviceEventsErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceEventsError {
@@ -5456,7 +5456,7 @@ impl ListDeviceEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeviceEventsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDeviceEventsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListDeviceEventsErrorKind::NotFoundException(_))
     }
@@ -5483,7 +5483,7 @@ pub struct ListGatewayGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewayGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGatewayGroupsError {
@@ -5567,7 +5567,7 @@ pub struct ListGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGatewaysError {
@@ -5651,7 +5651,7 @@ pub struct ListSkillsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSkillsError {
@@ -5735,7 +5735,7 @@ pub struct ListSkillsStoreCategoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsStoreCategoriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSkillsStoreCategoriesError {
@@ -5819,7 +5819,7 @@ pub struct ListSkillsStoreSkillsByCategoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsStoreSkillsByCategoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSkillsStoreSkillsByCategoryError {
@@ -5908,7 +5908,7 @@ pub struct ListSmartHomeAppliancesError {
 pub enum ListSmartHomeAppliancesErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSmartHomeAppliancesError {
@@ -5971,7 +5971,7 @@ impl ListSmartHomeAppliancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSmartHomeAppliancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListSmartHomeAppliancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6003,7 +6003,7 @@ pub struct ListTagsError {
 pub enum ListTagsErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -6066,7 +6066,7 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::NotFoundException(_))
     }
@@ -6095,7 +6095,7 @@ pub struct PutConferencePreferenceError {
 pub enum PutConferencePreferenceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConferencePreferenceError {
@@ -6158,7 +6158,7 @@ impl PutConferencePreferenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConferencePreferenceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConferencePreferenceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6192,7 +6192,7 @@ pub enum PutInvitationConfigurationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInvitationConfigurationError {
@@ -6258,14 +6258,14 @@ impl PutInvitationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInvitationConfigurationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutInvitationConfigurationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInvitationConfigurationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutInvitationConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutInvitationConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6300,7 +6300,7 @@ pub struct PutRoomSkillParameterError {
 pub enum PutRoomSkillParameterErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRoomSkillParameterError {
@@ -6365,7 +6365,7 @@ impl PutRoomSkillParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRoomSkillParameterErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutRoomSkillParameterErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6399,7 +6399,7 @@ pub enum PutSkillAuthorizationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The caller has no permissions to operate on the resource involved in the API call.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSkillAuthorizationError {
@@ -6465,14 +6465,14 @@ impl PutSkillAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSkillAuthorizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutSkillAuthorizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSkillAuthorizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutSkillAuthorizationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `PutSkillAuthorizationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6511,7 +6511,7 @@ pub enum RegisterAVSDeviceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterAVSDeviceError {
@@ -6577,28 +6577,28 @@ impl RegisterAVSDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterAVSDeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RegisterAVSDeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAVSDeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAVSDeviceErrorKind::InvalidDeviceException`.
+    /// Returns `true` if the error kind is `RegisterAVSDeviceErrorKind::InvalidDeviceException`.
     pub fn is_invalid_device_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAVSDeviceErrorKind::InvalidDeviceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAVSDeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterAVSDeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAVSDeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAVSDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RegisterAVSDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RegisterAVSDeviceErrorKind::NotFoundException(_))
     }
@@ -6632,7 +6632,7 @@ pub enum RejectSkillErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectSkillError {
@@ -6696,14 +6696,14 @@ impl RejectSkillError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectSkillErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RejectSkillErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectSkillErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RejectSkillErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RejectSkillErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RejectSkillErrorKind::NotFoundException(_))
     }
@@ -6733,7 +6733,7 @@ pub struct ResolveRoomError {
 pub enum ResolveRoomErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResolveRoomError {
@@ -6796,7 +6796,7 @@ impl ResolveRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResolveRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResolveRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ResolveRoomErrorKind::NotFoundException(_))
     }
@@ -6827,7 +6827,7 @@ pub enum RevokeInvitationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeInvitationError {
@@ -6891,14 +6891,14 @@ impl RevokeInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeInvitationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RevokeInvitationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeInvitationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeInvitationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RevokeInvitationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RevokeInvitationErrorKind::NotFoundException(_))
     }
@@ -6926,7 +6926,7 @@ pub struct SearchAddressBooksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchAddressBooksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchAddressBooksError {
@@ -7010,7 +7010,7 @@ pub struct SearchContactsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchContactsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchContactsError {
@@ -7094,7 +7094,7 @@ pub struct SearchDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchDevicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchDevicesError {
@@ -7178,7 +7178,7 @@ pub struct SearchNetworkProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchNetworkProfilesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchNetworkProfilesError {
@@ -7262,7 +7262,7 @@ pub struct SearchProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchProfilesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchProfilesError {
@@ -7346,7 +7346,7 @@ pub struct SearchRoomsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchRoomsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchRoomsError {
@@ -7430,7 +7430,7 @@ pub struct SearchSkillGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchSkillGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchSkillGroupsError {
@@ -7514,7 +7514,7 @@ pub struct SearchUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchUsersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchUsersError {
@@ -7602,7 +7602,7 @@ pub enum SendAnnouncementErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendAnnouncementError {
@@ -7666,14 +7666,14 @@ impl SendAnnouncementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendAnnouncementErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `SendAnnouncementErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAnnouncementErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `SendAnnouncementErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SendAnnouncementErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7710,7 +7710,7 @@ pub enum SendInvitationErrorKind {
     InvalidUserStatusException(crate::error::InvalidUserStatusException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendInvitationError {
@@ -7775,21 +7775,21 @@ impl SendInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendInvitationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `SendInvitationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendInvitationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `SendInvitationErrorKind::InvalidUserStatusException`.
+    /// Returns `true` if the error kind is `SendInvitationErrorKind::InvalidUserStatusException`.
     pub fn is_invalid_user_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendInvitationErrorKind::InvalidUserStatusException(_)
         )
     }
-    /// Returns true if the error kind is `SendInvitationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendInvitationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendInvitationErrorKind::NotFoundException(_))
     }
@@ -7820,7 +7820,7 @@ pub struct StartDeviceSyncError {
 pub enum StartDeviceSyncErrorKind {
     /// <p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDeviceSyncError {
@@ -7883,7 +7883,7 @@ impl StartDeviceSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDeviceSyncErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `StartDeviceSyncErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7915,7 +7915,7 @@ pub struct StartSmartHomeApplianceDiscoveryError {
 pub enum StartSmartHomeApplianceDiscoveryErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSmartHomeApplianceDiscoveryError {
@@ -7981,7 +7981,7 @@ impl StartSmartHomeApplianceDiscoveryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSmartHomeApplianceDiscoveryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartSmartHomeApplianceDiscoveryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8013,7 +8013,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -8076,7 +8076,7 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -8105,7 +8105,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -8168,7 +8168,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -8201,7 +8201,7 @@ pub enum UpdateAddressBookErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAddressBookError {
@@ -8266,21 +8266,21 @@ impl UpdateAddressBookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAddressBookErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateAddressBookErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAddressBookErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAddressBookErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateAddressBookErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAddressBookErrorKind::NameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAddressBookErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAddressBookErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAddressBookErrorKind::NotFoundException(_))
     }
@@ -8313,7 +8313,7 @@ pub enum UpdateBusinessReportScheduleErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBusinessReportScheduleError {
@@ -8379,14 +8379,14 @@ impl UpdateBusinessReportScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBusinessReportScheduleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateBusinessReportScheduleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBusinessReportScheduleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBusinessReportScheduleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBusinessReportScheduleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8421,7 +8421,7 @@ pub struct UpdateConferenceProviderError {
 pub enum UpdateConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConferenceProviderError {
@@ -8484,7 +8484,7 @@ impl UpdateConferenceProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConferenceProviderErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConferenceProviderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8518,7 +8518,7 @@ pub enum UpdateContactErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactError {
@@ -8582,14 +8582,14 @@ impl UpdateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::NotFoundException(_))
     }
@@ -8623,7 +8623,7 @@ pub enum UpdateDeviceErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceError {
@@ -8688,21 +8688,21 @@ impl UpdateDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::DeviceNotRegisteredException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::DeviceNotRegisteredException`.
     pub fn is_device_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceErrorKind::DeviceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeviceErrorKind::NotFoundException(_))
     }
@@ -8735,7 +8735,7 @@ pub enum UpdateGatewayErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayError {
@@ -8799,11 +8799,11 @@ impl UpdateGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateGatewayErrorKind::NameInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGatewayErrorKind::NotFoundException(_))
     }
@@ -8835,7 +8835,7 @@ pub enum UpdateGatewayGroupErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayGroupError {
@@ -8899,14 +8899,14 @@ impl UpdateGatewayGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayGroupErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateGatewayGroupErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayGroupErrorKind::NameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGatewayGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8947,7 +8947,7 @@ pub enum UpdateNetworkProfileErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNetworkProfileError {
@@ -9018,35 +9018,35 @@ impl UpdateNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::InvalidCertificateAuthorityException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::InvalidCertificateAuthorityException`.
     pub fn is_invalid_certificate_authority_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::InvalidCertificateAuthorityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::InvalidSecretsManagerResourceException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::InvalidSecretsManagerResourceException`.
     pub fn is_invalid_secrets_manager_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::InvalidSecretsManagerResourceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::NameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9090,7 +9090,7 @@ pub enum UpdateProfileErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProfileError {
@@ -9155,18 +9155,18 @@ impl UpdateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateProfileErrorKind::NameInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateProfileErrorKind::NotFoundException(_))
     }
@@ -9199,7 +9199,7 @@ pub enum UpdateRoomErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoomError {
@@ -9263,11 +9263,11 @@ impl UpdateRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::NameInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::NotFoundException(_))
     }
@@ -9301,7 +9301,7 @@ pub enum UpdateSkillGroupErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSkillGroupError {
@@ -9366,18 +9366,18 @@ impl UpdateSkillGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSkillGroupErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateSkillGroupErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSkillGroupErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSkillGroupErrorKind::NameInUseException`.
+    /// Returns `true` if the error kind is `UpdateSkillGroupErrorKind::NameInUseException`.
     pub fn is_name_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateSkillGroupErrorKind::NameInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateSkillGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSkillGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSkillGroupErrorKind::NotFoundException(_))
     }

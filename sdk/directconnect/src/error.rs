@@ -16,7 +16,7 @@ pub enum AcceptDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptDirectConnectGatewayAssociationProposalError {
@@ -91,14 +91,14 @@ impl AcceptDirectConnectGatewayAssociationProposalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum AllocateConnectionOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateConnectionOnInterconnectError {
@@ -210,14 +210,14 @@ impl AllocateConnectionOnInterconnectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -260,7 +260,7 @@ pub enum AllocateHostedConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateHostedConnectionError {
@@ -330,28 +330,28 @@ impl AllocateHostedConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateHostedConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateHostedConnectionErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateHostedConnectionErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateHostedConnectionErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -392,7 +392,7 @@ pub enum AllocatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocatePrivateVirtualInterfaceError {
@@ -467,28 +467,28 @@ impl AllocatePrivateVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -535,7 +535,7 @@ pub enum AllocatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocatePublicVirtualInterfaceError {
@@ -610,28 +610,28 @@ impl AllocatePublicVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -678,7 +678,7 @@ pub enum AllocateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateTransitVirtualInterfaceError {
@@ -753,28 +753,28 @@ impl AllocateTransitVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -817,7 +817,7 @@ pub enum AssociateConnectionWithLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateConnectionWithLagError {
@@ -885,14 +885,14 @@ impl AssociateConnectionWithLagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionWithLagErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -931,7 +931,7 @@ pub enum AssociateHostedConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateHostedConnectionError {
@@ -999,14 +999,14 @@ impl AssociateHostedConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateHostedConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1045,7 +1045,7 @@ pub enum AssociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateMacSecKeyError {
@@ -1109,14 +1109,14 @@ impl AssociateMacSecKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMacSecKeyErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1151,7 +1151,7 @@ pub enum AssociateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateVirtualInterfaceError {
@@ -1219,14 +1219,14 @@ impl AssociateVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1265,7 +1265,7 @@ pub enum ConfirmConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmConnectionError {
@@ -1329,14 +1329,14 @@ impl ConfirmConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `ConfirmConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `ConfirmConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1350,6 +1350,116 @@ impl std::error::Error for ConfirmConnectionError {
             ConfirmConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             ConfirmConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             ConfirmConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ConfirmCustomerAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ConfirmCustomerAgreementError {
+    /// Kind of error that occurred.
+    pub kind: ConfirmCustomerAgreementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ConfirmCustomerAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ConfirmCustomerAgreementErrorKind {
+    /// <p>One or more parameters are not valid.</p>
+    DirectConnectClientException(crate::error::DirectConnectClientException),
+    /// <p>A server-side error occurred.</p>
+    DirectConnectServerException(crate::error::DirectConnectServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ConfirmCustomerAgreementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ConfirmCustomerAgreementError {
+    fn code(&self) -> Option<&str> {
+        ConfirmCustomerAgreementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ConfirmCustomerAgreementError {
+    /// Creates a new `ConfirmCustomerAgreementError`.
+    pub fn new(kind: ConfirmCustomerAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ConfirmCustomerAgreementErrorKind::DirectConnectClientException`.
+    pub fn is_direct_connect_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ConfirmCustomerAgreementErrorKind::DirectConnectServerException`.
+    pub fn is_direct_connect_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_)
+        )
+    }
+}
+impl std::error::Error for ConfirmCustomerAgreementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) => Some(_inner),
+            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) => Some(_inner),
+            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1371,7 +1481,7 @@ pub enum ConfirmPrivateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmPrivateVirtualInterfaceError {
@@ -1442,14 +1552,14 @@ impl ConfirmPrivateVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1488,7 +1598,7 @@ pub enum ConfirmPublicVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmPublicVirtualInterfaceError {
@@ -1559,14 +1669,14 @@ impl ConfirmPublicVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1605,7 +1715,7 @@ pub enum ConfirmTransitVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmTransitVirtualInterfaceError {
@@ -1676,14 +1786,14 @@ impl ConfirmTransitVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1722,7 +1832,7 @@ pub enum CreateBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBGPPeerError {
@@ -1786,14 +1896,14 @@ impl CreateBGPPeerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBGPPeerErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateBGPPeerErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBGPPeerErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBGPPeerErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateBGPPeerErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1832,7 +1942,7 @@ pub enum CreateConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -1898,28 +2008,28 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1956,7 +2066,7 @@ pub enum CreateDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayError {
@@ -2024,14 +2134,14 @@ impl CreateDirectConnectGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2070,7 +2180,7 @@ pub enum CreateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationError {
@@ -2141,14 +2251,14 @@ impl CreateDirectConnectGatewayAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2189,7 +2299,7 @@ pub enum CreateDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationProposalError {
@@ -2264,14 +2374,14 @@ impl CreateDirectConnectGatewayAssociationProposalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2316,7 +2426,7 @@ pub enum CreateInterconnectErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInterconnectError {
@@ -2382,28 +2492,28 @@ impl CreateInterconnectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInterconnectErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInterconnectErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInterconnectErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInterconnectErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInterconnectErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInterconnectErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInterconnectErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateInterconnectErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2444,7 +2554,7 @@ pub enum CreateLagErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLagError {
@@ -2510,25 +2620,25 @@ impl CreateLagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLagErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLagErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLagErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLagErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLagErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateLagErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(&self.kind, CreateLagErrorKind::DuplicateTagKeysException(_))
     }
-    /// Returns true if the error kind is `CreateLagErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateLagErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, CreateLagErrorKind::TooManyTagsException(_))
     }
@@ -2566,7 +2676,7 @@ pub enum CreatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePrivateVirtualInterfaceError {
@@ -2641,28 +2751,28 @@ impl CreatePrivateVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2709,7 +2819,7 @@ pub enum CreatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePublicVirtualInterfaceError {
@@ -2781,28 +2891,28 @@ impl CreatePublicVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2849,7 +2959,7 @@ pub enum CreateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitVirtualInterfaceError {
@@ -2924,28 +3034,28 @@ impl CreateTransitVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2988,7 +3098,7 @@ pub enum DeleteBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBGPPeerError {
@@ -3052,14 +3162,14 @@ impl DeleteBGPPeerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBGPPeerErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteBGPPeerErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBGPPeerErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBGPPeerErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteBGPPeerErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3094,7 +3204,7 @@ pub enum DeleteConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -3158,14 +3268,14 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3200,7 +3310,7 @@ pub enum DeleteDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayError {
@@ -3268,14 +3378,14 @@ impl DeleteDirectConnectGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3314,7 +3424,7 @@ pub enum DeleteDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationError {
@@ -3385,14 +3495,14 @@ impl DeleteDirectConnectGatewayAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3433,7 +3543,7 @@ pub enum DeleteDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationProposalError {
@@ -3508,14 +3618,14 @@ impl DeleteDirectConnectGatewayAssociationProposalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3556,7 +3666,7 @@ pub enum DeleteInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInterconnectError {
@@ -3620,14 +3730,14 @@ impl DeleteInterconnectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInterconnectErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInterconnectErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInterconnectErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3662,7 +3772,7 @@ pub enum DeleteLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLagError {
@@ -3726,14 +3836,14 @@ impl DeleteLagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLagErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLagErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLagErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3768,7 +3878,7 @@ pub enum DeleteVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualInterfaceError {
@@ -3832,14 +3942,14 @@ impl DeleteVirtualInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3874,7 +3984,7 @@ pub enum DescribeConnectionLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionLoaError {
@@ -3938,14 +4048,14 @@ impl DescribeConnectionLoaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionLoaErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3980,7 +4090,7 @@ pub enum DescribeConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionsError {
@@ -4044,14 +4154,14 @@ impl DescribeConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeConnectionsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectionsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4086,7 +4196,7 @@ pub enum DescribeConnectionsOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionsOnInterconnectError {
@@ -4157,14 +4267,14 @@ impl DescribeConnectionsOnInterconnectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4186,6 +4296,116 @@ impl std::error::Error for DescribeConnectionsOnInterconnectError {
     }
 }
 
+/// Error type for the `DescribeCustomerMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeCustomerMetadataError {
+    /// Kind of error that occurred.
+    pub kind: DescribeCustomerMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeCustomerMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeCustomerMetadataErrorKind {
+    /// <p>One or more parameters are not valid.</p>
+    DirectConnectClientException(crate::error::DirectConnectClientException),
+    /// <p>A server-side error occurred.</p>
+    DirectConnectServerException(crate::error::DirectConnectServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeCustomerMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomerMetadataError {
+    fn code(&self) -> Option<&str> {
+        DescribeCustomerMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeCustomerMetadataError {
+    /// Creates a new `DescribeCustomerMetadataError`.
+    pub fn new(kind: DescribeCustomerMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeCustomerMetadataErrorKind::DirectConnectClientException`.
+    pub fn is_direct_connect_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCustomerMetadataErrorKind::DirectConnectServerException`.
+    pub fn is_direct_connect_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeCustomerMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) => Some(_inner),
+            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) => Some(_inner),
+            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeDirectConnectGatewayAssociationProposals` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4203,7 +4423,7 @@ pub enum DescribeDirectConnectGatewayAssociationProposalsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationProposalsError {
@@ -4278,7 +4498,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4287,7 +4507,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsError {
             )
         )
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4330,7 +4550,7 @@ pub enum DescribeDirectConnectGatewayAssociationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationsError {
@@ -4401,14 +4621,14 @@ impl DescribeDirectConnectGatewayAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4449,7 +4669,7 @@ pub enum DescribeDirectConnectGatewayAttachmentsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAttachmentsError {
@@ -4520,14 +4740,14 @@ impl DescribeDirectConnectGatewayAttachmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4568,7 +4788,7 @@ pub enum DescribeDirectConnectGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewaysError {
@@ -4639,14 +4859,14 @@ impl DescribeDirectConnectGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4685,7 +4905,7 @@ pub enum DescribeHostedConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHostedConnectionsError {
@@ -4753,14 +4973,14 @@ impl DescribeHostedConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHostedConnectionsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4799,7 +5019,7 @@ pub enum DescribeInterconnectLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInterconnectLoaError {
@@ -4863,14 +5083,14 @@ impl DescribeInterconnectLoaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInterconnectLoaErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4905,7 +5125,7 @@ pub enum DescribeInterconnectsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInterconnectsError {
@@ -4969,14 +5189,14 @@ impl DescribeInterconnectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInterconnectsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeInterconnectsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInterconnectsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInterconnectsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeInterconnectsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5011,7 +5231,7 @@ pub enum DescribeLagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLagsError {
@@ -5075,14 +5295,14 @@ impl DescribeLagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLagsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeLagsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLagsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLagsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeLagsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5117,7 +5337,7 @@ pub enum DescribeLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoaError {
@@ -5181,14 +5401,14 @@ impl DescribeLoaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoaErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoaErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoaErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5223,7 +5443,7 @@ pub enum DescribeLocationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationsError {
@@ -5287,14 +5507,14 @@ impl DescribeLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeLocationsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeLocationsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5308,6 +5528,120 @@ impl std::error::Error for DescribeLocationsError {
             DescribeLocationsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeLocationsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             DescribeLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeRouterConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeRouterConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeRouterConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeRouterConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeRouterConfigurationErrorKind {
+    /// <p>One or more parameters are not valid.</p>
+    DirectConnectClientException(crate::error::DirectConnectClientException),
+    /// <p>A server-side error occurred.</p>
+    DirectConnectServerException(crate::error::DirectConnectServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeRouterConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeRouterConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeRouterConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeRouterConfigurationError {
+    /// Creates a new `DescribeRouterConfigurationError`.
+    pub fn new(kind: DescribeRouterConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeRouterConfigurationErrorKind::DirectConnectClientException`.
+    pub fn is_direct_connect_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRouterConfigurationErrorKind::DirectConnectServerException`.
+    pub fn is_direct_connect_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeRouterConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) => {
+                Some(_inner)
+            }
+            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) => {
+                Some(_inner)
+            }
+            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5329,7 +5663,7 @@ pub enum DescribeTagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -5393,14 +5727,14 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5435,7 +5769,7 @@ pub enum DescribeVirtualGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualGatewaysError {
@@ -5499,14 +5833,14 @@ impl DescribeVirtualGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5541,7 +5875,7 @@ pub enum DescribeVirtualInterfacesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualInterfacesError {
@@ -5609,14 +5943,14 @@ impl DescribeVirtualInterfacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5655,7 +5989,7 @@ pub enum DisassociateConnectionFromLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateConnectionFromLagError {
@@ -5726,14 +6060,14 @@ impl DisassociateConnectionFromLagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5772,7 +6106,7 @@ pub enum DisassociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateMacSecKeyError {
@@ -5836,14 +6170,14 @@ impl DisassociateMacSecKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMacSecKeyErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5878,7 +6212,7 @@ pub enum ListVirtualInterfaceTestHistoryErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualInterfaceTestHistoryError {
@@ -5949,14 +6283,14 @@ impl ListVirtualInterfaceTestHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5995,7 +6329,7 @@ pub enum StartBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBgpFailoverTestError {
@@ -6059,14 +6393,14 @@ impl StartBgpFailoverTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBgpFailoverTestErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6101,7 +6435,7 @@ pub enum StopBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopBgpFailoverTestError {
@@ -6165,14 +6499,14 @@ impl StopBgpFailoverTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBgpFailoverTestErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6211,7 +6545,7 @@ pub enum TagResourceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6277,28 +6611,28 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::DirectConnectServerException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -6332,7 +6666,7 @@ pub enum UntagResourceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6396,14 +6730,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6438,7 +6772,7 @@ pub enum UpdateConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectionError {
@@ -6502,14 +6836,14 @@ impl UpdateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6523,6 +6857,120 @@ impl std::error::Error for UpdateConnectionError {
             UpdateConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             UpdateConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateDirectConnectGateway` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDirectConnectGatewayError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDirectConnectGatewayErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateDirectConnectGateway` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDirectConnectGatewayErrorKind {
+    /// <p>One or more parameters are not valid.</p>
+    DirectConnectClientException(crate::error::DirectConnectClientException),
+    /// <p>A server-side error occurred.</p>
+    DirectConnectServerException(crate::error::DirectConnectServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateDirectConnectGatewayError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDirectConnectGatewayError {
+    fn code(&self) -> Option<&str> {
+        UpdateDirectConnectGatewayError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDirectConnectGatewayError {
+    /// Creates a new `UpdateDirectConnectGatewayError`.
+    pub fn new(kind: UpdateDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDirectConnectGatewayErrorKind::DirectConnectClientException`.
+    pub fn is_direct_connect_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDirectConnectGatewayErrorKind::DirectConnectServerException`.
+    pub fn is_direct_connect_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDirectConnectGatewayError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6544,7 +6992,7 @@ pub enum UpdateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDirectConnectGatewayAssociationError {
@@ -6615,14 +7063,14 @@ impl UpdateDirectConnectGatewayAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6663,7 +7111,7 @@ pub enum UpdateLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLagError {
@@ -6727,14 +7175,14 @@ impl UpdateLagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLagErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `UpdateLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLagErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLagErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `UpdateLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6769,7 +7217,7 @@ pub enum UpdateVirtualInterfaceAttributesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVirtualInterfaceAttributesError {
@@ -6840,14 +7288,14 @@ impl UpdateVirtualInterfaceAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException`.
+    /// Returns `true` if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException`.
+    /// Returns `true` if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
         matches!(
             &self.kind,

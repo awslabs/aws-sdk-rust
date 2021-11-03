@@ -480,6 +480,11 @@ pub fn serialize_structure_crate_model_target_capacity_specification_request(
     if let Some(var_140) = &input.default_target_capacity_type {
         scope_139.string(var_140.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_141 = writer.prefix("TargetCapacityUnitType");
+    if let Some(var_142) = &input.target_capacity_unit_type {
+        scope_141.string(var_142.as_str());
+    }
 }
 
 #[allow(unused_mut)]
@@ -488,19 +493,19 @@ pub fn serialize_structure_crate_model_destination_options_request(
     input: &crate::model::DestinationOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_141 = writer.prefix("FileFormat");
-    if let Some(var_142) = &input.file_format {
-        scope_141.string(var_142.as_str());
+    let mut scope_143 = writer.prefix("FileFormat");
+    if let Some(var_144) = &input.file_format {
+        scope_143.string(var_144.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_143 = writer.prefix("HiveCompatiblePartitions");
-    if let Some(var_144) = &input.hive_compatible_partitions {
-        scope_143.boolean(*var_144);
-    }
-    #[allow(unused_mut)]
-    let mut scope_145 = writer.prefix("PerHourPartition");
-    if let Some(var_146) = &input.per_hour_partition {
+    let mut scope_145 = writer.prefix("HiveCompatiblePartitions");
+    if let Some(var_146) = &input.hive_compatible_partitions {
         scope_145.boolean(*var_146);
+    }
+    #[allow(unused_mut)]
+    let mut scope_147 = writer.prefix("PerHourPartition");
+    if let Some(var_148) = &input.per_hour_partition {
+        scope_147.boolean(*var_148);
     }
 }
 
@@ -510,14 +515,14 @@ pub fn serialize_structure_crate_model_storage_location(
     input: &crate::model::StorageLocation,
 ) {
     #[allow(unused_mut)]
-    let mut scope_147 = writer.prefix("Bucket");
-    if let Some(var_148) = &input.bucket {
-        scope_147.string(var_148);
+    let mut scope_149 = writer.prefix("Bucket");
+    if let Some(var_150) = &input.bucket {
+        scope_149.string(var_150);
     }
     #[allow(unused_mut)]
-    let mut scope_149 = writer.prefix("Key");
-    if let Some(var_150) = &input.key {
-        scope_149.string(var_150);
+    let mut scope_151 = writer.prefix("Key");
+    if let Some(var_152) = &input.key {
+        scope_151.string(var_152);
     }
 }
 
@@ -527,24 +532,24 @@ pub fn serialize_structure_crate_model_block_device_mapping(
     input: &crate::model::BlockDeviceMapping,
 ) {
     #[allow(unused_mut)]
-    let mut scope_151 = writer.prefix("DeviceName");
-    if let Some(var_152) = &input.device_name {
-        scope_151.string(var_152);
-    }
-    #[allow(unused_mut)]
-    let mut scope_153 = writer.prefix("VirtualName");
-    if let Some(var_154) = &input.virtual_name {
+    let mut scope_153 = writer.prefix("DeviceName");
+    if let Some(var_154) = &input.device_name {
         scope_153.string(var_154);
     }
     #[allow(unused_mut)]
-    let mut scope_155 = writer.prefix("Ebs");
-    if let Some(var_156) = &input.ebs {
-        crate::query_ser::serialize_structure_crate_model_ebs_block_device(scope_155, var_156);
+    let mut scope_155 = writer.prefix("VirtualName");
+    if let Some(var_156) = &input.virtual_name {
+        scope_155.string(var_156);
     }
     #[allow(unused_mut)]
-    let mut scope_157 = writer.prefix("NoDevice");
-    if let Some(var_158) = &input.no_device {
-        scope_157.string(var_158);
+    let mut scope_157 = writer.prefix("Ebs");
+    if let Some(var_158) = &input.ebs {
+        crate::query_ser::serialize_structure_crate_model_ebs_block_device(scope_157, var_158);
+    }
+    #[allow(unused_mut)]
+    let mut scope_159 = writer.prefix("NoDevice");
+    if let Some(var_160) = &input.no_device {
+        scope_159.string(var_160);
     }
 }
 
@@ -554,29 +559,29 @@ pub fn serialize_structure_crate_model_instance_event_window_time_range_request(
     input: &crate::model::InstanceEventWindowTimeRangeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_159 = writer.prefix("StartWeekDay");
-    if let Some(var_160) = &input.start_week_day {
-        scope_159.string(var_160.as_str());
+    let mut scope_161 = writer.prefix("StartWeekDay");
+    if let Some(var_162) = &input.start_week_day {
+        scope_161.string(var_162.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_161 = writer.prefix("StartHour");
-    if let Some(var_162) = &input.start_hour {
-        scope_161.number(
+    let mut scope_163 = writer.prefix("StartHour");
+    if let Some(var_164) = &input.start_hour {
+        scope_163.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_162).into()),
+            aws_smithy_types::Number::NegInt((*var_164).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_163 = writer.prefix("EndWeekDay");
-    if let Some(var_164) = &input.end_week_day {
-        scope_163.string(var_164.as_str());
+    let mut scope_165 = writer.prefix("EndWeekDay");
+    if let Some(var_166) = &input.end_week_day {
+        scope_165.string(var_166.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_165 = writer.prefix("EndHour");
-    if let Some(var_166) = &input.end_hour {
-        scope_165.number(
+    let mut scope_167 = writer.prefix("EndHour");
+    if let Some(var_168) = &input.end_hour {
+        scope_167.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_166).into()),
+            aws_smithy_types::Number::NegInt((*var_168).into()),
         );
     }
 }
@@ -587,24 +592,24 @@ pub fn serialize_structure_crate_model_export_to_s3_task_specification(
     input: &crate::model::ExportToS3TaskSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_167 = writer.prefix("ContainerFormat");
-    if let Some(var_168) = &input.container_format {
-        scope_167.string(var_168.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_169 = writer.prefix("DiskImageFormat");
-    if let Some(var_170) = &input.disk_image_format {
+    let mut scope_169 = writer.prefix("ContainerFormat");
+    if let Some(var_170) = &input.container_format {
         scope_169.string(var_170.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_171 = writer.prefix("S3Bucket");
-    if let Some(var_172) = &input.s3_bucket {
-        scope_171.string(var_172);
+    let mut scope_171 = writer.prefix("DiskImageFormat");
+    if let Some(var_172) = &input.disk_image_format {
+        scope_171.string(var_172.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_173 = writer.prefix("S3Prefix");
-    if let Some(var_174) = &input.s3_prefix {
+    let mut scope_173 = writer.prefix("S3Bucket");
+    if let Some(var_174) = &input.s3_bucket {
         scope_173.string(var_174);
+    }
+    #[allow(unused_mut)]
+    let mut scope_175 = writer.prefix("S3Prefix");
+    if let Some(var_176) = &input.s3_prefix {
+        scope_175.string(var_176);
     }
 }
 
@@ -614,200 +619,207 @@ pub fn serialize_structure_crate_model_request_launch_template_data(
     input: &crate::model::RequestLaunchTemplateData,
 ) {
     #[allow(unused_mut)]
-    let mut scope_175 = writer.prefix("KernelId");
-    if let Some(var_176) = &input.kernel_id {
-        scope_175.string(var_176);
+    let mut scope_177 = writer.prefix("KernelId");
+    if let Some(var_178) = &input.kernel_id {
+        scope_177.string(var_178);
     }
     #[allow(unused_mut)]
-    let mut scope_177 = writer.prefix("EbsOptimized");
-    if let Some(var_178) = &input.ebs_optimized {
-        scope_177.boolean(*var_178);
+    let mut scope_179 = writer.prefix("EbsOptimized");
+    if let Some(var_180) = &input.ebs_optimized {
+        scope_179.boolean(*var_180);
     }
     #[allow(unused_mut)]
-    let mut scope_179 = writer.prefix("IamInstanceProfile");
-    if let Some(var_180) = &input.iam_instance_profile {
-        crate::query_ser::serialize_structure_crate_model_launch_template_iam_instance_profile_specification_request(scope_179, var_180);
+    let mut scope_181 = writer.prefix("IamInstanceProfile");
+    if let Some(var_182) = &input.iam_instance_profile {
+        crate::query_ser::serialize_structure_crate_model_launch_template_iam_instance_profile_specification_request(scope_181, var_182);
     }
     #[allow(unused_mut)]
-    let mut scope_181 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_182) = &input.block_device_mappings {
-        let mut list_184 = scope_181.start_list(true, Some("BlockDeviceMapping"));
-        for item_183 in var_182 {
+    let mut scope_183 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_184) = &input.block_device_mappings {
+        let mut list_186 = scope_183.start_list(true, Some("BlockDeviceMapping"));
+        for item_185 in var_184 {
             #[allow(unused_mut)]
-            let mut entry_185 = list_184.entry();
-            crate::query_ser::serialize_structure_crate_model_launch_template_block_device_mapping_request(entry_185, item_183);
+            let mut entry_187 = list_186.entry();
+            crate::query_ser::serialize_structure_crate_model_launch_template_block_device_mapping_request(entry_187, item_185);
         }
-        list_184.finish();
+        list_186.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_186 = writer.prefix("NetworkInterface");
-    if let Some(var_187) = &input.network_interfaces {
-        let mut list_189 =
-            scope_186.start_list(true, Some("InstanceNetworkInterfaceSpecification"));
-        for item_188 in var_187 {
+    let mut scope_188 = writer.prefix("NetworkInterface");
+    if let Some(var_189) = &input.network_interfaces {
+        let mut list_191 =
+            scope_188.start_list(true, Some("InstanceNetworkInterfaceSpecification"));
+        for item_190 in var_189 {
             #[allow(unused_mut)]
-            let mut entry_190 = list_189.entry();
-            crate::query_ser::serialize_structure_crate_model_launch_template_instance_network_interface_specification_request(entry_190, item_188);
+            let mut entry_192 = list_191.entry();
+            crate::query_ser::serialize_structure_crate_model_launch_template_instance_network_interface_specification_request(entry_192, item_190);
         }
-        list_189.finish();
+        list_191.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_191 = writer.prefix("ImageId");
-    if let Some(var_192) = &input.image_id {
-        scope_191.string(var_192);
+    let mut scope_193 = writer.prefix("ImageId");
+    if let Some(var_194) = &input.image_id {
+        scope_193.string(var_194);
     }
     #[allow(unused_mut)]
-    let mut scope_193 = writer.prefix("InstanceType");
-    if let Some(var_194) = &input.instance_type {
-        scope_193.string(var_194.as_str());
+    let mut scope_195 = writer.prefix("InstanceType");
+    if let Some(var_196) = &input.instance_type {
+        scope_195.string(var_196.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_195 = writer.prefix("KeyName");
-    if let Some(var_196) = &input.key_name {
-        scope_195.string(var_196);
+    let mut scope_197 = writer.prefix("KeyName");
+    if let Some(var_198) = &input.key_name {
+        scope_197.string(var_198);
     }
     #[allow(unused_mut)]
-    let mut scope_197 = writer.prefix("Monitoring");
-    if let Some(var_198) = &input.monitoring {
+    let mut scope_199 = writer.prefix("Monitoring");
+    if let Some(var_200) = &input.monitoring {
         crate::query_ser::serialize_structure_crate_model_launch_templates_monitoring_request(
-            scope_197, var_198,
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_199 = writer.prefix("Placement");
-    if let Some(var_200) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_launch_template_placement_request(
             scope_199, var_200,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_201 = writer.prefix("RamDiskId");
-    if let Some(var_202) = &input.ram_disk_id {
-        scope_201.string(var_202);
-    }
-    #[allow(unused_mut)]
-    let mut scope_203 = writer.prefix("DisableApiTermination");
-    if let Some(var_204) = &input.disable_api_termination {
-        scope_203.boolean(*var_204);
-    }
-    #[allow(unused_mut)]
-    let mut scope_205 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_206) = &input.instance_initiated_shutdown_behavior {
-        scope_205.string(var_206.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_207 = writer.prefix("UserData");
-    if let Some(var_208) = &input.user_data {
-        scope_207.string(var_208);
-    }
-    #[allow(unused_mut)]
-    let mut scope_209 = writer.prefix("TagSpecification");
-    if let Some(var_210) = &input.tag_specifications {
-        let mut list_212 =
-            scope_209.start_list(true, Some("LaunchTemplateTagSpecificationRequest"));
-        for item_211 in var_210 {
-            #[allow(unused_mut)]
-            let mut entry_213 = list_212.entry();
-            crate::query_ser::serialize_structure_crate_model_launch_template_tag_specification_request(entry_213, item_211);
-        }
-        list_212.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_214 = writer.prefix("ElasticGpuSpecification");
-    if let Some(var_215) = &input.elastic_gpu_specifications {
-        let mut list_217 = scope_214.start_list(true, Some("ElasticGpuSpecification"));
-        for item_216 in var_215 {
-            #[allow(unused_mut)]
-            let mut entry_218 = list_217.entry();
-            crate::query_ser::serialize_structure_crate_model_elastic_gpu_specification(
-                entry_218, item_216,
-            );
-        }
-        list_217.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_219 = writer.prefix("ElasticInferenceAccelerator");
-    if let Some(var_220) = &input.elastic_inference_accelerators {
-        let mut list_222 = scope_219.start_list(true, Some("item"));
-        for item_221 in var_220 {
-            #[allow(unused_mut)]
-            let mut entry_223 = list_222.entry();
-            crate::query_ser::serialize_structure_crate_model_launch_template_elastic_inference_accelerator(entry_223, item_221);
-        }
-        list_222.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_224 = writer.prefix("SecurityGroupId");
-    if let Some(var_225) = &input.security_group_ids {
-        let mut list_227 = scope_224.start_list(true, Some("SecurityGroupId"));
-        for item_226 in var_225 {
-            #[allow(unused_mut)]
-            let mut entry_228 = list_227.entry();
-            entry_228.string(item_226);
-        }
-        list_227.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_229 = writer.prefix("SecurityGroup");
-    if let Some(var_230) = &input.security_groups {
-        let mut list_232 = scope_229.start_list(true, Some("SecurityGroup"));
-        for item_231 in var_230 {
-            #[allow(unused_mut)]
-            let mut entry_233 = list_232.entry();
-            entry_233.string(item_231);
-        }
-        list_232.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_234 = writer.prefix("InstanceMarketOptions");
-    if let Some(var_235) = &input.instance_market_options {
-        crate::query_ser::serialize_structure_crate_model_launch_template_instance_market_options_request(scope_234, var_235);
-    }
-    #[allow(unused_mut)]
-    let mut scope_236 = writer.prefix("CreditSpecification");
-    if let Some(var_237) = &input.credit_specification {
-        crate::query_ser::serialize_structure_crate_model_credit_specification_request(
-            scope_236, var_237,
+    let mut scope_201 = writer.prefix("Placement");
+    if let Some(var_202) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_launch_template_placement_request(
+            scope_201, var_202,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_238 = writer.prefix("CpuOptions");
-    if let Some(var_239) = &input.cpu_options {
-        crate::query_ser::serialize_structure_crate_model_launch_template_cpu_options_request(
+    let mut scope_203 = writer.prefix("RamDiskId");
+    if let Some(var_204) = &input.ram_disk_id {
+        scope_203.string(var_204);
+    }
+    #[allow(unused_mut)]
+    let mut scope_205 = writer.prefix("DisableApiTermination");
+    if let Some(var_206) = &input.disable_api_termination {
+        scope_205.boolean(*var_206);
+    }
+    #[allow(unused_mut)]
+    let mut scope_207 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_208) = &input.instance_initiated_shutdown_behavior {
+        scope_207.string(var_208.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_209 = writer.prefix("UserData");
+    if let Some(var_210) = &input.user_data {
+        scope_209.string(var_210);
+    }
+    #[allow(unused_mut)]
+    let mut scope_211 = writer.prefix("TagSpecification");
+    if let Some(var_212) = &input.tag_specifications {
+        let mut list_214 =
+            scope_211.start_list(true, Some("LaunchTemplateTagSpecificationRequest"));
+        for item_213 in var_212 {
+            #[allow(unused_mut)]
+            let mut entry_215 = list_214.entry();
+            crate::query_ser::serialize_structure_crate_model_launch_template_tag_specification_request(entry_215, item_213);
+        }
+        list_214.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_216 = writer.prefix("ElasticGpuSpecification");
+    if let Some(var_217) = &input.elastic_gpu_specifications {
+        let mut list_219 = scope_216.start_list(true, Some("ElasticGpuSpecification"));
+        for item_218 in var_217 {
+            #[allow(unused_mut)]
+            let mut entry_220 = list_219.entry();
+            crate::query_ser::serialize_structure_crate_model_elastic_gpu_specification(
+                entry_220, item_218,
+            );
+        }
+        list_219.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_221 = writer.prefix("ElasticInferenceAccelerator");
+    if let Some(var_222) = &input.elastic_inference_accelerators {
+        let mut list_224 = scope_221.start_list(true, Some("item"));
+        for item_223 in var_222 {
+            #[allow(unused_mut)]
+            let mut entry_225 = list_224.entry();
+            crate::query_ser::serialize_structure_crate_model_launch_template_elastic_inference_accelerator(entry_225, item_223);
+        }
+        list_224.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_226 = writer.prefix("SecurityGroupId");
+    if let Some(var_227) = &input.security_group_ids {
+        let mut list_229 = scope_226.start_list(true, Some("SecurityGroupId"));
+        for item_228 in var_227 {
+            #[allow(unused_mut)]
+            let mut entry_230 = list_229.entry();
+            entry_230.string(item_228);
+        }
+        list_229.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_231 = writer.prefix("SecurityGroup");
+    if let Some(var_232) = &input.security_groups {
+        let mut list_234 = scope_231.start_list(true, Some("SecurityGroup"));
+        for item_233 in var_232 {
+            #[allow(unused_mut)]
+            let mut entry_235 = list_234.entry();
+            entry_235.string(item_233);
+        }
+        list_234.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_236 = writer.prefix("InstanceMarketOptions");
+    if let Some(var_237) = &input.instance_market_options {
+        crate::query_ser::serialize_structure_crate_model_launch_template_instance_market_options_request(scope_236, var_237);
+    }
+    #[allow(unused_mut)]
+    let mut scope_238 = writer.prefix("CreditSpecification");
+    if let Some(var_239) = &input.credit_specification {
+        crate::query_ser::serialize_structure_crate_model_credit_specification_request(
             scope_238, var_239,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_240 = writer.prefix("CapacityReservationSpecification");
-    if let Some(var_241) = &input.capacity_reservation_specification {
-        crate::query_ser::serialize_structure_crate_model_launch_template_capacity_reservation_specification_request(scope_240, var_241);
+    let mut scope_240 = writer.prefix("CpuOptions");
+    if let Some(var_241) = &input.cpu_options {
+        crate::query_ser::serialize_structure_crate_model_launch_template_cpu_options_request(
+            scope_240, var_241,
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_242 = writer.prefix("LicenseSpecification");
-    if let Some(var_243) = &input.license_specifications {
-        let mut list_245 = scope_242.start_list(true, Some("item"));
-        for item_244 in var_243 {
+    let mut scope_242 = writer.prefix("CapacityReservationSpecification");
+    if let Some(var_243) = &input.capacity_reservation_specification {
+        crate::query_ser::serialize_structure_crate_model_launch_template_capacity_reservation_specification_request(scope_242, var_243);
+    }
+    #[allow(unused_mut)]
+    let mut scope_244 = writer.prefix("LicenseSpecification");
+    if let Some(var_245) = &input.license_specifications {
+        let mut list_247 = scope_244.start_list(true, Some("item"));
+        for item_246 in var_245 {
             #[allow(unused_mut)]
-            let mut entry_246 = list_245.entry();
-            crate::query_ser::serialize_structure_crate_model_launch_template_license_configuration_request(entry_246, item_244);
+            let mut entry_248 = list_247.entry();
+            crate::query_ser::serialize_structure_crate_model_launch_template_license_configuration_request(entry_248, item_246);
         }
-        list_245.finish();
+        list_247.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_247 = writer.prefix("HibernationOptions");
-    if let Some(var_248) = &input.hibernation_options {
-        crate::query_ser::serialize_structure_crate_model_launch_template_hibernation_options_request(scope_247, var_248);
+    let mut scope_249 = writer.prefix("HibernationOptions");
+    if let Some(var_250) = &input.hibernation_options {
+        crate::query_ser::serialize_structure_crate_model_launch_template_hibernation_options_request(scope_249, var_250);
     }
     #[allow(unused_mut)]
-    let mut scope_249 = writer.prefix("MetadataOptions");
-    if let Some(var_250) = &input.metadata_options {
-        crate::query_ser::serialize_structure_crate_model_launch_template_instance_metadata_options_request(scope_249, var_250);
+    let mut scope_251 = writer.prefix("MetadataOptions");
+    if let Some(var_252) = &input.metadata_options {
+        crate::query_ser::serialize_structure_crate_model_launch_template_instance_metadata_options_request(scope_251, var_252);
     }
     #[allow(unused_mut)]
-    let mut scope_251 = writer.prefix("EnclaveOptions");
-    if let Some(var_252) = &input.enclave_options {
+    let mut scope_253 = writer.prefix("EnclaveOptions");
+    if let Some(var_254) = &input.enclave_options {
         crate::query_ser::serialize_structure_crate_model_launch_template_enclave_options_request(
-            scope_251, var_252,
+            scope_253, var_254,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_255 = writer.prefix("InstanceRequirements");
+    if let Some(var_256) = &input.instance_requirements {
+        crate::query_ser::serialize_structure_crate_model_instance_requirements_request(
+            scope_255, var_256,
         );
     }
 }
@@ -818,14 +830,14 @@ pub fn serialize_structure_crate_model_add_prefix_list_entry(
     input: &crate::model::AddPrefixListEntry,
 ) {
     #[allow(unused_mut)]
-    let mut scope_253 = writer.prefix("Cidr");
-    if let Some(var_254) = &input.cidr {
-        scope_253.string(var_254);
+    let mut scope_257 = writer.prefix("Cidr");
+    if let Some(var_258) = &input.cidr {
+        scope_257.string(var_258);
     }
     #[allow(unused_mut)]
-    let mut scope_255 = writer.prefix("Description");
-    if let Some(var_256) = &input.description {
-        scope_255.string(var_256);
+    let mut scope_259 = writer.prefix("Description");
+    if let Some(var_260) = &input.description {
+        scope_259.string(var_260);
     }
 }
 
@@ -835,19 +847,19 @@ pub fn serialize_structure_crate_model_icmp_type_code(
     input: &crate::model::IcmpTypeCode,
 ) {
     #[allow(unused_mut)]
-    let mut scope_257 = writer.prefix("Code");
-    if let Some(var_258) = &input.code {
-        scope_257.number(
+    let mut scope_261 = writer.prefix("Code");
+    if let Some(var_262) = &input.code {
+        scope_261.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_258).into()),
+            aws_smithy_types::Number::NegInt((*var_262).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_259 = writer.prefix("Type");
-    if let Some(var_260) = &input.r#type {
-        scope_259.number(
+    let mut scope_263 = writer.prefix("Type");
+    if let Some(var_264) = &input.r#type {
+        scope_263.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_260).into()),
+            aws_smithy_types::Number::NegInt((*var_264).into()),
         );
     }
 }
@@ -858,19 +870,19 @@ pub fn serialize_structure_crate_model_port_range(
     input: &crate::model::PortRange,
 ) {
     #[allow(unused_mut)]
-    let mut scope_261 = writer.prefix("From");
-    if let Some(var_262) = &input.from {
-        scope_261.number(
+    let mut scope_265 = writer.prefix("From");
+    if let Some(var_266) = &input.from {
+        scope_265.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_262).into()),
+            aws_smithy_types::Number::NegInt((*var_266).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_263 = writer.prefix("To");
-    if let Some(var_264) = &input.to {
-        scope_263.number(
+    let mut scope_267 = writer.prefix("To");
+    if let Some(var_268) = &input.to {
+        scope_267.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_264).into()),
+            aws_smithy_types::Number::NegInt((*var_268).into()),
         );
     }
 }
@@ -881,9 +893,9 @@ pub fn serialize_structure_crate_model_instance_ipv6_address(
     input: &crate::model::InstanceIpv6Address,
 ) {
     #[allow(unused_mut)]
-    let mut scope_265 = writer.prefix("Ipv6Address");
-    if let Some(var_266) = &input.ipv6_address {
-        scope_265.string(var_266);
+    let mut scope_269 = writer.prefix("Ipv6Address");
+    if let Some(var_270) = &input.ipv6_address {
+        scope_269.string(var_270);
     }
 }
 
@@ -893,14 +905,14 @@ pub fn serialize_structure_crate_model_private_ip_address_specification(
     input: &crate::model::PrivateIpAddressSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_267 = writer.prefix("Primary");
-    if let Some(var_268) = &input.primary {
-        scope_267.boolean(*var_268);
+    let mut scope_271 = writer.prefix("Primary");
+    if let Some(var_272) = &input.primary {
+        scope_271.boolean(*var_272);
     }
     #[allow(unused_mut)]
-    let mut scope_269 = writer.prefix("PrivateIpAddress");
-    if let Some(var_270) = &input.private_ip_address {
-        scope_269.string(var_270);
+    let mut scope_273 = writer.prefix("PrivateIpAddress");
+    if let Some(var_274) = &input.private_ip_address {
+        scope_273.string(var_274);
     }
 }
 
@@ -910,9 +922,9 @@ pub fn serialize_structure_crate_model_ipv4_prefix_specification_request(
     input: &crate::model::Ipv4PrefixSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_271 = writer.prefix("Ipv4Prefix");
-    if let Some(var_272) = &input.ipv4_prefix {
-        scope_271.string(var_272);
+    let mut scope_275 = writer.prefix("Ipv4Prefix");
+    if let Some(var_276) = &input.ipv4_prefix {
+        scope_275.string(var_276);
     }
 }
 
@@ -922,9 +934,9 @@ pub fn serialize_structure_crate_model_ipv6_prefix_specification_request(
     input: &crate::model::Ipv6PrefixSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_273 = writer.prefix("Ipv6Prefix");
-    if let Some(var_274) = &input.ipv6_prefix {
-        scope_273.string(var_274);
+    let mut scope_277 = writer.prefix("Ipv6Prefix");
+    if let Some(var_278) = &input.ipv6_prefix {
+        scope_277.string(var_278);
     }
 }
 
@@ -934,24 +946,24 @@ pub fn serialize_structure_crate_model_price_schedule_specification(
     input: &crate::model::PriceScheduleSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_275 = writer.prefix("CurrencyCode");
-    if let Some(var_276) = &input.currency_code {
-        scope_275.string(var_276.as_str());
+    let mut scope_279 = writer.prefix("CurrencyCode");
+    if let Some(var_280) = &input.currency_code {
+        scope_279.string(var_280.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_277 = writer.prefix("Price");
-    if let Some(var_278) = &input.price {
-        scope_277.number(
+    let mut scope_281 = writer.prefix("Price");
+    if let Some(var_282) = &input.price {
+        scope_281.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_278).into()),
+            aws_smithy_types::Number::Float((*var_282).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_279 = writer.prefix("Term");
-    if let Some(var_280) = &input.term {
-        scope_279.number(
+    let mut scope_283 = writer.prefix("Term");
+    if let Some(var_284) = &input.term {
+        scope_283.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_280).into()),
+            aws_smithy_types::Number::NegInt((*var_284).into()),
         );
     }
 }
@@ -962,14 +974,14 @@ pub fn serialize_structure_crate_model_instance_specification(
     input: &crate::model::InstanceSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_281 = writer.prefix("InstanceId");
-    if let Some(var_282) = &input.instance_id {
-        scope_281.string(var_282);
+    let mut scope_285 = writer.prefix("InstanceId");
+    if let Some(var_286) = &input.instance_id {
+        scope_285.string(var_286);
     }
     #[allow(unused_mut)]
-    let mut scope_283 = writer.prefix("ExcludeBootVolume");
-    if let Some(var_284) = &input.exclude_boot_volume {
-        scope_283.boolean(*var_284);
+    let mut scope_287 = writer.prefix("ExcludeBootVolume");
+    if let Some(var_288) = &input.exclude_boot_volume {
+        scope_287.boolean(*var_288);
     }
 }
 
@@ -977,23 +989,6 @@ pub fn serialize_structure_crate_model_instance_specification(
 pub fn serialize_structure_crate_model_s3_object_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::S3ObjectTag,
-) {
-    #[allow(unused_mut)]
-    let mut scope_285 = writer.prefix("Key");
-    if let Some(var_286) = &input.key {
-        scope_285.string(var_286);
-    }
-    #[allow(unused_mut)]
-    let mut scope_287 = writer.prefix("Value");
-    if let Some(var_288) = &input.value {
-        scope_287.string(var_288);
-    }
-}
-
-#[allow(unused_mut)]
-pub fn serialize_structure_crate_model_tag(
-    mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Tag,
 ) {
     #[allow(unused_mut)]
     let mut scope_289 = writer.prefix("Key");
@@ -1008,24 +1003,41 @@ pub fn serialize_structure_crate_model_tag(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_tag(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::Tag,
+) {
+    #[allow(unused_mut)]
+    let mut scope_293 = writer.prefix("Key");
+    if let Some(var_294) = &input.key {
+        scope_293.string(var_294);
+    }
+    #[allow(unused_mut)]
+    let mut scope_295 = writer.prefix("Value");
+    if let Some(var_296) = &input.value {
+        scope_295.string(var_296);
+    }
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_traffic_mirror_port_range_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TrafficMirrorPortRangeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_293 = writer.prefix("FromPort");
-    if let Some(var_294) = &input.from_port {
-        scope_293.number(
+    let mut scope_297 = writer.prefix("FromPort");
+    if let Some(var_298) = &input.from_port {
+        scope_297.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_294).into()),
+            aws_smithy_types::Number::NegInt((*var_298).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_295 = writer.prefix("ToPort");
-    if let Some(var_296) = &input.to_port {
-        scope_295.number(
+    let mut scope_299 = writer.prefix("ToPort");
+    if let Some(var_300) = &input.to_port {
+        scope_299.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_296).into()),
+            aws_smithy_types::Number::NegInt((*var_300).into()),
         );
     }
 }
@@ -1036,53 +1048,53 @@ pub fn serialize_structure_crate_model_transit_gateway_request_options(
     input: &crate::model::TransitGatewayRequestOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_297 = writer.prefix("AmazonSideAsn");
-    if let Some(var_298) = &input.amazon_side_asn {
-        scope_297.number(
+    let mut scope_301 = writer.prefix("AmazonSideAsn");
+    if let Some(var_302) = &input.amazon_side_asn {
+        scope_301.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_298).into()),
+            aws_smithy_types::Number::NegInt((*var_302).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_299 = writer.prefix("AutoAcceptSharedAttachments");
-    if let Some(var_300) = &input.auto_accept_shared_attachments {
-        scope_299.string(var_300.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_301 = writer.prefix("DefaultRouteTableAssociation");
-    if let Some(var_302) = &input.default_route_table_association {
-        scope_301.string(var_302.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_303 = writer.prefix("DefaultRouteTablePropagation");
-    if let Some(var_304) = &input.default_route_table_propagation {
+    let mut scope_303 = writer.prefix("AutoAcceptSharedAttachments");
+    if let Some(var_304) = &input.auto_accept_shared_attachments {
         scope_303.string(var_304.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_305 = writer.prefix("VpnEcmpSupport");
-    if let Some(var_306) = &input.vpn_ecmp_support {
+    let mut scope_305 = writer.prefix("DefaultRouteTableAssociation");
+    if let Some(var_306) = &input.default_route_table_association {
         scope_305.string(var_306.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_307 = writer.prefix("DnsSupport");
-    if let Some(var_308) = &input.dns_support {
+    let mut scope_307 = writer.prefix("DefaultRouteTablePropagation");
+    if let Some(var_308) = &input.default_route_table_propagation {
         scope_307.string(var_308.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_309 = writer.prefix("MulticastSupport");
-    if let Some(var_310) = &input.multicast_support {
+    let mut scope_309 = writer.prefix("VpnEcmpSupport");
+    if let Some(var_310) = &input.vpn_ecmp_support {
         scope_309.string(var_310.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_311 = writer.prefix("TransitGatewayCidrBlocks");
-    if let Some(var_312) = &input.transit_gateway_cidr_blocks {
-        let mut list_314 = scope_311.start_list(true, Some("item"));
-        for item_313 in var_312 {
+    let mut scope_311 = writer.prefix("DnsSupport");
+    if let Some(var_312) = &input.dns_support {
+        scope_311.string(var_312.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_313 = writer.prefix("MulticastSupport");
+    if let Some(var_314) = &input.multicast_support {
+        scope_313.string(var_314.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_315 = writer.prefix("TransitGatewayCidrBlocks");
+    if let Some(var_316) = &input.transit_gateway_cidr_blocks {
+        let mut list_318 = scope_315.start_list(true, Some("item"));
+        for item_317 in var_316 {
             #[allow(unused_mut)]
-            let mut entry_315 = list_314.entry();
-            entry_315.string(item_313);
+            let mut entry_319 = list_318.entry();
+            entry_319.string(item_317);
         }
-        list_314.finish();
+        list_318.finish();
     }
 }
 
@@ -1092,9 +1104,9 @@ pub fn serialize_structure_crate_model_create_transit_gateway_connect_request_op
     input: &crate::model::CreateTransitGatewayConnectRequestOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_316 = writer.prefix("Protocol");
-    if let Some(var_317) = &input.protocol {
-        scope_316.string(var_317.as_str());
+    let mut scope_320 = writer.prefix("Protocol");
+    if let Some(var_321) = &input.protocol {
+        scope_320.string(var_321.as_str());
     }
 }
 
@@ -1104,11 +1116,11 @@ pub fn serialize_structure_crate_model_transit_gateway_connect_request_bgp_optio
     input: &crate::model::TransitGatewayConnectRequestBgpOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_318 = writer.prefix("PeerAsn");
-    if let Some(var_319) = &input.peer_asn {
-        scope_318.number(
+    let mut scope_322 = writer.prefix("PeerAsn");
+    if let Some(var_323) = &input.peer_asn {
+        scope_322.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_319).into()),
+            aws_smithy_types::Number::NegInt((*var_323).into()),
         );
     }
 }
@@ -1119,19 +1131,19 @@ pub fn serialize_structure_crate_model_create_transit_gateway_multicast_domain_r
     input: &crate::model::CreateTransitGatewayMulticastDomainRequestOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_320 = writer.prefix("Igmpv2Support");
-    if let Some(var_321) = &input.igmpv2_support {
-        scope_320.string(var_321.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_322 = writer.prefix("StaticSourcesSupport");
-    if let Some(var_323) = &input.static_sources_support {
-        scope_322.string(var_323.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_324 = writer.prefix("AutoAcceptSharedAssociations");
-    if let Some(var_325) = &input.auto_accept_shared_associations {
+    let mut scope_324 = writer.prefix("Igmpv2Support");
+    if let Some(var_325) = &input.igmpv2_support {
         scope_324.string(var_325.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_326 = writer.prefix("StaticSourcesSupport");
+    if let Some(var_327) = &input.static_sources_support {
+        scope_326.string(var_327.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_328 = writer.prefix("AutoAcceptSharedAssociations");
+    if let Some(var_329) = &input.auto_accept_shared_associations {
+        scope_328.string(var_329.as_str());
     }
 }
 
@@ -1141,19 +1153,19 @@ pub fn serialize_structure_crate_model_create_transit_gateway_vpc_attachment_req
     input: &crate::model::CreateTransitGatewayVpcAttachmentRequestOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_326 = writer.prefix("DnsSupport");
-    if let Some(var_327) = &input.dns_support {
-        scope_326.string(var_327.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_328 = writer.prefix("Ipv6Support");
-    if let Some(var_329) = &input.ipv6_support {
-        scope_328.string(var_329.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_330 = writer.prefix("ApplianceModeSupport");
-    if let Some(var_331) = &input.appliance_mode_support {
+    let mut scope_330 = writer.prefix("DnsSupport");
+    if let Some(var_331) = &input.dns_support {
         scope_330.string(var_331.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_332 = writer.prefix("Ipv6Support");
+    if let Some(var_333) = &input.ipv6_support {
+        scope_332.string(var_333.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_334 = writer.prefix("ApplianceModeSupport");
+    if let Some(var_335) = &input.appliance_mode_support {
+        scope_334.string(var_335.as_str());
     }
 }
 
@@ -1163,52 +1175,52 @@ pub fn serialize_structure_crate_model_vpn_connection_options_specification(
     input: &crate::model::VpnConnectionOptionsSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_332 = writer.prefix("EnableAcceleration");
-    if let Some(var_333) = &input.enable_acceleration {
-        scope_332.boolean(*var_333);
+    let mut scope_336 = writer.prefix("EnableAcceleration");
+    if let Some(var_337) = &input.enable_acceleration {
+        scope_336.boolean(*var_337);
     }
     #[allow(unused_mut)]
-    let mut scope_334 = writer.prefix("StaticRoutesOnly");
-    if let Some(var_335) = &input.static_routes_only {
-        scope_334.boolean(*var_335);
+    let mut scope_338 = writer.prefix("StaticRoutesOnly");
+    if let Some(var_339) = &input.static_routes_only {
+        scope_338.boolean(*var_339);
     }
     #[allow(unused_mut)]
-    let mut scope_336 = writer.prefix("TunnelInsideIpVersion");
-    if let Some(var_337) = &input.tunnel_inside_ip_version {
-        scope_336.string(var_337.as_str());
+    let mut scope_340 = writer.prefix("TunnelInsideIpVersion");
+    if let Some(var_341) = &input.tunnel_inside_ip_version {
+        scope_340.string(var_341.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_338 = writer.prefix("TunnelOptions");
-    if let Some(var_339) = &input.tunnel_options {
-        let mut list_341 = scope_338.start_list(true, None);
-        for item_340 in var_339 {
+    let mut scope_342 = writer.prefix("TunnelOptions");
+    if let Some(var_343) = &input.tunnel_options {
+        let mut list_345 = scope_342.start_list(true, None);
+        for item_344 in var_343 {
             #[allow(unused_mut)]
-            let mut entry_342 = list_341.entry();
+            let mut entry_346 = list_345.entry();
             crate::query_ser::serialize_structure_crate_model_vpn_tunnel_options_specification(
-                entry_342, item_340,
+                entry_346, item_344,
             );
         }
-        list_341.finish();
+        list_345.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_343 = writer.prefix("LocalIpv4NetworkCidr");
-    if let Some(var_344) = &input.local_ipv4_network_cidr {
-        scope_343.string(var_344);
-    }
-    #[allow(unused_mut)]
-    let mut scope_345 = writer.prefix("RemoteIpv4NetworkCidr");
-    if let Some(var_346) = &input.remote_ipv4_network_cidr {
-        scope_345.string(var_346);
-    }
-    #[allow(unused_mut)]
-    let mut scope_347 = writer.prefix("LocalIpv6NetworkCidr");
-    if let Some(var_348) = &input.local_ipv6_network_cidr {
+    let mut scope_347 = writer.prefix("LocalIpv4NetworkCidr");
+    if let Some(var_348) = &input.local_ipv4_network_cidr {
         scope_347.string(var_348);
     }
     #[allow(unused_mut)]
-    let mut scope_349 = writer.prefix("RemoteIpv6NetworkCidr");
-    if let Some(var_350) = &input.remote_ipv6_network_cidr {
+    let mut scope_349 = writer.prefix("RemoteIpv4NetworkCidr");
+    if let Some(var_350) = &input.remote_ipv4_network_cidr {
         scope_349.string(var_350);
+    }
+    #[allow(unused_mut)]
+    let mut scope_351 = writer.prefix("LocalIpv6NetworkCidr");
+    if let Some(var_352) = &input.local_ipv6_network_cidr {
+        scope_351.string(var_352);
+    }
+    #[allow(unused_mut)]
+    let mut scope_353 = writer.prefix("RemoteIpv6NetworkCidr");
+    if let Some(var_354) = &input.remote_ipv6_network_cidr {
+        scope_353.string(var_354);
     }
 }
 
@@ -1218,20 +1230,20 @@ pub fn serialize_structure_crate_model_deregister_instance_tag_attribute_request
     input: &crate::model::DeregisterInstanceTagAttributeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_351 = writer.prefix("IncludeAllTagsOfInstance");
-    if let Some(var_352) = &input.include_all_tags_of_instance {
-        scope_351.boolean(*var_352);
+    let mut scope_355 = writer.prefix("IncludeAllTagsOfInstance");
+    if let Some(var_356) = &input.include_all_tags_of_instance {
+        scope_355.boolean(*var_356);
     }
     #[allow(unused_mut)]
-    let mut scope_353 = writer.prefix("InstanceTagKey");
-    if let Some(var_354) = &input.instance_tag_keys {
-        let mut list_356 = scope_353.start_list(true, Some("item"));
-        for item_355 in var_354 {
+    let mut scope_357 = writer.prefix("InstanceTagKey");
+    if let Some(var_358) = &input.instance_tag_keys {
+        let mut list_360 = scope_357.start_list(true, Some("item"));
+        for item_359 in var_358 {
             #[allow(unused_mut)]
-            let mut entry_357 = list_356.entry();
-            entry_357.string(item_355);
+            let mut entry_361 = list_360.entry();
+            entry_361.string(item_359);
         }
-        list_356.finish();
+        list_360.finish();
     }
 }
 
@@ -1241,20 +1253,20 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) {
     #[allow(unused_mut)]
-    let mut scope_358 = writer.prefix("Name");
-    if let Some(var_359) = &input.name {
-        scope_358.string(var_359);
+    let mut scope_362 = writer.prefix("Name");
+    if let Some(var_363) = &input.name {
+        scope_362.string(var_363);
     }
     #[allow(unused_mut)]
-    let mut scope_360 = writer.prefix("Value");
-    if let Some(var_361) = &input.values {
-        let mut list_363 = scope_360.start_list(true, Some("item"));
-        for item_362 in var_361 {
+    let mut scope_364 = writer.prefix("Value");
+    if let Some(var_365) = &input.values {
+        let mut list_367 = scope_364.start_list(true, Some("item"));
+        for item_366 in var_365 {
             #[allow(unused_mut)]
-            let mut entry_364 = list_363.entry();
-            entry_364.string(item_362);
+            let mut entry_368 = list_367.entry();
+            entry_368.string(item_366);
         }
-        list_363.finish();
+        list_367.finish();
     }
 }
 
@@ -1264,14 +1276,14 @@ pub fn serialize_structure_crate_model_slot_date_time_range_request(
     input: &crate::model::SlotDateTimeRangeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_365 = writer.prefix("EarliestTime");
-    if let Some(var_366) = &input.earliest_time {
-        scope_365.instant(var_366, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_369 = writer.prefix("EarliestTime");
+    if let Some(var_370) = &input.earliest_time {
+        scope_369.instant(var_370, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_367 = writer.prefix("LatestTime");
-    if let Some(var_368) = &input.latest_time {
-        scope_367.instant(var_368, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_371 = writer.prefix("LatestTime");
+    if let Some(var_372) = &input.latest_time {
+        scope_371.instant(var_372, aws_smithy_types::instant::Format::DateTime);
     }
 }
 
@@ -1281,41 +1293,41 @@ pub fn serialize_structure_crate_model_scheduled_instance_recurrence_request(
     input: &crate::model::ScheduledInstanceRecurrenceRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_369 = writer.prefix("Frequency");
-    if let Some(var_370) = &input.frequency {
-        scope_369.string(var_370);
+    let mut scope_373 = writer.prefix("Frequency");
+    if let Some(var_374) = &input.frequency {
+        scope_373.string(var_374);
     }
     #[allow(unused_mut)]
-    let mut scope_371 = writer.prefix("Interval");
-    if let Some(var_372) = &input.interval {
-        scope_371.number(
+    let mut scope_375 = writer.prefix("Interval");
+    if let Some(var_376) = &input.interval {
+        scope_375.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_372).into()),
+            aws_smithy_types::Number::NegInt((*var_376).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_373 = writer.prefix("OccurrenceDay");
-    if let Some(var_374) = &input.occurrence_days {
-        let mut list_376 = scope_373.start_list(true, Some("OccurenceDay"));
-        for item_375 in var_374 {
+    let mut scope_377 = writer.prefix("OccurrenceDay");
+    if let Some(var_378) = &input.occurrence_days {
+        let mut list_380 = scope_377.start_list(true, Some("OccurenceDay"));
+        for item_379 in var_378 {
             #[allow(unused_mut)]
-            let mut entry_377 = list_376.entry();
-            entry_377.number(
+            let mut entry_381 = list_380.entry();
+            entry_381.number(
                 #[allow(clippy::useless_conversion)]
-                aws_smithy_types::Number::NegInt((*item_375).into()),
+                aws_smithy_types::Number::NegInt((*item_379).into()),
             );
         }
-        list_376.finish();
+        list_380.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_378 = writer.prefix("OccurrenceRelativeToEnd");
-    if let Some(var_379) = &input.occurrence_relative_to_end {
-        scope_378.boolean(*var_379);
+    let mut scope_382 = writer.prefix("OccurrenceRelativeToEnd");
+    if let Some(var_383) = &input.occurrence_relative_to_end {
+        scope_382.boolean(*var_383);
     }
     #[allow(unused_mut)]
-    let mut scope_380 = writer.prefix("OccurrenceUnit");
-    if let Some(var_381) = &input.occurrence_unit {
-        scope_380.string(var_381);
+    let mut scope_384 = writer.prefix("OccurrenceUnit");
+    if let Some(var_385) = &input.occurrence_unit {
+        scope_384.string(var_385);
     }
 }
 
@@ -1325,14 +1337,14 @@ pub fn serialize_structure_crate_model_slot_start_time_range_request(
     input: &crate::model::SlotStartTimeRangeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_382 = writer.prefix("EarliestTime");
-    if let Some(var_383) = &input.earliest_time {
-        scope_382.instant(var_383, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_386 = writer.prefix("EarliestTime");
+    if let Some(var_387) = &input.earliest_time {
+        scope_386.instant(var_387, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_384 = writer.prefix("LatestTime");
-    if let Some(var_385) = &input.latest_time {
-        scope_384.instant(var_385, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_388 = writer.prefix("LatestTime");
+    if let Some(var_389) = &input.latest_time {
+        scope_388.instant(var_389, aws_smithy_types::instant::Format::DateTime);
     }
 }
 
@@ -1342,37 +1354,37 @@ pub fn serialize_structure_crate_model_instance_event_window_disassociation_requ
     input: &crate::model::InstanceEventWindowDisassociationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_386 = writer.prefix("InstanceId");
-    if let Some(var_387) = &input.instance_ids {
-        let mut list_389 = scope_386.start_list(true, Some("item"));
-        for item_388 in var_387 {
+    let mut scope_390 = writer.prefix("InstanceId");
+    if let Some(var_391) = &input.instance_ids {
+        let mut list_393 = scope_390.start_list(true, Some("item"));
+        for item_392 in var_391 {
             #[allow(unused_mut)]
-            let mut entry_390 = list_389.entry();
-            entry_390.string(item_388);
+            let mut entry_394 = list_393.entry();
+            entry_394.string(item_392);
         }
-        list_389.finish();
+        list_393.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_391 = writer.prefix("InstanceTag");
-    if let Some(var_392) = &input.instance_tags {
-        let mut list_394 = scope_391.start_list(true, Some("item"));
-        for item_393 in var_392 {
+    let mut scope_395 = writer.prefix("InstanceTag");
+    if let Some(var_396) = &input.instance_tags {
+        let mut list_398 = scope_395.start_list(true, Some("item"));
+        for item_397 in var_396 {
             #[allow(unused_mut)]
-            let mut entry_395 = list_394.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_395, item_393);
+            let mut entry_399 = list_398.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_399, item_397);
         }
-        list_394.finish();
+        list_398.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_396 = writer.prefix("DedicatedHostId");
-    if let Some(var_397) = &input.dedicated_host_ids {
-        let mut list_399 = scope_396.start_list(true, Some("item"));
-        for item_398 in var_397 {
+    let mut scope_400 = writer.prefix("DedicatedHostId");
+    if let Some(var_401) = &input.dedicated_host_ids {
+        let mut list_403 = scope_400.start_list(true, Some("item"));
+        for item_402 in var_401 {
             #[allow(unused_mut)]
-            let mut entry_400 = list_399.entry();
-            entry_400.string(item_398);
+            let mut entry_404 = list_403.entry();
+            entry_404.string(item_402);
         }
-        list_399.finish();
+        list_403.finish();
     }
 }
 
@@ -1382,14 +1394,14 @@ pub fn serialize_structure_crate_model_export_task_s3_location_request(
     input: &crate::model::ExportTaskS3LocationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_401 = writer.prefix("S3Bucket");
-    if let Some(var_402) = &input.s3_bucket {
-        scope_401.string(var_402);
+    let mut scope_405 = writer.prefix("S3Bucket");
+    if let Some(var_406) = &input.s3_bucket {
+        scope_405.string(var_406);
     }
     #[allow(unused_mut)]
-    let mut scope_403 = writer.prefix("S3Prefix");
-    if let Some(var_404) = &input.s3_prefix {
-        scope_403.string(var_404);
+    let mut scope_407 = writer.prefix("S3Prefix");
+    if let Some(var_408) = &input.s3_prefix {
+        scope_407.string(var_408);
     }
 }
 
@@ -1399,17 +1411,227 @@ pub fn serialize_structure_crate_model_integrate_services(
     input: &crate::model::IntegrateServices,
 ) {
     #[allow(unused_mut)]
-    let mut scope_405 = writer.prefix("AthenaIntegration");
-    if let Some(var_406) = &input.athena_integrations {
-        let mut list_408 = scope_405.start_list(true, Some("item"));
-        for item_407 in var_406 {
+    let mut scope_409 = writer.prefix("AthenaIntegration");
+    if let Some(var_410) = &input.athena_integrations {
+        let mut list_412 = scope_409.start_list(true, Some("item"));
+        for item_411 in var_410 {
             #[allow(unused_mut)]
-            let mut entry_409 = list_408.entry();
+            let mut entry_413 = list_412.entry();
             crate::query_ser::serialize_structure_crate_model_athena_integration(
-                entry_409, item_407,
+                entry_413, item_411,
             );
         }
-        list_408.finish();
+        list_412.finish();
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_instance_requirements_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::InstanceRequirementsRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_414 = writer.prefix("VCpuCount");
+    if let Some(var_415) = &input.v_cpu_count {
+        crate::query_ser::serialize_structure_crate_model_v_cpu_count_range_request(
+            scope_414, var_415,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_416 = writer.prefix("MemoryMiB");
+    if let Some(var_417) = &input.memory_mi_b {
+        crate::query_ser::serialize_structure_crate_model_memory_mi_b_request(scope_416, var_417);
+    }
+    #[allow(unused_mut)]
+    let mut scope_418 = writer.prefix("CpuManufacturer");
+    if let Some(var_419) = &input.cpu_manufacturers {
+        let mut list_421 = scope_418.start_list(true, Some("item"));
+        for item_420 in var_419 {
+            #[allow(unused_mut)]
+            let mut entry_422 = list_421.entry();
+            entry_422.string(item_420.as_str());
+        }
+        list_421.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_423 = writer.prefix("MemoryGiBPerVCpu");
+    if let Some(var_424) = &input.memory_gi_b_per_v_cpu {
+        crate::query_ser::serialize_structure_crate_model_memory_gi_b_per_v_cpu_request(
+            scope_423, var_424,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_425 = writer.prefix("ExcludedInstanceType");
+    if let Some(var_426) = &input.excluded_instance_types {
+        let mut list_428 = scope_425.start_list(true, Some("item"));
+        for item_427 in var_426 {
+            #[allow(unused_mut)]
+            let mut entry_429 = list_428.entry();
+            entry_429.string(item_427);
+        }
+        list_428.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_430 = writer.prefix("InstanceGeneration");
+    if let Some(var_431) = &input.instance_generations {
+        let mut list_433 = scope_430.start_list(true, Some("item"));
+        for item_432 in var_431 {
+            #[allow(unused_mut)]
+            let mut entry_434 = list_433.entry();
+            entry_434.string(item_432.as_str());
+        }
+        list_433.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_435 = writer.prefix("SpotMaxPricePercentageOverLowestPrice");
+    if let Some(var_436) = &input.spot_max_price_percentage_over_lowest_price {
+        scope_435.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_436).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_437 = writer.prefix("OnDemandMaxPricePercentageOverLowestPrice");
+    if let Some(var_438) = &input.on_demand_max_price_percentage_over_lowest_price {
+        scope_437.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_438).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_439 = writer.prefix("BareMetal");
+    if let Some(var_440) = &input.bare_metal {
+        scope_439.string(var_440.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_441 = writer.prefix("BurstablePerformance");
+    if let Some(var_442) = &input.burstable_performance {
+        scope_441.string(var_442.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_443 = writer.prefix("RequireHibernateSupport");
+    if let Some(var_444) = &input.require_hibernate_support {
+        scope_443.boolean(*var_444);
+    }
+    #[allow(unused_mut)]
+    let mut scope_445 = writer.prefix("NetworkInterfaceCount");
+    if let Some(var_446) = &input.network_interface_count {
+        crate::query_ser::serialize_structure_crate_model_network_interface_count_request(
+            scope_445, var_446,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_447 = writer.prefix("LocalStorage");
+    if let Some(var_448) = &input.local_storage {
+        scope_447.string(var_448.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_449 = writer.prefix("LocalStorageType");
+    if let Some(var_450) = &input.local_storage_types {
+        let mut list_452 = scope_449.start_list(true, Some("item"));
+        for item_451 in var_450 {
+            #[allow(unused_mut)]
+            let mut entry_453 = list_452.entry();
+            entry_453.string(item_451.as_str());
+        }
+        list_452.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_454 = writer.prefix("TotalLocalStorageGB");
+    if let Some(var_455) = &input.total_local_storage_gb {
+        crate::query_ser::serialize_structure_crate_model_total_local_storage_gb_request(
+            scope_454, var_455,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_456 = writer.prefix("BaselineEbsBandwidthMbps");
+    if let Some(var_457) = &input.baseline_ebs_bandwidth_mbps {
+        crate::query_ser::serialize_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
+            scope_456, var_457,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_458 = writer.prefix("AcceleratorType");
+    if let Some(var_459) = &input.accelerator_types {
+        let mut list_461 = scope_458.start_list(true, Some("item"));
+        for item_460 in var_459 {
+            #[allow(unused_mut)]
+            let mut entry_462 = list_461.entry();
+            entry_462.string(item_460.as_str());
+        }
+        list_461.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_463 = writer.prefix("AcceleratorCount");
+    if let Some(var_464) = &input.accelerator_count {
+        crate::query_ser::serialize_structure_crate_model_accelerator_count_request(
+            scope_463, var_464,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_465 = writer.prefix("AcceleratorManufacturer");
+    if let Some(var_466) = &input.accelerator_manufacturers {
+        let mut list_468 = scope_465.start_list(true, Some("item"));
+        for item_467 in var_466 {
+            #[allow(unused_mut)]
+            let mut entry_469 = list_468.entry();
+            entry_469.string(item_467.as_str());
+        }
+        list_468.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_470 = writer.prefix("AcceleratorName");
+    if let Some(var_471) = &input.accelerator_names {
+        let mut list_473 = scope_470.start_list(true, Some("item"));
+        for item_472 in var_471 {
+            #[allow(unused_mut)]
+            let mut entry_474 = list_473.entry();
+            entry_474.string(item_472.as_str());
+        }
+        list_473.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_475 = writer.prefix("AcceleratorTotalMemoryMiB");
+    if let Some(var_476) = &input.accelerator_total_memory_mi_b {
+        crate::query_ser::serialize_structure_crate_model_accelerator_total_memory_mi_b_request(
+            scope_475, var_476,
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_instance_requirements_with_metadata_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::InstanceRequirementsWithMetadataRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_477 = writer.prefix("ArchitectureType");
+    if let Some(var_478) = &input.architecture_types {
+        let mut list_480 = scope_477.start_list(true, Some("item"));
+        for item_479 in var_478 {
+            #[allow(unused_mut)]
+            let mut entry_481 = list_480.entry();
+            entry_481.string(item_479.as_str());
+        }
+        list_480.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_482 = writer.prefix("VirtualizationType");
+    if let Some(var_483) = &input.virtualization_types {
+        let mut list_485 = scope_482.start_list(true, Some("item"));
+        for item_484 in var_483 {
+            #[allow(unused_mut)]
+            let mut entry_486 = list_485.entry();
+            entry_486.string(item_484.as_str());
+        }
+        list_485.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_487 = writer.prefix("InstanceRequirements");
+    if let Some(var_488) = &input.instance_requirements {
+        crate::query_ser::serialize_structure_crate_model_instance_requirements_request(
+            scope_487, var_488,
+        );
     }
 }
 
@@ -1419,27 +1641,27 @@ pub fn serialize_structure_crate_model_client_data(
     input: &crate::model::ClientData,
 ) {
     #[allow(unused_mut)]
-    let mut scope_410 = writer.prefix("Comment");
-    if let Some(var_411) = &input.comment {
-        scope_410.string(var_411);
+    let mut scope_489 = writer.prefix("Comment");
+    if let Some(var_490) = &input.comment {
+        scope_489.string(var_490);
     }
     #[allow(unused_mut)]
-    let mut scope_412 = writer.prefix("UploadEnd");
-    if let Some(var_413) = &input.upload_end {
-        scope_412.instant(var_413, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_491 = writer.prefix("UploadEnd");
+    if let Some(var_492) = &input.upload_end {
+        scope_491.instant(var_492, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_414 = writer.prefix("UploadSize");
-    if let Some(var_415) = &input.upload_size {
-        scope_414.number(
+    let mut scope_493 = writer.prefix("UploadSize");
+    if let Some(var_494) = &input.upload_size {
+        scope_493.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_415).into()),
+            aws_smithy_types::Number::Float((*var_494).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_416 = writer.prefix("UploadStart");
-    if let Some(var_417) = &input.upload_start {
-        scope_416.instant(var_417, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_495 = writer.prefix("UploadStart");
+    if let Some(var_496) = &input.upload_start {
+        scope_495.instant(var_496, aws_smithy_types::instant::Format::DateTime);
     }
 }
 
@@ -1449,34 +1671,34 @@ pub fn serialize_structure_crate_model_image_disk_container(
     input: &crate::model::ImageDiskContainer,
 ) {
     #[allow(unused_mut)]
-    let mut scope_418 = writer.prefix("Description");
-    if let Some(var_419) = &input.description {
-        scope_418.string(var_419);
+    let mut scope_497 = writer.prefix("Description");
+    if let Some(var_498) = &input.description {
+        scope_497.string(var_498);
     }
     #[allow(unused_mut)]
-    let mut scope_420 = writer.prefix("DeviceName");
-    if let Some(var_421) = &input.device_name {
-        scope_420.string(var_421);
+    let mut scope_499 = writer.prefix("DeviceName");
+    if let Some(var_500) = &input.device_name {
+        scope_499.string(var_500);
     }
     #[allow(unused_mut)]
-    let mut scope_422 = writer.prefix("Format");
-    if let Some(var_423) = &input.format {
-        scope_422.string(var_423);
+    let mut scope_501 = writer.prefix("Format");
+    if let Some(var_502) = &input.format {
+        scope_501.string(var_502);
     }
     #[allow(unused_mut)]
-    let mut scope_424 = writer.prefix("SnapshotId");
-    if let Some(var_425) = &input.snapshot_id {
-        scope_424.string(var_425);
+    let mut scope_503 = writer.prefix("SnapshotId");
+    if let Some(var_504) = &input.snapshot_id {
+        scope_503.string(var_504);
     }
     #[allow(unused_mut)]
-    let mut scope_426 = writer.prefix("Url");
-    if let Some(var_427) = &input.url {
-        scope_426.string(var_427);
+    let mut scope_505 = writer.prefix("Url");
+    if let Some(var_506) = &input.url {
+        scope_505.string(var_506);
     }
     #[allow(unused_mut)]
-    let mut scope_428 = writer.prefix("UserBucket");
-    if let Some(var_429) = &input.user_bucket {
-        crate::query_ser::serialize_structure_crate_model_user_bucket(scope_428, var_429);
+    let mut scope_507 = writer.prefix("UserBucket");
+    if let Some(var_508) = &input.user_bucket {
+        crate::query_ser::serialize_structure_crate_model_user_bucket(scope_507, var_508);
     }
 }
 
@@ -1486,9 +1708,9 @@ pub fn serialize_structure_crate_model_import_image_license_configuration_reques
     input: &crate::model::ImportImageLicenseConfigurationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_430 = writer.prefix("LicenseConfigurationArn");
-    if let Some(var_431) = &input.license_configuration_arn {
-        scope_430.string(var_431);
+    let mut scope_509 = writer.prefix("LicenseConfigurationArn");
+    if let Some(var_510) = &input.license_configuration_arn {
+        scope_509.string(var_510);
     }
 }
 
@@ -1498,19 +1720,19 @@ pub fn serialize_structure_crate_model_disk_image(
     input: &crate::model::DiskImage,
 ) {
     #[allow(unused_mut)]
-    let mut scope_432 = writer.prefix("Description");
-    if let Some(var_433) = &input.description {
-        scope_432.string(var_433);
+    let mut scope_511 = writer.prefix("Description");
+    if let Some(var_512) = &input.description {
+        scope_511.string(var_512);
     }
     #[allow(unused_mut)]
-    let mut scope_434 = writer.prefix("Image");
-    if let Some(var_435) = &input.image {
-        crate::query_ser::serialize_structure_crate_model_disk_image_detail(scope_434, var_435);
+    let mut scope_513 = writer.prefix("Image");
+    if let Some(var_514) = &input.image {
+        crate::query_ser::serialize_structure_crate_model_disk_image_detail(scope_513, var_514);
     }
     #[allow(unused_mut)]
-    let mut scope_436 = writer.prefix("Volume");
-    if let Some(var_437) = &input.volume {
-        crate::query_ser::serialize_structure_crate_model_volume_detail(scope_436, var_437);
+    let mut scope_515 = writer.prefix("Volume");
+    if let Some(var_516) = &input.volume {
+        crate::query_ser::serialize_structure_crate_model_volume_detail(scope_515, var_516);
     }
 }
 
@@ -1520,71 +1742,71 @@ pub fn serialize_structure_crate_model_import_instance_launch_specification(
     input: &crate::model::ImportInstanceLaunchSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_438 = writer.prefix("AdditionalInfo");
-    if let Some(var_439) = &input.additional_info {
-        scope_438.string(var_439);
+    let mut scope_517 = writer.prefix("AdditionalInfo");
+    if let Some(var_518) = &input.additional_info {
+        scope_517.string(var_518);
     }
     #[allow(unused_mut)]
-    let mut scope_440 = writer.prefix("Architecture");
-    if let Some(var_441) = &input.architecture {
-        scope_440.string(var_441.as_str());
+    let mut scope_519 = writer.prefix("Architecture");
+    if let Some(var_520) = &input.architecture {
+        scope_519.string(var_520.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_442 = writer.prefix("GroupId");
-    if let Some(var_443) = &input.group_ids {
-        let mut list_445 = scope_442.start_list(true, Some("SecurityGroupId"));
-        for item_444 in var_443 {
+    let mut scope_521 = writer.prefix("GroupId");
+    if let Some(var_522) = &input.group_ids {
+        let mut list_524 = scope_521.start_list(true, Some("SecurityGroupId"));
+        for item_523 in var_522 {
             #[allow(unused_mut)]
-            let mut entry_446 = list_445.entry();
-            entry_446.string(item_444);
+            let mut entry_525 = list_524.entry();
+            entry_525.string(item_523);
         }
-        list_445.finish();
+        list_524.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_447 = writer.prefix("GroupName");
-    if let Some(var_448) = &input.group_names {
-        let mut list_450 = scope_447.start_list(true, Some("SecurityGroup"));
-        for item_449 in var_448 {
+    let mut scope_526 = writer.prefix("GroupName");
+    if let Some(var_527) = &input.group_names {
+        let mut list_529 = scope_526.start_list(true, Some("SecurityGroup"));
+        for item_528 in var_527 {
             #[allow(unused_mut)]
-            let mut entry_451 = list_450.entry();
-            entry_451.string(item_449);
+            let mut entry_530 = list_529.entry();
+            entry_530.string(item_528);
         }
-        list_450.finish();
+        list_529.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_452 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_453) = &input.instance_initiated_shutdown_behavior {
-        scope_452.string(var_453.as_str());
+    let mut scope_531 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_532) = &input.instance_initiated_shutdown_behavior {
+        scope_531.string(var_532.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_454 = writer.prefix("InstanceType");
-    if let Some(var_455) = &input.instance_type {
-        scope_454.string(var_455.as_str());
+    let mut scope_533 = writer.prefix("InstanceType");
+    if let Some(var_534) = &input.instance_type {
+        scope_533.string(var_534.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_456 = writer.prefix("Monitoring");
-    if let Some(var_457) = &input.monitoring {
-        scope_456.boolean(*var_457);
+    let mut scope_535 = writer.prefix("Monitoring");
+    if let Some(var_536) = &input.monitoring {
+        scope_535.boolean(*var_536);
     }
     #[allow(unused_mut)]
-    let mut scope_458 = writer.prefix("Placement");
-    if let Some(var_459) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_placement(scope_458, var_459);
+    let mut scope_537 = writer.prefix("Placement");
+    if let Some(var_538) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_placement(scope_537, var_538);
     }
     #[allow(unused_mut)]
-    let mut scope_460 = writer.prefix("PrivateIpAddress");
-    if let Some(var_461) = &input.private_ip_address {
-        scope_460.string(var_461);
+    let mut scope_539 = writer.prefix("PrivateIpAddress");
+    if let Some(var_540) = &input.private_ip_address {
+        scope_539.string(var_540);
     }
     #[allow(unused_mut)]
-    let mut scope_462 = writer.prefix("SubnetId");
-    if let Some(var_463) = &input.subnet_id {
-        scope_462.string(var_463);
+    let mut scope_541 = writer.prefix("SubnetId");
+    if let Some(var_542) = &input.subnet_id {
+        scope_541.string(var_542);
     }
     #[allow(unused_mut)]
-    let mut scope_464 = writer.prefix("UserData");
-    if let Some(var_465) = &input.user_data {
-        crate::query_ser::serialize_structure_crate_model_user_data(scope_464, var_465);
+    let mut scope_543 = writer.prefix("UserData");
+    if let Some(var_544) = &input.user_data {
+        crate::query_ser::serialize_structure_crate_model_user_data(scope_543, var_544);
     }
 }
 
@@ -1594,24 +1816,24 @@ pub fn serialize_structure_crate_model_snapshot_disk_container(
     input: &crate::model::SnapshotDiskContainer,
 ) {
     #[allow(unused_mut)]
-    let mut scope_466 = writer.prefix("Description");
-    if let Some(var_467) = &input.description {
-        scope_466.string(var_467);
+    let mut scope_545 = writer.prefix("Description");
+    if let Some(var_546) = &input.description {
+        scope_545.string(var_546);
     }
     #[allow(unused_mut)]
-    let mut scope_468 = writer.prefix("Format");
-    if let Some(var_469) = &input.format {
-        scope_468.string(var_469);
+    let mut scope_547 = writer.prefix("Format");
+    if let Some(var_548) = &input.format {
+        scope_547.string(var_548);
     }
     #[allow(unused_mut)]
-    let mut scope_470 = writer.prefix("Url");
-    if let Some(var_471) = &input.url {
-        scope_470.string(var_471);
+    let mut scope_549 = writer.prefix("Url");
+    if let Some(var_550) = &input.url {
+        scope_549.string(var_550);
     }
     #[allow(unused_mut)]
-    let mut scope_472 = writer.prefix("UserBucket");
-    if let Some(var_473) = &input.user_bucket {
-        crate::query_ser::serialize_structure_crate_model_user_bucket(scope_472, var_473);
+    let mut scope_551 = writer.prefix("UserBucket");
+    if let Some(var_552) = &input.user_bucket {
+        crate::query_ser::serialize_structure_crate_model_user_bucket(scope_551, var_552);
     }
 }
 
@@ -1621,22 +1843,22 @@ pub fn serialize_structure_crate_model_disk_image_detail(
     input: &crate::model::DiskImageDetail,
 ) {
     #[allow(unused_mut)]
-    let mut scope_474 = writer.prefix("Bytes");
-    if let Some(var_475) = &input.bytes {
-        scope_474.number(
+    let mut scope_553 = writer.prefix("Bytes");
+    if let Some(var_554) = &input.bytes {
+        scope_553.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_475).into()),
+            aws_smithy_types::Number::NegInt((*var_554).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_476 = writer.prefix("Format");
-    if let Some(var_477) = &input.format {
-        scope_476.string(var_477.as_str());
+    let mut scope_555 = writer.prefix("Format");
+    if let Some(var_556) = &input.format {
+        scope_555.string(var_556.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_478 = writer.prefix("ImportManifestUrl");
-    if let Some(var_479) = &input.import_manifest_url {
-        scope_478.string(var_479);
+    let mut scope_557 = writer.prefix("ImportManifestUrl");
+    if let Some(var_558) = &input.import_manifest_url {
+        scope_557.string(var_558);
     }
 }
 
@@ -1646,11 +1868,11 @@ pub fn serialize_structure_crate_model_volume_detail(
     input: &crate::model::VolumeDetail,
 ) {
     #[allow(unused_mut)]
-    let mut scope_480 = writer.prefix("Size");
-    if let Some(var_481) = &input.size {
-        scope_480.number(
+    let mut scope_559 = writer.prefix("Size");
+    if let Some(var_560) = &input.size {
+        scope_559.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_481).into()),
+            aws_smithy_types::Number::NegInt((*var_560).into()),
         );
     }
 }
@@ -1661,20 +1883,20 @@ pub fn serialize_structure_crate_model_dns_servers_options_modify_structure(
     input: &crate::model::DnsServersOptionsModifyStructure,
 ) {
     #[allow(unused_mut)]
-    let mut scope_482 = writer.prefix("CustomDnsServers");
-    if let Some(var_483) = &input.custom_dns_servers {
-        let mut list_485 = scope_482.start_list(true, Some("item"));
-        for item_484 in var_483 {
+    let mut scope_561 = writer.prefix("CustomDnsServers");
+    if let Some(var_562) = &input.custom_dns_servers {
+        let mut list_564 = scope_561.start_list(true, Some("item"));
+        for item_563 in var_562 {
             #[allow(unused_mut)]
-            let mut entry_486 = list_485.entry();
-            entry_486.string(item_484);
+            let mut entry_565 = list_564.entry();
+            entry_565.string(item_563);
         }
-        list_485.finish();
+        list_564.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_487 = writer.prefix("Enabled");
-    if let Some(var_488) = &input.enabled {
-        scope_487.boolean(*var_488);
+    let mut scope_566 = writer.prefix("Enabled");
+    if let Some(var_567) = &input.enabled {
+        scope_566.boolean(*var_567);
     }
 }
 
@@ -1684,30 +1906,30 @@ pub fn serialize_structure_crate_model_load_permission_modifications(
     input: &crate::model::LoadPermissionModifications,
 ) {
     #[allow(unused_mut)]
-    let mut scope_489 = writer.prefix("Add");
-    if let Some(var_490) = &input.add {
-        let mut list_492 = scope_489.start_list(true, Some("item"));
-        for item_491 in var_490 {
+    let mut scope_568 = writer.prefix("Add");
+    if let Some(var_569) = &input.add {
+        let mut list_571 = scope_568.start_list(true, Some("item"));
+        for item_570 in var_569 {
             #[allow(unused_mut)]
-            let mut entry_493 = list_492.entry();
+            let mut entry_572 = list_571.entry();
             crate::query_ser::serialize_structure_crate_model_load_permission_request(
-                entry_493, item_491,
+                entry_572, item_570,
             );
         }
-        list_492.finish();
+        list_571.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_494 = writer.prefix("Remove");
-    if let Some(var_495) = &input.remove {
-        let mut list_497 = scope_494.start_list(true, Some("item"));
-        for item_496 in var_495 {
+    let mut scope_573 = writer.prefix("Remove");
+    if let Some(var_574) = &input.remove {
+        let mut list_576 = scope_573.start_list(true, Some("item"));
+        for item_575 in var_574 {
             #[allow(unused_mut)]
-            let mut entry_498 = list_497.entry();
+            let mut entry_577 = list_576.entry();
             crate::query_ser::serialize_structure_crate_model_load_permission_request(
-                entry_498, item_496,
+                entry_577, item_575,
             );
         }
-        list_497.finish();
+        list_576.finish();
     }
 }
 
@@ -1717,9 +1939,9 @@ pub fn serialize_structure_crate_model_attribute_value(
     input: &crate::model::AttributeValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_499 = writer.prefix("Value");
-    if let Some(var_500) = &input.value {
-        scope_499.string(var_500);
+    let mut scope_578 = writer.prefix("Value");
+    if let Some(var_579) = &input.value {
+        scope_578.string(var_579);
     }
 }
 
@@ -1729,30 +1951,30 @@ pub fn serialize_structure_crate_model_launch_permission_modifications(
     input: &crate::model::LaunchPermissionModifications,
 ) {
     #[allow(unused_mut)]
-    let mut scope_501 = writer.prefix("Add");
-    if let Some(var_502) = &input.add {
-        let mut list_504 = scope_501.start_list(true, Some("item"));
-        for item_503 in var_502 {
+    let mut scope_580 = writer.prefix("Add");
+    if let Some(var_581) = &input.add {
+        let mut list_583 = scope_580.start_list(true, Some("item"));
+        for item_582 in var_581 {
             #[allow(unused_mut)]
-            let mut entry_505 = list_504.entry();
+            let mut entry_584 = list_583.entry();
             crate::query_ser::serialize_structure_crate_model_launch_permission(
-                entry_505, item_503,
+                entry_584, item_582,
             );
         }
-        list_504.finish();
+        list_583.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_506 = writer.prefix("Remove");
-    if let Some(var_507) = &input.remove {
-        let mut list_509 = scope_506.start_list(true, Some("item"));
-        for item_508 in var_507 {
+    let mut scope_585 = writer.prefix("Remove");
+    if let Some(var_586) = &input.remove {
+        let mut list_588 = scope_585.start_list(true, Some("item"));
+        for item_587 in var_586 {
             #[allow(unused_mut)]
-            let mut entry_510 = list_509.entry();
+            let mut entry_589 = list_588.entry();
             crate::query_ser::serialize_structure_crate_model_launch_permission(
-                entry_510, item_508,
+                entry_589, item_587,
             );
         }
-        list_509.finish();
+        list_588.finish();
     }
 }
 
@@ -1762,9 +1984,9 @@ pub fn serialize_structure_crate_model_attribute_boolean_value(
     input: &crate::model::AttributeBooleanValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_511 = writer.prefix("Value");
-    if let Some(var_512) = &input.value {
-        scope_511.boolean(*var_512);
+    let mut scope_590 = writer.prefix("Value");
+    if let Some(var_591) = &input.value {
+        scope_590.boolean(*var_591);
     }
 }
 
@@ -1774,26 +1996,26 @@ pub fn serialize_structure_crate_model_instance_block_device_mapping_specificati
     input: &crate::model::InstanceBlockDeviceMappingSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_513 = writer.prefix("DeviceName");
-    if let Some(var_514) = &input.device_name {
-        scope_513.string(var_514);
+    let mut scope_592 = writer.prefix("DeviceName");
+    if let Some(var_593) = &input.device_name {
+        scope_592.string(var_593);
     }
     #[allow(unused_mut)]
-    let mut scope_515 = writer.prefix("Ebs");
-    if let Some(var_516) = &input.ebs {
+    let mut scope_594 = writer.prefix("Ebs");
+    if let Some(var_595) = &input.ebs {
         crate::query_ser::serialize_structure_crate_model_ebs_instance_block_device_specification(
-            scope_515, var_516,
+            scope_594, var_595,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_517 = writer.prefix("NoDevice");
-    if let Some(var_518) = &input.no_device {
-        scope_517.string(var_518);
+    let mut scope_596 = writer.prefix("NoDevice");
+    if let Some(var_597) = &input.no_device {
+        scope_596.string(var_597);
     }
     #[allow(unused_mut)]
-    let mut scope_519 = writer.prefix("VirtualName");
-    if let Some(var_520) = &input.virtual_name {
-        scope_519.string(var_520);
+    let mut scope_598 = writer.prefix("VirtualName");
+    if let Some(var_599) = &input.virtual_name {
+        scope_598.string(var_599);
     }
 }
 
@@ -1803,9 +2025,9 @@ pub fn serialize_structure_crate_model_blob_attribute_value(
     input: &crate::model::BlobAttributeValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_521 = writer.prefix("Value");
-    if let Some(var_522) = &input.value {
-        scope_521.string(&aws_smithy_types::base64::encode(var_522));
+    let mut scope_600 = writer.prefix("Value");
+    if let Some(var_601) = &input.value {
+        scope_600.string(&aws_smithy_types::base64::encode(var_601));
     }
 }
 
@@ -1815,15 +2037,15 @@ pub fn serialize_structure_crate_model_capacity_reservation_specification(
     input: &crate::model::CapacityReservationSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_523 = writer.prefix("CapacityReservationPreference");
-    if let Some(var_524) = &input.capacity_reservation_preference {
-        scope_523.string(var_524.as_str());
+    let mut scope_602 = writer.prefix("CapacityReservationPreference");
+    if let Some(var_603) = &input.capacity_reservation_preference {
+        scope_602.string(var_603.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_525 = writer.prefix("CapacityReservationTarget");
-    if let Some(var_526) = &input.capacity_reservation_target {
+    let mut scope_604 = writer.prefix("CapacityReservationTarget");
+    if let Some(var_605) = &input.capacity_reservation_target {
         crate::query_ser::serialize_structure_crate_model_capacity_reservation_target(
-            scope_525, var_526,
+            scope_604, var_605,
         );
     }
 }
@@ -1834,14 +2056,14 @@ pub fn serialize_structure_crate_model_instance_credit_specification_request(
     input: &crate::model::InstanceCreditSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_527 = writer.prefix("InstanceId");
-    if let Some(var_528) = &input.instance_id {
-        scope_527.string(var_528);
+    let mut scope_606 = writer.prefix("InstanceId");
+    if let Some(var_607) = &input.instance_id {
+        scope_606.string(var_607);
     }
     #[allow(unused_mut)]
-    let mut scope_529 = writer.prefix("CpuCredits");
-    if let Some(var_530) = &input.cpu_credits {
-        scope_529.string(var_530);
+    let mut scope_608 = writer.prefix("CpuCredits");
+    if let Some(var_609) = &input.cpu_credits {
+        scope_608.string(var_609);
     }
 }
 
@@ -1851,9 +2073,9 @@ pub fn serialize_structure_crate_model_remove_prefix_list_entry(
     input: &crate::model::RemovePrefixListEntry,
 ) {
     #[allow(unused_mut)]
-    let mut scope_531 = writer.prefix("Cidr");
-    if let Some(var_532) = &input.cidr {
-        scope_531.string(var_532);
+    let mut scope_610 = writer.prefix("Cidr");
+    if let Some(var_611) = &input.cidr {
+        scope_610.string(var_611);
     }
 }
 
@@ -1863,14 +2085,14 @@ pub fn serialize_structure_crate_model_network_interface_attachment_changes(
     input: &crate::model::NetworkInterfaceAttachmentChanges,
 ) {
     #[allow(unused_mut)]
-    let mut scope_533 = writer.prefix("AttachmentId");
-    if let Some(var_534) = &input.attachment_id {
-        scope_533.string(var_534);
+    let mut scope_612 = writer.prefix("AttachmentId");
+    if let Some(var_613) = &input.attachment_id {
+        scope_612.string(var_613);
     }
     #[allow(unused_mut)]
-    let mut scope_535 = writer.prefix("DeleteOnTermination");
-    if let Some(var_536) = &input.delete_on_termination {
-        scope_535.boolean(*var_536);
+    let mut scope_614 = writer.prefix("DeleteOnTermination");
+    if let Some(var_615) = &input.delete_on_termination {
+        scope_614.boolean(*var_615);
     }
 }
 
@@ -1880,32 +2102,32 @@ pub fn serialize_structure_crate_model_reserved_instances_configuration(
     input: &crate::model::ReservedInstancesConfiguration,
 ) {
     #[allow(unused_mut)]
-    let mut scope_537 = writer.prefix("AvailabilityZone");
-    if let Some(var_538) = &input.availability_zone {
-        scope_537.string(var_538);
+    let mut scope_616 = writer.prefix("AvailabilityZone");
+    if let Some(var_617) = &input.availability_zone {
+        scope_616.string(var_617);
     }
     #[allow(unused_mut)]
-    let mut scope_539 = writer.prefix("InstanceCount");
-    if let Some(var_540) = &input.instance_count {
-        scope_539.number(
+    let mut scope_618 = writer.prefix("InstanceCount");
+    if let Some(var_619) = &input.instance_count {
+        scope_618.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_540).into()),
+            aws_smithy_types::Number::NegInt((*var_619).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_541 = writer.prefix("InstanceType");
-    if let Some(var_542) = &input.instance_type {
-        scope_541.string(var_542.as_str());
+    let mut scope_620 = writer.prefix("InstanceType");
+    if let Some(var_621) = &input.instance_type {
+        scope_620.string(var_621.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_543 = writer.prefix("Platform");
-    if let Some(var_544) = &input.platform {
-        scope_543.string(var_544);
+    let mut scope_622 = writer.prefix("Platform");
+    if let Some(var_623) = &input.platform {
+        scope_622.string(var_623);
     }
     #[allow(unused_mut)]
-    let mut scope_545 = writer.prefix("Scope");
-    if let Some(var_546) = &input.scope {
-        scope_545.string(var_546.as_str());
+    let mut scope_624 = writer.prefix("Scope");
+    if let Some(var_625) = &input.scope {
+        scope_624.string(var_625.as_str());
     }
 }
 
@@ -1915,15 +2137,15 @@ pub fn serialize_structure_crate_model_security_group_rule_update(
     input: &crate::model::SecurityGroupRuleUpdate,
 ) {
     #[allow(unused_mut)]
-    let mut scope_547 = writer.prefix("SecurityGroupRuleId");
-    if let Some(var_548) = &input.security_group_rule_id {
-        scope_547.string(var_548);
+    let mut scope_626 = writer.prefix("SecurityGroupRuleId");
+    if let Some(var_627) = &input.security_group_rule_id {
+        scope_626.string(var_627);
     }
     #[allow(unused_mut)]
-    let mut scope_549 = writer.prefix("SecurityGroupRule");
-    if let Some(var_550) = &input.security_group_rule {
+    let mut scope_628 = writer.prefix("SecurityGroupRule");
+    if let Some(var_629) = &input.security_group_rule {
         crate::query_ser::serialize_structure_crate_model_security_group_rule_request(
-            scope_549, var_550,
+            scope_628, var_629,
         );
     }
 }
@@ -1934,30 +2156,30 @@ pub fn serialize_structure_crate_model_create_volume_permission_modifications(
     input: &crate::model::CreateVolumePermissionModifications,
 ) {
     #[allow(unused_mut)]
-    let mut scope_551 = writer.prefix("Add");
-    if let Some(var_552) = &input.add {
-        let mut list_554 = scope_551.start_list(true, Some("item"));
-        for item_553 in var_552 {
+    let mut scope_630 = writer.prefix("Add");
+    if let Some(var_631) = &input.add {
+        let mut list_633 = scope_630.start_list(true, Some("item"));
+        for item_632 in var_631 {
             #[allow(unused_mut)]
-            let mut entry_555 = list_554.entry();
+            let mut entry_634 = list_633.entry();
             crate::query_ser::serialize_structure_crate_model_create_volume_permission(
-                entry_555, item_553,
+                entry_634, item_632,
             );
         }
-        list_554.finish();
+        list_633.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_556 = writer.prefix("Remove");
-    if let Some(var_557) = &input.remove {
-        let mut list_559 = scope_556.start_list(true, Some("item"));
-        for item_558 in var_557 {
+    let mut scope_635 = writer.prefix("Remove");
+    if let Some(var_636) = &input.remove {
+        let mut list_638 = scope_635.start_list(true, Some("item"));
+        for item_637 in var_636 {
             #[allow(unused_mut)]
-            let mut entry_560 = list_559.entry();
+            let mut entry_639 = list_638.entry();
             crate::query_ser::serialize_structure_crate_model_create_volume_permission(
-                entry_560, item_558,
+                entry_639, item_637,
             );
         }
-        list_559.finish();
+        list_638.finish();
     }
 }
 
@@ -1967,24 +2189,24 @@ pub fn serialize_structure_crate_model_launch_template_config(
     input: &crate::model::LaunchTemplateConfig,
 ) {
     #[allow(unused_mut)]
-    let mut scope_561 = writer.prefix("LaunchTemplateSpecification");
-    if let Some(var_562) = &input.launch_template_specification {
+    let mut scope_640 = writer.prefix("LaunchTemplateSpecification");
+    if let Some(var_641) = &input.launch_template_specification {
         crate::query_ser::serialize_structure_crate_model_fleet_launch_template_specification(
-            scope_561, var_562,
+            scope_640, var_641,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_563 = writer.prefix("Overrides");
-    if let Some(var_564) = &input.overrides {
-        let mut list_566 = scope_563.start_list(true, Some("item"));
-        for item_565 in var_564 {
+    let mut scope_642 = writer.prefix("Overrides");
+    if let Some(var_643) = &input.overrides {
+        let mut list_645 = scope_642.start_list(true, Some("item"));
+        for item_644 in var_643 {
             #[allow(unused_mut)]
-            let mut entry_567 = list_566.entry();
+            let mut entry_646 = list_645.entry();
             crate::query_ser::serialize_structure_crate_model_launch_template_overrides(
-                entry_567, item_565,
+                entry_646, item_644,
             );
         }
-        list_566.finish();
+        list_645.finish();
     }
 }
 
@@ -1994,61 +2216,61 @@ pub fn serialize_structure_crate_model_modify_transit_gateway_options(
     input: &crate::model::ModifyTransitGatewayOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_568 = writer.prefix("AddTransitGatewayCidrBlocks");
-    if let Some(var_569) = &input.add_transit_gateway_cidr_blocks {
-        let mut list_571 = scope_568.start_list(true, Some("item"));
-        for item_570 in var_569 {
+    let mut scope_647 = writer.prefix("AddTransitGatewayCidrBlocks");
+    if let Some(var_648) = &input.add_transit_gateway_cidr_blocks {
+        let mut list_650 = scope_647.start_list(true, Some("item"));
+        for item_649 in var_648 {
             #[allow(unused_mut)]
-            let mut entry_572 = list_571.entry();
-            entry_572.string(item_570);
+            let mut entry_651 = list_650.entry();
+            entry_651.string(item_649);
         }
-        list_571.finish();
+        list_650.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_573 = writer.prefix("RemoveTransitGatewayCidrBlocks");
-    if let Some(var_574) = &input.remove_transit_gateway_cidr_blocks {
-        let mut list_576 = scope_573.start_list(true, Some("item"));
-        for item_575 in var_574 {
+    let mut scope_652 = writer.prefix("RemoveTransitGatewayCidrBlocks");
+    if let Some(var_653) = &input.remove_transit_gateway_cidr_blocks {
+        let mut list_655 = scope_652.start_list(true, Some("item"));
+        for item_654 in var_653 {
             #[allow(unused_mut)]
-            let mut entry_577 = list_576.entry();
-            entry_577.string(item_575);
+            let mut entry_656 = list_655.entry();
+            entry_656.string(item_654);
         }
-        list_576.finish();
+        list_655.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_578 = writer.prefix("VpnEcmpSupport");
-    if let Some(var_579) = &input.vpn_ecmp_support {
-        scope_578.string(var_579.as_str());
+    let mut scope_657 = writer.prefix("VpnEcmpSupport");
+    if let Some(var_658) = &input.vpn_ecmp_support {
+        scope_657.string(var_658.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_580 = writer.prefix("DnsSupport");
-    if let Some(var_581) = &input.dns_support {
-        scope_580.string(var_581.as_str());
+    let mut scope_659 = writer.prefix("DnsSupport");
+    if let Some(var_660) = &input.dns_support {
+        scope_659.string(var_660.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_582 = writer.prefix("AutoAcceptSharedAttachments");
-    if let Some(var_583) = &input.auto_accept_shared_attachments {
-        scope_582.string(var_583.as_str());
+    let mut scope_661 = writer.prefix("AutoAcceptSharedAttachments");
+    if let Some(var_662) = &input.auto_accept_shared_attachments {
+        scope_661.string(var_662.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_584 = writer.prefix("DefaultRouteTableAssociation");
-    if let Some(var_585) = &input.default_route_table_association {
-        scope_584.string(var_585.as_str());
+    let mut scope_663 = writer.prefix("DefaultRouteTableAssociation");
+    if let Some(var_664) = &input.default_route_table_association {
+        scope_663.string(var_664.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_586 = writer.prefix("AssociationDefaultRouteTableId");
-    if let Some(var_587) = &input.association_default_route_table_id {
-        scope_586.string(var_587);
+    let mut scope_665 = writer.prefix("AssociationDefaultRouteTableId");
+    if let Some(var_666) = &input.association_default_route_table_id {
+        scope_665.string(var_666);
     }
     #[allow(unused_mut)]
-    let mut scope_588 = writer.prefix("DefaultRouteTablePropagation");
-    if let Some(var_589) = &input.default_route_table_propagation {
-        scope_588.string(var_589.as_str());
+    let mut scope_667 = writer.prefix("DefaultRouteTablePropagation");
+    if let Some(var_668) = &input.default_route_table_propagation {
+        scope_667.string(var_668.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_590 = writer.prefix("PropagationDefaultRouteTableId");
-    if let Some(var_591) = &input.propagation_default_route_table_id {
-        scope_590.string(var_591);
+    let mut scope_669 = writer.prefix("PropagationDefaultRouteTableId");
+    if let Some(var_670) = &input.propagation_default_route_table_id {
+        scope_669.string(var_670);
     }
 }
 
@@ -2058,19 +2280,19 @@ pub fn serialize_structure_crate_model_modify_transit_gateway_vpc_attachment_req
     input: &crate::model::ModifyTransitGatewayVpcAttachmentRequestOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_592 = writer.prefix("DnsSupport");
-    if let Some(var_593) = &input.dns_support {
-        scope_592.string(var_593.as_str());
+    let mut scope_671 = writer.prefix("DnsSupport");
+    if let Some(var_672) = &input.dns_support {
+        scope_671.string(var_672.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_594 = writer.prefix("Ipv6Support");
-    if let Some(var_595) = &input.ipv6_support {
-        scope_594.string(var_595.as_str());
+    let mut scope_673 = writer.prefix("Ipv6Support");
+    if let Some(var_674) = &input.ipv6_support {
+        scope_673.string(var_674.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_596 = writer.prefix("ApplianceModeSupport");
-    if let Some(var_597) = &input.appliance_mode_support {
-        scope_596.string(var_597.as_str());
+    let mut scope_675 = writer.prefix("ApplianceModeSupport");
+    if let Some(var_676) = &input.appliance_mode_support {
+        scope_675.string(var_676.as_str());
     }
 }
 
@@ -2080,19 +2302,19 @@ pub fn serialize_structure_crate_model_peering_connection_options_request(
     input: &crate::model::PeeringConnectionOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_598 = writer.prefix("AllowDnsResolutionFromRemoteVpc");
-    if let Some(var_599) = &input.allow_dns_resolution_from_remote_vpc {
-        scope_598.boolean(*var_599);
+    let mut scope_677 = writer.prefix("AllowDnsResolutionFromRemoteVpc");
+    if let Some(var_678) = &input.allow_dns_resolution_from_remote_vpc {
+        scope_677.boolean(*var_678);
     }
     #[allow(unused_mut)]
-    let mut scope_600 = writer.prefix("AllowEgressFromLocalClassicLinkToRemoteVpc");
-    if let Some(var_601) = &input.allow_egress_from_local_classic_link_to_remote_vpc {
-        scope_600.boolean(*var_601);
+    let mut scope_679 = writer.prefix("AllowEgressFromLocalClassicLinkToRemoteVpc");
+    if let Some(var_680) = &input.allow_egress_from_local_classic_link_to_remote_vpc {
+        scope_679.boolean(*var_680);
     }
     #[allow(unused_mut)]
-    let mut scope_602 = writer.prefix("AllowEgressFromLocalVpcToRemoteClassicLink");
-    if let Some(var_603) = &input.allow_egress_from_local_vpc_to_remote_classic_link {
-        scope_602.boolean(*var_603);
+    let mut scope_681 = writer.prefix("AllowEgressFromLocalVpcToRemoteClassicLink");
+    if let Some(var_682) = &input.allow_egress_from_local_vpc_to_remote_classic_link {
+        scope_681.boolean(*var_682);
     }
 }
 
@@ -2102,156 +2324,156 @@ pub fn serialize_structure_crate_model_modify_vpn_tunnel_options_specification(
     input: &crate::model::ModifyVpnTunnelOptionsSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_604 = writer.prefix("TunnelInsideCidr");
-    if let Some(var_605) = &input.tunnel_inside_cidr {
-        scope_604.string(var_605);
+    let mut scope_683 = writer.prefix("TunnelInsideCidr");
+    if let Some(var_684) = &input.tunnel_inside_cidr {
+        scope_683.string(var_684);
     }
     #[allow(unused_mut)]
-    let mut scope_606 = writer.prefix("TunnelInsideIpv6Cidr");
-    if let Some(var_607) = &input.tunnel_inside_ipv6_cidr {
-        scope_606.string(var_607);
+    let mut scope_685 = writer.prefix("TunnelInsideIpv6Cidr");
+    if let Some(var_686) = &input.tunnel_inside_ipv6_cidr {
+        scope_685.string(var_686);
     }
     #[allow(unused_mut)]
-    let mut scope_608 = writer.prefix("PreSharedKey");
-    if let Some(var_609) = &input.pre_shared_key {
-        scope_608.string(var_609);
+    let mut scope_687 = writer.prefix("PreSharedKey");
+    if let Some(var_688) = &input.pre_shared_key {
+        scope_687.string(var_688);
     }
     #[allow(unused_mut)]
-    let mut scope_610 = writer.prefix("Phase1LifetimeSeconds");
-    if let Some(var_611) = &input.phase1_lifetime_seconds {
-        scope_610.number(
+    let mut scope_689 = writer.prefix("Phase1LifetimeSeconds");
+    if let Some(var_690) = &input.phase1_lifetime_seconds {
+        scope_689.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_611).into()),
+            aws_smithy_types::Number::NegInt((*var_690).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_612 = writer.prefix("Phase2LifetimeSeconds");
-    if let Some(var_613) = &input.phase2_lifetime_seconds {
-        scope_612.number(
+    let mut scope_691 = writer.prefix("Phase2LifetimeSeconds");
+    if let Some(var_692) = &input.phase2_lifetime_seconds {
+        scope_691.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_613).into()),
+            aws_smithy_types::Number::NegInt((*var_692).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_614 = writer.prefix("RekeyMarginTimeSeconds");
-    if let Some(var_615) = &input.rekey_margin_time_seconds {
-        scope_614.number(
+    let mut scope_693 = writer.prefix("RekeyMarginTimeSeconds");
+    if let Some(var_694) = &input.rekey_margin_time_seconds {
+        scope_693.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_615).into()),
+            aws_smithy_types::Number::NegInt((*var_694).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_616 = writer.prefix("RekeyFuzzPercentage");
-    if let Some(var_617) = &input.rekey_fuzz_percentage {
-        scope_616.number(
+    let mut scope_695 = writer.prefix("RekeyFuzzPercentage");
+    if let Some(var_696) = &input.rekey_fuzz_percentage {
+        scope_695.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_617).into()),
+            aws_smithy_types::Number::NegInt((*var_696).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_618 = writer.prefix("ReplayWindowSize");
-    if let Some(var_619) = &input.replay_window_size {
-        scope_618.number(
+    let mut scope_697 = writer.prefix("ReplayWindowSize");
+    if let Some(var_698) = &input.replay_window_size {
+        scope_697.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_619).into()),
+            aws_smithy_types::Number::NegInt((*var_698).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_620 = writer.prefix("DPDTimeoutSeconds");
-    if let Some(var_621) = &input.dpd_timeout_seconds {
-        scope_620.number(
+    let mut scope_699 = writer.prefix("DPDTimeoutSeconds");
+    if let Some(var_700) = &input.dpd_timeout_seconds {
+        scope_699.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_621).into()),
+            aws_smithy_types::Number::NegInt((*var_700).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_622 = writer.prefix("DPDTimeoutAction");
-    if let Some(var_623) = &input.dpd_timeout_action {
-        scope_622.string(var_623);
+    let mut scope_701 = writer.prefix("DPDTimeoutAction");
+    if let Some(var_702) = &input.dpd_timeout_action {
+        scope_701.string(var_702);
     }
     #[allow(unused_mut)]
-    let mut scope_624 = writer.prefix("Phase1EncryptionAlgorithm");
-    if let Some(var_625) = &input.phase1_encryption_algorithms {
-        let mut list_627 = scope_624.start_list(true, Some("item"));
-        for item_626 in var_625 {
+    let mut scope_703 = writer.prefix("Phase1EncryptionAlgorithm");
+    if let Some(var_704) = &input.phase1_encryption_algorithms {
+        let mut list_706 = scope_703.start_list(true, Some("item"));
+        for item_705 in var_704 {
             #[allow(unused_mut)]
-            let mut entry_628 = list_627.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_encryption_algorithms_request_list_value(entry_628, item_626);
+            let mut entry_707 = list_706.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_encryption_algorithms_request_list_value(entry_707, item_705);
         }
-        list_627.finish();
+        list_706.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_629 = writer.prefix("Phase2EncryptionAlgorithm");
-    if let Some(var_630) = &input.phase2_encryption_algorithms {
-        let mut list_632 = scope_629.start_list(true, Some("item"));
-        for item_631 in var_630 {
+    let mut scope_708 = writer.prefix("Phase2EncryptionAlgorithm");
+    if let Some(var_709) = &input.phase2_encryption_algorithms {
+        let mut list_711 = scope_708.start_list(true, Some("item"));
+        for item_710 in var_709 {
             #[allow(unused_mut)]
-            let mut entry_633 = list_632.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_encryption_algorithms_request_list_value(entry_633, item_631);
+            let mut entry_712 = list_711.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_encryption_algorithms_request_list_value(entry_712, item_710);
         }
-        list_632.finish();
+        list_711.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_634 = writer.prefix("Phase1IntegrityAlgorithm");
-    if let Some(var_635) = &input.phase1_integrity_algorithms {
-        let mut list_637 = scope_634.start_list(true, Some("item"));
-        for item_636 in var_635 {
+    let mut scope_713 = writer.prefix("Phase1IntegrityAlgorithm");
+    if let Some(var_714) = &input.phase1_integrity_algorithms {
+        let mut list_716 = scope_713.start_list(true, Some("item"));
+        for item_715 in var_714 {
             #[allow(unused_mut)]
-            let mut entry_638 = list_637.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_integrity_algorithms_request_list_value(entry_638, item_636);
+            let mut entry_717 = list_716.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_integrity_algorithms_request_list_value(entry_717, item_715);
         }
-        list_637.finish();
+        list_716.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_639 = writer.prefix("Phase2IntegrityAlgorithm");
-    if let Some(var_640) = &input.phase2_integrity_algorithms {
-        let mut list_642 = scope_639.start_list(true, Some("item"));
-        for item_641 in var_640 {
+    let mut scope_718 = writer.prefix("Phase2IntegrityAlgorithm");
+    if let Some(var_719) = &input.phase2_integrity_algorithms {
+        let mut list_721 = scope_718.start_list(true, Some("item"));
+        for item_720 in var_719 {
             #[allow(unused_mut)]
-            let mut entry_643 = list_642.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_integrity_algorithms_request_list_value(entry_643, item_641);
+            let mut entry_722 = list_721.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_integrity_algorithms_request_list_value(entry_722, item_720);
         }
-        list_642.finish();
+        list_721.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_644 = writer.prefix("Phase1DHGroupNumber");
-    if let Some(var_645) = &input.phase1_dh_group_numbers {
-        let mut list_647 = scope_644.start_list(true, Some("item"));
-        for item_646 in var_645 {
+    let mut scope_723 = writer.prefix("Phase1DHGroupNumber");
+    if let Some(var_724) = &input.phase1_dh_group_numbers {
+        let mut list_726 = scope_723.start_list(true, Some("item"));
+        for item_725 in var_724 {
             #[allow(unused_mut)]
-            let mut entry_648 = list_647.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_dh_group_numbers_request_list_value(entry_648, item_646);
+            let mut entry_727 = list_726.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_dh_group_numbers_request_list_value(entry_727, item_725);
         }
-        list_647.finish();
+        list_726.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_649 = writer.prefix("Phase2DHGroupNumber");
-    if let Some(var_650) = &input.phase2_dh_group_numbers {
-        let mut list_652 = scope_649.start_list(true, Some("item"));
-        for item_651 in var_650 {
+    let mut scope_728 = writer.prefix("Phase2DHGroupNumber");
+    if let Some(var_729) = &input.phase2_dh_group_numbers {
+        let mut list_731 = scope_728.start_list(true, Some("item"));
+        for item_730 in var_729 {
             #[allow(unused_mut)]
-            let mut entry_653 = list_652.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_dh_group_numbers_request_list_value(entry_653, item_651);
+            let mut entry_732 = list_731.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_dh_group_numbers_request_list_value(entry_732, item_730);
         }
-        list_652.finish();
+        list_731.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_654 = writer.prefix("IKEVersion");
-    if let Some(var_655) = &input.ike_versions {
-        let mut list_657 = scope_654.start_list(true, Some("item"));
-        for item_656 in var_655 {
+    let mut scope_733 = writer.prefix("IKEVersion");
+    if let Some(var_734) = &input.ike_versions {
+        let mut list_736 = scope_733.start_list(true, Some("item"));
+        for item_735 in var_734 {
             #[allow(unused_mut)]
-            let mut entry_658 = list_657.entry();
+            let mut entry_737 = list_736.entry();
             crate::query_ser::serialize_structure_crate_model_ike_versions_request_list_value(
-                entry_658, item_656,
+                entry_737, item_735,
             );
         }
-        list_657.finish();
+        list_736.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_659 = writer.prefix("StartupAction");
-    if let Some(var_660) = &input.startup_action {
-        scope_659.string(var_660);
+    let mut scope_738 = writer.prefix("StartupAction");
+    if let Some(var_739) = &input.startup_action {
+        scope_738.string(var_739);
     }
 }
 
@@ -2261,14 +2483,14 @@ pub fn serialize_structure_crate_model_cidr_authorization_context(
     input: &crate::model::CidrAuthorizationContext,
 ) {
     #[allow(unused_mut)]
-    let mut scope_661 = writer.prefix("Message");
-    if let Some(var_662) = &input.message {
-        scope_661.string(var_662);
+    let mut scope_740 = writer.prefix("Message");
+    if let Some(var_741) = &input.message {
+        scope_740.string(var_741);
     }
     #[allow(unused_mut)]
-    let mut scope_663 = writer.prefix("Signature");
-    if let Some(var_664) = &input.signature {
-        scope_663.string(var_664);
+    let mut scope_742 = writer.prefix("Signature");
+    if let Some(var_743) = &input.signature {
+        scope_742.string(var_743);
     }
 }
 
@@ -2278,17 +2500,17 @@ pub fn serialize_structure_crate_model_reserved_instance_limit_price(
     input: &crate::model::ReservedInstanceLimitPrice,
 ) {
     #[allow(unused_mut)]
-    let mut scope_665 = writer.prefix("Amount");
-    if let Some(var_666) = &input.amount {
-        scope_665.number(
+    let mut scope_744 = writer.prefix("Amount");
+    if let Some(var_745) = &input.amount {
+        scope_744.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_666).into()),
+            aws_smithy_types::Number::Float((*var_745).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_667 = writer.prefix("CurrencyCode");
-    if let Some(var_668) = &input.currency_code {
-        scope_667.string(var_668.as_str());
+    let mut scope_746 = writer.prefix("CurrencyCode");
+    if let Some(var_747) = &input.currency_code {
+        scope_746.string(var_747.as_str());
     }
 }
 
@@ -2298,17 +2520,17 @@ pub fn serialize_structure_crate_model_purchase_request(
     input: &crate::model::PurchaseRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_669 = writer.prefix("InstanceCount");
-    if let Some(var_670) = &input.instance_count {
-        scope_669.number(
+    let mut scope_748 = writer.prefix("InstanceCount");
+    if let Some(var_749) = &input.instance_count {
+        scope_748.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_670).into()),
+            aws_smithy_types::Number::NegInt((*var_749).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_671 = writer.prefix("PurchaseToken");
-    if let Some(var_672) = &input.purchase_token {
-        scope_671.string(var_672);
+    let mut scope_750 = writer.prefix("PurchaseToken");
+    if let Some(var_751) = &input.purchase_token {
+        scope_750.string(var_751);
     }
 }
 
@@ -2318,20 +2540,20 @@ pub fn serialize_structure_crate_model_register_instance_tag_attribute_request(
     input: &crate::model::RegisterInstanceTagAttributeRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_673 = writer.prefix("IncludeAllTagsOfInstance");
-    if let Some(var_674) = &input.include_all_tags_of_instance {
-        scope_673.boolean(*var_674);
+    let mut scope_752 = writer.prefix("IncludeAllTagsOfInstance");
+    if let Some(var_753) = &input.include_all_tags_of_instance {
+        scope_752.boolean(*var_753);
     }
     #[allow(unused_mut)]
-    let mut scope_675 = writer.prefix("InstanceTagKey");
-    if let Some(var_676) = &input.instance_tag_keys {
-        let mut list_678 = scope_675.start_list(true, Some("item"));
-        for item_677 in var_676 {
+    let mut scope_754 = writer.prefix("InstanceTagKey");
+    if let Some(var_755) = &input.instance_tag_keys {
+        let mut list_757 = scope_754.start_list(true, Some("item"));
+        for item_756 in var_755 {
             #[allow(unused_mut)]
-            let mut entry_679 = list_678.entry();
-            entry_679.string(item_677);
+            let mut entry_758 = list_757.entry();
+            entry_758.string(item_756);
         }
-        list_678.finish();
+        list_757.finish();
     }
 }
 
@@ -2341,170 +2563,175 @@ pub fn serialize_structure_crate_model_spot_fleet_request_config_data(
     input: &crate::model::SpotFleetRequestConfigData,
 ) {
     #[allow(unused_mut)]
-    let mut scope_680 = writer.prefix("AllocationStrategy");
-    if let Some(var_681) = &input.allocation_strategy {
-        scope_680.string(var_681.as_str());
+    let mut scope_759 = writer.prefix("AllocationStrategy");
+    if let Some(var_760) = &input.allocation_strategy {
+        scope_759.string(var_760.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_682 = writer.prefix("OnDemandAllocationStrategy");
-    if let Some(var_683) = &input.on_demand_allocation_strategy {
-        scope_682.string(var_683.as_str());
+    let mut scope_761 = writer.prefix("OnDemandAllocationStrategy");
+    if let Some(var_762) = &input.on_demand_allocation_strategy {
+        scope_761.string(var_762.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_684 = writer.prefix("SpotMaintenanceStrategies");
-    if let Some(var_685) = &input.spot_maintenance_strategies {
+    let mut scope_763 = writer.prefix("SpotMaintenanceStrategies");
+    if let Some(var_764) = &input.spot_maintenance_strategies {
         crate::query_ser::serialize_structure_crate_model_spot_maintenance_strategies(
-            scope_684, var_685,
+            scope_763, var_764,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_686 = writer.prefix("ClientToken");
-    if let Some(var_687) = &input.client_token {
-        scope_686.string(var_687);
+    let mut scope_765 = writer.prefix("ClientToken");
+    if let Some(var_766) = &input.client_token {
+        scope_765.string(var_766);
     }
     #[allow(unused_mut)]
-    let mut scope_688 = writer.prefix("ExcessCapacityTerminationPolicy");
-    if let Some(var_689) = &input.excess_capacity_termination_policy {
-        scope_688.string(var_689.as_str());
+    let mut scope_767 = writer.prefix("ExcessCapacityTerminationPolicy");
+    if let Some(var_768) = &input.excess_capacity_termination_policy {
+        scope_767.string(var_768.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_690 = writer.prefix("FulfilledCapacity");
-    if let Some(var_691) = &input.fulfilled_capacity {
-        scope_690.number(
+    let mut scope_769 = writer.prefix("FulfilledCapacity");
+    if let Some(var_770) = &input.fulfilled_capacity {
+        scope_769.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_691).into()),
+            aws_smithy_types::Number::Float((*var_770).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_692 = writer.prefix("OnDemandFulfilledCapacity");
-    if let Some(var_693) = &input.on_demand_fulfilled_capacity {
-        scope_692.number(
+    let mut scope_771 = writer.prefix("OnDemandFulfilledCapacity");
+    if let Some(var_772) = &input.on_demand_fulfilled_capacity {
+        scope_771.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_693).into()),
+            aws_smithy_types::Number::Float((*var_772).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_694 = writer.prefix("IamFleetRole");
-    if let Some(var_695) = &input.iam_fleet_role {
-        scope_694.string(var_695);
+    let mut scope_773 = writer.prefix("IamFleetRole");
+    if let Some(var_774) = &input.iam_fleet_role {
+        scope_773.string(var_774);
     }
     #[allow(unused_mut)]
-    let mut scope_696 = writer.prefix("LaunchSpecifications");
-    if let Some(var_697) = &input.launch_specifications {
-        let mut list_699 = scope_696.start_list(true, Some("item"));
-        for item_698 in var_697 {
+    let mut scope_775 = writer.prefix("LaunchSpecifications");
+    if let Some(var_776) = &input.launch_specifications {
+        let mut list_778 = scope_775.start_list(true, Some("item"));
+        for item_777 in var_776 {
             #[allow(unused_mut)]
-            let mut entry_700 = list_699.entry();
+            let mut entry_779 = list_778.entry();
             crate::query_ser::serialize_structure_crate_model_spot_fleet_launch_specification(
-                entry_700, item_698,
+                entry_779, item_777,
             );
         }
-        list_699.finish();
+        list_778.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_701 = writer.prefix("LaunchTemplateConfigs");
-    if let Some(var_702) = &input.launch_template_configs {
-        let mut list_704 = scope_701.start_list(true, Some("item"));
-        for item_703 in var_702 {
+    let mut scope_780 = writer.prefix("LaunchTemplateConfigs");
+    if let Some(var_781) = &input.launch_template_configs {
+        let mut list_783 = scope_780.start_list(true, Some("item"));
+        for item_782 in var_781 {
             #[allow(unused_mut)]
-            let mut entry_705 = list_704.entry();
+            let mut entry_784 = list_783.entry();
             crate::query_ser::serialize_structure_crate_model_launch_template_config(
-                entry_705, item_703,
+                entry_784, item_782,
             );
         }
-        list_704.finish();
+        list_783.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_706 = writer.prefix("SpotPrice");
-    if let Some(var_707) = &input.spot_price {
-        scope_706.string(var_707);
+    let mut scope_785 = writer.prefix("SpotPrice");
+    if let Some(var_786) = &input.spot_price {
+        scope_785.string(var_786);
     }
     #[allow(unused_mut)]
-    let mut scope_708 = writer.prefix("TargetCapacity");
-    if let Some(var_709) = &input.target_capacity {
-        scope_708.number(
+    let mut scope_787 = writer.prefix("TargetCapacity");
+    if let Some(var_788) = &input.target_capacity {
+        scope_787.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_709).into()),
+            aws_smithy_types::Number::NegInt((*var_788).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_710 = writer.prefix("OnDemandTargetCapacity");
-    if let Some(var_711) = &input.on_demand_target_capacity {
-        scope_710.number(
+    let mut scope_789 = writer.prefix("OnDemandTargetCapacity");
+    if let Some(var_790) = &input.on_demand_target_capacity {
+        scope_789.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_711).into()),
+            aws_smithy_types::Number::NegInt((*var_790).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_712 = writer.prefix("OnDemandMaxTotalPrice");
-    if let Some(var_713) = &input.on_demand_max_total_price {
-        scope_712.string(var_713);
+    let mut scope_791 = writer.prefix("OnDemandMaxTotalPrice");
+    if let Some(var_792) = &input.on_demand_max_total_price {
+        scope_791.string(var_792);
     }
     #[allow(unused_mut)]
-    let mut scope_714 = writer.prefix("SpotMaxTotalPrice");
-    if let Some(var_715) = &input.spot_max_total_price {
-        scope_714.string(var_715);
+    let mut scope_793 = writer.prefix("SpotMaxTotalPrice");
+    if let Some(var_794) = &input.spot_max_total_price {
+        scope_793.string(var_794);
     }
     #[allow(unused_mut)]
-    let mut scope_716 = writer.prefix("TerminateInstancesWithExpiration");
-    if let Some(var_717) = &input.terminate_instances_with_expiration {
-        scope_716.boolean(*var_717);
+    let mut scope_795 = writer.prefix("TerminateInstancesWithExpiration");
+    if let Some(var_796) = &input.terminate_instances_with_expiration {
+        scope_795.boolean(*var_796);
     }
     #[allow(unused_mut)]
-    let mut scope_718 = writer.prefix("Type");
-    if let Some(var_719) = &input.r#type {
-        scope_718.string(var_719.as_str());
+    let mut scope_797 = writer.prefix("Type");
+    if let Some(var_798) = &input.r#type {
+        scope_797.string(var_798.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_720 = writer.prefix("ValidFrom");
-    if let Some(var_721) = &input.valid_from {
-        scope_720.instant(var_721, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_799 = writer.prefix("ValidFrom");
+    if let Some(var_800) = &input.valid_from {
+        scope_799.instant(var_800, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_722 = writer.prefix("ValidUntil");
-    if let Some(var_723) = &input.valid_until {
-        scope_722.instant(var_723, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_801 = writer.prefix("ValidUntil");
+    if let Some(var_802) = &input.valid_until {
+        scope_801.instant(var_802, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_724 = writer.prefix("ReplaceUnhealthyInstances");
-    if let Some(var_725) = &input.replace_unhealthy_instances {
-        scope_724.boolean(*var_725);
+    let mut scope_803 = writer.prefix("ReplaceUnhealthyInstances");
+    if let Some(var_804) = &input.replace_unhealthy_instances {
+        scope_803.boolean(*var_804);
     }
     #[allow(unused_mut)]
-    let mut scope_726 = writer.prefix("InstanceInterruptionBehavior");
-    if let Some(var_727) = &input.instance_interruption_behavior {
-        scope_726.string(var_727.as_str());
+    let mut scope_805 = writer.prefix("InstanceInterruptionBehavior");
+    if let Some(var_806) = &input.instance_interruption_behavior {
+        scope_805.string(var_806.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_728 = writer.prefix("LoadBalancersConfig");
-    if let Some(var_729) = &input.load_balancers_config {
-        crate::query_ser::serialize_structure_crate_model_load_balancers_config(scope_728, var_729);
+    let mut scope_807 = writer.prefix("LoadBalancersConfig");
+    if let Some(var_808) = &input.load_balancers_config {
+        crate::query_ser::serialize_structure_crate_model_load_balancers_config(scope_807, var_808);
     }
     #[allow(unused_mut)]
-    let mut scope_730 = writer.prefix("InstancePoolsToUseCount");
-    if let Some(var_731) = &input.instance_pools_to_use_count {
-        scope_730.number(
+    let mut scope_809 = writer.prefix("InstancePoolsToUseCount");
+    if let Some(var_810) = &input.instance_pools_to_use_count {
+        scope_809.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_731).into()),
+            aws_smithy_types::Number::NegInt((*var_810).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_732 = writer.prefix("Context");
-    if let Some(var_733) = &input.context {
-        scope_732.string(var_733);
+    let mut scope_811 = writer.prefix("Context");
+    if let Some(var_812) = &input.context {
+        scope_811.string(var_812);
     }
     #[allow(unused_mut)]
-    let mut scope_734 = writer.prefix("TagSpecification");
-    if let Some(var_735) = &input.tag_specifications {
-        let mut list_737 = scope_734.start_list(true, Some("item"));
-        for item_736 in var_735 {
+    let mut scope_813 = writer.prefix("TargetCapacityUnitType");
+    if let Some(var_814) = &input.target_capacity_unit_type {
+        scope_813.string(var_814.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_815 = writer.prefix("TagSpecification");
+    if let Some(var_816) = &input.tag_specifications {
+        let mut list_818 = scope_815.start_list(true, Some("item"));
+        for item_817 in var_816 {
             #[allow(unused_mut)]
-            let mut entry_738 = list_737.entry();
+            let mut entry_819 = list_818.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_738, item_736,
+                entry_819, item_817,
             );
         }
-        list_737.finish();
+        list_818.finish();
     }
 }
 
@@ -2514,114 +2741,114 @@ pub fn serialize_structure_crate_model_request_spot_launch_specification(
     input: &crate::model::RequestSpotLaunchSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_739 = writer.prefix("SecurityGroupId");
-    if let Some(var_740) = &input.security_group_ids {
-        let mut list_742 = scope_739.start_list(true, Some("item"));
-        for item_741 in var_740 {
+    let mut scope_820 = writer.prefix("SecurityGroupId");
+    if let Some(var_821) = &input.security_group_ids {
+        let mut list_823 = scope_820.start_list(true, Some("item"));
+        for item_822 in var_821 {
             #[allow(unused_mut)]
-            let mut entry_743 = list_742.entry();
-            entry_743.string(item_741);
+            let mut entry_824 = list_823.entry();
+            entry_824.string(item_822);
         }
-        list_742.finish();
+        list_823.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_744 = writer.prefix("SecurityGroup");
-    if let Some(var_745) = &input.security_groups {
-        let mut list_747 = scope_744.start_list(true, Some("item"));
-        for item_746 in var_745 {
+    let mut scope_825 = writer.prefix("SecurityGroup");
+    if let Some(var_826) = &input.security_groups {
+        let mut list_828 = scope_825.start_list(true, Some("item"));
+        for item_827 in var_826 {
             #[allow(unused_mut)]
-            let mut entry_748 = list_747.entry();
-            entry_748.string(item_746);
+            let mut entry_829 = list_828.entry();
+            entry_829.string(item_827);
         }
-        list_747.finish();
+        list_828.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_749 = writer.prefix("AddressingType");
-    if let Some(var_750) = &input.addressing_type {
-        scope_749.string(var_750);
+    let mut scope_830 = writer.prefix("AddressingType");
+    if let Some(var_831) = &input.addressing_type {
+        scope_830.string(var_831);
     }
     #[allow(unused_mut)]
-    let mut scope_751 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_752) = &input.block_device_mappings {
-        let mut list_754 = scope_751.start_list(true, Some("item"));
-        for item_753 in var_752 {
+    let mut scope_832 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_833) = &input.block_device_mappings {
+        let mut list_835 = scope_832.start_list(true, Some("item"));
+        for item_834 in var_833 {
             #[allow(unused_mut)]
-            let mut entry_755 = list_754.entry();
+            let mut entry_836 = list_835.entry();
             crate::query_ser::serialize_structure_crate_model_block_device_mapping(
-                entry_755, item_753,
+                entry_836, item_834,
             );
         }
-        list_754.finish();
+        list_835.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_756 = writer.prefix("EbsOptimized");
-    if let Some(var_757) = &input.ebs_optimized {
-        scope_756.boolean(*var_757);
+    let mut scope_837 = writer.prefix("EbsOptimized");
+    if let Some(var_838) = &input.ebs_optimized {
+        scope_837.boolean(*var_838);
     }
     #[allow(unused_mut)]
-    let mut scope_758 = writer.prefix("IamInstanceProfile");
-    if let Some(var_759) = &input.iam_instance_profile {
+    let mut scope_839 = writer.prefix("IamInstanceProfile");
+    if let Some(var_840) = &input.iam_instance_profile {
         crate::query_ser::serialize_structure_crate_model_iam_instance_profile_specification(
-            scope_758, var_759,
+            scope_839, var_840,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_760 = writer.prefix("ImageId");
-    if let Some(var_761) = &input.image_id {
-        scope_760.string(var_761);
+    let mut scope_841 = writer.prefix("ImageId");
+    if let Some(var_842) = &input.image_id {
+        scope_841.string(var_842);
     }
     #[allow(unused_mut)]
-    let mut scope_762 = writer.prefix("InstanceType");
-    if let Some(var_763) = &input.instance_type {
-        scope_762.string(var_763.as_str());
+    let mut scope_843 = writer.prefix("InstanceType");
+    if let Some(var_844) = &input.instance_type {
+        scope_843.string(var_844.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_764 = writer.prefix("KernelId");
-    if let Some(var_765) = &input.kernel_id {
-        scope_764.string(var_765);
+    let mut scope_845 = writer.prefix("KernelId");
+    if let Some(var_846) = &input.kernel_id {
+        scope_845.string(var_846);
     }
     #[allow(unused_mut)]
-    let mut scope_766 = writer.prefix("KeyName");
-    if let Some(var_767) = &input.key_name {
-        scope_766.string(var_767);
+    let mut scope_847 = writer.prefix("KeyName");
+    if let Some(var_848) = &input.key_name {
+        scope_847.string(var_848);
     }
     #[allow(unused_mut)]
-    let mut scope_768 = writer.prefix("Monitoring");
-    if let Some(var_769) = &input.monitoring {
+    let mut scope_849 = writer.prefix("Monitoring");
+    if let Some(var_850) = &input.monitoring {
         crate::query_ser::serialize_structure_crate_model_run_instances_monitoring_enabled(
-            scope_768, var_769,
+            scope_849, var_850,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_770 = writer.prefix("NetworkInterface");
-    if let Some(var_771) = &input.network_interfaces {
-        let mut list_773 = scope_770.start_list(true, Some("item"));
-        for item_772 in var_771 {
+    let mut scope_851 = writer.prefix("NetworkInterface");
+    if let Some(var_852) = &input.network_interfaces {
+        let mut list_854 = scope_851.start_list(true, Some("item"));
+        for item_853 in var_852 {
             #[allow(unused_mut)]
-            let mut entry_774 = list_773.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_774, item_772);
+            let mut entry_855 = list_854.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_855, item_853);
         }
-        list_773.finish();
+        list_854.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_775 = writer.prefix("Placement");
-    if let Some(var_776) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_spot_placement(scope_775, var_776);
+    let mut scope_856 = writer.prefix("Placement");
+    if let Some(var_857) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_spot_placement(scope_856, var_857);
     }
     #[allow(unused_mut)]
-    let mut scope_777 = writer.prefix("RamdiskId");
-    if let Some(var_778) = &input.ramdisk_id {
-        scope_777.string(var_778);
+    let mut scope_858 = writer.prefix("RamdiskId");
+    if let Some(var_859) = &input.ramdisk_id {
+        scope_858.string(var_859);
     }
     #[allow(unused_mut)]
-    let mut scope_779 = writer.prefix("SubnetId");
-    if let Some(var_780) = &input.subnet_id {
-        scope_779.string(var_780);
+    let mut scope_860 = writer.prefix("SubnetId");
+    if let Some(var_861) = &input.subnet_id {
+        scope_860.string(var_861);
     }
     #[allow(unused_mut)]
-    let mut scope_781 = writer.prefix("UserData");
-    if let Some(var_782) = &input.user_data {
-        scope_781.string(var_782);
+    let mut scope_862 = writer.prefix("UserData");
+    if let Some(var_863) = &input.user_data {
+        scope_862.string(var_863);
     }
 }
 
@@ -2631,9 +2858,9 @@ pub fn serialize_structure_crate_model_run_instances_monitoring_enabled(
     input: &crate::model::RunInstancesMonitoringEnabled,
 ) {
     #[allow(unused_mut)]
-    let mut scope_783 = writer.prefix("Enabled");
-    if let Some(var_784) = &input.enabled {
-        scope_783.boolean(*var_784);
+    let mut scope_864 = writer.prefix("Enabled");
+    if let Some(var_865) = &input.enabled {
+        scope_864.boolean(*var_865);
     }
 }
 
@@ -2643,47 +2870,47 @@ pub fn serialize_structure_crate_model_placement(
     input: &crate::model::Placement,
 ) {
     #[allow(unused_mut)]
-    let mut scope_785 = writer.prefix("AvailabilityZone");
-    if let Some(var_786) = &input.availability_zone {
-        scope_785.string(var_786);
+    let mut scope_866 = writer.prefix("AvailabilityZone");
+    if let Some(var_867) = &input.availability_zone {
+        scope_866.string(var_867);
     }
     #[allow(unused_mut)]
-    let mut scope_787 = writer.prefix("Affinity");
-    if let Some(var_788) = &input.affinity {
-        scope_787.string(var_788);
+    let mut scope_868 = writer.prefix("Affinity");
+    if let Some(var_869) = &input.affinity {
+        scope_868.string(var_869);
     }
     #[allow(unused_mut)]
-    let mut scope_789 = writer.prefix("GroupName");
-    if let Some(var_790) = &input.group_name {
-        scope_789.string(var_790);
+    let mut scope_870 = writer.prefix("GroupName");
+    if let Some(var_871) = &input.group_name {
+        scope_870.string(var_871);
     }
     #[allow(unused_mut)]
-    let mut scope_791 = writer.prefix("PartitionNumber");
-    if let Some(var_792) = &input.partition_number {
-        scope_791.number(
+    let mut scope_872 = writer.prefix("PartitionNumber");
+    if let Some(var_873) = &input.partition_number {
+        scope_872.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_792).into()),
+            aws_smithy_types::Number::NegInt((*var_873).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_793 = writer.prefix("HostId");
-    if let Some(var_794) = &input.host_id {
-        scope_793.string(var_794);
+    let mut scope_874 = writer.prefix("HostId");
+    if let Some(var_875) = &input.host_id {
+        scope_874.string(var_875);
     }
     #[allow(unused_mut)]
-    let mut scope_795 = writer.prefix("Tenancy");
-    if let Some(var_796) = &input.tenancy {
-        scope_795.string(var_796.as_str());
+    let mut scope_876 = writer.prefix("Tenancy");
+    if let Some(var_877) = &input.tenancy {
+        scope_876.string(var_877.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_797 = writer.prefix("SpreadDomain");
-    if let Some(var_798) = &input.spread_domain {
-        scope_797.string(var_798);
+    let mut scope_878 = writer.prefix("SpreadDomain");
+    if let Some(var_879) = &input.spread_domain {
+        scope_878.string(var_879);
     }
     #[allow(unused_mut)]
-    let mut scope_799 = writer.prefix("HostResourceGroupArn");
-    if let Some(var_800) = &input.host_resource_group_arn {
-        scope_799.string(var_800);
+    let mut scope_880 = writer.prefix("HostResourceGroupArn");
+    if let Some(var_881) = &input.host_resource_group_arn {
+        scope_880.string(var_881);
     }
 }
 
@@ -2693,154 +2920,154 @@ pub fn serialize_structure_crate_model_instance_network_interface_specification(
     input: &crate::model::InstanceNetworkInterfaceSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_801 = writer.prefix("AssociatePublicIpAddress");
-    if let Some(var_802) = &input.associate_public_ip_address {
-        scope_801.boolean(*var_802);
+    let mut scope_882 = writer.prefix("AssociatePublicIpAddress");
+    if let Some(var_883) = &input.associate_public_ip_address {
+        scope_882.boolean(*var_883);
     }
     #[allow(unused_mut)]
-    let mut scope_803 = writer.prefix("DeleteOnTermination");
-    if let Some(var_804) = &input.delete_on_termination {
-        scope_803.boolean(*var_804);
+    let mut scope_884 = writer.prefix("DeleteOnTermination");
+    if let Some(var_885) = &input.delete_on_termination {
+        scope_884.boolean(*var_885);
     }
     #[allow(unused_mut)]
-    let mut scope_805 = writer.prefix("Description");
-    if let Some(var_806) = &input.description {
-        scope_805.string(var_806);
+    let mut scope_886 = writer.prefix("Description");
+    if let Some(var_887) = &input.description {
+        scope_886.string(var_887);
     }
     #[allow(unused_mut)]
-    let mut scope_807 = writer.prefix("DeviceIndex");
-    if let Some(var_808) = &input.device_index {
-        scope_807.number(
+    let mut scope_888 = writer.prefix("DeviceIndex");
+    if let Some(var_889) = &input.device_index {
+        scope_888.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_808).into()),
+            aws_smithy_types::Number::NegInt((*var_889).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_809 = writer.prefix("SecurityGroupId");
-    if let Some(var_810) = &input.groups {
-        let mut list_812 = scope_809.start_list(true, Some("SecurityGroupId"));
-        for item_811 in var_810 {
+    let mut scope_890 = writer.prefix("SecurityGroupId");
+    if let Some(var_891) = &input.groups {
+        let mut list_893 = scope_890.start_list(true, Some("SecurityGroupId"));
+        for item_892 in var_891 {
             #[allow(unused_mut)]
-            let mut entry_813 = list_812.entry();
-            entry_813.string(item_811);
+            let mut entry_894 = list_893.entry();
+            entry_894.string(item_892);
         }
-        list_812.finish();
+        list_893.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_814 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_815) = &input.ipv6_address_count {
-        scope_814.number(
+    let mut scope_895 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_896) = &input.ipv6_address_count {
+        scope_895.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_815).into()),
+            aws_smithy_types::Number::NegInt((*var_896).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_816 = writer.prefix("Ipv6Addresses");
-    if let Some(var_817) = &input.ipv6_addresses {
-        let mut list_819 = scope_816.start_list(true, Some("item"));
-        for item_818 in var_817 {
+    let mut scope_897 = writer.prefix("Ipv6Addresses");
+    if let Some(var_898) = &input.ipv6_addresses {
+        let mut list_900 = scope_897.start_list(true, Some("item"));
+        for item_899 in var_898 {
             #[allow(unused_mut)]
-            let mut entry_820 = list_819.entry();
+            let mut entry_901 = list_900.entry();
             crate::query_ser::serialize_structure_crate_model_instance_ipv6_address(
-                entry_820, item_818,
+                entry_901, item_899,
             );
         }
-        list_819.finish();
+        list_900.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_821 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_822) = &input.network_interface_id {
-        scope_821.string(var_822);
+    let mut scope_902 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_903) = &input.network_interface_id {
+        scope_902.string(var_903);
     }
     #[allow(unused_mut)]
-    let mut scope_823 = writer.prefix("PrivateIpAddress");
-    if let Some(var_824) = &input.private_ip_address {
-        scope_823.string(var_824);
+    let mut scope_904 = writer.prefix("PrivateIpAddress");
+    if let Some(var_905) = &input.private_ip_address {
+        scope_904.string(var_905);
     }
     #[allow(unused_mut)]
-    let mut scope_825 = writer.prefix("PrivateIpAddresses");
-    if let Some(var_826) = &input.private_ip_addresses {
-        let mut list_828 = scope_825.start_list(true, Some("item"));
-        for item_827 in var_826 {
+    let mut scope_906 = writer.prefix("PrivateIpAddresses");
+    if let Some(var_907) = &input.private_ip_addresses {
+        let mut list_909 = scope_906.start_list(true, Some("item"));
+        for item_908 in var_907 {
             #[allow(unused_mut)]
-            let mut entry_829 = list_828.entry();
+            let mut entry_910 = list_909.entry();
             crate::query_ser::serialize_structure_crate_model_private_ip_address_specification(
-                entry_829, item_827,
+                entry_910, item_908,
             );
         }
-        list_828.finish();
+        list_909.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_830 = writer.prefix("SecondaryPrivateIpAddressCount");
-    if let Some(var_831) = &input.secondary_private_ip_address_count {
-        scope_830.number(
+    let mut scope_911 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_912) = &input.secondary_private_ip_address_count {
+        scope_911.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_831).into()),
+            aws_smithy_types::Number::NegInt((*var_912).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_832 = writer.prefix("SubnetId");
-    if let Some(var_833) = &input.subnet_id {
-        scope_832.string(var_833);
+    let mut scope_913 = writer.prefix("SubnetId");
+    if let Some(var_914) = &input.subnet_id {
+        scope_913.string(var_914);
     }
     #[allow(unused_mut)]
-    let mut scope_834 = writer.prefix("AssociateCarrierIpAddress");
-    if let Some(var_835) = &input.associate_carrier_ip_address {
-        scope_834.boolean(*var_835);
+    let mut scope_915 = writer.prefix("AssociateCarrierIpAddress");
+    if let Some(var_916) = &input.associate_carrier_ip_address {
+        scope_915.boolean(*var_916);
     }
     #[allow(unused_mut)]
-    let mut scope_836 = writer.prefix("InterfaceType");
-    if let Some(var_837) = &input.interface_type {
-        scope_836.string(var_837);
+    let mut scope_917 = writer.prefix("InterfaceType");
+    if let Some(var_918) = &input.interface_type {
+        scope_917.string(var_918);
     }
     #[allow(unused_mut)]
-    let mut scope_838 = writer.prefix("NetworkCardIndex");
-    if let Some(var_839) = &input.network_card_index {
-        scope_838.number(
+    let mut scope_919 = writer.prefix("NetworkCardIndex");
+    if let Some(var_920) = &input.network_card_index {
+        scope_919.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_839).into()),
+            aws_smithy_types::Number::NegInt((*var_920).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_840 = writer.prefix("Ipv4Prefix");
-    if let Some(var_841) = &input.ipv4_prefixes {
-        let mut list_843 = scope_840.start_list(true, Some("item"));
-        for item_842 in var_841 {
+    let mut scope_921 = writer.prefix("Ipv4Prefix");
+    if let Some(var_922) = &input.ipv4_prefixes {
+        let mut list_924 = scope_921.start_list(true, Some("item"));
+        for item_923 in var_922 {
             #[allow(unused_mut)]
-            let mut entry_844 = list_843.entry();
+            let mut entry_925 = list_924.entry();
             crate::query_ser::serialize_structure_crate_model_ipv4_prefix_specification_request(
-                entry_844, item_842,
+                entry_925, item_923,
             );
         }
-        list_843.finish();
+        list_924.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_845 = writer.prefix("Ipv4PrefixCount");
-    if let Some(var_846) = &input.ipv4_prefix_count {
-        scope_845.number(
+    let mut scope_926 = writer.prefix("Ipv4PrefixCount");
+    if let Some(var_927) = &input.ipv4_prefix_count {
+        scope_926.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_846).into()),
+            aws_smithy_types::Number::NegInt((*var_927).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_847 = writer.prefix("Ipv6Prefix");
-    if let Some(var_848) = &input.ipv6_prefixes {
-        let mut list_850 = scope_847.start_list(true, Some("item"));
-        for item_849 in var_848 {
+    let mut scope_928 = writer.prefix("Ipv6Prefix");
+    if let Some(var_929) = &input.ipv6_prefixes {
+        let mut list_931 = scope_928.start_list(true, Some("item"));
+        for item_930 in var_929 {
             #[allow(unused_mut)]
-            let mut entry_851 = list_850.entry();
+            let mut entry_932 = list_931.entry();
             crate::query_ser::serialize_structure_crate_model_ipv6_prefix_specification_request(
-                entry_851, item_849,
+                entry_932, item_930,
             );
         }
-        list_850.finish();
+        list_931.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_852 = writer.prefix("Ipv6PrefixCount");
-    if let Some(var_853) = &input.ipv6_prefix_count {
-        scope_852.number(
+    let mut scope_933 = writer.prefix("Ipv6PrefixCount");
+    if let Some(var_934) = &input.ipv6_prefix_count {
+        scope_933.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_853).into()),
+            aws_smithy_types::Number::NegInt((*var_934).into()),
         );
     }
 }
@@ -2851,9 +3078,9 @@ pub fn serialize_structure_crate_model_elastic_gpu_specification(
     input: &crate::model::ElasticGpuSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_854 = writer.prefix("Type");
-    if let Some(var_855) = &input.r#type {
-        scope_854.string(var_855);
+    let mut scope_935 = writer.prefix("Type");
+    if let Some(var_936) = &input.r#type {
+        scope_935.string(var_936);
     }
 }
 
@@ -2863,16 +3090,16 @@ pub fn serialize_structure_crate_model_elastic_inference_accelerator(
     input: &crate::model::ElasticInferenceAccelerator,
 ) {
     #[allow(unused_mut)]
-    let mut scope_856 = writer.prefix("Type");
-    if let Some(var_857) = &input.r#type {
-        scope_856.string(var_857);
+    let mut scope_937 = writer.prefix("Type");
+    if let Some(var_938) = &input.r#type {
+        scope_937.string(var_938);
     }
     #[allow(unused_mut)]
-    let mut scope_858 = writer.prefix("Count");
-    if let Some(var_859) = &input.count {
-        scope_858.number(
+    let mut scope_939 = writer.prefix("Count");
+    if let Some(var_940) = &input.count {
+        scope_939.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_859).into()),
+            aws_smithy_types::Number::NegInt((*var_940).into()),
         );
     }
 }
@@ -2883,19 +3110,19 @@ pub fn serialize_structure_crate_model_launch_template_specification(
     input: &crate::model::LaunchTemplateSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_860 = writer.prefix("LaunchTemplateId");
-    if let Some(var_861) = &input.launch_template_id {
-        scope_860.string(var_861);
+    let mut scope_941 = writer.prefix("LaunchTemplateId");
+    if let Some(var_942) = &input.launch_template_id {
+        scope_941.string(var_942);
     }
     #[allow(unused_mut)]
-    let mut scope_862 = writer.prefix("LaunchTemplateName");
-    if let Some(var_863) = &input.launch_template_name {
-        scope_862.string(var_863);
+    let mut scope_943 = writer.prefix("LaunchTemplateName");
+    if let Some(var_944) = &input.launch_template_name {
+        scope_943.string(var_944);
     }
     #[allow(unused_mut)]
-    let mut scope_864 = writer.prefix("Version");
-    if let Some(var_865) = &input.version {
-        scope_864.string(var_865);
+    let mut scope_945 = writer.prefix("Version");
+    if let Some(var_946) = &input.version {
+        scope_945.string(var_946);
     }
 }
 
@@ -2905,14 +3132,14 @@ pub fn serialize_structure_crate_model_instance_market_options_request(
     input: &crate::model::InstanceMarketOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_866 = writer.prefix("MarketType");
-    if let Some(var_867) = &input.market_type {
-        scope_866.string(var_867.as_str());
+    let mut scope_947 = writer.prefix("MarketType");
+    if let Some(var_948) = &input.market_type {
+        scope_947.string(var_948.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_868 = writer.prefix("SpotOptions");
-    if let Some(var_869) = &input.spot_options {
-        crate::query_ser::serialize_structure_crate_model_spot_market_options(scope_868, var_869);
+    let mut scope_949 = writer.prefix("SpotOptions");
+    if let Some(var_950) = &input.spot_options {
+        crate::query_ser::serialize_structure_crate_model_spot_market_options(scope_949, var_950);
     }
 }
 
@@ -2922,9 +3149,9 @@ pub fn serialize_structure_crate_model_credit_specification_request(
     input: &crate::model::CreditSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_870 = writer.prefix("CpuCredits");
-    if let Some(var_871) = &input.cpu_credits {
-        scope_870.string(var_871);
+    let mut scope_951 = writer.prefix("CpuCredits");
+    if let Some(var_952) = &input.cpu_credits {
+        scope_951.string(var_952);
     }
 }
 
@@ -2934,19 +3161,19 @@ pub fn serialize_structure_crate_model_cpu_options_request(
     input: &crate::model::CpuOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_872 = writer.prefix("CoreCount");
-    if let Some(var_873) = &input.core_count {
-        scope_872.number(
+    let mut scope_953 = writer.prefix("CoreCount");
+    if let Some(var_954) = &input.core_count {
+        scope_953.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_873).into()),
+            aws_smithy_types::Number::NegInt((*var_954).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_874 = writer.prefix("ThreadsPerCore");
-    if let Some(var_875) = &input.threads_per_core {
-        scope_874.number(
+    let mut scope_955 = writer.prefix("ThreadsPerCore");
+    if let Some(var_956) = &input.threads_per_core {
+        scope_955.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_875).into()),
+            aws_smithy_types::Number::NegInt((*var_956).into()),
         );
     }
 }
@@ -2957,9 +3184,9 @@ pub fn serialize_structure_crate_model_hibernation_options_request(
     input: &crate::model::HibernationOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_876 = writer.prefix("Configured");
-    if let Some(var_877) = &input.configured {
-        scope_876.boolean(*var_877);
+    let mut scope_957 = writer.prefix("Configured");
+    if let Some(var_958) = &input.configured {
+        scope_957.boolean(*var_958);
     }
 }
 
@@ -2969,9 +3196,9 @@ pub fn serialize_structure_crate_model_license_configuration_request(
     input: &crate::model::LicenseConfigurationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_878 = writer.prefix("LicenseConfigurationArn");
-    if let Some(var_879) = &input.license_configuration_arn {
-        scope_878.string(var_879);
+    let mut scope_959 = writer.prefix("LicenseConfigurationArn");
+    if let Some(var_960) = &input.license_configuration_arn {
+        scope_959.string(var_960);
     }
 }
 
@@ -2981,27 +3208,27 @@ pub fn serialize_structure_crate_model_instance_metadata_options_request(
     input: &crate::model::InstanceMetadataOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_880 = writer.prefix("HttpTokens");
-    if let Some(var_881) = &input.http_tokens {
-        scope_880.string(var_881.as_str());
+    let mut scope_961 = writer.prefix("HttpTokens");
+    if let Some(var_962) = &input.http_tokens {
+        scope_961.string(var_962.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_882 = writer.prefix("HttpPutResponseHopLimit");
-    if let Some(var_883) = &input.http_put_response_hop_limit {
-        scope_882.number(
+    let mut scope_963 = writer.prefix("HttpPutResponseHopLimit");
+    if let Some(var_964) = &input.http_put_response_hop_limit {
+        scope_963.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_883).into()),
+            aws_smithy_types::Number::NegInt((*var_964).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_884 = writer.prefix("HttpEndpoint");
-    if let Some(var_885) = &input.http_endpoint {
-        scope_884.string(var_885.as_str());
+    let mut scope_965 = writer.prefix("HttpEndpoint");
+    if let Some(var_966) = &input.http_endpoint {
+        scope_965.string(var_966.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_886 = writer.prefix("HttpProtocolIpv6");
-    if let Some(var_887) = &input.http_protocol_ipv6 {
-        scope_886.string(var_887.as_str());
+    let mut scope_967 = writer.prefix("HttpProtocolIpv6");
+    if let Some(var_968) = &input.http_protocol_ipv6 {
+        scope_967.string(var_968.as_str());
     }
 }
 
@@ -3011,9 +3238,9 @@ pub fn serialize_structure_crate_model_enclave_options_request(
     input: &crate::model::EnclaveOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_888 = writer.prefix("Enabled");
-    if let Some(var_889) = &input.enabled {
-        scope_888.boolean(*var_889);
+    let mut scope_969 = writer.prefix("Enabled");
+    if let Some(var_970) = &input.enabled {
+        scope_969.boolean(*var_970);
     }
 }
 
@@ -3023,100 +3250,100 @@ pub fn serialize_structure_crate_model_scheduled_instances_launch_specification(
     input: &crate::model::ScheduledInstancesLaunchSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_890 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_891) = &input.block_device_mappings {
-        let mut list_893 = scope_890.start_list(true, Some("BlockDeviceMapping"));
-        for item_892 in var_891 {
+    let mut scope_971 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_972) = &input.block_device_mappings {
+        let mut list_974 = scope_971.start_list(true, Some("BlockDeviceMapping"));
+        for item_973 in var_972 {
             #[allow(unused_mut)]
-            let mut entry_894 = list_893.entry();
-            crate::query_ser::serialize_structure_crate_model_scheduled_instances_block_device_mapping(entry_894, item_892);
+            let mut entry_975 = list_974.entry();
+            crate::query_ser::serialize_structure_crate_model_scheduled_instances_block_device_mapping(entry_975, item_973);
         }
-        list_893.finish();
+        list_974.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_895 = writer.prefix("EbsOptimized");
-    if let Some(var_896) = &input.ebs_optimized {
-        scope_895.boolean(*var_896);
+    let mut scope_976 = writer.prefix("EbsOptimized");
+    if let Some(var_977) = &input.ebs_optimized {
+        scope_976.boolean(*var_977);
     }
     #[allow(unused_mut)]
-    let mut scope_897 = writer.prefix("IamInstanceProfile");
-    if let Some(var_898) = &input.iam_instance_profile {
+    let mut scope_978 = writer.prefix("IamInstanceProfile");
+    if let Some(var_979) = &input.iam_instance_profile {
         crate::query_ser::serialize_structure_crate_model_scheduled_instances_iam_instance_profile(
-            scope_897, var_898,
+            scope_978, var_979,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_899 = writer.prefix("ImageId");
-    if let Some(var_900) = &input.image_id {
-        scope_899.string(var_900);
+    let mut scope_980 = writer.prefix("ImageId");
+    if let Some(var_981) = &input.image_id {
+        scope_980.string(var_981);
     }
     #[allow(unused_mut)]
-    let mut scope_901 = writer.prefix("InstanceType");
-    if let Some(var_902) = &input.instance_type {
-        scope_901.string(var_902);
+    let mut scope_982 = writer.prefix("InstanceType");
+    if let Some(var_983) = &input.instance_type {
+        scope_982.string(var_983);
     }
     #[allow(unused_mut)]
-    let mut scope_903 = writer.prefix("KernelId");
-    if let Some(var_904) = &input.kernel_id {
-        scope_903.string(var_904);
+    let mut scope_984 = writer.prefix("KernelId");
+    if let Some(var_985) = &input.kernel_id {
+        scope_984.string(var_985);
     }
     #[allow(unused_mut)]
-    let mut scope_905 = writer.prefix("KeyName");
-    if let Some(var_906) = &input.key_name {
-        scope_905.string(var_906);
+    let mut scope_986 = writer.prefix("KeyName");
+    if let Some(var_987) = &input.key_name {
+        scope_986.string(var_987);
     }
     #[allow(unused_mut)]
-    let mut scope_907 = writer.prefix("Monitoring");
-    if let Some(var_908) = &input.monitoring {
+    let mut scope_988 = writer.prefix("Monitoring");
+    if let Some(var_989) = &input.monitoring {
         crate::query_ser::serialize_structure_crate_model_scheduled_instances_monitoring(
-            scope_907, var_908,
+            scope_988, var_989,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_909 = writer.prefix("NetworkInterface");
-    if let Some(var_910) = &input.network_interfaces {
-        let mut list_912 = scope_909.start_list(true, Some("NetworkInterface"));
-        for item_911 in var_910 {
+    let mut scope_990 = writer.prefix("NetworkInterface");
+    if let Some(var_991) = &input.network_interfaces {
+        let mut list_993 = scope_990.start_list(true, Some("NetworkInterface"));
+        for item_992 in var_991 {
             #[allow(unused_mut)]
-            let mut entry_913 = list_912.entry();
+            let mut entry_994 = list_993.entry();
             crate::query_ser::serialize_structure_crate_model_scheduled_instances_network_interface(
-                entry_913, item_911,
+                entry_994, item_992,
             );
         }
-        list_912.finish();
+        list_993.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_914 = writer.prefix("Placement");
-    if let Some(var_915) = &input.placement {
+    let mut scope_995 = writer.prefix("Placement");
+    if let Some(var_996) = &input.placement {
         crate::query_ser::serialize_structure_crate_model_scheduled_instances_placement(
-            scope_914, var_915,
+            scope_995, var_996,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_916 = writer.prefix("RamdiskId");
-    if let Some(var_917) = &input.ramdisk_id {
-        scope_916.string(var_917);
+    let mut scope_997 = writer.prefix("RamdiskId");
+    if let Some(var_998) = &input.ramdisk_id {
+        scope_997.string(var_998);
     }
     #[allow(unused_mut)]
-    let mut scope_918 = writer.prefix("SecurityGroupId");
-    if let Some(var_919) = &input.security_group_ids {
-        let mut list_921 = scope_918.start_list(true, Some("SecurityGroupId"));
-        for item_920 in var_919 {
+    let mut scope_999 = writer.prefix("SecurityGroupId");
+    if let Some(var_1000) = &input.security_group_ids {
+        let mut list_1002 = scope_999.start_list(true, Some("SecurityGroupId"));
+        for item_1001 in var_1000 {
             #[allow(unused_mut)]
-            let mut entry_922 = list_921.entry();
-            entry_922.string(item_920);
+            let mut entry_1003 = list_1002.entry();
+            entry_1003.string(item_1001);
         }
-        list_921.finish();
+        list_1002.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_923 = writer.prefix("SubnetId");
-    if let Some(var_924) = &input.subnet_id {
-        scope_923.string(var_924);
+    let mut scope_1004 = writer.prefix("SubnetId");
+    if let Some(var_1005) = &input.subnet_id {
+        scope_1004.string(var_1005);
     }
     #[allow(unused_mut)]
-    let mut scope_925 = writer.prefix("UserData");
-    if let Some(var_926) = &input.user_data {
-        scope_925.string(var_926);
+    let mut scope_1006 = writer.prefix("UserData");
+    if let Some(var_1007) = &input.user_data {
+        scope_1006.string(var_1007);
     }
 }
 
@@ -3126,14 +3353,14 @@ pub fn serialize_structure_crate_model_security_group_rule_description(
     input: &crate::model::SecurityGroupRuleDescription,
 ) {
     #[allow(unused_mut)]
-    let mut scope_927 = writer.prefix("SecurityGroupRuleId");
-    if let Some(var_928) = &input.security_group_rule_id {
-        scope_927.string(var_928);
+    let mut scope_1008 = writer.prefix("SecurityGroupRuleId");
+    if let Some(var_1009) = &input.security_group_rule_id {
+        scope_1008.string(var_1009);
     }
     #[allow(unused_mut)]
-    let mut scope_929 = writer.prefix("Description");
-    if let Some(var_930) = &input.description {
-        scope_929.string(var_930);
+    let mut scope_1010 = writer.prefix("Description");
+    if let Some(var_1011) = &input.description {
+        scope_1010.string(var_1011);
     }
 }
 
@@ -3143,14 +3370,14 @@ pub fn serialize_structure_crate_model_ip_range(
     input: &crate::model::IpRange,
 ) {
     #[allow(unused_mut)]
-    let mut scope_931 = writer.prefix("CidrIp");
-    if let Some(var_932) = &input.cidr_ip {
-        scope_931.string(var_932);
+    let mut scope_1012 = writer.prefix("CidrIp");
+    if let Some(var_1013) = &input.cidr_ip {
+        scope_1012.string(var_1013);
     }
     #[allow(unused_mut)]
-    let mut scope_933 = writer.prefix("Description");
-    if let Some(var_934) = &input.description {
-        scope_933.string(var_934);
+    let mut scope_1014 = writer.prefix("Description");
+    if let Some(var_1015) = &input.description {
+        scope_1014.string(var_1015);
     }
 }
 
@@ -3160,14 +3387,14 @@ pub fn serialize_structure_crate_model_ipv6_range(
     input: &crate::model::Ipv6Range,
 ) {
     #[allow(unused_mut)]
-    let mut scope_935 = writer.prefix("CidrIpv6");
-    if let Some(var_936) = &input.cidr_ipv6 {
-        scope_935.string(var_936);
+    let mut scope_1016 = writer.prefix("CidrIpv6");
+    if let Some(var_1017) = &input.cidr_ipv6 {
+        scope_1016.string(var_1017);
     }
     #[allow(unused_mut)]
-    let mut scope_937 = writer.prefix("Description");
-    if let Some(var_938) = &input.description {
-        scope_937.string(var_938);
+    let mut scope_1018 = writer.prefix("Description");
+    if let Some(var_1019) = &input.description {
+        scope_1018.string(var_1019);
     }
 }
 
@@ -3177,14 +3404,14 @@ pub fn serialize_structure_crate_model_prefix_list_id(
     input: &crate::model::PrefixListId,
 ) {
     #[allow(unused_mut)]
-    let mut scope_939 = writer.prefix("Description");
-    if let Some(var_940) = &input.description {
-        scope_939.string(var_940);
+    let mut scope_1020 = writer.prefix("Description");
+    if let Some(var_1021) = &input.description {
+        scope_1020.string(var_1021);
     }
     #[allow(unused_mut)]
-    let mut scope_941 = writer.prefix("PrefixListId");
-    if let Some(var_942) = &input.prefix_list_id {
-        scope_941.string(var_942);
+    let mut scope_1022 = writer.prefix("PrefixListId");
+    if let Some(var_1023) = &input.prefix_list_id {
+        scope_1022.string(var_1023);
     }
 }
 
@@ -3194,39 +3421,39 @@ pub fn serialize_structure_crate_model_user_id_group_pair(
     input: &crate::model::UserIdGroupPair,
 ) {
     #[allow(unused_mut)]
-    let mut scope_943 = writer.prefix("Description");
-    if let Some(var_944) = &input.description {
-        scope_943.string(var_944);
+    let mut scope_1024 = writer.prefix("Description");
+    if let Some(var_1025) = &input.description {
+        scope_1024.string(var_1025);
     }
     #[allow(unused_mut)]
-    let mut scope_945 = writer.prefix("GroupId");
-    if let Some(var_946) = &input.group_id {
-        scope_945.string(var_946);
+    let mut scope_1026 = writer.prefix("GroupId");
+    if let Some(var_1027) = &input.group_id {
+        scope_1026.string(var_1027);
     }
     #[allow(unused_mut)]
-    let mut scope_947 = writer.prefix("GroupName");
-    if let Some(var_948) = &input.group_name {
-        scope_947.string(var_948);
+    let mut scope_1028 = writer.prefix("GroupName");
+    if let Some(var_1029) = &input.group_name {
+        scope_1028.string(var_1029);
     }
     #[allow(unused_mut)]
-    let mut scope_949 = writer.prefix("PeeringStatus");
-    if let Some(var_950) = &input.peering_status {
-        scope_949.string(var_950);
+    let mut scope_1030 = writer.prefix("PeeringStatus");
+    if let Some(var_1031) = &input.peering_status {
+        scope_1030.string(var_1031);
     }
     #[allow(unused_mut)]
-    let mut scope_951 = writer.prefix("UserId");
-    if let Some(var_952) = &input.user_id {
-        scope_951.string(var_952);
+    let mut scope_1032 = writer.prefix("UserId");
+    if let Some(var_1033) = &input.user_id {
+        scope_1032.string(var_1033);
     }
     #[allow(unused_mut)]
-    let mut scope_953 = writer.prefix("VpcId");
-    if let Some(var_954) = &input.vpc_id {
-        scope_953.string(var_954);
+    let mut scope_1034 = writer.prefix("VpcId");
+    if let Some(var_1035) = &input.vpc_id {
+        scope_1034.string(var_1035);
     }
     #[allow(unused_mut)]
-    let mut scope_955 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_956) = &input.vpc_peering_connection_id {
-        scope_955.string(var_956);
+    let mut scope_1036 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_1037) = &input.vpc_peering_connection_id {
+        scope_1036.string(var_1037);
     }
 }
 
@@ -3236,29 +3463,29 @@ pub fn serialize_structure_crate_model_s3_storage(
     input: &crate::model::S3Storage,
 ) {
     #[allow(unused_mut)]
-    let mut scope_957 = writer.prefix("AWSAccessKeyId");
-    if let Some(var_958) = &input.aws_access_key_id {
-        scope_957.string(var_958);
+    let mut scope_1038 = writer.prefix("AWSAccessKeyId");
+    if let Some(var_1039) = &input.aws_access_key_id {
+        scope_1038.string(var_1039);
     }
     #[allow(unused_mut)]
-    let mut scope_959 = writer.prefix("Bucket");
-    if let Some(var_960) = &input.bucket {
-        scope_959.string(var_960);
+    let mut scope_1040 = writer.prefix("Bucket");
+    if let Some(var_1041) = &input.bucket {
+        scope_1040.string(var_1041);
     }
     #[allow(unused_mut)]
-    let mut scope_961 = writer.prefix("Prefix");
-    if let Some(var_962) = &input.prefix {
-        scope_961.string(var_962);
+    let mut scope_1042 = writer.prefix("Prefix");
+    if let Some(var_1043) = &input.prefix {
+        scope_1042.string(var_1043);
     }
     #[allow(unused_mut)]
-    let mut scope_963 = writer.prefix("UploadPolicy");
-    if let Some(var_964) = &input.upload_policy {
-        scope_963.string(&aws_smithy_types::base64::encode(var_964));
+    let mut scope_1044 = writer.prefix("UploadPolicy");
+    if let Some(var_1045) = &input.upload_policy {
+        scope_1044.string(&aws_smithy_types::base64::encode(var_1045));
     }
     #[allow(unused_mut)]
-    let mut scope_965 = writer.prefix("UploadPolicySignature");
-    if let Some(var_966) = &input.upload_policy_signature {
-        scope_965.string(var_966);
+    let mut scope_1046 = writer.prefix("UploadPolicySignature");
+    if let Some(var_1047) = &input.upload_policy_signature {
+        scope_1046.string(var_1047);
     }
 }
 
@@ -3268,9 +3495,9 @@ pub fn serialize_structure_crate_model_directory_service_authentication_request(
     input: &crate::model::DirectoryServiceAuthenticationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_967 = writer.prefix("DirectoryId");
-    if let Some(var_968) = &input.directory_id {
-        scope_967.string(var_968);
+    let mut scope_1048 = writer.prefix("DirectoryId");
+    if let Some(var_1049) = &input.directory_id {
+        scope_1048.string(var_1049);
     }
 }
 
@@ -3280,9 +3507,9 @@ pub fn serialize_structure_crate_model_certificate_authentication_request(
     input: &crate::model::CertificateAuthenticationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_969 = writer.prefix("ClientRootCertificateChainArn");
-    if let Some(var_970) = &input.client_root_certificate_chain_arn {
-        scope_969.string(var_970);
+    let mut scope_1050 = writer.prefix("ClientRootCertificateChainArn");
+    if let Some(var_1051) = &input.client_root_certificate_chain_arn {
+        scope_1050.string(var_1051);
     }
 }
 
@@ -3292,14 +3519,14 @@ pub fn serialize_structure_crate_model_federated_authentication_request(
     input: &crate::model::FederatedAuthenticationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_971 = writer.prefix("SAMLProviderArn");
-    if let Some(var_972) = &input.saml_provider_arn {
-        scope_971.string(var_972);
+    let mut scope_1052 = writer.prefix("SAMLProviderArn");
+    if let Some(var_1053) = &input.saml_provider_arn {
+        scope_1052.string(var_1053);
     }
     #[allow(unused_mut)]
-    let mut scope_973 = writer.prefix("SelfServiceSAMLProviderArn");
-    if let Some(var_974) = &input.self_service_saml_provider_arn {
-        scope_973.string(var_974);
+    let mut scope_1054 = writer.prefix("SelfServiceSAMLProviderArn");
+    if let Some(var_1055) = &input.self_service_saml_provider_arn {
+        scope_1054.string(var_1055);
     }
 }
 
@@ -3309,10 +3536,10 @@ pub fn serialize_structure_crate_model_fleet_spot_maintenance_strategies_request
     input: &crate::model::FleetSpotMaintenanceStrategiesRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_975 = writer.prefix("CapacityRebalance");
-    if let Some(var_976) = &input.capacity_rebalance {
+    let mut scope_1056 = writer.prefix("CapacityRebalance");
+    if let Some(var_1057) = &input.capacity_rebalance {
         crate::query_ser::serialize_structure_crate_model_fleet_spot_capacity_rebalance_request(
-            scope_975, var_976,
+            scope_1056, var_1057,
         );
     }
 }
@@ -3323,9 +3550,9 @@ pub fn serialize_structure_crate_model_capacity_reservation_options_request(
     input: &crate::model::CapacityReservationOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_977 = writer.prefix("UsageStrategy");
-    if let Some(var_978) = &input.usage_strategy {
-        scope_977.string(var_978.as_str());
+    let mut scope_1058 = writer.prefix("UsageStrategy");
+    if let Some(var_1059) = &input.usage_strategy {
+        scope_1058.string(var_1059.as_str());
     }
 }
 
@@ -3335,19 +3562,19 @@ pub fn serialize_structure_crate_model_fleet_launch_template_specification_reque
     input: &crate::model::FleetLaunchTemplateSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_979 = writer.prefix("LaunchTemplateId");
-    if let Some(var_980) = &input.launch_template_id {
-        scope_979.string(var_980);
+    let mut scope_1060 = writer.prefix("LaunchTemplateId");
+    if let Some(var_1061) = &input.launch_template_id {
+        scope_1060.string(var_1061);
     }
     #[allow(unused_mut)]
-    let mut scope_981 = writer.prefix("LaunchTemplateName");
-    if let Some(var_982) = &input.launch_template_name {
-        scope_981.string(var_982);
+    let mut scope_1062 = writer.prefix("LaunchTemplateName");
+    if let Some(var_1063) = &input.launch_template_name {
+        scope_1062.string(var_1063);
     }
     #[allow(unused_mut)]
-    let mut scope_983 = writer.prefix("Version");
-    if let Some(var_984) = &input.version {
-        scope_983.string(var_984);
+    let mut scope_1064 = writer.prefix("Version");
+    if let Some(var_1065) = &input.version {
+        scope_1064.string(var_1065);
     }
 }
 
@@ -3357,45 +3584,52 @@ pub fn serialize_structure_crate_model_fleet_launch_template_overrides_request(
     input: &crate::model::FleetLaunchTemplateOverridesRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_985 = writer.prefix("InstanceType");
-    if let Some(var_986) = &input.instance_type {
-        scope_985.string(var_986.as_str());
+    let mut scope_1066 = writer.prefix("InstanceType");
+    if let Some(var_1067) = &input.instance_type {
+        scope_1066.string(var_1067.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_987 = writer.prefix("MaxPrice");
-    if let Some(var_988) = &input.max_price {
-        scope_987.string(var_988);
+    let mut scope_1068 = writer.prefix("MaxPrice");
+    if let Some(var_1069) = &input.max_price {
+        scope_1068.string(var_1069);
     }
     #[allow(unused_mut)]
-    let mut scope_989 = writer.prefix("SubnetId");
-    if let Some(var_990) = &input.subnet_id {
-        scope_989.string(var_990);
+    let mut scope_1070 = writer.prefix("SubnetId");
+    if let Some(var_1071) = &input.subnet_id {
+        scope_1070.string(var_1071);
     }
     #[allow(unused_mut)]
-    let mut scope_991 = writer.prefix("AvailabilityZone");
-    if let Some(var_992) = &input.availability_zone {
-        scope_991.string(var_992);
+    let mut scope_1072 = writer.prefix("AvailabilityZone");
+    if let Some(var_1073) = &input.availability_zone {
+        scope_1072.string(var_1073);
     }
     #[allow(unused_mut)]
-    let mut scope_993 = writer.prefix("WeightedCapacity");
-    if let Some(var_994) = &input.weighted_capacity {
-        scope_993.number(
+    let mut scope_1074 = writer.prefix("WeightedCapacity");
+    if let Some(var_1075) = &input.weighted_capacity {
+        scope_1074.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_994).into()),
+            aws_smithy_types::Number::Float((*var_1075).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_995 = writer.prefix("Priority");
-    if let Some(var_996) = &input.priority {
-        scope_995.number(
+    let mut scope_1076 = writer.prefix("Priority");
+    if let Some(var_1077) = &input.priority {
+        scope_1076.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_996).into()),
+            aws_smithy_types::Number::Float((*var_1077).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_997 = writer.prefix("Placement");
-    if let Some(var_998) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_placement(scope_997, var_998);
+    let mut scope_1078 = writer.prefix("Placement");
+    if let Some(var_1079) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_placement(scope_1078, var_1079);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1080 = writer.prefix("InstanceRequirements");
+    if let Some(var_1081) = &input.instance_requirements {
+        crate::query_ser::serialize_structure_crate_model_instance_requirements_request(
+            scope_1080, var_1081,
+        );
     }
 }
 
@@ -3405,58 +3639,58 @@ pub fn serialize_structure_crate_model_ebs_block_device(
     input: &crate::model::EbsBlockDevice,
 ) {
     #[allow(unused_mut)]
-    let mut scope_999 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1000) = &input.delete_on_termination {
-        scope_999.boolean(*var_1000);
+    let mut scope_1082 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1083) = &input.delete_on_termination {
+        scope_1082.boolean(*var_1083);
     }
     #[allow(unused_mut)]
-    let mut scope_1001 = writer.prefix("Iops");
-    if let Some(var_1002) = &input.iops {
-        scope_1001.number(
+    let mut scope_1084 = writer.prefix("Iops");
+    if let Some(var_1085) = &input.iops {
+        scope_1084.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1002).into()),
+            aws_smithy_types::Number::NegInt((*var_1085).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1003 = writer.prefix("SnapshotId");
-    if let Some(var_1004) = &input.snapshot_id {
-        scope_1003.string(var_1004);
+    let mut scope_1086 = writer.prefix("SnapshotId");
+    if let Some(var_1087) = &input.snapshot_id {
+        scope_1086.string(var_1087);
     }
     #[allow(unused_mut)]
-    let mut scope_1005 = writer.prefix("VolumeSize");
-    if let Some(var_1006) = &input.volume_size {
-        scope_1005.number(
+    let mut scope_1088 = writer.prefix("VolumeSize");
+    if let Some(var_1089) = &input.volume_size {
+        scope_1088.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1006).into()),
+            aws_smithy_types::Number::NegInt((*var_1089).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1007 = writer.prefix("VolumeType");
-    if let Some(var_1008) = &input.volume_type {
-        scope_1007.string(var_1008.as_str());
+    let mut scope_1090 = writer.prefix("VolumeType");
+    if let Some(var_1091) = &input.volume_type {
+        scope_1090.string(var_1091.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1009 = writer.prefix("KmsKeyId");
-    if let Some(var_1010) = &input.kms_key_id {
-        scope_1009.string(var_1010);
+    let mut scope_1092 = writer.prefix("KmsKeyId");
+    if let Some(var_1093) = &input.kms_key_id {
+        scope_1092.string(var_1093);
     }
     #[allow(unused_mut)]
-    let mut scope_1011 = writer.prefix("Throughput");
-    if let Some(var_1012) = &input.throughput {
-        scope_1011.number(
+    let mut scope_1094 = writer.prefix("Throughput");
+    if let Some(var_1095) = &input.throughput {
+        scope_1094.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1012).into()),
+            aws_smithy_types::Number::NegInt((*var_1095).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1013 = writer.prefix("OutpostArn");
-    if let Some(var_1014) = &input.outpost_arn {
-        scope_1013.string(var_1014);
+    let mut scope_1096 = writer.prefix("OutpostArn");
+    if let Some(var_1097) = &input.outpost_arn {
+        scope_1096.string(var_1097);
     }
     #[allow(unused_mut)]
-    let mut scope_1015 = writer.prefix("Encrypted");
-    if let Some(var_1016) = &input.encrypted {
-        scope_1015.boolean(*var_1016);
+    let mut scope_1098 = writer.prefix("Encrypted");
+    if let Some(var_1099) = &input.encrypted {
+        scope_1098.boolean(*var_1099);
     }
 }
 
@@ -3466,14 +3700,14 @@ pub fn serialize_structure_crate_model_launch_template_iam_instance_profile_spec
     input: &crate::model::LaunchTemplateIamInstanceProfileSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1017 = writer.prefix("Arn");
-    if let Some(var_1018) = &input.arn {
-        scope_1017.string(var_1018);
+    let mut scope_1100 = writer.prefix("Arn");
+    if let Some(var_1101) = &input.arn {
+        scope_1100.string(var_1101);
     }
     #[allow(unused_mut)]
-    let mut scope_1019 = writer.prefix("Name");
-    if let Some(var_1020) = &input.name {
-        scope_1019.string(var_1020);
+    let mut scope_1102 = writer.prefix("Name");
+    if let Some(var_1103) = &input.name {
+        scope_1102.string(var_1103);
     }
 }
 
@@ -3483,26 +3717,26 @@ pub fn serialize_structure_crate_model_launch_template_block_device_mapping_requ
     input: &crate::model::LaunchTemplateBlockDeviceMappingRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1021 = writer.prefix("DeviceName");
-    if let Some(var_1022) = &input.device_name {
-        scope_1021.string(var_1022);
+    let mut scope_1104 = writer.prefix("DeviceName");
+    if let Some(var_1105) = &input.device_name {
+        scope_1104.string(var_1105);
     }
     #[allow(unused_mut)]
-    let mut scope_1023 = writer.prefix("VirtualName");
-    if let Some(var_1024) = &input.virtual_name {
-        scope_1023.string(var_1024);
+    let mut scope_1106 = writer.prefix("VirtualName");
+    if let Some(var_1107) = &input.virtual_name {
+        scope_1106.string(var_1107);
     }
     #[allow(unused_mut)]
-    let mut scope_1025 = writer.prefix("Ebs");
-    if let Some(var_1026) = &input.ebs {
+    let mut scope_1108 = writer.prefix("Ebs");
+    if let Some(var_1109) = &input.ebs {
         crate::query_ser::serialize_structure_crate_model_launch_template_ebs_block_device_request(
-            scope_1025, var_1026,
+            scope_1108, var_1109,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1027 = writer.prefix("NoDevice");
-    if let Some(var_1028) = &input.no_device {
-        scope_1027.string(var_1028);
+    let mut scope_1110 = writer.prefix("NoDevice");
+    if let Some(var_1111) = &input.no_device {
+        scope_1110.string(var_1111);
     }
 }
 
@@ -3512,154 +3746,154 @@ pub fn serialize_structure_crate_model_launch_template_instance_network_interfac
     input: &crate::model::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1029 = writer.prefix("AssociateCarrierIpAddress");
-    if let Some(var_1030) = &input.associate_carrier_ip_address {
-        scope_1029.boolean(*var_1030);
+    let mut scope_1112 = writer.prefix("AssociateCarrierIpAddress");
+    if let Some(var_1113) = &input.associate_carrier_ip_address {
+        scope_1112.boolean(*var_1113);
     }
     #[allow(unused_mut)]
-    let mut scope_1031 = writer.prefix("AssociatePublicIpAddress");
-    if let Some(var_1032) = &input.associate_public_ip_address {
-        scope_1031.boolean(*var_1032);
+    let mut scope_1114 = writer.prefix("AssociatePublicIpAddress");
+    if let Some(var_1115) = &input.associate_public_ip_address {
+        scope_1114.boolean(*var_1115);
     }
     #[allow(unused_mut)]
-    let mut scope_1033 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1034) = &input.delete_on_termination {
-        scope_1033.boolean(*var_1034);
+    let mut scope_1116 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1117) = &input.delete_on_termination {
+        scope_1116.boolean(*var_1117);
     }
     #[allow(unused_mut)]
-    let mut scope_1035 = writer.prefix("Description");
-    if let Some(var_1036) = &input.description {
-        scope_1035.string(var_1036);
+    let mut scope_1118 = writer.prefix("Description");
+    if let Some(var_1119) = &input.description {
+        scope_1118.string(var_1119);
     }
     #[allow(unused_mut)]
-    let mut scope_1037 = writer.prefix("DeviceIndex");
-    if let Some(var_1038) = &input.device_index {
-        scope_1037.number(
+    let mut scope_1120 = writer.prefix("DeviceIndex");
+    if let Some(var_1121) = &input.device_index {
+        scope_1120.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1038).into()),
+            aws_smithy_types::Number::NegInt((*var_1121).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1039 = writer.prefix("SecurityGroupId");
-    if let Some(var_1040) = &input.groups {
-        let mut list_1042 = scope_1039.start_list(true, Some("SecurityGroupId"));
-        for item_1041 in var_1040 {
+    let mut scope_1122 = writer.prefix("SecurityGroupId");
+    if let Some(var_1123) = &input.groups {
+        let mut list_1125 = scope_1122.start_list(true, Some("SecurityGroupId"));
+        for item_1124 in var_1123 {
             #[allow(unused_mut)]
-            let mut entry_1043 = list_1042.entry();
-            entry_1043.string(item_1041);
+            let mut entry_1126 = list_1125.entry();
+            entry_1126.string(item_1124);
         }
-        list_1042.finish();
+        list_1125.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1044 = writer.prefix("InterfaceType");
-    if let Some(var_1045) = &input.interface_type {
-        scope_1044.string(var_1045);
+    let mut scope_1127 = writer.prefix("InterfaceType");
+    if let Some(var_1128) = &input.interface_type {
+        scope_1127.string(var_1128);
     }
     #[allow(unused_mut)]
-    let mut scope_1046 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_1047) = &input.ipv6_address_count {
-        scope_1046.number(
+    let mut scope_1129 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_1130) = &input.ipv6_address_count {
+        scope_1129.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1047).into()),
+            aws_smithy_types::Number::NegInt((*var_1130).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1048 = writer.prefix("Ipv6Addresses");
-    if let Some(var_1049) = &input.ipv6_addresses {
-        let mut list_1051 = scope_1048.start_list(true, Some("InstanceIpv6Address"));
-        for item_1050 in var_1049 {
+    let mut scope_1131 = writer.prefix("Ipv6Addresses");
+    if let Some(var_1132) = &input.ipv6_addresses {
+        let mut list_1134 = scope_1131.start_list(true, Some("InstanceIpv6Address"));
+        for item_1133 in var_1132 {
             #[allow(unused_mut)]
-            let mut entry_1052 = list_1051.entry();
+            let mut entry_1135 = list_1134.entry();
             crate::query_ser::serialize_structure_crate_model_instance_ipv6_address_request(
-                entry_1052, item_1050,
+                entry_1135, item_1133,
             );
         }
-        list_1051.finish();
+        list_1134.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1053 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_1054) = &input.network_interface_id {
-        scope_1053.string(var_1054);
+    let mut scope_1136 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_1137) = &input.network_interface_id {
+        scope_1136.string(var_1137);
     }
     #[allow(unused_mut)]
-    let mut scope_1055 = writer.prefix("PrivateIpAddress");
-    if let Some(var_1056) = &input.private_ip_address {
-        scope_1055.string(var_1056);
+    let mut scope_1138 = writer.prefix("PrivateIpAddress");
+    if let Some(var_1139) = &input.private_ip_address {
+        scope_1138.string(var_1139);
     }
     #[allow(unused_mut)]
-    let mut scope_1057 = writer.prefix("PrivateIpAddresses");
-    if let Some(var_1058) = &input.private_ip_addresses {
-        let mut list_1060 = scope_1057.start_list(true, Some("item"));
-        for item_1059 in var_1058 {
+    let mut scope_1140 = writer.prefix("PrivateIpAddresses");
+    if let Some(var_1141) = &input.private_ip_addresses {
+        let mut list_1143 = scope_1140.start_list(true, Some("item"));
+        for item_1142 in var_1141 {
             #[allow(unused_mut)]
-            let mut entry_1061 = list_1060.entry();
+            let mut entry_1144 = list_1143.entry();
             crate::query_ser::serialize_structure_crate_model_private_ip_address_specification(
-                entry_1061, item_1059,
+                entry_1144, item_1142,
             );
         }
-        list_1060.finish();
+        list_1143.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1062 = writer.prefix("SecondaryPrivateIpAddressCount");
-    if let Some(var_1063) = &input.secondary_private_ip_address_count {
-        scope_1062.number(
+    let mut scope_1145 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_1146) = &input.secondary_private_ip_address_count {
+        scope_1145.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1063).into()),
+            aws_smithy_types::Number::NegInt((*var_1146).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1064 = writer.prefix("SubnetId");
-    if let Some(var_1065) = &input.subnet_id {
-        scope_1064.string(var_1065);
+    let mut scope_1147 = writer.prefix("SubnetId");
+    if let Some(var_1148) = &input.subnet_id {
+        scope_1147.string(var_1148);
     }
     #[allow(unused_mut)]
-    let mut scope_1066 = writer.prefix("NetworkCardIndex");
-    if let Some(var_1067) = &input.network_card_index {
-        scope_1066.number(
+    let mut scope_1149 = writer.prefix("NetworkCardIndex");
+    if let Some(var_1150) = &input.network_card_index {
+        scope_1149.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1067).into()),
+            aws_smithy_types::Number::NegInt((*var_1150).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1068 = writer.prefix("Ipv4Prefix");
-    if let Some(var_1069) = &input.ipv4_prefixes {
-        let mut list_1071 = scope_1068.start_list(true, Some("item"));
-        for item_1070 in var_1069 {
+    let mut scope_1151 = writer.prefix("Ipv4Prefix");
+    if let Some(var_1152) = &input.ipv4_prefixes {
+        let mut list_1154 = scope_1151.start_list(true, Some("item"));
+        for item_1153 in var_1152 {
             #[allow(unused_mut)]
-            let mut entry_1072 = list_1071.entry();
+            let mut entry_1155 = list_1154.entry();
             crate::query_ser::serialize_structure_crate_model_ipv4_prefix_specification_request(
-                entry_1072, item_1070,
+                entry_1155, item_1153,
             );
         }
-        list_1071.finish();
+        list_1154.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1073 = writer.prefix("Ipv4PrefixCount");
-    if let Some(var_1074) = &input.ipv4_prefix_count {
-        scope_1073.number(
+    let mut scope_1156 = writer.prefix("Ipv4PrefixCount");
+    if let Some(var_1157) = &input.ipv4_prefix_count {
+        scope_1156.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1074).into()),
+            aws_smithy_types::Number::NegInt((*var_1157).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1075 = writer.prefix("Ipv6Prefix");
-    if let Some(var_1076) = &input.ipv6_prefixes {
-        let mut list_1078 = scope_1075.start_list(true, Some("item"));
-        for item_1077 in var_1076 {
+    let mut scope_1158 = writer.prefix("Ipv6Prefix");
+    if let Some(var_1159) = &input.ipv6_prefixes {
+        let mut list_1161 = scope_1158.start_list(true, Some("item"));
+        for item_1160 in var_1159 {
             #[allow(unused_mut)]
-            let mut entry_1079 = list_1078.entry();
+            let mut entry_1162 = list_1161.entry();
             crate::query_ser::serialize_structure_crate_model_ipv6_prefix_specification_request(
-                entry_1079, item_1077,
+                entry_1162, item_1160,
             );
         }
-        list_1078.finish();
+        list_1161.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1080 = writer.prefix("Ipv6PrefixCount");
-    if let Some(var_1081) = &input.ipv6_prefix_count {
-        scope_1080.number(
+    let mut scope_1163 = writer.prefix("Ipv6PrefixCount");
+    if let Some(var_1164) = &input.ipv6_prefix_count {
+        scope_1163.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1081).into()),
+            aws_smithy_types::Number::NegInt((*var_1164).into()),
         );
     }
 }
@@ -3670,9 +3904,9 @@ pub fn serialize_structure_crate_model_launch_templates_monitoring_request(
     input: &crate::model::LaunchTemplatesMonitoringRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1082 = writer.prefix("Enabled");
-    if let Some(var_1083) = &input.enabled {
-        scope_1082.boolean(*var_1083);
+    let mut scope_1165 = writer.prefix("Enabled");
+    if let Some(var_1166) = &input.enabled {
+        scope_1165.boolean(*var_1166);
     }
 }
 
@@ -3682,46 +3916,46 @@ pub fn serialize_structure_crate_model_launch_template_placement_request(
     input: &crate::model::LaunchTemplatePlacementRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1084 = writer.prefix("AvailabilityZone");
-    if let Some(var_1085) = &input.availability_zone {
-        scope_1084.string(var_1085);
+    let mut scope_1167 = writer.prefix("AvailabilityZone");
+    if let Some(var_1168) = &input.availability_zone {
+        scope_1167.string(var_1168);
     }
     #[allow(unused_mut)]
-    let mut scope_1086 = writer.prefix("Affinity");
-    if let Some(var_1087) = &input.affinity {
-        scope_1086.string(var_1087);
+    let mut scope_1169 = writer.prefix("Affinity");
+    if let Some(var_1170) = &input.affinity {
+        scope_1169.string(var_1170);
     }
     #[allow(unused_mut)]
-    let mut scope_1088 = writer.prefix("GroupName");
-    if let Some(var_1089) = &input.group_name {
-        scope_1088.string(var_1089);
+    let mut scope_1171 = writer.prefix("GroupName");
+    if let Some(var_1172) = &input.group_name {
+        scope_1171.string(var_1172);
     }
     #[allow(unused_mut)]
-    let mut scope_1090 = writer.prefix("HostId");
-    if let Some(var_1091) = &input.host_id {
-        scope_1090.string(var_1091);
+    let mut scope_1173 = writer.prefix("HostId");
+    if let Some(var_1174) = &input.host_id {
+        scope_1173.string(var_1174);
     }
     #[allow(unused_mut)]
-    let mut scope_1092 = writer.prefix("Tenancy");
-    if let Some(var_1093) = &input.tenancy {
-        scope_1092.string(var_1093.as_str());
+    let mut scope_1175 = writer.prefix("Tenancy");
+    if let Some(var_1176) = &input.tenancy {
+        scope_1175.string(var_1176.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1094 = writer.prefix("SpreadDomain");
-    if let Some(var_1095) = &input.spread_domain {
-        scope_1094.string(var_1095);
+    let mut scope_1177 = writer.prefix("SpreadDomain");
+    if let Some(var_1178) = &input.spread_domain {
+        scope_1177.string(var_1178);
     }
     #[allow(unused_mut)]
-    let mut scope_1096 = writer.prefix("HostResourceGroupArn");
-    if let Some(var_1097) = &input.host_resource_group_arn {
-        scope_1096.string(var_1097);
+    let mut scope_1179 = writer.prefix("HostResourceGroupArn");
+    if let Some(var_1180) = &input.host_resource_group_arn {
+        scope_1179.string(var_1180);
     }
     #[allow(unused_mut)]
-    let mut scope_1098 = writer.prefix("PartitionNumber");
-    if let Some(var_1099) = &input.partition_number {
-        scope_1098.number(
+    let mut scope_1181 = writer.prefix("PartitionNumber");
+    if let Some(var_1182) = &input.partition_number {
+        scope_1181.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1099).into()),
+            aws_smithy_types::Number::NegInt((*var_1182).into()),
         );
     }
 }
@@ -3732,20 +3966,20 @@ pub fn serialize_structure_crate_model_launch_template_tag_specification_request
     input: &crate::model::LaunchTemplateTagSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1100 = writer.prefix("ResourceType");
-    if let Some(var_1101) = &input.resource_type {
-        scope_1100.string(var_1101.as_str());
+    let mut scope_1183 = writer.prefix("ResourceType");
+    if let Some(var_1184) = &input.resource_type {
+        scope_1183.string(var_1184.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1102 = writer.prefix("Tag");
-    if let Some(var_1103) = &input.tags {
-        let mut list_1105 = scope_1102.start_list(true, Some("item"));
-        for item_1104 in var_1103 {
+    let mut scope_1185 = writer.prefix("Tag");
+    if let Some(var_1186) = &input.tags {
+        let mut list_1188 = scope_1185.start_list(true, Some("item"));
+        for item_1187 in var_1186 {
             #[allow(unused_mut)]
-            let mut entry_1106 = list_1105.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_1106, item_1104);
+            let mut entry_1189 = list_1188.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_1189, item_1187);
         }
-        list_1105.finish();
+        list_1188.finish();
     }
 }
 
@@ -3755,16 +3989,16 @@ pub fn serialize_structure_crate_model_launch_template_elastic_inference_acceler
     input: &crate::model::LaunchTemplateElasticInferenceAccelerator,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1107 = writer.prefix("Type");
-    if let Some(var_1108) = &input.r#type {
-        scope_1107.string(var_1108);
+    let mut scope_1190 = writer.prefix("Type");
+    if let Some(var_1191) = &input.r#type {
+        scope_1190.string(var_1191);
     }
     #[allow(unused_mut)]
-    let mut scope_1109 = writer.prefix("Count");
-    if let Some(var_1110) = &input.count {
-        scope_1109.number(
+    let mut scope_1192 = writer.prefix("Count");
+    if let Some(var_1193) = &input.count {
+        scope_1192.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1110).into()),
+            aws_smithy_types::Number::NegInt((*var_1193).into()),
         );
     }
 }
@@ -3775,14 +4009,14 @@ pub fn serialize_structure_crate_model_launch_template_instance_market_options_r
     input: &crate::model::LaunchTemplateInstanceMarketOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1111 = writer.prefix("MarketType");
-    if let Some(var_1112) = &input.market_type {
-        scope_1111.string(var_1112.as_str());
+    let mut scope_1194 = writer.prefix("MarketType");
+    if let Some(var_1195) = &input.market_type {
+        scope_1194.string(var_1195.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1113 = writer.prefix("SpotOptions");
-    if let Some(var_1114) = &input.spot_options {
-        crate::query_ser::serialize_structure_crate_model_launch_template_spot_market_options_request(scope_1113, var_1114);
+    let mut scope_1196 = writer.prefix("SpotOptions");
+    if let Some(var_1197) = &input.spot_options {
+        crate::query_ser::serialize_structure_crate_model_launch_template_spot_market_options_request(scope_1196, var_1197);
     }
 }
 
@@ -3792,19 +4026,19 @@ pub fn serialize_structure_crate_model_launch_template_cpu_options_request(
     input: &crate::model::LaunchTemplateCpuOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1115 = writer.prefix("CoreCount");
-    if let Some(var_1116) = &input.core_count {
-        scope_1115.number(
+    let mut scope_1198 = writer.prefix("CoreCount");
+    if let Some(var_1199) = &input.core_count {
+        scope_1198.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1116).into()),
+            aws_smithy_types::Number::NegInt((*var_1199).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1117 = writer.prefix("ThreadsPerCore");
-    if let Some(var_1118) = &input.threads_per_core {
-        scope_1117.number(
+    let mut scope_1200 = writer.prefix("ThreadsPerCore");
+    if let Some(var_1201) = &input.threads_per_core {
+        scope_1200.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1118).into()),
+            aws_smithy_types::Number::NegInt((*var_1201).into()),
         );
     }
 }
@@ -3815,15 +4049,15 @@ pub fn serialize_structure_crate_model_launch_template_capacity_reservation_spec
     input: &crate::model::LaunchTemplateCapacityReservationSpecificationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1119 = writer.prefix("CapacityReservationPreference");
-    if let Some(var_1120) = &input.capacity_reservation_preference {
-        scope_1119.string(var_1120.as_str());
+    let mut scope_1202 = writer.prefix("CapacityReservationPreference");
+    if let Some(var_1203) = &input.capacity_reservation_preference {
+        scope_1202.string(var_1203.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1121 = writer.prefix("CapacityReservationTarget");
-    if let Some(var_1122) = &input.capacity_reservation_target {
+    let mut scope_1204 = writer.prefix("CapacityReservationTarget");
+    if let Some(var_1205) = &input.capacity_reservation_target {
         crate::query_ser::serialize_structure_crate_model_capacity_reservation_target(
-            scope_1121, var_1122,
+            scope_1204, var_1205,
         );
     }
 }
@@ -3834,9 +4068,9 @@ pub fn serialize_structure_crate_model_launch_template_license_configuration_req
     input: &crate::model::LaunchTemplateLicenseConfigurationRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1123 = writer.prefix("LicenseConfigurationArn");
-    if let Some(var_1124) = &input.license_configuration_arn {
-        scope_1123.string(var_1124);
+    let mut scope_1206 = writer.prefix("LicenseConfigurationArn");
+    if let Some(var_1207) = &input.license_configuration_arn {
+        scope_1206.string(var_1207);
     }
 }
 
@@ -3846,9 +4080,9 @@ pub fn serialize_structure_crate_model_launch_template_hibernation_options_reque
     input: &crate::model::LaunchTemplateHibernationOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1125 = writer.prefix("Configured");
-    if let Some(var_1126) = &input.configured {
-        scope_1125.boolean(*var_1126);
+    let mut scope_1208 = writer.prefix("Configured");
+    if let Some(var_1209) = &input.configured {
+        scope_1208.boolean(*var_1209);
     }
 }
 
@@ -3858,27 +4092,27 @@ pub fn serialize_structure_crate_model_launch_template_instance_metadata_options
     input: &crate::model::LaunchTemplateInstanceMetadataOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1127 = writer.prefix("HttpTokens");
-    if let Some(var_1128) = &input.http_tokens {
-        scope_1127.string(var_1128.as_str());
+    let mut scope_1210 = writer.prefix("HttpTokens");
+    if let Some(var_1211) = &input.http_tokens {
+        scope_1210.string(var_1211.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1129 = writer.prefix("HttpPutResponseHopLimit");
-    if let Some(var_1130) = &input.http_put_response_hop_limit {
-        scope_1129.number(
+    let mut scope_1212 = writer.prefix("HttpPutResponseHopLimit");
+    if let Some(var_1213) = &input.http_put_response_hop_limit {
+        scope_1212.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1130).into()),
+            aws_smithy_types::Number::NegInt((*var_1213).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1131 = writer.prefix("HttpEndpoint");
-    if let Some(var_1132) = &input.http_endpoint {
-        scope_1131.string(var_1132.as_str());
+    let mut scope_1214 = writer.prefix("HttpEndpoint");
+    if let Some(var_1215) = &input.http_endpoint {
+        scope_1214.string(var_1215.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1133 = writer.prefix("HttpProtocolIpv6");
-    if let Some(var_1134) = &input.http_protocol_ipv6 {
-        scope_1133.string(var_1134.as_str());
+    let mut scope_1216 = writer.prefix("HttpProtocolIpv6");
+    if let Some(var_1217) = &input.http_protocol_ipv6 {
+        scope_1216.string(var_1217.as_str());
     }
 }
 
@@ -3888,9 +4122,9 @@ pub fn serialize_structure_crate_model_launch_template_enclave_options_request(
     input: &crate::model::LaunchTemplateEnclaveOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1135 = writer.prefix("Enabled");
-    if let Some(var_1136) = &input.enabled {
-        scope_1135.boolean(*var_1136);
+    let mut scope_1218 = writer.prefix("Enabled");
+    if let Some(var_1219) = &input.enabled {
+        scope_1218.boolean(*var_1219);
     }
 }
 
@@ -3900,156 +4134,156 @@ pub fn serialize_structure_crate_model_vpn_tunnel_options_specification(
     input: &crate::model::VpnTunnelOptionsSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1137 = writer.prefix("TunnelInsideCidr");
-    if let Some(var_1138) = &input.tunnel_inside_cidr {
-        scope_1137.string(var_1138);
+    let mut scope_1220 = writer.prefix("TunnelInsideCidr");
+    if let Some(var_1221) = &input.tunnel_inside_cidr {
+        scope_1220.string(var_1221);
     }
     #[allow(unused_mut)]
-    let mut scope_1139 = writer.prefix("TunnelInsideIpv6Cidr");
-    if let Some(var_1140) = &input.tunnel_inside_ipv6_cidr {
-        scope_1139.string(var_1140);
+    let mut scope_1222 = writer.prefix("TunnelInsideIpv6Cidr");
+    if let Some(var_1223) = &input.tunnel_inside_ipv6_cidr {
+        scope_1222.string(var_1223);
     }
     #[allow(unused_mut)]
-    let mut scope_1141 = writer.prefix("PreSharedKey");
-    if let Some(var_1142) = &input.pre_shared_key {
-        scope_1141.string(var_1142);
+    let mut scope_1224 = writer.prefix("PreSharedKey");
+    if let Some(var_1225) = &input.pre_shared_key {
+        scope_1224.string(var_1225);
     }
     #[allow(unused_mut)]
-    let mut scope_1143 = writer.prefix("Phase1LifetimeSeconds");
-    if let Some(var_1144) = &input.phase1_lifetime_seconds {
-        scope_1143.number(
+    let mut scope_1226 = writer.prefix("Phase1LifetimeSeconds");
+    if let Some(var_1227) = &input.phase1_lifetime_seconds {
+        scope_1226.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1144).into()),
+            aws_smithy_types::Number::NegInt((*var_1227).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1145 = writer.prefix("Phase2LifetimeSeconds");
-    if let Some(var_1146) = &input.phase2_lifetime_seconds {
-        scope_1145.number(
+    let mut scope_1228 = writer.prefix("Phase2LifetimeSeconds");
+    if let Some(var_1229) = &input.phase2_lifetime_seconds {
+        scope_1228.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1146).into()),
+            aws_smithy_types::Number::NegInt((*var_1229).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1147 = writer.prefix("RekeyMarginTimeSeconds");
-    if let Some(var_1148) = &input.rekey_margin_time_seconds {
-        scope_1147.number(
+    let mut scope_1230 = writer.prefix("RekeyMarginTimeSeconds");
+    if let Some(var_1231) = &input.rekey_margin_time_seconds {
+        scope_1230.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1148).into()),
+            aws_smithy_types::Number::NegInt((*var_1231).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1149 = writer.prefix("RekeyFuzzPercentage");
-    if let Some(var_1150) = &input.rekey_fuzz_percentage {
-        scope_1149.number(
+    let mut scope_1232 = writer.prefix("RekeyFuzzPercentage");
+    if let Some(var_1233) = &input.rekey_fuzz_percentage {
+        scope_1232.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1150).into()),
+            aws_smithy_types::Number::NegInt((*var_1233).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1151 = writer.prefix("ReplayWindowSize");
-    if let Some(var_1152) = &input.replay_window_size {
-        scope_1151.number(
+    let mut scope_1234 = writer.prefix("ReplayWindowSize");
+    if let Some(var_1235) = &input.replay_window_size {
+        scope_1234.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1152).into()),
+            aws_smithy_types::Number::NegInt((*var_1235).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1153 = writer.prefix("DPDTimeoutSeconds");
-    if let Some(var_1154) = &input.dpd_timeout_seconds {
-        scope_1153.number(
+    let mut scope_1236 = writer.prefix("DPDTimeoutSeconds");
+    if let Some(var_1237) = &input.dpd_timeout_seconds {
+        scope_1236.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1154).into()),
+            aws_smithy_types::Number::NegInt((*var_1237).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1155 = writer.prefix("DPDTimeoutAction");
-    if let Some(var_1156) = &input.dpd_timeout_action {
-        scope_1155.string(var_1156);
+    let mut scope_1238 = writer.prefix("DPDTimeoutAction");
+    if let Some(var_1239) = &input.dpd_timeout_action {
+        scope_1238.string(var_1239);
     }
     #[allow(unused_mut)]
-    let mut scope_1157 = writer.prefix("Phase1EncryptionAlgorithm");
-    if let Some(var_1158) = &input.phase1_encryption_algorithms {
-        let mut list_1160 = scope_1157.start_list(true, Some("item"));
-        for item_1159 in var_1158 {
+    let mut scope_1240 = writer.prefix("Phase1EncryptionAlgorithm");
+    if let Some(var_1241) = &input.phase1_encryption_algorithms {
+        let mut list_1243 = scope_1240.start_list(true, Some("item"));
+        for item_1242 in var_1241 {
             #[allow(unused_mut)]
-            let mut entry_1161 = list_1160.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_encryption_algorithms_request_list_value(entry_1161, item_1159);
+            let mut entry_1244 = list_1243.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_encryption_algorithms_request_list_value(entry_1244, item_1242);
         }
-        list_1160.finish();
+        list_1243.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1162 = writer.prefix("Phase2EncryptionAlgorithm");
-    if let Some(var_1163) = &input.phase2_encryption_algorithms {
-        let mut list_1165 = scope_1162.start_list(true, Some("item"));
-        for item_1164 in var_1163 {
+    let mut scope_1245 = writer.prefix("Phase2EncryptionAlgorithm");
+    if let Some(var_1246) = &input.phase2_encryption_algorithms {
+        let mut list_1248 = scope_1245.start_list(true, Some("item"));
+        for item_1247 in var_1246 {
             #[allow(unused_mut)]
-            let mut entry_1166 = list_1165.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_encryption_algorithms_request_list_value(entry_1166, item_1164);
+            let mut entry_1249 = list_1248.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_encryption_algorithms_request_list_value(entry_1249, item_1247);
         }
-        list_1165.finish();
+        list_1248.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1167 = writer.prefix("Phase1IntegrityAlgorithm");
-    if let Some(var_1168) = &input.phase1_integrity_algorithms {
-        let mut list_1170 = scope_1167.start_list(true, Some("item"));
-        for item_1169 in var_1168 {
+    let mut scope_1250 = writer.prefix("Phase1IntegrityAlgorithm");
+    if let Some(var_1251) = &input.phase1_integrity_algorithms {
+        let mut list_1253 = scope_1250.start_list(true, Some("item"));
+        for item_1252 in var_1251 {
             #[allow(unused_mut)]
-            let mut entry_1171 = list_1170.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_integrity_algorithms_request_list_value(entry_1171, item_1169);
+            let mut entry_1254 = list_1253.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_integrity_algorithms_request_list_value(entry_1254, item_1252);
         }
-        list_1170.finish();
+        list_1253.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1172 = writer.prefix("Phase2IntegrityAlgorithm");
-    if let Some(var_1173) = &input.phase2_integrity_algorithms {
-        let mut list_1175 = scope_1172.start_list(true, Some("item"));
-        for item_1174 in var_1173 {
+    let mut scope_1255 = writer.prefix("Phase2IntegrityAlgorithm");
+    if let Some(var_1256) = &input.phase2_integrity_algorithms {
+        let mut list_1258 = scope_1255.start_list(true, Some("item"));
+        for item_1257 in var_1256 {
             #[allow(unused_mut)]
-            let mut entry_1176 = list_1175.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_integrity_algorithms_request_list_value(entry_1176, item_1174);
+            let mut entry_1259 = list_1258.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_integrity_algorithms_request_list_value(entry_1259, item_1257);
         }
-        list_1175.finish();
+        list_1258.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1177 = writer.prefix("Phase1DHGroupNumber");
-    if let Some(var_1178) = &input.phase1_dh_group_numbers {
-        let mut list_1180 = scope_1177.start_list(true, Some("item"));
-        for item_1179 in var_1178 {
+    let mut scope_1260 = writer.prefix("Phase1DHGroupNumber");
+    if let Some(var_1261) = &input.phase1_dh_group_numbers {
+        let mut list_1263 = scope_1260.start_list(true, Some("item"));
+        for item_1262 in var_1261 {
             #[allow(unused_mut)]
-            let mut entry_1181 = list_1180.entry();
-            crate::query_ser::serialize_structure_crate_model_phase1_dh_group_numbers_request_list_value(entry_1181, item_1179);
+            let mut entry_1264 = list_1263.entry();
+            crate::query_ser::serialize_structure_crate_model_phase1_dh_group_numbers_request_list_value(entry_1264, item_1262);
         }
-        list_1180.finish();
+        list_1263.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1182 = writer.prefix("Phase2DHGroupNumber");
-    if let Some(var_1183) = &input.phase2_dh_group_numbers {
-        let mut list_1185 = scope_1182.start_list(true, Some("item"));
-        for item_1184 in var_1183 {
+    let mut scope_1265 = writer.prefix("Phase2DHGroupNumber");
+    if let Some(var_1266) = &input.phase2_dh_group_numbers {
+        let mut list_1268 = scope_1265.start_list(true, Some("item"));
+        for item_1267 in var_1266 {
             #[allow(unused_mut)]
-            let mut entry_1186 = list_1185.entry();
-            crate::query_ser::serialize_structure_crate_model_phase2_dh_group_numbers_request_list_value(entry_1186, item_1184);
+            let mut entry_1269 = list_1268.entry();
+            crate::query_ser::serialize_structure_crate_model_phase2_dh_group_numbers_request_list_value(entry_1269, item_1267);
         }
-        list_1185.finish();
+        list_1268.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1187 = writer.prefix("IKEVersion");
-    if let Some(var_1188) = &input.ike_versions {
-        let mut list_1190 = scope_1187.start_list(true, Some("item"));
-        for item_1189 in var_1188 {
+    let mut scope_1270 = writer.prefix("IKEVersion");
+    if let Some(var_1271) = &input.ike_versions {
+        let mut list_1273 = scope_1270.start_list(true, Some("item"));
+        for item_1272 in var_1271 {
             #[allow(unused_mut)]
-            let mut entry_1191 = list_1190.entry();
+            let mut entry_1274 = list_1273.entry();
             crate::query_ser::serialize_structure_crate_model_ike_versions_request_list_value(
-                entry_1191, item_1189,
+                entry_1274, item_1272,
             );
         }
-        list_1190.finish();
+        list_1273.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1192 = writer.prefix("StartupAction");
-    if let Some(var_1193) = &input.startup_action {
-        scope_1192.string(var_1193);
+    let mut scope_1275 = writer.prefix("StartupAction");
+    if let Some(var_1276) = &input.startup_action {
+        scope_1275.string(var_1276);
     }
 }
 
@@ -4059,24 +4293,208 @@ pub fn serialize_structure_crate_model_athena_integration(
     input: &crate::model::AthenaIntegration,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1194 = writer.prefix("IntegrationResultS3DestinationArn");
-    if let Some(var_1195) = &input.integration_result_s3_destination_arn {
-        scope_1194.string(var_1195);
+    let mut scope_1277 = writer.prefix("IntegrationResultS3DestinationArn");
+    if let Some(var_1278) = &input.integration_result_s3_destination_arn {
+        scope_1277.string(var_1278);
     }
     #[allow(unused_mut)]
-    let mut scope_1196 = writer.prefix("PartitionLoadFrequency");
-    if let Some(var_1197) = &input.partition_load_frequency {
-        scope_1196.string(var_1197.as_str());
+    let mut scope_1279 = writer.prefix("PartitionLoadFrequency");
+    if let Some(var_1280) = &input.partition_load_frequency {
+        scope_1279.string(var_1280.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1198 = writer.prefix("PartitionStartDate");
-    if let Some(var_1199) = &input.partition_start_date {
-        scope_1198.instant(var_1199, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_1281 = writer.prefix("PartitionStartDate");
+    if let Some(var_1282) = &input.partition_start_date {
+        scope_1281.instant(var_1282, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_1200 = writer.prefix("PartitionEndDate");
-    if let Some(var_1201) = &input.partition_end_date {
-        scope_1200.instant(var_1201, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_1283 = writer.prefix("PartitionEndDate");
+    if let Some(var_1284) = &input.partition_end_date {
+        scope_1283.instant(var_1284, aws_smithy_types::instant::Format::DateTime);
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_v_cpu_count_range_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::VCpuCountRangeRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1285 = writer.prefix("Min");
+    if let Some(var_1286) = &input.min {
+        scope_1285.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1286).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1287 = writer.prefix("Max");
+    if let Some(var_1288) = &input.max {
+        scope_1287.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1288).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_memory_mi_b_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MemoryMiBRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1289 = writer.prefix("Min");
+    if let Some(var_1290) = &input.min {
+        scope_1289.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1290).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1291 = writer.prefix("Max");
+    if let Some(var_1292) = &input.max {
+        scope_1291.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1292).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_memory_gi_b_per_v_cpu_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MemoryGiBPerVCpuRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1293 = writer.prefix("Min");
+    if let Some(var_1294) = &input.min {
+        scope_1293.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1294).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1295 = writer.prefix("Max");
+    if let Some(var_1296) = &input.max {
+        scope_1295.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1296).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_network_interface_count_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::NetworkInterfaceCountRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1297 = writer.prefix("Min");
+    if let Some(var_1298) = &input.min {
+        scope_1297.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1298).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1299 = writer.prefix("Max");
+    if let Some(var_1300) = &input.max {
+        scope_1299.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1300).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_total_local_storage_gb_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::TotalLocalStorageGbRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1301 = writer.prefix("Min");
+    if let Some(var_1302) = &input.min {
+        scope_1301.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1302).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1303 = writer.prefix("Max");
+    if let Some(var_1304) = &input.max {
+        scope_1303.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1304).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::BaselineEbsBandwidthMbpsRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1305 = writer.prefix("Min");
+    if let Some(var_1306) = &input.min {
+        scope_1305.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1306).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1307 = writer.prefix("Max");
+    if let Some(var_1308) = &input.max {
+        scope_1307.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1308).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_accelerator_count_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::AcceleratorCountRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1309 = writer.prefix("Min");
+    if let Some(var_1310) = &input.min {
+        scope_1309.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1310).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1311 = writer.prefix("Max");
+    if let Some(var_1312) = &input.max {
+        scope_1311.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1312).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_accelerator_total_memory_mi_b_request(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::AcceleratorTotalMemoryMiBRequest,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1313 = writer.prefix("Min");
+    if let Some(var_1314) = &input.min {
+        scope_1313.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1314).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1315 = writer.prefix("Max");
+    if let Some(var_1316) = &input.max {
+        scope_1315.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1316).into()),
+        );
     }
 }
 
@@ -4086,14 +4504,14 @@ pub fn serialize_structure_crate_model_user_bucket(
     input: &crate::model::UserBucket,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1202 = writer.prefix("S3Bucket");
-    if let Some(var_1203) = &input.s3_bucket {
-        scope_1202.string(var_1203);
+    let mut scope_1317 = writer.prefix("S3Bucket");
+    if let Some(var_1318) = &input.s3_bucket {
+        scope_1317.string(var_1318);
     }
     #[allow(unused_mut)]
-    let mut scope_1204 = writer.prefix("S3Key");
-    if let Some(var_1205) = &input.s3_key {
-        scope_1204.string(var_1205);
+    let mut scope_1319 = writer.prefix("S3Key");
+    if let Some(var_1320) = &input.s3_key {
+        scope_1319.string(var_1320);
     }
 }
 
@@ -4103,9 +4521,9 @@ pub fn serialize_structure_crate_model_user_data(
     input: &crate::model::UserData,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1206 = writer.prefix("Data");
-    if let Some(var_1207) = &input.data {
-        scope_1206.string(var_1207);
+    let mut scope_1321 = writer.prefix("Data");
+    if let Some(var_1322) = &input.data {
+        scope_1321.string(var_1322);
     }
 }
 
@@ -4115,14 +4533,14 @@ pub fn serialize_structure_crate_model_load_permission_request(
     input: &crate::model::LoadPermissionRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1208 = writer.prefix("Group");
-    if let Some(var_1209) = &input.group {
-        scope_1208.string(var_1209.as_str());
+    let mut scope_1323 = writer.prefix("Group");
+    if let Some(var_1324) = &input.group {
+        scope_1323.string(var_1324.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1210 = writer.prefix("UserId");
-    if let Some(var_1211) = &input.user_id {
-        scope_1210.string(var_1211);
+    let mut scope_1325 = writer.prefix("UserId");
+    if let Some(var_1326) = &input.user_id {
+        scope_1325.string(var_1326);
     }
 }
 
@@ -4132,14 +4550,24 @@ pub fn serialize_structure_crate_model_launch_permission(
     input: &crate::model::LaunchPermission,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1212 = writer.prefix("Group");
-    if let Some(var_1213) = &input.group {
-        scope_1212.string(var_1213.as_str());
+    let mut scope_1327 = writer.prefix("Group");
+    if let Some(var_1328) = &input.group {
+        scope_1327.string(var_1328.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1214 = writer.prefix("UserId");
-    if let Some(var_1215) = &input.user_id {
-        scope_1214.string(var_1215);
+    let mut scope_1329 = writer.prefix("UserId");
+    if let Some(var_1330) = &input.user_id {
+        scope_1329.string(var_1330);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1331 = writer.prefix("OrganizationArn");
+    if let Some(var_1332) = &input.organization_arn {
+        scope_1331.string(var_1332);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1333 = writer.prefix("OrganizationalUnitArn");
+    if let Some(var_1334) = &input.organizational_unit_arn {
+        scope_1333.string(var_1334);
     }
 }
 
@@ -4149,14 +4577,14 @@ pub fn serialize_structure_crate_model_ebs_instance_block_device_specification(
     input: &crate::model::EbsInstanceBlockDeviceSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1216 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1217) = &input.delete_on_termination {
-        scope_1216.boolean(*var_1217);
+    let mut scope_1335 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1336) = &input.delete_on_termination {
+        scope_1335.boolean(*var_1336);
     }
     #[allow(unused_mut)]
-    let mut scope_1218 = writer.prefix("VolumeId");
-    if let Some(var_1219) = &input.volume_id {
-        scope_1218.string(var_1219);
+    let mut scope_1337 = writer.prefix("VolumeId");
+    if let Some(var_1338) = &input.volume_id {
+        scope_1337.string(var_1338);
     }
 }
 
@@ -4166,14 +4594,14 @@ pub fn serialize_structure_crate_model_capacity_reservation_target(
     input: &crate::model::CapacityReservationTarget,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1220 = writer.prefix("CapacityReservationId");
-    if let Some(var_1221) = &input.capacity_reservation_id {
-        scope_1220.string(var_1221);
+    let mut scope_1339 = writer.prefix("CapacityReservationId");
+    if let Some(var_1340) = &input.capacity_reservation_id {
+        scope_1339.string(var_1340);
     }
     #[allow(unused_mut)]
-    let mut scope_1222 = writer.prefix("CapacityReservationResourceGroupArn");
-    if let Some(var_1223) = &input.capacity_reservation_resource_group_arn {
-        scope_1222.string(var_1223);
+    let mut scope_1341 = writer.prefix("CapacityReservationResourceGroupArn");
+    if let Some(var_1342) = &input.capacity_reservation_resource_group_arn {
+        scope_1341.string(var_1342);
     }
 }
 
@@ -4183,50 +4611,50 @@ pub fn serialize_structure_crate_model_security_group_rule_request(
     input: &crate::model::SecurityGroupRuleRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1224 = writer.prefix("IpProtocol");
-    if let Some(var_1225) = &input.ip_protocol {
-        scope_1224.string(var_1225);
+    let mut scope_1343 = writer.prefix("IpProtocol");
+    if let Some(var_1344) = &input.ip_protocol {
+        scope_1343.string(var_1344);
     }
     #[allow(unused_mut)]
-    let mut scope_1226 = writer.prefix("FromPort");
-    if let Some(var_1227) = &input.from_port {
-        scope_1226.number(
+    let mut scope_1345 = writer.prefix("FromPort");
+    if let Some(var_1346) = &input.from_port {
+        scope_1345.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1227).into()),
+            aws_smithy_types::Number::NegInt((*var_1346).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1228 = writer.prefix("ToPort");
-    if let Some(var_1229) = &input.to_port {
-        scope_1228.number(
+    let mut scope_1347 = writer.prefix("ToPort");
+    if let Some(var_1348) = &input.to_port {
+        scope_1347.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1229).into()),
+            aws_smithy_types::Number::NegInt((*var_1348).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1230 = writer.prefix("CidrIpv4");
-    if let Some(var_1231) = &input.cidr_ipv4 {
-        scope_1230.string(var_1231);
+    let mut scope_1349 = writer.prefix("CidrIpv4");
+    if let Some(var_1350) = &input.cidr_ipv4 {
+        scope_1349.string(var_1350);
     }
     #[allow(unused_mut)]
-    let mut scope_1232 = writer.prefix("CidrIpv6");
-    if let Some(var_1233) = &input.cidr_ipv6 {
-        scope_1232.string(var_1233);
+    let mut scope_1351 = writer.prefix("CidrIpv6");
+    if let Some(var_1352) = &input.cidr_ipv6 {
+        scope_1351.string(var_1352);
     }
     #[allow(unused_mut)]
-    let mut scope_1234 = writer.prefix("PrefixListId");
-    if let Some(var_1235) = &input.prefix_list_id {
-        scope_1234.string(var_1235);
+    let mut scope_1353 = writer.prefix("PrefixListId");
+    if let Some(var_1354) = &input.prefix_list_id {
+        scope_1353.string(var_1354);
     }
     #[allow(unused_mut)]
-    let mut scope_1236 = writer.prefix("ReferencedGroupId");
-    if let Some(var_1237) = &input.referenced_group_id {
-        scope_1236.string(var_1237);
+    let mut scope_1355 = writer.prefix("ReferencedGroupId");
+    if let Some(var_1356) = &input.referenced_group_id {
+        scope_1355.string(var_1356);
     }
     #[allow(unused_mut)]
-    let mut scope_1238 = writer.prefix("Description");
-    if let Some(var_1239) = &input.description {
-        scope_1238.string(var_1239);
+    let mut scope_1357 = writer.prefix("Description");
+    if let Some(var_1358) = &input.description {
+        scope_1357.string(var_1358);
     }
 }
 
@@ -4236,14 +4664,14 @@ pub fn serialize_structure_crate_model_create_volume_permission(
     input: &crate::model::CreateVolumePermission,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1240 = writer.prefix("Group");
-    if let Some(var_1241) = &input.group {
-        scope_1240.string(var_1241.as_str());
+    let mut scope_1359 = writer.prefix("Group");
+    if let Some(var_1360) = &input.group {
+        scope_1359.string(var_1360.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1242 = writer.prefix("UserId");
-    if let Some(var_1243) = &input.user_id {
-        scope_1242.string(var_1243);
+    let mut scope_1361 = writer.prefix("UserId");
+    if let Some(var_1362) = &input.user_id {
+        scope_1361.string(var_1362);
     }
 }
 
@@ -4253,19 +4681,19 @@ pub fn serialize_structure_crate_model_fleet_launch_template_specification(
     input: &crate::model::FleetLaunchTemplateSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1244 = writer.prefix("LaunchTemplateId");
-    if let Some(var_1245) = &input.launch_template_id {
-        scope_1244.string(var_1245);
+    let mut scope_1363 = writer.prefix("LaunchTemplateId");
+    if let Some(var_1364) = &input.launch_template_id {
+        scope_1363.string(var_1364);
     }
     #[allow(unused_mut)]
-    let mut scope_1246 = writer.prefix("LaunchTemplateName");
-    if let Some(var_1247) = &input.launch_template_name {
-        scope_1246.string(var_1247);
+    let mut scope_1365 = writer.prefix("LaunchTemplateName");
+    if let Some(var_1366) = &input.launch_template_name {
+        scope_1365.string(var_1366);
     }
     #[allow(unused_mut)]
-    let mut scope_1248 = writer.prefix("Version");
-    if let Some(var_1249) = &input.version {
-        scope_1248.string(var_1249);
+    let mut scope_1367 = writer.prefix("Version");
+    if let Some(var_1368) = &input.version {
+        scope_1367.string(var_1368);
     }
 }
 
@@ -4275,39 +4703,46 @@ pub fn serialize_structure_crate_model_launch_template_overrides(
     input: &crate::model::LaunchTemplateOverrides,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1250 = writer.prefix("InstanceType");
-    if let Some(var_1251) = &input.instance_type {
-        scope_1250.string(var_1251.as_str());
+    let mut scope_1369 = writer.prefix("InstanceType");
+    if let Some(var_1370) = &input.instance_type {
+        scope_1369.string(var_1370.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1252 = writer.prefix("SpotPrice");
-    if let Some(var_1253) = &input.spot_price {
-        scope_1252.string(var_1253);
+    let mut scope_1371 = writer.prefix("SpotPrice");
+    if let Some(var_1372) = &input.spot_price {
+        scope_1371.string(var_1372);
     }
     #[allow(unused_mut)]
-    let mut scope_1254 = writer.prefix("SubnetId");
-    if let Some(var_1255) = &input.subnet_id {
-        scope_1254.string(var_1255);
+    let mut scope_1373 = writer.prefix("SubnetId");
+    if let Some(var_1374) = &input.subnet_id {
+        scope_1373.string(var_1374);
     }
     #[allow(unused_mut)]
-    let mut scope_1256 = writer.prefix("AvailabilityZone");
-    if let Some(var_1257) = &input.availability_zone {
-        scope_1256.string(var_1257);
+    let mut scope_1375 = writer.prefix("AvailabilityZone");
+    if let Some(var_1376) = &input.availability_zone {
+        scope_1375.string(var_1376);
     }
     #[allow(unused_mut)]
-    let mut scope_1258 = writer.prefix("WeightedCapacity");
-    if let Some(var_1259) = &input.weighted_capacity {
-        scope_1258.number(
+    let mut scope_1377 = writer.prefix("WeightedCapacity");
+    if let Some(var_1378) = &input.weighted_capacity {
+        scope_1377.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_1259).into()),
+            aws_smithy_types::Number::Float((*var_1378).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1260 = writer.prefix("Priority");
-    if let Some(var_1261) = &input.priority {
-        scope_1260.number(
+    let mut scope_1379 = writer.prefix("Priority");
+    if let Some(var_1380) = &input.priority {
+        scope_1379.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_1261).into()),
+            aws_smithy_types::Number::Float((*var_1380).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1381 = writer.prefix("InstanceRequirements");
+    if let Some(var_1382) = &input.instance_requirements {
+        crate::query_ser::serialize_structure_crate_model_instance_requirements(
+            scope_1381, var_1382,
         );
     }
 }
@@ -4318,9 +4753,9 @@ pub fn serialize_structure_crate_model_phase1_encryption_algorithms_request_list
     input: &crate::model::Phase1EncryptionAlgorithmsRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1262 = writer.prefix("Value");
-    if let Some(var_1263) = &input.value {
-        scope_1262.string(var_1263);
+    let mut scope_1383 = writer.prefix("Value");
+    if let Some(var_1384) = &input.value {
+        scope_1383.string(var_1384);
     }
 }
 
@@ -4330,9 +4765,9 @@ pub fn serialize_structure_crate_model_phase2_encryption_algorithms_request_list
     input: &crate::model::Phase2EncryptionAlgorithmsRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1264 = writer.prefix("Value");
-    if let Some(var_1265) = &input.value {
-        scope_1264.string(var_1265);
+    let mut scope_1385 = writer.prefix("Value");
+    if let Some(var_1386) = &input.value {
+        scope_1385.string(var_1386);
     }
 }
 
@@ -4342,9 +4777,9 @@ pub fn serialize_structure_crate_model_phase1_integrity_algorithms_request_list_
     input: &crate::model::Phase1IntegrityAlgorithmsRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1266 = writer.prefix("Value");
-    if let Some(var_1267) = &input.value {
-        scope_1266.string(var_1267);
+    let mut scope_1387 = writer.prefix("Value");
+    if let Some(var_1388) = &input.value {
+        scope_1387.string(var_1388);
     }
 }
 
@@ -4354,9 +4789,9 @@ pub fn serialize_structure_crate_model_phase2_integrity_algorithms_request_list_
     input: &crate::model::Phase2IntegrityAlgorithmsRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1268 = writer.prefix("Value");
-    if let Some(var_1269) = &input.value {
-        scope_1268.string(var_1269);
+    let mut scope_1389 = writer.prefix("Value");
+    if let Some(var_1390) = &input.value {
+        scope_1389.string(var_1390);
     }
 }
 
@@ -4366,11 +4801,11 @@ pub fn serialize_structure_crate_model_phase1_dh_group_numbers_request_list_valu
     input: &crate::model::Phase1DhGroupNumbersRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1270 = writer.prefix("Value");
-    if let Some(var_1271) = &input.value {
-        scope_1270.number(
+    let mut scope_1391 = writer.prefix("Value");
+    if let Some(var_1392) = &input.value {
+        scope_1391.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1271).into()),
+            aws_smithy_types::Number::NegInt((*var_1392).into()),
         );
     }
 }
@@ -4381,11 +4816,11 @@ pub fn serialize_structure_crate_model_phase2_dh_group_numbers_request_list_valu
     input: &crate::model::Phase2DhGroupNumbersRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1272 = writer.prefix("Value");
-    if let Some(var_1273) = &input.value {
-        scope_1272.number(
+    let mut scope_1393 = writer.prefix("Value");
+    if let Some(var_1394) = &input.value {
+        scope_1393.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1273).into()),
+            aws_smithy_types::Number::NegInt((*var_1394).into()),
         );
     }
 }
@@ -4396,9 +4831,9 @@ pub fn serialize_structure_crate_model_ike_versions_request_list_value(
     input: &crate::model::IkeVersionsRequestListValue,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1274 = writer.prefix("Value");
-    if let Some(var_1275) = &input.value {
-        scope_1274.string(var_1275);
+    let mut scope_1395 = writer.prefix("Value");
+    if let Some(var_1396) = &input.value {
+        scope_1395.string(var_1396);
     }
 }
 
@@ -4408,10 +4843,10 @@ pub fn serialize_structure_crate_model_spot_maintenance_strategies(
     input: &crate::model::SpotMaintenanceStrategies,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1276 = writer.prefix("CapacityRebalance");
-    if let Some(var_1277) = &input.capacity_rebalance {
+    let mut scope_1397 = writer.prefix("CapacityRebalance");
+    if let Some(var_1398) = &input.capacity_rebalance {
         crate::query_ser::serialize_structure_crate_model_spot_capacity_rebalance(
-            scope_1276, var_1277,
+            scope_1397, var_1398,
         );
     }
 }
@@ -4422,131 +4857,138 @@ pub fn serialize_structure_crate_model_spot_fleet_launch_specification(
     input: &crate::model::SpotFleetLaunchSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1278 = writer.prefix("GroupSet");
-    if let Some(var_1279) = &input.security_groups {
-        let mut list_1281 = scope_1278.start_list(true, Some("item"));
-        for item_1280 in var_1279 {
+    let mut scope_1399 = writer.prefix("GroupSet");
+    if let Some(var_1400) = &input.security_groups {
+        let mut list_1402 = scope_1399.start_list(true, Some("item"));
+        for item_1401 in var_1400 {
             #[allow(unused_mut)]
-            let mut entry_1282 = list_1281.entry();
+            let mut entry_1403 = list_1402.entry();
             crate::query_ser::serialize_structure_crate_model_group_identifier(
-                entry_1282, item_1280,
+                entry_1403, item_1401,
             );
         }
-        list_1281.finish();
+        list_1402.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1283 = writer.prefix("AddressingType");
-    if let Some(var_1284) = &input.addressing_type {
-        scope_1283.string(var_1284);
+    let mut scope_1404 = writer.prefix("AddressingType");
+    if let Some(var_1405) = &input.addressing_type {
+        scope_1404.string(var_1405);
     }
     #[allow(unused_mut)]
-    let mut scope_1285 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_1286) = &input.block_device_mappings {
-        let mut list_1288 = scope_1285.start_list(true, Some("item"));
-        for item_1287 in var_1286 {
+    let mut scope_1406 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_1407) = &input.block_device_mappings {
+        let mut list_1409 = scope_1406.start_list(true, Some("item"));
+        for item_1408 in var_1407 {
             #[allow(unused_mut)]
-            let mut entry_1289 = list_1288.entry();
+            let mut entry_1410 = list_1409.entry();
             crate::query_ser::serialize_structure_crate_model_block_device_mapping(
-                entry_1289, item_1287,
+                entry_1410, item_1408,
             );
         }
-        list_1288.finish();
+        list_1409.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1290 = writer.prefix("EbsOptimized");
-    if let Some(var_1291) = &input.ebs_optimized {
-        scope_1290.boolean(*var_1291);
+    let mut scope_1411 = writer.prefix("EbsOptimized");
+    if let Some(var_1412) = &input.ebs_optimized {
+        scope_1411.boolean(*var_1412);
     }
     #[allow(unused_mut)]
-    let mut scope_1292 = writer.prefix("IamInstanceProfile");
-    if let Some(var_1293) = &input.iam_instance_profile {
+    let mut scope_1413 = writer.prefix("IamInstanceProfile");
+    if let Some(var_1414) = &input.iam_instance_profile {
         crate::query_ser::serialize_structure_crate_model_iam_instance_profile_specification(
-            scope_1292, var_1293,
+            scope_1413, var_1414,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1294 = writer.prefix("ImageId");
-    if let Some(var_1295) = &input.image_id {
-        scope_1294.string(var_1295);
+    let mut scope_1415 = writer.prefix("ImageId");
+    if let Some(var_1416) = &input.image_id {
+        scope_1415.string(var_1416);
     }
     #[allow(unused_mut)]
-    let mut scope_1296 = writer.prefix("InstanceType");
-    if let Some(var_1297) = &input.instance_type {
-        scope_1296.string(var_1297.as_str());
+    let mut scope_1417 = writer.prefix("InstanceType");
+    if let Some(var_1418) = &input.instance_type {
+        scope_1417.string(var_1418.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1298 = writer.prefix("KernelId");
-    if let Some(var_1299) = &input.kernel_id {
-        scope_1298.string(var_1299);
+    let mut scope_1419 = writer.prefix("KernelId");
+    if let Some(var_1420) = &input.kernel_id {
+        scope_1419.string(var_1420);
     }
     #[allow(unused_mut)]
-    let mut scope_1300 = writer.prefix("KeyName");
-    if let Some(var_1301) = &input.key_name {
-        scope_1300.string(var_1301);
+    let mut scope_1421 = writer.prefix("KeyName");
+    if let Some(var_1422) = &input.key_name {
+        scope_1421.string(var_1422);
     }
     #[allow(unused_mut)]
-    let mut scope_1302 = writer.prefix("Monitoring");
-    if let Some(var_1303) = &input.monitoring {
+    let mut scope_1423 = writer.prefix("Monitoring");
+    if let Some(var_1424) = &input.monitoring {
         crate::query_ser::serialize_structure_crate_model_spot_fleet_monitoring(
-            scope_1302, var_1303,
+            scope_1423, var_1424,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1304 = writer.prefix("NetworkInterfaceSet");
-    if let Some(var_1305) = &input.network_interfaces {
-        let mut list_1307 = scope_1304.start_list(true, Some("item"));
-        for item_1306 in var_1305 {
+    let mut scope_1425 = writer.prefix("NetworkInterfaceSet");
+    if let Some(var_1426) = &input.network_interfaces {
+        let mut list_1428 = scope_1425.start_list(true, Some("item"));
+        for item_1427 in var_1426 {
             #[allow(unused_mut)]
-            let mut entry_1308 = list_1307.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_1308, item_1306);
+            let mut entry_1429 = list_1428.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_1429, item_1427);
         }
-        list_1307.finish();
+        list_1428.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1309 = writer.prefix("Placement");
-    if let Some(var_1310) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_spot_placement(scope_1309, var_1310);
+    let mut scope_1430 = writer.prefix("Placement");
+    if let Some(var_1431) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_spot_placement(scope_1430, var_1431);
     }
     #[allow(unused_mut)]
-    let mut scope_1311 = writer.prefix("RamdiskId");
-    if let Some(var_1312) = &input.ramdisk_id {
-        scope_1311.string(var_1312);
+    let mut scope_1432 = writer.prefix("RamdiskId");
+    if let Some(var_1433) = &input.ramdisk_id {
+        scope_1432.string(var_1433);
     }
     #[allow(unused_mut)]
-    let mut scope_1313 = writer.prefix("SpotPrice");
-    if let Some(var_1314) = &input.spot_price {
-        scope_1313.string(var_1314);
+    let mut scope_1434 = writer.prefix("SpotPrice");
+    if let Some(var_1435) = &input.spot_price {
+        scope_1434.string(var_1435);
     }
     #[allow(unused_mut)]
-    let mut scope_1315 = writer.prefix("SubnetId");
-    if let Some(var_1316) = &input.subnet_id {
-        scope_1315.string(var_1316);
+    let mut scope_1436 = writer.prefix("SubnetId");
+    if let Some(var_1437) = &input.subnet_id {
+        scope_1436.string(var_1437);
     }
     #[allow(unused_mut)]
-    let mut scope_1317 = writer.prefix("UserData");
-    if let Some(var_1318) = &input.user_data {
-        scope_1317.string(var_1318);
+    let mut scope_1438 = writer.prefix("UserData");
+    if let Some(var_1439) = &input.user_data {
+        scope_1438.string(var_1439);
     }
     #[allow(unused_mut)]
-    let mut scope_1319 = writer.prefix("WeightedCapacity");
-    if let Some(var_1320) = &input.weighted_capacity {
-        scope_1319.number(
+    let mut scope_1440 = writer.prefix("WeightedCapacity");
+    if let Some(var_1441) = &input.weighted_capacity {
+        scope_1440.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_1320).into()),
+            aws_smithy_types::Number::Float((*var_1441).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1321 = writer.prefix("TagSpecificationSet");
-    if let Some(var_1322) = &input.tag_specifications {
-        let mut list_1324 = scope_1321.start_list(true, Some("item"));
-        for item_1323 in var_1322 {
+    let mut scope_1442 = writer.prefix("TagSpecificationSet");
+    if let Some(var_1443) = &input.tag_specifications {
+        let mut list_1445 = scope_1442.start_list(true, Some("item"));
+        for item_1444 in var_1443 {
             #[allow(unused_mut)]
-            let mut entry_1325 = list_1324.entry();
+            let mut entry_1446 = list_1445.entry();
             crate::query_ser::serialize_structure_crate_model_spot_fleet_tag_specification(
-                entry_1325, item_1323,
+                entry_1446, item_1444,
             );
         }
-        list_1324.finish();
+        list_1445.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1447 = writer.prefix("InstanceRequirements");
+    if let Some(var_1448) = &input.instance_requirements {
+        crate::query_ser::serialize_structure_crate_model_instance_requirements(
+            scope_1447, var_1448,
+        );
     }
 }
 
@@ -4556,17 +4998,17 @@ pub fn serialize_structure_crate_model_load_balancers_config(
     input: &crate::model::LoadBalancersConfig,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1326 = writer.prefix("ClassicLoadBalancersConfig");
-    if let Some(var_1327) = &input.classic_load_balancers_config {
+    let mut scope_1449 = writer.prefix("ClassicLoadBalancersConfig");
+    if let Some(var_1450) = &input.classic_load_balancers_config {
         crate::query_ser::serialize_structure_crate_model_classic_load_balancers_config(
-            scope_1326, var_1327,
+            scope_1449, var_1450,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1328 = writer.prefix("TargetGroupsConfig");
-    if let Some(var_1329) = &input.target_groups_config {
+    let mut scope_1451 = writer.prefix("TargetGroupsConfig");
+    if let Some(var_1452) = &input.target_groups_config {
         crate::query_ser::serialize_structure_crate_model_target_groups_config(
-            scope_1328, var_1329,
+            scope_1451, var_1452,
         );
     }
 }
@@ -4577,19 +5019,19 @@ pub fn serialize_structure_crate_model_spot_placement(
     input: &crate::model::SpotPlacement,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1330 = writer.prefix("AvailabilityZone");
-    if let Some(var_1331) = &input.availability_zone {
-        scope_1330.string(var_1331);
+    let mut scope_1453 = writer.prefix("AvailabilityZone");
+    if let Some(var_1454) = &input.availability_zone {
+        scope_1453.string(var_1454);
     }
     #[allow(unused_mut)]
-    let mut scope_1332 = writer.prefix("GroupName");
-    if let Some(var_1333) = &input.group_name {
-        scope_1332.string(var_1333);
+    let mut scope_1455 = writer.prefix("GroupName");
+    if let Some(var_1456) = &input.group_name {
+        scope_1455.string(var_1456);
     }
     #[allow(unused_mut)]
-    let mut scope_1334 = writer.prefix("Tenancy");
-    if let Some(var_1335) = &input.tenancy {
-        scope_1334.string(var_1335.as_str());
+    let mut scope_1457 = writer.prefix("Tenancy");
+    if let Some(var_1458) = &input.tenancy {
+        scope_1457.string(var_1458.as_str());
     }
 }
 
@@ -4599,32 +5041,32 @@ pub fn serialize_structure_crate_model_spot_market_options(
     input: &crate::model::SpotMarketOptions,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1336 = writer.prefix("MaxPrice");
-    if let Some(var_1337) = &input.max_price {
-        scope_1336.string(var_1337);
+    let mut scope_1459 = writer.prefix("MaxPrice");
+    if let Some(var_1460) = &input.max_price {
+        scope_1459.string(var_1460);
     }
     #[allow(unused_mut)]
-    let mut scope_1338 = writer.prefix("SpotInstanceType");
-    if let Some(var_1339) = &input.spot_instance_type {
-        scope_1338.string(var_1339.as_str());
+    let mut scope_1461 = writer.prefix("SpotInstanceType");
+    if let Some(var_1462) = &input.spot_instance_type {
+        scope_1461.string(var_1462.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1340 = writer.prefix("BlockDurationMinutes");
-    if let Some(var_1341) = &input.block_duration_minutes {
-        scope_1340.number(
+    let mut scope_1463 = writer.prefix("BlockDurationMinutes");
+    if let Some(var_1464) = &input.block_duration_minutes {
+        scope_1463.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1341).into()),
+            aws_smithy_types::Number::NegInt((*var_1464).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1342 = writer.prefix("ValidUntil");
-    if let Some(var_1343) = &input.valid_until {
-        scope_1342.instant(var_1343, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_1465 = writer.prefix("ValidUntil");
+    if let Some(var_1466) = &input.valid_until {
+        scope_1465.instant(var_1466, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_1344 = writer.prefix("InstanceInterruptionBehavior");
-    if let Some(var_1345) = &input.instance_interruption_behavior {
-        scope_1344.string(var_1345.as_str());
+    let mut scope_1467 = writer.prefix("InstanceInterruptionBehavior");
+    if let Some(var_1468) = &input.instance_interruption_behavior {
+        scope_1467.string(var_1468.as_str());
     }
 }
 
@@ -4634,26 +5076,26 @@ pub fn serialize_structure_crate_model_scheduled_instances_block_device_mapping(
     input: &crate::model::ScheduledInstancesBlockDeviceMapping,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1346 = writer.prefix("DeviceName");
-    if let Some(var_1347) = &input.device_name {
-        scope_1346.string(var_1347);
+    let mut scope_1469 = writer.prefix("DeviceName");
+    if let Some(var_1470) = &input.device_name {
+        scope_1469.string(var_1470);
     }
     #[allow(unused_mut)]
-    let mut scope_1348 = writer.prefix("Ebs");
-    if let Some(var_1349) = &input.ebs {
+    let mut scope_1471 = writer.prefix("Ebs");
+    if let Some(var_1472) = &input.ebs {
         crate::query_ser::serialize_structure_crate_model_scheduled_instances_ebs(
-            scope_1348, var_1349,
+            scope_1471, var_1472,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1350 = writer.prefix("NoDevice");
-    if let Some(var_1351) = &input.no_device {
-        scope_1350.string(var_1351);
+    let mut scope_1473 = writer.prefix("NoDevice");
+    if let Some(var_1474) = &input.no_device {
+        scope_1473.string(var_1474);
     }
     #[allow(unused_mut)]
-    let mut scope_1352 = writer.prefix("VirtualName");
-    if let Some(var_1353) = &input.virtual_name {
-        scope_1352.string(var_1353);
+    let mut scope_1475 = writer.prefix("VirtualName");
+    if let Some(var_1476) = &input.virtual_name {
+        scope_1475.string(var_1476);
     }
 }
 
@@ -4663,14 +5105,14 @@ pub fn serialize_structure_crate_model_scheduled_instances_iam_instance_profile(
     input: &crate::model::ScheduledInstancesIamInstanceProfile,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1354 = writer.prefix("Arn");
-    if let Some(var_1355) = &input.arn {
-        scope_1354.string(var_1355);
+    let mut scope_1477 = writer.prefix("Arn");
+    if let Some(var_1478) = &input.arn {
+        scope_1477.string(var_1478);
     }
     #[allow(unused_mut)]
-    let mut scope_1356 = writer.prefix("Name");
-    if let Some(var_1357) = &input.name {
-        scope_1356.string(var_1357);
+    let mut scope_1479 = writer.prefix("Name");
+    if let Some(var_1480) = &input.name {
+        scope_1479.string(var_1480);
     }
 }
 
@@ -4680,9 +5122,9 @@ pub fn serialize_structure_crate_model_scheduled_instances_monitoring(
     input: &crate::model::ScheduledInstancesMonitoring,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1358 = writer.prefix("Enabled");
-    if let Some(var_1359) = &input.enabled {
-        scope_1358.boolean(*var_1359);
+    let mut scope_1481 = writer.prefix("Enabled");
+    if let Some(var_1482) = &input.enabled {
+        scope_1481.boolean(*var_1482);
     }
 }
 
@@ -4692,93 +5134,93 @@ pub fn serialize_structure_crate_model_scheduled_instances_network_interface(
     input: &crate::model::ScheduledInstancesNetworkInterface,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1360 = writer.prefix("AssociatePublicIpAddress");
-    if let Some(var_1361) = &input.associate_public_ip_address {
-        scope_1360.boolean(*var_1361);
+    let mut scope_1483 = writer.prefix("AssociatePublicIpAddress");
+    if let Some(var_1484) = &input.associate_public_ip_address {
+        scope_1483.boolean(*var_1484);
     }
     #[allow(unused_mut)]
-    let mut scope_1362 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1363) = &input.delete_on_termination {
-        scope_1362.boolean(*var_1363);
+    let mut scope_1485 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1486) = &input.delete_on_termination {
+        scope_1485.boolean(*var_1486);
     }
     #[allow(unused_mut)]
-    let mut scope_1364 = writer.prefix("Description");
-    if let Some(var_1365) = &input.description {
-        scope_1364.string(var_1365);
+    let mut scope_1487 = writer.prefix("Description");
+    if let Some(var_1488) = &input.description {
+        scope_1487.string(var_1488);
     }
     #[allow(unused_mut)]
-    let mut scope_1366 = writer.prefix("DeviceIndex");
-    if let Some(var_1367) = &input.device_index {
-        scope_1366.number(
+    let mut scope_1489 = writer.prefix("DeviceIndex");
+    if let Some(var_1490) = &input.device_index {
+        scope_1489.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1367).into()),
+            aws_smithy_types::Number::NegInt((*var_1490).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1368 = writer.prefix("Group");
-    if let Some(var_1369) = &input.groups {
-        let mut list_1371 = scope_1368.start_list(true, Some("SecurityGroupId"));
-        for item_1370 in var_1369 {
+    let mut scope_1491 = writer.prefix("Group");
+    if let Some(var_1492) = &input.groups {
+        let mut list_1494 = scope_1491.start_list(true, Some("SecurityGroupId"));
+        for item_1493 in var_1492 {
             #[allow(unused_mut)]
-            let mut entry_1372 = list_1371.entry();
-            entry_1372.string(item_1370);
+            let mut entry_1495 = list_1494.entry();
+            entry_1495.string(item_1493);
         }
-        list_1371.finish();
+        list_1494.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1373 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_1374) = &input.ipv6_address_count {
-        scope_1373.number(
+    let mut scope_1496 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_1497) = &input.ipv6_address_count {
+        scope_1496.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1374).into()),
+            aws_smithy_types::Number::NegInt((*var_1497).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1375 = writer.prefix("Ipv6Address");
-    if let Some(var_1376) = &input.ipv6_addresses {
-        let mut list_1378 = scope_1375.start_list(true, Some("Ipv6Address"));
-        for item_1377 in var_1376 {
+    let mut scope_1498 = writer.prefix("Ipv6Address");
+    if let Some(var_1499) = &input.ipv6_addresses {
+        let mut list_1501 = scope_1498.start_list(true, Some("Ipv6Address"));
+        for item_1500 in var_1499 {
             #[allow(unused_mut)]
-            let mut entry_1379 = list_1378.entry();
+            let mut entry_1502 = list_1501.entry();
             crate::query_ser::serialize_structure_crate_model_scheduled_instances_ipv6_address(
-                entry_1379, item_1377,
+                entry_1502, item_1500,
             );
         }
-        list_1378.finish();
+        list_1501.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1380 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_1381) = &input.network_interface_id {
-        scope_1380.string(var_1381);
+    let mut scope_1503 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_1504) = &input.network_interface_id {
+        scope_1503.string(var_1504);
     }
     #[allow(unused_mut)]
-    let mut scope_1382 = writer.prefix("PrivateIpAddress");
-    if let Some(var_1383) = &input.private_ip_address {
-        scope_1382.string(var_1383);
+    let mut scope_1505 = writer.prefix("PrivateIpAddress");
+    if let Some(var_1506) = &input.private_ip_address {
+        scope_1505.string(var_1506);
     }
     #[allow(unused_mut)]
-    let mut scope_1384 = writer.prefix("PrivateIpAddressConfig");
-    if let Some(var_1385) = &input.private_ip_address_configs {
-        let mut list_1387 = scope_1384.start_list(true, Some("PrivateIpAddressConfigSet"));
-        for item_1386 in var_1385 {
+    let mut scope_1507 = writer.prefix("PrivateIpAddressConfig");
+    if let Some(var_1508) = &input.private_ip_address_configs {
+        let mut list_1510 = scope_1507.start_list(true, Some("PrivateIpAddressConfigSet"));
+        for item_1509 in var_1508 {
             #[allow(unused_mut)]
-            let mut entry_1388 = list_1387.entry();
-            crate::query_ser::serialize_structure_crate_model_scheduled_instances_private_ip_address_config(entry_1388, item_1386);
+            let mut entry_1511 = list_1510.entry();
+            crate::query_ser::serialize_structure_crate_model_scheduled_instances_private_ip_address_config(entry_1511, item_1509);
         }
-        list_1387.finish();
+        list_1510.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_1389 = writer.prefix("SecondaryPrivateIpAddressCount");
-    if let Some(var_1390) = &input.secondary_private_ip_address_count {
-        scope_1389.number(
+    let mut scope_1512 = writer.prefix("SecondaryPrivateIpAddressCount");
+    if let Some(var_1513) = &input.secondary_private_ip_address_count {
+        scope_1512.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1390).into()),
+            aws_smithy_types::Number::NegInt((*var_1513).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1391 = writer.prefix("SubnetId");
-    if let Some(var_1392) = &input.subnet_id {
-        scope_1391.string(var_1392);
+    let mut scope_1514 = writer.prefix("SubnetId");
+    if let Some(var_1515) = &input.subnet_id {
+        scope_1514.string(var_1515);
     }
 }
 
@@ -4788,14 +5230,14 @@ pub fn serialize_structure_crate_model_scheduled_instances_placement(
     input: &crate::model::ScheduledInstancesPlacement,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1393 = writer.prefix("AvailabilityZone");
-    if let Some(var_1394) = &input.availability_zone {
-        scope_1393.string(var_1394);
+    let mut scope_1516 = writer.prefix("AvailabilityZone");
+    if let Some(var_1517) = &input.availability_zone {
+        scope_1516.string(var_1517);
     }
     #[allow(unused_mut)]
-    let mut scope_1395 = writer.prefix("GroupName");
-    if let Some(var_1396) = &input.group_name {
-        scope_1395.string(var_1396);
+    let mut scope_1518 = writer.prefix("GroupName");
+    if let Some(var_1519) = &input.group_name {
+        scope_1518.string(var_1519);
     }
 }
 
@@ -4805,9 +5247,9 @@ pub fn serialize_structure_crate_model_fleet_spot_capacity_rebalance_request(
     input: &crate::model::FleetSpotCapacityRebalanceRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1397 = writer.prefix("ReplacementStrategy");
-    if let Some(var_1398) = &input.replacement_strategy {
-        scope_1397.string(var_1398.as_str());
+    let mut scope_1520 = writer.prefix("ReplacementStrategy");
+    if let Some(var_1521) = &input.replacement_strategy {
+        scope_1520.string(var_1521.as_str());
     }
 }
 
@@ -4817,52 +5259,52 @@ pub fn serialize_structure_crate_model_launch_template_ebs_block_device_request(
     input: &crate::model::LaunchTemplateEbsBlockDeviceRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1399 = writer.prefix("Encrypted");
-    if let Some(var_1400) = &input.encrypted {
-        scope_1399.boolean(*var_1400);
+    let mut scope_1522 = writer.prefix("Encrypted");
+    if let Some(var_1523) = &input.encrypted {
+        scope_1522.boolean(*var_1523);
     }
     #[allow(unused_mut)]
-    let mut scope_1401 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1402) = &input.delete_on_termination {
-        scope_1401.boolean(*var_1402);
+    let mut scope_1524 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1525) = &input.delete_on_termination {
+        scope_1524.boolean(*var_1525);
     }
     #[allow(unused_mut)]
-    let mut scope_1403 = writer.prefix("Iops");
-    if let Some(var_1404) = &input.iops {
-        scope_1403.number(
+    let mut scope_1526 = writer.prefix("Iops");
+    if let Some(var_1527) = &input.iops {
+        scope_1526.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1404).into()),
+            aws_smithy_types::Number::NegInt((*var_1527).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1405 = writer.prefix("KmsKeyId");
-    if let Some(var_1406) = &input.kms_key_id {
-        scope_1405.string(var_1406);
+    let mut scope_1528 = writer.prefix("KmsKeyId");
+    if let Some(var_1529) = &input.kms_key_id {
+        scope_1528.string(var_1529);
     }
     #[allow(unused_mut)]
-    let mut scope_1407 = writer.prefix("SnapshotId");
-    if let Some(var_1408) = &input.snapshot_id {
-        scope_1407.string(var_1408);
+    let mut scope_1530 = writer.prefix("SnapshotId");
+    if let Some(var_1531) = &input.snapshot_id {
+        scope_1530.string(var_1531);
     }
     #[allow(unused_mut)]
-    let mut scope_1409 = writer.prefix("VolumeSize");
-    if let Some(var_1410) = &input.volume_size {
-        scope_1409.number(
+    let mut scope_1532 = writer.prefix("VolumeSize");
+    if let Some(var_1533) = &input.volume_size {
+        scope_1532.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1410).into()),
+            aws_smithy_types::Number::NegInt((*var_1533).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1411 = writer.prefix("VolumeType");
-    if let Some(var_1412) = &input.volume_type {
-        scope_1411.string(var_1412.as_str());
+    let mut scope_1534 = writer.prefix("VolumeType");
+    if let Some(var_1535) = &input.volume_type {
+        scope_1534.string(var_1535.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1413 = writer.prefix("Throughput");
-    if let Some(var_1414) = &input.throughput {
-        scope_1413.number(
+    let mut scope_1536 = writer.prefix("Throughput");
+    if let Some(var_1537) = &input.throughput {
+        scope_1536.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1414).into()),
+            aws_smithy_types::Number::NegInt((*var_1537).into()),
         );
     }
 }
@@ -4873,9 +5315,9 @@ pub fn serialize_structure_crate_model_instance_ipv6_address_request(
     input: &crate::model::InstanceIpv6AddressRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1415 = writer.prefix("Ipv6Address");
-    if let Some(var_1416) = &input.ipv6_address {
-        scope_1415.string(var_1416);
+    let mut scope_1538 = writer.prefix("Ipv6Address");
+    if let Some(var_1539) = &input.ipv6_address {
+        scope_1538.string(var_1539);
     }
 }
 
@@ -4885,32 +5327,202 @@ pub fn serialize_structure_crate_model_launch_template_spot_market_options_reque
     input: &crate::model::LaunchTemplateSpotMarketOptionsRequest,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1417 = writer.prefix("MaxPrice");
-    if let Some(var_1418) = &input.max_price {
-        scope_1417.string(var_1418);
+    let mut scope_1540 = writer.prefix("MaxPrice");
+    if let Some(var_1541) = &input.max_price {
+        scope_1540.string(var_1541);
     }
     #[allow(unused_mut)]
-    let mut scope_1419 = writer.prefix("SpotInstanceType");
-    if let Some(var_1420) = &input.spot_instance_type {
-        scope_1419.string(var_1420.as_str());
+    let mut scope_1542 = writer.prefix("SpotInstanceType");
+    if let Some(var_1543) = &input.spot_instance_type {
+        scope_1542.string(var_1543.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1421 = writer.prefix("BlockDurationMinutes");
-    if let Some(var_1422) = &input.block_duration_minutes {
-        scope_1421.number(
+    let mut scope_1544 = writer.prefix("BlockDurationMinutes");
+    if let Some(var_1545) = &input.block_duration_minutes {
+        scope_1544.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1422).into()),
+            aws_smithy_types::Number::NegInt((*var_1545).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1423 = writer.prefix("ValidUntil");
-    if let Some(var_1424) = &input.valid_until {
-        scope_1423.instant(var_1424, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_1546 = writer.prefix("ValidUntil");
+    if let Some(var_1547) = &input.valid_until {
+        scope_1546.instant(var_1547, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_1425 = writer.prefix("InstanceInterruptionBehavior");
-    if let Some(var_1426) = &input.instance_interruption_behavior {
-        scope_1425.string(var_1426.as_str());
+    let mut scope_1548 = writer.prefix("InstanceInterruptionBehavior");
+    if let Some(var_1549) = &input.instance_interruption_behavior {
+        scope_1548.string(var_1549.as_str());
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_instance_requirements(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::InstanceRequirements,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1550 = writer.prefix("VCpuCount");
+    if let Some(var_1551) = &input.v_cpu_count {
+        crate::query_ser::serialize_structure_crate_model_v_cpu_count_range(scope_1550, var_1551);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1552 = writer.prefix("MemoryMiB");
+    if let Some(var_1553) = &input.memory_mi_b {
+        crate::query_ser::serialize_structure_crate_model_memory_mi_b(scope_1552, var_1553);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1554 = writer.prefix("CpuManufacturerSet");
+    if let Some(var_1555) = &input.cpu_manufacturers {
+        let mut list_1557 = scope_1554.start_list(true, Some("item"));
+        for item_1556 in var_1555 {
+            #[allow(unused_mut)]
+            let mut entry_1558 = list_1557.entry();
+            entry_1558.string(item_1556.as_str());
+        }
+        list_1557.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1559 = writer.prefix("MemoryGiBPerVCpu");
+    if let Some(var_1560) = &input.memory_gi_b_per_v_cpu {
+        crate::query_ser::serialize_structure_crate_model_memory_gi_b_per_v_cpu(
+            scope_1559, var_1560,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1561 = writer.prefix("ExcludedInstanceTypeSet");
+    if let Some(var_1562) = &input.excluded_instance_types {
+        let mut list_1564 = scope_1561.start_list(true, Some("item"));
+        for item_1563 in var_1562 {
+            #[allow(unused_mut)]
+            let mut entry_1565 = list_1564.entry();
+            entry_1565.string(item_1563);
+        }
+        list_1564.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1566 = writer.prefix("InstanceGenerationSet");
+    if let Some(var_1567) = &input.instance_generations {
+        let mut list_1569 = scope_1566.start_list(true, Some("item"));
+        for item_1568 in var_1567 {
+            #[allow(unused_mut)]
+            let mut entry_1570 = list_1569.entry();
+            entry_1570.string(item_1568.as_str());
+        }
+        list_1569.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1571 = writer.prefix("SpotMaxPricePercentageOverLowestPrice");
+    if let Some(var_1572) = &input.spot_max_price_percentage_over_lowest_price {
+        scope_1571.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1572).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1573 = writer.prefix("OnDemandMaxPricePercentageOverLowestPrice");
+    if let Some(var_1574) = &input.on_demand_max_price_percentage_over_lowest_price {
+        scope_1573.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1574).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1575 = writer.prefix("BareMetal");
+    if let Some(var_1576) = &input.bare_metal {
+        scope_1575.string(var_1576.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_1577 = writer.prefix("BurstablePerformance");
+    if let Some(var_1578) = &input.burstable_performance {
+        scope_1577.string(var_1578.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_1579 = writer.prefix("RequireHibernateSupport");
+    if let Some(var_1580) = &input.require_hibernate_support {
+        scope_1579.boolean(*var_1580);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1581 = writer.prefix("NetworkInterfaceCount");
+    if let Some(var_1582) = &input.network_interface_count {
+        crate::query_ser::serialize_structure_crate_model_network_interface_count(
+            scope_1581, var_1582,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1583 = writer.prefix("LocalStorage");
+    if let Some(var_1584) = &input.local_storage {
+        scope_1583.string(var_1584.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_1585 = writer.prefix("LocalStorageTypeSet");
+    if let Some(var_1586) = &input.local_storage_types {
+        let mut list_1588 = scope_1585.start_list(true, Some("item"));
+        for item_1587 in var_1586 {
+            #[allow(unused_mut)]
+            let mut entry_1589 = list_1588.entry();
+            entry_1589.string(item_1587.as_str());
+        }
+        list_1588.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1590 = writer.prefix("TotalLocalStorageGB");
+    if let Some(var_1591) = &input.total_local_storage_gb {
+        crate::query_ser::serialize_structure_crate_model_total_local_storage_gb(
+            scope_1590, var_1591,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1592 = writer.prefix("BaselineEbsBandwidthMbps");
+    if let Some(var_1593) = &input.baseline_ebs_bandwidth_mbps {
+        crate::query_ser::serialize_structure_crate_model_baseline_ebs_bandwidth_mbps(
+            scope_1592, var_1593,
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1594 = writer.prefix("AcceleratorTypeSet");
+    if let Some(var_1595) = &input.accelerator_types {
+        let mut list_1597 = scope_1594.start_list(true, Some("item"));
+        for item_1596 in var_1595 {
+            #[allow(unused_mut)]
+            let mut entry_1598 = list_1597.entry();
+            entry_1598.string(item_1596.as_str());
+        }
+        list_1597.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1599 = writer.prefix("AcceleratorCount");
+    if let Some(var_1600) = &input.accelerator_count {
+        crate::query_ser::serialize_structure_crate_model_accelerator_count(scope_1599, var_1600);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1601 = writer.prefix("AcceleratorManufacturerSet");
+    if let Some(var_1602) = &input.accelerator_manufacturers {
+        let mut list_1604 = scope_1601.start_list(true, Some("item"));
+        for item_1603 in var_1602 {
+            #[allow(unused_mut)]
+            let mut entry_1605 = list_1604.entry();
+            entry_1605.string(item_1603.as_str());
+        }
+        list_1604.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1606 = writer.prefix("AcceleratorNameSet");
+    if let Some(var_1607) = &input.accelerator_names {
+        let mut list_1609 = scope_1606.start_list(true, Some("item"));
+        for item_1608 in var_1607 {
+            #[allow(unused_mut)]
+            let mut entry_1610 = list_1609.entry();
+            entry_1610.string(item_1608.as_str());
+        }
+        list_1609.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1611 = writer.prefix("AcceleratorTotalMemoryMiB");
+    if let Some(var_1612) = &input.accelerator_total_memory_mi_b {
+        crate::query_ser::serialize_structure_crate_model_accelerator_total_memory_mi_b(
+            scope_1611, var_1612,
+        );
     }
 }
 
@@ -4920,9 +5532,9 @@ pub fn serialize_structure_crate_model_spot_capacity_rebalance(
     input: &crate::model::SpotCapacityRebalance,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1427 = writer.prefix("ReplacementStrategy");
-    if let Some(var_1428) = &input.replacement_strategy {
-        scope_1427.string(var_1428.as_str());
+    let mut scope_1613 = writer.prefix("ReplacementStrategy");
+    if let Some(var_1614) = &input.replacement_strategy {
+        scope_1613.string(var_1614.as_str());
     }
 }
 
@@ -4932,14 +5544,14 @@ pub fn serialize_structure_crate_model_group_identifier(
     input: &crate::model::GroupIdentifier,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1429 = writer.prefix("GroupName");
-    if let Some(var_1430) = &input.group_name {
-        scope_1429.string(var_1430);
+    let mut scope_1615 = writer.prefix("GroupName");
+    if let Some(var_1616) = &input.group_name {
+        scope_1615.string(var_1616);
     }
     #[allow(unused_mut)]
-    let mut scope_1431 = writer.prefix("GroupId");
-    if let Some(var_1432) = &input.group_id {
-        scope_1431.string(var_1432);
+    let mut scope_1617 = writer.prefix("GroupId");
+    if let Some(var_1618) = &input.group_id {
+        scope_1617.string(var_1618);
     }
 }
 
@@ -4949,9 +5561,9 @@ pub fn serialize_structure_crate_model_spot_fleet_monitoring(
     input: &crate::model::SpotFleetMonitoring,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1433 = writer.prefix("Enabled");
-    if let Some(var_1434) = &input.enabled {
-        scope_1433.boolean(*var_1434);
+    let mut scope_1619 = writer.prefix("Enabled");
+    if let Some(var_1620) = &input.enabled {
+        scope_1619.boolean(*var_1620);
     }
 }
 
@@ -4961,20 +5573,20 @@ pub fn serialize_structure_crate_model_spot_fleet_tag_specification(
     input: &crate::model::SpotFleetTagSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1435 = writer.prefix("ResourceType");
-    if let Some(var_1436) = &input.resource_type {
-        scope_1435.string(var_1436.as_str());
+    let mut scope_1621 = writer.prefix("ResourceType");
+    if let Some(var_1622) = &input.resource_type {
+        scope_1621.string(var_1622.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_1437 = writer.prefix("Tag");
-    if let Some(var_1438) = &input.tags {
-        let mut list_1440 = scope_1437.start_list(true, Some("item"));
-        for item_1439 in var_1438 {
+    let mut scope_1623 = writer.prefix("Tag");
+    if let Some(var_1624) = &input.tags {
+        let mut list_1626 = scope_1623.start_list(true, Some("item"));
+        for item_1625 in var_1624 {
             #[allow(unused_mut)]
-            let mut entry_1441 = list_1440.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_1441, item_1439);
+            let mut entry_1627 = list_1626.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_1627, item_1625);
         }
-        list_1440.finish();
+        list_1626.finish();
     }
 }
 
@@ -4984,17 +5596,17 @@ pub fn serialize_structure_crate_model_classic_load_balancers_config(
     input: &crate::model::ClassicLoadBalancersConfig,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1442 = writer.prefix("ClassicLoadBalancers");
-    if let Some(var_1443) = &input.classic_load_balancers {
-        let mut list_1445 = scope_1442.start_list(true, Some("item"));
-        for item_1444 in var_1443 {
+    let mut scope_1628 = writer.prefix("ClassicLoadBalancers");
+    if let Some(var_1629) = &input.classic_load_balancers {
+        let mut list_1631 = scope_1628.start_list(true, Some("item"));
+        for item_1630 in var_1629 {
             #[allow(unused_mut)]
-            let mut entry_1446 = list_1445.entry();
+            let mut entry_1632 = list_1631.entry();
             crate::query_ser::serialize_structure_crate_model_classic_load_balancer(
-                entry_1446, item_1444,
+                entry_1632, item_1630,
             );
         }
-        list_1445.finish();
+        list_1631.finish();
     }
 }
 
@@ -5004,15 +5616,15 @@ pub fn serialize_structure_crate_model_target_groups_config(
     input: &crate::model::TargetGroupsConfig,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1447 = writer.prefix("TargetGroups");
-    if let Some(var_1448) = &input.target_groups {
-        let mut list_1450 = scope_1447.start_list(true, Some("item"));
-        for item_1449 in var_1448 {
+    let mut scope_1633 = writer.prefix("TargetGroups");
+    if let Some(var_1634) = &input.target_groups {
+        let mut list_1636 = scope_1633.start_list(true, Some("item"));
+        for item_1635 in var_1634 {
             #[allow(unused_mut)]
-            let mut entry_1451 = list_1450.entry();
-            crate::query_ser::serialize_structure_crate_model_target_group(entry_1451, item_1449);
+            let mut entry_1637 = list_1636.entry();
+            crate::query_ser::serialize_structure_crate_model_target_group(entry_1637, item_1635);
         }
-        list_1450.finish();
+        list_1636.finish();
     }
 }
 
@@ -5022,40 +5634,40 @@ pub fn serialize_structure_crate_model_scheduled_instances_ebs(
     input: &crate::model::ScheduledInstancesEbs,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1452 = writer.prefix("DeleteOnTermination");
-    if let Some(var_1453) = &input.delete_on_termination {
-        scope_1452.boolean(*var_1453);
+    let mut scope_1638 = writer.prefix("DeleteOnTermination");
+    if let Some(var_1639) = &input.delete_on_termination {
+        scope_1638.boolean(*var_1639);
     }
     #[allow(unused_mut)]
-    let mut scope_1454 = writer.prefix("Encrypted");
-    if let Some(var_1455) = &input.encrypted {
-        scope_1454.boolean(*var_1455);
+    let mut scope_1640 = writer.prefix("Encrypted");
+    if let Some(var_1641) = &input.encrypted {
+        scope_1640.boolean(*var_1641);
     }
     #[allow(unused_mut)]
-    let mut scope_1456 = writer.prefix("Iops");
-    if let Some(var_1457) = &input.iops {
-        scope_1456.number(
+    let mut scope_1642 = writer.prefix("Iops");
+    if let Some(var_1643) = &input.iops {
+        scope_1642.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1457).into()),
+            aws_smithy_types::Number::NegInt((*var_1643).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1458 = writer.prefix("SnapshotId");
-    if let Some(var_1459) = &input.snapshot_id {
-        scope_1458.string(var_1459);
+    let mut scope_1644 = writer.prefix("SnapshotId");
+    if let Some(var_1645) = &input.snapshot_id {
+        scope_1644.string(var_1645);
     }
     #[allow(unused_mut)]
-    let mut scope_1460 = writer.prefix("VolumeSize");
-    if let Some(var_1461) = &input.volume_size {
-        scope_1460.number(
+    let mut scope_1646 = writer.prefix("VolumeSize");
+    if let Some(var_1647) = &input.volume_size {
+        scope_1646.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_1461).into()),
+            aws_smithy_types::Number::NegInt((*var_1647).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_1462 = writer.prefix("VolumeType");
-    if let Some(var_1463) = &input.volume_type {
-        scope_1462.string(var_1463);
+    let mut scope_1648 = writer.prefix("VolumeType");
+    if let Some(var_1649) = &input.volume_type {
+        scope_1648.string(var_1649);
     }
 }
 
@@ -5065,9 +5677,9 @@ pub fn serialize_structure_crate_model_scheduled_instances_ipv6_address(
     input: &crate::model::ScheduledInstancesIpv6Address,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1464 = writer.prefix("Ipv6Address");
-    if let Some(var_1465) = &input.ipv6_address {
-        scope_1464.string(var_1465);
+    let mut scope_1650 = writer.prefix("Ipv6Address");
+    if let Some(var_1651) = &input.ipv6_address {
+        scope_1650.string(var_1651);
     }
 }
 
@@ -5077,14 +5689,198 @@ pub fn serialize_structure_crate_model_scheduled_instances_private_ip_address_co
     input: &crate::model::ScheduledInstancesPrivateIpAddressConfig,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1466 = writer.prefix("Primary");
-    if let Some(var_1467) = &input.primary {
-        scope_1466.boolean(*var_1467);
+    let mut scope_1652 = writer.prefix("Primary");
+    if let Some(var_1653) = &input.primary {
+        scope_1652.boolean(*var_1653);
     }
     #[allow(unused_mut)]
-    let mut scope_1468 = writer.prefix("PrivateIpAddress");
-    if let Some(var_1469) = &input.private_ip_address {
-        scope_1468.string(var_1469);
+    let mut scope_1654 = writer.prefix("PrivateIpAddress");
+    if let Some(var_1655) = &input.private_ip_address {
+        scope_1654.string(var_1655);
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_v_cpu_count_range(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::VCpuCountRange,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1656 = writer.prefix("Min");
+    if let Some(var_1657) = &input.min {
+        scope_1656.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1657).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1658 = writer.prefix("Max");
+    if let Some(var_1659) = &input.max {
+        scope_1658.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1659).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_memory_mi_b(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MemoryMiB,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1660 = writer.prefix("Min");
+    if let Some(var_1661) = &input.min {
+        scope_1660.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1661).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1662 = writer.prefix("Max");
+    if let Some(var_1663) = &input.max {
+        scope_1662.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1663).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_memory_gi_b_per_v_cpu(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::MemoryGiBPerVCpu,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1664 = writer.prefix("Min");
+    if let Some(var_1665) = &input.min {
+        scope_1664.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1665).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1666 = writer.prefix("Max");
+    if let Some(var_1667) = &input.max {
+        scope_1666.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1667).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_network_interface_count(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::NetworkInterfaceCount,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1668 = writer.prefix("Min");
+    if let Some(var_1669) = &input.min {
+        scope_1668.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1669).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1670 = writer.prefix("Max");
+    if let Some(var_1671) = &input.max {
+        scope_1670.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1671).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_total_local_storage_gb(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::TotalLocalStorageGb,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1672 = writer.prefix("Min");
+    if let Some(var_1673) = &input.min {
+        scope_1672.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1673).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1674 = writer.prefix("Max");
+    if let Some(var_1675) = &input.max {
+        scope_1674.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_1675).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_baseline_ebs_bandwidth_mbps(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::BaselineEbsBandwidthMbps,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1676 = writer.prefix("Min");
+    if let Some(var_1677) = &input.min {
+        scope_1676.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1677).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1678 = writer.prefix("Max");
+    if let Some(var_1679) = &input.max {
+        scope_1678.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1679).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_accelerator_count(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::AcceleratorCount,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1680 = writer.prefix("Min");
+    if let Some(var_1681) = &input.min {
+        scope_1680.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1681).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1682 = writer.prefix("Max");
+    if let Some(var_1683) = &input.max {
+        scope_1682.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1683).into()),
+        );
+    }
+}
+
+#[allow(unused_mut)]
+pub fn serialize_structure_crate_model_accelerator_total_memory_mi_b(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::AcceleratorTotalMemoryMiB,
+) {
+    #[allow(unused_mut)]
+    let mut scope_1684 = writer.prefix("Min");
+    if let Some(var_1685) = &input.min {
+        scope_1684.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1685).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_1686 = writer.prefix("Max");
+    if let Some(var_1687) = &input.max {
+        scope_1686.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_1687).into()),
+        );
     }
 }
 
@@ -5094,9 +5890,9 @@ pub fn serialize_structure_crate_model_classic_load_balancer(
     input: &crate::model::ClassicLoadBalancer,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1470 = writer.prefix("Name");
-    if let Some(var_1471) = &input.name {
-        scope_1470.string(var_1471);
+    let mut scope_1688 = writer.prefix("Name");
+    if let Some(var_1689) = &input.name {
+        scope_1688.string(var_1689);
     }
 }
 
@@ -5106,8 +5902,8 @@ pub fn serialize_structure_crate_model_target_group(
     input: &crate::model::TargetGroup,
 ) {
     #[allow(unused_mut)]
-    let mut scope_1472 = writer.prefix("Arn");
-    if let Some(var_1473) = &input.arn {
-        scope_1472.string(var_1473);
+    let mut scope_1690 = writer.prefix("Arn");
+    if let Some(var_1691) = &input.arn {
+        scope_1690.string(var_1691);
     }
 }

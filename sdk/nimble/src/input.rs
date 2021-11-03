@@ -11,12 +11,16 @@ pub mod accept_eulas_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -40,12 +44,12 @@ pub mod accept_eulas_input {
             self.eula_ids = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>A collection of EULA IDs.</p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>A collection of EULA IDs.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -72,7 +76,7 @@ pub type AcceptEulasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AcceptEulasInput {
     /// Consumes the builder and constructs an Operation<[`AcceptEulas`](crate::operation::AcceptEulas)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -148,6 +152,7 @@ impl AcceptEulasInput {
             input: &crate::input::AcceptEulasInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -207,9 +212,10 @@ impl AcceptEulasInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -246,12 +252,16 @@ pub mod create_launch_profile_input {
         >,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -270,13 +280,16 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
         ///
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+        /// These subnets must support the specified instance types. </p>
         pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_subnet_ids = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+        /// These subnets must support the specified instance types. </p>
         pub fn set_ec2_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -288,7 +301,8 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -298,7 +312,8 @@ pub mod create_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -336,14 +351,16 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -351,12 +368,12 @@ pub mod create_launch_profile_input {
             self.studio_component_ids = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -365,7 +382,8 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -376,7 +394,8 @@ pub mod create_launch_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -414,7 +433,7 @@ pub type CreateLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunchProfile`](crate::operation::CreateLaunchProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -490,6 +509,7 @@ impl CreateLaunchProfileInput {
             input: &crate::input::CreateLaunchProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -550,9 +570,10 @@ impl CreateLaunchProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -584,12 +605,16 @@ pub mod create_streaming_image_input {
         >,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -624,12 +649,12 @@ pub mod create_streaming_image_input {
             self.name = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -638,7 +663,8 @@ pub mod create_streaming_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -649,7 +675,8 @@ pub mod create_streaming_image_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -684,7 +711,7 @@ pub type CreateStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingImage`](crate::operation::CreateStreamingImage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -760,6 +787,7 @@ impl CreateStreamingImageInput {
             input: &crate::input::CreateStreamingImageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -820,9 +848,10 @@ impl CreateStreamingImageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -855,12 +884,16 @@ pub mod create_streaming_session_input {
         >,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -914,12 +947,12 @@ pub mod create_streaming_session_input {
             self.streaming_image_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -928,7 +961,8 @@ pub mod create_streaming_session_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -939,7 +973,8 @@ pub mod create_streaming_session_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -975,7 +1010,7 @@ pub type CreateStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSession`](crate::operation::CreateStreamingSession)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1051,6 +1086,7 @@ impl CreateStreamingSessionInput {
             input: &crate::input::CreateStreamingSessionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1113,9 +1149,10 @@ impl CreateStreamingSessionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1143,12 +1180,16 @@ pub mod create_streaming_session_stream_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1163,22 +1204,22 @@ pub mod create_streaming_session_stream_input {
             self.expiration_in_seconds = input;
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1207,7 +1248,7 @@ pub type CreateStreamingSessionStreamInputOperationRetryAlias = aws_http::AwsErr
 impl CreateStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSessionStream`](crate::operation::CreateStreamingSessionStream)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1299,6 +1340,7 @@ impl CreateStreamingSessionStreamInput {
             input: &crate::input::CreateStreamingSessionStreamInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1357,9 +1399,10 @@ impl CreateStreamingSessionStreamInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1393,12 +1436,14 @@ pub mod create_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1406,12 +1451,16 @@ pub mod create_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1442,12 +1491,14 @@ pub mod create_studio_input {
             self.studio_encryption_configuration = input;
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+        /// by Nimble Studio users.</p>
         pub fn studio_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_name = Some(input.into());
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+        /// by Nimble Studio users.</p>
         pub fn set_studio_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_name = input;
             self
@@ -1456,7 +1507,8 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1467,7 +1519,8 @@ pub mod create_studio_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1477,12 +1530,14 @@ pub mod create_studio_input {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1516,7 +1571,7 @@ pub type CreateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateStudioInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudio`](crate::operation::CreateStudio)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1572,6 +1627,7 @@ impl CreateStudioInput {
             input: &crate::input::CreateStudioInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1631,9 +1687,10 @@ impl CreateStudioInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1672,12 +1729,16 @@ pub mod create_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1780,12 +1841,12 @@ pub mod create_studio_component_input {
             self.script_parameters = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1807,7 +1868,8 @@ pub mod create_studio_component_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1818,7 +1880,8 @@ pub mod create_studio_component_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1871,7 +1934,7 @@ pub type CreateStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudioComponent`](crate::operation::CreateStudioComponent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1947,6 +2010,7 @@ impl CreateStudioComponentInput {
             input: &crate::input::CreateStudioComponentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2009,9 +2073,10 @@ impl CreateStudioComponentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2038,22 +2103,26 @@ pub mod delete_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2061,12 +2130,12 @@ pub mod delete_launch_profile_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -2093,7 +2162,7 @@ pub type DeleteLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfile`](crate::operation::DeleteLaunchProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2185,12 +2254,8 @@ impl DeleteLaunchProfileInput {
             input: &crate::input::DeleteLaunchProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -2241,16 +2306,9 @@ impl DeleteLaunchProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileInput`](crate::input::DeleteLaunchProfileInput)
@@ -2271,22 +2329,26 @@ pub mod delete_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2294,22 +2356,22 @@ pub mod delete_launch_profile_member_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -2338,7 +2400,7 @@ pub type DeleteLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorR
 impl DeleteLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfileMember`](crate::operation::DeleteLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2439,12 +2501,8 @@ impl DeleteLaunchProfileMemberInput {
             input: &crate::input::DeleteLaunchProfileMemberInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -2495,16 +2553,9 @@ impl DeleteLaunchProfileMemberInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileMemberInput`](crate::input::DeleteLaunchProfileMemberInput)
@@ -2524,12 +2575,16 @@ pub mod delete_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2547,12 +2602,12 @@ pub mod delete_streaming_image_input {
             self.streaming_image_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -2579,7 +2634,7 @@ pub type DeleteStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingImage`](crate::operation::DeleteStreamingImage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2671,12 +2726,8 @@ impl DeleteStreamingImageInput {
             input: &crate::input::DeleteStreamingImageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -2727,16 +2778,9 @@ impl DeleteStreamingImageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStreamingImageInput`](crate::input::DeleteStreamingImageInput)
@@ -2756,32 +2800,36 @@ pub mod delete_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -2808,7 +2856,7 @@ pub type DeleteStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingSession`](crate::operation::DeleteStreamingSession)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2900,12 +2948,8 @@ impl DeleteStreamingSessionInput {
             input: &crate::input::DeleteStreamingSessionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -2956,16 +3000,9 @@ impl DeleteStreamingSessionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionInput`](crate::input::DeleteStreamingSessionInput)
@@ -2984,22 +3021,26 @@ pub mod delete_studio_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -3025,7 +3066,7 @@ pub type DeleteStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteStudioInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudio`](crate::operation::DeleteStudio)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3101,12 +3142,8 @@ impl DeleteStudioInput {
             input: &crate::input::DeleteStudioInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -3157,16 +3194,9 @@ impl DeleteStudioInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStudioInput`](crate::input::DeleteStudioInput)
@@ -3186,12 +3216,16 @@ pub mod delete_studio_component_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3209,12 +3243,12 @@ pub mod delete_studio_component_input {
             self.studio_component_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -3241,7 +3275,7 @@ pub type DeleteStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioComponent`](crate::operation::DeleteStudioComponent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3333,12 +3367,8 @@ impl DeleteStudioComponentInput {
             input: &crate::input::DeleteStudioComponentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -3389,16 +3419,9 @@ impl DeleteStudioComponentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStudioComponentInput`](crate::input::DeleteStudioComponentInput)
@@ -3418,32 +3441,36 @@ pub mod delete_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -3470,7 +3497,7 @@ pub type DeleteStudioMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioMember`](crate::operation::DeleteStudioMember)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3562,12 +3589,8 @@ impl DeleteStudioMemberInput {
             input: &crate::input::DeleteStudioMemberInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -3618,16 +3641,9 @@ impl DeleteStudioMemberInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStudioMemberInput`](crate::input::DeleteStudioMemberInput)
@@ -3673,7 +3689,7 @@ pub type GetEulaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetEulaInput {
     /// Consumes the builder and constructs an Operation<[`GetEula`](crate::operation::GetEula)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3721,12 +3737,8 @@ impl GetEulaInput {
             input: &crate::input::GetEulaInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3771,16 +3783,9 @@ impl GetEulaInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetEulaInput`](crate::input::GetEulaInput)
@@ -3799,12 +3804,12 @@ pub mod get_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3812,12 +3817,12 @@ pub mod get_launch_profile_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -3843,7 +3848,7 @@ pub type GetLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfile`](crate::operation::GetLaunchProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3911,12 +3916,8 @@ impl GetLaunchProfileInput {
             input: &crate::input::GetLaunchProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3964,16 +3965,9 @@ impl GetLaunchProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileInput`](crate::input::GetLaunchProfileInput)
@@ -3992,12 +3986,12 @@ pub mod get_launch_profile_details_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4005,12 +3999,12 @@ pub mod get_launch_profile_details_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -4037,7 +4031,7 @@ pub type GetLaunchProfileDetailsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetLaunchProfileDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileDetails`](crate::operation::GetLaunchProfileDetails)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4105,12 +4099,8 @@ impl GetLaunchProfileDetailsInput {
             input: &crate::input::GetLaunchProfileDetailsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4158,16 +4148,9 @@ impl GetLaunchProfileDetailsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileDetailsInput`](crate::input::GetLaunchProfileDetailsInput)
@@ -4190,12 +4173,12 @@ pub mod get_launch_profile_initialization_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4207,7 +4190,7 @@ pub mod get_launch_profile_initialization_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>A collection of launch profile protocol versions.</p>
+        /// <p>The launch profile protocol versions supported by the client.</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -4217,7 +4200,7 @@ pub mod get_launch_profile_initialization_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>A collection of launch profile protocol versions.</p>
+        /// <p>The launch profile protocol versions supported by the client.</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4238,22 +4221,22 @@ pub mod get_launch_profile_initialization_input {
             self.launch_purpose = input;
             self
         }
-        /// <p>The platform.</p>
+        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform = Some(input.into());
             self
         }
-        /// <p>The platform.</p>
+        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -4283,7 +4266,7 @@ pub type GetLaunchProfileInitializationInputOperationRetryAlias = aws_http::AwsE
 impl GetLaunchProfileInitializationInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileInitialization`](crate::operation::GetLaunchProfileInitialization)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4375,12 +4358,8 @@ impl GetLaunchProfileInitializationInput {
             input: &crate::input::GetLaunchProfileInitializationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4428,16 +4407,9 @@ impl GetLaunchProfileInitializationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileInitializationInput`](crate::input::GetLaunchProfileInitializationInput)
@@ -4457,12 +4429,12 @@ pub mod get_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4470,22 +4442,22 @@ pub mod get_launch_profile_member_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -4512,7 +4484,7 @@ pub type GetLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileMember`](crate::operation::GetLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4589,12 +4561,8 @@ impl GetLaunchProfileMemberInput {
             input: &crate::input::GetLaunchProfileMemberInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4642,16 +4610,9 @@ impl GetLaunchProfileMemberInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileMemberInput`](crate::input::GetLaunchProfileMemberInput)
@@ -4683,12 +4644,12 @@ pub mod get_streaming_image_input {
             self.streaming_image_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -4714,7 +4675,7 @@ pub type GetStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingImage`](crate::operation::GetStreamingImage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4782,12 +4743,8 @@ impl GetStreamingImageInput {
             input: &crate::input::GetStreamingImageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4835,16 +4792,9 @@ impl GetStreamingImageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingImageInput`](crate::input::GetStreamingImageInput)
@@ -4863,22 +4813,22 @@ pub mod get_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -4904,7 +4854,7 @@ pub type GetStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSession`](crate::operation::GetStreamingSession)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4972,12 +4922,8 @@ impl GetStreamingSessionInput {
             input: &crate::input::GetStreamingSessionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5025,16 +4971,9 @@ impl GetStreamingSessionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionInput`](crate::input::GetStreamingSessionInput)
@@ -5054,32 +4993,32 @@ pub mod get_streaming_session_stream_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
         }
-        /// <p>The stream ID.</p>
+        /// <p>The streaming session stream ID.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>The stream ID.</p>
+        /// <p>The streaming session stream ID.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5107,7 +5046,7 @@ pub type GetStreamingSessionStreamInputOperationRetryAlias = aws_http::AwsErrorR
 impl GetStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSessionStream`](crate::operation::GetStreamingSessionStream)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5191,12 +5130,8 @@ impl GetStreamingSessionStreamInput {
             input: &crate::input::GetStreamingSessionStreamInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5244,16 +5179,9 @@ impl GetStreamingSessionStreamInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionStreamInput`](crate::input::GetStreamingSessionStreamInput)
@@ -5271,12 +5199,12 @@ pub mod get_studio_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5299,7 +5227,7 @@ pub type GetStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetStudioInput {
     /// Consumes the builder and constructs an Operation<[`GetStudio`](crate::operation::GetStudio)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5351,12 +5279,8 @@ impl GetStudioInput {
             input: &crate::input::GetStudioInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5402,16 +5326,9 @@ impl GetStudioInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStudioInput`](crate::input::GetStudioInput)
@@ -5443,12 +5360,12 @@ pub mod get_studio_component_input {
             self.studio_component_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5474,7 +5391,7 @@ pub type GetStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioComponent`](crate::operation::GetStudioComponent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5542,12 +5459,8 @@ impl GetStudioComponentInput {
             input: &crate::input::GetStudioComponentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5595,16 +5508,9 @@ impl GetStudioComponentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStudioComponentInput`](crate::input::GetStudioComponentInput)
@@ -5623,22 +5529,22 @@ pub mod get_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5664,7 +5570,7 @@ pub type GetStudioMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioMember`](crate::operation::GetStudioMember)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5732,12 +5638,8 @@ impl GetStudioMemberInput {
             input: &crate::input::GetStudioMemberInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5785,16 +5687,9 @@ impl GetStudioMemberInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStudioMemberInput`](crate::input::GetStudioMemberInput)
@@ -5818,14 +5713,14 @@ pub mod list_eula_acceptances_input {
         ///
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that have been previously accepted.</p>
         pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eula_ids.unwrap_or_default();
             v.push(input.into());
             self.eula_ids = Some(v);
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that have been previously accepted.</p>
         pub fn set_eula_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5833,22 +5728,22 @@ pub mod list_eula_acceptances_input {
             self.eula_ids = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5875,7 +5770,7 @@ pub type ListEulaAcceptancesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListEulaAcceptancesInput {
     /// Consumes the builder and constructs an Operation<[`ListEulaAcceptances`](crate::operation::ListEulaAcceptances)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5939,12 +5834,8 @@ impl ListEulaAcceptancesInput {
             input: &crate::input::ListEulaAcceptancesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5992,16 +5883,9 @@ impl ListEulaAcceptancesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesInput`](crate::input::ListEulaAcceptancesInput)
@@ -6024,14 +5908,14 @@ pub mod list_eulas_input {
         ///
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that should be returned</p>
         pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eula_ids.unwrap_or_default();
             v.push(input.into());
             self.eula_ids = Some(v);
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that should be returned</p>
         pub fn set_eula_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6039,12 +5923,12 @@ pub mod list_eulas_input {
             self.eula_ids = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6068,7 +5952,7 @@ pub type ListEulasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListEulasInput {
     /// Consumes the builder and constructs an Operation<[`ListEulas`](crate::operation::ListEulas)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6112,12 +5996,8 @@ impl ListEulasInput {
             input: &crate::input::ListEulasInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6163,16 +6043,9 @@ impl ListEulasInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListEulasInput`](crate::input::ListEulasInput)
@@ -6193,12 +6066,12 @@ pub mod list_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6206,32 +6079,32 @@ pub mod list_launch_profile_members_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -6260,7 +6133,7 @@ pub type ListLaunchProfileMembersInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfileMembers`](crate::operation::ListLaunchProfileMembers)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6344,12 +6217,8 @@ impl ListLaunchProfileMembersInput {
             input: &crate::input::ListLaunchProfileMembersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6397,16 +6266,9 @@ impl ListLaunchProfileMembersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListLaunchProfileMembersInput`](crate::input::ListLaunchProfileMembersInput)
@@ -6428,32 +6290,32 @@ pub mod list_launch_profiles_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -6462,14 +6324,14 @@ pub mod list_launch_profiles_input {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>A list of states.</p>
+        /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.states.unwrap_or_default();
             v.push(input.into());
             self.states = Some(v);
             self
         }
-        /// <p>A list of states.</p>
+        /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6477,12 +6339,12 @@ pub mod list_launch_profiles_input {
             self.states = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -6511,7 +6373,7 @@ pub type ListLaunchProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListLaunchProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfiles`](crate::operation::ListLaunchProfiles)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6587,12 +6449,8 @@ impl ListLaunchProfilesInput {
             input: &crate::input::ListLaunchProfilesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6640,16 +6498,9 @@ impl ListLaunchProfilesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListLaunchProfilesInput`](crate::input::ListLaunchProfilesInput)
@@ -6669,32 +6520,32 @@ pub mod list_streaming_images_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The owner.</p>
+        /// <p>Filter this request to streaming images with the given owner</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner.</p>
+        /// <p>Filter this request to streaming images with the given owner</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -6721,7 +6572,7 @@ pub type ListStreamingImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListStreamingImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingImages`](crate::operation::ListStreamingImages)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6783,12 +6634,8 @@ impl ListStreamingImagesInput {
             input: &crate::input::ListStreamingImagesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6836,16 +6683,9 @@ impl ListStreamingImagesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStreamingImagesInput`](crate::input::ListStreamingImagesInput)
@@ -6867,52 +6707,52 @@ pub mod list_streaming_sessions_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user ID of the user that created the streaming session.</p>
+        /// <p>Filters the request to streaming sessions created by the given user.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
         }
-        /// <p>The user ID of the user that created the streaming session.</p>
+        /// <p>Filters the request to streaming sessions created by the given user.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>Filters the request to streaming session owned by the given user</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.owned_by = Some(input.into());
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>Filters the request to streaming session owned by the given user</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
         }
-        /// <p>A collection of session IDs.</p>
+        /// <p>Filters the request to only the provided session IDs.</p>
         pub fn session_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_ids = Some(input.into());
             self
         }
-        /// <p>A collection of session IDs.</p>
+        /// <p>Filters the request to only the provided session IDs.</p>
         pub fn set_session_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_ids = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -6941,7 +6781,7 @@ pub type ListStreamingSessionsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListStreamingSessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingSessions`](crate::operation::ListStreamingSessions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7009,12 +6849,8 @@ impl ListStreamingSessionsInput {
             input: &crate::input::ListStreamingSessionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7062,16 +6898,9 @@ impl ListStreamingSessionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsInput`](crate::input::ListStreamingSessionsInput)
@@ -7093,22 +6922,22 @@ pub mod list_studio_components_input {
         pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7117,14 +6946,14 @@ pub mod list_studio_components_input {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>A list of states.</p>
+        /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.states.unwrap_or_default();
             v.push(input.into());
             self.states = Some(v);
             self
         }
-        /// <p>A list of states.</p>
+        /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7132,12 +6961,12 @@ pub mod list_studio_components_input {
             self.states = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -7146,14 +6975,14 @@ pub mod list_studio_components_input {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>The types.</p>
+        /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.types.unwrap_or_default();
             v.push(input.into());
             self.types = Some(v);
             self
         }
-        /// <p>The types.</p>
+        /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn set_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7185,7 +7014,7 @@ pub type ListStudioComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListStudioComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioComponents`](crate::operation::ListStudioComponents)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7260,12 +7089,8 @@ impl ListStudioComponentsInput {
             input: &crate::input::ListStudioComponentsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7313,16 +7138,9 @@ impl ListStudioComponentsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStudioComponentsInput`](crate::input::ListStudioComponentsInput)
@@ -7342,32 +7160,32 @@ pub mod list_studio_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -7394,7 +7212,7 @@ pub type ListStudioMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioMembers`](crate::operation::ListStudioMembers)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7459,12 +7277,8 @@ impl ListStudioMembersInput {
             input: &crate::input::ListStudioMembersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7512,16 +7326,9 @@ impl ListStudioMembersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStudioMembersInput`](crate::input::ListStudioMembersInput)
@@ -7539,12 +7346,12 @@ pub mod list_studios_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7569,7 +7376,7 @@ pub type ListStudiosInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListStudiosInput {
     /// Consumes the builder and constructs an Operation<[`ListStudios`](crate::operation::ListStudios)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7608,12 +7415,8 @@ impl ListStudiosInput {
             input: &crate::input::ListStudiosInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7661,16 +7464,9 @@ impl ListStudiosInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStudiosInput`](crate::input::ListStudiosInput)
@@ -7688,12 +7484,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7718,7 +7514,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7770,12 +7566,8 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7823,16 +7615,9 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -7855,12 +7640,16 @@ pub mod put_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7878,12 +7667,12 @@ pub mod put_launch_profile_members_input {
             self.identity_store_id = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7910,12 +7699,12 @@ pub mod put_launch_profile_members_input {
             self.members = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -7945,7 +7734,7 @@ pub type PutLaunchProfileMembersInputOperationRetryAlias = aws_http::AwsErrorRet
 impl PutLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutLaunchProfileMembers`](crate::operation::PutLaunchProfileMembers)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8037,6 +7826,7 @@ impl PutLaunchProfileMembersInput {
             input: &crate::input::PutLaunchProfileMembersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8099,9 +7889,10 @@ impl PutLaunchProfileMembersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8129,12 +7920,16 @@ pub mod put_studio_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8171,12 +7966,12 @@ pub mod put_studio_members_input {
             self.members = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -8204,7 +7999,7 @@ pub type PutStudioMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl PutStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutStudioMembers`](crate::operation::PutStudioMembers)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8280,6 +8075,7 @@ impl PutStudioMembersInput {
             input: &crate::input::PutStudioMembersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8340,9 +8136,10 @@ impl PutStudioMembersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8358,6 +8155,228 @@ impl PutStudioMembersInput {
     }
 }
 
+/// See [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput)
+pub mod start_streaming_session_input {
+    /// A builder for [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) studio_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.studio_id = Some(input.into());
+            self
+        }
+        /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.studio_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartStreamingSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartStreamingSessionInput {
+                client_token: self.client_token,
+                session_id: self.session_id,
+                studio_id: self.studio_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartStreamingSessionInputOperationOutputAlias = crate::operation::StartStreamingSession;
+#[doc(hidden)]
+pub type StartStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartStreamingSessionInput {
+    /// Consumes the builder and constructs an Operation<[`StartStreamingSession`](crate::operation::StartStreamingSession)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartStreamingSession,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartStreamingSessionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_116 = &_input.studio_id;
+            let input_116 =
+                input_116
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = aws_smithy_http::label::fmt_string(input_116, false);
+            if studio_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "studio_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_117 = &_input.session_id;
+            let input_117 =
+                input_117
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = aws_smithy_http::label::fmt_string(input_117, false);
+            if session_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "session_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/start",
+                studioId = studio_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::StartStreamingSessionInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            if let Some(inner_118) = &_input.client_token {
+                let formatted_119 = AsRef::<str>::as_ref(inner_118);
+                if !formatted_119.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_119;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "client_token",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartStreamingSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartStreamingSessionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartStreamingSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartStreamingSession",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput)
+    pub fn builder() -> crate::input::start_streaming_session_input::Builder {
+        crate::input::start_streaming_session_input::Builder::default()
+    }
+}
+
 /// See [`StartStudioSsoConfigurationRepairInput`](crate::input::StartStudioSsoConfigurationRepairInput)
 pub mod start_studio_sso_configuration_repair_input {
     /// A builder for [`StartStudioSsoConfigurationRepairInput`](crate::input::StartStudioSsoConfigurationRepairInput)
@@ -8368,22 +8387,26 @@ pub mod start_studio_sso_configuration_repair_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -8410,7 +8433,7 @@ pub type StartStudioSsoConfigurationRepairInputOperationRetryAlias = aws_http::A
 impl StartStudioSsoConfigurationRepairInput {
     /// Consumes the builder and constructs an Operation<[`StartStudioSSOConfigurationRepair`](crate::operation::StartStudioSSOConfigurationRepair)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8424,15 +8447,15 @@ impl StartStudioSsoConfigurationRepairInput {
             _input: &crate::input::StartStudioSsoConfigurationRepairInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_116 = &_input.studio_id;
-            let input_116 =
-                input_116
+            let input_120 = &_input.studio_id;
+            let input_120 =
+                input_120
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_116, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_120, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
@@ -8452,11 +8475,11 @@ impl StartStudioSsoConfigurationRepairInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_117) = &_input.client_token {
-                let formatted_118 = AsRef::<str>::as_ref(inner_117);
-                if !formatted_118.is_empty() {
+            if let Some(inner_121) = &_input.client_token {
+                let formatted_122 = AsRef::<str>::as_ref(inner_121);
+                if !formatted_122.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_118;
+                    let header_value = formatted_122;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -8486,12 +8509,8 @@ impl StartStudioSsoConfigurationRepairInput {
             input: &crate::input::StartStudioSsoConfigurationRepairInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         if self.client_token.is_none() {
@@ -8542,21 +8561,236 @@ impl StartStudioSsoConfigurationRepairInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`StartStudioSsoConfigurationRepairInput`](crate::input::StartStudioSsoConfigurationRepairInput)
     pub fn builder() -> crate::input::start_studio_sso_configuration_repair_input::Builder {
         crate::input::start_studio_sso_configuration_repair_input::Builder::default()
+    }
+}
+
+/// See [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput)
+pub mod stop_streaming_session_input {
+    /// A builder for [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) studio_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The studioId for the StopStreamingSessionRequest.</p>
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.studio_id = Some(input.into());
+            self
+        }
+        /// <p>The studioId for the StopStreamingSessionRequest.</p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.studio_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopStreamingSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopStreamingSessionInput {
+                client_token: self.client_token,
+                session_id: self.session_id,
+                studio_id: self.studio_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopStreamingSessionInputOperationOutputAlias = crate::operation::StopStreamingSession;
+#[doc(hidden)]
+pub type StopStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StopStreamingSessionInput {
+    /// Consumes the builder and constructs an Operation<[`StopStreamingSession`](crate::operation::StopStreamingSession)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopStreamingSession,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StopStreamingSessionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_123 = &_input.studio_id;
+            let input_123 =
+                input_123
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = aws_smithy_http::label::fmt_string(input_123, false);
+            if studio_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "studio_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_124 = &_input.session_id;
+            let input_124 =
+                input_124
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = aws_smithy_http::label::fmt_string(input_124, false);
+            if session_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "session_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/stop",
+                studioId = studio_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::StopStreamingSessionInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            if let Some(inner_125) = &_input.client_token {
+                let formatted_126 = AsRef::<str>::as_ref(inner_125);
+                if !formatted_126.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_126;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "client_token",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StopStreamingSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StopStreamingSessionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopStreamingSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopStreamingSession",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput)
+    pub fn builder() -> crate::input::stop_streaming_session_input::Builder {
+        crate::input::stop_streaming_session_input::Builder::default()
     }
 }
 
@@ -8572,12 +8806,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8586,7 +8820,8 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8597,7 +8832,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8628,7 +8864,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8642,15 +8878,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_119 = &_input.resource_arn;
-            let input_119 =
-                input_119
+            let input_127 = &_input.resource_arn;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_119, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_127, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -8680,6 +8916,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8736,9 +8973,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8764,12 +9002,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8778,14 +9016,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>An array of tag keys to delete.</p>
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>An array of tag keys to delete.</p>
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8814,7 +9052,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8828,15 +9066,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_120 = &_input.resource_arn;
-            let input_120 =
-                input_120
+            let input_128 = &_input.resource_arn;
+            let input_128 =
+                input_128
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_120, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_128, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -8853,9 +9091,9 @@ impl UntagResourceInput {
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_121) = &_input.tag_keys {
-                for inner_122 in inner_121 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_122));
+            if let Some(inner_129) = &_input.tag_keys {
+                for inner_130 in inner_129 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_130));
                 }
             }
         }
@@ -8875,12 +9113,8 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8928,16 +9162,9 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
@@ -8964,12 +9191,16 @@ pub mod update_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8984,12 +9215,12 @@ pub mod update_launch_profile_input {
             self.description = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9001,7 +9232,8 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -9011,7 +9243,8 @@ pub mod update_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9049,14 +9282,16 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9064,12 +9299,12 @@ pub mod update_launch_profile_input {
             self.studio_component_ids = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -9101,7 +9336,7 @@ pub type UpdateLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfile`](crate::operation::UpdateLaunchProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9115,30 +9350,30 @@ impl UpdateLaunchProfileInput {
             _input: &crate::input::UpdateLaunchProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_123 = &_input.studio_id;
-            let input_123 =
-                input_123
+            let input_131 = &_input.studio_id;
+            let input_131 =
+                input_131
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_123, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_131, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_124 = &_input.launch_profile_id;
-            let input_124 =
-                input_124
+            let input_132 = &_input.launch_profile_id;
+            let input_132 =
+                input_132
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let launch_profile_id = aws_smithy_http::label::fmt_string(input_124, false);
+            let launch_profile_id = aws_smithy_http::label::fmt_string(input_132, false);
             if launch_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
@@ -9159,11 +9394,11 @@ impl UpdateLaunchProfileInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_125) = &_input.client_token {
-                let formatted_126 = AsRef::<str>::as_ref(inner_125);
-                if !formatted_126.is_empty() {
+            if let Some(inner_133) = &_input.client_token {
+                let formatted_134 = AsRef::<str>::as_ref(inner_133);
+                if !formatted_134.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_126;
+                    let header_value = formatted_134;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -9193,6 +9428,7 @@ impl UpdateLaunchProfileInput {
             input: &crate::input::UpdateLaunchProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9253,9 +9489,10 @@ impl UpdateLaunchProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9284,22 +9521,26 @@ pub mod update_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_profile_id = Some(input.into());
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9320,22 +9561,22 @@ pub mod update_launch_profile_member_input {
             self.persona = input;
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -9365,7 +9606,7 @@ pub type UpdateLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorR
 impl UpdateLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfileMember`](crate::operation::UpdateLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9379,45 +9620,45 @@ impl UpdateLaunchProfileMemberInput {
             _input: &crate::input::UpdateLaunchProfileMemberInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_127 = &_input.studio_id;
-            let input_127 =
-                input_127
+            let input_135 = &_input.studio_id;
+            let input_135 =
+                input_135
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_127, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_135, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_128 = &_input.launch_profile_id;
-            let input_128 =
-                input_128
+            let input_136 = &_input.launch_profile_id;
+            let input_136 =
+                input_136
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let launch_profile_id = aws_smithy_http::label::fmt_string(input_128, false);
+            let launch_profile_id = aws_smithy_http::label::fmt_string(input_136, false);
             if launch_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_129 = &_input.principal_id;
-            let input_129 =
-                input_129
+            let input_137 = &_input.principal_id;
+            let input_137 =
+                input_137
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "principal_id",
                         details: "cannot be empty or unset",
                     })?;
-            let principal_id = aws_smithy_http::label::fmt_string(input_129, false);
+            let principal_id = aws_smithy_http::label::fmt_string(input_137, false);
             if principal_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
@@ -9432,11 +9673,11 @@ impl UpdateLaunchProfileMemberInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_130) = &_input.client_token {
-                let formatted_131 = AsRef::<str>::as_ref(inner_130);
-                if !formatted_131.is_empty() {
+            if let Some(inner_138) = &_input.client_token {
+                let formatted_139 = AsRef::<str>::as_ref(inner_138);
+                if !formatted_139.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_131;
+                    let header_value = formatted_139;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -9466,6 +9707,7 @@ impl UpdateLaunchProfileMemberInput {
             input: &crate::input::UpdateLaunchProfileMemberInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9528,9 +9770,10 @@ impl UpdateLaunchProfileMemberInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9559,12 +9802,16 @@ pub mod update_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9602,12 +9849,12 @@ pub mod update_streaming_image_input {
             self.streaming_image_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -9636,7 +9883,7 @@ pub type UpdateStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl UpdateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingImage`](crate::operation::UpdateStreamingImage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9650,30 +9897,30 @@ impl UpdateStreamingImageInput {
             _input: &crate::input::UpdateStreamingImageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_132 = &_input.studio_id;
-            let input_132 =
-                input_132
+            let input_140 = &_input.studio_id;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_132, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_140, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_133 = &_input.streaming_image_id;
-            let input_133 =
-                input_133
+            let input_141 = &_input.streaming_image_id;
+            let input_141 =
+                input_141
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "streaming_image_id",
                         details: "cannot be empty or unset",
                     })?;
-            let streaming_image_id = aws_smithy_http::label::fmt_string(input_133, false);
+            let streaming_image_id = aws_smithy_http::label::fmt_string(input_141, false);
             if streaming_image_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "streaming_image_id",
@@ -9694,11 +9941,11 @@ impl UpdateStreamingImageInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_134) = &_input.client_token {
-                let formatted_135 = AsRef::<str>::as_ref(inner_134);
-                if !formatted_135.is_empty() {
+            if let Some(inner_142) = &_input.client_token {
+                let formatted_143 = AsRef::<str>::as_ref(inner_142);
+                if !formatted_143.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_135;
+                    let header_value = formatted_143;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -9728,6 +9975,7 @@ impl UpdateStreamingImageInput {
             input: &crate::input::UpdateStreamingImageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9788,9 +10036,10 @@ impl UpdateStreamingImageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9819,12 +10068,14 @@ pub mod update_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9832,12 +10083,16 @@ pub mod update_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9852,22 +10107,24 @@ pub mod update_studio_input {
             self.display_name = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9899,7 +10156,7 @@ pub type UpdateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateStudioInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudio`](crate::operation::UpdateStudio)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9913,15 +10170,15 @@ impl UpdateStudioInput {
             _input: &crate::input::UpdateStudioInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_136 = &_input.studio_id;
-            let input_136 =
-                input_136
+            let input_144 = &_input.studio_id;
+            let input_144 =
+                input_144
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_136, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_144, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
@@ -9941,11 +10198,11 @@ impl UpdateStudioInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_137) = &_input.client_token {
-                let formatted_138 = AsRef::<str>::as_ref(inner_137);
-                if !formatted_138.is_empty() {
+            if let Some(inner_145) = &_input.client_token {
+                let formatted_146 = AsRef::<str>::as_ref(inner_145);
+                if !formatted_146.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_138;
+                    let header_value = formatted_146;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -9975,6 +10232,7 @@ impl UpdateStudioInput {
             input: &crate::input::UpdateStudioInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10034,9 +10292,10 @@ impl UpdateStudioInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10073,12 +10332,16 @@ pub mod update_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10194,12 +10457,12 @@ pub mod update_studio_component_input {
             self.studio_component_id = input;
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_id = Some(input.into());
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -10260,7 +10523,7 @@ pub type UpdateStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudioComponent`](crate::operation::UpdateStudioComponent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10274,30 +10537,30 @@ impl UpdateStudioComponentInput {
             _input: &crate::input::UpdateStudioComponentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_139 = &_input.studio_id;
-            let input_139 =
-                input_139
+            let input_147 = &_input.studio_id;
+            let input_147 =
+                input_147
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_id = aws_smithy_http::label::fmt_string(input_139, false);
+            let studio_id = aws_smithy_http::label::fmt_string(input_147, false);
             if studio_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_140 = &_input.studio_component_id;
-            let input_140 =
-                input_140
+            let input_148 = &_input.studio_component_id;
+            let input_148 =
+                input_148
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "studio_component_id",
                         details: "cannot be empty or unset",
                     })?;
-            let studio_component_id = aws_smithy_http::label::fmt_string(input_140, false);
+            let studio_component_id = aws_smithy_http::label::fmt_string(input_148, false);
             if studio_component_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "studio_component_id",
@@ -10318,11 +10581,11 @@ impl UpdateStudioComponentInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_141) = &_input.client_token {
-                let formatted_142 = AsRef::<str>::as_ref(inner_141);
-                if !formatted_142.is_empty() {
+            if let Some(inner_149) = &_input.client_token {
+                let formatted_150 = AsRef::<str>::as_ref(inner_149);
+                if !formatted_150.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_142;
+                    let header_value = formatted_150;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
@@ -10352,6 +10615,7 @@ impl UpdateStudioComponentInput {
             input: &crate::input::UpdateStudioComponentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10414,9 +10678,10 @@ impl UpdateStudioComponentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10432,217 +10697,15 @@ impl UpdateStudioComponentInput {
     }
 }
 
-/// <p>The studio component ID.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStudioComponentInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The configuration of the studio component, based on component type.</p>
-    pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
-    /// <p>The description.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Initialization scripts for studio components.</p>
-    pub initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
-    /// <p>The name for the studio component.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Parameters for the studio component scripts.</p>
-    pub script_parameters:
-        std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
-    /// <p>The studio component ID.</p>
-    pub studio_component_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The specific subtype of a studio component.</p>
-    pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>The type of the studio component.</p>
-    pub r#type: std::option::Option<crate::model::StudioComponentType>,
-}
-impl std::fmt::Debug for UpdateStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioComponentInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
-        formatter.field("initialization_scripts", &self.initialization_scripts);
-        formatter.field("name", &self.name);
-        formatter.field("script_parameters", &self.script_parameters);
-        formatter.field("studio_component_id", &self.studio_component_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("subtype", &self.subtype);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-
-/// <p>The studio ID.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>A friendly name for the studio.</p>
-    pub display_name: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub user_role_arn: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UpdateStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioInput");
-        formatter.field("admin_role_arn", &self.admin_role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("user_role_arn", &self.user_role_arn);
-        formatter.finish()
-    }
-}
-
-/// <p>The streaming image ID.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStreamingImageInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The description.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The name for the streaming image.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The streaming image ID.</p>
-    pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UpdateStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamingImageInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-/// <p>The principal ID.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLaunchProfileMemberInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The persona.</p>
-    pub persona: std::option::Option<crate::model::LaunchProfilePersona>,
-    /// <p>The principal ID.</p>
-    pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchProfileMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-/// <p>The launch profile ID.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLaunchProfileInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The description.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name for the launch profile.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>A configuration for a streaming session.</p>
-    pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UpdateLaunchProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchProfileInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field(
-            "launch_profile_protocol_versions",
-            &self.launch_profile_protocol_versions,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("stream_configuration", &self.stream_configuration);
-        formatter.field("studio_component_ids", &self.studio_component_ids);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceInput {
-    /// <p>The ARN of the target resource for tagging operations.</p>
-    pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>An array of tag keys to delete.</p>
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
-
-/// <p>The ARN for the role that manages access.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput {
-    /// <p>The ARN of the target resource for tagging operations.</p>
-    pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
@@ -10654,17 +10717,19 @@ impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
     }
 }
 
-/// <p>A launch profile membership collection.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStudioMembersInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>A list of members.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::NewStudioMember>>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutStudioMembersInput {
@@ -10678,72 +10743,15 @@ impl std::fmt::Debug for PutStudioMembersInput {
     }
 }
 
-/// <p>Information about a launch profile membership.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutLaunchProfileMembersInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ID of the identity store.</p>
-    pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>A list of members.</p>
-    pub members: std::option::Option<std::vec::Vec<crate::model::NewLaunchProfileMember>>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PutLaunchProfileMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLaunchProfileMembersInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("members", &self.members);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceInput {
-    /// <p>The ARN of the target resource for tagging operations.</p>
-    pub resource_arn: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListStudiosInput {
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListStudiosInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudiosInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioMembersInput {
-    /// <p>The maximum number of results to be returned per request.</p>
+    /// <p>The max number of results to return in the response.</p>
     pub max_results: i32,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListStudioMembersInput {
@@ -10759,16 +10767,182 @@ impl std::fmt::Debug for ListStudioMembersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListStudioComponentsInput {
-    /// <p>The maximum number of results to be returned per request.</p>
-    pub max_results: i32,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of states.</p>
-    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The studio ID.</p>
+pub struct GetStudioMemberInput {
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub principal_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The types.</p>
+}
+impl std::fmt::Debug for GetStudioMemberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStudioMemberInput");
+        formatter.field("principal_id", &self.principal_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub principal_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStudioMemberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioMemberInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("principal_id", &self.principal_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStudiosInput {
+    /// <p>The token to request the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListStudiosInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStudiosInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStudioInput {
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub admin_role_arn: std::option::Option<std::string::String>,
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A friendly name for the studio.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The studio encryption configuration.</p>
+    pub studio_encryption_configuration:
+        std::option::Option<crate::model::StudioEncryptionConfiguration>,
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+    /// by Nimble Studio users.</p>
+    pub studio_name: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub user_role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateStudioInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStudioInput");
+        formatter.field("admin_role_arn", &self.admin_role_arn);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "studio_encryption_configuration",
+            &self.studio_encryption_configuration,
+        );
+        formatter.field("studio_name", &self.studio_name);
+        formatter.field("tags", &self.tags);
+        formatter.field("user_role_arn", &self.user_role_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStudioInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStudioInput {
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub admin_role_arn: std::option::Option<std::string::String>,
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A friendly name for the studio.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub user_role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateStudioInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStudioInput");
+        formatter.field("admin_role_arn", &self.admin_role_arn);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("user_role_arn", &self.user_role_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStudioInput {
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetStudioInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStudioInput");
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStudioComponentsInput {
+    /// <p>The max number of results to return in the response.</p>
+    pub max_results: i32,
+    /// <p>The token to request the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ListStudioComponentsInput {
@@ -10786,16 +10960,250 @@ impl std::fmt::Debug for ListStudioComponentsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
+    /// <p>The description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Initialization scripts for studio components.</p>
+    pub initialization_scripts:
+        std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
+    /// <p>The name for the studio component.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Parameters for the studio component scripts.</p>
+    pub script_parameters:
+        std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>The specific subtype of a studio component.</p>
+    pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The type of the studio component.</p>
+    pub r#type: std::option::Option<crate::model::StudioComponentType>,
+}
+impl std::fmt::Debug for CreateStudioComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStudioComponentInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("configuration", &self.configuration);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+        formatter.field("initialization_scripts", &self.initialization_scripts);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("script_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("subtype", &self.subtype);
+        formatter.field("tags", &self.tags);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The studio component ID.</p>
+    pub studio_component_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStudioComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioComponentInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("studio_component_id", &self.studio_component_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStudioComponentInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
+    /// <p>The description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Initialization scripts for studio components.</p>
+    pub initialization_scripts:
+        std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
+    /// <p>The name for the studio component.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Parameters for the studio component scripts.</p>
+    pub script_parameters:
+        std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
+    /// <p>The studio component ID.</p>
+    pub studio_component_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>The specific subtype of a studio component.</p>
+    pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
+    /// <p>The type of the studio component.</p>
+    pub r#type: std::option::Option<crate::model::StudioComponentType>,
+}
+impl std::fmt::Debug for UpdateStudioComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStudioComponentInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("configuration", &self.configuration);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+        formatter.field("initialization_scripts", &self.initialization_scripts);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("script_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("studio_component_id", &self.studio_component_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("subtype", &self.subtype);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStudioComponentInput {
+    /// <p>The studio component ID.</p>
+    pub studio_component_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetStudioComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStudioComponentInput");
+        formatter.field("studio_component_id", &self.studio_component_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StopStreamingSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopStreamingSessionInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("session_id", &self.session_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StartStreamingSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartStreamingSessionInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("session_id", &self.session_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingSessionStreamInput {
+    /// <p>The streaming session ID.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The streaming session stream ID.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetStreamingSessionStreamInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingSessionStreamInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("stream_id", &self.stream_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStreamingSessionStreamInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The expiration time in seconds.</p>
+    pub expiration_in_seconds: i32,
+    /// <p>The streaming session ID.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateStreamingSessionStreamInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStreamingSessionStreamInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("expiration_in_seconds", &self.expiration_in_seconds);
+        formatter.field("session_id", &self.session_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingSessionsInput {
-    /// <p>The user ID of the user that created the streaming session.</p>
+    /// <p>Filters the request to streaming sessions created by the given user.</p>
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>Filters the request to streaming session owned by the given user</p>
     pub owned_by: std::option::Option<std::string::String>,
-    /// <p>A collection of session IDs.</p>
+    /// <p>Filters the request to only the provided session IDs.</p>
     pub session_ids: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListStreamingSessionsInput {
@@ -10813,12 +11221,90 @@ impl std::fmt::Debug for ListStreamingSessionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The EC2 Instance type used for the streaming session.</p>
+    pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
+    /// <p>The launch profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub owned_by: std::option::Option<std::string::String>,
+    /// <p>The ID of the streaming image.</p>
+    pub streaming_image_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for CreateStreamingSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStreamingSessionInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("ec2_instance_type", &self.ec2_instance_type);
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("owned_by", &self.owned_by);
+        formatter.field("streaming_image_id", &self.streaming_image_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStreamingSessionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The streaming session ID.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStreamingSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStreamingSessionInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("session_id", &self.session_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingSessionInput {
+    /// <p>The streaming session ID.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetStreamingSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingSessionInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingImagesInput {
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The owner.</p>
+    /// <p>Filter this request to streaming images with the given owner</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListStreamingImagesInput {
@@ -10834,25 +11320,160 @@ impl std::fmt::Debug for ListStreamingImagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListLaunchProfilesInput {
-    /// <p>The maximum number of results to be returned per request.</p>
-    pub max_results: i32,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The principal ID.</p>
-    pub principal_id: std::option::Option<std::string::String>,
-    /// <p>A list of states.</p>
-    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The studio ID.</p>
+pub struct CreateStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>A human-readable description of the streaming image.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    pub ec2_image_id: std::option::Option<std::string::String>,
+    /// <p>A friendly name for a streaming image resource.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for CreateStreamingImageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStreamingImageInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("ec2_image_id", &self.ec2_image_id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The streaming image ID.</p>
+    pub streaming_image_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListLaunchProfilesInput {
+impl std::fmt::Debug for DeleteStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLaunchProfilesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
+        let mut formatter = f.debug_struct("DeleteStreamingImageInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("streaming_image_id", &self.streaming_image_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStreamingImageInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The name for the streaming image.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The streaming image ID.</p>
+    pub streaming_image_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateStreamingImageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStreamingImageInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("streaming_image_id", &self.streaming_image_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingImageInput {
+    /// <p>The streaming image ID.</p>
+    pub streaming_image_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetStreamingImageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingImageInput");
+        formatter.field("streaming_image_id", &self.streaming_image_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+/// <p/>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLaunchProfileMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The Launch Profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The persona.</p>
+    pub persona: std::option::Option<crate::model::LaunchProfilePersona>,
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub principal_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLaunchProfileMemberInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("persona", &self.persona);
         formatter.field("principal_id", &self.principal_id);
-        formatter.field("states", &self.states);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutLaunchProfileMembersInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The ID of the identity store.</p>
+    pub identity_store_id: std::option::Option<std::string::String>,
+    /// <p>The Launch Profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>A list of members.</p>
+    pub members: std::option::Option<std::vec::Vec<crate::model::NewLaunchProfileMember>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PutLaunchProfileMembersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutLaunchProfileMembersInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("identity_store_id", &self.identity_store_id);
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("members", &self.members);
         formatter.field("studio_id", &self.studio_id);
         formatter.finish()
     }
@@ -10862,13 +11483,13 @@ impl std::fmt::Debug for ListLaunchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchProfileMembersInput {
-    /// <p>The launch profile ID.</p>
+    /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per request.</p>
+    /// <p>The max number of results to return in the response.</p>
     pub max_results: i32,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListLaunchProfileMembersInput {
@@ -10885,159 +11506,12 @@ impl std::fmt::Debug for ListLaunchProfileMembersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEulasInput {
-    /// <p>A collection of EULA IDs.</p>
-    pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListEulasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulasInput");
-        formatter.field("eula_ids", &self.eula_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEulaAcceptancesInput {
-    /// <p>A collection of EULA IDs.</p>
-    pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListEulaAcceptancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulaAcceptancesInput");
-        formatter.field("eula_ids", &self.eula_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioMemberInput {
-    /// <p>The principal ID.</p>
-    pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStudioMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioMemberInput");
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioComponentInput {
-    /// <p>The studio component ID.</p>
-    pub studio_component_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioComponentInput");
-        formatter.field("studio_component_id", &self.studio_component_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioInput {
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingSessionStreamInput {
-    /// <p>The session ID.</p>
-    pub session_id: std::option::Option<std::string::String>,
-    /// <p>The stream ID.</p>
-    pub stream_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStreamingSessionStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionStreamInput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingSessionInput {
-    /// <p>The session ID.</p>
-    pub session_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionInput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingImageInput {
-    /// <p>The streaming image ID.</p>
-    pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for GetStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingImageInput");
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileMemberInput {
-    /// <p>The launch profile ID.</p>
+    /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The principal ID.</p>
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
     pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetLaunchProfileMemberInput {
@@ -11054,15 +11528,15 @@ impl std::fmt::Debug for GetLaunchProfileMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileInitializationInput {
-    /// <p>The launch profile ID.</p>
+    /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>A collection of launch profile protocol versions.</p>
+    /// <p>The launch profile protocol versions supported by the client.</p>
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The launch purpose.</p>
     pub launch_purpose: std::option::Option<std::string::String>,
-    /// <p>The platform.</p>
+    /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
     pub platform: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetLaunchProfileInitializationInput {
@@ -11084,9 +11558,9 @@ impl std::fmt::Debug for GetLaunchProfileInitializationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileDetailsInput {
-    /// <p>The launch profile ID.</p>
+    /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetLaunchProfileDetailsInput {
@@ -11101,10 +11575,178 @@ impl std::fmt::Debug for GetLaunchProfileDetailsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetLaunchProfileInput {
-    /// <p>The launch profile ID.</p>
+pub struct DeleteLaunchProfileMemberInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub principal_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLaunchProfileMemberInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("principal_id", &self.principal_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLaunchProfilesInput {
+    /// <p>The max number of results to return in the response.</p>
+    pub max_results: i32,
+    /// <p>The token to request the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    pub principal_id: std::option::Option<std::string::String>,
+    /// <p>Filter this request to launch profiles in any of the given states.</p>
+    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListLaunchProfilesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLaunchProfilesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("principal_id", &self.principal_id);
+        formatter.field("states", &self.states);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+    /// These subnets must support the specified instance types. </p>
+    pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name for the launch profile.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A configuration for a streaming session.</p>
+    pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
+    /// <p>Unique identifiers for a collection of studio components that can be used with this
+    /// launch profile.</p>
+    pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for CreateLaunchProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLaunchProfileInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("ec2_subnet_ids", &self.ec2_subnet_ids);
+        formatter.field(
+            "launch_profile_protocol_versions",
+            &self.launch_profile_protocol_versions,
+        );
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("stream_configuration", &self.stream_configuration);
+        formatter.field("studio_component_ids", &self.studio_component_ids);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The Launch Profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteLaunchProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLaunchProfileInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLaunchProfileInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Launch Profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name for the launch profile.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A configuration for a streaming session.</p>
+    pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
+    /// <p>Unique identifiers for a collection of studio components that can be used with this
+    /// launch profile.</p>
+    pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The studio ID. </p>
+    pub studio_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateLaunchProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLaunchProfileInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field(
+            "launch_profile_protocol_versions",
+            &self.launch_profile_protocol_versions,
+        );
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("stream_configuration", &self.stream_configuration);
+        formatter.field("studio_component_ids", &self.studio_component_ids);
+        formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLaunchProfileInput {
+    /// <p>The Launch Profile ID.</p>
+    pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetLaunchProfileInput {
@@ -11112,6 +11754,24 @@ impl std::fmt::Debug for GetLaunchProfileInput {
         let mut formatter = f.debug_struct("GetLaunchProfileInput");
         formatter.field("launch_profile_id", &self.launch_profile_id);
         formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEulasInput {
+    /// <p>The list of EULA IDs that should be returned</p>
+    pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The token to request the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListEulasInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEulasInput");
+        formatter.field("eula_ids", &self.eula_ids);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -11134,377 +11794,35 @@ impl std::fmt::Debug for GetEulaInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioMemberInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The principal ID.</p>
-    pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
+pub struct ListEulaAcceptancesInput {
+    /// <p>The list of EULA IDs that have been previously accepted.</p>
+    pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The token to request the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DeleteStudioMemberInput {
+impl std::fmt::Debug for ListEulaAcceptancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("principal_id", &self.principal_id);
+        let mut formatter = f.debug_struct("ListEulaAcceptancesInput");
+        formatter.field("eula_ids", &self.eula_ids);
+        formatter.field("next_token", &self.next_token);
         formatter.field("studio_id", &self.studio_id);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioComponentInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The studio component ID.</p>
-    pub studio_component_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioComponentInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("studio_component_id", &self.studio_component_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStreamingSessionInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The session ID.</p>
-    pub session_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStreamingImageInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The streaming image ID.</p>
-    pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingImageInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteLaunchProfileMemberInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The principal ID.</p>
-    pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchProfileMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteLaunchProfileInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DeleteLaunchProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchProfileInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-/// <p>The studio components.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStudioComponentInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The configuration of the studio component, based on component type.</p>
-    pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
-    /// <p>The description.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Initialization scripts for studio components.</p>
-    pub initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
-    /// <p>The name for the studio component.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Parameters for the studio component scripts.</p>
-    pub script_parameters:
-        std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The specific subtype of a studio component.</p>
-    pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The type of the studio component.</p>
-    pub r#type: std::option::Option<crate::model::StudioComponentType>,
-}
-impl std::fmt::Debug for CreateStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioComponentInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("description", &self.description);
-        formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
-        formatter.field("initialization_scripts", &self.initialization_scripts);
-        formatter.field("name", &self.name);
-        formatter.field("script_parameters", &self.script_parameters);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("subtype", &self.subtype);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-
-/// <p>A collection of studio resources.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>A friendly name for the studio.</p>
-    pub display_name: std::option::Option<std::string::String>,
-    /// <p>The studio encryption configuration.</p>
-    pub studio_encryption_configuration:
-        std::option::Option<crate::model::StudioEncryptionConfiguration>,
-    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
-    pub studio_name: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub user_role_arn: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CreateStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioInput");
-        formatter.field("admin_role_arn", &self.admin_role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "studio_encryption_configuration",
-            &self.studio_encryption_configuration,
-        );
-        formatter.field("studio_name", &self.studio_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("user_role_arn", &self.user_role_arn);
-        formatter.finish()
-    }
-}
-
-/// <p>A list collection streams.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingSessionStreamInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The expiration time in seconds.</p>
-    pub expiration_in_seconds: i32,
-    /// <p>The session ID.</p>
-    pub session_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CreateStreamingSessionStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionStreamInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("expiration_in_seconds", &self.expiration_in_seconds);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
-
-/// <p>A collection of streaming sessions.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingSessionInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The EC2 Instance type used for the streaming session.</p>
-    pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
-    /// <p>The launch profile ID.</p>
-    pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The user ID of the user that owns the streaming session.</p>
-    pub owned_by: std::option::Option<std::string::String>,
-    /// <p>The ID of the streaming image.</p>
-    pub streaming_image_id: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl std::fmt::Debug for CreateStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-
-/// <p>A collection of streaming images.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingImageInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>A human-readable description of the streaming image.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
-    pub ec2_image_id: std::option::Option<std::string::String>,
-    /// <p>A friendly name for a streaming image resource.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl std::fmt::Debug for CreateStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingImageInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("ec2_image_id", &self.ec2_image_id);
-        formatter.field("name", &self.name);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-
-/// <p>A collection of launch profiles.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLaunchProfileInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
-    pub client_token: std::option::Option<std::string::String>,
-    /// <p>The description.</p>
-    pub description: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name for the launch profile.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>A configuration for a streaming session.</p>
-    pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The studio ID.</p>
-    pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl std::fmt::Debug for CreateLaunchProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLaunchProfileInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("ec2_subnet_ids", &self.ec2_subnet_ids);
-        formatter.field(
-            "launch_profile_protocol_versions",
-            &self.launch_profile_protocol_versions,
-        );
-        formatter.field("name", &self.name);
-        formatter.field("stream_configuration", &self.stream_configuration);
-        formatter.field("studio_component_ids", &self.studio_component_ids);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
-
-/// <p>A collection of EULA acceptances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEulasInput {
-    /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+    /// client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The studio ID.</p>
+    /// <p>A collection of EULA IDs.</p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AcceptEulasInput {
@@ -11513,6 +11831,59 @@ impl std::fmt::Debug for AcceptEulasInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("eula_ids", &self.eula_ids);
         formatter.field("studio_id", &self.studio_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+/// <p/>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }

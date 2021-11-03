@@ -30,7 +30,7 @@ pub enum CreateBotVersionErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotVersionError {
@@ -98,36 +98,36 @@ impl CreateBotVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBotVersionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBotVersionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -180,7 +180,7 @@ pub enum CreateIntentVersionErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIntentVersionError {
@@ -248,42 +248,42 @@ impl CreateIntentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateIntentVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -336,7 +336,7 @@ pub enum CreateSlotTypeVersionErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSlotTypeVersionError {
@@ -404,42 +404,42 @@ impl CreateSlotTypeVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -505,7 +505,7 @@ pub enum DeleteBotErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotError {
@@ -573,27 +573,27 @@ impl DeleteBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::ResourceInUseException(_))
     }
@@ -656,7 +656,7 @@ pub enum DeleteBotAliasErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotAliasError {
@@ -724,33 +724,33 @@ impl DeleteBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotAliasErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -799,7 +799,7 @@ pub enum DeleteBotChannelAssociationErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotChannelAssociationError {
@@ -866,35 +866,35 @@ impl DeleteBotChannelAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotChannelAssociationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBotChannelAssociationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotChannelAssociationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotChannelAssociationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotChannelAssociationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotChannelAssociationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotChannelAssociationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteBotChannelAssociationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotChannelAssociationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotChannelAssociationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotChannelAssociationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotChannelAssociationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotChannelAssociationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBotChannelAssociationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -959,7 +959,7 @@ pub enum DeleteBotVersionErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotVersionError {
@@ -1027,36 +1027,36 @@ impl DeleteBotVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotVersionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotVersionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1122,7 +1122,7 @@ pub enum DeleteIntentErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntentError {
@@ -1190,30 +1190,30 @@ impl DeleteIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::ResourceInUseException(_))
     }
@@ -1276,7 +1276,7 @@ pub enum DeleteIntentVersionErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntentVersionError {
@@ -1344,42 +1344,42 @@ impl DeleteIntentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteIntentVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1445,7 +1445,7 @@ pub enum DeleteSlotTypeErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSlotTypeError {
@@ -1513,33 +1513,33 @@ impl DeleteSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1605,7 +1605,7 @@ pub enum DeleteSlotTypeVersionErrorKind {
     /// <i>string</i> } }</code>
     /// </p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSlotTypeVersionError {
@@ -1673,42 +1673,42 @@ impl DeleteSlotTypeVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeVersionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1754,7 +1754,7 @@ pub enum DeleteUtterancesErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUtterancesError {
@@ -1820,28 +1820,28 @@ impl DeleteUtterancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUtterancesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUtterancesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUtterancesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUtterancesErrorKind::NotFoundException(_))
     }
@@ -1882,7 +1882,7 @@ pub enum GetBotErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotError {
@@ -1948,19 +1948,19 @@ impl GetBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::NotFoundException(_))
     }
@@ -2001,7 +2001,7 @@ pub enum GetBotAliasErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotAliasError {
@@ -2067,22 +2067,22 @@ impl GetBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotAliasErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotAliasErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotAliasErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetBotAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetBotAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBotAliasErrorKind::NotFoundException(_))
     }
@@ -2120,7 +2120,7 @@ pub enum GetBotAliasesErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotAliasesError {
@@ -2185,18 +2185,18 @@ impl GetBotAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotAliasesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotAliasesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotAliasesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotAliasesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotAliasesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotAliasesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotAliasesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotAliasesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2239,7 +2239,7 @@ pub enum GetBotChannelAssociationErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotChannelAssociationError {
@@ -2305,28 +2305,28 @@ impl GetBotChannelAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotChannelAssociationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotChannelAssociationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotChannelAssociationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2367,7 +2367,7 @@ pub enum GetBotChannelAssociationsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotChannelAssociationsError {
@@ -2432,21 +2432,21 @@ impl GetBotChannelAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotChannelAssociationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotChannelAssociationsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotChannelAssociationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotChannelAssociationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2489,7 +2489,7 @@ pub enum GetBotsErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotsError {
@@ -2555,19 +2555,19 @@ impl GetBotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetBotsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetBotsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetBotsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetBotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBotsErrorKind::NotFoundException(_))
     }
@@ -2608,7 +2608,7 @@ pub enum GetBotVersionsErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotVersionsError {
@@ -2674,25 +2674,25 @@ impl GetBotVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotVersionsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBotVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotVersionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBotVersionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBotVersionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetBotVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBotVersionsErrorKind::NotFoundException(_))
     }
@@ -2733,7 +2733,7 @@ pub enum GetBuiltinIntentErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBuiltinIntentError {
@@ -2799,28 +2799,28 @@ impl GetBuiltinIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBuiltinIntentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinIntentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinIntentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinIntentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinIntentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinIntentErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinIntentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBuiltinIntentErrorKind::NotFoundException(_))
     }
@@ -2858,7 +2858,7 @@ pub enum GetBuiltinIntentsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBuiltinIntentsError {
@@ -2923,21 +2923,21 @@ impl GetBuiltinIntentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBuiltinIntentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinIntentsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinIntentsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinIntentsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinIntentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBuiltinIntentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2977,7 +2977,7 @@ pub enum GetBuiltinSlotTypesErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBuiltinSlotTypesError {
@@ -3042,21 +3042,21 @@ impl GetBuiltinSlotTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBuiltinSlotTypesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBuiltinSlotTypesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinSlotTypesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinSlotTypesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetBuiltinSlotTypesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBuiltinSlotTypesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBuiltinSlotTypesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBuiltinSlotTypesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3099,7 +3099,7 @@ pub enum GetExportErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExportError {
@@ -3165,19 +3165,19 @@ impl GetExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetExportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetExportErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetExportErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetExportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetExportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetExportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetExportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::NotFoundException(_))
     }
@@ -3218,7 +3218,7 @@ pub enum GetImportErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImportError {
@@ -3284,19 +3284,19 @@ impl GetImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetImportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetImportErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetImportErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetImportErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetImportErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetImportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetImportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetImportErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetImportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetImportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetImportErrorKind::NotFoundException(_))
     }
@@ -3337,7 +3337,7 @@ pub enum GetIntentErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntentError {
@@ -3403,19 +3403,19 @@ impl GetIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetIntentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetIntentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetIntentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetIntentErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetIntentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetIntentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetIntentErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetIntentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntentErrorKind::NotFoundException(_))
     }
@@ -3456,7 +3456,7 @@ pub enum GetIntentsErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntentsError {
@@ -3522,19 +3522,19 @@ impl GetIntentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetIntentsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetIntentsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetIntentsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetIntentsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetIntentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetIntentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetIntentsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetIntentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntentsErrorKind::NotFoundException(_))
     }
@@ -3575,7 +3575,7 @@ pub enum GetIntentVersionsErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntentVersionsError {
@@ -3641,28 +3641,28 @@ impl GetIntentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntentVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntentVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntentVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntentVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetIntentVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntentVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntentVersionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetIntentVersionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntentVersionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntentVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntentVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntentVersionsErrorKind::NotFoundException(_))
     }
@@ -3703,7 +3703,7 @@ pub enum GetMigrationErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMigrationError {
@@ -3769,22 +3769,22 @@ impl GetMigrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMigrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMigrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetMigrationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetMigrationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetMigrationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMigrationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMigrationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMigrationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetMigrationErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetMigrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetMigrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetMigrationErrorKind::NotFoundException(_))
     }
@@ -3822,7 +3822,7 @@ pub enum GetMigrationsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMigrationsError {
@@ -3887,18 +3887,18 @@ impl GetMigrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMigrationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMigrationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetMigrationsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetMigrationsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetMigrationsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMigrationsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMigrationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMigrationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3941,7 +3941,7 @@ pub enum GetSlotTypeErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSlotTypeError {
@@ -4007,22 +4007,22 @@ impl GetSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSlotTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSlotTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSlotTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSlotTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSlotTypeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSlotTypeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSlotTypeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypeErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetSlotTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSlotTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypeErrorKind::NotFoundException(_))
     }
@@ -4063,7 +4063,7 @@ pub enum GetSlotTypesErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSlotTypesError {
@@ -4129,22 +4129,22 @@ impl GetSlotTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSlotTypesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSlotTypesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSlotTypesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSlotTypesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSlotTypesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSlotTypesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSlotTypesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypesErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetSlotTypesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSlotTypesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSlotTypesErrorKind::NotFoundException(_))
     }
@@ -4185,7 +4185,7 @@ pub enum GetSlotTypeVersionsErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSlotTypeVersionsError {
@@ -4251,28 +4251,28 @@ impl GetSlotTypeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSlotTypeVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSlotTypeVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSlotTypeVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSlotTypeVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSlotTypeVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSlotTypeVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSlotTypeVersionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSlotTypeVersionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSlotTypeVersionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetSlotTypeVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSlotTypeVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4313,7 +4313,7 @@ pub enum GetUtterancesViewErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUtterancesViewError {
@@ -4378,21 +4378,21 @@ impl GetUtterancesViewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUtterancesViewErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetUtterancesViewErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUtterancesViewErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetUtterancesViewErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetUtterancesViewErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUtterancesViewErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetUtterancesViewErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetUtterancesViewErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4435,7 +4435,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4501,28 +4501,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4570,7 +4570,7 @@ pub enum PutBotErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBotError {
@@ -4637,23 +4637,23 @@ impl PutBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutBotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutBotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutBotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutBotErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutBotErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, PutBotErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `PutBotErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutBotErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutBotErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutBotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PutBotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(&self.kind, PutBotErrorKind::PreconditionFailedException(_))
     }
@@ -4699,7 +4699,7 @@ pub enum PutBotAliasErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBotAliasError {
@@ -4766,26 +4766,26 @@ impl PutBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBotAliasErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutBotAliasErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutBotAliasErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutBotAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutBotAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutBotAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutBotAliasErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutBotAliasErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBotAliasErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutBotAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutBotAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutBotAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutBotAliasErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PutBotAliasErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4834,7 +4834,7 @@ pub enum PutIntentErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutIntentError {
@@ -4901,23 +4901,23 @@ impl PutIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutIntentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutIntentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutIntentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutIntentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutIntentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutIntentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutIntentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutIntentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, PutIntentErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `PutIntentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutIntentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutIntentErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutIntentErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PutIntentErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4966,7 +4966,7 @@ pub enum PutSlotTypeErrorKind {
     /// not match the checksum in the request. Check the resource's checksum and
     /// try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSlotTypeError {
@@ -5033,26 +5033,26 @@ impl PutSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSlotTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutSlotTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutSlotTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutSlotTypeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutSlotTypeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutSlotTypeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutSlotTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutSlotTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSlotTypeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutSlotTypeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutSlotTypeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutSlotTypeErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutSlotTypeErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PutSlotTypeErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5094,7 +5094,7 @@ pub enum StartImportErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImportError {
@@ -5159,18 +5159,18 @@ impl StartImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartImportErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::LimitExceededException(_))
     }
@@ -5213,7 +5213,7 @@ pub enum StartMigrationErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMigrationError {
@@ -5280,32 +5280,32 @@ impl StartMigrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMigrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartMigrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMigrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartMigrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartMigrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartMigrationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartMigrationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartMigrationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMigrationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartMigrationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartMigrationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMigrationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartMigrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartMigrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartMigrationErrorKind::NotFoundException(_))
     }
@@ -5350,7 +5350,7 @@ pub enum TagResourceErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5417,26 +5417,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -5481,7 +5481,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The resource specified in the request was not found. Check the
     /// resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5548,29 +5548,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }

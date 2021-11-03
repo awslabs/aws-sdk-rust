@@ -820,11 +820,11 @@ pub fn parse_synthesize_speech(
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_synthesize_speech_synthesize_speech_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::SynthesizeSpeechError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::SynthesizeSpeechError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_request_characters(
             crate::http_serde::deser_header_synthesize_speech_synthesize_speech_output_request_characters(response.headers())
-                                        .map_err(|_|crate::error::SynthesizeSpeechError::unhandled("Failed to parse RequestCharacters from header `x-amzn-RequestCharacters"))?
+                                    .map_err(|_|crate::error::SynthesizeSpeechError::unhandled("Failed to parse RequestCharacters from header `x-amzn-RequestCharacters"))?
         );
         output.build()
     })

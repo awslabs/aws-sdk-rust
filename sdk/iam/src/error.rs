@@ -24,7 +24,7 @@ pub enum AddClientIDToOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddClientIDToOpenIDConnectProviderError {
@@ -101,28 +101,28 @@ impl AddClientIDToOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -180,7 +180,7 @@ pub enum AddRoleToInstanceProfileErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToInstanceProfileError {
@@ -249,35 +249,35 @@ impl AddRoleToInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddRoleToInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AddRoleToInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AddRoleToInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -320,7 +320,7 @@ pub enum AddUserToGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddUserToGroupError {
@@ -385,21 +385,21 @@ impl AddUserToGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddUserToGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddUserToGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddUserToGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddUserToGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AddUserToGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddUserToGroupErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AddUserToGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AddUserToGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -446,7 +446,7 @@ pub enum AttachGroupPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachGroupPolicyError {
@@ -513,35 +513,35 @@ impl AttachGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachGroupPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachGroupPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachGroupPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachGroupPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachGroupPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AttachGroupPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AttachGroupPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachGroupPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AttachGroupPolicyErrorKind::PolicyNotAttachableException`.
+    /// Returns `true` if the error kind is `AttachGroupPolicyErrorKind::PolicyNotAttachableException`.
     pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachGroupPolicyErrorKind::PolicyNotAttachableException(_)
         )
     }
-    /// Returns true if the error kind is `AttachGroupPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AttachGroupPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -595,7 +595,7 @@ pub enum AttachRolePolicyErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachRolePolicyError {
@@ -663,42 +663,42 @@ impl AttachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachRolePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachRolePolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::PolicyNotAttachableException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::PolicyNotAttachableException`.
     pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachRolePolicyErrorKind::PolicyNotAttachableException(_)
         )
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachRolePolicyErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `AttachRolePolicyErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -748,7 +748,7 @@ pub enum AttachUserPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachUserPolicyError {
@@ -815,35 +815,35 @@ impl AttachUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachUserPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachUserPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachUserPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachUserPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachUserPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachUserPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AttachUserPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AttachUserPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachUserPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AttachUserPolicyErrorKind::PolicyNotAttachableException`.
+    /// Returns `true` if the error kind is `AttachUserPolicyErrorKind::PolicyNotAttachableException`.
     pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachUserPolicyErrorKind::PolicyNotAttachableException(_)
         )
     }
-    /// Returns true if the error kind is `AttachUserPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AttachUserPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -897,7 +897,7 @@ pub enum ChangePasswordErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangePasswordError {
@@ -967,42 +967,42 @@ impl ChangePasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::InvalidUserTypeException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::InvalidUserTypeException`.
     pub fn is_invalid_user_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::InvalidUserTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::PasswordPolicyViolationException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::PasswordPolicyViolationException`.
     pub fn is_password_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::PasswordPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1046,7 +1046,7 @@ pub enum CreateAccessKeyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessKeyError {
@@ -1111,21 +1111,21 @@ impl CreateAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccessKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAccessKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessKeyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateAccessKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessKeyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAccessKeyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1166,7 +1166,7 @@ pub enum CreateAccountAliasErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccountAliasError {
@@ -1231,21 +1231,21 @@ impl CreateAccountAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccountAliasErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAccountAliasErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountAliasErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAccountAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountAliasErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountAliasErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAccountAliasErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1289,7 +1289,7 @@ pub enum CreateGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -1355,22 +1355,22 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ServiceFailureException(_))
     }
@@ -1415,7 +1415,7 @@ pub enum CreateInstanceProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceProfileError {
@@ -1484,35 +1484,35 @@ impl CreateInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1561,7 +1561,7 @@ pub enum CreateLoginProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoginProfileError {
@@ -1628,35 +1628,35 @@ impl CreateLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoginProfileErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateLoginProfileErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoginProfileErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoginProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLoginProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoginProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateLoginProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoginProfileErrorKind::PasswordPolicyViolationException`.
+    /// Returns `true` if the error kind is `CreateLoginProfileErrorKind::PasswordPolicyViolationException`.
     pub fn is_password_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoginProfileErrorKind::PasswordPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoginProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateLoginProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1705,7 +1705,7 @@ pub enum CreateOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOpenIDConnectProviderError {
@@ -1776,35 +1776,35 @@ impl CreateOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpenIDConnectProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1860,7 +1860,7 @@ pub enum CreatePolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePolicyError {
@@ -1928,36 +1928,36 @@ impl CreatePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreatePolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreatePolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2007,7 +2007,7 @@ pub enum CreatePolicyVersionErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePolicyVersionError {
@@ -2074,35 +2074,35 @@ impl CreatePolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePolicyVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePolicyVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePolicyVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyVersionErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreatePolicyVersionErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyVersionErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyVersionErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreatePolicyVersionErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyVersionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreatePolicyVersionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2154,7 +2154,7 @@ pub enum CreateRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoleError {
@@ -2222,36 +2222,36 @@ impl CreateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoleErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateRoleErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateRoleErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoleErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateRoleErrorKind::ServiceFailureException(_))
     }
@@ -2298,7 +2298,7 @@ pub enum CreateSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSAMLProviderError {
@@ -2365,35 +2365,35 @@ impl CreateSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSAMLProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateSAMLProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSAMLProviderErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSAMLProviderErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSAMLProviderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSAMLProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSAMLProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2439,7 +2439,7 @@ pub enum CreateServiceLinkedRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceLinkedRoleError {
@@ -2505,28 +2505,28 @@ impl CreateServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceLinkedRoleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateServiceLinkedRoleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceLinkedRoleErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceLinkedRoleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateServiceLinkedRoleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceLinkedRoleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceLinkedRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateServiceLinkedRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceLinkedRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceLinkedRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateServiceLinkedRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2567,7 +2567,7 @@ pub enum CreateServiceSpecificCredentialErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The specified service does not support service-specific credentials.</p>
     ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceSpecificCredentialError {
@@ -2641,21 +2641,21 @@ impl CreateServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceSpecificCredentialErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateServiceSpecificCredentialErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceSpecificCredentialErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceSpecificCredentialErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateServiceSpecificCredentialErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceSpecificCredentialErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException`.
+    /// Returns `true` if the error kind is `CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException`.
     pub fn is_service_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2709,7 +2709,7 @@ pub enum CreateUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -2777,33 +2777,33 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ServiceFailureException(_))
     }
@@ -2850,7 +2850,7 @@ pub enum CreateVirtualMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualMFADeviceError {
@@ -2919,35 +2919,35 @@ impl CreateVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualMFADeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateVirtualMFADeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualMFADeviceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateVirtualMFADeviceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualMFADeviceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVirtualMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateVirtualMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2997,7 +2997,7 @@ pub enum DeactivateMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateMFADeviceError {
@@ -3065,28 +3065,28 @@ impl DeactivateMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeactivateMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeactivateMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeactivateMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3130,7 +3130,7 @@ pub enum DeleteAccessKeyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessKeyError {
@@ -3195,21 +3195,21 @@ impl DeleteAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteAccessKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessKeyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAccessKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessKeyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccessKeyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3250,7 +3250,7 @@ pub enum DeleteAccountAliasErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountAliasError {
@@ -3315,21 +3315,21 @@ impl DeleteAccountAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccountAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountAliasErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountAliasErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountAliasErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountAliasErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3370,7 +3370,7 @@ pub enum DeleteAccountPasswordPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountPasswordPolicyError {
@@ -3435,21 +3435,21 @@ impl DeleteAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccountPasswordPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteAccountPasswordPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountPasswordPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountPasswordPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccountPasswordPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3493,7 +3493,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -3559,19 +3559,19 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::DeleteConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::ServiceFailureException(_))
     }
@@ -3610,7 +3610,7 @@ pub enum DeleteGroupPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupPolicyError {
@@ -3675,21 +3675,21 @@ impl DeleteGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteGroupPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteGroupPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteGroupPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3733,7 +3733,7 @@ pub enum DeleteInstanceProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceProfileError {
@@ -3799,28 +3799,28 @@ impl DeleteInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::DeleteConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3867,7 +3867,7 @@ pub enum DeleteLoginProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoginProfileError {
@@ -3935,28 +3935,28 @@ impl DeleteLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoginProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLoginProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoginProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteLoginProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoginProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteLoginProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4000,7 +4000,7 @@ pub enum DeleteOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOpenIDConnectProviderError {
@@ -4065,21 +4065,21 @@ impl DeleteOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4126,7 +4126,7 @@ pub enum DeletePolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
@@ -4193,26 +4193,26 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::DeleteConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4261,7 +4261,7 @@ pub enum DeletePolicyVersionErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyVersionError {
@@ -4328,35 +4328,35 @@ impl DeletePolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyVersionErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeletePolicyVersionErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyVersionErrorKind::DeleteConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePolicyVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeletePolicyVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyVersionErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeletePolicyVersionErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyVersionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeletePolicyVersionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4410,7 +4410,7 @@ pub enum DeleteRoleErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoleError {
@@ -4478,30 +4478,30 @@ impl DeleteRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoleErrorKind::DeleteConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoleErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoleErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoleErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `DeleteRoleErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `DeleteRoleErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4547,7 +4547,7 @@ pub enum DeleteRolePermissionsBoundaryErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRolePermissionsBoundaryError {
@@ -4619,21 +4619,21 @@ impl DeleteRolePermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4681,7 +4681,7 @@ pub enum DeleteRolePolicyErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRolePolicyError {
@@ -4747,28 +4747,28 @@ impl DeleteRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRolePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteRolePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRolePolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRolePolicyErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `DeleteRolePolicyErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4813,7 +4813,7 @@ pub enum DeleteSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSAMLProviderError {
@@ -4879,28 +4879,28 @@ impl DeleteSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSAMLProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSAMLProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSAMLProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteSAMLProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4945,7 +4945,7 @@ pub enum DeleteServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServerCertificateError {
@@ -5011,28 +5011,28 @@ impl DeleteServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServerCertificateErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteServerCertificateErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCertificateErrorKind::DeleteConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteServerCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteServerCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5074,7 +5074,7 @@ pub enum DeleteServiceLinkedRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceLinkedRoleError {
@@ -5139,21 +5139,21 @@ impl DeleteServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceLinkedRoleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteServiceLinkedRoleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceLinkedRoleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceLinkedRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteServiceLinkedRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceLinkedRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceLinkedRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteServiceLinkedRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5188,7 +5188,7 @@ pub enum DeleteServiceSpecificCredentialErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceSpecificCredentialError {
@@ -5256,7 +5256,7 @@ impl DeleteServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5295,7 +5295,7 @@ pub enum DeleteSigningCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSigningCertificateError {
@@ -5360,21 +5360,21 @@ impl DeleteSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSigningCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSigningCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSigningCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteSigningCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSigningCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteSigningCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5409,7 +5409,7 @@ pub enum DeleteSSHPublicKeyErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSSHPublicKeyError {
@@ -5472,7 +5472,7 @@ impl DeleteSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSSHPublicKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteSSHPublicKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5517,7 +5517,7 @@ pub enum DeleteUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -5584,26 +5584,26 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::DeleteConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::ServiceFailureException(_))
     }
@@ -5640,7 +5640,7 @@ pub enum DeleteUserPermissionsBoundaryErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPermissionsBoundaryError {
@@ -5709,14 +5709,14 @@ impl DeleteUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5756,7 +5756,7 @@ pub enum DeleteUserPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPolicyError {
@@ -5821,21 +5821,21 @@ impl DeleteUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteUserPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteUserPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteUserPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5879,7 +5879,7 @@ pub enum DeleteVirtualMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualMFADeviceError {
@@ -5945,28 +5945,28 @@ impl DeleteVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualMFADeviceErrorKind::DeleteConflictException`.
+    /// Returns `true` if the error kind is `DeleteVirtualMFADeviceErrorKind::DeleteConflictException`.
     pub fn is_delete_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualMFADeviceErrorKind::DeleteConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteVirtualMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteVirtualMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVirtualMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6011,7 +6011,7 @@ pub enum DetachGroupPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachGroupPolicyError {
@@ -6077,28 +6077,28 @@ impl DetachGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachGroupPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachGroupPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachGroupPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachGroupPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachGroupPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetachGroupPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DetachGroupPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachGroupPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DetachGroupPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DetachGroupPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6148,7 +6148,7 @@ pub enum DetachRolePolicyErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachRolePolicyError {
@@ -6215,35 +6215,35 @@ impl DetachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachRolePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachRolePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachRolePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachRolePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachRolePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetachRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DetachRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachRolePolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DetachRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DetachRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DetachRolePolicyErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `DetachRolePolicyErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6289,7 +6289,7 @@ pub enum DetachUserPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachUserPolicyError {
@@ -6355,28 +6355,28 @@ impl DetachUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachUserPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachUserPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachUserPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachUserPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachUserPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachUserPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetachUserPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DetachUserPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachUserPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DetachUserPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DetachUserPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6429,7 +6429,7 @@ pub enum EnableMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableMFADeviceError {
@@ -6499,42 +6499,42 @@ impl EnableMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableMFADeviceErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::InvalidAuthenticationCodeException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::InvalidAuthenticationCodeException`.
     pub fn is_invalid_authentication_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableMFADeviceErrorKind::InvalidAuthenticationCodeException(_)
         )
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `EnableMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `EnableMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6577,7 +6577,7 @@ pub enum GenerateCredentialReportErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateCredentialReportError {
@@ -6641,14 +6641,14 @@ impl GenerateCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateCredentialReportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GenerateCredentialReportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateCredentialReportErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateCredentialReportErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GenerateCredentialReportErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6682,7 +6682,7 @@ pub enum GenerateOrganizationsAccessReportErrorKind {
     /// <p>The request failed because the maximum number of concurrent requests for this account are
     /// already running.</p>
     ReportGenerationLimitExceededException(crate::error::ReportGenerationLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateOrganizationsAccessReportError {
@@ -6750,7 +6750,7 @@ impl GenerateOrganizationsAccessReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException`.
+    /// Returns `true` if the error kind is `GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException`.
     pub fn is_report_generation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6788,7 +6788,7 @@ pub enum GenerateServiceLastAccessedDetailsErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateServiceLastAccessedDetailsError {
@@ -6859,14 +6859,14 @@ impl GenerateServiceLastAccessedDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6904,7 +6904,7 @@ pub enum GetAccessKeyLastUsedErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessKeyLastUsedError {
@@ -6967,7 +6967,7 @@ impl GetAccessKeyLastUsedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccessKeyLastUsedErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetAccessKeyLastUsedErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7000,7 +7000,7 @@ pub enum GetAccountAuthorizationDetailsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountAuthorizationDetailsError {
@@ -7068,7 +7068,7 @@ impl GetAccountAuthorizationDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountAuthorizationDetailsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAccountAuthorizationDetailsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7106,7 +7106,7 @@ pub enum GetAccountPasswordPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountPasswordPolicyError {
@@ -7170,14 +7170,14 @@ impl GetAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountPasswordPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetAccountPasswordPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountPasswordPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAccountPasswordPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7211,7 +7211,7 @@ pub enum GetAccountSummaryErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSummaryError {
@@ -7274,7 +7274,7 @@ impl GetAccountSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountSummaryErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAccountSummaryErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7307,7 +7307,7 @@ pub enum GetContextKeysForCustomPolicyErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContextKeysForCustomPolicyError {
@@ -7373,7 +7373,7 @@ impl GetContextKeysForCustomPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContextKeysForCustomPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContextKeysForCustomPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7409,7 +7409,7 @@ pub enum GetContextKeysForPrincipalPolicyErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContextKeysForPrincipalPolicyError {
@@ -7480,14 +7480,14 @@ impl GetContextKeysForPrincipalPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7535,7 +7535,7 @@ pub enum GetCredentialReportErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCredentialReportError {
@@ -7605,28 +7605,28 @@ impl GetCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCredentialReportErrorKind::CredentialReportExpiredException`.
+    /// Returns `true` if the error kind is `GetCredentialReportErrorKind::CredentialReportExpiredException`.
     pub fn is_credential_report_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialReportErrorKind::CredentialReportExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialReportErrorKind::CredentialReportNotPresentException`.
+    /// Returns `true` if the error kind is `GetCredentialReportErrorKind::CredentialReportNotPresentException`.
     pub fn is_credential_report_not_present_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialReportErrorKind::CredentialReportNotPresentException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialReportErrorKind::CredentialReportNotReadyException`.
+    /// Returns `true` if the error kind is `GetCredentialReportErrorKind::CredentialReportNotReadyException`.
     pub fn is_credential_report_not_ready_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialReportErrorKind::CredentialReportNotReadyException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialReportErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetCredentialReportErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7667,7 +7667,7 @@ pub enum GetGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
@@ -7731,11 +7731,11 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::ServiceFailureException(_))
     }
@@ -7769,7 +7769,7 @@ pub enum GetGroupPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupPolicyError {
@@ -7833,14 +7833,14 @@ impl GetGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetGroupPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetGroupPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7877,7 +7877,7 @@ pub enum GetInstanceProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceProfileError {
@@ -7941,14 +7941,14 @@ impl GetInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7985,7 +7985,7 @@ pub enum GetLoginProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoginProfileError {
@@ -8049,14 +8049,14 @@ impl GetLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoginProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetLoginProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoginProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetLoginProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8096,7 +8096,7 @@ pub enum GetOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpenIDConnectProviderError {
@@ -8161,21 +8161,21 @@ impl GetOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8210,7 +8210,7 @@ pub enum GetOrganizationsAccessReportErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOrganizationsAccessReportError {
@@ -8273,7 +8273,7 @@ impl GetOrganizationsAccessReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOrganizationsAccessReportErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetOrganizationsAccessReportErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8312,7 +8312,7 @@ pub enum GetPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
@@ -8377,15 +8377,15 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ServiceFailureException(_))
     }
@@ -8423,7 +8423,7 @@ pub enum GetPolicyVersionErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyVersionError {
@@ -8488,21 +8488,21 @@ impl GetPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPolicyVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPolicyVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetPolicyVersionErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetPolicyVersionErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetPolicyVersionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetPolicyVersionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8540,7 +8540,7 @@ pub enum GetRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoleError {
@@ -8604,11 +8604,11 @@ impl GetRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetRoleErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetRoleErrorKind::ServiceFailureException(_))
     }
@@ -8642,7 +8642,7 @@ pub enum GetRolePolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRolePolicyError {
@@ -8706,11 +8706,11 @@ impl GetRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetRolePolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8750,7 +8750,7 @@ pub enum GetSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSAMLProviderError {
@@ -8815,21 +8815,21 @@ impl GetSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetSAMLProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetSAMLProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8867,7 +8867,7 @@ pub enum GetServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServerCertificateError {
@@ -8931,14 +8931,14 @@ impl GetServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServerCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetServerCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8975,7 +8975,7 @@ pub enum GetServiceLastAccessedDetailsErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLastAccessedDetailsError {
@@ -9042,14 +9042,14 @@ impl GetServiceLastAccessedDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceLastAccessedDetailsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetServiceLastAccessedDetailsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceLastAccessedDetailsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9086,7 +9086,7 @@ pub enum GetServiceLastAccessedDetailsWithEntitiesErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLastAccessedDetailsWithEntitiesError {
@@ -9157,14 +9157,14 @@ impl GetServiceLastAccessedDetailsWithEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9210,7 +9210,7 @@ pub enum GetServiceLinkedRoleDeletionStatusErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceLinkedRoleDeletionStatusError {
@@ -9284,21 +9284,21 @@ impl GetServiceLinkedRoleDeletionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9342,7 +9342,7 @@ pub enum GetSSHPublicKeyErrorKind {
     /// <p>The request was rejected because the public key encoding format is unsupported or
     /// unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSSHPublicKeyError {
@@ -9408,14 +9408,14 @@ impl GetSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSSHPublicKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetSSHPublicKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSSHPublicKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException`.
+    /// Returns `true` if the error kind is `GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException`.
     pub fn is_unrecognized_public_key_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9454,7 +9454,7 @@ pub enum GetUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserError {
@@ -9518,11 +9518,11 @@ impl GetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ServiceFailureException(_))
     }
@@ -9556,7 +9556,7 @@ pub enum GetUserPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserPolicyError {
@@ -9620,11 +9620,11 @@ impl GetUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetUserPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, GetUserPolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `GetUserPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetUserPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9661,7 +9661,7 @@ pub enum ListAccessKeysErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessKeysError {
@@ -9725,14 +9725,14 @@ impl ListAccessKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccessKeysErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAccessKeysErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessKeysErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessKeysErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAccessKeysErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9766,7 +9766,7 @@ pub enum ListAccountAliasesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountAliasesError {
@@ -9829,7 +9829,7 @@ impl ListAccountAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountAliasesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAccountAliasesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9868,7 +9868,7 @@ pub enum ListAttachedGroupPoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedGroupPoliciesError {
@@ -9933,21 +9933,21 @@ impl ListAttachedGroupPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttachedGroupPoliciesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAttachedGroupPoliciesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedGroupPoliciesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedGroupPoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAttachedGroupPoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedGroupPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedGroupPoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAttachedGroupPoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9988,7 +9988,7 @@ pub enum ListAttachedRolePoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedRolePoliciesError {
@@ -10053,21 +10053,21 @@ impl ListAttachedRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttachedRolePoliciesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAttachedRolePoliciesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedRolePoliciesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedRolePoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAttachedRolePoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedRolePoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedRolePoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAttachedRolePoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10108,7 +10108,7 @@ pub enum ListAttachedUserPoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedUserPoliciesError {
@@ -10173,21 +10173,21 @@ impl ListAttachedUserPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttachedUserPoliciesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAttachedUserPoliciesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedUserPoliciesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedUserPoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAttachedUserPoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedUserPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedUserPoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAttachedUserPoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10228,7 +10228,7 @@ pub enum ListEntitiesForPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEntitiesForPolicyError {
@@ -10293,21 +10293,21 @@ impl ListEntitiesForPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEntitiesForPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListEntitiesForPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesForPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesForPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListEntitiesForPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesForPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesForPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListEntitiesForPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10345,7 +10345,7 @@ pub enum ListGroupPoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupPoliciesError {
@@ -10409,14 +10409,14 @@ impl ListGroupPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupPoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListGroupPoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupPoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListGroupPoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10450,7 +10450,7 @@ pub enum ListGroupsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -10513,7 +10513,7 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::ServiceFailureException(_))
     }
@@ -10546,7 +10546,7 @@ pub enum ListGroupsForUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsForUserError {
@@ -10610,14 +10610,14 @@ impl ListGroupsForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsForUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListGroupsForUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsForUserErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsForUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListGroupsForUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10651,7 +10651,7 @@ pub enum ListInstanceProfilesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfilesError {
@@ -10714,7 +10714,7 @@ impl ListInstanceProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceProfilesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10750,7 +10750,7 @@ pub enum ListInstanceProfilesForRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfilesForRoleError {
@@ -10814,14 +10814,14 @@ impl ListInstanceProfilesForRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceProfilesForRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesForRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceProfilesForRoleErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceProfilesForRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesForRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10858,7 +10858,7 @@ pub enum ListInstanceProfileTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfileTagsError {
@@ -10922,14 +10922,14 @@ impl ListInstanceProfileTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceProfileTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListInstanceProfileTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceProfileTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceProfileTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListInstanceProfileTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10966,7 +10966,7 @@ pub enum ListMFADevicesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMFADevicesError {
@@ -11030,14 +11030,14 @@ impl ListMFADevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMFADevicesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListMFADevicesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMFADevicesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListMFADevicesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListMFADevicesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11077,7 +11077,7 @@ pub enum ListMFADeviceTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMFADeviceTagsError {
@@ -11142,21 +11142,21 @@ impl ListMFADeviceTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMFADeviceTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListMFADeviceTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMFADeviceTagsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListMFADeviceTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListMFADeviceTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMFADeviceTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListMFADeviceTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListMFADeviceTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11191,7 +11191,7 @@ pub enum ListOpenIDConnectProvidersErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpenIDConnectProvidersError {
@@ -11254,7 +11254,7 @@ impl ListOpenIDConnectProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpenIDConnectProvidersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListOpenIDConnectProvidersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11293,7 +11293,7 @@ pub enum ListOpenIDConnectProviderTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpenIDConnectProviderTagsError {
@@ -11363,21 +11363,21 @@ impl ListOpenIDConnectProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpenIDConnectProviderTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListOpenIDConnectProviderTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOpenIDConnectProviderTagsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11412,7 +11412,7 @@ pub enum ListPoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesError {
@@ -11475,7 +11475,7 @@ impl ListPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11511,7 +11511,7 @@ pub enum ListPoliciesGrantingServiceAccessErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesGrantingServiceAccessError {
@@ -11582,14 +11582,14 @@ impl ListPoliciesGrantingServiceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11633,7 +11633,7 @@ pub enum ListPolicyTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPolicyTagsError {
@@ -11698,21 +11698,21 @@ impl ListPolicyTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPolicyTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPolicyTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyTagsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListPolicyTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListPolicyTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11753,7 +11753,7 @@ pub enum ListPolicyVersionsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPolicyVersionsError {
@@ -11818,21 +11818,21 @@ impl ListPolicyVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPolicyVersionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPolicyVersionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyVersionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyVersionsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListPolicyVersionsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyVersionsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyVersionsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListPolicyVersionsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11870,7 +11870,7 @@ pub enum ListRolePoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRolePoliciesError {
@@ -11934,14 +11934,14 @@ impl ListRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRolePoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListRolePoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRolePoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListRolePoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListRolePoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11975,7 +11975,7 @@ pub enum ListRolesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRolesError {
@@ -12038,7 +12038,7 @@ impl ListRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRolesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListRolesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListRolesErrorKind::ServiceFailureException(_))
     }
@@ -12071,7 +12071,7 @@ pub enum ListRoleTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoleTagsError {
@@ -12135,11 +12135,11 @@ impl ListRoleTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRoleTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListRoleTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, ListRoleTagsErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `ListRoleTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListRoleTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12173,7 +12173,7 @@ pub enum ListSAMLProvidersErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSAMLProvidersError {
@@ -12236,7 +12236,7 @@ impl ListSAMLProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSAMLProvidersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSAMLProvidersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12275,7 +12275,7 @@ pub enum ListSAMLProviderTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSAMLProviderTagsError {
@@ -12340,21 +12340,21 @@ impl ListSAMLProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSAMLProviderTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSAMLProviderTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSAMLProviderTagsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListSAMLProviderTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListSAMLProviderTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSAMLProviderTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListSAMLProviderTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSAMLProviderTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12389,7 +12389,7 @@ pub enum ListServerCertificatesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServerCertificatesError {
@@ -12452,7 +12452,7 @@ impl ListServerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServerCertificatesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListServerCertificatesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12488,7 +12488,7 @@ pub enum ListServerCertificateTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServerCertificateTagsError {
@@ -12552,14 +12552,14 @@ impl ListServerCertificateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServerCertificateTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListServerCertificateTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServerCertificateTagsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListServerCertificateTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListServerCertificateTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12595,7 +12595,7 @@ pub enum ListServiceSpecificCredentialsErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The specified service does not support service-specific credentials.</p>
     ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceSpecificCredentialsError {
@@ -12664,14 +12664,14 @@ impl ListServiceSpecificCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceSpecificCredentialsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListServiceSpecificCredentialsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceSpecificCredentialsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException`.
+    /// Returns `true` if the error kind is `ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException`.
     pub fn is_service_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12710,7 +12710,7 @@ pub enum ListSigningCertificatesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSigningCertificatesError {
@@ -12774,14 +12774,14 @@ impl ListSigningCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSigningCertificatesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListSigningCertificatesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningCertificatesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningCertificatesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSigningCertificatesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12815,7 +12815,7 @@ pub enum ListSSHPublicKeysErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSSHPublicKeysError {
@@ -12878,7 +12878,7 @@ impl ListSSHPublicKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSSHPublicKeysErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListSSHPublicKeysErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12914,7 +12914,7 @@ pub enum ListUserPoliciesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserPoliciesError {
@@ -12978,14 +12978,14 @@ impl ListUserPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserPoliciesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListUserPoliciesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoliciesErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoliciesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListUserPoliciesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13019,7 +13019,7 @@ pub enum ListUsersErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -13082,7 +13082,7 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ServiceFailureException(_))
     }
@@ -13115,7 +13115,7 @@ pub enum ListUserTagsErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserTagsError {
@@ -13179,11 +13179,11 @@ impl ListUserTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserTagsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListUserTagsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, ListUserTagsErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `ListUserTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListUserTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13214,7 +13214,7 @@ pub struct ListVirtualMFADevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVirtualMFADevicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualMFADevicesError {
@@ -13310,7 +13310,7 @@ pub enum PutGroupPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutGroupPolicyError {
@@ -13376,28 +13376,28 @@ impl PutGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutGroupPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutGroupPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupPolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `PutGroupPolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupPolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PutGroupPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutGroupPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13447,7 +13447,7 @@ pub enum PutRolePermissionsBoundaryErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRolePermissionsBoundaryError {
@@ -13518,35 +13518,35 @@ impl PutRolePermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRolePermissionsBoundaryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutRolePermissionsBoundaryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePermissionsBoundaryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePermissionsBoundaryErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PutRolePermissionsBoundaryErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException`.
+    /// Returns `true` if the error kind is `PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException`.
     pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePermissionsBoundaryErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutRolePermissionsBoundaryErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePermissionsBoundaryErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13601,7 +13601,7 @@ pub enum PutRolePolicyErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRolePolicyError {
@@ -13668,32 +13668,32 @@ impl PutRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRolePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutRolePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `PutRolePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PutRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, PutRolePolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `PutRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutRolePolicyErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `PutRolePolicyErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13739,7 +13739,7 @@ pub enum PutUserPermissionsBoundaryErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutUserPermissionsBoundaryError {
@@ -13807,28 +13807,28 @@ impl PutUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutUserPermissionsBoundaryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutUserPermissionsBoundaryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutUserPermissionsBoundaryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutUserPermissionsBoundaryErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PutUserPermissionsBoundaryErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutUserPermissionsBoundaryErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException`.
+    /// Returns `true` if the error kind is `PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException`.
     pub fn is_policy_not_attachable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException(_)
         )
     }
-    /// Returns true if the error kind is `PutUserPermissionsBoundaryErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutUserPermissionsBoundaryErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13875,7 +13875,7 @@ pub enum PutUserPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutUserPolicyError {
@@ -13941,25 +13941,25 @@ impl PutUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutUserPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutUserPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutUserPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutUserPolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `PutUserPolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutUserPolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutUserPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PutUserPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, PutUserPolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `PutUserPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutUserPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14001,7 +14001,7 @@ pub enum RemoveClientIDFromOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveClientIDFromOpenIDConnectProviderError {
@@ -14075,21 +14075,21 @@ impl RemoveClientIDFromOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14143,7 +14143,7 @@ pub enum RemoveRoleFromInstanceProfileErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromInstanceProfileError {
@@ -14216,28 +14216,28 @@ impl RemoveRoleFromInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveRoleFromInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveRoleFromInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14281,7 +14281,7 @@ pub enum RemoveUserFromGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveUserFromGroupError {
@@ -14346,21 +14346,21 @@ impl RemoveUserFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveUserFromGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveUserFromGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveUserFromGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveUserFromGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `RemoveUserFromGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveUserFromGroupErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveUserFromGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RemoveUserFromGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14395,7 +14395,7 @@ pub enum ResetServiceSpecificCredentialErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetServiceSpecificCredentialError {
@@ -14461,7 +14461,7 @@ impl ResetServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetServiceSpecificCredentialErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ResetServiceSpecificCredentialErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14503,7 +14503,7 @@ pub enum ResyncMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResyncMFADeviceError {
@@ -14569,28 +14569,28 @@ impl ResyncMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException`.
+    /// Returns `true` if the error kind is `ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException`.
     pub fn is_invalid_authentication_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException(_)
         )
     }
-    /// Returns true if the error kind is `ResyncMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ResyncMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResyncMFADeviceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ResyncMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ResyncMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResyncMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `ResyncMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ResyncMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14635,7 +14635,7 @@ pub enum SetDefaultPolicyVersionErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetDefaultPolicyVersionError {
@@ -14701,28 +14701,28 @@ impl SetDefaultPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetDefaultPolicyVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SetDefaultPolicyVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetDefaultPolicyVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SetDefaultPolicyVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SetDefaultPolicyVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetDefaultPolicyVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SetDefaultPolicyVersionErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `SetDefaultPolicyVersionErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetDefaultPolicyVersionErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `SetDefaultPolicyVersionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `SetDefaultPolicyVersionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14758,7 +14758,7 @@ pub enum SetSecurityTokenServicePreferencesErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSecurityTokenServicePreferencesError {
@@ -14826,7 +14826,7 @@ impl SetSecurityTokenServicePreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14864,7 +14864,7 @@ pub enum SimulateCustomPolicyErrorKind {
     /// <p>The request failed because a provided policy could not be successfully evaluated. An
     /// additional detailed message indicates the source of the failure.</p>
     PolicyEvaluationException(crate::error::PolicyEvaluationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SimulateCustomPolicyError {
@@ -14928,14 +14928,14 @@ impl SimulateCustomPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SimulateCustomPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SimulateCustomPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SimulateCustomPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SimulateCustomPolicyErrorKind::PolicyEvaluationException`.
+    /// Returns `true` if the error kind is `SimulateCustomPolicyErrorKind::PolicyEvaluationException`.
     pub fn is_policy_evaluation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14975,7 +14975,7 @@ pub enum SimulatePrincipalPolicyErrorKind {
     /// <p>The request failed because a provided policy could not be successfully evaluated. An
     /// additional detailed message indicates the source of the failure.</p>
     PolicyEvaluationException(crate::error::PolicyEvaluationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SimulatePrincipalPolicyError {
@@ -15040,21 +15040,21 @@ impl SimulatePrincipalPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SimulatePrincipalPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SimulatePrincipalPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SimulatePrincipalPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SimulatePrincipalPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `SimulatePrincipalPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             SimulatePrincipalPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `SimulatePrincipalPolicyErrorKind::PolicyEvaluationException`.
+    /// Returns `true` if the error kind is `SimulatePrincipalPolicyErrorKind::PolicyEvaluationException`.
     pub fn is_policy_evaluation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15101,7 +15101,7 @@ pub enum TagInstanceProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagInstanceProfileError {
@@ -15168,35 +15168,35 @@ impl TagInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagInstanceProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagInstanceProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagInstanceProfileErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagInstanceProfileErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `TagInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `TagInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15245,7 +15245,7 @@ pub enum TagMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagMFADeviceError {
@@ -15312,26 +15312,26 @@ impl TagMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagMFADeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagMFADeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagMFADeviceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagMFADeviceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagMFADeviceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagMFADeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagMFADeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagMFADeviceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, TagMFADeviceErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `TagMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15380,7 +15380,7 @@ pub enum TagOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagOpenIDConnectProviderError {
@@ -15449,35 +15449,35 @@ impl TagOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `TagOpenIDConnectProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagOpenIDConnectProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagOpenIDConnectProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `TagOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15528,7 +15528,7 @@ pub enum TagPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagPolicyError {
@@ -15595,26 +15595,26 @@ impl TagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagPolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagPolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagPolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagPolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, TagPolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `TagPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagPolicyErrorKind::ServiceFailureException(_))
     }
@@ -15660,7 +15660,7 @@ pub enum TagRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagRoleError {
@@ -15727,26 +15727,26 @@ impl TagRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagRoleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagRoleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagRoleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagRoleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagRoleErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagRoleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagRoleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagRoleErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, TagRoleErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `TagRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagRoleErrorKind::ServiceFailureException(_))
     }
@@ -15792,7 +15792,7 @@ pub enum TagSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagSAMLProviderError {
@@ -15859,35 +15859,35 @@ impl TagSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagSAMLProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagSAMLProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `TagSAMLProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagSAMLProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagSAMLProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagSAMLProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `TagSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15936,7 +15936,7 @@ pub enum TagServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagServerCertificateError {
@@ -16003,35 +16003,35 @@ impl TagServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagServerCertificateErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagServerCertificateErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagServerCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagServerCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `TagServerCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagServerCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagServerCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagServerCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `TagServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16080,7 +16080,7 @@ pub enum TagUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagUserError {
@@ -16147,26 +16147,26 @@ impl TagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagUserErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagUserErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagUserErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `TagUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, TagUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `TagUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagUserErrorKind::ServiceFailureException(_))
     }
@@ -16209,7 +16209,7 @@ pub enum UntagInstanceProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagInstanceProfileError {
@@ -16275,28 +16275,28 @@ impl UntagInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagInstanceProfileErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagInstanceProfileErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagInstanceProfileErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagInstanceProfileErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagInstanceProfileErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagInstanceProfileErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UntagInstanceProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagInstanceProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagInstanceProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UntagInstanceProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagInstanceProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16341,7 +16341,7 @@ pub enum UntagMFADeviceErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagMFADeviceError {
@@ -16407,28 +16407,28 @@ impl UntagMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagMFADeviceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagMFADeviceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMFADeviceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMFADeviceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagMFADeviceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMFADeviceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMFADeviceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagMFADeviceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMFADeviceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMFADeviceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagMFADeviceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16473,7 +16473,7 @@ pub enum UntagOpenIDConnectProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagOpenIDConnectProviderError {
@@ -16541,28 +16541,28 @@ impl UntagOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagOpenIDConnectProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagOpenIDConnectProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagOpenIDConnectProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UntagOpenIDConnectProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagOpenIDConnectProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagOpenIDConnectProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UntagOpenIDConnectProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagOpenIDConnectProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16609,7 +16609,7 @@ pub enum UntagPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagPolicyError {
@@ -16675,22 +16675,22 @@ impl UntagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagPolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagPolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagPolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UntagPolicyErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UntagPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UntagPolicyErrorKind::ServiceFailureException(_))
     }
@@ -16729,7 +16729,7 @@ pub enum UntagRoleErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagRoleError {
@@ -16794,18 +16794,18 @@ impl UntagRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagRoleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagRoleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagRoleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UntagRoleErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UntagRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UntagRoleErrorKind::ServiceFailureException(_))
     }
@@ -16846,7 +16846,7 @@ pub enum UntagSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagSAMLProviderError {
@@ -16912,28 +16912,28 @@ impl UntagSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagSAMLProviderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagSAMLProviderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagSAMLProviderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UntagSAMLProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagSAMLProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UntagSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16978,7 +16978,7 @@ pub enum UntagServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagServerCertificateError {
@@ -17046,28 +17046,28 @@ impl UntagServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagServerCertificateErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagServerCertificateErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagServerCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagServerCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UntagServerCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagServerCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UntagServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17111,7 +17111,7 @@ pub enum UntagUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagUserError {
@@ -17176,18 +17176,18 @@ impl UntagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UntagUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UntagUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UntagUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UntagUserErrorKind::ServiceFailureException(_))
     }
@@ -17225,7 +17225,7 @@ pub enum UpdateAccessKeyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccessKeyError {
@@ -17290,21 +17290,21 @@ impl UpdateAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccessKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAccessKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessKeyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateAccessKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessKeyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccessKeyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17348,7 +17348,7 @@ pub enum UpdateAccountPasswordPolicyErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountPasswordPolicyError {
@@ -17416,28 +17416,28 @@ impl UpdateAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccountPasswordPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAccountPasswordPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountPasswordPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountPasswordPolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccountPasswordPolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17489,7 +17489,7 @@ pub enum UpdateAssumeRolePolicyErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssumeRolePolicyError {
@@ -17558,35 +17558,35 @@ impl UpdateAssumeRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssumeRolePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAssumeRolePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssumeRolePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssumeRolePolicyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateAssumeRolePolicyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssumeRolePolicyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssumeRolePolicyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAssumeRolePolicyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssumeRolePolicyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17634,7 +17634,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -17700,22 +17700,22 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::ServiceFailureException(_))
     }
@@ -17762,7 +17762,7 @@ pub enum UpdateLoginProfileErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLoginProfileError {
@@ -17831,35 +17831,35 @@ impl UpdateLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoginProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLoginProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoginProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoginProfileErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateLoginProfileErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoginProfileErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoginProfileErrorKind::PasswordPolicyViolationException`.
+    /// Returns `true` if the error kind is `UpdateLoginProfileErrorKind::PasswordPolicyViolationException`.
     pub fn is_password_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoginProfileErrorKind::PasswordPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoginProfileErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateLoginProfileErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17904,7 +17904,7 @@ pub enum UpdateOpenIDConnectProviderThumbprintErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOpenIDConnectProviderThumbprintError {
@@ -17978,21 +17978,21 @@ impl UpdateOpenIDConnectProviderThumbprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18043,7 +18043,7 @@ pub enum UpdateRoleErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoleError {
@@ -18108,15 +18108,15 @@ impl UpdateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoleErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateRoleErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoleErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UpdateRoleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateRoleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoleErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateRoleErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `UpdateRoleErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18159,7 +18159,7 @@ pub enum UpdateRoleDescriptionErrorKind {
     /// service that depends on this service-linked role. You must request the change through that
     /// service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoleDescriptionError {
@@ -18224,21 +18224,21 @@ impl UpdateRoleDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoleDescriptionErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateRoleDescriptionErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoleDescriptionErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoleDescriptionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateRoleDescriptionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoleDescriptionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoleDescriptionErrorKind::UnmodifiableEntityException`.
+    /// Returns `true` if the error kind is `UpdateRoleDescriptionErrorKind::UnmodifiableEntityException`.
     pub fn is_unmodifiable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18282,7 +18282,7 @@ pub enum UpdateSAMLProviderErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSAMLProviderError {
@@ -18348,28 +18348,28 @@ impl UpdateSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSAMLProviderErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateSAMLProviderErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSAMLProviderErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSAMLProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSAMLProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSAMLProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSAMLProviderErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateSAMLProviderErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSAMLProviderErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSAMLProviderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateSAMLProviderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18414,7 +18414,7 @@ pub enum UpdateServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServerCertificateError {
@@ -18480,28 +18480,28 @@ impl UpdateServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServerCertificateErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateServerCertificateErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateServerCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateServerCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18537,7 +18537,7 @@ pub enum UpdateServiceSpecificCredentialErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceSpecificCredentialError {
@@ -18605,7 +18605,7 @@ impl UpdateServiceSpecificCredentialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18644,7 +18644,7 @@ pub enum UpdateSigningCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSigningCertificateError {
@@ -18709,21 +18709,21 @@ impl UpdateSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSigningCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSigningCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSigningCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateSigningCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSigningCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateSigningCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18758,7 +18758,7 @@ pub enum UpdateSSHPublicKeyErrorKind {
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The
     /// error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSSHPublicKeyError {
@@ -18821,7 +18821,7 @@ impl UpdateSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSSHPublicKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateSSHPublicKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18871,7 +18871,7 @@ pub enum UpdateUserErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -18939,36 +18939,36 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::EntityTemporarilyUnmodifiableException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::EntityTemporarilyUnmodifiableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::NoSuchEntityException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ServiceFailureException(_))
     }
@@ -19021,7 +19021,7 @@ pub enum UploadServerCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadServerCertificateError {
@@ -19094,49 +19094,49 @@ impl UploadServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::KeyPairMismatchException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::KeyPairMismatchException`.
     pub fn is_key_pair_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::KeyPairMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::MalformedCertificateException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::MalformedCertificateException`.
     pub fn is_malformed_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadServerCertificateErrorKind::MalformedCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `UploadServerCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UploadServerCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19194,7 +19194,7 @@ pub enum UploadSigningCertificateErrorKind {
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadSigningCertificateError {
@@ -19269,49 +19269,49 @@ impl UploadSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::DuplicateCertificateException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::DuplicateCertificateException`.
     pub fn is_duplicate_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::DuplicateCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::InvalidCertificateException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::InvalidCertificateException`.
     pub fn is_invalid_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::InvalidCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::MalformedCertificateException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::MalformedCertificateException`.
     pub fn is_malformed_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::MalformedCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSigningCertificateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSigningCertificateErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UploadSigningCertificateErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19365,7 +19365,7 @@ pub enum UploadSSHPublicKeyErrorKind {
     /// <p>The request was rejected because the public key encoding format is unsupported or
     /// unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadSSHPublicKeyError {
@@ -19434,35 +19434,35 @@ impl UploadSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException`.
+    /// Returns `true` if the error kind is `UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException`.
     pub fn is_duplicate_ssh_public_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSSHPublicKeyErrorKind::InvalidPublicKeyException`.
+    /// Returns `true` if the error kind is `UploadSSHPublicKeyErrorKind::InvalidPublicKeyException`.
     pub fn is_invalid_public_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSSHPublicKeyErrorKind::InvalidPublicKeyException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSSHPublicKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UploadSSHPublicKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSSHPublicKeyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSSHPublicKeyErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UploadSSHPublicKeyErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadSSHPublicKeyErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException`.
+    /// Returns `true` if the error kind is `UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException`.
     pub fn is_unrecognized_public_key_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,

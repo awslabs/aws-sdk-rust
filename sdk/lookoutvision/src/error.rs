@@ -28,7 +28,7 @@ pub enum CreateDatasetErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetError {
@@ -97,40 +97,40 @@ impl CreateDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ValidationException(_))
     }
@@ -179,7 +179,7 @@ pub enum CreateModelErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelError {
@@ -248,37 +248,37 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ValidationException(_))
     }
@@ -327,7 +327,7 @@ pub enum CreateProjectErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -396,40 +396,40 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ValidationException(_))
     }
@@ -475,7 +475,7 @@ pub enum DeleteDatasetErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetError {
@@ -543,33 +543,33 @@ impl DeleteDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ValidationException(_))
     }
@@ -614,7 +614,7 @@ pub enum DeleteModelErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelError {
@@ -682,30 +682,30 @@ impl DeleteModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ValidationException(_))
     }
@@ -750,7 +750,7 @@ pub enum DeleteProjectErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -818,33 +818,33 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ValidationException(_))
     }
@@ -889,7 +889,7 @@ pub enum DescribeDatasetErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetError {
@@ -957,36 +957,36 @@ impl DescribeDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ValidationException(_))
     }
@@ -1031,7 +1031,7 @@ pub enum DescribeModelErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelError {
@@ -1099,33 +1099,33 @@ impl DescribeModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeModelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::ValidationException(_))
     }
@@ -1170,7 +1170,7 @@ pub enum DescribeProjectErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -1238,36 +1238,36 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ValidationException(_))
     }
@@ -1312,7 +1312,7 @@ pub enum DetectAnomaliesErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectAnomaliesError {
@@ -1380,36 +1380,36 @@ impl DetectAnomaliesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectAnomaliesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DetectAnomaliesErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectAnomaliesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectAnomaliesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DetectAnomaliesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DetectAnomaliesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DetectAnomaliesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DetectAnomaliesErrorKind::ValidationException(_))
     }
@@ -1454,7 +1454,7 @@ pub enum ListDatasetEntriesErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetEntriesError {
@@ -1522,42 +1522,42 @@ impl ListDatasetEntriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetEntriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetEntriesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetEntriesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetEntriesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetEntriesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetEntriesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1605,7 +1605,7 @@ pub enum ListModelsErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelsError {
@@ -1673,30 +1673,30 @@ impl ListModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListModelsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::ValidationException(_))
     }
@@ -1741,7 +1741,7 @@ pub enum ListProjectsErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -1809,33 +1809,33 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ValidationException(_))
     }
@@ -1880,7 +1880,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1948,42 +1948,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2034,7 +2034,7 @@ pub enum StartModelErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartModelError {
@@ -2103,37 +2103,37 @@ impl StartModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StartModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StartModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StartModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartModelErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartModelErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartModelErrorKind::ValidationException(_))
     }
@@ -2179,7 +2179,7 @@ pub enum StopModelErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopModelError {
@@ -2247,27 +2247,27 @@ impl StopModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StopModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StopModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StopModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StopModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopModelErrorKind::ValidationException(_))
     }
@@ -2315,7 +2315,7 @@ pub enum TagResourceErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2384,37 +2384,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2460,7 +2460,7 @@ pub enum UntagResourceErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2528,33 +2528,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -2599,7 +2599,7 @@ pub enum UpdateDatasetEntriesErrorKind {
     /// <p>An input validation error occured. For example, invalid characters in a project name,
     /// or if a pagination token is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDatasetEntriesError {
@@ -2667,42 +2667,42 @@ impl UpdateDatasetEntriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetEntriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetEntriesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetEntriesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetEntriesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetEntriesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetEntriesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

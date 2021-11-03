@@ -68,7 +68,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>Specifies the storage type associated with the automated backup.</p>
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.
     /// <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
@@ -441,13 +441,13 @@ pub mod db_instance_automated_backup {
             self
         }
         /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -775,7 +775,7 @@ pub struct DbInstance {
     pub pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+    /// <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.</p>
     pub multi_az: bool,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
@@ -805,7 +805,7 @@ pub struct DbInstance {
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub replica_mode: std::option::Option<crate::model::ReplicaMode>,
-    /// <p>License model information for this DB instance.</p>
+    /// <p>License model information for this DB instance. This setting doesn't apply to RDS Custom.</p>
     pub license_model: std::option::Option<std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub iops: std::option::Option<i32>,
@@ -844,10 +844,10 @@ pub struct DbInstance {
     /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
     /// for the encrypted DB instance.
     /// </p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log
-    /// entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.</p>
+    /// entries whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
@@ -900,7 +900,7 @@ pub struct DbInstance {
     /// <p>True if Performance Insights is enabled for the DB instance, and otherwise false.</p>
     pub performance_insights_enabled: std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -948,8 +948,7 @@ pub struct DbInstance {
     /// <p>The status of the database activity stream.</p>
     pub activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
-    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-    /// customer master key (CMK).</p>
+    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub activity_stream_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
@@ -958,6 +957,33 @@ pub struct DbInstance {
     pub activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub activity_stream_engine_native_audit_fields_included: std::option::Option<bool>,
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
+    /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+    /// <code>all paused</code>, the instance pauses automation for the duration set by
+    /// <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub automation_mode: std::option::Option<crate::model::AutomationMode>,
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+    /// The minimum value is 60 (default). The maximum value is 1,440.
+    /// </p>
+    pub resume_full_automation_mode_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+    /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+    /// </li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+    /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+    /// User Guide</i>.</p>
+    pub custom_iam_instance_profile: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1083,6 +1109,15 @@ impl std::fmt::Debug for DbInstance {
             "activity_stream_engine_native_audit_fields_included",
             &self.activity_stream_engine_native_audit_fields_included,
         );
+        formatter.field("automation_mode", &self.automation_mode);
+        formatter.field(
+            "resume_full_automation_mode_time",
+            &self.resume_full_automation_mode_time,
+        );
+        formatter.field(
+            "custom_iam_instance_profile",
+            &self.custom_iam_instance_profile,
+        );
         formatter.finish()
     }
 }
@@ -1176,6 +1211,9 @@ pub mod db_instance {
         pub(crate) activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
         pub(crate) activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
         pub(crate) activity_stream_engine_native_audit_fields_included: std::option::Option<bool>,
+        pub(crate) automation_mode: std::option::Option<crate::model::AutomationMode>,
+        pub(crate) resume_full_automation_mode_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1502,12 +1540,12 @@ pub mod db_instance {
             self.latest_restorable_time = input;
             self
         }
-        /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.</p>
         pub fn multi_az(mut self, input: bool) -> Self {
             self.multi_az = Some(input);
             self
         }
-        /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+        /// <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
@@ -1638,12 +1676,12 @@ pub mod db_instance {
             self.replica_mode = input;
             self
         }
-        /// <p>License model information for this DB instance.</p>
+        /// <p>License model information for this DB instance. This setting doesn't apply to RDS Custom.</p>
         pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_model = Some(input.into());
             self
         }
-        /// <p>License model information for this DB instance.</p>
+        /// <p>License model information for this DB instance. This setting doesn't apply to RDS Custom.</p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1833,7 +1871,7 @@ pub mod db_instance {
         /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB instance.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -1842,19 +1880,19 @@ pub mod db_instance {
         /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB instance.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log
-        /// entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.</p>
+        /// entries whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log
-        /// entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.</p>
+        /// entries whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
         pub fn set_dbi_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2062,7 +2100,7 @@ pub mod db_instance {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2071,7 +2109,7 @@ pub mod db_instance {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_performance_insights_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2313,15 +2351,13 @@ pub mod db_instance {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-        /// customer master key (CMK).</p>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn activity_stream_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_stream_kms_key_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
-        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-        /// customer master key (CMK).</p>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_activity_stream_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2371,6 +2407,93 @@ pub mod db_instance {
             input: std::option::Option<bool>,
         ) -> Self {
             self.activity_stream_engine_native_audit_fields_included = input;
+            self
+        }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all paused</code>, the instance pauses automation for the duration set by
+        /// <code>--resume-full-automation-mode-minutes</code>.</p>
+        pub fn automation_mode(mut self, input: crate::model::AutomationMode) -> Self {
+            self.automation_mode = Some(input);
+            self
+        }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all paused</code>, the instance pauses automation for the duration set by
+        /// <code>--resume-full-automation-mode-minutes</code>.</p>
+        pub fn set_automation_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomationMode>,
+        ) -> Self {
+            self.automation_mode = input;
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+        /// The minimum value is 60 (default). The maximum value is 1,440.
+        /// </p>
+        pub fn resume_full_automation_mode_time(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
+            self.resume_full_automation_mode_time = Some(input);
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+        /// The minimum value is 60 (default). The maximum value is 1,440.
+        /// </p>
+        pub fn set_resume_full_automation_mode_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.resume_full_automation_mode_time = input;
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        pub fn custom_iam_instance_profile(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_iam_instance_profile = Some(input.into());
+            self
+        }
+        /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
+        /// RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The profile must exist in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p>
+        /// </li>
+        /// <li>
+        /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the list of permissions required for the IAM role, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.</p>
+        pub fn set_custom_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_iam_instance_profile = input;
             self
         }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance)
@@ -2451,6 +2574,9 @@ pub mod db_instance {
                 activity_stream_mode: self.activity_stream_mode,
                 activity_stream_engine_native_audit_fields_included: self
                     .activity_stream_engine_native_audit_fields_included,
+                automation_mode: self.automation_mode,
+                resume_full_automation_mode_time: self.resume_full_automation_mode_time,
+                custom_iam_instance_profile: self.custom_iam_instance_profile,
             }
         }
     }
@@ -2459,6 +2585,61 @@ impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::model::DbInstance)
     pub fn builder() -> crate::model::db_instance::Builder {
         crate::model::db_instance::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutomationMode {
+    #[allow(missing_docs)] // documentation missing in model
+    AllPaused,
+    #[allow(missing_docs)] // documentation missing in model
+    Full,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutomationMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "all-paused" => AutomationMode::AllPaused,
+            "full" => AutomationMode::Full,
+            other => AutomationMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutomationMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutomationMode::from(s))
+    }
+}
+impl AutomationMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutomationMode::AllPaused => "all-paused",
+            AutomationMode::Full => "full",
+            AutomationMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["all-paused", "full"]
+    }
+}
+impl AsRef<str> for AutomationMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2752,7 +2933,7 @@ pub struct DbInstanceRole {
     /// instance.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-    /// For the list of supported feature names, see <code>DBEngineVersion</code>.
+    /// For information about supported feature names, see <code>DBEngineVersion</code>.
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>Describes the state of association between the IAM role and the DB instance. The Status property returns one of the following
@@ -2808,14 +2989,14 @@ pub mod db_instance_role {
             self
         }
         /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <code>DBEngineVersion</code>.
+        /// For information about supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
         /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <code>DBEngineVersion</code>.
+        /// For information about supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
@@ -3402,6 +3583,15 @@ pub struct PendingModifiedValues {
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
     /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: std::option::Option<bool>,
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>.
+    /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+    /// <code>all-paused</code>, the instance pauses automation for the duration set by
+    /// <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub automation_mode: std::option::Option<crate::model::AutomationMode>,
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+    /// The minimum value is 60 (default). The maximum value is 1,440.
+    /// </p>
+    pub resume_full_automation_mode_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PendingModifiedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3427,6 +3617,11 @@ impl std::fmt::Debug for PendingModifiedValues {
         formatter.field(
             "iam_database_authentication_enabled",
             &self.iam_database_authentication_enabled,
+        );
+        formatter.field("automation_mode", &self.automation_mode);
+        formatter.field(
+            "resume_full_automation_mode_time",
+            &self.resume_full_automation_mode_time,
         );
         formatter.finish()
     }
@@ -3455,6 +3650,8 @@ pub mod pending_modified_values {
         pub(crate) processor_features:
             std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         pub(crate) iam_database_authentication_enabled: std::option::Option<bool>,
+        pub(crate) automation_mode: std::option::Option<crate::model::AutomationMode>,
+        pub(crate) resume_full_automation_mode_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -3667,6 +3864,45 @@ pub mod pending_modified_values {
             self.iam_database_authentication_enabled = input;
             self
         }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all-paused</code>, the instance pauses automation for the duration set by
+        /// <code>--resume-full-automation-mode-minutes</code>.</p>
+        pub fn automation_mode(mut self, input: crate::model::AutomationMode) -> Self {
+            self.automation_mode = Some(input);
+            self
+        }
+        /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
+        /// <code>all-paused</code>, the instance pauses automation for the duration set by
+        /// <code>--resume-full-automation-mode-minutes</code>.</p>
+        pub fn set_automation_mode(
+            mut self,
+            input: std::option::Option<crate::model::AutomationMode>,
+        ) -> Self {
+            self.automation_mode = input;
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+        /// The minimum value is 60 (default). The maximum value is 1,440.
+        /// </p>
+        pub fn resume_full_automation_mode_time(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
+            self.resume_full_automation_mode_time = Some(input);
+            self
+        }
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.
+        /// The minimum value is 60 (default). The maximum value is 1,440.
+        /// </p>
+        pub fn set_resume_full_automation_mode_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.resume_full_automation_mode_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::model::PendingModifiedValues)
         pub fn build(self) -> crate::model::PendingModifiedValues {
             crate::model::PendingModifiedValues {
@@ -3686,6 +3922,8 @@ pub mod pending_modified_values {
                 pending_cloudwatch_logs_exports: self.pending_cloudwatch_logs_exports,
                 processor_features: self.processor_features,
                 iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+                automation_mode: self.automation_mode,
+                resume_full_automation_mode_time: self.resume_full_automation_mode_time,
             }
         }
     }
@@ -4499,10 +4737,10 @@ pub struct DbCluster {
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
-    /// the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
+    /// the KMS key for the DB cluster is accessed.</p>
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
     pub db_cluster_arn: std::option::Option<std::string::String>,
@@ -4561,7 +4799,7 @@ pub struct DbCluster {
     /// <p>The status of the database activity stream.</p>
     pub activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub activity_stream_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
@@ -5209,25 +5447,25 @@ pub mod db_cluster {
             self
         }
         /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
-        /// the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
+        /// the KMS key for the DB cluster is accessed.</p>
         pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_resource_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
-        /// the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
+        /// the KMS key for the DB cluster is accessed.</p>
         pub fn set_db_cluster_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5495,13 +5733,13 @@ pub mod db_cluster {
             self
         }
         /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn activity_stream_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_stream_kms_key_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_activity_stream_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6108,7 +6346,7 @@ pub struct DbClusterRole {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-    /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+    /// For information about supported feature names, see <a>DBEngineVersion</a>.
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
 }
@@ -6187,14 +6425,14 @@ pub mod db_cluster_role {
             self
         }
         /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
         /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
@@ -7529,7 +7767,7 @@ pub struct GlobalCluster {
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>
     /// The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in
-    /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
+    /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
     /// </p>
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
@@ -7626,7 +7864,7 @@ pub mod global_cluster {
         }
         /// <p>
         /// The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in
-        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
+        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
         /// </p>
         pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_resource_id = Some(input.into());
@@ -7634,7 +7872,7 @@ pub mod global_cluster {
         }
         /// <p>
         /// The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in
-        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
+        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
         /// </p>
         pub fn set_global_cluster_resource_id(
             mut self,
@@ -10085,7 +10323,7 @@ pub struct DbSnapshot {
     /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
     /// for the encrypted DB snapshot.
     /// </p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
     pub db_snapshot_arn: std::option::Option<std::string::String>,
@@ -10463,7 +10701,7 @@ pub mod db_snapshot {
         /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB snapshot.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -10472,7 +10710,7 @@ pub mod db_snapshot {
         /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB snapshot.
         /// </p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -12643,6 +12881,360 @@ impl DbClusterSnapshotAttribute {
     /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute)
     pub fn builder() -> crate::model::db_cluster_snapshot_attribute::Builder {
         crate::model::db_cluster_snapshot_attribute::Builder::default()
+    }
+}
+
+/// <p>A time zone associated with a
+/// <code>DBInstance</code>
+/// or a <code>DBSnapshot</code>.
+/// This data type is an element in the response to  
+/// the <code>DescribeDBInstances</code>,
+/// the <code>DescribeDBSnapshots</code>,
+/// and the <code>DescribeDBEngineVersions</code>
+/// actions.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Timezone {
+    /// <p>The name of the time zone.</p>
+    pub timezone_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Timezone {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Timezone");
+        formatter.field("timezone_name", &self.timezone_name);
+        formatter.finish()
+    }
+}
+/// See [`Timezone`](crate::model::Timezone)
+pub mod timezone {
+    /// A builder for [`Timezone`](crate::model::Timezone)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) timezone_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the time zone.</p>
+        pub fn timezone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the time zone.</p>
+        pub fn set_timezone_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timezone_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Timezone`](crate::model::Timezone)
+        pub fn build(self) -> crate::model::Timezone {
+            crate::model::Timezone {
+                timezone_name: self.timezone_name,
+            }
+        }
+    }
+}
+impl Timezone {
+    /// Creates a new builder-style object to manufacture [`Timezone`](crate::model::Timezone)
+    pub fn builder() -> crate::model::timezone::Builder {
+        crate::model::timezone::Builder::default()
+    }
+}
+
+/// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpgradeTarget {
+    /// <p>The name of the upgrade target database engine.</p>
+    pub engine: std::option::Option<std::string::String>,
+    /// <p>The version number of the upgrade target database engine.</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    pub auto_upgrade: bool,
+    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    pub is_major_version_upgrade: bool,
+    /// <p>A list of the supported DB engine modes for the target engine version.</p>
+    pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    pub supports_parallel_query: std::option::Option<bool>,
+    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    pub supports_global_databases: std::option::Option<bool>,
+}
+impl std::fmt::Debug for UpgradeTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpgradeTarget");
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("description", &self.description);
+        formatter.field("auto_upgrade", &self.auto_upgrade);
+        formatter.field("is_major_version_upgrade", &self.is_major_version_upgrade);
+        formatter.field("supported_engine_modes", &self.supported_engine_modes);
+        formatter.field("supports_parallel_query", &self.supports_parallel_query);
+        formatter.field("supports_global_databases", &self.supports_global_databases);
+        formatter.finish()
+    }
+}
+/// See [`UpgradeTarget`](crate::model::UpgradeTarget)
+pub mod upgrade_target {
+    /// A builder for [`UpgradeTarget`](crate::model::UpgradeTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) auto_upgrade: std::option::Option<bool>,
+        pub(crate) is_major_version_upgrade: std::option::Option<bool>,
+        pub(crate) supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supports_parallel_query: std::option::Option<bool>,
+        pub(crate) supports_global_databases: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The name of the upgrade target database engine.</p>
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
+            self
+        }
+        /// <p>The name of the upgrade target database engine.</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
+            self
+        }
+        /// <p>The version number of the upgrade target database engine.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The version number of the upgrade target database engine.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+        pub fn auto_upgrade(mut self, input: bool) -> Self {
+            self.auto_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+        pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_upgrade = input;
+            self
+        }
+        /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+        pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
+            self.is_major_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+        pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_major_version_upgrade = input;
+            self
+        }
+        /// Appends an item to `supported_engine_modes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_engine_modes`](Self::set_supported_engine_modes).
+        ///
+        /// <p>A list of the supported DB engine modes for the target engine version.</p>
+        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_engine_modes.unwrap_or_default();
+            v.push(input.into());
+            self.supported_engine_modes = Some(v);
+            self
+        }
+        /// <p>A list of the supported DB engine modes for the target engine version.</p>
+        pub fn set_supported_engine_modes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_engine_modes = input;
+            self
+        }
+        /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+        pub fn supports_parallel_query(mut self, input: bool) -> Self {
+            self.supports_parallel_query = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+        pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_parallel_query = input;
+            self
+        }
+        /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpgradeTarget`](crate::model::UpgradeTarget)
+        pub fn build(self) -> crate::model::UpgradeTarget {
+            crate::model::UpgradeTarget {
+                engine: self.engine,
+                engine_version: self.engine_version,
+                description: self.description,
+                auto_upgrade: self.auto_upgrade.unwrap_or_default(),
+                is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
+                supported_engine_modes: self.supported_engine_modes,
+                supports_parallel_query: self.supports_parallel_query,
+                supports_global_databases: self.supports_global_databases,
+            }
+        }
+    }
+}
+impl UpgradeTarget {
+    /// Creates a new builder-style object to manufacture [`UpgradeTarget`](crate::model::UpgradeTarget)
+    pub fn builder() -> crate::model::upgrade_target::Builder {
+        crate::model::upgrade_target::Builder::default()
+    }
+}
+
+/// <p>
+/// This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CharacterSet {
+    /// <p>The name of the character set.</p>
+    pub character_set_name: std::option::Option<std::string::String>,
+    /// <p>The description of the character set.</p>
+    pub character_set_description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CharacterSet {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CharacterSet");
+        formatter.field("character_set_name", &self.character_set_name);
+        formatter.field("character_set_description", &self.character_set_description);
+        formatter.finish()
+    }
+}
+/// See [`CharacterSet`](crate::model::CharacterSet)
+pub mod character_set {
+    /// A builder for [`CharacterSet`](crate::model::CharacterSet)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) character_set_name: std::option::Option<std::string::String>,
+        pub(crate) character_set_description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the character set.</p>
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the character set.</p>
+        pub fn set_character_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.character_set_name = input;
+            self
+        }
+        /// <p>The description of the character set.</p>
+        pub fn character_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_description = Some(input.into());
+            self
+        }
+        /// <p>The description of the character set.</p>
+        pub fn set_character_set_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.character_set_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CharacterSet`](crate::model::CharacterSet)
+        pub fn build(self) -> crate::model::CharacterSet {
+            crate::model::CharacterSet {
+                character_set_name: self.character_set_name,
+                character_set_description: self.character_set_description,
+            }
+        }
+    }
+}
+impl CharacterSet {
+    /// Creates a new builder-style object to manufacture [`CharacterSet`](crate::model::CharacterSet)
+    pub fn builder() -> crate::model::character_set::Builder {
+        crate::model::character_set::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CustomEngineVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    #[allow(missing_docs)] // documentation missing in model
+    InactiveExceptRestore,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CustomEngineVersionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "available" => CustomEngineVersionStatus::Available,
+            "inactive" => CustomEngineVersionStatus::Inactive,
+            "inactive-except-restore" => CustomEngineVersionStatus::InactiveExceptRestore,
+            other => CustomEngineVersionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CustomEngineVersionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CustomEngineVersionStatus::from(s))
+    }
+}
+impl CustomEngineVersionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CustomEngineVersionStatus::Available => "available",
+            CustomEngineVersionStatus::Inactive => "inactive",
+            CustomEngineVersionStatus::InactiveExceptRestore => "inactive-except-restore",
+            CustomEngineVersionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["available", "inactive", "inactive-except-restore"]
+    }
+}
+impl AsRef<str> for CustomEngineVersionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -15579,9 +16171,9 @@ pub struct ExportTask {
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-    /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-    /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this KMS key. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
     pub status: std::option::Option<std::string::String>,
@@ -15802,16 +16394,16 @@ pub mod export_task {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-        /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-        /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to
+        /// Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+        /// must have encryption and decryption permissions to use this KMS key. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-        /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-        /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to
+        /// Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+        /// must have encryption and decryption permissions to use this KMS key. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -16054,6 +16646,8 @@ impl Event {
 )]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
+    CustomEngineVersion,
+    #[allow(missing_docs)] // documentation missing in model
     DbCluster,
     #[allow(missing_docs)] // documentation missing in model
     DbClusterSnapshot,
@@ -16071,6 +16665,7 @@ pub enum SourceType {
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
         match s {
+            "custom-engine-version" => SourceType::CustomEngineVersion,
             "db-cluster" => SourceType::DbCluster,
             "db-cluster-snapshot" => SourceType::DbClusterSnapshot,
             "db-instance" => SourceType::DbInstance,
@@ -16092,6 +16687,7 @@ impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SourceType::CustomEngineVersion => "custom-engine-version",
             SourceType::DbCluster => "db-cluster",
             SourceType::DbClusterSnapshot => "db-cluster-snapshot",
             SourceType::DbInstance => "db-instance",
@@ -16104,6 +16700,7 @@ impl SourceType {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "custom-engine-version",
             "db-cluster",
             "db-cluster-snapshot",
             "db-instance",
@@ -16531,13 +17128,20 @@ pub struct DbEngineVersion {
     /// <p>A list of the supported DB engine modes.</p>
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>
-    /// A list of features supported by the DB engine. Supported feature names include the following.
+    /// A list of features supported by the DB engine.
     /// </p>
-    /// <ul>
-    /// <li>
-    /// <p>s3Import</p>
-    /// </li>
-    /// </ul>
+    /// <p>The supported features vary by DB engine and DB engine version.</p>
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+    /// </p>
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+    /// </p>
+    /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub status: std::option::Option<std::string::String>,
@@ -16545,6 +17149,24 @@ pub struct DbEngineVersion {
     pub supports_parallel_query: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub supports_global_databases: bool,
+    /// <p>The major engine version of the CEV.</p>
+    pub major_engine_version: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 directory that contains the database installation files.
+    /// If not specified, then no prefix is assumed.</p>
+    pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
+    /// <p>The ARN of the custom engine version.</p>
+    pub db_engine_version_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+    /// RDS Custom, but optional for Amazon RDS.</p>
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The creation time of the DB engine version.</p>
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>A list of tags.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+    /// </p>
+    pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for DbEngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16576,6 +17198,19 @@ impl std::fmt::Debug for DbEngineVersion {
         formatter.field("status", &self.status);
         formatter.field("supports_parallel_query", &self.supports_parallel_query);
         formatter.field("supports_global_databases", &self.supports_global_databases);
+        formatter.field("major_engine_version", &self.major_engine_version);
+        formatter.field(
+            "database_installation_files_s3_bucket_name",
+            &self.database_installation_files_s3_bucket_name,
+        );
+        formatter.field(
+            "database_installation_files_s3_prefix",
+            &self.database_installation_files_s3_prefix,
+        );
+        formatter.field("db_engine_version_arn", &self.db_engine_version_arn);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("tag_list", &self.tag_list);
         formatter.finish()
     }
 }
@@ -16606,6 +17241,14 @@ pub mod db_engine_version {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) supports_parallel_query: std::option::Option<bool>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
+        pub(crate) major_engine_version: std::option::Option<std::string::String>,
+        pub(crate) database_installation_files_s3_bucket_name:
+            std::option::Option<std::string::String>,
+        pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
+        pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -16853,13 +17496,20 @@ pub mod db_engine_version {
         /// To override the contents of this collection use [`set_supported_feature_names`](Self::set_supported_feature_names).
         ///
         /// <p>
-        /// A list of features supported by the DB engine. Supported feature names include the following.
+        /// A list of features supported by the DB engine.
         /// </p>
-        /// <ul>
-        /// <li>
-        /// <p>s3Import</p>
-        /// </li>
-        /// </ul>
+        /// <p>The supported features vary by DB engine and DB engine version.</p>
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+        /// use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+        /// </p>
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+        /// use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+        /// </p>
+        /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
         pub fn supported_feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_feature_names.unwrap_or_default();
             v.push(input.into());
@@ -16867,13 +17517,20 @@ pub mod db_engine_version {
             self
         }
         /// <p>
-        /// A list of features supported by the DB engine. Supported feature names include the following.
+        /// A list of features supported by the DB engine.
         /// </p>
-        /// <ul>
-        /// <li>
-        /// <p>s3Import</p>
-        /// </li>
-        /// </ul>
+        /// <p>The supported features vary by DB engine and DB engine version.</p>
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+        /// use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+        /// </p>
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+        /// use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+        /// </p>
+        /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
         pub fn set_supported_feature_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16911,6 +17568,114 @@ pub mod db_engine_version {
             self.supports_global_databases = input;
             self
         }
+        /// <p>The major engine version of the CEV.</p>
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The major engine version of the CEV.</p>
+        pub fn set_major_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.major_engine_version = input;
+            self
+        }
+        /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+        pub fn database_installation_files_s3_bucket_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.database_installation_files_s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+        pub fn set_database_installation_files_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_installation_files_s3_bucket_name = input;
+            self
+        }
+        /// <p>The Amazon S3 directory that contains the database installation files.
+        /// If not specified, then no prefix is assumed.</p>
+        pub fn database_installation_files_s3_prefix(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.database_installation_files_s3_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 directory that contains the database installation files.
+        /// If not specified, then no prefix is assumed.</p>
+        pub fn set_database_installation_files_s3_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_installation_files_s3_prefix = input;
+            self
+        }
+        /// <p>The ARN of the custom engine version.</p>
+        pub fn db_engine_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the custom engine version.</p>
+        pub fn set_db_engine_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_engine_version_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+        /// RDS Custom, but optional for Amazon RDS.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+        /// RDS Custom, but optional for Amazon RDS.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>The creation time of the DB engine version.</p>
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        /// <p>The creation time of the DB engine version.</p>
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>A list of tags.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+        /// </p>
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tag_list.unwrap_or_default();
+            v.push(input.into());
+            self.tag_list = Some(v);
+            self
+        }
+        /// <p>A list of tags.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+        /// </p>
+        pub fn set_tag_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tag_list = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbEngineVersion`](crate::model::DbEngineVersion)
         pub fn build(self) -> crate::model::DbEngineVersion {
             crate::model::DbEngineVersion {
@@ -16934,6 +17699,14 @@ pub mod db_engine_version {
                 status: self.status,
                 supports_parallel_query: self.supports_parallel_query.unwrap_or_default(),
                 supports_global_databases: self.supports_global_databases.unwrap_or_default(),
+                major_engine_version: self.major_engine_version,
+                database_installation_files_s3_bucket_name: self
+                    .database_installation_files_s3_bucket_name,
+                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+                db_engine_version_arn: self.db_engine_version_arn,
+                kms_key_id: self.kms_key_id,
+                create_time: self.create_time,
+                tag_list: self.tag_list,
             }
         }
     }
@@ -16942,301 +17715,6 @@ impl DbEngineVersion {
     /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::model::DbEngineVersion)
     pub fn builder() -> crate::model::db_engine_version::Builder {
         crate::model::db_engine_version::Builder::default()
-    }
-}
-
-/// <p>A time zone associated with a
-/// <code>DBInstance</code>
-/// or a <code>DBSnapshot</code>.
-/// This data type is an element in the response to  
-/// the <code>DescribeDBInstances</code>,
-/// the <code>DescribeDBSnapshots</code>,
-/// and the <code>DescribeDBEngineVersions</code>
-/// actions.
-/// </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Timezone {
-    /// <p>The name of the time zone.</p>
-    pub timezone_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Timezone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Timezone");
-        formatter.field("timezone_name", &self.timezone_name);
-        formatter.finish()
-    }
-}
-/// See [`Timezone`](crate::model::Timezone)
-pub mod timezone {
-    /// A builder for [`Timezone`](crate::model::Timezone)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) timezone_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the time zone.</p>
-        pub fn timezone_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.timezone_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the time zone.</p>
-        pub fn set_timezone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timezone_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Timezone`](crate::model::Timezone)
-        pub fn build(self) -> crate::model::Timezone {
-            crate::model::Timezone {
-                timezone_name: self.timezone_name,
-            }
-        }
-    }
-}
-impl Timezone {
-    /// Creates a new builder-style object to manufacture [`Timezone`](crate::model::Timezone)
-    pub fn builder() -> crate::model::timezone::Builder {
-        crate::model::timezone::Builder::default()
-    }
-}
-
-/// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpgradeTarget {
-    /// <p>The name of the upgrade target database engine.</p>
-    pub engine: std::option::Option<std::string::String>,
-    /// <p>The version number of the upgrade target database engine.</p>
-    pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
-    pub auto_upgrade: bool,
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
-    pub is_major_version_upgrade: bool,
-    /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
-    pub supports_parallel_query: std::option::Option<bool>,
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
-    pub supports_global_databases: std::option::Option<bool>,
-}
-impl std::fmt::Debug for UpgradeTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeTarget");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("description", &self.description);
-        formatter.field("auto_upgrade", &self.auto_upgrade);
-        formatter.field("is_major_version_upgrade", &self.is_major_version_upgrade);
-        formatter.field("supported_engine_modes", &self.supported_engine_modes);
-        formatter.field("supports_parallel_query", &self.supports_parallel_query);
-        formatter.field("supports_global_databases", &self.supports_global_databases);
-        formatter.finish()
-    }
-}
-/// See [`UpgradeTarget`](crate::model::UpgradeTarget)
-pub mod upgrade_target {
-    /// A builder for [`UpgradeTarget`](crate::model::UpgradeTarget)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) engine: std::option::Option<std::string::String>,
-        pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) auto_upgrade: std::option::Option<bool>,
-        pub(crate) is_major_version_upgrade: std::option::Option<bool>,
-        pub(crate) supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) supports_parallel_query: std::option::Option<bool>,
-        pub(crate) supports_global_databases: std::option::Option<bool>,
-    }
-    impl Builder {
-        /// <p>The name of the upgrade target database engine.</p>
-        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine = Some(input.into());
-            self
-        }
-        /// <p>The name of the upgrade target database engine.</p>
-        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
-        }
-        /// <p>The version number of the upgrade target database engine.</p>
-        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(input.into());
-            self
-        }
-        /// <p>The version number of the upgrade target database engine.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
-        }
-        /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
-        pub fn auto_upgrade(mut self, input: bool) -> Self {
-            self.auto_upgrade = Some(input);
-            self
-        }
-        /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
-        pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_upgrade = input;
-            self
-        }
-        /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
-        pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
-            self.is_major_version_upgrade = Some(input);
-            self
-        }
-        /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
-        pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_major_version_upgrade = input;
-            self
-        }
-        /// Appends an item to `supported_engine_modes`.
-        ///
-        /// To override the contents of this collection use [`set_supported_engine_modes`](Self::set_supported_engine_modes).
-        ///
-        /// <p>A list of the supported DB engine modes for the target engine version.</p>
-        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(input.into());
-            self.supported_engine_modes = Some(v);
-            self
-        }
-        /// <p>A list of the supported DB engine modes for the target engine version.</p>
-        pub fn set_supported_engine_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_engine_modes = input;
-            self
-        }
-        /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
-        pub fn supports_parallel_query(mut self, input: bool) -> Self {
-            self.supports_parallel_query = Some(input);
-            self
-        }
-        /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
-        pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_parallel_query = input;
-            self
-        }
-        /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
-        pub fn supports_global_databases(mut self, input: bool) -> Self {
-            self.supports_global_databases = Some(input);
-            self
-        }
-        /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
-        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_global_databases = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpgradeTarget`](crate::model::UpgradeTarget)
-        pub fn build(self) -> crate::model::UpgradeTarget {
-            crate::model::UpgradeTarget {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                description: self.description,
-                auto_upgrade: self.auto_upgrade.unwrap_or_default(),
-                is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
-                supported_engine_modes: self.supported_engine_modes,
-                supports_parallel_query: self.supports_parallel_query,
-                supports_global_databases: self.supports_global_databases,
-            }
-        }
-    }
-}
-impl UpgradeTarget {
-    /// Creates a new builder-style object to manufacture [`UpgradeTarget`](crate::model::UpgradeTarget)
-    pub fn builder() -> crate::model::upgrade_target::Builder {
-        crate::model::upgrade_target::Builder::default()
-    }
-}
-
-/// <p>
-/// This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
-/// </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CharacterSet {
-    /// <p>The name of the character set.</p>
-    pub character_set_name: std::option::Option<std::string::String>,
-    /// <p>The description of the character set.</p>
-    pub character_set_description: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CharacterSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CharacterSet");
-        formatter.field("character_set_name", &self.character_set_name);
-        formatter.field("character_set_description", &self.character_set_description);
-        formatter.finish()
-    }
-}
-/// See [`CharacterSet`](crate::model::CharacterSet)
-pub mod character_set {
-    /// A builder for [`CharacterSet`](crate::model::CharacterSet)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) character_set_name: std::option::Option<std::string::String>,
-        pub(crate) character_set_description: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the character set.</p>
-        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the character set.</p>
-        pub fn set_character_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.character_set_name = input;
-            self
-        }
-        /// <p>The description of the character set.</p>
-        pub fn character_set_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.character_set_description = Some(input.into());
-            self
-        }
-        /// <p>The description of the character set.</p>
-        pub fn set_character_set_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.character_set_description = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CharacterSet`](crate::model::CharacterSet)
-        pub fn build(self) -> crate::model::CharacterSet {
-            crate::model::CharacterSet {
-                character_set_name: self.character_set_name,
-                character_set_description: self.character_set_description,
-            }
-        }
-    }
-}
-impl CharacterSet {
-    /// Creates a new builder-style object to manufacture [`CharacterSet`](crate::model::CharacterSet)
-    pub fn builder() -> crate::model::character_set::Builder {
-        crate::model::character_set::Builder::default()
     }
 }
 
@@ -17283,7 +17761,7 @@ pub struct DbClusterSnapshot {
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
-    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub db_cluster_snapshot_arn: std::option::Option<std::string::String>,
@@ -17571,13 +18049,13 @@ pub mod db_cluster_snapshot {
             self
         }
         /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
-        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

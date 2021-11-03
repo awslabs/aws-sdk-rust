@@ -309,12 +309,15 @@ pub struct ListProblemsOutput {
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
     /// when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListProblemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProblemsOutput");
         formatter.field("problem_list", &self.problem_list);
         formatter.field("next_token", &self.next_token);
+        formatter.field("resource_group_name", &self.resource_group_name);
         formatter.finish()
     }
 }
@@ -326,6 +329,7 @@ pub mod list_problems_output {
     pub struct Builder {
         pub(crate) problem_list: std::option::Option<std::vec::Vec<crate::model::Problem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) resource_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `problem_list`.
@@ -359,11 +363,25 @@ pub mod list_problems_output {
             self.next_token = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_group_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_resource_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_group_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProblemsOutput`](crate::output::ListProblemsOutput)
         pub fn build(self) -> crate::output::ListProblemsOutput {
             crate::output::ListProblemsOutput {
                 problem_list: self.problem_list,
                 next_token: self.next_token,
+                resource_group_name: self.resource_group_name,
             }
         }
     }

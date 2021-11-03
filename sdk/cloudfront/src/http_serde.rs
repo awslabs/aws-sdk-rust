@@ -341,6 +341,37 @@ pub fn deser_payload_create_public_key_create_public_key_output_public_key(
     }).transpose()
 }
 
+pub fn deser_header_create_response_headers_policy_create_response_headers_policy_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_create_response_headers_policy_create_response_headers_policy_output_location(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Location").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_create_response_headers_policy_create_response_headers_policy_output_response_headers_policy(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ResponseHeadersPolicy>,
+    crate::error::CreateResponseHeadersPolicyError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_response_headers_policy_output_response_headers_policy(body).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)
+    }).transpose()
+}
+
 pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -809,6 +840,48 @@ pub fn deser_payload_get_public_key_config_get_public_key_config_output_public_k
     }).transpose()
 }
 
+pub fn deser_header_get_response_headers_policy_get_response_headers_policy_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_get_response_headers_policy_get_response_headers_policy_output_response_headers_policy(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ResponseHeadersPolicy>,
+    crate::error::GetResponseHeadersPolicyError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_response_headers_policy_output_response_headers_policy(body).map_err(crate::error::GetResponseHeadersPolicyError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_header_get_response_headers_policy_config_get_response_headers_policy_config_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_get_response_headers_policy_config_get_response_headers_policy_config_output_response_headers_policy_config(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+    crate::error::GetResponseHeadersPolicyConfigError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_response_headers_policy_config_output_response_headers_policy_config(body).map_err(crate::error::GetResponseHeadersPolicyConfigError::unhandled)
+    }).transpose()
+}
+
 pub fn deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -939,6 +1012,17 @@ pub fn deser_payload_list_distributions_by_realtime_log_config_list_distribution
     }).transpose()
 }
 
+pub fn deser_payload_list_distributions_by_response_headers_policy_id_list_distributions_by_response_headers_policy_id_output_distribution_id_list(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::DistributionIdList>,
+    crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_distributions_by_response_headers_policy_id_output_distribution_id_list(body).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)
+    }).transpose()
+}
+
 pub fn deser_payload_list_distributions_by_web_acl_id_list_distributions_by_web_acl_id_output_distribution_list(
     body: &[u8],
 ) -> std::result::Result<
@@ -1035,6 +1119,17 @@ pub fn deser_payload_list_realtime_log_configs_list_realtime_log_configs_output_
 > {
     (!body.is_empty()).then(||{
         crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_realtime_log_configs_output_realtime_log_configs(body).map_err(crate::error::ListRealtimeLogConfigsError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_payload_list_response_headers_policies_list_response_headers_policies_output_response_headers_policy_list(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ResponseHeadersPolicyList>,
+    crate::error::ListResponseHeadersPoliciesError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_response_headers_policies_output_response_headers_policy_list(body).map_err(crate::error::ListResponseHeadersPoliciesError::unhandled)
     }).transpose()
 }
 
@@ -1268,6 +1363,27 @@ pub fn deser_payload_update_public_key_update_public_key_output_public_key(
 > {
     (!body.is_empty()).then(||{
         crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_public_key_output_public_key(body).map_err(crate::error::UpdatePublicKeyError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_header_update_response_headers_policy_update_response_headers_policy_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_update_response_headers_policy_update_response_headers_policy_output_response_headers_policy(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::ResponseHeadersPolicy>,
+    crate::error::UpdateResponseHeadersPolicyError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_response_headers_policy_output_response_headers_policy(body).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)
     }).transpose()
 }
 

@@ -28,7 +28,7 @@ pub enum CreateConnectorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectorError {
@@ -98,44 +98,44 @@ impl CreateConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectorErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectorErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectorErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectorErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -188,7 +188,7 @@ pub enum CreateCustomPluginErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomPluginError {
@@ -258,56 +258,56 @@ impl CreateCustomPluginError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomPluginErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomPluginErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateCustomPluginErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -360,7 +360,7 @@ pub enum CreateWorkerConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkerConfigurationError {
@@ -434,56 +434,56 @@ impl CreateWorkerConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkerConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkerConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateWorkerConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -536,7 +536,7 @@ pub enum DeleteConnectorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectorError {
@@ -605,40 +605,40 @@ impl DeleteConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectorErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectorErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectorErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectorErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectorErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -688,7 +688,7 @@ pub enum DescribeConnectorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectorError {
@@ -757,46 +757,46 @@ impl DescribeConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeConnectorErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -846,7 +846,7 @@ pub enum DescribeCustomPluginErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomPluginError {
@@ -915,49 +915,49 @@ impl DescribeCustomPluginError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomPluginErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomPluginErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeCustomPluginErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1007,7 +1007,7 @@ pub enum DescribeWorkerConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkerConfigurationError {
@@ -1080,49 +1080,49 @@ impl DescribeWorkerConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkerConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkerConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeWorkerConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1176,7 +1176,7 @@ pub enum ListConnectorsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectorsError {
@@ -1245,40 +1245,40 @@ impl ListConnectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListConnectorsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListConnectorsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListConnectorsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1328,7 +1328,7 @@ pub enum ListCustomPluginsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomPluginsError {
@@ -1397,46 +1397,46 @@ impl ListCustomPluginsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomPluginsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomPluginsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomPluginsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListCustomPluginsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomPluginsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomPluginsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomPluginsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListCustomPluginsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1486,7 +1486,7 @@ pub enum ListWorkerConfigurationsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkerConfigurationsError {
@@ -1557,49 +1557,49 @@ impl ListWorkerConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkerConfigurationsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkerConfigurationsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListWorkerConfigurationsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1649,7 +1649,7 @@ pub enum UpdateConnectorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectorError {
@@ -1718,40 +1718,40 @@ impl UpdateConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateConnectorErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateConnectorErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateConnectorErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,

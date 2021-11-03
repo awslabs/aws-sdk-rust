@@ -28,7 +28,7 @@ pub enum AddCustomAttributesErrorKind {
     /// <p>This exception is thrown when you are trying to modify a user pool while a user import
     /// job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddCustomAttributesError {
@@ -96,42 +96,42 @@ impl AddCustomAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomAttributesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomAttributesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomAttributesErrorKind::UserImportInProgressException`.
+    /// Returns `true` if the error kind is `AddCustomAttributesErrorKind::UserImportInProgressException`.
     pub fn is_user_import_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -181,7 +181,7 @@ pub enum AdminAddUserToGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminAddUserToGroupError {
@@ -249,42 +249,42 @@ impl AdminAddUserToGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminAddUserToGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminAddUserToGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminAddUserToGroupErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminAddUserToGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminAddUserToGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminAddUserToGroupErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminAddUserToGroupErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -348,7 +348,7 @@ pub enum AdminConfirmSignUpErrorKind {
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminConfirmSignUpError {
@@ -421,77 +421,77 @@ impl AdminConfirmSignUpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::TooManyFailedAttemptsException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::TooManyFailedAttemptsException`.
     pub fn is_too_many_failed_attempts_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::TooManyFailedAttemptsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminConfirmSignUpErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminConfirmSignUpErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminConfirmSignUpErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -576,7 +576,7 @@ pub enum AdminCreateUserErrorKind {
     UsernameExistsException(crate::error::UsernameExistsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminCreateUserError {
@@ -656,112 +656,112 @@ impl AdminCreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::UnsupportedUserStateException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::UnsupportedUserStateException`.
     pub fn is_unsupported_user_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::UnsupportedUserStateException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::UsernameExistsException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::UsernameExistsException`.
     pub fn is_username_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminCreateUserErrorKind::UsernameExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminCreateUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminCreateUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -823,7 +823,7 @@ pub enum AdminDeleteUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminDeleteUserError {
@@ -891,42 +891,42 @@ impl AdminDeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -976,7 +976,7 @@ pub enum AdminDeleteUserAttributesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminDeleteUserAttributesError {
@@ -1044,42 +1044,42 @@ impl AdminDeleteUserAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserAttributesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDeleteUserAttributesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDeleteUserAttributesErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDeleteUserAttributesErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1133,7 +1133,7 @@ pub enum AdminDisableProviderForUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminDisableProviderForUserError {
@@ -1206,49 +1206,49 @@ impl AdminDisableProviderForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableProviderForUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableProviderForUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDisableProviderForUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1299,7 +1299,7 @@ pub enum AdminDisableUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminDisableUserError {
@@ -1367,42 +1367,42 @@ impl AdminDisableUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminDisableUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminDisableUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminDisableUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1452,7 +1452,7 @@ pub enum AdminEnableUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminEnableUserError {
@@ -1520,42 +1520,42 @@ impl AdminEnableUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminEnableUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminEnableUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminEnableUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminEnableUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminEnableUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminEnableUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminEnableUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1607,7 +1607,7 @@ pub enum AdminForgetDeviceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminForgetDeviceError {
@@ -1678,49 +1678,49 @@ impl AdminForgetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminForgetDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminForgetDeviceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminForgetDeviceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1773,7 +1773,7 @@ pub enum AdminGetDeviceErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminGetDeviceError {
@@ -1841,42 +1841,42 @@ impl AdminGetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetDeviceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetDeviceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetDeviceErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetDeviceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminGetDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1926,7 +1926,7 @@ pub enum AdminGetUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminGetUserError {
@@ -1994,36 +1994,36 @@ impl AdminGetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, AdminGetUserErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, AdminGetUserErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminGetUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminGetUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminGetUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, AdminGetUserErrorKind::UserNotFoundException(_))
     }
@@ -2096,7 +2096,7 @@ pub enum AdminInitiateAuthErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminInitiateAuthError {
@@ -2179,105 +2179,105 @@ impl AdminInitiateAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::MfaMethodNotFoundException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::MfaMethodNotFoundException`.
     pub fn is_mfa_method_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::MfaMethodNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminInitiateAuthErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminInitiateAuthErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminInitiateAuthErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2347,7 +2347,7 @@ pub enum AdminLinkProviderForUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminLinkProviderForUserError {
@@ -2417,56 +2417,56 @@ impl AdminLinkProviderForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminLinkProviderForUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminLinkProviderForUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminLinkProviderForUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2518,7 +2518,7 @@ pub enum AdminListDevicesErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminListDevicesError {
@@ -2588,42 +2588,42 @@ impl AdminListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListDevicesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListDevicesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListDevicesErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListDevicesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListDevicesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListDevicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminListDevicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2675,7 +2675,7 @@ pub enum AdminListGroupsForUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminListGroupsForUserError {
@@ -2743,42 +2743,42 @@ impl AdminListGroupsForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListGroupsForUserErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListGroupsForUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListGroupsForUserErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListGroupsForUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListGroupsForUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListGroupsForUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminListGroupsForUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2830,7 +2830,7 @@ pub enum AdminListUserAuthEventsErrorKind {
     UserNotFoundException(crate::error::UserNotFoundException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminListUserAuthEventsError {
@@ -2901,49 +2901,49 @@ impl AdminListUserAuthEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminListUserAuthEventsErrorKind::UserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminListUserAuthEventsErrorKind::UserPoolAddOnNotEnabledException`.
+    /// Returns `true` if the error kind is `AdminListUserAuthEventsErrorKind::UserPoolAddOnNotEnabledException`.
     pub fn is_user_pool_add_on_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2996,7 +2996,7 @@ pub enum AdminRemoveUserFromGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminRemoveUserFromGroupError {
@@ -3064,42 +3064,42 @@ impl AdminRemoveUserFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRemoveUserFromGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRemoveUserFromGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRemoveUserFromGroupErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRemoveUserFromGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRemoveUserFromGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRemoveUserFromGroupErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRemoveUserFromGroupErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3172,7 +3172,7 @@ pub enum AdminResetUserPasswordErrorKind {
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminResetUserPasswordError {
@@ -3255,91 +3255,91 @@ impl AdminResetUserPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminResetUserPasswordErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminResetUserPasswordErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminResetUserPasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3443,7 +3443,7 @@ pub enum AdminRespondToAuthChallengeErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminRespondToAuthChallengeError {
@@ -3549,140 +3549,140 @@ impl AdminRespondToAuthChallengeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::ExpiredCodeException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::MfaMethodNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::MfaMethodNotFoundException`.
     pub fn is_mfa_method_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::MfaMethodNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException`.
     pub fn is_software_token_mfa_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminRespondToAuthChallengeErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminRespondToAuthChallengeErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminRespondToAuthChallengeErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3763,7 +3763,7 @@ pub enum AdminSetUserMFAPreferenceErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminSetUserMFAPreferenceError {
@@ -3834,49 +3834,49 @@ impl AdminSetUserMFAPreferenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserMFAPreferenceErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserMFAPreferenceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserMFAPreferenceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3932,7 +3932,7 @@ pub enum AdminSetUserPasswordErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminSetUserPasswordError {
@@ -4001,49 +4001,49 @@ impl AdminSetUserPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserPasswordErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserPasswordErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserPasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4091,7 +4091,7 @@ pub enum AdminSetUserSettingsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminSetUserSettingsError {
@@ -4158,35 +4158,35 @@ impl AdminSetUserSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminSetUserSettingsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminSetUserSettingsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserSettingsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminSetUserSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserSettingsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminSetUserSettingsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserSettingsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminSetUserSettingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminSetUserSettingsErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminSetUserSettingsErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4237,7 +4237,7 @@ pub enum AdminUpdateAuthEventFeedbackErrorKind {
     UserNotFoundException(crate::error::UserNotFoundException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminUpdateAuthEventFeedbackError {
@@ -4314,49 +4314,49 @@ impl AdminUpdateAuthEventFeedbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateAuthEventFeedbackErrorKind::UserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException`.
+    /// Returns `true` if the error kind is `AdminUpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException`.
     pub fn is_user_pool_add_on_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4415,7 +4415,7 @@ pub enum AdminUpdateDeviceStatusErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminUpdateDeviceStatusError {
@@ -4486,49 +4486,49 @@ impl AdminUpdateDeviceStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateDeviceStatusErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateDeviceStatusErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateDeviceStatusErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4605,7 +4605,7 @@ pub enum AdminUpdateUserAttributesErrorKind {
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminUpdateUserAttributesError {
@@ -4690,91 +4690,91 @@ impl AdminUpdateUserAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUpdateUserAttributesErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUpdateUserAttributesErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUpdateUserAttributesErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4841,7 +4841,7 @@ pub enum AdminUserGlobalSignOutErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdminUserGlobalSignOutError {
@@ -4909,42 +4909,42 @@ impl AdminUserGlobalSignOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUserGlobalSignOutErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUserGlobalSignOutErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUserGlobalSignOutErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUserGlobalSignOutErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdminUserGlobalSignOutErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AdminUserGlobalSignOutErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `AdminUserGlobalSignOutErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4995,7 +4995,7 @@ pub enum AssociateSoftwareTokenErrorKind {
     /// <p>This exception is thrown when the software token TOTP multi-factor authentication
     /// (MFA) is not enabled for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSoftwareTokenError {
@@ -5067,42 +5067,42 @@ impl AssociateSoftwareTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSoftwareTokenErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSoftwareTokenErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSoftwareTokenErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSoftwareTokenErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSoftwareTokenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException`.
     pub fn is_software_token_mfa_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5166,7 +5166,7 @@ pub enum ChangePasswordErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangePasswordError {
@@ -5238,70 +5238,70 @@ impl ChangePasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangePasswordErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ChangePasswordErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5369,7 +5369,7 @@ pub enum ConfirmDeviceErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmDeviceError {
@@ -5443,84 +5443,84 @@ impl ConfirmDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::UsernameExistsException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::UsernameExistsException`.
     pub fn is_username_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::UsernameExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmDeviceErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmDeviceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, ConfirmDeviceErrorKind::UserNotFoundException(_))
     }
@@ -5597,7 +5597,7 @@ pub enum ConfirmForgotPasswordErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmForgotPasswordError {
@@ -5674,105 +5674,105 @@ impl ConfirmForgotPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::ExpiredCodeException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::TooManyFailedAttemptsException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::TooManyFailedAttemptsException`.
     pub fn is_too_many_failed_attempts_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::TooManyFailedAttemptsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmForgotPasswordErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5854,7 +5854,7 @@ pub enum ConfirmSignUpErrorKind {
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmSignUpError {
@@ -5930,89 +5930,89 @@ impl ConfirmSignUpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(&self.kind, ConfirmSignUpErrorKind::AliasExistsException(_))
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(&self.kind, ConfirmSignUpErrorKind::CodeMismatchException(_))
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(&self.kind, ConfirmSignUpErrorKind::ExpiredCodeException(_))
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::TooManyFailedAttemptsException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::TooManyFailedAttemptsException`.
     pub fn is_too_many_failed_attempts_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::TooManyFailedAttemptsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfirmSignUpErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ConfirmSignUpErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, ConfirmSignUpErrorKind::UserNotFoundException(_))
     }
@@ -6071,7 +6071,7 @@ pub enum CreateGroupErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -6140,37 +6140,37 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::GroupExistsException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::GroupExistsException`.
     pub fn is_group_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::GroupExistsException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6225,7 +6225,7 @@ pub enum CreateIdentityProviderErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIdentityProviderError {
@@ -6294,49 +6294,49 @@ impl CreateIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::DuplicateProviderException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::DuplicateProviderException`.
     pub fn is_duplicate_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::DuplicateProviderException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateIdentityProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6388,7 +6388,7 @@ pub enum CreateResourceServerErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceServerError {
@@ -6456,42 +6456,42 @@ impl CreateResourceServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceServerErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceServerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceServerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceServerErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceServerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateResourceServerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6544,7 +6544,7 @@ pub enum CreateUserImportJobErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserImportJobError {
@@ -6613,49 +6613,49 @@ impl CreateUserImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateUserImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6718,7 +6718,7 @@ pub enum CreateUserPoolErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserPoolError {
@@ -6791,63 +6791,63 @@ impl CreateUserPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolErrorKind::UserPoolTaggingException`.
+    /// Returns `true` if the error kind is `CreateUserPoolErrorKind::UserPoolTaggingException`.
     pub fn is_user_pool_tagging_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6907,7 +6907,7 @@ pub enum CreateUserPoolClientErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserPoolClientError {
@@ -6977,56 +6977,56 @@ impl CreateUserPoolClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::InvalidOAuthFlowException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::InvalidOAuthFlowException`.
     pub fn is_invalid_o_auth_flow_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::InvalidOAuthFlowException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::ScopeDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::ScopeDoesNotExistException`.
     pub fn is_scope_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolClientErrorKind::ScopeDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolClientErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateUserPoolClientErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7076,7 +7076,7 @@ pub enum CreateUserPoolDomainErrorKind {
     /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
     /// resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserPoolDomainError {
@@ -7143,35 +7143,35 @@ impl CreateUserPoolDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserPoolDomainErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateUserPoolDomainErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolDomainErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateUserPoolDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolDomainErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserPoolDomainErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolDomainErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolDomainErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateUserPoolDomainErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserPoolDomainErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserPoolDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserPoolDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7218,7 +7218,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -7285,29 +7285,29 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7356,7 +7356,7 @@ pub enum DeleteIdentityProviderErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when the specified identifier is not supported.</p>
     UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIdentityProviderError {
@@ -7426,42 +7426,42 @@ impl DeleteIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityProviderErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityProviderErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityProviderErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityProviderErrorKind::UnsupportedIdentityProviderException`.
+    /// Returns `true` if the error kind is `DeleteIdentityProviderErrorKind::UnsupportedIdentityProviderException`.
     pub fn is_unsupported_identity_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7511,7 +7511,7 @@ pub enum DeleteResourceServerErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceServerError {
@@ -7578,35 +7578,35 @@ impl DeleteResourceServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceServerErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteResourceServerErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceServerErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceServerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResourceServerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceServerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceServerErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteResourceServerErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceServerErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceServerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteResourceServerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7659,7 +7659,7 @@ pub enum DeleteUserErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -7729,47 +7729,47 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::UserNotFoundException(_))
     }
@@ -7822,7 +7822,7 @@ pub enum DeleteUserAttributesErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserAttributesError {
@@ -7892,56 +7892,56 @@ impl DeleteUserAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserAttributesErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserAttributesErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7994,7 +7994,7 @@ pub enum DeleteUserPoolErrorKind {
     /// <p>This exception is thrown when you are trying to modify a user pool while a user import
     /// job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPoolError {
@@ -8062,42 +8062,42 @@ impl DeleteUserPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolErrorKind::UserImportInProgressException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolErrorKind::UserImportInProgressException`.
     pub fn is_user_import_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8145,7 +8145,7 @@ pub enum DeleteUserPoolClientErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPoolClientError {
@@ -8212,35 +8212,35 @@ impl DeleteUserPoolClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserPoolClientErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolClientErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolClientErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolClientErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolClientErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolClientErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolClientErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolClientErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolClientErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolClientErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8284,7 +8284,7 @@ pub enum DeleteUserPoolDomainErrorKind {
     /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
     /// resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserPoolDomainError {
@@ -8350,28 +8350,28 @@ impl DeleteUserPoolDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserPoolDomainErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolDomainErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolDomainErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolDomainErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolDomainErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserPoolDomainErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserPoolDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserPoolDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8417,7 +8417,7 @@ pub enum DescribeIdentityProviderErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityProviderError {
@@ -8484,35 +8484,35 @@ impl DescribeIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8559,7 +8559,7 @@ pub enum DescribeResourceServerErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourceServerError {
@@ -8626,35 +8626,35 @@ impl DescribeResourceServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourceServerErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeResourceServerErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceServerErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceServerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeResourceServerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceServerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceServerErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeResourceServerErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceServerErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeResourceServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceServerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeResourceServerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8703,7 +8703,7 @@ pub enum DescribeRiskConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRiskConfigurationError {
@@ -8773,42 +8773,42 @@ impl DescribeRiskConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRiskConfigurationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRiskConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRiskConfigurationErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRiskConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRiskConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException`.
+    /// Returns `true` if the error kind is `DescribeRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException`.
     pub fn is_user_pool_add_on_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8858,7 +8858,7 @@ pub enum DescribeUserImportJobErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserImportJobError {
@@ -8925,35 +8925,35 @@ impl DescribeUserImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserImportJobErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeUserImportJobErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserImportJobErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserImportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUserImportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserImportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserImportJobErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeUserImportJobErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserImportJobErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeUserImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9002,7 +9002,7 @@ pub enum DescribeUserPoolErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserPoolError {
@@ -9070,42 +9070,42 @@ impl DescribeUserPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolErrorKind::UserPoolTaggingException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolErrorKind::UserPoolTaggingException`.
     pub fn is_user_pool_tagging_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9153,7 +9153,7 @@ pub enum DescribeUserPoolClientErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserPoolClientError {
@@ -9220,35 +9220,35 @@ impl DescribeUserPoolClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserPoolClientErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolClientErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolClientErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolClientErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolClientErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolClientErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolClientErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolClientErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolClientErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolClientErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolClientErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolClientErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolClientErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolClientErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9292,7 +9292,7 @@ pub enum DescribeUserPoolDomainErrorKind {
     /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
     /// resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserPoolDomainError {
@@ -9358,28 +9358,28 @@ impl DescribeUserPoolDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserPoolDomainErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolDomainErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolDomainErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolDomainErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolDomainErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserPoolDomainErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserPoolDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserPoolDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9433,7 +9433,7 @@ pub enum ForgetDeviceErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ForgetDeviceError {
@@ -9504,57 +9504,57 @@ impl ForgetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ForgetDeviceErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, ForgetDeviceErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgetDeviceErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ForgetDeviceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, ForgetDeviceErrorKind::UserNotFoundException(_))
     }
@@ -9632,7 +9632,7 @@ pub enum ForgotPasswordErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ForgotPasswordError {
@@ -9711,105 +9711,105 @@ impl ForgotPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ForgotPasswordErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ForgotPasswordErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9868,7 +9868,7 @@ pub enum GetCSVHeaderErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCSVHeaderError {
@@ -9935,29 +9935,29 @@ impl GetCSVHeaderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCSVHeaderErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetCSVHeaderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetCSVHeaderErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetCSVHeaderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetCSVHeaderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCSVHeaderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetCSVHeaderErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetCSVHeaderErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetCSVHeaderErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetCSVHeaderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCSVHeaderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCSVHeaderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCSVHeaderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCSVHeaderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10012,7 +10012,7 @@ pub enum GetDeviceErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceError {
@@ -10083,45 +10083,45 @@ impl GetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::UserNotConfirmedException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::UserNotFoundException(_))
     }
@@ -10169,7 +10169,7 @@ pub enum GetGroupErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
@@ -10236,23 +10236,23 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::TooManyRequestsException(_))
     }
@@ -10296,7 +10296,7 @@ pub enum GetIdentityProviderByIdentifierErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityProviderByIdentifierError {
@@ -10376,35 +10376,35 @@ impl GetIdentityProviderByIdentifierError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIdentityProviderByIdentifierErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetIdentityProviderByIdentifierErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityProviderByIdentifierErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityProviderByIdentifierErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetIdentityProviderByIdentifierErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityProviderByIdentifierErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityProviderByIdentifierErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetIdentityProviderByIdentifierErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityProviderByIdentifierErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityProviderByIdentifierErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIdentityProviderByIdentifierErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityProviderByIdentifierErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityProviderByIdentifierErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIdentityProviderByIdentifierErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10456,7 +10456,7 @@ pub enum GetSigningCertificateErrorKind {
     /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
     /// resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSigningCertificateError {
@@ -10521,21 +10521,21 @@ impl GetSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSigningCertificateErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetSigningCertificateErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningCertificateErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningCertificateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSigningCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningCertificateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSigningCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10580,7 +10580,7 @@ pub enum GetUICustomizationErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUICustomizationError {
@@ -10647,35 +10647,35 @@ impl GetUICustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUICustomizationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetUICustomizationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUICustomizationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetUICustomizationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetUICustomizationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUICustomizationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetUICustomizationErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetUICustomizationErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUICustomizationErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetUICustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetUICustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUICustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetUICustomizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetUICustomizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10728,7 +10728,7 @@ pub enum GetUserErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserError {
@@ -10798,38 +10798,38 @@ impl GetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::UserNotConfirmedException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::UserNotFoundException(_))
     }
@@ -10908,7 +10908,7 @@ pub enum GetUserAttributeVerificationCodeErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserAttributeVerificationCodeError {
@@ -11021,112 +11021,112 @@ impl GetUserAttributeVerificationCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11216,7 +11216,7 @@ pub enum GetUserPoolMfaConfigErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserPoolMfaConfigError {
@@ -11283,35 +11283,35 @@ impl GetUserPoolMfaConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserPoolMfaConfigErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetUserPoolMfaConfigErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserPoolMfaConfigErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserPoolMfaConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetUserPoolMfaConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserPoolMfaConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserPoolMfaConfigErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetUserPoolMfaConfigErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserPoolMfaConfigErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserPoolMfaConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserPoolMfaConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserPoolMfaConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserPoolMfaConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetUserPoolMfaConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11362,7 +11362,7 @@ pub enum GlobalSignOutErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GlobalSignOutError {
@@ -11431,49 +11431,49 @@ impl GlobalSignOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GlobalSignOutErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GlobalSignOutErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11547,7 +11547,7 @@ pub enum InitiateAuthErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitiateAuthError {
@@ -11625,92 +11625,92 @@ impl InitiateAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, InitiateAuthErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, InitiateAuthErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateAuthErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateAuthErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, InitiateAuthErrorKind::UserNotFoundException(_))
     }
@@ -11771,7 +11771,7 @@ pub enum ListDevicesErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicesError {
@@ -11842,57 +11842,57 @@ impl ListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::UserNotFoundException(_))
     }
@@ -11940,7 +11940,7 @@ pub enum ListGroupsErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -12007,29 +12007,29 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::TooManyRequestsException(_))
     }
@@ -12073,7 +12073,7 @@ pub enum ListIdentityProvidersErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentityProvidersError {
@@ -12140,35 +12140,35 @@ impl ListIdentityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIdentityProvidersErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListIdentityProvidersErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProvidersErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProvidersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListIdentityProvidersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProvidersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProvidersErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListIdentityProvidersErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProvidersErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProvidersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIdentityProvidersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProvidersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProvidersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListIdentityProvidersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12215,7 +12215,7 @@ pub enum ListResourceServersErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceServersError {
@@ -12282,35 +12282,35 @@ impl ListResourceServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceServersErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListResourceServersErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceServersErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceServersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourceServersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceServersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceServersErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListResourceServersErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceServersErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceServersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourceServersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceServersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceServersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListResourceServersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12357,7 +12357,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -12424,35 +12424,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12499,7 +12499,7 @@ pub enum ListUserImportJobsErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserImportJobsError {
@@ -12566,35 +12566,35 @@ impl ListUserImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserImportJobsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListUserImportJobsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserImportJobsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserImportJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUserImportJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserImportJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserImportJobsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListUserImportJobsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserImportJobsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserImportJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUserImportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserImportJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserImportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListUserImportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12641,7 +12641,7 @@ pub enum ListUserPoolClientsErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserPoolClientsError {
@@ -12708,35 +12708,35 @@ impl ListUserPoolClientsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserPoolClientsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListUserPoolClientsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolClientsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolClientsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUserPoolClientsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolClientsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolClientsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListUserPoolClientsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolClientsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolClientsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUserPoolClientsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolClientsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolClientsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListUserPoolClientsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12780,7 +12780,7 @@ pub enum ListUserPoolsErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserPoolsError {
@@ -12846,28 +12846,28 @@ impl ListUserPoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserPoolsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListUserPoolsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUserPoolsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListUserPoolsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserPoolsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserPoolsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListUserPoolsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12913,7 +12913,7 @@ pub enum ListUsersErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -12980,23 +12980,23 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::TooManyRequestsException(_))
     }
@@ -13040,7 +13040,7 @@ pub enum ListUsersInGroupErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersInGroupError {
@@ -13107,35 +13107,35 @@ impl ListUsersInGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersInGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListUsersInGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersInGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersInGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUsersInGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersInGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersInGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListUsersInGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersInGroupErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersInGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersInGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersInGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersInGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListUsersInGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13210,7 +13210,7 @@ pub enum ResendConfirmationCodeErrorKind {
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResendConfirmationCodeError {
@@ -13294,98 +13294,98 @@ impl ResendConfirmationCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ResendConfirmationCodeErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13490,7 +13490,7 @@ pub enum RespondToAuthChallengeErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RespondToAuthChallengeError {
@@ -13584,140 +13584,140 @@ impl RespondToAuthChallengeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::ExpiredCodeException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::MfaMethodNotFoundException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::MfaMethodNotFoundException`.
     pub fn is_mfa_method_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::MfaMethodNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException`.
     pub fn is_software_token_mfa_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `RespondToAuthChallengeErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13788,7 +13788,7 @@ pub enum RevokeTokenErrorKind {
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// <p>This exception is thrown when an unsupported token is passed to an operation.</p>
     UnsupportedTokenTypeException(crate::error::UnsupportedTokenTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeTokenError {
@@ -13856,36 +13856,36 @@ impl RevokeTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, RevokeTokenErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeTokenErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeTokenErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, RevokeTokenErrorKind::UnauthorizedException(_))
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeTokenErrorKind::UnsupportedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeTokenErrorKind::UnsupportedTokenTypeException`.
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::UnsupportedTokenTypeException`.
     pub fn is_unsupported_token_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13941,7 +13941,7 @@ pub enum SetRiskConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetRiskConfigurationError {
@@ -14015,56 +14015,56 @@ impl SetRiskConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRiskConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `SetRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException`.
+    /// Returns `true` if the error kind is `SetRiskConfigurationErrorKind::UserPoolAddOnNotEnabledException`.
     pub fn is_user_pool_add_on_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14116,7 +14116,7 @@ pub enum SetUICustomizationErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetUICustomizationError {
@@ -14183,35 +14183,35 @@ impl SetUICustomizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetUICustomizationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetUICustomizationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUICustomizationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetUICustomizationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetUICustomizationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUICustomizationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetUICustomizationErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetUICustomizationErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUICustomizationErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUICustomizationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetUICustomizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUICustomizationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetUICustomizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SetUICustomizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14261,7 +14261,7 @@ pub enum SetUserMFAPreferenceErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetUserMFAPreferenceError {
@@ -14330,49 +14330,49 @@ impl SetUserMFAPreferenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserMFAPreferenceErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserMFAPreferenceErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14430,7 +14430,7 @@ pub enum SetUserPoolMfaConfigErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetUserPoolMfaConfigError {
@@ -14503,49 +14503,49 @@ impl SetUserPoolMfaConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserPoolMfaConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserPoolMfaConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SetUserPoolMfaConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14601,7 +14601,7 @@ pub enum SetUserSettingsErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetUserSettingsError {
@@ -14670,49 +14670,49 @@ impl SetUserSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetUserSettingsErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `SetUserSettingsErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14790,7 +14790,7 @@ pub enum SignUpErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters a user name that already
     /// exists in the user pool.</p>
     UsernameExistsException(crate::error::UsernameExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignUpError {
@@ -14866,74 +14866,74 @@ impl SignUpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SignUpErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::CodeDeliveryFailureException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignUpErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignUpErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::InvalidPasswordException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignUpErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `SignUpErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignUpErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `SignUpErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::UnexpectedLambdaException(_))
     }
-    /// Returns true if the error kind is `SignUpErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignUpErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `SignUpErrorKind::UsernameExistsException`.
+    /// Returns `true` if the error kind is `SignUpErrorKind::UsernameExistsException`.
     pub fn is_username_exists_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::UsernameExistsException(_))
     }
@@ -14988,7 +14988,7 @@ pub enum StartUserImportJobErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartUserImportJobError {
@@ -15056,42 +15056,42 @@ impl StartUserImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartUserImportJobErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartUserImportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartUserImportJobErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartUserImportJobErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartUserImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartUserImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartUserImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15141,7 +15141,7 @@ pub enum StopUserImportJobErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopUserImportJobError {
@@ -15209,42 +15209,42 @@ impl StopUserImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopUserImportJobErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopUserImportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopUserImportJobErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopUserImportJobErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopUserImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopUserImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StopUserImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15292,7 +15292,7 @@ pub enum TagResourceErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -15359,29 +15359,29 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15428,7 +15428,7 @@ pub enum UntagResourceErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -15495,35 +15495,35 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15574,7 +15574,7 @@ pub enum UpdateAuthEventFeedbackErrorKind {
     UserNotFoundException(crate::error::UserNotFoundException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAuthEventFeedbackError {
@@ -15645,49 +15645,49 @@ impl UpdateAuthEventFeedbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthEventFeedbackErrorKind::UserNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException`.
+    /// Returns `true` if the error kind is `UpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException`.
     pub fn is_user_pool_add_on_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15746,7 +15746,7 @@ pub enum UpdateDeviceStatusErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceStatusError {
@@ -15819,63 +15819,63 @@ impl UpdateDeviceStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStatusErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStatusErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15928,7 +15928,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -15995,29 +15995,29 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16066,7 +16066,7 @@ pub enum UpdateIdentityProviderErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when the specified identifier is not supported.</p>
     UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIdentityProviderError {
@@ -16136,42 +16136,42 @@ impl UpdateIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderErrorKind::UnsupportedIdentityProviderException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderErrorKind::UnsupportedIdentityProviderException`.
     pub fn is_unsupported_identity_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16221,7 +16221,7 @@ pub enum UpdateResourceServerErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceServerError {
@@ -16288,35 +16288,35 @@ impl UpdateResourceServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceServerErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateResourceServerErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceServerErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceServerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateResourceServerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceServerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceServerErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateResourceServerErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceServerErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceServerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateResourceServerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16401,7 +16401,7 @@ pub enum UpdateUserAttributesErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserAttributesError {
@@ -16487,126 +16487,126 @@ impl UpdateUserAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::AliasExistsException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::AliasExistsException`.
     pub fn is_alias_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::AliasExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::CodeDeliveryFailureException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::CodeDeliveryFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::ExpiredCodeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InvalidLambdaResponseException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InvalidLambdaResponseException`.
     pub fn is_invalid_lambda_response_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InvalidLambdaResponseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::UnexpectedLambdaException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::UnexpectedLambdaException`.
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::UnexpectedLambdaException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::UserLambdaValidationException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserAttributesErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16692,7 +16692,7 @@ pub enum UpdateUserPoolErrorKind {
     UserImportInProgressException(crate::error::UserImportInProgressException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserPoolError {
@@ -16767,77 +16767,77 @@ impl UpdateUserPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException`.
     pub fn is_invalid_email_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::InvalidEmailRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException`.
     pub fn is_invalid_sms_role_access_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException`.
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::UserImportInProgressException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::UserImportInProgressException`.
     pub fn is_user_import_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolErrorKind::UserImportInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolErrorKind::UserPoolTaggingException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolErrorKind::UserPoolTaggingException`.
     pub fn is_user_pool_tagging_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16899,7 +16899,7 @@ pub enum UpdateUserPoolClientErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserPoolClientError {
@@ -16969,56 +16969,56 @@ impl UpdateUserPoolClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::InvalidOAuthFlowException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::InvalidOAuthFlowException`.
     pub fn is_invalid_o_auth_flow_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::InvalidOAuthFlowException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::ScopeDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::ScopeDoesNotExistException`.
     pub fn is_scope_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolClientErrorKind::ScopeDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolClientErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolClientErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17068,7 +17068,7 @@ pub enum UpdateUserPoolDomainErrorKind {
     /// <p>This exception is thrown when the user has made too many requests for a given
     /// operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserPoolDomainError {
@@ -17135,35 +17135,35 @@ impl UpdateUserPoolDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserPoolDomainErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolDomainErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolDomainErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolDomainErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserPoolDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserPoolDomainErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17227,7 +17227,7 @@ pub enum VerifySoftwareTokenErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifySoftwareTokenError {
@@ -17305,84 +17305,84 @@ impl VerifySoftwareTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException`.
     pub fn is_enable_software_token_mfa_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException`.
     pub fn is_invalid_user_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException`.
     pub fn is_software_token_mfa_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifySoftwareTokenErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `VerifySoftwareTokenErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17452,7 +17452,7 @@ pub enum VerifyUserAttributeErrorKind {
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyUserAttributeError {
@@ -17525,77 +17525,77 @@ impl VerifyUserAttributeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::CodeMismatchException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::CodeMismatchException`.
     pub fn is_code_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::CodeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::ExpiredCodeException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::ExpiredCodeException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::PasswordResetRequiredException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::PasswordResetRequiredException`.
     pub fn is_password_reset_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::PasswordResetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::UserNotConfirmedException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::UserNotConfirmedException`.
     pub fn is_user_not_confirmed_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyUserAttributeErrorKind::UserNotConfirmedException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyUserAttributeErrorKind::UserNotFoundException`.
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

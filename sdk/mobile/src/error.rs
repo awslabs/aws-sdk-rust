@@ -47,7 +47,7 @@ pub enum CreateProjectErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -116,43 +116,43 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::UnauthorizedException(_))
     }
@@ -208,7 +208,7 @@ pub enum DeleteProjectErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -275,32 +275,32 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::UnauthorizedException(_))
     }
@@ -359,7 +359,7 @@ pub enum DescribeBundleErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBundleError {
@@ -427,36 +427,36 @@ impl DescribeBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeBundleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBundleErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBundleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBundleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBundleErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBundleErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeBundleErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -519,7 +519,7 @@ pub enum DescribeProjectErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -587,36 +587,36 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -679,7 +679,7 @@ pub enum ExportBundleErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportBundleError {
@@ -747,36 +747,36 @@ impl ExportBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExportBundleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBundleErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ExportBundleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBundleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBundleErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBundleErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ExportBundleErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ExportBundleErrorKind::UnauthorizedException(_))
     }
@@ -836,7 +836,7 @@ pub enum ExportProjectErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportProjectError {
@@ -904,36 +904,36 @@ impl ExportProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExportProjectErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ExportProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportProjectErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportProjectErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ExportProjectErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ExportProjectErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ExportProjectErrorKind::UnauthorizedException(_))
     }
@@ -989,7 +989,7 @@ pub enum ListBundlesErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBundlesError {
@@ -1056,32 +1056,32 @@ impl ListBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBundlesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBundlesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListBundlesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListBundlesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListBundlesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBundlesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListBundlesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBundlesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBundlesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListBundlesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListBundlesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBundlesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListBundlesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListBundlesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListBundlesErrorKind::UnauthorizedException(_))
     }
@@ -1136,7 +1136,7 @@ pub enum ListProjectsErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -1203,32 +1203,32 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::UnauthorizedException(_))
     }
@@ -1298,7 +1298,7 @@ pub enum UpdateProjectErrorKind {
     /// Credentials of the caller are insufficient to authorize the request.
     /// </p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -1368,50 +1368,50 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::AccountActionRequiredException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::AccountActionRequiredException`.
     pub fn is_account_action_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::AccountActionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::UnauthorizedException(_))
     }

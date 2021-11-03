@@ -449,26 +449,26 @@ pub fn parse_create_hosted_configuration_version_response(
         let _ = response;
         output = output.set_application_id(
             crate::http_serde::deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_application_id(response.headers())
-                                        .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
+                                    .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
         );
         output = output.set_configuration_profile_id(
             crate::http_serde::deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_configuration_profile_id(response.headers())
-                                        .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
+                                    .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
         );
         output = output.set_content(
             crate::http_serde::deser_payload_create_hosted_configuration_version_create_hosted_configuration_version_output_content(response.body().as_ref())?
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_description(
             crate::http_serde::deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_description(response.headers())
-                                        .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
+                                    .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
         );
         output = output.set_version_number(
             crate::http_serde::deser_header_create_hosted_configuration_version_create_hosted_configuration_version_output_version_number(response.headers())
-                                        .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
+                                    .map_err(|_|crate::error::CreateHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
         );
         output.build()
     })
@@ -1117,7 +1117,7 @@ pub fn parse_get_configuration_response(
         let _ = response;
         output = output.set_configuration_version(
             crate::http_serde::deser_header_get_configuration_get_configuration_output_configuration_version(response.headers())
-                                        .map_err(|_|crate::error::GetConfigurationError::unhandled("Failed to parse ConfigurationVersion from header `Configuration-Version"))?
+                                    .map_err(|_|crate::error::GetConfigurationError::unhandled("Failed to parse ConfigurationVersion from header `Configuration-Version"))?
         );
         output = output.set_content(
             crate::http_serde::deser_payload_get_configuration_get_configuration_output_content(
@@ -1126,7 +1126,7 @@ pub fn parse_get_configuration_response(
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_get_configuration_get_configuration_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::GetConfigurationError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::GetConfigurationError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output.build()
     })
@@ -1579,26 +1579,26 @@ pub fn parse_get_hosted_configuration_version_response(
         let _ = response;
         output = output.set_application_id(
             crate::http_serde::deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_application_id(response.headers())
-                                        .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
+                                    .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
         );
         output = output.set_configuration_profile_id(
             crate::http_serde::deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_configuration_profile_id(response.headers())
-                                        .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
+                                    .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
         );
         output = output.set_content(
             crate::http_serde::deser_payload_get_hosted_configuration_version_get_hosted_configuration_version_output_content(response.body().as_ref())?
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_description(
             crate::http_serde::deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_description(response.headers())
-                                        .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
+                                    .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
         );
         output = output.set_version_number(
             crate::http_serde::deser_header_get_hosted_configuration_version_get_hosted_configuration_version_output_version_number(response.headers())
-                                        .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
+                                    .map_err(|_|crate::error::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
         );
         output.build()
     })

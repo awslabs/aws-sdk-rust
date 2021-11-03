@@ -21,7 +21,7 @@ pub enum BatchGetRecordErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetRecordError {
@@ -87,19 +87,19 @@ impl BatchGetRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetRecordErrorKind::AccessForbidden`.
+    /// Returns `true` if the error kind is `BatchGetRecordErrorKind::AccessForbidden`.
     pub fn is_access_forbidden(&self) -> bool {
         matches!(&self.kind, BatchGetRecordErrorKind::AccessForbidden(_))
     }
-    /// Returns true if the error kind is `BatchGetRecordErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `BatchGetRecordErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, BatchGetRecordErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `BatchGetRecordErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `BatchGetRecordErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(&self.kind, BatchGetRecordErrorKind::ServiceUnavailable(_))
     }
-    /// Returns true if the error kind is `BatchGetRecordErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `BatchGetRecordErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, BatchGetRecordErrorKind::ValidationError(_))
     }
@@ -138,7 +138,7 @@ pub enum DeleteRecordErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRecordError {
@@ -204,19 +204,19 @@ impl DeleteRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRecordErrorKind::AccessForbidden`.
+    /// Returns `true` if the error kind is `DeleteRecordErrorKind::AccessForbidden`.
     pub fn is_access_forbidden(&self) -> bool {
         matches!(&self.kind, DeleteRecordErrorKind::AccessForbidden(_))
     }
-    /// Returns true if the error kind is `DeleteRecordErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `DeleteRecordErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, DeleteRecordErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `DeleteRecordErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `DeleteRecordErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(&self.kind, DeleteRecordErrorKind::ServiceUnavailable(_))
     }
-    /// Returns true if the error kind is `DeleteRecordErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `DeleteRecordErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, DeleteRecordErrorKind::ValidationError(_))
     }
@@ -257,7 +257,7 @@ pub enum GetRecordErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecordError {
@@ -324,23 +324,23 @@ impl GetRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecordErrorKind::AccessForbidden`.
+    /// Returns `true` if the error kind is `GetRecordErrorKind::AccessForbidden`.
     pub fn is_access_forbidden(&self) -> bool {
         matches!(&self.kind, GetRecordErrorKind::AccessForbidden(_))
     }
-    /// Returns true if the error kind is `GetRecordErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `GetRecordErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, GetRecordErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `GetRecordErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `GetRecordErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, GetRecordErrorKind::ResourceNotFound(_))
     }
-    /// Returns true if the error kind is `GetRecordErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `GetRecordErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(&self.kind, GetRecordErrorKind::ServiceUnavailable(_))
     }
-    /// Returns true if the error kind is `GetRecordErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `GetRecordErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, GetRecordErrorKind::ValidationError(_))
     }
@@ -380,7 +380,7 @@ pub enum PutRecordErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRecordError {
@@ -446,19 +446,19 @@ impl PutRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::AccessForbidden`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::AccessForbidden`.
     pub fn is_access_forbidden(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::AccessForbidden(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::ServiceUnavailable(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::ValidationError(_))
     }

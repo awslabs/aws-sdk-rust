@@ -24,7 +24,7 @@ pub enum CreateDataIntegrationErrorKind {
     ResourceQuotaExceededException(crate::error::ResourceQuotaExceededException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataIntegrationError {
@@ -92,42 +92,42 @@ impl CreateDataIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataIntegrationErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::ResourceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::ResourceQuotaExceededException`.
     pub fn is_resource_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataIntegrationErrorKind::ResourceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDataIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum CreateEventIntegrationErrorKind {
     ResourceQuotaExceededException(crate::error::ResourceQuotaExceededException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventIntegrationError {
@@ -244,42 +244,42 @@ impl CreateEventIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventIntegrationErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::ResourceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::ResourceQuotaExceededException`.
     pub fn is_resource_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventIntegrationErrorKind::ResourceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateEventIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -324,7 +324,7 @@ pub enum DeleteDataIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataIntegrationError {
@@ -391,35 +391,35 @@ impl DeleteDataIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDataIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteDataIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteDataIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDataIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -463,7 +463,7 @@ pub enum DeleteEventIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventIntegrationError {
@@ -530,35 +530,35 @@ impl DeleteEventIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteEventIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteEventIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteEventIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEventIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteEventIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -602,7 +602,7 @@ pub enum GetDataIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataIntegrationError {
@@ -669,35 +669,35 @@ impl GetDataIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDataIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetDataIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetDataIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetDataIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDataIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDataIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDataIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -741,7 +741,7 @@ pub enum GetEventIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventIntegrationError {
@@ -808,35 +808,35 @@ impl GetEventIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEventIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEventIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetEventIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetEventIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetEventIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetEventIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEventIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEventIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -880,7 +880,7 @@ pub enum ListDataIntegrationAssociationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataIntegrationAssociationsError {
@@ -956,35 +956,35 @@ impl ListDataIntegrationAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataIntegrationAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationAssociationsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListDataIntegrationAssociationsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationAssociationsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationAssociationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationAssociationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationAssociationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1030,7 +1030,7 @@ pub enum ListDataIntegrationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataIntegrationsError {
@@ -1096,28 +1096,28 @@ impl ListDataIntegrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataIntegrationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListDataIntegrationsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIntegrationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIntegrationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDataIntegrationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1160,7 +1160,7 @@ pub enum ListEventIntegrationAssociationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventIntegrationAssociationsError {
@@ -1238,35 +1238,35 @@ impl ListEventIntegrationAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventIntegrationAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationAssociationsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListEventIntegrationAssociationsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationAssociationsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationAssociationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationAssociationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationAssociationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1314,7 +1314,7 @@ pub enum ListEventIntegrationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventIntegrationsError {
@@ -1380,28 +1380,28 @@ impl ListEventIntegrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventIntegrationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListEventIntegrationsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventIntegrationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventIntegrationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEventIntegrationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1442,7 +1442,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1508,28 +1508,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1570,7 +1570,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1636,22 +1636,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -1689,7 +1689,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1755,25 +1755,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -1813,7 +1813,7 @@ pub enum UpdateDataIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataIntegrationError {
@@ -1880,35 +1880,35 @@ impl UpdateDataIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDataIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateDataIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDataIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDataIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1952,7 +1952,7 @@ pub enum UpdateEventIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEventIntegrationError {
@@ -2019,35 +2019,35 @@ impl UpdateEventIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEventIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateEventIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventIntegrationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateEventIntegrationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventIntegrationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventIntegrationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateEventIntegrationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventIntegrationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEventIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateEventIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

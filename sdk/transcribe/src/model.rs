@@ -398,8 +398,8 @@ pub enum Rule {
     TranscriptFilter(crate::model::TranscriptFilter),
 }
 impl Rule {
-    /// Tries to convert the enum instance into its [`Rule`](crate::model::Rule) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`InterruptionFilter`](crate::model::Rule::InterruptionFilter), extracting the inner [`InterruptionFilter`](crate::model::InterruptionFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_interruption_filter(
         &self,
     ) -> std::result::Result<&crate::model::InterruptionFilter, &Self> {
@@ -409,12 +409,12 @@ impl Rule {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Rule` variant.
+    /// Returns true if this is a [`InterruptionFilter`](crate::model::Rule::InterruptionFilter).
     pub fn is_interruption_filter(&self) -> bool {
         self.as_interruption_filter().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Rule`](crate::model::Rule) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`NonTalkTimeFilter`](crate::model::Rule::NonTalkTimeFilter), extracting the inner [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_non_talk_time_filter(
         &self,
     ) -> std::result::Result<&crate::model::NonTalkTimeFilter, &Self> {
@@ -424,12 +424,12 @@ impl Rule {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Rule` variant.
+    /// Returns true if this is a [`NonTalkTimeFilter`](crate::model::Rule::NonTalkTimeFilter).
     pub fn is_non_talk_time_filter(&self) -> bool {
         self.as_non_talk_time_filter().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Rule`](crate::model::Rule) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SentimentFilter`](crate::model::Rule::SentimentFilter), extracting the inner [`SentimentFilter`](crate::model::SentimentFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sentiment_filter(
         &self,
     ) -> std::result::Result<&crate::model::SentimentFilter, &Self> {
@@ -439,12 +439,12 @@ impl Rule {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Rule` variant.
+    /// Returns true if this is a [`SentimentFilter`](crate::model::Rule::SentimentFilter).
     pub fn is_sentiment_filter(&self) -> bool {
         self.as_sentiment_filter().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Rule`](crate::model::Rule) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TranscriptFilter`](crate::model::Rule::TranscriptFilter), extracting the inner [`TranscriptFilter`](crate::model::TranscriptFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_filter(
         &self,
     ) -> std::result::Result<&crate::model::TranscriptFilter, &Self> {
@@ -454,7 +454,7 @@ impl Rule {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Rule` variant.
+    /// Returns true if this is a [`TranscriptFilter`](crate::model::Rule::TranscriptFilter).
     pub fn is_transcript_filter(&self) -> bool {
         self.as_transcript_filter().is_ok()
     }
@@ -1662,6 +1662,12 @@ pub struct TranscriptionJob {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Generate subtitles for your batch transcription job.</p>
     pub subtitles: std::option::Option<crate::model::SubtitlesOutput>,
+    /// <p>Language-specific settings that can be specified when language identification is enabled for your transcription
+    /// job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+    /// <code>LanguageModelName</code>LanguageModelName.</p>
+    pub language_id_settings: std::option::Option<
+        std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+    >,
 }
 impl std::fmt::Debug for TranscriptionJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1686,6 +1692,7 @@ impl std::fmt::Debug for TranscriptionJob {
         formatter.field("identified_language_score", &self.identified_language_score);
         formatter.field("tags", &self.tags);
         formatter.field("subtitles", &self.subtitles);
+        formatter.field("language_id_settings", &self.language_id_settings);
         formatter.finish()
     }
 }
@@ -1716,6 +1723,9 @@ pub mod transcription_job {
         pub(crate) identified_language_score: std::option::Option<f32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) subtitles: std::option::Option<crate::model::SubtitlesOutput>,
+        pub(crate) language_id_settings: std::option::Option<
+            std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+        >,
     }
     impl Builder {
         /// <p>The name of the transcription job.</p>
@@ -2064,6 +2074,38 @@ pub mod transcription_job {
             self.subtitles = input;
             self
         }
+        /// Adds a key-value pair to `language_id_settings`.
+        ///
+        /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
+        ///
+        /// <p>Language-specific settings that can be specified when language identification is enabled for your transcription
+        /// job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>LanguageModelName.</p>
+        pub fn language_id_settings(
+            mut self,
+            k: impl Into<crate::model::LanguageCode>,
+            v: impl Into<crate::model::LanguageIdSettings>,
+        ) -> Self {
+            let mut hash_map = self.language_id_settings.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.language_id_settings = Some(hash_map);
+            self
+        }
+        /// <p>Language-specific settings that can be specified when language identification is enabled for your transcription
+        /// job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>LanguageModelName.</p>
+        pub fn set_language_id_settings(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::LanguageCode,
+                    crate::model::LanguageIdSettings,
+                >,
+            >,
+        ) -> Self {
+            self.language_id_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TranscriptionJob`](crate::model::TranscriptionJob)
         pub fn build(self) -> crate::model::TranscriptionJob {
             crate::model::TranscriptionJob {
@@ -2087,6 +2129,7 @@ pub mod transcription_job {
                 identified_language_score: self.identified_language_score,
                 tags: self.tags,
                 subtitles: self.subtitles,
+                language_id_settings: self.language_id_settings,
             }
         }
     }
@@ -2095,6 +2138,111 @@ impl TranscriptionJob {
     /// Creates a new builder-style object to manufacture [`TranscriptionJob`](crate::model::TranscriptionJob)
     pub fn builder() -> crate::model::transcription_job::Builder {
         crate::model::transcription_job::Builder::default()
+    }
+}
+
+/// <p>Language-specific settings that can be specified when language identification is enabled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LanguageIdSettings {
+    /// <p>The name of the vocabulary you want to use when processing your transcription job. The
+    /// vocabulary you specify must have the same language code as the transcription job; if the languages don't
+    /// match, the vocabulary won't be applied.</p>
+    pub vocabulary_name: std::option::Option<std::string::String>,
+    /// <p>The name of the vocabulary filter you want to use when transcribing your audio. The filter you specify
+    /// must have the same language code as the transcription job; if the languages don't match, the vocabulary
+    /// filter won't be applied.</p>
+    pub vocabulary_filter_name: std::option::Option<std::string::String>,
+    /// <p>The name of the language model you want to use when transcribing your audio. The model you specify
+    /// must have the same language code as the transcription job; if the languages don't match, the language model
+    /// won't be applied.</p>
+    pub language_model_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LanguageIdSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LanguageIdSettings");
+        formatter.field("vocabulary_name", &self.vocabulary_name);
+        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
+        formatter.field("language_model_name", &self.language_model_name);
+        formatter.finish()
+    }
+}
+/// See [`LanguageIdSettings`](crate::model::LanguageIdSettings)
+pub mod language_id_settings {
+    /// A builder for [`LanguageIdSettings`](crate::model::LanguageIdSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary_name: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
+        pub(crate) language_model_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the vocabulary you want to use when processing your transcription job. The
+        /// vocabulary you specify must have the same language code as the transcription job; if the languages don't
+        /// match, the vocabulary won't be applied.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the vocabulary you want to use when processing your transcription job. The
+        /// vocabulary you specify must have the same language code as the transcription job; if the languages don't
+        /// match, the vocabulary won't be applied.</p>
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_name = input;
+            self
+        }
+        /// <p>The name of the vocabulary filter you want to use when transcribing your audio. The filter you specify
+        /// must have the same language code as the transcription job; if the languages don't match, the vocabulary
+        /// filter won't be applied.</p>
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_filter_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the vocabulary filter you want to use when transcribing your audio. The filter you specify
+        /// must have the same language code as the transcription job; if the languages don't match, the vocabulary
+        /// filter won't be applied.</p>
+        pub fn set_vocabulary_filter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_filter_name = input;
+            self
+        }
+        /// <p>The name of the language model you want to use when transcribing your audio. The model you specify
+        /// must have the same language code as the transcription job; if the languages don't match, the language model
+        /// won't be applied.</p>
+        pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the language model you want to use when transcribing your audio. The model you specify
+        /// must have the same language code as the transcription job; if the languages don't match, the language model
+        /// won't be applied.</p>
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_model_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LanguageIdSettings`](crate::model::LanguageIdSettings)
+        pub fn build(self) -> crate::model::LanguageIdSettings {
+            crate::model::LanguageIdSettings {
+                vocabulary_name: self.vocabulary_name,
+                vocabulary_filter_name: self.vocabulary_filter_name,
+                language_model_name: self.language_model_name,
+            }
+        }
+    }
+}
+impl LanguageIdSettings {
+    /// Creates a new builder-style object to manufacture [`LanguageIdSettings`](crate::model::LanguageIdSettings)
+    pub fn builder() -> crate::model::language_id_settings::Builder {
+        crate::model::language_id_settings::Builder::default()
     }
 }
 
@@ -2430,9 +2578,11 @@ pub struct JobExecutionSettings {
     /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
     /// <code>DataAccessRoleArn</code> field.</p>
     pub allow_deferred_execution: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon Transcribe
-    /// assumes this role to read queued media files. If you have specified an output S3 bucket for the transcription results,
-    /// this role should have access to the output bucket as well.</p>
+    /// <p>The Amazon Resource Name (ARN), in the form
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role
+    /// that has access to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued
+    /// media files. If you have specified an output S3 bucket for the transcription results, this role should
+    /// have access to the output bucket as well.</p>      
     /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
     /// <code>DataAccessRoleArn</code> field.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
@@ -2477,18 +2627,22 @@ pub mod job_execution_settings {
             self.allow_deferred_execution = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon Transcribe
-        /// assumes this role to read queued media files. If you have specified an output S3 bucket for the transcription results,
-        /// this role should have access to the output bucket as well.</p>
+        /// <p>The Amazon Resource Name (ARN), in the form
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role
+        /// that has access to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued
+        /// media files. If you have specified an output S3 bucket for the transcription results, this role should
+        /// have access to the output bucket as well.</p>      
         /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
         /// <code>DataAccessRoleArn</code> field.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon Transcribe
-        /// assumes this role to read queued media files. If you have specified an output S3 bucket for the transcription results,
-        /// this role should have access to the output bucket as well.</p>
+        /// <p>The Amazon Resource Name (ARN), in the form
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role
+        /// that has access to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued
+        /// media files. If you have specified an output S3 bucket for the transcription results, this role should
+        /// have access to the output bucket as well.</p>      
         /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
         /// <code>DataAccessRoleArn</code> field.</p>
         pub fn set_data_access_role_arn(
@@ -4188,7 +4342,8 @@ pub struct CallAnalyticsJob {
     /// </li>
     /// </ul>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) that you use to get access to the analytics job.</p>
+    /// <p>The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source audio. This value
     /// appears only when you don't provide a single language code. Larger values indicate that Amazon Transcribe has higher confidence in
@@ -4478,12 +4633,14 @@ pub mod call_analytics_job {
             self.failure_reason = input;
             self
         }
-        /// <p>The Amazon Resource Number (ARN) that you use to get access to the analytics job.</p>
+        /// <p>The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) that you use to get access to the analytics job.</p>
+        /// <p>The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4664,6 +4821,12 @@ pub struct CallAnalyticsJobSettings {
     /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported languages and language-specific
     /// features</a> for additional information.</p>
     pub language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+    /// <p>The language identification settings associated with your call analytics job. These settings include
+    /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+    /// <code>LanguageModelName</code>.</p>
+    pub language_id_settings: std::option::Option<
+        std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+    >,
 }
 impl std::fmt::Debug for CallAnalyticsJobSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4674,6 +4837,7 @@ impl std::fmt::Debug for CallAnalyticsJobSettings {
         formatter.field("language_model_name", &self.language_model_name);
         formatter.field("content_redaction", &self.content_redaction);
         formatter.field("language_options", &self.language_options);
+        formatter.field("language_id_settings", &self.language_id_settings);
         formatter.finish()
     }
 }
@@ -4690,6 +4854,9 @@ pub mod call_analytics_job_settings {
         pub(crate) language_model_name: std::option::Option<std::string::String>,
         pub(crate) content_redaction: std::option::Option<crate::model::ContentRedaction>,
         pub(crate) language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+        pub(crate) language_id_settings: std::option::Option<
+            std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+        >,
     }
     impl Builder {
         /// <p>The name of a vocabulary to use when processing the call analytics job.</p>
@@ -4799,6 +4966,38 @@ pub mod call_analytics_job_settings {
             self.language_options = input;
             self
         }
+        /// Adds a key-value pair to `language_id_settings`.
+        ///
+        /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
+        ///
+        /// <p>The language identification settings associated with your call analytics job. These settings include
+        /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>.</p>
+        pub fn language_id_settings(
+            mut self,
+            k: impl Into<crate::model::LanguageCode>,
+            v: impl Into<crate::model::LanguageIdSettings>,
+        ) -> Self {
+            let mut hash_map = self.language_id_settings.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.language_id_settings = Some(hash_map);
+            self
+        }
+        /// <p>The language identification settings associated with your call analytics job. These settings include
+        /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>.</p>
+        pub fn set_language_id_settings(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::LanguageCode,
+                    crate::model::LanguageIdSettings,
+                >,
+            >,
+        ) -> Self {
+            self.language_id_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
         pub fn build(self) -> crate::model::CallAnalyticsJobSettings {
             crate::model::CallAnalyticsJobSettings {
@@ -4808,6 +5007,7 @@ pub mod call_analytics_job_settings {
                 language_model_name: self.language_model_name,
                 content_redaction: self.content_redaction,
                 language_options: self.language_options,
+                language_id_settings: self.language_id_settings,
             }
         }
     }
@@ -5860,7 +6060,8 @@ pub struct InputDataConfig {
     /// <p>The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.</p>
     pub tuning_data_s3_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access your
-    /// Amazon S3 buckets containing your media files or text data.</p>
+    /// Amazon S3 buckets containing your media files or text data. ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InputDataConfig {
@@ -5907,13 +6108,15 @@ pub mod input_data_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access your
-        /// Amazon S3 buckets containing your media files or text data.</p>
+        /// Amazon S3 buckets containing your media files or text data. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access your
-        /// Amazon S3 buckets containing your media files or text data.</p>
+        /// Amazon S3 buckets containing your media files or text data. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -26,7 +26,7 @@ pub enum CreateClusterErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -95,40 +95,40 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ValidationException(_))
     }
@@ -175,7 +175,7 @@ pub enum CreateControlPanelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateControlPanelError {
@@ -244,49 +244,49 @@ impl CreateControlPanelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlPanelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlPanelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateControlPanelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -336,7 +336,7 @@ pub enum CreateRoutingControlErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoutingControlError {
@@ -405,49 +405,49 @@ impl CreateRoutingControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoutingControlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoutingControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateRoutingControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -487,7 +487,7 @@ pub enum CreateSafetyRuleErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSafetyRuleError {
@@ -551,14 +551,14 @@ impl CreateSafetyRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSafetyRuleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSafetyRuleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSafetyRuleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSafetyRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSafetyRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -601,7 +601,7 @@ pub enum DeleteClusterErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -669,33 +669,33 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ValidationException(_))
     }
@@ -739,7 +739,7 @@ pub enum DeleteControlPanelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteControlPanelError {
@@ -807,42 +807,42 @@ impl DeleteControlPanelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlPanelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlPanelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlPanelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlPanelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlPanelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlPanelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteControlPanelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -889,7 +889,7 @@ pub enum DeleteRoutingControlErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoutingControlError {
@@ -957,42 +957,42 @@ impl DeleteRoutingControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoutingControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoutingControlErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoutingControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoutingControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoutingControlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoutingControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteRoutingControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1033,7 +1033,7 @@ pub enum DeleteSafetyRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSafetyRuleError {
@@ -1098,21 +1098,21 @@ impl DeleteSafetyRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSafetyRuleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSafetyRuleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSafetyRuleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSafetyRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSafetyRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSafetyRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSafetyRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSafetyRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1156,7 +1156,7 @@ pub enum DescribeClusterErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterError {
@@ -1224,36 +1224,36 @@ impl DescribeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeClusterErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeClusterErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeClusterErrorKind::ValidationException(_))
     }
@@ -1297,7 +1297,7 @@ pub enum DescribeControlPanelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeControlPanelError {
@@ -1365,42 +1365,42 @@ impl DescribeControlPanelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeControlPanelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeControlPanelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeControlPanelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeControlPanelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeControlPanelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeControlPanelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeControlPanelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1447,7 +1447,7 @@ pub enum DescribeRoutingControlErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRoutingControlError {
@@ -1515,42 +1515,42 @@ impl DescribeRoutingControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRoutingControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRoutingControlErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRoutingControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRoutingControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRoutingControlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRoutingControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRoutingControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1589,7 +1589,7 @@ pub enum DescribeSafetyRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSafetyRuleError {
@@ -1653,14 +1653,14 @@ impl DescribeSafetyRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSafetyRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSafetyRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSafetyRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSafetyRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeSafetyRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1697,7 +1697,7 @@ pub enum ListAssociatedRoute53HealthChecksErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociatedRoute53HealthChecksError {
@@ -1771,21 +1771,21 @@ impl ListAssociatedRoute53HealthChecksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociatedRoute53HealthChecksErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociatedRoute53HealthChecksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssociatedRoute53HealthChecksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1831,7 +1831,7 @@ pub enum ListClustersErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
@@ -1898,29 +1898,29 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClustersErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClustersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ValidationException(_))
     }
@@ -1961,7 +1961,7 @@ pub enum ListControlPanelsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListControlPanelsError {
@@ -2028,35 +2028,35 @@ impl ListControlPanelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListControlPanelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListControlPanelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListControlPanelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListControlPanelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListControlPanelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListControlPanelsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListControlPanelsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListControlPanelsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListControlPanelsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListControlPanelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListControlPanelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListControlPanelsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListControlPanelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListControlPanelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2100,7 +2100,7 @@ pub enum ListRoutingControlsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoutingControlsError {
@@ -2167,35 +2167,35 @@ impl ListRoutingControlsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRoutingControlsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutingControlsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutingControlsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutingControlsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutingControlsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutingControlsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutingControlsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutingControlsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutingControlsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2239,7 +2239,7 @@ pub enum ListSafetyRulesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSafetyRulesError {
@@ -2306,32 +2306,32 @@ impl ListSafetyRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSafetyRulesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSafetyRulesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSafetyRulesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSafetyRulesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSafetyRulesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSafetyRulesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSafetyRulesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListSafetyRulesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSafetyRulesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListSafetyRulesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListSafetyRulesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListSafetyRulesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListSafetyRulesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSafetyRulesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSafetyRulesErrorKind::ValidationException(_))
     }
@@ -2374,7 +2374,7 @@ pub enum UpdateControlPanelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateControlPanelError {
@@ -2442,42 +2442,42 @@ impl UpdateControlPanelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlPanelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlPanelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlPanelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlPanelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlPanelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlPanelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateControlPanelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2524,7 +2524,7 @@ pub enum UpdateRoutingControlErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoutingControlError {
@@ -2592,42 +2592,42 @@ impl UpdateRoutingControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2668,7 +2668,7 @@ pub enum UpdateSafetyRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSafetyRuleError {
@@ -2733,21 +2733,21 @@ impl UpdateSafetyRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSafetyRuleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSafetyRuleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSafetyRuleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSafetyRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSafetyRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSafetyRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSafetyRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSafetyRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

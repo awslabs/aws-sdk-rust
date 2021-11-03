@@ -23,7 +23,7 @@ type BoxError = Box<dyn Error + Send + Sync>;
 /// Successful SDK Result
 #[derive(Debug)]
 pub struct SdkSuccess<O> {
-    /// Raw Response from the service. (eg. Http Response)
+    /// Raw Response from the service. (e.g. Http Response)
     pub raw: operation::Response,
 
     /// Parsed response from the service
@@ -93,7 +93,7 @@ impl ConnectorError {
         }
     }
 
-    /// Construct a [`ConnectorError`] from an error caused by the user (eg. invalid HTTP request)
+    /// Construct a [`ConnectorError`] from an error caused by the user (e.g. invalid HTTP request)
     pub fn user(err: BoxError) -> Self {
         Self {
             err,
@@ -101,7 +101,7 @@ impl ConnectorError {
         }
     }
 
-    /// Construct a [`ConnectorError`] from an IO related error (eg. socket hangup)
+    /// Construct a [`ConnectorError`] from an IO related error (e.g. socket hangup)
     pub fn io(err: BoxError) -> Self {
         Self {
             err,
@@ -148,7 +148,7 @@ enum ConnectorErrorKind {
     /// A timeout occurred while processing the request
     Timeout,
 
-    /// A user-caused error (eg. invalid HTTP request)
+    /// A user-caused error (e.g. invalid HTTP request)
     User,
 
     /// Socket/IO error

@@ -17,7 +17,7 @@ pub enum AttachInstancesErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachInstancesError {
@@ -81,14 +81,14 @@ impl AttachInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachInstancesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `AttachInstancesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `AttachInstancesErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -124,7 +124,7 @@ pub enum AttachLoadBalancersErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachLoadBalancersError {
@@ -188,14 +188,14 @@ impl AttachLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachLoadBalancersErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `AttachLoadBalancersErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancersErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancersErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `AttachLoadBalancersErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -231,7 +231,7 @@ pub enum AttachLoadBalancerTargetGroupsErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachLoadBalancerTargetGroupsError {
@@ -302,14 +302,14 @@ impl AttachLoadBalancerTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -347,7 +347,7 @@ pub enum BatchDeleteScheduledActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteScheduledActionError {
@@ -410,7 +410,7 @@ impl BatchDeleteScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteScheduledActionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `BatchDeleteScheduledActionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -450,7 +450,7 @@ pub enum BatchPutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchPutScheduledUpdateGroupActionError {
@@ -524,21 +524,21 @@ impl BatchPutScheduledUpdateGroupActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault`.
+    /// Returns `true` if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault`.
     pub fn is_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutScheduledUpdateGroupActionErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `BatchPutScheduledUpdateGroupActionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -583,7 +583,7 @@ pub enum CancelInstanceRefreshErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelInstanceRefreshError {
@@ -650,21 +650,21 @@ impl CancelInstanceRefreshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault`.
+    /// Returns `true` if the error kind is `CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault`.
     pub fn is_active_instance_refresh_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelInstanceRefreshErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CancelInstanceRefreshErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelInstanceRefreshErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelInstanceRefreshErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `CancelInstanceRefreshErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -701,7 +701,7 @@ pub enum CompleteLifecycleActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompleteLifecycleActionError {
@@ -764,7 +764,7 @@ impl CompleteLifecycleActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CompleteLifecycleActionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `CompleteLifecycleActionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -806,7 +806,7 @@ pub enum CreateAutoScalingGroupErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAutoScalingGroupError {
@@ -872,28 +872,28 @@ impl CreateAutoScalingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAutoScalingGroupErrorKind::AlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateAutoScalingGroupErrorKind::AlreadyExistsFault`.
     pub fn is_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateAutoScalingGroupErrorKind::AlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateAutoScalingGroupErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateAutoScalingGroupErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateAutoScalingGroupErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateAutoScalingGroupErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `CreateAutoScalingGroupErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateAutoScalingGroupErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `CreateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -936,7 +936,7 @@ pub enum CreateLaunchConfigurationErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLaunchConfigurationError {
@@ -1001,21 +1001,21 @@ impl CreateLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLaunchConfigurationErrorKind::AlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationErrorKind::AlreadyExistsFault`.
     pub fn is_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchConfigurationErrorKind::AlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchConfigurationErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchConfigurationErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchConfigurationErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1059,7 +1059,7 @@ pub enum CreateOrUpdateTagsErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOrUpdateTagsError {
@@ -1125,28 +1125,28 @@ impl CreateOrUpdateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOrUpdateTagsErrorKind::AlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateOrUpdateTagsErrorKind::AlreadyExistsFault`.
     pub fn is_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrUpdateTagsErrorKind::AlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrUpdateTagsErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateOrUpdateTagsErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrUpdateTagsErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrUpdateTagsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `CreateOrUpdateTagsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrUpdateTagsErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrUpdateTagsErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `CreateOrUpdateTagsErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1187,7 +1187,7 @@ pub enum DeleteAutoScalingGroupErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in
     /// progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAutoScalingGroupError {
@@ -1254,21 +1254,21 @@ impl DeleteAutoScalingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAutoScalingGroupErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingGroupErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoScalingGroupErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoScalingGroupErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingGroupErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoScalingGroupErrorKind::ResourceInUseFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1305,7 +1305,7 @@ pub enum DeleteLaunchConfigurationErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLaunchConfigurationError {
@@ -1369,14 +1369,14 @@ impl DeleteLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLaunchConfigurationErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteLaunchConfigurationErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchConfigurationErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchConfigurationErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `DeleteLaunchConfigurationErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1410,7 +1410,7 @@ pub enum DeleteLifecycleHookErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLifecycleHookError {
@@ -1473,7 +1473,7 @@ impl DeleteLifecycleHookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLifecycleHookErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteLifecycleHookErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1506,7 +1506,7 @@ pub enum DeleteNotificationConfigurationErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotificationConfigurationError {
@@ -1574,7 +1574,7 @@ impl DeleteNotificationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNotificationConfigurationErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteNotificationConfigurationErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1611,7 +1611,7 @@ pub enum DeletePolicyErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
@@ -1675,14 +1675,14 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -1716,7 +1716,7 @@ pub enum DeleteScheduledActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduledActionError {
@@ -1779,7 +1779,7 @@ impl DeleteScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1814,7 +1814,7 @@ pub enum DeleteTagsErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -1878,11 +1878,11 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::ResourceContentionFault(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::ResourceInUseFault(_))
     }
@@ -1923,7 +1923,7 @@ pub enum DeleteWarmPoolErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in
     /// progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWarmPoolError {
@@ -1989,22 +1989,22 @@ impl DeleteWarmPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWarmPoolErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `DeleteWarmPoolErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, DeleteWarmPoolErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `DeleteWarmPoolErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DeleteWarmPoolErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWarmPoolErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWarmPoolErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `DeleteWarmPoolErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(&self.kind, DeleteWarmPoolErrorKind::ResourceInUseFault(_))
     }
-    /// Returns true if the error kind is `DeleteWarmPoolErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `DeleteWarmPoolErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2040,7 +2040,7 @@ pub enum DescribeAccountLimitsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
@@ -2103,7 +2103,7 @@ impl DescribeAccountLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountLimitsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeAccountLimitsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2136,7 +2136,7 @@ pub enum DescribeAdjustmentTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAdjustmentTypesError {
@@ -2199,7 +2199,7 @@ impl DescribeAdjustmentTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAdjustmentTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeAdjustmentTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2234,7 +2234,7 @@ pub enum DescribeAutoScalingGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutoScalingGroupsError {
@@ -2298,14 +2298,14 @@ impl DescribeAutoScalingGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutoScalingGroupsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingGroupsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutoScalingGroupsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutoScalingGroupsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingGroupsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2341,7 +2341,7 @@ pub enum DescribeAutoScalingInstancesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutoScalingInstancesError {
@@ -2405,14 +2405,14 @@ impl DescribeAutoScalingInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutoScalingInstancesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingInstancesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutoScalingInstancesErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutoScalingInstancesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingInstancesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2446,7 +2446,7 @@ pub enum DescribeAutoScalingNotificationTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutoScalingNotificationTypesError {
@@ -2514,7 +2514,7 @@ impl DescribeAutoScalingNotificationTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutoScalingNotificationTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingNotificationTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2553,7 +2553,7 @@ pub enum DescribeInstanceRefreshesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceRefreshesError {
@@ -2617,14 +2617,14 @@ impl DescribeInstanceRefreshesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstanceRefreshesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstanceRefreshesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceRefreshesErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceRefreshesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeInstanceRefreshesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2660,7 +2660,7 @@ pub enum DescribeLaunchConfigurationsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLaunchConfigurationsError {
@@ -2724,14 +2724,14 @@ impl DescribeLaunchConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLaunchConfigurationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeLaunchConfigurationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLaunchConfigurationsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLaunchConfigurationsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeLaunchConfigurationsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2765,7 +2765,7 @@ pub enum DescribeLifecycleHooksErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLifecycleHooksError {
@@ -2828,7 +2828,7 @@ impl DescribeLifecycleHooksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLifecycleHooksErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeLifecycleHooksErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2861,7 +2861,7 @@ pub enum DescribeLifecycleHookTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLifecycleHookTypesError {
@@ -2924,7 +2924,7 @@ impl DescribeLifecycleHookTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLifecycleHookTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeLifecycleHookTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2959,7 +2959,7 @@ pub enum DescribeLoadBalancersErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
@@ -3023,14 +3023,14 @@ impl DescribeLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancersErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBalancersErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBalancersErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3066,7 +3066,7 @@ pub enum DescribeLoadBalancerTargetGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancerTargetGroupsError {
@@ -3135,14 +3135,14 @@ impl DescribeLoadBalancerTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3178,7 +3178,7 @@ pub enum DescribeMetricCollectionTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMetricCollectionTypesError {
@@ -3246,7 +3246,7 @@ impl DescribeMetricCollectionTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMetricCollectionTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeMetricCollectionTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3281,7 +3281,7 @@ pub enum DescribeNotificationConfigurationsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotificationConfigurationsError {
@@ -3350,14 +3350,14 @@ impl DescribeNotificationConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNotificationConfigurationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationConfigurationsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationConfigurationsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeNotificationConfigurationsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3397,7 +3397,7 @@ pub enum DescribePoliciesErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePoliciesError {
@@ -3462,18 +3462,18 @@ impl DescribePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePoliciesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribePoliciesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribePoliciesErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `DescribePoliciesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribePoliciesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribePoliciesErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribePoliciesErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `DescribePoliciesErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -3510,7 +3510,7 @@ pub enum DescribeScalingActivitiesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingActivitiesError {
@@ -3574,14 +3574,14 @@ impl DescribeScalingActivitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingActivitiesErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3615,7 +3615,7 @@ pub enum DescribeScalingProcessTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingProcessTypesError {
@@ -3678,7 +3678,7 @@ impl DescribeScalingProcessTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingProcessTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeScalingProcessTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3713,7 +3713,7 @@ pub enum DescribeScheduledActionsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduledActionsError {
@@ -3777,14 +3777,14 @@ impl DescribeScheduledActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduledActionsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3820,7 +3820,7 @@ pub enum DescribeTagsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -3884,11 +3884,11 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3922,7 +3922,7 @@ pub enum DescribeTerminationPolicyTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTerminationPolicyTypesError {
@@ -3990,7 +3990,7 @@ impl DescribeTerminationPolicyTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTerminationPolicyTypesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeTerminationPolicyTypesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4032,7 +4032,7 @@ pub enum DescribeWarmPoolErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWarmPoolError {
@@ -4097,15 +4097,15 @@ impl DescribeWarmPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWarmPoolErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeWarmPoolErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribeWarmPoolErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `DescribeWarmPoolErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `DescribeWarmPoolErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, DescribeWarmPoolErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `DescribeWarmPoolErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DescribeWarmPoolErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4140,7 +4140,7 @@ pub enum DetachInstancesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachInstancesError {
@@ -4203,7 +4203,7 @@ impl DetachInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachInstancesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DetachInstancesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4236,7 +4236,7 @@ pub enum DetachLoadBalancersErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachLoadBalancersError {
@@ -4299,7 +4299,7 @@ impl DetachLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachLoadBalancersErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DetachLoadBalancersErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4332,7 +4332,7 @@ pub enum DetachLoadBalancerTargetGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachLoadBalancerTargetGroupsError {
@@ -4400,7 +4400,7 @@ impl DetachLoadBalancerTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DetachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4435,7 +4435,7 @@ pub enum DisableMetricsCollectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableMetricsCollectionError {
@@ -4498,7 +4498,7 @@ impl DisableMetricsCollectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableMetricsCollectionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `DisableMetricsCollectionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4531,7 +4531,7 @@ pub enum EnableMetricsCollectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableMetricsCollectionError {
@@ -4594,7 +4594,7 @@ impl EnableMetricsCollectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableMetricsCollectionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `EnableMetricsCollectionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4627,7 +4627,7 @@ pub enum EnterStandbyErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnterStandbyError {
@@ -4690,7 +4690,7 @@ impl EnterStandbyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnterStandbyErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `EnterStandbyErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4726,7 +4726,7 @@ pub enum ExecutePolicyErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in
     /// progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecutePolicyError {
@@ -4790,14 +4790,14 @@ impl ExecutePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecutePolicyErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `ExecutePolicyErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             ExecutePolicyErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `ExecutePolicyErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `ExecutePolicyErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4831,7 +4831,7 @@ pub enum ExitStandbyErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExitStandbyError {
@@ -4894,7 +4894,7 @@ impl ExitStandbyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExitStandbyErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `ExitStandbyErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(&self.kind, ExitStandbyErrorKind::ResourceContentionFault(_))
     }
@@ -4924,7 +4924,7 @@ pub enum GetPredictiveScalingForecastErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPredictiveScalingForecastError {
@@ -4987,7 +4987,7 @@ impl GetPredictiveScalingForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPredictiveScalingForecastErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `GetPredictiveScalingForecastErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5025,7 +5025,7 @@ pub enum PutLifecycleHookErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLifecycleHookError {
@@ -5089,11 +5089,11 @@ impl PutLifecycleHookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLifecycleHookErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutLifecycleHookErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, PutLifecycleHookErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `PutLifecycleHookErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `PutLifecycleHookErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5134,7 +5134,7 @@ pub enum PutNotificationConfigurationErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutNotificationConfigurationError {
@@ -5201,21 +5201,21 @@ impl PutNotificationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutNotificationConfigurationErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutNotificationConfigurationErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutNotificationConfigurationErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PutNotificationConfigurationErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `PutNotificationConfigurationErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutNotificationConfigurationErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `PutNotificationConfigurationErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `PutNotificationConfigurationErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -5257,7 +5257,7 @@ pub enum PutScalingPolicyErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutScalingPolicyError {
@@ -5322,18 +5322,18 @@ impl PutScalingPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, PutScalingPolicyErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,
@@ -5375,7 +5375,7 @@ pub enum PutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutScheduledUpdateGroupActionError {
@@ -5445,21 +5445,21 @@ impl PutScheduledUpdateGroupActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault`.
+    /// Returns `true` if the error kind is `PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault`.
     pub fn is_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledUpdateGroupActionErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutScheduledUpdateGroupActionErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledUpdateGroupActionErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledUpdateGroupActionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `PutScheduledUpdateGroupActionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5499,7 +5499,7 @@ pub enum PutWarmPoolErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutWarmPoolError {
@@ -5563,11 +5563,11 @@ impl PutWarmPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutWarmPoolErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutWarmPoolErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, PutWarmPoolErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `PutWarmPoolErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `PutWarmPoolErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(&self.kind, PutWarmPoolErrorKind::ResourceContentionFault(_))
     }
@@ -5598,7 +5598,7 @@ pub enum RecordLifecycleActionHeartbeatErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecordLifecycleActionHeartbeatError {
@@ -5666,7 +5666,7 @@ impl RecordLifecycleActionHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecordLifecycleActionHeartbeatErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `RecordLifecycleActionHeartbeatErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5703,7 +5703,7 @@ pub enum ResumeProcessesErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeProcessesError {
@@ -5767,14 +5767,14 @@ impl ResumeProcessesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeProcessesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `ResumeProcessesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResumeProcessesErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `ResumeProcessesErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `ResumeProcessesErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(&self.kind, ResumeProcessesErrorKind::ResourceInUseFault(_))
     }
@@ -5808,7 +5808,7 @@ pub enum SetDesiredCapacityErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in
     /// progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetDesiredCapacityError {
@@ -5872,14 +5872,14 @@ impl SetDesiredCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetDesiredCapacityErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `SetDesiredCapacityErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             SetDesiredCapacityErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `SetDesiredCapacityErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `SetDesiredCapacityErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5913,7 +5913,7 @@ pub enum SetInstanceHealthErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetInstanceHealthError {
@@ -5976,7 +5976,7 @@ impl SetInstanceHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetInstanceHealthErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `SetInstanceHealthErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6014,7 +6014,7 @@ pub enum SetInstanceProtectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetInstanceProtectionError {
@@ -6078,14 +6078,14 @@ impl SetInstanceProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetInstanceProtectionErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `SetInstanceProtectionErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             SetInstanceProtectionErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `SetInstanceProtectionErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `SetInstanceProtectionErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6127,7 +6127,7 @@ pub enum StartInstanceRefreshErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
     /// instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartInstanceRefreshError {
@@ -6192,21 +6192,21 @@ impl StartInstanceRefreshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartInstanceRefreshErrorKind::InstanceRefreshInProgressFault`.
+    /// Returns `true` if the error kind is `StartInstanceRefreshErrorKind::InstanceRefreshInProgressFault`.
     pub fn is_instance_refresh_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartInstanceRefreshErrorKind::InstanceRefreshInProgressFault(_)
         )
     }
-    /// Returns true if the error kind is `StartInstanceRefreshErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `StartInstanceRefreshErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartInstanceRefreshErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `StartInstanceRefreshErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `StartInstanceRefreshErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6243,7 +6243,7 @@ pub enum SuspendProcessesErrorKind {
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SuspendProcessesError {
@@ -6307,14 +6307,14 @@ impl SuspendProcessesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SuspendProcessesErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `SuspendProcessesErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             SuspendProcessesErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `SuspendProcessesErrorKind::ResourceInUseFault`.
+    /// Returns `true` if the error kind is `SuspendProcessesErrorKind::ResourceInUseFault`.
     pub fn is_resource_in_use_fault(&self) -> bool {
         matches!(&self.kind, SuspendProcessesErrorKind::ResourceInUseFault(_))
     }
@@ -6348,7 +6348,7 @@ pub enum TerminateInstanceInAutoScalingGroupErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in
     /// progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateInstanceInAutoScalingGroupError {
@@ -6419,14 +6419,14 @@ impl TerminateInstanceInAutoScalingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6471,7 +6471,7 @@ pub enum UpdateAutoScalingGroupErrorKind {
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAutoScalingGroupError {
@@ -6538,21 +6538,21 @@ impl UpdateAutoScalingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAutoScalingGroupErrorKind::ResourceContentionFault`.
+    /// Returns `true` if the error kind is `UpdateAutoScalingGroupErrorKind::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAutoScalingGroupErrorKind::ResourceContentionFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
+    /// Returns `true` if the error kind is `UpdateAutoScalingGroupErrorKind::ScalingActivityInProgressFault`.
     pub fn is_scaling_activity_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAutoScalingGroupErrorKind::ScalingActivityInProgressFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure`.
+    /// Returns `true` if the error kind is `UpdateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure`.
     pub fn is_service_linked_role_failure(&self) -> bool {
         matches!(
             &self.kind,

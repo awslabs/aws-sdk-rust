@@ -23,7 +23,7 @@ pub enum CreateCertificateAuthorityErrorKind {
     /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
     /// quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCertificateAuthorityError {
@@ -89,28 +89,28 @@ impl CreateCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityErrorKind::InvalidPolicyException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityErrorKind::InvalidPolicyException`.
     pub fn is_invalid_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityErrorKind::InvalidPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -157,7 +157,7 @@ pub enum CreateCertificateAuthorityAuditReportErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCertificateAuthorityAuditReportError {
@@ -240,42 +240,42 @@ impl CreateCertificateAuthorityAuditReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityAuditReportErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityAuditReportErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityAuditReportErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityAuditReportErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::RequestInProgressException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateAuthorityAuditReportErrorKind::RequestInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -339,7 +339,7 @@ pub enum CreatePermissionErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePermissionError {
@@ -407,42 +407,42 @@ impl CreatePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePermissionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePermissionErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePermissionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::PermissionAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::PermissionAlreadyExistsException`.
     pub fn is_permission_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePermissionErrorKind::PermissionAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePermissionErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -487,7 +487,7 @@ pub enum DeleteCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCertificateAuthorityError {
@@ -555,28 +555,28 @@ impl DeleteCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCertificateAuthorityErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteCertificateAuthorityErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateAuthorityErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateAuthorityErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteCertificateAuthorityErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateAuthorityErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -621,7 +621,7 @@ pub enum DeletePermissionErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePermissionError {
@@ -687,28 +687,28 @@ impl DeletePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePermissionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeletePermissionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePermissionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePermissionErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeletePermissionErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePermissionErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePermissionErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `DeletePermissionErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePermissionErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -757,7 +757,7 @@ pub enum DeletePolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
@@ -825,33 +825,33 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::LockoutPreventedException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::LockoutPreventedException`.
     pub fn is_lockout_prevented_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::LockoutPreventedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::RequestFailedException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -892,7 +892,7 @@ pub enum DescribeCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCertificateAuthorityError {
@@ -958,14 +958,14 @@ impl DescribeCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DescribeCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1006,7 +1006,7 @@ pub enum DescribeCertificateAuthorityAuditReportErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCertificateAuthorityAuditReportError {
@@ -1080,21 +1080,21 @@ impl DescribeCertificateAuthorityAuditReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateAuthorityAuditReportErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateAuthorityAuditReportErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1146,7 +1146,7 @@ pub enum GetCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCertificateError {
@@ -1213,32 +1213,32 @@ impl GetCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCertificateErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetCertificateErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetCertificateErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `GetCertificateErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `GetCertificateErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateErrorKind::RequestInProgressException`.
+    /// Returns `true` if the error kind is `GetCertificateErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateErrorKind::RequestInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1280,7 +1280,7 @@ pub enum GetCertificateAuthorityCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCertificateAuthorityCertificateError {
@@ -1354,21 +1354,21 @@ impl GetCertificateAuthorityCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCertificateErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCertificateErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCertificateErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCertificateErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCertificateErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1418,7 +1418,7 @@ pub enum GetCertificateAuthorityCsrErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCertificateAuthorityCsrError {
@@ -1487,35 +1487,35 @@ impl GetCertificateAuthorityCsrError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCsrErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCsrErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCsrErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCsrErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCsrErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCsrErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCsrErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCsrErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCsrErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCsrErrorKind::RequestInProgressException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCsrErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificateAuthorityCsrErrorKind::RequestInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificateAuthorityCsrErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCertificateAuthorityCsrErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1559,7 +1559,7 @@ pub enum GetPolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
@@ -1625,19 +1625,19 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::RequestFailedException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ResourceNotFoundException(_))
     }
@@ -1688,7 +1688,7 @@ pub enum ImportCertificateAuthorityCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportCertificateAuthorityCertificateError {
@@ -1780,63 +1780,63 @@ impl ImportCertificateAuthorityCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::CertificateMismatchException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::CertificateMismatchException`.
     pub fn is_certificate_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::CertificateMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::MalformedCertificateException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::MalformedCertificateException`.
     pub fn is_malformed_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::MalformedCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::RequestInProgressException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateAuthorityCertificateErrorKind::RequestInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateAuthorityCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportCertificateAuthorityCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1909,7 +1909,7 @@ pub enum IssueCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for IssueCertificateError {
@@ -1977,42 +1977,42 @@ impl IssueCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             IssueCertificateErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             IssueCertificateErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             IssueCertificateErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             IssueCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::MalformedCsrException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::MalformedCsrException`.
     pub fn is_malformed_csr_exception(&self) -> bool {
         matches!(
             &self.kind,
             IssueCertificateErrorKind::MalformedCsrException(_)
         )
     }
-    /// Returns true if the error kind is `IssueCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `IssueCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2050,7 +2050,7 @@ pub enum ListCertificateAuthoritiesErrorKind {
     /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token
     /// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCertificateAuthoritiesError {
@@ -2113,7 +2113,7 @@ impl ListCertificateAuthoritiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCertificateAuthoritiesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCertificateAuthoritiesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2156,7 +2156,7 @@ pub enum ListPermissionsErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPermissionsError {
@@ -2223,32 +2223,32 @@ impl ListPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListPermissionsErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2290,7 +2290,7 @@ pub enum ListTagsErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -2355,15 +2355,15 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
@@ -2411,7 +2411,7 @@ pub enum PutPolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPolicyError {
@@ -2480,34 +2480,34 @@ impl PutPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::InvalidPolicyException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::InvalidPolicyException`.
     pub fn is_invalid_policy_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::InvalidPolicyException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::LockoutPreventedException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::LockoutPreventedException`.
     pub fn is_lockout_prevented_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::LockoutPreventedException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::RequestFailedException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::ResourceNotFoundException(_))
     }
@@ -2548,7 +2548,7 @@ pub enum RestoreCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreCertificateAuthorityError {
@@ -2615,21 +2615,21 @@ impl RestoreCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `RestoreCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreCertificateAuthorityErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `RestoreCertificateAuthorityErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreCertificateAuthorityErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2682,7 +2682,7 @@ pub enum RevokeCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeCertificateError {
@@ -2753,63 +2753,63 @@ impl RevokeCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::RequestAlreadyProcessedException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::RequestAlreadyProcessedException`.
     pub fn is_request_already_processed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::RequestAlreadyProcessedException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::RequestInProgressException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeCertificateErrorKind::RequestInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RevokeCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2861,7 +2861,7 @@ pub enum TagCertificateAuthorityErrorKind {
     /// <p>You can associate up to 50 tags with a private CA. Exception information is contained
     /// in the exception message field.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagCertificateAuthorityError {
@@ -2928,35 +2928,35 @@ impl TagCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `TagCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `TagCertificateAuthorityErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `TagCertificateAuthorityErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagCertificateAuthorityErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `TagCertificateAuthorityErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `TagCertificateAuthorityErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagCertificateAuthorityErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `TagCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagCertificateAuthorityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagCertificateAuthorityErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagCertificateAuthorityErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3001,7 +3001,7 @@ pub enum UntagCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagCertificateAuthorityError {
@@ -3067,28 +3067,28 @@ impl UntagCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UntagCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UntagCertificateAuthorityErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UntagCertificateAuthorityErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagCertificateAuthorityErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UntagCertificateAuthorityErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `UntagCertificateAuthorityErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagCertificateAuthorityErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `UntagCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3136,7 +3136,7 @@ pub enum UpdateCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
     /// cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCertificateAuthorityError {
@@ -3206,42 +3206,42 @@ impl UpdateCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCertificateAuthorityErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidArgsException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCertificateAuthorityErrorKind::InvalidArgsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCertificateAuthorityErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidPolicyException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidPolicyException`.
     pub fn is_invalid_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCertificateAuthorityErrorKind::InvalidPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCertificateAuthorityErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

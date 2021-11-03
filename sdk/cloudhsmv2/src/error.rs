@@ -27,7 +27,7 @@ pub enum CopyBackupToRegionErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyBackupToRegionError {
@@ -95,42 +95,42 @@ impl CopyBackupToRegionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupToRegionErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupToRegionErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -180,7 +180,7 @@ pub enum CreateClusterErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -248,42 +248,42 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::CloudHsmTagException(_))
     }
@@ -328,7 +328,7 @@ pub enum CreateHsmErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHsmError {
@@ -395,35 +395,35 @@ impl CreateHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, CreateHsmErrorKind::CloudHsmServiceException(_))
     }
@@ -467,7 +467,7 @@ pub enum DeleteBackupErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupError {
@@ -534,35 +534,35 @@ impl DeleteBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -611,7 +611,7 @@ pub enum DeleteClusterErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -679,42 +679,42 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::CloudHsmTagException(_))
     }
@@ -759,7 +759,7 @@ pub enum DeleteHsmErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHsmError {
@@ -826,35 +826,35 @@ impl DeleteHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteHsmErrorKind::CloudHsmServiceException(_))
     }
@@ -900,7 +900,7 @@ pub enum DescribeBackupsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupsError {
@@ -968,42 +968,42 @@ impl DescribeBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1050,7 +1050,7 @@ pub enum DescribeClustersErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClustersError {
@@ -1117,35 +1117,35 @@ impl DescribeClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1192,7 +1192,7 @@ pub enum InitializeClusterErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitializeClusterError {
@@ -1259,35 +1259,35 @@ impl InitializeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitializeClusterErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitializeClusterErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `InitializeClusterErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitializeClusterErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `InitializeClusterErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitializeClusterErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `InitializeClusterErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InitializeClusterErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1336,7 +1336,7 @@ pub enum ListTagsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -1404,39 +1404,39 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::CloudHsmTagException(_))
     }
@@ -1481,7 +1481,7 @@ pub enum ModifyBackupAttributesErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyBackupAttributesError {
@@ -1554,35 +1554,35 @@ impl ModifyBackupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1635,7 +1635,7 @@ pub enum ModifyClusterErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterError {
@@ -1702,35 +1702,35 @@ impl ModifyClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1777,7 +1777,7 @@ pub enum RestoreBackupErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreBackupError {
@@ -1844,35 +1844,35 @@ impl RestoreBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreBackupErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreBackupErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreBackupErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreBackupErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreBackupErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreBackupErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreBackupErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreBackupErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1921,7 +1921,7 @@ pub enum TagResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1989,42 +1989,42 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::CloudHsmTagException(_))
     }
@@ -2071,7 +2071,7 @@ pub enum UntagResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2139,42 +2139,42 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmAccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::CloudHsmAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmInternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::CloudHsmInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmInvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::CloudHsmInvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::CloudHsmResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::CloudHsmTagException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::CloudHsmTagException(_))
     }

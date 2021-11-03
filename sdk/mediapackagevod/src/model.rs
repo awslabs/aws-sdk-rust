@@ -904,6 +904,8 @@ pub struct HlsPackage {
     pub encryption: std::option::Option<crate::model::HlsEncryption>,
     /// A list of HLS manifest configurations.
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub include_dvb_subtitles: bool,
     /// Duration (in seconds) of each fragment. Actual fragments will be
     /// rounded to the nearest multiple of the source fragment duration.
     pub segment_duration_seconds: i32,
@@ -915,6 +917,7 @@ impl std::fmt::Debug for HlsPackage {
         let mut formatter = f.debug_struct("HlsPackage");
         formatter.field("encryption", &self.encryption);
         formatter.field("hls_manifests", &self.hls_manifests);
+        formatter.field("include_dvb_subtitles", &self.include_dvb_subtitles);
         formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
         formatter.field("use_audio_rendition_group", &self.use_audio_rendition_group);
         formatter.finish()
@@ -928,6 +931,7 @@ pub mod hls_package {
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::HlsEncryption>,
         pub(crate) hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
+        pub(crate) include_dvb_subtitles: std::option::Option<bool>,
         pub(crate) segment_duration_seconds: std::option::Option<i32>,
         pub(crate) use_audio_rendition_group: std::option::Option<bool>,
     }
@@ -964,6 +968,16 @@ pub mod hls_package {
             self.hls_manifests = input;
             self
         }
+        /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+        pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
+            self.include_dvb_subtitles = Some(input);
+            self
+        }
+        /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+        pub fn set_include_dvb_subtitles(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_dvb_subtitles = input;
+            self
+        }
         /// Duration (in seconds) of each fragment. Actual fragments will be
         /// rounded to the nearest multiple of the source fragment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -991,6 +1005,7 @@ pub mod hls_package {
             crate::model::HlsPackage {
                 encryption: self.encryption,
                 hls_manifests: self.hls_manifests,
+                include_dvb_subtitles: self.include_dvb_subtitles.unwrap_or_default(),
                 segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
                 use_audio_rendition_group: self.use_audio_rendition_group.unwrap_or_default(),
             }

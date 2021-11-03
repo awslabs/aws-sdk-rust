@@ -31,7 +31,7 @@ pub enum AssociateEncryptionConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateEncryptionConfigError {
@@ -99,42 +99,42 @@ impl AssociateEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateEncryptionConfigErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateEncryptionConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateEncryptionConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateEncryptionConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateEncryptionConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateEncryptionConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `AssociateEncryptionConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -188,7 +188,7 @@ pub enum AssociateIdentityProviderConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateIdentityProviderConfigError {
@@ -267,42 +267,42 @@ impl AssociateIdentityProviderConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIdentityProviderConfigErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIdentityProviderConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIdentityProviderConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIdentityProviderConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIdentityProviderConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIdentityProviderConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `AssociateIdentityProviderConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -364,7 +364,7 @@ pub enum CreateAddonErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAddonError {
@@ -432,33 +432,33 @@ impl CreateAddonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateAddonErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAddonErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAddonErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateAddonErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAddonErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAddonErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateAddonErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateAddonErrorKind::ServerException(_))
     }
@@ -509,7 +509,7 @@ pub enum CreateClusterErrorKind {
     /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
     /// your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::error::UnsupportedAvailabilityZoneException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -578,43 +578,43 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::UnsupportedAvailabilityZoneException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::UnsupportedAvailabilityZoneException`.
     pub fn is_unsupported_availability_zone_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -668,7 +668,7 @@ pub enum CreateFargateProfileErrorKind {
     /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
     /// your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::error::UnsupportedAvailabilityZoneException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFargateProfileError {
@@ -738,42 +738,42 @@ impl CreateFargateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFargateProfileErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFargateProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFargateProfileErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFargateProfileErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFargateProfileErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFargateProfileErrorKind::UnsupportedAvailabilityZoneException`.
+    /// Returns `true` if the error kind is `CreateFargateProfileErrorKind::UnsupportedAvailabilityZoneException`.
     pub fn is_unsupported_availability_zone_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -828,7 +828,7 @@ pub enum CreateNodegroupErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNodegroupError {
@@ -897,43 +897,43 @@ impl CreateNodegroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateNodegroupErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNodegroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNodegroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNodegroupErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNodegroupErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateNodegroupErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CreateNodegroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateNodegroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -986,7 +986,7 @@ pub enum DeleteAddonErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAddonError {
@@ -1053,29 +1053,29 @@ impl DeleteAddonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAddonErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteAddonErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteAddonErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteAddonErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAddonErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAddonErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAddonErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAddonErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAddonErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAddonErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAddonErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAddonErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAddonErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteAddonErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteAddonErrorKind::ServerException(_))
     }
@@ -1121,7 +1121,7 @@ pub enum DeleteClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -1188,29 +1188,29 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1258,7 +1258,7 @@ pub enum DeleteFargateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFargateProfileError {
@@ -1324,28 +1324,28 @@ impl DeleteFargateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFargateProfileErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteFargateProfileErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFargateProfileErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFargateProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteFargateProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFargateProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFargateProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFargateProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFargateProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFargateProfileErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteFargateProfileErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1396,7 +1396,7 @@ pub enum DeleteNodegroupErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNodegroupError {
@@ -1464,36 +1464,36 @@ impl DeleteNodegroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteNodegroupErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNodegroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNodegroupErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNodegroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteNodegroupErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeleteNodegroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteNodegroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1543,7 +1543,7 @@ pub enum DeregisterClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterClusterError {
@@ -1610,29 +1610,29 @@ impl DeregisterClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeregisterClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeregisterClusterErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterClusterErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeregisterClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeregisterClusterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeregisterClusterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1683,7 +1683,7 @@ pub enum DescribeAddonErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddonError {
@@ -1750,32 +1750,32 @@ impl DescribeAddonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAddonErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeAddonErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeAddonErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeAddonErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeAddonErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddonErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddonErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAddonErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddonErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddonErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAddonErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddonErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddonErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeAddonErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeAddonErrorKind::ServerException(_))
     }
@@ -1816,7 +1816,7 @@ pub enum DescribeAddonVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddonVersionsError {
@@ -1881,21 +1881,21 @@ impl DescribeAddonVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAddonVersionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeAddonVersionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddonVersionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddonVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAddonVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddonVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddonVersionsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeAddonVersionsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1940,7 +1940,7 @@ pub enum DescribeClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterError {
@@ -2006,22 +2006,22 @@ impl DescribeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2068,7 +2068,7 @@ pub enum DescribeFargateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFargateProfileError {
@@ -2134,28 +2134,28 @@ impl DescribeFargateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFargateProfileErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeFargateProfileErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFargateProfileErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFargateProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeFargateProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFargateProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFargateProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFargateProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFargateProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFargateProfileErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeFargateProfileErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2204,7 +2204,7 @@ pub enum DescribeIdentityProviderConfigErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityProviderConfigError {
@@ -2280,35 +2280,35 @@ impl DescribeIdentityProviderConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2364,7 +2364,7 @@ pub enum DescribeNodegroupErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNodegroupError {
@@ -2431,29 +2431,29 @@ impl DescribeNodegroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNodegroupErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeNodegroupErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeNodegroupErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeNodegroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeNodegroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodegroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodegroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeNodegroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodegroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodegroupErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeNodegroupErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeNodegroupErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DescribeNodegroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeNodegroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2501,7 +2501,7 @@ pub enum DescribeUpdateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUpdateError {
@@ -2567,25 +2567,25 @@ impl DescribeUpdateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUpdateErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeUpdateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeUpdateErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeUpdateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUpdateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUpdateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUpdateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUpdateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUpdateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUpdateErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeUpdateErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeUpdateErrorKind::ServerException(_))
     }
@@ -2634,7 +2634,7 @@ pub enum DisassociateIdentityProviderConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateIdentityProviderConfigError {
@@ -2713,42 +2713,42 @@ impl DisassociateIdentityProviderConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIdentityProviderConfigErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIdentityProviderConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIdentityProviderConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIdentityProviderConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIdentityProviderConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIdentityProviderConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DisassociateIdentityProviderConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2808,7 +2808,7 @@ pub enum ListAddonsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAddonsError {
@@ -2875,29 +2875,29 @@ impl ListAddonsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAddonsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListAddonsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListAddonsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListAddonsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAddonsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAddonsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListAddonsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAddonsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListAddonsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListAddonsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAddonsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAddonsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAddonsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListAddonsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListAddonsErrorKind::ServerException(_))
     }
@@ -2939,7 +2939,7 @@ pub enum ListClustersErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
@@ -3005,22 +3005,22 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClustersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3067,7 +3067,7 @@ pub enum ListFargateProfilesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFargateProfilesError {
@@ -3133,25 +3133,25 @@ impl ListFargateProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFargateProfilesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListFargateProfilesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListFargateProfilesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListFargateProfilesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListFargateProfilesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFargateProfilesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListFargateProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFargateProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFargateProfilesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFargateProfilesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListFargateProfilesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListFargateProfilesErrorKind::ServerException(_))
     }
@@ -3197,7 +3197,7 @@ pub enum ListIdentityProviderConfigsErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentityProviderConfigsError {
@@ -3270,35 +3270,35 @@ impl ListIdentityProviderConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIdentityProviderConfigsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListIdentityProviderConfigsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProviderConfigsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProviderConfigsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListIdentityProviderConfigsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProviderConfigsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProviderConfigsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIdentityProviderConfigsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProviderConfigsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProviderConfigsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListIdentityProviderConfigsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityProviderConfigsErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityProviderConfigsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListIdentityProviderConfigsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3350,7 +3350,7 @@ pub enum ListNodegroupsErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNodegroupsError {
@@ -3417,29 +3417,29 @@ impl ListNodegroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNodegroupsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListNodegroupsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListNodegroupsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListNodegroupsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListNodegroupsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNodegroupsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListNodegroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListNodegroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNodegroupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListNodegroupsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListNodegroupsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListNodegroupsErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `ListNodegroupsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListNodegroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3479,7 +3479,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>A service resource associated with the request could not be found. Clients should not
     /// retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3543,14 +3543,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3595,7 +3595,7 @@ pub enum ListUpdatesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUpdatesError {
@@ -3661,25 +3661,25 @@ impl ListUpdatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUpdatesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListUpdatesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListUpdatesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListUpdatesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUpdatesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUpdatesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListUpdatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUpdatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUpdatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUpdatesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListUpdatesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListUpdatesErrorKind::ServerException(_))
     }
@@ -3722,7 +3722,7 @@ pub enum RegisterClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterClusterError {
@@ -3789,29 +3789,29 @@ impl RegisterClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RegisterClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RegisterClusterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClusterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterClusterErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClusterErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, RegisterClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `RegisterClusterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RegisterClusterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3851,7 +3851,7 @@ pub enum TagResourceErrorKind {
     /// <p>A service resource associated with the request could not be found. Clients should not
     /// retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3915,11 +3915,11 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -3953,7 +3953,7 @@ pub enum UntagResourceErrorKind {
     /// <p>A service resource associated with the request could not be found. Clients should not
     /// retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4017,11 +4017,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -4068,7 +4068,7 @@ pub enum UpdateAddonErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAddonError {
@@ -4136,33 +4136,33 @@ impl UpdateAddonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateAddonErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAddonErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAddonErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateAddonErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAddonErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAddonErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateAddonErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateAddonErrorKind::ServerException(_))
     }
@@ -4213,7 +4213,7 @@ pub enum UpdateClusterConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterConfigError {
@@ -4281,39 +4281,39 @@ impl UpdateClusterConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateClusterConfigErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateClusterConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateClusterConfigErrorKind::ServerException(_))
     }
@@ -4364,7 +4364,7 @@ pub enum UpdateClusterVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterVersionError {
@@ -4432,42 +4432,42 @@ impl UpdateClusterVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterVersionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterVersionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterVersionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateClusterVersionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4521,7 +4521,7 @@ pub enum UpdateNodegroupConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNodegroupConfigError {
@@ -4589,42 +4589,42 @@ impl UpdateNodegroupConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupConfigErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupConfigErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupConfigErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4678,7 +4678,7 @@ pub enum UpdateNodegroupVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNodegroupVersionError {
@@ -4746,42 +4746,42 @@ impl UpdateNodegroupVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupVersionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupVersionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNodegroupVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNodegroupVersionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateNodegroupVersionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,

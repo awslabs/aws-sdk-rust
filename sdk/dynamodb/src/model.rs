@@ -6837,8 +6837,8 @@ pub enum AttributeValue {
     Ss(std::vec::Vec<std::string::String>),
 }
 impl AttributeValue {
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`B`](crate::model::AttributeValue::B), extracting the inner [`Blob`](aws_smithy_types::Blob).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_b(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let AttributeValue::B(val) = &self {
             Ok(&val)
@@ -6846,12 +6846,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`B`](crate::model::AttributeValue::B).
     pub fn is_b(&self) -> bool {
         self.as_b().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Bool`](crate::model::AttributeValue::Bool), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bool(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Bool(val) = &self {
             Ok(&val)
@@ -6859,12 +6859,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`Bool`](crate::model::AttributeValue::Bool).
     pub fn is_bool(&self) -> bool {
         self.as_bool().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Bs`](crate::model::AttributeValue::Bs), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bs(&self) -> std::result::Result<&std::vec::Vec<aws_smithy_types::Blob>, &Self> {
         if let AttributeValue::Bs(val) = &self {
             Ok(&val)
@@ -6872,12 +6872,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`Bs`](crate::model::AttributeValue::Bs).
     pub fn is_bs(&self) -> bool {
         self.as_bs().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`L`](crate::model::AttributeValue::L), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_l(&self) -> std::result::Result<&std::vec::Vec<crate::model::AttributeValue>, &Self> {
         if let AttributeValue::L(val) = &self {
             Ok(&val)
@@ -6885,12 +6885,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`L`](crate::model::AttributeValue::L).
     pub fn is_l(&self) -> bool {
         self.as_l().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`M`](crate::model::AttributeValue::M), extracting the inner [`HashMap`](std::collections::HashMap).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_m(
         &self,
     ) -> std::result::Result<
@@ -6903,12 +6903,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`M`](crate::model::AttributeValue::M).
     pub fn is_m(&self) -> bool {
         self.as_m().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`N`](crate::model::AttributeValue::N), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_n(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::N(val) = &self {
             Ok(&val)
@@ -6916,12 +6916,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`N`](crate::model::AttributeValue::N).
     pub fn is_n(&self) -> bool {
         self.as_n().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Ns`](crate::model::AttributeValue::Ns), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ns(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ns(val) = &self {
             Ok(&val)
@@ -6929,12 +6929,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`Ns`](crate::model::AttributeValue::Ns).
     pub fn is_ns(&self) -> bool {
         self.as_ns().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Null`](crate::model::AttributeValue::Null), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_null(&self) -> std::result::Result<&bool, &Self> {
         if let AttributeValue::Null(val) = &self {
             Ok(&val)
@@ -6942,12 +6942,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`Null`](crate::model::AttributeValue::Null).
     pub fn is_null(&self) -> bool {
         self.as_null().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S`](crate::model::AttributeValue::S), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AttributeValue::S(val) = &self {
             Ok(&val)
@@ -6955,12 +6955,12 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`S`](crate::model::AttributeValue::S).
     pub fn is_s(&self) -> bool {
         self.as_s().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValue`](crate::model::AttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Ss`](crate::model::AttributeValue::Ss), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ss(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValue::Ss(val) = &self {
             Ok(&val)
@@ -6968,7 +6968,7 @@ impl AttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValue` variant.
+    /// Returns true if this is a [`Ss`](crate::model::AttributeValue::Ss).
     pub fn is_ss(&self) -> bool {
         self.as_ss().is_ok()
     }

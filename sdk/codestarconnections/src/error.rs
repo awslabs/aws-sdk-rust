@@ -18,7 +18,7 @@ pub enum CreateConnectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -83,21 +83,21 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -131,7 +131,7 @@ pub struct CreateHostError {
 pub enum CreateHostErrorKind {
     /// <p>Exceeded the maximum limit for connections.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHostError {
@@ -194,7 +194,7 @@ impl CreateHostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHostErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateHostErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateHostErrorKind::LimitExceededException(_))
     }
@@ -223,7 +223,7 @@ pub struct DeleteConnectionError {
 pub enum DeleteConnectionErrorKind {
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -286,7 +286,7 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -320,7 +320,7 @@ pub enum DeleteHostErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHostError {
@@ -384,14 +384,14 @@ impl DeleteHostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHostErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteHostErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHostErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHostErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteHostErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -426,7 +426,7 @@ pub enum GetConnectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionError {
@@ -490,14 +490,14 @@ impl GetConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -532,7 +532,7 @@ pub enum GetHostErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostError {
@@ -596,11 +596,11 @@ impl GetHostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetHostErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetHostErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetHostErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `GetHostErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -631,7 +631,7 @@ pub struct ListConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectionsError {
@@ -715,7 +715,7 @@ pub struct ListHostsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListHostsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHostsError {
@@ -801,7 +801,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -864,7 +864,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -898,7 +898,7 @@ pub enum TagResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -962,11 +962,11 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -999,7 +999,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1062,7 +1062,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1100,7 +1100,7 @@ pub enum UpdateHostErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The operation is not supported. Check the connection status and try again.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHostError {
@@ -1166,25 +1166,25 @@ impl UpdateHostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHostErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateHostErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateHostErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateHostErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateHostErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHostErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHostErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateHostErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHostErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHostErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdateHostErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,

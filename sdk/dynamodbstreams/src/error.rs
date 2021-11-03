@@ -18,7 +18,7 @@ pub enum DescribeStreamErrorKind {
     /// might not be specified correctly, or its status might not be
     /// <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamError {
@@ -82,11 +82,11 @@ impl DescribeStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeStreamErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -153,7 +153,7 @@ pub enum GetRecordsErrorKind {
     /// </li>
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecordsError {
@@ -220,26 +220,26 @@ impl GetRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::ExpiredIteratorException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::ExpiredIteratorException`.
     pub fn is_expired_iterator_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::ExpiredIteratorException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecordsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::TrimmedDataAccessException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::TrimmedDataAccessException`.
     pub fn is_trimmed_data_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -292,7 +292,7 @@ pub enum GetShardIteratorErrorKind {
     /// </li>
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetShardIteratorError {
@@ -357,21 +357,21 @@ impl GetShardIteratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetShardIteratorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetShardIteratorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::TrimmedDataAccessException`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::TrimmedDataAccessException`.
     pub fn is_trimmed_data_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -409,7 +409,7 @@ pub enum ListStreamsErrorKind {
     /// might not be specified correctly, or its status might not be
     /// <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamsError {
@@ -473,11 +473,11 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

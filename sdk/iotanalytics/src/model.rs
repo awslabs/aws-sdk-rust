@@ -1439,8 +1439,8 @@ pub enum DatastoreStorage {
     ServiceManagedS3(crate::model::ServiceManagedDatastoreS3Storage),
 }
 impl DatastoreStorage {
-    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`CustomerManagedS3`](crate::model::DatastoreStorage::CustomerManagedS3), extracting the inner [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customer_managed_s3(
         &self,
     ) -> std::result::Result<&crate::model::CustomerManagedDatastoreS3Storage, &Self> {
@@ -1450,12 +1450,12 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DatastoreStorage` variant.
+    /// Returns true if this is a [`CustomerManagedS3`](crate::model::DatastoreStorage::CustomerManagedS3).
     pub fn is_customer_managed_s3(&self) -> bool {
         self.as_customer_managed_s3().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IotSiteWiseMultiLayerStorage`](crate::model::DatastoreStorage::IotSiteWiseMultiLayerStorage), extracting the inner [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iot_site_wise_multi_layer_storage(
         &self,
     ) -> std::result::Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
@@ -1465,12 +1465,12 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DatastoreStorage` variant.
+    /// Returns true if this is a [`IotSiteWiseMultiLayerStorage`](crate::model::DatastoreStorage::IotSiteWiseMultiLayerStorage).
     pub fn is_iot_site_wise_multi_layer_storage(&self) -> bool {
         self.as_iot_site_wise_multi_layer_storage().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ServiceManagedS3`](crate::model::DatastoreStorage::ServiceManagedS3), extracting the inner [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_managed_s3(
         &self,
     ) -> std::result::Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
@@ -1480,7 +1480,7 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DatastoreStorage` variant.
+    /// Returns true if this is a [`ServiceManagedS3`](crate::model::DatastoreStorage::ServiceManagedS3).
     pub fn is_service_managed_s3(&self) -> bool {
         self.as_service_managed_s3().is_ok()
     }

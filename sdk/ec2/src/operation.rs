@@ -11868,6 +11868,44 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostReservationPurcha
     }
 }
 
+/// Operation shape for `GetInstanceTypesFromInstanceRequirements`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_instance_types_from_instance_requirements`](crate::client::Client::get_instance_types_from_instance_requirements).
+///
+/// See [`crate::client::fluent_builders::GetInstanceTypesFromInstanceRequirements`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInstanceTypesFromInstanceRequirements {
+    _private: (),
+}
+impl GetInstanceTypesFromInstanceRequirements {
+    /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsInput`](crate::input::GetInstanceTypesFromInstanceRequirementsInput)
+    pub fn builder() -> crate::input::get_instance_types_from_instance_requirements_input::Builder {
+        crate::input::get_instance_types_from_instance_requirements_input::Builder::default()
+    }
+    /// Creates a new `GetInstanceTypesFromInstanceRequirements` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInstanceRequirements {
+    type Output = std::result::Result<
+        crate::output::GetInstanceTypesFromInstanceRequirementsOutput,
+        crate::error::GetInstanceTypesFromInstanceRequirementsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_instance_types_from_instance_requirements_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_instance_types_from_instance_requirements_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `GetLaunchTemplateData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -12068,6 +12106,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSerialConsoleAccessSt
             crate::operation_deser::parse_get_serial_console_access_status_error(response)
         } else {
             crate::operation_deser::parse_get_serial_console_access_status_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetSpotPlacementScores`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_spot_placement_scores`](crate::client::Client::get_spot_placement_scores).
+///
+/// See [`crate::client::fluent_builders::GetSpotPlacementScores`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSpotPlacementScores {
+    _private: (),
+}
+impl GetSpotPlacementScores {
+    /// Creates a new builder-style object to manufacture [`GetSpotPlacementScoresInput`](crate::input::GetSpotPlacementScoresInput)
+    pub fn builder() -> crate::input::get_spot_placement_scores_input::Builder {
+        crate::input::get_spot_placement_scores_input::Builder::default()
+    }
+    /// Creates a new `GetSpotPlacementScores` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSpotPlacementScores {
+    type Output = std::result::Result<
+        crate::output::GetSpotPlacementScoresOutput,
+        crate::error::GetSpotPlacementScoresError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_spot_placement_scores_error(response)
+        } else {
+            crate::operation_deser::parse_get_spot_placement_scores_response(response)
         }
     }
 }

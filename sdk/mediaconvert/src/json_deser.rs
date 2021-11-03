@@ -17365,6 +17365,19 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "timeDeltaUnits" => {
+                                builder = builder.set_time_delta_units(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::FileSourceTimeDeltaUnits::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

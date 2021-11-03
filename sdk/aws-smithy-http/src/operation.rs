@@ -44,10 +44,10 @@ pub struct Parts<H, R> {
     pub metadata: Option<Metadata>,
 }
 
-/// An error occured attempting to build an `Operation` from an input
+/// An error occurred attempting to build an `Operation` from an input
 ///
 /// These are almost always due to user error caused by limitations of specific fields due to
-/// protocol serialization (eg. fields that can only be a subset ASCII because they are serialized
+/// protocol serialization (e.g. fields that can only be a subset ASCII because they are serialized
 /// as the name of an HTTP header)
 #[non_exhaustive]
 #[derive(Debug, Error)]
@@ -64,6 +64,9 @@ pub enum BuildError {
     },
     #[error("Failed during serialization: {0}")]
     SerializationError(#[from] Box<dyn Error + Send + Sync + 'static>),
+
+    #[error("Error during request construction: {0}")]
+    Other(Box<dyn Error + Send + Sync + 'static>),
 }
 
 #[derive(Debug)]

@@ -18,7 +18,7 @@ pub enum BatchGetAggregateResourceConfigErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetAggregateResourceConfigError {
@@ -87,14 +87,14 @@ impl BatchGetAggregateResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `BatchGetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetAggregateResourceConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchGetAggregateResourceConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -137,7 +137,7 @@ pub enum BatchGetResourceConfigErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetResourceConfigError {
@@ -203,14 +203,14 @@ impl BatchGetResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetResourceConfigErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `BatchGetResourceConfigErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetResourceConfigErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetResourceConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchGetResourceConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -246,7 +246,7 @@ pub enum DeleteAggregationAuthorizationErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAggregationAuthorizationError {
@@ -314,7 +314,7 @@ impl DeleteAggregationAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAggregationAuthorizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteAggregationAuthorizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -374,7 +374,7 @@ pub enum DeleteConfigRuleErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigRuleError {
@@ -438,14 +438,14 @@ impl DeleteConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigRuleErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `DeleteConfigRuleErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigRuleErrorKind::NoSuchConfigRuleException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigRuleErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteConfigRuleErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -478,7 +478,7 @@ pub struct DeleteConfigurationAggregatorError {
 pub enum DeleteConfigurationAggregatorErrorKind {
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationAggregatorError {
@@ -546,7 +546,7 @@ impl DeleteConfigurationAggregatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationAggregatorErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationAggregatorErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -581,7 +581,7 @@ pub enum DeleteConfigurationRecorderErrorKind {
     /// <p>You have specified a configuration recorder that does not
     /// exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationRecorderError {
@@ -646,7 +646,7 @@ impl DeleteConfigurationRecorderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -705,7 +705,7 @@ pub enum DeleteConformancePackErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConformancePackError {
@@ -769,14 +769,14 @@ impl DeleteConformancePackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConformancePackErrorKind::NoSuchConformancePackException`.
+    /// Returns `true` if the error kind is `DeleteConformancePackErrorKind::NoSuchConformancePackException`.
     pub fn is_no_such_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConformancePackErrorKind::NoSuchConformancePackException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConformancePackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteConformancePackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -815,7 +815,7 @@ pub enum DeleteDeliveryChannelErrorKind {
     /// <p>You have specified a delivery channel that does not
     /// exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeliveryChannelError {
@@ -881,14 +881,14 @@ impl DeleteDeliveryChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeliveryChannelErrorKind::LastDeliveryChannelDeleteFailedException`.
+    /// Returns `true` if the error kind is `DeleteDeliveryChannelErrorKind::LastDeliveryChannelDeleteFailedException`.
     pub fn is_last_delivery_channel_delete_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeliveryChannelErrorKind::LastDeliveryChannelDeleteFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeliveryChannelErrorKind::NoSuchDeliveryChannelException`.
+    /// Returns `true` if the error kind is `DeleteDeliveryChannelErrorKind::NoSuchDeliveryChannelException`.
     pub fn is_no_such_delivery_channel_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -949,7 +949,7 @@ pub enum DeleteEvaluationResultsErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEvaluationResultsError {
@@ -1013,14 +1013,14 @@ impl DeleteEvaluationResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEvaluationResultsErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `DeleteEvaluationResultsErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEvaluationResultsErrorKind::NoSuchConfigRuleException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEvaluationResultsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteEvaluationResultsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1098,7 +1098,7 @@ pub enum DeleteOrganizationConfigRuleErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOrganizationConfigRuleError {
@@ -1167,21 +1167,21 @@ impl DeleteOrganizationConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOrganizationConfigRuleErrorKind::NoSuchOrganizationConfigRuleException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConfigRuleErrorKind::NoSuchOrganizationConfigRuleException`.
     pub fn is_no_such_organization_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationConfigRuleErrorKind::NoSuchOrganizationConfigRuleException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationConfigRuleErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConfigRuleErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1267,7 +1267,7 @@ pub enum DeleteOrganizationConformancePackErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOrganizationConformancePackError {
@@ -1343,7 +1343,7 @@ impl DeleteOrganizationConformancePackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOrganizationConformancePackErrorKind::NoSuchOrganizationConformancePackException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConformancePackErrorKind::NoSuchOrganizationConformancePackException`.
     pub fn is_no_such_organization_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1352,14 +1352,14 @@ impl DeleteOrganizationConformancePackError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationConformancePackErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConformancePackErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationConformancePackErrorKind::OrganizationAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationConformancePackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationConformancePackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1402,7 +1402,7 @@ pub enum DeletePendingAggregationRequestErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePendingAggregationRequestError {
@@ -1470,7 +1470,7 @@ impl DeletePendingAggregationRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePendingAggregationRequestErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeletePendingAggregationRequestErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1533,7 +1533,7 @@ pub enum DeleteRemediationConfigurationErrorKind {
     NoSuchRemediationConfigurationException(crate::error::NoSuchRemediationConfigurationException),
     /// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later. </p>
     RemediationInProgressException(crate::error::RemediationInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRemediationConfigurationError {
@@ -1610,28 +1610,28 @@ impl DeleteRemediationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRemediationConfigurationErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `DeleteRemediationConfigurationErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemediationConfigurationErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemediationConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteRemediationConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemediationConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemediationConfigurationErrorKind::NoSuchRemediationConfigurationException`.
+    /// Returns `true` if the error kind is `DeleteRemediationConfigurationErrorKind::NoSuchRemediationConfigurationException`.
     pub fn is_no_such_remediation_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemediationConfigurationErrorKind::NoSuchRemediationConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemediationConfigurationErrorKind::RemediationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteRemediationConfigurationErrorKind::RemediationInProgressException`.
     pub fn is_remediation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1674,7 +1674,7 @@ pub struct DeleteRemediationExceptionsError {
 pub enum DeleteRemediationExceptionsErrorKind {
     /// <p>You tried to delete a remediation exception that does not exist.</p>
     NoSuchRemediationExceptionException(crate::error::NoSuchRemediationExceptionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRemediationExceptionsError {
@@ -1739,7 +1739,7 @@ impl DeleteRemediationExceptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRemediationExceptionsErrorKind::NoSuchRemediationExceptionException`.
+    /// Returns `true` if the error kind is `DeleteRemediationExceptionsErrorKind::NoSuchRemediationExceptionException`.
     pub fn is_no_such_remediation_exception_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1777,7 +1777,7 @@ pub enum DeleteResourceConfigErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceConfigError {
@@ -1843,14 +1843,14 @@ impl DeleteResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceConfigErrorKind::NoRunningConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DeleteResourceConfigErrorKind::NoRunningConfigurationRecorderException`.
     pub fn is_no_running_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceConfigErrorKind::NoRunningConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteResourceConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1888,7 +1888,7 @@ pub enum DeleteRetentionConfigurationErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You have specified a retention configuration that does not exist.</p>
     NoSuchRetentionConfigurationException(crate::error::NoSuchRetentionConfigurationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRetentionConfigurationError {
@@ -1956,14 +1956,14 @@ impl DeleteRetentionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRetentionConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteRetentionConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionConfigurationErrorKind::NoSuchRetentionConfigurationException`.
+    /// Returns `true` if the error kind is `DeleteRetentionConfigurationErrorKind::NoSuchRetentionConfigurationException`.
     pub fn is_no_such_retention_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2004,7 +2004,7 @@ pub enum DeleteStoredQueryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStoredQueryError {
@@ -2068,14 +2068,14 @@ impl DeleteStoredQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStoredQueryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStoredQueryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStoredQueryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStoredQueryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStoredQueryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2117,7 +2117,7 @@ pub enum DeliverConfigSnapshotErrorKind {
     /// <p>You have specified a delivery channel that does not
     /// exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeliverConfigSnapshotError {
@@ -2186,21 +2186,21 @@ impl DeliverConfigSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeliverConfigSnapshotErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DeliverConfigSnapshotErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeliverConfigSnapshotErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `DeliverConfigSnapshotErrorKind::NoRunningConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DeliverConfigSnapshotErrorKind::NoRunningConfigurationRecorderException`.
     pub fn is_no_running_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeliverConfigSnapshotErrorKind::NoRunningConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `DeliverConfigSnapshotErrorKind::NoSuchDeliveryChannelException`.
+    /// Returns `true` if the error kind is `DeliverConfigSnapshotErrorKind::NoSuchDeliveryChannelException`.
     pub fn is_no_such_delivery_channel_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2248,7 +2248,7 @@ pub enum DescribeAggregateComplianceByConfigRulesErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAggregateComplianceByConfigRulesError {
@@ -2327,25 +2327,25 @@ impl DescribeAggregateComplianceByConfigRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregateComplianceByConfigRulesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregateComplianceByConfigRulesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, DescribeAggregateComplianceByConfigRulesErrorKind::NoSuchConfigurationAggregatorException(_))
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConfigRulesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2400,7 +2400,7 @@ pub enum DescribeAggregateComplianceByConformancePacksErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAggregateComplianceByConformancePacksError {
@@ -2481,25 +2481,25 @@ impl DescribeAggregateComplianceByConformancePacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregateComplianceByConformancePacksErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregateComplianceByConformancePacksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, DescribeAggregateComplianceByConformancePacksErrorKind::NoSuchConfigurationAggregatorException(_))
     }
-    /// Returns true if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAggregateComplianceByConformancePacksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2551,7 +2551,7 @@ pub enum DescribeAggregationAuthorizationsErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAggregationAuthorizationsError {
@@ -2625,21 +2625,21 @@ impl DescribeAggregationAuthorizationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregationAuthorizationsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAggregationAuthorizationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAggregationAuthorizationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2687,7 +2687,7 @@ pub enum DescribeComplianceByConfigRuleErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComplianceByConfigRuleError {
@@ -2761,21 +2761,21 @@ impl DescribeComplianceByConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComplianceByConfigRuleErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeComplianceByConfigRuleErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComplianceByConfigRuleErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComplianceByConfigRuleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeComplianceByConfigRuleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComplianceByConfigRuleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComplianceByConfigRuleErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `DescribeComplianceByConfigRuleErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2820,7 +2820,7 @@ pub enum DescribeComplianceByResourceErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComplianceByResourceError {
@@ -2888,14 +2888,14 @@ impl DescribeComplianceByResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComplianceByResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeComplianceByResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComplianceByResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComplianceByResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeComplianceByResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2940,7 +2940,7 @@ pub enum DescribeConfigRuleEvaluationStatusErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigRuleEvaluationStatusError {
@@ -3014,21 +3014,21 @@ impl DescribeConfigRuleEvaluationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigRuleEvaluationStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigRuleEvaluationStatusErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `DescribeConfigRuleEvaluationStatusErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3073,7 +3073,7 @@ pub enum DescribeConfigRulesErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigRulesError {
@@ -3137,14 +3137,14 @@ impl DescribeConfigRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigRulesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConfigRulesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigRulesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigRulesErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `DescribeConfigRulesErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3186,7 +3186,7 @@ pub enum DescribeConfigurationAggregatorsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationAggregatorsError {
@@ -3263,28 +3263,28 @@ impl DescribeConfigurationAggregatorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationAggregatorsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationAggregatorsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationAggregatorsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorsErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorsErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3336,7 +3336,7 @@ pub enum DescribeConfigurationAggregatorSourcesStatusErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationAggregatorSourcesStatusError {
@@ -3417,21 +3417,21 @@ impl DescribeConfigurationAggregatorSourcesStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3440,7 +3440,7 @@ impl DescribeConfigurationAggregatorSourcesStatusError {
             )
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationAggregatorSourcesStatusErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, DescribeConfigurationAggregatorSourcesStatusErrorKind::NoSuchConfigurationAggregatorException(_))
     }
@@ -3483,7 +3483,7 @@ pub enum DescribeConfigurationRecordersErrorKind {
     /// <p>You have specified a configuration recorder that does not
     /// exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationRecordersError {
@@ -3551,7 +3551,7 @@ impl DescribeConfigurationRecordersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationRecordersErrorKind::NoSuchConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRecordersErrorKind::NoSuchConfigurationRecorderException`.
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3586,7 +3586,7 @@ pub enum DescribeConfigurationRecorderStatusErrorKind {
     /// <p>You have specified a configuration recorder that does not
     /// exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationRecorderStatusError {
@@ -3654,7 +3654,7 @@ impl DescribeConfigurationRecorderStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationRecorderStatusErrorKind::NoSuchConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRecorderStatusErrorKind::NoSuchConfigurationRecorderException`.
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3703,7 +3703,7 @@ pub enum DescribeConformancePackComplianceErrorKind {
     ),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConformancePackComplianceError {
@@ -3785,28 +3785,28 @@ impl DescribeConformancePackComplianceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePackComplianceErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePackComplianceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackComplianceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePackComplianceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackComplianceErrorKind::NoSuchConfigRuleInConformancePackException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackComplianceErrorKind::NoSuchConfigRuleInConformancePackException`.
     pub fn is_no_such_config_rule_in_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3815,7 +3815,7 @@ impl DescribeConformancePackComplianceError {
             )
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackComplianceErrorKind::NoSuchConformancePackException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackComplianceErrorKind::NoSuchConformancePackException`.
     pub fn is_no_such_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3872,7 +3872,7 @@ pub enum DescribeConformancePacksErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConformancePacksError {
@@ -3942,28 +3942,28 @@ impl DescribeConformancePacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConformancePacksErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeConformancePacksErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePacksErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePacksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConformancePacksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePacksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePacksErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConformancePacksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePacksErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePacksErrorKind::NoSuchConformancePackException`.
+    /// Returns `true` if the error kind is `DescribeConformancePacksErrorKind::NoSuchConformancePackException`.
     pub fn is_no_such_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4009,7 +4009,7 @@ pub enum DescribeConformancePackStatusErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConformancePackStatusError {
@@ -4081,21 +4081,21 @@ impl DescribeConformancePackStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConformancePackStatusErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackStatusErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePackStatusErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConformancePackStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConformancePackStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConformancePackStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4134,7 +4134,7 @@ pub enum DescribeDeliveryChannelsErrorKind {
     /// <p>You have specified a delivery channel that does not
     /// exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeliveryChannelsError {
@@ -4199,7 +4199,7 @@ impl DescribeDeliveryChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeliveryChannelsErrorKind::NoSuchDeliveryChannelException`.
+    /// Returns `true` if the error kind is `DescribeDeliveryChannelsErrorKind::NoSuchDeliveryChannelException`.
     pub fn is_no_such_delivery_channel_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4234,7 +4234,7 @@ pub enum DescribeDeliveryChannelStatusErrorKind {
     /// <p>You have specified a delivery channel that does not
     /// exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeliveryChannelStatusError {
@@ -4302,7 +4302,7 @@ impl DescribeDeliveryChannelStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeliveryChannelStatusErrorKind::NoSuchDeliveryChannelException`.
+    /// Returns `true` if the error kind is `DescribeDeliveryChannelStatusErrorKind::NoSuchDeliveryChannelException`.
     pub fn is_no_such_delivery_channel_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4362,7 +4362,7 @@ pub enum DescribeOrganizationConfigRulesErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationConfigRulesError {
@@ -4439,28 +4439,28 @@ impl DescribeOrganizationConfigRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRulesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRulesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigRulesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRulesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRulesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigRulesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRulesErrorKind::NoSuchOrganizationConfigRuleException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRulesErrorKind::NoSuchOrganizationConfigRuleException`.
     pub fn is_no_such_organization_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigRulesErrorKind::NoSuchOrganizationConfigRuleException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRulesErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRulesErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4527,7 +4527,7 @@ pub enum DescribeOrganizationConfigRuleStatusesErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationConfigRuleStatusesError {
@@ -4606,21 +4606,21 @@ impl DescribeOrganizationConfigRuleStatusesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigRuleStatusesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigRuleStatusesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::NoSuchOrganizationConfigRuleException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::NoSuchOrganizationConfigRuleException`.
     pub fn is_no_such_organization_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4629,7 +4629,7 @@ impl DescribeOrganizationConfigRuleStatusesError {
             )
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigRuleStatusesErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4703,7 +4703,7 @@ pub enum DescribeOrganizationConformancePacksErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationConformancePacksError {
@@ -4782,25 +4782,25 @@ impl DescribeOrganizationConformancePacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePacksErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePacksErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConformancePacksErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePacksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePacksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConformancePacksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePacksErrorKind::NoSuchOrganizationConformancePackException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePacksErrorKind::NoSuchOrganizationConformancePackException`.
     pub fn is_no_such_organization_conformance_pack_exception(&self) -> bool {
         matches!(&self.kind, DescribeOrganizationConformancePacksErrorKind::NoSuchOrganizationConformancePackException(_))
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePacksErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePacksErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4874,7 +4874,7 @@ pub enum DescribeOrganizationConformancePackStatusesErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationConformancePackStatusesError {
@@ -4955,25 +4955,25 @@ impl DescribeOrganizationConformancePackStatusesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConformancePackStatusesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConformancePackStatusesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::NoSuchOrganizationConformancePackException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::NoSuchOrganizationConformancePackException`.
     pub fn is_no_such_organization_conformance_pack_exception(&self) -> bool {
         matches!(&self.kind, DescribeOrganizationConformancePackStatusesErrorKind::NoSuchOrganizationConformancePackException(_))
     }
-    /// Returns true if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConformancePackStatusesErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5027,7 +5027,7 @@ pub enum DescribePendingAggregationRequestsErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePendingAggregationRequestsError {
@@ -5101,21 +5101,21 @@ impl DescribePendingAggregationRequestsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePendingAggregationRequestsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePendingAggregationRequestsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribePendingAggregationRequestsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5153,7 +5153,7 @@ pub struct DescribeRemediationConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRemediationConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRemediationConfigurationsError {
@@ -5247,7 +5247,7 @@ pub enum DescribeRemediationExceptionsErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRemediationExceptionsError {
@@ -5318,14 +5318,14 @@ impl DescribeRemediationExceptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRemediationExceptionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeRemediationExceptionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRemediationExceptionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRemediationExceptionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRemediationExceptionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5369,7 +5369,7 @@ pub enum DescribeRemediationExecutionStatusErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You specified an Config rule without a remediation configuration.</p>
     NoSuchRemediationConfigurationException(crate::error::NoSuchRemediationConfigurationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRemediationExecutionStatusError {
@@ -5445,21 +5445,21 @@ impl DescribeRemediationExecutionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRemediationExecutionStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeRemediationExecutionStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRemediationExecutionStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRemediationExecutionStatusErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRemediationExecutionStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRemediationExecutionStatusErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRemediationExecutionStatusErrorKind::NoSuchRemediationConfigurationException`.
+    /// Returns `true` if the error kind is `DescribeRemediationExecutionStatusErrorKind::NoSuchRemediationConfigurationException`.
     pub fn is_no_such_remediation_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5508,7 +5508,7 @@ pub enum DescribeRetentionConfigurationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You have specified a retention configuration that does not exist.</p>
     NoSuchRetentionConfigurationException(crate::error::NoSuchRetentionConfigurationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRetentionConfigurationsError {
@@ -5582,21 +5582,21 @@ impl DescribeRetentionConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRetentionConfigurationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeRetentionConfigurationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRetentionConfigurationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRetentionConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRetentionConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRetentionConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRetentionConfigurationsErrorKind::NoSuchRetentionConfigurationException`.
+    /// Returns `true` if the error kind is `DescribeRetentionConfigurationsErrorKind::NoSuchRetentionConfigurationException`.
     pub fn is_no_such_retention_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5646,7 +5646,7 @@ pub enum GetAggregateComplianceDetailsByConfigRuleErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAggregateComplianceDetailsByConfigRuleError {
@@ -5725,25 +5725,25 @@ impl GetAggregateComplianceDetailsByConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, GetAggregateComplianceDetailsByConfigRuleErrorKind::NoSuchConfigurationAggregatorException(_))
     }
-    /// Returns true if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAggregateComplianceDetailsByConfigRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5798,7 +5798,7 @@ pub enum GetAggregateConfigRuleComplianceSummaryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAggregateConfigRuleComplianceSummaryError {
@@ -5877,25 +5877,25 @@ impl GetAggregateConfigRuleComplianceSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, GetAggregateConfigRuleComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException(_))
     }
-    /// Returns true if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAggregateConfigRuleComplianceSummaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5950,7 +5950,7 @@ pub enum GetAggregateConformancePackComplianceSummaryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAggregateConformancePackComplianceSummaryError {
@@ -6031,25 +6031,25 @@ impl GetAggregateConformancePackComplianceSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateConformancePackComplianceSummaryErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateConformancePackComplianceSummaryErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(&self.kind, GetAggregateConformancePackComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException(_))
     }
-    /// Returns true if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAggregateConformancePackComplianceSummaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6104,7 +6104,7 @@ pub enum GetAggregateDiscoveredResourceCountsErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAggregateDiscoveredResourceCountsError {
@@ -6183,21 +6183,21 @@ impl GetAggregateDiscoveredResourceCountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateDiscoveredResourceCountsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateDiscoveredResourceCountsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6206,7 +6206,7 @@ impl GetAggregateDiscoveredResourceCountsError {
             )
         )
     }
-    /// Returns true if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAggregateDiscoveredResourceCountsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6260,7 +6260,7 @@ pub enum GetAggregateResourceConfigErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAggregateResourceConfigError {
@@ -6332,28 +6332,28 @@ impl GetAggregateResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `GetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateResourceConfigErrorKind::OversizedConfigurationItemException`.
+    /// Returns `true` if the error kind is `GetAggregateResourceConfigErrorKind::OversizedConfigurationItemException`.
     pub fn is_oversized_configuration_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateResourceConfigErrorKind::OversizedConfigurationItemException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateResourceConfigErrorKind::ResourceNotDiscoveredException`.
+    /// Returns `true` if the error kind is `GetAggregateResourceConfigErrorKind::ResourceNotDiscoveredException`.
     pub fn is_resource_not_discovered_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAggregateResourceConfigErrorKind::ResourceNotDiscoveredException(_)
         )
     }
-    /// Returns true if the error kind is `GetAggregateResourceConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAggregateResourceConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6402,7 +6402,7 @@ pub enum GetComplianceDetailsByConfigRuleErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComplianceDetailsByConfigRuleError {
@@ -6476,21 +6476,21 @@ impl GetComplianceDetailsByConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComplianceDetailsByConfigRuleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `GetComplianceDetailsByConfigRuleErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6531,7 +6531,7 @@ pub enum GetComplianceDetailsByResourceErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComplianceDetailsByResourceError {
@@ -6599,7 +6599,7 @@ impl GetComplianceDetailsByResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComplianceDetailsByResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetComplianceDetailsByResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6631,7 +6631,7 @@ pub struct GetComplianceSummaryByConfigRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetComplianceSummaryByConfigRuleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComplianceSummaryByConfigRuleError {
@@ -6721,7 +6721,7 @@ pub enum GetComplianceSummaryByResourceTypeErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComplianceSummaryByResourceTypeError {
@@ -6789,7 +6789,7 @@ impl GetComplianceSummaryByResourceTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComplianceSummaryByResourceTypeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetComplianceSummaryByResourceTypeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6836,7 +6836,7 @@ pub enum GetConformancePackComplianceDetailsErrorKind {
     ),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConformancePackComplianceDetailsError {
@@ -6918,32 +6918,32 @@ impl GetConformancePackComplianceDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConformancePackComplianceDetailsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConformancePackComplianceDetailsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceDetailsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConformancePackComplianceDetailsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceDetailsErrorKind::NoSuchConfigRuleInConformancePackException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceDetailsErrorKind::NoSuchConfigRuleInConformancePackException`.
     pub fn is_no_such_config_rule_in_conformance_pack_exception(&self) -> bool {
         matches!(&self.kind, GetConformancePackComplianceDetailsErrorKind::NoSuchConfigRuleInConformancePackException(_))
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceDetailsErrorKind::NoSuchConformancePackException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceDetailsErrorKind::NoSuchConformancePackException`.
     pub fn is_no_such_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6997,7 +6997,7 @@ pub enum GetConformancePackComplianceSummaryErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConformancePackComplianceSummaryError {
@@ -7071,21 +7071,21 @@ impl GetConformancePackComplianceSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceSummaryErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceSummaryErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConformancePackComplianceSummaryErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceSummaryErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceSummaryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConformancePackComplianceSummaryErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetConformancePackComplianceSummaryErrorKind::NoSuchConformancePackException`.
+    /// Returns `true` if the error kind is `GetConformancePackComplianceSummaryErrorKind::NoSuchConformancePackException`.
     pub fn is_no_such_conformance_pack_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7135,7 +7135,7 @@ pub enum GetDiscoveredResourceCountsErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiscoveredResourceCountsError {
@@ -7202,21 +7202,21 @@ impl GetDiscoveredResourceCountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiscoveredResourceCountsErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetDiscoveredResourceCountsErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredResourceCountsErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredResourceCountsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetDiscoveredResourceCountsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredResourceCountsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredResourceCountsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDiscoveredResourceCountsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7276,7 +7276,7 @@ pub enum GetOrganizationConfigRuleDetailedStatusErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOrganizationConfigRuleDetailedStatusError {
@@ -7355,21 +7355,21 @@ impl GetOrganizationConfigRuleDetailedStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::NoSuchOrganizationConfigRuleException`.
+    /// Returns `true` if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::NoSuchOrganizationConfigRuleException`.
     pub fn is_no_such_organization_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7378,7 +7378,7 @@ impl GetOrganizationConfigRuleDetailedStatusError {
             )
         )
     }
-    /// Returns true if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOrganizationConfigRuleDetailedStatusErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7452,7 +7452,7 @@ pub enum GetOrganizationConformancePackDetailedStatusErrorKind {
     /// </ul>  
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOrganizationConformancePackDetailedStatusError {
@@ -7533,25 +7533,25 @@ impl GetOrganizationConformancePackDetailedStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationConformancePackDetailedStatusErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationConformancePackDetailedStatusErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::NoSuchOrganizationConformancePackException`.
+    /// Returns `true` if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::NoSuchOrganizationConformancePackException`.
     pub fn is_no_such_organization_conformance_pack_exception(&self) -> bool {
         matches!(&self.kind, GetOrganizationConformancePackDetailedStatusErrorKind::NoSuchOrganizationConformancePackException(_))
     }
-    /// Returns true if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOrganizationConformancePackDetailedStatusErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetOrganizationConformancePackDetailedStatusErrorKind::OrganizationAccessDeniedException(_))
     }
@@ -7613,7 +7613,7 @@ pub enum GetResourceConfigHistoryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceConfigHistoryError {
@@ -7685,42 +7685,42 @@ impl GetResourceConfigHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceConfigHistoryErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceConfigHistoryErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::InvalidTimeRangeException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::InvalidTimeRangeException`.
     pub fn is_invalid_time_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceConfigHistoryErrorKind::InvalidTimeRangeException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceConfigHistoryErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::ResourceNotDiscoveredException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::ResourceNotDiscoveredException`.
     pub fn is_resource_not_discovered_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceConfigHistoryErrorKind::ResourceNotDiscoveredException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceConfigHistoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetResourceConfigHistoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7765,7 +7765,7 @@ pub enum GetStoredQueryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStoredQueryError {
@@ -7829,14 +7829,14 @@ impl GetStoredQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStoredQueryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStoredQueryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStoredQueryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStoredQueryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStoredQueryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetStoredQueryErrorKind::ValidationException(_))
     }
@@ -7876,7 +7876,7 @@ pub enum ListAggregateDiscoveredResourcesErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAggregateDiscoveredResourcesError {
@@ -7951,28 +7951,28 @@ impl ListAggregateDiscoveredResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAggregateDiscoveredResourcesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `ListAggregateDiscoveredResourcesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregateDiscoveredResourcesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregateDiscoveredResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListAggregateDiscoveredResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregateDiscoveredResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregateDiscoveredResourcesErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `ListAggregateDiscoveredResourcesErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregateDiscoveredResourcesErrorKind::NoSuchConfigurationAggregatorException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregateDiscoveredResourcesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAggregateDiscoveredResourcesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8027,7 +8027,7 @@ pub enum ListDiscoveredResourcesErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDiscoveredResourcesError {
@@ -8095,28 +8095,28 @@ impl ListDiscoveredResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8159,7 +8159,7 @@ pub enum ListStoredQueriesErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStoredQueriesError {
@@ -8223,14 +8223,14 @@ impl ListStoredQueriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStoredQueriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListStoredQueriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStoredQueriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListStoredQueriesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStoredQueriesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8273,7 +8273,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -8339,28 +8339,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8396,7 +8396,7 @@ pub enum PutAggregationAuthorizationErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAggregationAuthorizationError {
@@ -8461,7 +8461,7 @@ impl PutAggregationAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAggregationAuthorizationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutAggregationAuthorizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8555,7 +8555,7 @@ pub enum PutConfigRuleErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigRuleError {
@@ -8626,35 +8626,35 @@ impl PutConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigRuleErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutConfigRuleErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigRuleErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigRuleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutConfigRuleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigRuleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigRuleErrorKind::MaxNumberOfConfigRulesExceededException`.
+    /// Returns `true` if the error kind is `PutConfigRuleErrorKind::MaxNumberOfConfigRulesExceededException`.
     pub fn is_max_number_of_config_rules_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigRuleErrorKind::MaxNumberOfConfigRulesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigRuleErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `PutConfigRuleErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigRuleErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigRuleErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutConfigRuleErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8728,7 +8728,7 @@ pub enum PutConfigurationAggregatorErrorKind {
     OrganizationAllFeaturesNotEnabledException(
         crate::error::OrganizationAllFeaturesNotEnabledException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationAggregatorError {
@@ -8804,42 +8804,42 @@ impl PutConfigurationAggregatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationAggregatorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationAggregatorErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationAggregatorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationAggregatorErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationAggregatorErrorKind::OrganizationAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationAggregatorErrorKind::OrganizationAllFeaturesNotEnabledException`.
+    /// Returns `true` if the error kind is `PutConfigurationAggregatorErrorKind::OrganizationAllFeaturesNotEnabledException`.
     pub fn is_organization_all_features_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8896,7 +8896,7 @@ pub enum PutConfigurationRecorderErrorKind {
     MaxNumberOfConfigurationRecordersExceededException(
         crate::error::MaxNumberOfConfigurationRecordersExceededException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationRecorderError {
@@ -8972,28 +8972,28 @@ impl PutConfigurationRecorderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationRecorderErrorKind::InvalidConfigurationRecorderNameException`.
+    /// Returns `true` if the error kind is `PutConfigurationRecorderErrorKind::InvalidConfigurationRecorderNameException`.
     pub fn is_invalid_configuration_recorder_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationRecorderErrorKind::InvalidConfigurationRecorderNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationRecorderErrorKind::InvalidRecordingGroupException`.
+    /// Returns `true` if the error kind is `PutConfigurationRecorderErrorKind::InvalidRecordingGroupException`.
     pub fn is_invalid_recording_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationRecorderErrorKind::InvalidRecordingGroupException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationRecorderErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `PutConfigurationRecorderErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationRecorderErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationRecorderErrorKind::MaxNumberOfConfigurationRecordersExceededException`.
+    /// Returns `true` if the error kind is `PutConfigurationRecorderErrorKind::MaxNumberOfConfigurationRecordersExceededException`.
     pub fn is_max_number_of_configuration_recorders_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9098,7 +9098,7 @@ pub enum PutConformancePackErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConformancePackError {
@@ -9169,35 +9169,35 @@ impl PutConformancePackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConformancePackErrorKind::ConformancePackTemplateValidationException`.
+    /// Returns `true` if the error kind is `PutConformancePackErrorKind::ConformancePackTemplateValidationException`.
     pub fn is_conformance_pack_template_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConformancePackErrorKind::ConformancePackTemplateValidationException(_)
         )
     }
-    /// Returns true if the error kind is `PutConformancePackErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutConformancePackErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConformancePackErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutConformancePackErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutConformancePackErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConformancePackErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutConformancePackErrorKind::MaxNumberOfConformancePacksExceededException`.
+    /// Returns `true` if the error kind is `PutConformancePackErrorKind::MaxNumberOfConformancePacksExceededException`.
     pub fn is_max_number_of_conformance_packs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConformancePackErrorKind::MaxNumberOfConformancePacksExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutConformancePackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutConformancePackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9259,7 +9259,7 @@ pub enum PutDeliveryChannelErrorKind {
     ),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::error::NoSuchBucketException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDeliveryChannelError {
@@ -9337,56 +9337,56 @@ impl PutDeliveryChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::InsufficientDeliveryPolicyException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::InsufficientDeliveryPolicyException`.
     pub fn is_insufficient_delivery_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::InsufficientDeliveryPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::InvalidDeliveryChannelNameException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::InvalidDeliveryChannelNameException`.
     pub fn is_invalid_delivery_channel_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::InvalidDeliveryChannelNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::InvalidS3KeyPrefixException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::InvalidS3KeyPrefixException`.
     pub fn is_invalid_s3_key_prefix_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::InvalidS3KeyPrefixException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::InvalidS3KmsKeyArnException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::InvalidS3KmsKeyArnException`.
     pub fn is_invalid_s3_kms_key_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::InvalidS3KmsKeyArnException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::InvalidSnsTopicArnException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::InvalidSnsTopicArnException`.
     pub fn is_invalid_sns_topic_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::InvalidSnsTopicArnException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::MaxNumberOfDeliveryChannelsExceededException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::MaxNumberOfDeliveryChannelsExceededException`.
     pub fn is_max_number_of_delivery_channels_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::MaxNumberOfDeliveryChannelsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::NoAvailableConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::NoAvailableConfigurationRecorderException`.
     pub fn is_no_available_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliveryChannelErrorKind::NoAvailableConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliveryChannelErrorKind::NoSuchBucketException`.
+    /// Returns `true` if the error kind is `PutDeliveryChannelErrorKind::NoSuchBucketException`.
     pub fn is_no_such_bucket_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9439,7 +9439,7 @@ pub enum PutEvaluationsErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEvaluationsError {
@@ -9504,21 +9504,21 @@ impl PutEvaluationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEvaluationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutEvaluationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEvaluationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutEvaluationsErrorKind::InvalidResultTokenException`.
+    /// Returns `true` if the error kind is `PutEvaluationsErrorKind::InvalidResultTokenException`.
     pub fn is_invalid_result_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEvaluationsErrorKind::InvalidResultTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PutEvaluationsErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `PutEvaluationsErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9556,7 +9556,7 @@ pub enum PutExternalEvaluationErrorKind {
     /// <p>One or more Config rules in the request are invalid. Verify
     /// that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutExternalEvaluationError {
@@ -9620,14 +9620,14 @@ impl PutExternalEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutExternalEvaluationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutExternalEvaluationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutExternalEvaluationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutExternalEvaluationErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `PutExternalEvaluationErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9744,7 +9744,7 @@ pub enum PutOrganizationConfigRuleErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutOrganizationConfigRuleError {
@@ -9832,21 +9832,21 @@ impl PutOrganizationConfigRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::MaxNumberOfOrganizationConfigRulesExceededException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::MaxNumberOfOrganizationConfigRulesExceededException`.
     pub fn is_max_number_of_organization_config_rules_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9855,35 +9855,35 @@ impl PutOrganizationConfigRuleError {
             )
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::OrganizationAllFeaturesNotEnabledException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::OrganizationAllFeaturesNotEnabledException`.
     pub fn is_organization_all_features_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::OrganizationAllFeaturesNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConfigRuleErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConfigRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutOrganizationConfigRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10025,7 +10025,7 @@ pub enum PutOrganizationConformancePackErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutOrganizationConformancePackError {
@@ -10116,50 +10116,50 @@ impl PutOrganizationConformancePackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConformancePackErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::MaxNumberOfOrganizationConformancePacksExceededException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::MaxNumberOfOrganizationConformancePacksExceededException`.
     pub fn is_max_number_of_organization_conformance_packs_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutOrganizationConformancePackErrorKind::MaxNumberOfOrganizationConformancePacksExceededException(_))
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConformancePackErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationAccessDeniedException`.
     pub fn is_organization_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConformancePackErrorKind::OrganizationAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationAllFeaturesNotEnabledException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationAllFeaturesNotEnabledException`.
     pub fn is_organization_all_features_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConformancePackErrorKind::OrganizationAllFeaturesNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationConformancePackTemplateValidationException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::OrganizationConformancePackTemplateValidationException`.
     pub fn is_organization_conformance_pack_template_validation_exception(&self) -> bool {
         matches!(&self.kind, PutOrganizationConformancePackErrorKind::OrganizationConformancePackTemplateValidationException(_))
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutOrganizationConformancePackErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutOrganizationConformancePackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutOrganizationConformancePackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10241,7 +10241,7 @@ pub enum PutRemediationConfigurationsErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRemediationConfigurationsError {
@@ -10309,14 +10309,14 @@ impl PutRemediationConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRemediationConfigurationsErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutRemediationConfigurationsErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRemediationConfigurationsErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutRemediationConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutRemediationConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10378,7 +10378,7 @@ pub enum PutRemediationExceptionsErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify
     /// that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRemediationExceptionsError {
@@ -10446,14 +10446,14 @@ impl PutRemediationExceptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRemediationExceptionsErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutRemediationExceptionsErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRemediationExceptionsErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutRemediationExceptionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutRemediationExceptionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10521,7 +10521,7 @@ pub enum PutResourceConfigErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourceConfigError {
@@ -10591,28 +10591,28 @@ impl PutResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourceConfigErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `PutResourceConfigErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceConfigErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceConfigErrorKind::MaxActiveResourcesExceededException`.
+    /// Returns `true` if the error kind is `PutResourceConfigErrorKind::MaxActiveResourcesExceededException`.
     pub fn is_max_active_resources_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceConfigErrorKind::MaxActiveResourcesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceConfigErrorKind::NoRunningConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `PutResourceConfigErrorKind::NoRunningConfigurationRecorderException`.
     pub fn is_no_running_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceConfigErrorKind::NoRunningConfigurationRecorderException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutResourceConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10654,7 +10654,7 @@ pub enum PutRetentionConfigurationErrorKind {
     MaxNumberOfRetentionConfigurationsExceededException(
         crate::error::MaxNumberOfRetentionConfigurationsExceededException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRetentionConfigurationError {
@@ -10724,14 +10724,14 @@ impl PutRetentionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRetentionConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutRetentionConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionConfigurationErrorKind::MaxNumberOfRetentionConfigurationsExceededException`.
+    /// Returns `true` if the error kind is `PutRetentionConfigurationErrorKind::MaxNumberOfRetentionConfigurationsExceededException`.
     pub fn is_max_number_of_retention_configurations_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10778,7 +10778,7 @@ pub enum PutStoredQueryErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutStoredQueryError {
@@ -10845,18 +10845,18 @@ impl PutStoredQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutStoredQueryErrorKind::ResourceConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutStoredQueryErrorKind::ResourceConcurrentModificationException`.
     pub fn is_resource_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStoredQueryErrorKind::ResourceConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutStoredQueryErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `PutStoredQueryErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, PutStoredQueryErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `PutStoredQueryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutStoredQueryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutStoredQueryErrorKind::ValidationException(_))
     }
@@ -10897,7 +10897,7 @@ pub enum SelectAggregateResourceConfigErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SelectAggregateResourceConfigError {
@@ -10972,28 +10972,28 @@ impl SelectAggregateResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidExpressionException`.
+    /// Returns `true` if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidExpressionException`.
     pub fn is_invalid_expression_exception(&self) -> bool {
         matches!(
             &self.kind,
             SelectAggregateResourceConfigErrorKind::InvalidExpressionException(_)
         )
     }
-    /// Returns true if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             SelectAggregateResourceConfigErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `SelectAggregateResourceConfigErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             SelectAggregateResourceConfigErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `SelectAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
+    /// Returns `true` if the error kind is `SelectAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException`.
     pub fn is_no_such_configuration_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11040,7 +11040,7 @@ pub enum SelectResourceConfigErrorKind {
     /// <code>nextToken</code> string that was returned in the previous
     /// response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SelectResourceConfigError {
@@ -11105,21 +11105,21 @@ impl SelectResourceConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SelectResourceConfigErrorKind::InvalidExpressionException`.
+    /// Returns `true` if the error kind is `SelectResourceConfigErrorKind::InvalidExpressionException`.
     pub fn is_invalid_expression_exception(&self) -> bool {
         matches!(
             &self.kind,
             SelectResourceConfigErrorKind::InvalidExpressionException(_)
         )
     }
-    /// Returns true if the error kind is `SelectResourceConfigErrorKind::InvalidLimitException`.
+    /// Returns `true` if the error kind is `SelectResourceConfigErrorKind::InvalidLimitException`.
     pub fn is_invalid_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             SelectResourceConfigErrorKind::InvalidLimitException(_)
         )
     }
-    /// Returns true if the error kind is `SelectResourceConfigErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `SelectResourceConfigErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11189,7 +11189,7 @@ pub enum StartConfigRulesEvaluationErrorKind {
     /// </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartConfigRulesEvaluationError {
@@ -11257,28 +11257,28 @@ impl StartConfigRulesEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartConfigRulesEvaluationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartConfigRulesEvaluationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartConfigRulesEvaluationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartConfigRulesEvaluationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartConfigRulesEvaluationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartConfigRulesEvaluationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartConfigRulesEvaluationErrorKind::NoSuchConfigRuleException`.
+    /// Returns `true` if the error kind is `StartConfigRulesEvaluationErrorKind::NoSuchConfigRuleException`.
     pub fn is_no_such_config_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartConfigRulesEvaluationErrorKind::NoSuchConfigRuleException(_)
         )
     }
-    /// Returns true if the error kind is `StartConfigRulesEvaluationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartConfigRulesEvaluationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11319,7 +11319,7 @@ pub enum StartConfigurationRecorderErrorKind {
     /// <p>You have specified a configuration recorder that does not
     /// exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartConfigurationRecorderError {
@@ -11387,14 +11387,14 @@ impl StartConfigurationRecorderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartConfigurationRecorderErrorKind::NoAvailableDeliveryChannelException`.
+    /// Returns `true` if the error kind is `StartConfigurationRecorderErrorKind::NoAvailableDeliveryChannelException`.
     pub fn is_no_available_delivery_channel_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartConfigurationRecorderErrorKind::NoAvailableDeliveryChannelException(_)
         )
     }
-    /// Returns true if the error kind is `StartConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `StartConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11458,7 +11458,7 @@ pub enum StartRemediationExecutionErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You specified an Config rule without a remediation configuration.</p>
     NoSuchRemediationConfigurationException(crate::error::NoSuchRemediationConfigurationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartRemediationExecutionError {
@@ -11529,21 +11529,21 @@ impl StartRemediationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartRemediationExecutionErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `StartRemediationExecutionErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRemediationExecutionErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `StartRemediationExecutionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartRemediationExecutionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRemediationExecutionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartRemediationExecutionErrorKind::NoSuchRemediationConfigurationException`.
+    /// Returns `true` if the error kind is `StartRemediationExecutionErrorKind::NoSuchRemediationConfigurationException`.
     pub fn is_no_such_remediation_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11584,7 +11584,7 @@ pub enum StopConfigurationRecorderErrorKind {
     /// <p>You have specified a configuration recorder that does not
     /// exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopConfigurationRecorderError {
@@ -11649,7 +11649,7 @@ impl StopConfigurationRecorderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
+    /// Returns `true` if the error kind is `StopConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException`.
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11689,7 +11689,7 @@ pub enum TagResourceErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -11754,18 +11754,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -11800,7 +11800,7 @@ pub enum UntagResourceErrorKind {
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -11864,14 +11864,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

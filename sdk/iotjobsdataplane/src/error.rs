@@ -24,7 +24,7 @@ pub enum DescribeJobExecutionErrorKind {
     TerminalStateException(crate::error::TerminalStateException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobExecutionError {
@@ -92,42 +92,42 @@ impl DescribeJobExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::CertificateValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobExecutionErrorKind::CertificateValidationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobExecutionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobExecutionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::TerminalStateException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::TerminalStateException`.
     pub fn is_terminal_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobExecutionErrorKind::TerminalStateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobExecutionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -172,7 +172,7 @@ pub enum GetPendingJobExecutionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPendingJobExecutionsError {
@@ -241,35 +241,35 @@ impl GetPendingJobExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPendingJobExecutionsErrorKind::CertificateValidationException`.
+    /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPendingJobExecutionsErrorKind::CertificateValidationException(_)
         )
     }
-    /// Returns true if the error kind is `GetPendingJobExecutionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPendingJobExecutionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetPendingJobExecutionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPendingJobExecutionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPendingJobExecutionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -315,7 +315,7 @@ pub enum StartNextPendingJobExecutionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartNextPendingJobExecutionError {
@@ -388,35 +388,35 @@ impl StartNextPendingJobExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartNextPendingJobExecutionErrorKind::CertificateValidationException`.
+    /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartNextPendingJobExecutionErrorKind::CertificateValidationException(_)
         )
     }
-    /// Returns true if the error kind is `StartNextPendingJobExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartNextPendingJobExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartNextPendingJobExecutionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartNextPendingJobExecutionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartNextPendingJobExecutionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -470,7 +470,7 @@ pub enum UpdateJobExecutionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobExecutionError {
@@ -538,42 +538,42 @@ impl UpdateJobExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::CertificateValidationException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobExecutionErrorKind::CertificateValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobExecutionErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobExecutionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobExecutionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobExecutionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

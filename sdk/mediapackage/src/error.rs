@@ -24,7 +24,7 @@ pub enum ConfigureLogsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfigureLogsError {
@@ -92,36 +92,36 @@ impl ConfigureLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ConfigureLogsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ConfigureLogsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -168,7 +168,7 @@ pub enum CreateChannelErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
@@ -236,36 +236,36 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -312,7 +312,7 @@ pub enum CreateHarvestJobErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHarvestJobError {
@@ -380,36 +380,36 @@ impl CreateHarvestJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateHarvestJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHarvestJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateHarvestJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHarvestJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHarvestJobErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHarvestJobErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateHarvestJobErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -456,7 +456,7 @@ pub enum CreateOriginEndpointErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOriginEndpointError {
@@ -524,42 +524,42 @@ impl CreateOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginEndpointErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginEndpointErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateOriginEndpointErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -606,7 +606,7 @@ pub enum DeleteChannelErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
@@ -674,36 +674,36 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -750,7 +750,7 @@ pub enum DeleteOriginEndpointErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOriginEndpointError {
@@ -818,42 +818,42 @@ impl DeleteOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginEndpointErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginEndpointErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeleteOriginEndpointErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -900,7 +900,7 @@ pub enum DescribeChannelErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
@@ -968,36 +968,36 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1044,7 +1044,7 @@ pub enum DescribeHarvestJobErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHarvestJobError {
@@ -1112,42 +1112,42 @@ impl DescribeHarvestJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHarvestJobErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHarvestJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHarvestJobErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHarvestJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHarvestJobErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHarvestJobErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribeHarvestJobErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1194,7 +1194,7 @@ pub enum DescribeOriginEndpointErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOriginEndpointError {
@@ -1262,42 +1262,42 @@ impl DescribeOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOriginEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOriginEndpointErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOriginEndpointErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribeOriginEndpointErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1344,7 +1344,7 @@ pub enum ListChannelsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
@@ -1412,36 +1412,36 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1488,7 +1488,7 @@ pub enum ListHarvestJobsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHarvestJobsError {
@@ -1556,36 +1556,36 @@ impl ListHarvestJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListHarvestJobsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHarvestJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListHarvestJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHarvestJobsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHarvestJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListHarvestJobsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListHarvestJobsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1632,7 +1632,7 @@ pub enum ListOriginEndpointsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOriginEndpointsError {
@@ -1700,42 +1700,42 @@ impl ListOriginEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginEndpointsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginEndpointsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginEndpointsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginEndpointsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginEndpointsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginEndpointsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListOriginEndpointsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1770,7 +1770,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1866,7 +1866,7 @@ pub enum RotateChannelCredentialsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateChannelCredentialsError {
@@ -1938,42 +1938,42 @@ impl RotateChannelCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateChannelCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateChannelCredentialsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateChannelCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateChannelCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateChannelCredentialsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RotateChannelCredentialsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `RotateChannelCredentialsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2020,7 +2020,7 @@ pub enum RotateIngestEndpointCredentialsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateIngestEndpointCredentialsError {
@@ -2099,42 +2099,42 @@ impl RotateIngestEndpointCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateIngestEndpointCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateIngestEndpointCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2177,7 +2177,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2261,7 +2261,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2357,7 +2357,7 @@ pub enum UpdateChannelErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
@@ -2425,36 +2425,36 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2501,7 +2501,7 @@ pub enum UpdateOriginEndpointErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOriginEndpointError {
@@ -2569,42 +2569,42 @@ impl UpdateOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginEndpointErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginEndpointErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateOriginEndpointErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,

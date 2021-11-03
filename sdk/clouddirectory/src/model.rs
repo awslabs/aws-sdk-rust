@@ -495,8 +495,8 @@ pub enum TypedAttributeValue {
     StringValue(std::string::String),
 }
 impl TypedAttributeValue {
-    /// Tries to convert the enum instance into its [`TypedAttributeValue`](crate::model::TypedAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_binary_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let TypedAttributeValue::BinaryValue(val) = &self {
             Ok(&val)
@@ -504,12 +504,12 @@ impl TypedAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TypedAttributeValue` variant.
+    /// Returns true if this is a [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue).
     pub fn is_binary_value(&self) -> bool {
         self.as_binary_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TypedAttributeValue`](crate::model::TypedAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BooleanValue`](crate::model::TypedAttributeValue::BooleanValue), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let TypedAttributeValue::BooleanValue(val) = &self {
             Ok(&val)
@@ -517,12 +517,12 @@ impl TypedAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TypedAttributeValue` variant.
+    /// Returns true if this is a [`BooleanValue`](crate::model::TypedAttributeValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TypedAttributeValue`](crate::model::TypedAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_datetime_value(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
         if let TypedAttributeValue::DatetimeValue(val) = &self {
             Ok(&val)
@@ -530,12 +530,12 @@ impl TypedAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TypedAttributeValue` variant.
+    /// Returns true if this is a [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue).
     pub fn is_datetime_value(&self) -> bool {
         self.as_datetime_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TypedAttributeValue`](crate::model::TypedAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`NumberValue`](crate::model::TypedAttributeValue::NumberValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::NumberValue(val) = &self {
             Ok(&val)
@@ -543,12 +543,12 @@ impl TypedAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TypedAttributeValue` variant.
+    /// Returns true if this is a [`NumberValue`](crate::model::TypedAttributeValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TypedAttributeValue`](crate::model::TypedAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::TypedAttributeValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::StringValue(val) = &self {
             Ok(&val)
@@ -556,7 +556,7 @@ impl TypedAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TypedAttributeValue` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::TypedAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }

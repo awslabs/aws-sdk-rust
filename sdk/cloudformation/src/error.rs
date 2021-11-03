@@ -16,7 +16,7 @@ pub enum ActivateTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateTypeError {
@@ -80,11 +80,11 @@ impl ActivateTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `ActivateTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, ActivateTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `ActivateTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `ActivateTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, ActivateTypeErrorKind::TypeNotFoundException(_))
     }
@@ -116,7 +116,7 @@ pub enum BatchDescribeTypeConfigurationsErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension configuration cannot be found.</p>
     TypeConfigurationNotFoundException(crate::error::TypeConfigurationNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDescribeTypeConfigurationsError {
@@ -185,14 +185,14 @@ impl BatchDescribeTypeConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException`.
     pub fn is_type_configuration_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -227,7 +227,7 @@ pub struct CancelUpdateStackError {
 pub enum CancelUpdateStackErrorKind {
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelUpdateStackError {
@@ -290,7 +290,7 @@ impl CancelUpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelUpdateStackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CancelUpdateStackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -322,7 +322,7 @@ pub struct ContinueUpdateRollbackError {
 pub enum ContinueUpdateRollbackErrorKind {
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ContinueUpdateRollbackError {
@@ -385,7 +385,7 @@ impl ContinueUpdateRollbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -424,7 +424,7 @@ pub enum CreateChangeSetErrorKind {
     /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
     /// the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChangeSetError {
@@ -489,21 +489,21 @@ impl CreateChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChangeSetErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateChangeSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangeSetErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChangeSetErrorKind::InsufficientCapabilitiesException`.
+    /// Returns `true` if the error kind is `CreateChangeSetErrorKind::InsufficientCapabilitiesException`.
     pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangeSetErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChangeSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateChangeSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -546,7 +546,7 @@ pub enum CreateStackErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackError {
@@ -612,22 +612,22 @@ impl CreateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateStackErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::InsufficientCapabilitiesException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::InsufficientCapabilitiesException`.
     pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateStackErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -676,7 +676,7 @@ pub enum CreateStackInstancesErrorKind {
     /// <p>Another operation has been performed on this stack set since the specified operation
     /// was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackInstancesError {
@@ -746,42 +746,42 @@ impl CreateStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackInstancesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::OperationIdAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::OperationIdAlreadyExistsException`.
     pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackInstancesErrorKind::StaleRequestException`.
+    /// Returns `true` if the error kind is `CreateStackInstancesErrorKind::StaleRequestException`.
     pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -826,7 +826,7 @@ pub enum CreateStackSetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified name is already in use.</p>
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackSetError {
@@ -891,21 +891,21 @@ impl CreateStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStackSetErrorKind::CreatedButModifiedException`.
+    /// Returns `true` if the error kind is `CreateStackSetErrorKind::CreatedButModifiedException`.
     pub fn is_created_but_modified_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackSetErrorKind::CreatedButModifiedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStackSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackSetErrorKind::NameAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateStackSetErrorKind::NameAlreadyExistsException`.
     pub fn is_name_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -941,7 +941,7 @@ pub enum DeactivateTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateTypeError {
@@ -1005,11 +1005,11 @@ impl DeactivateTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `DeactivateTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, DeactivateTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `DeactivateTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `DeactivateTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1044,7 +1044,7 @@ pub enum DeleteChangeSetErrorKind {
     /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
     /// <code>UPDATE_IN_PROGRESS</code>.</p>
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChangeSetError {
@@ -1107,7 +1107,7 @@ impl DeleteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChangeSetErrorKind::InvalidChangeSetStatusException`.
+    /// Returns `true` if the error kind is `DeleteChangeSetErrorKind::InvalidChangeSetStatusException`.
     pub fn is_invalid_change_set_status_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1139,7 +1139,7 @@ pub struct DeleteStackError {
 pub enum DeleteStackErrorKind {
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackError {
@@ -1202,7 +1202,7 @@ impl DeleteStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1244,7 +1244,7 @@ pub enum DeleteStackInstancesErrorKind {
     /// <p>Another operation has been performed on this stack set since the specified operation
     /// was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackInstancesError {
@@ -1313,35 +1313,35 @@ impl DeleteStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStackInstancesErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DeleteStackInstancesErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException`.
+    /// Returns `true` if the error kind is `DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException`.
     pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackInstancesErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteStackInstancesErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackInstancesErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStackInstancesErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackInstancesErrorKind::StaleRequestException`.
+    /// Returns `true` if the error kind is `DeleteStackInstancesErrorKind::StaleRequestException`.
     pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1384,7 +1384,7 @@ pub enum DeleteStackSetErrorKind {
     /// instances. Delete all stack instances from the stack set before deleting the stack
     /// set.</p>
     StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackSetError {
@@ -1448,14 +1448,14 @@ impl DeleteStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStackSetErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteStackSetErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackSetErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackSetErrorKind::StackSetNotEmptyException`.
+    /// Returns `true` if the error kind is `DeleteStackSetErrorKind::StackSetNotEmptyException`.
     pub fn is_stack_set_not_empty_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1490,7 +1490,7 @@ pub enum DeregisterTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTypeError {
@@ -1554,11 +1554,11 @@ impl DeregisterTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `DeregisterTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, DeregisterTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `DeregisterTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1589,7 +1589,7 @@ pub struct DescribeAccountLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
@@ -1676,7 +1676,7 @@ pub enum DescribeChangeSetErrorKind {
     /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a
     /// stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChangeSetError {
@@ -1739,7 +1739,7 @@ impl DescribeChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::ChangeSetNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::ChangeSetNotFoundException`.
     pub fn is_change_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1771,7 +1771,7 @@ pub struct DescribePublisherError {
 pub enum DescribePublisherErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePublisherError {
@@ -1834,7 +1834,7 @@ impl DescribePublisherError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePublisherErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `DescribePublisherErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1864,7 +1864,7 @@ pub struct DescribeStackDriftDetectionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackDriftDetectionStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackDriftDetectionStatusError {
@@ -1951,7 +1951,7 @@ pub struct DescribeStackEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackEventsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackEventsError {
@@ -2039,7 +2039,7 @@ pub enum DescribeStackInstanceErrorKind {
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackInstanceError {
@@ -2103,14 +2103,14 @@ impl DescribeStackInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStackInstanceErrorKind::StackInstanceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackInstanceErrorKind::StackInstanceNotFoundException`.
     pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStackInstanceErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStackInstanceErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackInstanceErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2141,7 +2141,7 @@ pub struct DescribeStackResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackResourceError {
@@ -2225,7 +2225,7 @@ pub struct DescribeStackResourceDriftsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackResourceDriftsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackResourceDriftsError {
@@ -2309,7 +2309,7 @@ pub struct DescribeStackResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackResourcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackResourcesError {
@@ -2393,7 +2393,7 @@ pub struct DescribeStacksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStacksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStacksError {
@@ -2479,7 +2479,7 @@ pub struct DescribeStackSetError {
 pub enum DescribeStackSetErrorKind {
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackSetError {
@@ -2542,7 +2542,7 @@ impl DescribeStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStackSetErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackSetErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2576,7 +2576,7 @@ pub enum DescribeStackSetOperationErrorKind {
     OperationNotFoundException(crate::error::OperationNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackSetOperationError {
@@ -2640,14 +2640,14 @@ impl DescribeStackSetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStackSetOperationErrorKind::OperationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackSetOperationErrorKind::OperationNotFoundException`.
     pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStackSetOperationErrorKind::OperationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStackSetOperationErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackSetOperationErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2682,7 +2682,7 @@ pub enum DescribeTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTypeError {
@@ -2746,11 +2746,11 @@ impl DescribeTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `DescribeTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, DescribeTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `DescribeTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeTypeErrorKind::TypeNotFoundException(_))
     }
@@ -2780,7 +2780,7 @@ pub struct DescribeTypeRegistrationError {
 pub enum DescribeTypeRegistrationErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTypeRegistrationError {
@@ -2843,7 +2843,7 @@ impl DescribeTypeRegistrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTypeRegistrationErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `DescribeTypeRegistrationErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2873,7 +2873,7 @@ pub struct DetectStackDriftError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetectStackDriftErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectStackDriftError {
@@ -2957,7 +2957,7 @@ pub struct DetectStackResourceDriftError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetectStackResourceDriftErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectStackResourceDriftError {
@@ -3048,7 +3048,7 @@ pub enum DetectStackSetDriftErrorKind {
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectStackSetDriftError {
@@ -3113,21 +3113,21 @@ impl DetectStackSetDriftError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectStackSetDriftErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DetectStackSetDriftErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectStackSetDriftErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DetectStackSetDriftErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DetectStackSetDriftErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectStackSetDriftErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DetectStackSetDriftErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `DetectStackSetDriftErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3159,7 +3159,7 @@ pub struct EstimateTemplateCostError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EstimateTemplateCostErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EstimateTemplateCostError {
@@ -3255,7 +3255,7 @@ pub enum ExecuteChangeSetErrorKind {
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteChangeSetError {
@@ -3321,28 +3321,28 @@ impl ExecuteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteChangeSetErrorKind::ChangeSetNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteChangeSetErrorKind::ChangeSetNotFoundException`.
     pub fn is_change_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteChangeSetErrorKind::ChangeSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteChangeSetErrorKind::InsufficientCapabilitiesException`.
+    /// Returns `true` if the error kind is `ExecuteChangeSetErrorKind::InsufficientCapabilitiesException`.
     pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteChangeSetErrorKind::InvalidChangeSetStatusException`.
+    /// Returns `true` if the error kind is `ExecuteChangeSetErrorKind::InvalidChangeSetStatusException`.
     pub fn is_invalid_change_set_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteChangeSetErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ExecuteChangeSetErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3375,7 +3375,7 @@ pub struct GetStackPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStackPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStackPolicyError {
@@ -3462,7 +3462,7 @@ pub enum GetTemplateErrorKind {
     /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a
     /// stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTemplateError {
@@ -3525,7 +3525,7 @@ impl GetTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTemplateErrorKind::ChangeSetNotFoundException`.
+    /// Returns `true` if the error kind is `GetTemplateErrorKind::ChangeSetNotFoundException`.
     pub fn is_change_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3557,7 +3557,7 @@ pub struct GetTemplateSummaryError {
 pub enum GetTemplateSummaryErrorKind {
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTemplateSummaryError {
@@ -3620,7 +3620,7 @@ impl GetTemplateSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTemplateSummaryErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `GetTemplateSummaryErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3669,7 +3669,7 @@ pub enum ImportStacksToStackSetErrorKind {
     /// <p>Another operation has been performed on this stack set since the specified operation
     /// was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportStacksToStackSetError {
@@ -3740,49 +3740,49 @@ impl ImportStacksToStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException`.
     pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::StackNotFoundException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::StackNotFoundException`.
     pub fn is_stack_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::StackNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportStacksToStackSetErrorKind::StackSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ImportStacksToStackSetErrorKind::StaleRequestException`.
+    /// Returns `true` if the error kind is `ImportStacksToStackSetErrorKind::StaleRequestException`.
     pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3820,7 +3820,7 @@ pub struct ListChangeSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChangeSetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChangeSetsError {
@@ -3904,7 +3904,7 @@ pub struct ListExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExportsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExportsError {
@@ -3988,7 +3988,7 @@ pub struct ListImportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImportsError {
@@ -4074,7 +4074,7 @@ pub struct ListStackInstancesError {
 pub enum ListStackInstancesErrorKind {
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackInstancesError {
@@ -4137,7 +4137,7 @@ impl ListStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStackInstancesErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `ListStackInstancesErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4167,7 +4167,7 @@ pub struct ListStackResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStackResourcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackResourcesError {
@@ -4251,7 +4251,7 @@ pub struct ListStacksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStacksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStacksError {
@@ -4339,7 +4339,7 @@ pub enum ListStackSetOperationResultsErrorKind {
     OperationNotFoundException(crate::error::OperationNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackSetOperationResultsError {
@@ -4407,14 +4407,14 @@ impl ListStackSetOperationResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStackSetOperationResultsErrorKind::OperationNotFoundException`.
+    /// Returns `true` if the error kind is `ListStackSetOperationResultsErrorKind::OperationNotFoundException`.
     pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStackSetOperationResultsErrorKind::OperationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStackSetOperationResultsErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `ListStackSetOperationResultsErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4451,7 +4451,7 @@ pub struct ListStackSetOperationsError {
 pub enum ListStackSetOperationsErrorKind {
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackSetOperationsError {
@@ -4514,7 +4514,7 @@ impl ListStackSetOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStackSetOperationsErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `ListStackSetOperationsErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4544,7 +4544,7 @@ pub struct ListStackSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStackSetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackSetsError {
@@ -4630,7 +4630,7 @@ pub struct ListTypeRegistrationsError {
 pub enum ListTypeRegistrationsErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypeRegistrationsError {
@@ -4693,7 +4693,7 @@ impl ListTypeRegistrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypeRegistrationsErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `ListTypeRegistrationsErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4725,7 +4725,7 @@ pub struct ListTypesError {
 pub enum ListTypesErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypesError {
@@ -4788,7 +4788,7 @@ impl ListTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, ListTypesErrorKind::CfnRegistryException(_))
     }
@@ -4817,7 +4817,7 @@ pub struct ListTypeVersionsError {
 pub enum ListTypeVersionsErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypeVersionsError {
@@ -4880,7 +4880,7 @@ impl ListTypeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypeVersionsErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `ListTypeVersionsErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4914,7 +4914,7 @@ pub enum PublishTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishTypeError {
@@ -4978,11 +4978,11 @@ impl PublishTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `PublishTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, PublishTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `PublishTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `PublishTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, PublishTypeErrorKind::TypeNotFoundException(_))
     }
@@ -5016,7 +5016,7 @@ pub enum RecordHandlerProgressErrorKind {
     /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
     /// users.</p>
     OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecordHandlerProgressError {
@@ -5084,14 +5084,14 @@ impl RecordHandlerProgressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecordHandlerProgressErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `RecordHandlerProgressErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecordHandlerProgressErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `RecordHandlerProgressErrorKind::OperationStatusCheckFailedException`.
+    /// Returns `true` if the error kind is `RecordHandlerProgressErrorKind::OperationStatusCheckFailedException`.
     pub fn is_operation_status_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5126,7 +5126,7 @@ pub struct RegisterPublisherError {
 pub enum RegisterPublisherErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterPublisherError {
@@ -5189,7 +5189,7 @@ impl RegisterPublisherError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterPublisherErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `RegisterPublisherErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5221,7 +5221,7 @@ pub struct RegisterTypeError {
 pub enum RegisterTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTypeError {
@@ -5284,7 +5284,7 @@ impl RegisterTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `RegisterTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, RegisterTypeErrorKind::CfnRegistryException(_))
     }
@@ -5313,7 +5313,7 @@ pub struct RollbackStackError {
 pub enum RollbackStackErrorKind {
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RollbackStackError {
@@ -5376,7 +5376,7 @@ impl RollbackStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RollbackStackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `RollbackStackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5406,7 +5406,7 @@ pub struct SetStackPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetStackPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetStackPolicyError {
@@ -5494,7 +5494,7 @@ pub enum SetTypeConfigurationErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTypeConfigurationError {
@@ -5558,14 +5558,14 @@ impl SetTypeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTypeConfigurationErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `SetTypeConfigurationErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTypeConfigurationErrorKind::CfnRegistryException(_)
         )
     }
-    /// Returns true if the error kind is `SetTypeConfigurationErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `SetTypeConfigurationErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5600,7 +5600,7 @@ pub enum SetTypeDefaultVersionErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTypeDefaultVersionError {
@@ -5664,14 +5664,14 @@ impl SetTypeDefaultVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTypeDefaultVersionErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `SetTypeDefaultVersionErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTypeDefaultVersionErrorKind::CfnRegistryException(_)
         )
     }
-    /// Returns true if the error kind is `SetTypeDefaultVersionErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `SetTypeDefaultVersionErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5702,7 +5702,7 @@ pub struct SignalResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SignalResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignalResourceError {
@@ -5792,7 +5792,7 @@ pub enum StopStackSetOperationErrorKind {
     OperationNotFoundException(crate::error::OperationNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStackSetOperationError {
@@ -5857,21 +5857,21 @@ impl StopStackSetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopStackSetOperationErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `StopStackSetOperationErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStackSetOperationErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `StopStackSetOperationErrorKind::OperationNotFoundException`.
+    /// Returns `true` if the error kind is `StopStackSetOperationErrorKind::OperationNotFoundException`.
     pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStackSetOperationErrorKind::OperationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopStackSetOperationErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `StopStackSetOperationErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5907,7 +5907,7 @@ pub enum TestTypeErrorKind {
     CfnRegistryException(crate::error::CfnRegistryException),
     /// <p>The specified extension does not exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestTypeError {
@@ -5971,11 +5971,11 @@ impl TestTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestTypeErrorKind::CfnRegistryException`.
+    /// Returns `true` if the error kind is `TestTypeErrorKind::CfnRegistryException`.
     pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(&self.kind, TestTypeErrorKind::CfnRegistryException(_))
     }
-    /// Returns true if the error kind is `TestTypeErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `TestTypeErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, TestTypeErrorKind::TypeNotFoundException(_))
     }
@@ -6008,7 +6008,7 @@ pub enum UpdateStackErrorKind {
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackError {
@@ -6072,14 +6072,14 @@ impl UpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::InsufficientCapabilitiesException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::InsufficientCapabilitiesException`.
     pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::TokenAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::TokenAlreadyExistsException`.
     pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6124,7 +6124,7 @@ pub enum UpdateStackInstancesErrorKind {
     /// <p>Another operation has been performed on this stack set since the specified operation
     /// was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackInstancesError {
@@ -6194,42 +6194,42 @@ impl UpdateStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException`.
     pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::StackInstanceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::StackInstanceNotFoundException`.
     pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackInstancesErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackInstancesErrorKind::StaleRequestException`.
+    /// Returns `true` if the error kind is `UpdateStackInstancesErrorKind::StaleRequestException`.
     pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6280,7 +6280,7 @@ pub enum UpdateStackSetErrorKind {
     /// <p>Another operation has been performed on this stack set since the specified operation
     /// was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackSetError {
@@ -6348,42 +6348,42 @@ impl UpdateStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackSetErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::OperationIdAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::OperationIdAlreadyExistsException`.
     pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackSetErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackSetErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::StackInstanceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::StackInstanceNotFoundException`.
     pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackSetErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::StackSetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::StackSetNotFoundException`.
     pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackSetErrorKind::StackSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackSetErrorKind::StaleRequestException`.
+    /// Returns `true` if the error kind is `UpdateStackSetErrorKind::StaleRequestException`.
     pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6418,7 +6418,7 @@ pub struct UpdateTerminationProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTerminationProtectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTerminationProtectionError {
@@ -6502,7 +6502,7 @@ pub struct ValidateTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateTemplateError {

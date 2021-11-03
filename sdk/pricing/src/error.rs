@@ -22,7 +22,7 @@ pub enum DescribeServicesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServicesError {
@@ -89,35 +89,35 @@ impl DescribeServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeServicesErrorKind::NotFoundException(_))
     }
@@ -158,7 +158,7 @@ pub enum GetAttributeValuesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAttributeValuesError {
@@ -225,35 +225,35 @@ impl GetAttributeValuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAttributeValuesErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `GetAttributeValuesErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttributeValuesErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttributeValuesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetAttributeValuesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttributeValuesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttributeValuesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetAttributeValuesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttributeValuesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttributeValuesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAttributeValuesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttributeValuesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttributeValuesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAttributeValuesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -297,7 +297,7 @@ pub enum GetProductsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProductsError {
@@ -364,32 +364,32 @@ impl GetProductsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProductsErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `GetProductsErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProductsErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetProductsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetProductsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetProductsErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetProductsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetProductsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProductsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetProductsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetProductsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProductsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetProductsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetProductsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetProductsErrorKind::NotFoundException(_))
     }

@@ -27,7 +27,7 @@ pub enum AssociateCustomerGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateCustomerGatewayError {
@@ -98,49 +98,49 @@ impl AssociateCustomerGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomerGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomerGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateCustomerGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -193,7 +193,7 @@ pub enum AssociateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateLinkError {
@@ -262,40 +262,40 @@ impl AssociateLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AssociateLinkErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, AssociateLinkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLinkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLinkErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AssociateLinkErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `AssociateLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AssociateLinkErrorKind::ValidationException(_))
     }
@@ -343,7 +343,7 @@ pub enum AssociateTransitGatewayConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTransitGatewayConnectPeerError {
@@ -427,49 +427,49 @@ impl AssociateTransitGatewayConnectPeerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTransitGatewayConnectPeerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateTransitGatewayConnectPeerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -530,7 +530,7 @@ pub enum CreateConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -598,39 +598,39 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -680,7 +680,7 @@ pub enum CreateDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeviceError {
@@ -749,40 +749,40 @@ impl CreateDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDeviceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDeviceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDeviceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDeviceErrorKind::ValidationException(_))
     }
@@ -828,7 +828,7 @@ pub enum CreateGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGlobalNetworkError {
@@ -896,42 +896,42 @@ impl CreateGlobalNetworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalNetworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalNetworkErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalNetworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalNetworkErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalNetworkErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalNetworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateGlobalNetworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -981,7 +981,7 @@ pub enum CreateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLinkError {
@@ -1050,37 +1050,37 @@ impl CreateLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateLinkErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateLinkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateLinkErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLinkErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateLinkErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateLinkErrorKind::ValidationException(_))
     }
@@ -1128,7 +1128,7 @@ pub enum CreateSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSiteError {
@@ -1197,37 +1197,37 @@ impl CreateSiteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateSiteErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateSiteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateSiteErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSiteErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSiteErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateSiteErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateSiteErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSiteErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSiteErrorKind::ValidationException(_))
     }
@@ -1273,7 +1273,7 @@ pub enum DeleteConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -1341,39 +1341,39 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1421,7 +1421,7 @@ pub enum DeleteDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceError {
@@ -1489,33 +1489,33 @@ impl DeleteDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeviceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeviceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeviceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeviceErrorKind::ValidationException(_))
     }
@@ -1560,7 +1560,7 @@ pub enum DeleteGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGlobalNetworkError {
@@ -1628,42 +1628,42 @@ impl DeleteGlobalNetworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalNetworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalNetworkErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalNetworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalNetworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalNetworkErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalNetworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteGlobalNetworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1711,7 +1711,7 @@ pub enum DeleteLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLinkError {
@@ -1779,30 +1779,30 @@ impl DeleteLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteLinkErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteLinkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteLinkErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteLinkErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteLinkErrorKind::ValidationException(_))
     }
@@ -1847,7 +1847,7 @@ pub enum DeleteSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSiteError {
@@ -1915,30 +1915,30 @@ impl DeleteSiteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSiteErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::ValidationException(_))
     }
@@ -1983,7 +1983,7 @@ pub enum DeregisterTransitGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTransitGatewayError {
@@ -2051,42 +2051,42 @@ impl DeregisterTransitGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTransitGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTransitGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTransitGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTransitGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTransitGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTransitGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterTransitGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2131,7 +2131,7 @@ pub enum DescribeGlobalNetworksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalNetworksError {
@@ -2198,35 +2198,35 @@ impl DescribeGlobalNetworksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGlobalNetworksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeGlobalNetworksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalNetworksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalNetworksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeGlobalNetworksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalNetworksErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalNetworksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGlobalNetworksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalNetworksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalNetworksErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeGlobalNetworksErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalNetworksErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalNetworksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeGlobalNetworksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2273,7 +2273,7 @@ pub enum DisassociateCustomerGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateCustomerGatewayError {
@@ -2343,42 +2343,42 @@ impl DisassociateCustomerGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomerGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomerGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomerGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomerGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomerGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomerGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateCustomerGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2426,7 +2426,7 @@ pub enum DisassociateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateLinkError {
@@ -2494,39 +2494,39 @@ impl DisassociateLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLinkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DisassociateLinkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLinkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLinkErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2574,7 +2574,7 @@ pub enum DisassociateTransitGatewayConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTransitGatewayConnectPeerError {
@@ -2657,42 +2657,42 @@ impl DisassociateTransitGatewayConnectPeerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTransitGatewayConnectPeerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTransitGatewayConnectPeerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTransitGatewayConnectPeerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTransitGatewayConnectPeerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTransitGatewayConnectPeerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateTransitGatewayConnectPeerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2751,7 +2751,7 @@ pub enum GetConnectionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionsError {
@@ -2818,32 +2818,32 @@ impl GetConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetConnectionsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetConnectionsErrorKind::ValidationException(_))
     }
@@ -2887,7 +2887,7 @@ pub enum GetCustomerGatewayAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCustomerGatewayAssociationsError {
@@ -2962,42 +2962,42 @@ impl GetCustomerGatewayAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomerGatewayAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomerGatewayAssociationsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomerGatewayAssociationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomerGatewayAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomerGatewayAssociationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomerGatewayAssociationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetCustomerGatewayAssociationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3046,7 +3046,7 @@ pub enum GetDevicesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevicesError {
@@ -3113,26 +3113,26 @@ impl GetDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDevicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDevicesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDevicesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDevicesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetDevicesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetDevicesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDevicesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDevicesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetDevicesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetDevicesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDevicesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDevicesErrorKind::ValidationException(_))
     }
@@ -3173,7 +3173,7 @@ pub enum GetLinkAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLinkAssociationsError {
@@ -3240,35 +3240,35 @@ impl GetLinkAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLinkAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLinkAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAssociationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLinkAssociationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAssociationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLinkAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLinkAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAssociationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAssociationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLinkAssociationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3312,7 +3312,7 @@ pub enum GetLinksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLinksError {
@@ -3379,23 +3379,23 @@ impl GetLinksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLinksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLinksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetLinksErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetLinksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLinksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetLinksErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetLinksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLinksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLinksErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetLinksErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLinksErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetLinksErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetLinksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLinksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetLinksErrorKind::ValidationException(_))
     }
@@ -3409,6 +3409,842 @@ impl std::error::Error for GetLinksError {
             GetLinksErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLinksErrorKind::ValidationException(_inner) => Some(_inner),
             GetLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetNetworkResourceCounts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkResourceCountsError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkResourceCountsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkResourceCounts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkResourceCountsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkResourceCountsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkResourceCountsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetNetworkResourceCountsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetNetworkResourceCountsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkResourceCountsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkResourceCountsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkResourceCountsError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkResourceCountsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkResourceCountsError {
+    /// Creates a new `GetNetworkResourceCountsError`.
+    pub fn new(kind: GetNetworkResourceCountsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkResourceCountsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkResourceCountsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkResourceCountsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkResourceCountsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceCountsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceCountsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceCountsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceCountsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceCountsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceCountsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceCountsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceCountsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkResourceCountsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkResourceCountsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkResourceCountsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetNetworkResourceCountsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkResourceCountsErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkResourceCountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetNetworkResourceRelationships` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkResourceRelationshipsError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkResourceRelationshipsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkResourceRelationships` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkResourceRelationshipsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkResourceRelationshipsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkResourceRelationshipsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkResourceRelationshipsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkResourceRelationshipsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkResourceRelationshipsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkResourceRelationshipsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkResourceRelationshipsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkResourceRelationshipsError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkResourceRelationshipsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkResourceRelationshipsError {
+    /// Creates a new `GetNetworkResourceRelationshipsError`.
+    pub fn new(
+        kind: GetNetworkResourceRelationshipsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkResourceRelationshipsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkResourceRelationshipsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceRelationshipsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceRelationshipsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceRelationshipsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceRelationshipsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceRelationshipsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceRelationshipsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceRelationshipsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceRelationshipsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourceRelationshipsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourceRelationshipsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkResourceRelationshipsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkResourceRelationshipsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkResourceRelationshipsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetNetworkResourceRelationshipsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetNetworkResourceRelationshipsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkResourceRelationshipsErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkResourceRelationshipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetNetworkResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkResourcesError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkResourcesErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkResourcesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetNetworkResourcesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetNetworkResourcesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetNetworkResourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkResourcesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkResourcesError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkResourcesError {
+    /// Creates a new `GetNetworkResourcesError`.
+    pub fn new(kind: GetNetworkResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkResourcesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkResourcesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourcesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourcesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourcesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkResourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkResourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkResourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkResourcesErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetNetworkResourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetNetworkResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkResourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetNetworkRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkRoutesError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkRoutesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkRoutes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkRoutesErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkRoutesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkRoutesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetNetworkRoutesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetNetworkRoutesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetNetworkRoutesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkRoutesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkRoutesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkRoutesError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkRoutesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkRoutesError {
+    /// Creates a new `GetNetworkRoutesError`.
+    pub fn new(kind: GetNetworkRoutesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkRoutesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkRoutesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkRoutesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkRoutesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkRoutesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkRoutesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkRoutesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkRoutesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkRoutesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkRoutesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkRoutesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkRoutesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkRoutesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkRoutesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkRoutesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkRoutesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkRoutesErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetNetworkRoutesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetNetworkRoutesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkRoutesErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkRoutesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetNetworkTelemetry` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkTelemetryError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkTelemetryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkTelemetry` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkTelemetryErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkTelemetryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkTelemetryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetNetworkTelemetryErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetNetworkTelemetryErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetNetworkTelemetryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkTelemetryErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkTelemetryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkTelemetryError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkTelemetryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkTelemetryError {
+    /// Creates a new `GetNetworkTelemetryError`.
+    pub fn new(kind: GetNetworkTelemetryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkTelemetryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkTelemetryErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkTelemetryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkTelemetryErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkTelemetryErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkTelemetryErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkTelemetryErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkTelemetryErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkTelemetryErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkTelemetryErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkTelemetryErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkTelemetryErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkTelemetryErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkTelemetryErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkTelemetryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkTelemetryErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkTelemetryErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetNetworkTelemetryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetNetworkTelemetryErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkTelemetryErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkTelemetryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetRouteAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetRouteAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: GetRouteAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetRouteAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetRouteAnalysisErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetRouteAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetRouteAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetRouteAnalysisErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetRouteAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetRouteAnalysisErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetRouteAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetRouteAnalysisError {
+    fn code(&self) -> Option<&str> {
+        GetRouteAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetRouteAnalysisError {
+    /// Creates a new `GetRouteAnalysisError`.
+    pub fn new(kind: GetRouteAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetRouteAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetRouteAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetRouteAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetRouteAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetRouteAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRouteAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRouteAnalysisErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRouteAnalysisErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRouteAnalysisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRouteAnalysisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRouteAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRouteAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRouteAnalysisErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRouteAnalysisErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetRouteAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetRouteAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetRouteAnalysisErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetRouteAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetRouteAnalysisErrorKind::ValidationException(_inner) => Some(_inner),
+            GetRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3436,7 +4272,7 @@ pub enum GetSitesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSitesError {
@@ -3503,23 +4339,23 @@ impl GetSitesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSitesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSitesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSitesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSitesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSitesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetSitesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetSitesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSitesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSitesErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSitesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetSitesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetSitesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetSitesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSitesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSitesErrorKind::ValidationException(_))
     }
@@ -3563,7 +4399,7 @@ pub enum GetTransitGatewayConnectPeerAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayConnectPeerAssociationsError {
@@ -3646,42 +4482,42 @@ impl GetTransitGatewayConnectPeerAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayConnectPeerAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayConnectPeerAssociationsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayConnectPeerAssociationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayConnectPeerAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayConnectPeerAssociationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayConnectPeerAssociationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3740,7 +4576,7 @@ pub enum GetTransitGatewayRegistrationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayRegistrationsError {
@@ -3814,35 +4650,35 @@ impl GetTransitGatewayRegistrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTransitGatewayRegistrationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayRegistrationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayRegistrationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayRegistrationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayRegistrationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayRegistrationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayRegistrationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayRegistrationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayRegistrationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayRegistrationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayRegistrationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTransitGatewayRegistrationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetTransitGatewayRegistrationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetTransitGatewayRegistrationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3890,7 +4726,7 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3957,35 +4793,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4032,7 +4868,7 @@ pub enum RegisterTransitGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTransitGatewayError {
@@ -4100,42 +4936,42 @@ impl RegisterTransitGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTransitGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTransitGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTransitGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTransitGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTransitGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTransitGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterTransitGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4153,6 +4989,157 @@ impl std::error::Error for RegisterTransitGatewayError {
             RegisterTransitGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterTransitGatewayErrorKind::ValidationException(_inner) => Some(_inner),
             RegisterTransitGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartRouteAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartRouteAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: StartRouteAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartRouteAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartRouteAnalysisErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can
+    /// cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartRouteAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartRouteAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartRouteAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartRouteAnalysisError {
+    fn code(&self) -> Option<&str> {
+        StartRouteAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartRouteAnalysisError {
+    /// Creates a new `StartRouteAnalysisError`.
+    pub fn new(kind: StartRouteAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartRouteAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartRouteAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartRouteAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartRouteAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartRouteAnalysisErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartRouteAnalysisErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartRouteAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartRouteAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::ConflictException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::ValidationException(_inner) => Some(_inner),
+            StartRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4185,7 +5172,7 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4254,37 +5241,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -4330,7 +5317,7 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4398,33 +5385,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -4469,7 +5456,7 @@ pub enum UpdateConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectionError {
@@ -4537,39 +5524,39 @@ impl UpdateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateConnectionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4617,7 +5604,7 @@ pub enum UpdateDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceError {
@@ -4685,33 +5672,33 @@ impl UpdateDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeviceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeviceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeviceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeviceErrorKind::ValidationException(_))
     }
@@ -4756,7 +5743,7 @@ pub enum UpdateGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalNetworkError {
@@ -4824,42 +5811,42 @@ impl UpdateGlobalNetworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalNetworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalNetworkErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalNetworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalNetworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalNetworkErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalNetworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateGlobalNetworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4909,7 +5896,7 @@ pub enum UpdateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLinkError {
@@ -4978,37 +5965,37 @@ impl UpdateLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateLinkErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateLinkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateLinkErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateLinkErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateLinkErrorKind::ValidationException(_))
     }
@@ -5024,6 +6011,166 @@ impl std::error::Error for UpdateLinkError {
             UpdateLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateLinkErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateNetworkResourceMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateNetworkResourceMetadataError {
+    /// Kind of error that occurred.
+    pub kind: UpdateNetworkResourceMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateNetworkResourceMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateNetworkResourceMetadataErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can
+    /// cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request has failed due to an internal error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateNetworkResourceMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateNetworkResourceMetadataErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateNetworkResourceMetadataErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateNetworkResourceMetadataErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkResourceMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkResourceMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateNetworkResourceMetadataErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateNetworkResourceMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateNetworkResourceMetadataError {
+    fn code(&self) -> Option<&str> {
+        UpdateNetworkResourceMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateNetworkResourceMetadataError {
+    /// Creates a new `UpdateNetworkResourceMetadataError`.
+    pub fn new(
+        kind: UpdateNetworkResourceMetadataErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateNetworkResourceMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateNetworkResourceMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkResourceMetadataErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkResourceMetadataErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateNetworkResourceMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateNetworkResourceMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateNetworkResourceMetadataErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateNetworkResourceMetadataErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateNetworkResourceMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkResourceMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateNetworkResourceMetadataErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateNetworkResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5054,7 +6201,7 @@ pub enum UpdateSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSiteError {
@@ -5122,30 +6269,30 @@ impl UpdateSiteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateSiteErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateSiteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateSiteErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSiteErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateSiteErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateSiteErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSiteErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateSiteErrorKind::ValidationException(_))
     }
@@ -5360,6 +6507,9 @@ pub struct ResourceNotFoundException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5367,6 +6517,7 @@ impl std::fmt::Debug for ResourceNotFoundException {
         formatter.field("message", &self.message);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("context", &self.context);
         formatter.finish()
     }
 }
@@ -5395,6 +6546,9 @@ pub mod resource_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) context: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -5430,12 +6584,37 @@ pub mod resource_not_found_exception {
             self.resource_type = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        pub fn context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.context.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.context = Some(hash_map);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.context = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
                 resource_id: self.resource_id,
                 resource_type: self.resource_type,
+                context: self.context,
             }
         }
     }

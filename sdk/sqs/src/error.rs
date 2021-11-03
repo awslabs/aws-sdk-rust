@@ -17,7 +17,7 @@ pub enum AddPermissionErrorKind {
     /// <code>AddPermission</code> returns this error if the maximum number of permissions
     /// for the queue is reached.</p>
     OverLimit(crate::error::OverLimit),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPermissionError {
@@ -80,7 +80,7 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::OverLimit`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::OverLimit`.
     pub fn is_over_limit(&self) -> bool {
         matches!(&self.kind, AddPermissionErrorKind::OverLimit(_))
     }
@@ -111,7 +111,7 @@ pub enum ChangeMessageVisibilityErrorKind {
     MessageNotInflight(crate::error::MessageNotInflight),
     /// <p>The specified receipt handle isn't valid.</p>
     ReceiptHandleIsInvalid(crate::error::ReceiptHandleIsInvalid),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangeMessageVisibilityError {
@@ -175,14 +175,14 @@ impl ChangeMessageVisibilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityErrorKind::MessageNotInflight`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityErrorKind::MessageNotInflight`.
     pub fn is_message_not_inflight(&self) -> bool {
         matches!(
             &self.kind,
             ChangeMessageVisibilityErrorKind::MessageNotInflight(_)
         )
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityErrorKind::ReceiptHandleIsInvalid`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityErrorKind::ReceiptHandleIsInvalid`.
     pub fn is_receipt_handle_is_invalid(&self) -> bool {
         matches!(
             &self.kind,
@@ -221,7 +221,7 @@ pub enum ChangeMessageVisibilityBatchErrorKind {
     InvalidBatchEntryId(crate::error::InvalidBatchEntryId),
     /// <p>The batch request contains more entries than permissible.</p>
     TooManyEntriesInBatchRequest(crate::error::TooManyEntriesInBatchRequest),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangeMessageVisibilityBatchError {
@@ -291,28 +291,28 @@ impl ChangeMessageVisibilityBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct`.
     pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
         matches!(
             &self.kind,
             ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct(_)
         )
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest`.
     pub fn is_empty_batch_request(&self) -> bool {
         matches!(
             &self.kind,
             ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest(_)
         )
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId`.
     pub fn is_invalid_batch_entry_id(&self) -> bool {
         matches!(
             &self.kind,
             ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId(_)
         )
     }
-    /// Returns true if the error kind is `ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest`.
+    /// Returns `true` if the error kind is `ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest`.
     pub fn is_too_many_entries_in_batch_request(&self) -> bool {
         matches!(
             &self.kind,
@@ -353,7 +353,7 @@ pub enum CreateQueueErrorKind {
     /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request
     /// includes attributes whose values differ from those of the existing queue.</p>
     QueueNameExists(crate::error::QueueNameExists),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateQueueError {
@@ -417,11 +417,11 @@ impl CreateQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::QueueDeletedRecently`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::QueueDeletedRecently`.
     pub fn is_queue_deleted_recently(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::QueueDeletedRecently(_))
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::QueueNameExists`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::QueueNameExists`.
     pub fn is_queue_name_exists(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::QueueNameExists(_))
     }
@@ -453,7 +453,7 @@ pub enum DeleteMessageErrorKind {
     InvalidIdFormat(crate::error::InvalidIdFormat),
     /// <p>The specified receipt handle isn't valid.</p>
     ReceiptHandleIsInvalid(crate::error::ReceiptHandleIsInvalid),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMessageError {
@@ -517,11 +517,11 @@ impl DeleteMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMessageErrorKind::InvalidIdFormat`.
+    /// Returns `true` if the error kind is `DeleteMessageErrorKind::InvalidIdFormat`.
     pub fn is_invalid_id_format(&self) -> bool {
         matches!(&self.kind, DeleteMessageErrorKind::InvalidIdFormat(_))
     }
-    /// Returns true if the error kind is `DeleteMessageErrorKind::ReceiptHandleIsInvalid`.
+    /// Returns `true` if the error kind is `DeleteMessageErrorKind::ReceiptHandleIsInvalid`.
     pub fn is_receipt_handle_is_invalid(&self) -> bool {
         matches!(
             &self.kind,
@@ -560,7 +560,7 @@ pub enum DeleteMessageBatchErrorKind {
     InvalidBatchEntryId(crate::error::InvalidBatchEntryId),
     /// <p>The batch request contains more entries than permissible.</p>
     TooManyEntriesInBatchRequest(crate::error::TooManyEntriesInBatchRequest),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMessageBatchError {
@@ -626,28 +626,28 @@ impl DeleteMessageBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMessageBatchErrorKind::BatchEntryIdsNotDistinct`.
+    /// Returns `true` if the error kind is `DeleteMessageBatchErrorKind::BatchEntryIdsNotDistinct`.
     pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMessageBatchErrorKind::BatchEntryIdsNotDistinct(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMessageBatchErrorKind::EmptyBatchRequest`.
+    /// Returns `true` if the error kind is `DeleteMessageBatchErrorKind::EmptyBatchRequest`.
     pub fn is_empty_batch_request(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMessageBatchErrorKind::EmptyBatchRequest(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMessageBatchErrorKind::InvalidBatchEntryId`.
+    /// Returns `true` if the error kind is `DeleteMessageBatchErrorKind::InvalidBatchEntryId`.
     pub fn is_invalid_batch_entry_id(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMessageBatchErrorKind::InvalidBatchEntryId(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMessageBatchErrorKind::TooManyEntriesInBatchRequest`.
+    /// Returns `true` if the error kind is `DeleteMessageBatchErrorKind::TooManyEntriesInBatchRequest`.
     pub fn is_too_many_entries_in_batch_request(&self) -> bool {
         matches!(
             &self.kind,
@@ -680,7 +680,7 @@ pub struct DeleteQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteQueueErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQueueError {
@@ -766,7 +766,7 @@ pub struct GetQueueAttributesError {
 pub enum GetQueueAttributesErrorKind {
     /// <p>The specified attribute doesn't exist.</p>
     InvalidAttributeName(crate::error::InvalidAttributeName),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueueAttributesError {
@@ -829,7 +829,7 @@ impl GetQueueAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueueAttributesErrorKind::InvalidAttributeName`.
+    /// Returns `true` if the error kind is `GetQueueAttributesErrorKind::InvalidAttributeName`.
     pub fn is_invalid_attribute_name(&self) -> bool {
         matches!(
             &self.kind,
@@ -861,7 +861,7 @@ pub struct GetQueueUrlError {
 pub enum GetQueueUrlErrorKind {
     /// <p>The specified queue doesn't exist.</p>
     QueueDoesNotExist(crate::error::QueueDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueueUrlError {
@@ -924,7 +924,7 @@ impl GetQueueUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueueUrlErrorKind::QueueDoesNotExist`.
+    /// Returns `true` if the error kind is `GetQueueUrlErrorKind::QueueDoesNotExist`.
     pub fn is_queue_does_not_exist(&self) -> bool {
         matches!(&self.kind, GetQueueUrlErrorKind::QueueDoesNotExist(_))
     }
@@ -953,7 +953,7 @@ pub struct ListDeadLetterSourceQueuesError {
 pub enum ListDeadLetterSourceQueuesErrorKind {
     /// <p>The specified queue doesn't exist.</p>
     QueueDoesNotExist(crate::error::QueueDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeadLetterSourceQueuesError {
@@ -1016,7 +1016,7 @@ impl ListDeadLetterSourceQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeadLetterSourceQueuesErrorKind::QueueDoesNotExist`.
+    /// Returns `true` if the error kind is `ListDeadLetterSourceQueuesErrorKind::QueueDoesNotExist`.
     pub fn is_queue_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -1046,7 +1046,7 @@ pub struct ListQueuesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListQueuesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQueuesError {
@@ -1130,7 +1130,7 @@ pub struct ListQueueTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListQueueTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQueueTagsError {
@@ -1218,7 +1218,7 @@ pub enum PurgeQueueErrorKind {
     PurgeQueueInProgress(crate::error::PurgeQueueInProgress),
     /// <p>The specified queue doesn't exist.</p>
     QueueDoesNotExist(crate::error::QueueDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurgeQueueError {
@@ -1282,11 +1282,11 @@ impl PurgeQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurgeQueueErrorKind::PurgeQueueInProgress`.
+    /// Returns `true` if the error kind is `PurgeQueueErrorKind::PurgeQueueInProgress`.
     pub fn is_purge_queue_in_progress(&self) -> bool {
         matches!(&self.kind, PurgeQueueErrorKind::PurgeQueueInProgress(_))
     }
-    /// Returns true if the error kind is `PurgeQueueErrorKind::QueueDoesNotExist`.
+    /// Returns `true` if the error kind is `PurgeQueueErrorKind::QueueDoesNotExist`.
     pub fn is_queue_does_not_exist(&self) -> bool {
         matches!(&self.kind, PurgeQueueErrorKind::QueueDoesNotExist(_))
     }
@@ -1319,7 +1319,7 @@ pub enum ReceiveMessageErrorKind {
     /// <code>AddPermission</code> returns this error if the maximum number of permissions
     /// for the queue is reached.</p>
     OverLimit(crate::error::OverLimit),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReceiveMessageError {
@@ -1382,7 +1382,7 @@ impl ReceiveMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReceiveMessageErrorKind::OverLimit`.
+    /// Returns `true` if the error kind is `ReceiveMessageErrorKind::OverLimit`.
     pub fn is_over_limit(&self) -> bool {
         matches!(&self.kind, ReceiveMessageErrorKind::OverLimit(_))
     }
@@ -1409,7 +1409,7 @@ pub struct RemovePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemovePermissionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
@@ -1497,7 +1497,7 @@ pub enum SendMessageErrorKind {
     InvalidMessageContents(crate::error::InvalidMessageContents),
     /// <p>Error code 400. Unsupported operation.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendMessageError {
@@ -1561,11 +1561,11 @@ impl SendMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::InvalidMessageContents`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::InvalidMessageContents`.
     pub fn is_invalid_message_contents(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::InvalidMessageContents(_))
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::UnsupportedOperation(_))
     }
@@ -1605,7 +1605,7 @@ pub enum SendMessageBatchErrorKind {
     TooManyEntriesInBatchRequest(crate::error::TooManyEntriesInBatchRequest),
     /// <p>Error code 400. Unsupported operation.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendMessageBatchError {
@@ -1673,39 +1673,39 @@ impl SendMessageBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::BatchEntryIdsNotDistinct`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::BatchEntryIdsNotDistinct`.
     pub fn is_batch_entry_ids_not_distinct(&self) -> bool {
         matches!(
             &self.kind,
             SendMessageBatchErrorKind::BatchEntryIdsNotDistinct(_)
         )
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::BatchRequestTooLong`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::BatchRequestTooLong`.
     pub fn is_batch_request_too_long(&self) -> bool {
         matches!(
             &self.kind,
             SendMessageBatchErrorKind::BatchRequestTooLong(_)
         )
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::EmptyBatchRequest`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::EmptyBatchRequest`.
     pub fn is_empty_batch_request(&self) -> bool {
         matches!(&self.kind, SendMessageBatchErrorKind::EmptyBatchRequest(_))
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::InvalidBatchEntryId`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::InvalidBatchEntryId`.
     pub fn is_invalid_batch_entry_id(&self) -> bool {
         matches!(
             &self.kind,
             SendMessageBatchErrorKind::InvalidBatchEntryId(_)
         )
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::TooManyEntriesInBatchRequest`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::TooManyEntriesInBatchRequest`.
     pub fn is_too_many_entries_in_batch_request(&self) -> bool {
         matches!(
             &self.kind,
             SendMessageBatchErrorKind::TooManyEntriesInBatchRequest(_)
         )
     }
-    /// Returns true if the error kind is `SendMessageBatchErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `SendMessageBatchErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -1742,7 +1742,7 @@ pub struct SetQueueAttributesError {
 pub enum SetQueueAttributesErrorKind {
     /// <p>The specified attribute doesn't exist.</p>
     InvalidAttributeName(crate::error::InvalidAttributeName),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetQueueAttributesError {
@@ -1805,7 +1805,7 @@ impl SetQueueAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetQueueAttributesErrorKind::InvalidAttributeName`.
+    /// Returns `true` if the error kind is `SetQueueAttributesErrorKind::InvalidAttributeName`.
     pub fn is_invalid_attribute_name(&self) -> bool {
         matches!(
             &self.kind,
@@ -1835,7 +1835,7 @@ pub struct TagQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagQueueErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagQueueError {
@@ -1919,7 +1919,7 @@ pub struct UntagQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagQueueErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagQueueError {

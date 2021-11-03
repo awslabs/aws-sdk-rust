@@ -67,8 +67,8 @@ async fn main() {
             shared_config.region().unwrap()
         );
         println!("Parameter name:       {}", name);
-        println!("Paramter value:       {}", parameter_value);
-        println!("Paramter description: {}", description);
+        println!("Parameter value:       {}", parameter_value);
+        println!("Parameter description: {}", description);
 
         tracing_subscriber::fmt::init();
     }

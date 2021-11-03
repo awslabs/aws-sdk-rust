@@ -16,7 +16,7 @@ pub enum CreateApplicationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -80,14 +80,14 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -124,7 +124,7 @@ pub enum CreateConfigurationProfileErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationProfileError {
@@ -189,21 +189,21 @@ impl CreateConfigurationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationProfileErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateConfigurationProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateConfigurationProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -239,7 +239,7 @@ pub enum CreateDeploymentStrategyErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentStrategyError {
@@ -303,14 +303,14 @@ impl CreateDeploymentStrategyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentStrategyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeploymentStrategyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentStrategyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentStrategyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDeploymentStrategyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -347,7 +347,7 @@ pub enum CreateEnvironmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEnvironmentError {
@@ -412,21 +412,21 @@ impl CreateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -472,7 +472,7 @@ pub enum CreateHostedConfigurationVersionErrorKind {
     /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig
     /// configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHostedConfigurationVersionError {
@@ -551,42 +551,42 @@ impl CreateHostedConfigurationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedConfigurationVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedConfigurationVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedConfigurationVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedConfigurationVersionErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedConfigurationVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedConfigurationVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateHostedConfigurationVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -635,7 +635,7 @@ pub enum DeleteApplicationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -700,21 +700,21 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -755,7 +755,7 @@ pub enum DeleteConfigurationProfileErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationProfileError {
@@ -821,28 +821,28 @@ impl DeleteConfigurationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationProfileErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -881,7 +881,7 @@ pub enum DeleteDeploymentStrategyErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeploymentStrategyError {
@@ -946,21 +946,21 @@ impl DeleteDeploymentStrategyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeploymentStrategyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentStrategyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentStrategyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentStrategyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentStrategyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentStrategyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentStrategyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentStrategyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1001,7 +1001,7 @@ pub enum DeleteEnvironmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
@@ -1067,25 +1067,25 @@ impl DeleteEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteEnvironmentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1124,7 +1124,7 @@ pub enum DeleteHostedConfigurationVersionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHostedConfigurationVersionError {
@@ -1196,21 +1196,21 @@ impl DeleteHostedConfigurationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHostedConfigurationVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteHostedConfigurationVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHostedConfigurationVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHostedConfigurationVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteHostedConfigurationVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHostedConfigurationVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1252,7 +1252,7 @@ pub enum GetApplicationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationError {
@@ -1317,18 +1317,18 @@ impl GetApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApplicationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum GetConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationError {
@@ -1431,21 +1431,21 @@ impl GetConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1483,7 +1483,7 @@ pub enum GetConfigurationProfileErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationProfileError {
@@ -1548,21 +1548,21 @@ impl GetConfigurationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigurationProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConfigurationProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationProfileErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetConfigurationProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigurationProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1600,7 +1600,7 @@ pub enum GetDeploymentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentError {
@@ -1665,18 +1665,18 @@ impl GetDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1714,7 +1714,7 @@ pub enum GetDeploymentStrategyErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentStrategyError {
@@ -1779,21 +1779,21 @@ impl GetDeploymentStrategyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentStrategyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeploymentStrategyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentStrategyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentStrategyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDeploymentStrategyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentStrategyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentStrategyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeploymentStrategyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1831,7 +1831,7 @@ pub enum GetEnvironmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEnvironmentError {
@@ -1896,18 +1896,18 @@ impl GetEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetEnvironmentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1945,7 +1945,7 @@ pub enum GetHostedConfigurationVersionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostedConfigurationVersionError {
@@ -2017,21 +2017,21 @@ impl GetHostedConfigurationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostedConfigurationVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetHostedConfigurationVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHostedConfigurationVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetHostedConfigurationVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetHostedConfigurationVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHostedConfigurationVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetHostedConfigurationVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2069,7 +2069,7 @@ pub enum ListApplicationsErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationsError {
@@ -2133,14 +2133,14 @@ impl ListApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2177,7 +2177,7 @@ pub enum ListConfigurationProfilesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationProfilesError {
@@ -2242,21 +2242,21 @@ impl ListConfigurationProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationProfilesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConfigurationProfilesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationProfilesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListConfigurationProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConfigurationProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2294,7 +2294,7 @@ pub enum ListDeploymentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentsError {
@@ -2359,18 +2359,18 @@ impl ListDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListDeploymentsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2406,7 +2406,7 @@ pub enum ListDeploymentStrategiesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentStrategiesError {
@@ -2470,14 +2470,14 @@ impl ListDeploymentStrategiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentStrategiesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDeploymentStrategiesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentStrategiesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentStrategiesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDeploymentStrategiesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2514,7 +2514,7 @@ pub enum ListEnvironmentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEnvironmentsError {
@@ -2579,21 +2579,21 @@ impl ListEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2631,7 +2631,7 @@ pub enum ListHostedConfigurationVersionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHostedConfigurationVersionsError {
@@ -2703,21 +2703,21 @@ impl ListHostedConfigurationVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHostedConfigurationVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListHostedConfigurationVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHostedConfigurationVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListHostedConfigurationVersionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListHostedConfigurationVersionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHostedConfigurationVersionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListHostedConfigurationVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListHostedConfigurationVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2759,7 +2759,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2824,21 +2824,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2879,7 +2879,7 @@ pub enum StartDeploymentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDeploymentError {
@@ -2945,22 +2945,22 @@ impl StartDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartDeploymentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartDeploymentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2999,7 +2999,7 @@ pub enum StopDeploymentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDeploymentError {
@@ -3064,18 +3064,18 @@ impl StopDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StopDeploymentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3113,7 +3113,7 @@ pub enum TagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3178,15 +3178,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3224,7 +3224,7 @@ pub enum UntagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3289,18 +3289,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3338,7 +3338,7 @@ pub enum UpdateApplicationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -3403,21 +3403,21 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3455,7 +3455,7 @@ pub enum UpdateConfigurationProfileErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationProfileError {
@@ -3520,21 +3520,21 @@ impl UpdateConfigurationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationProfileErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3572,7 +3572,7 @@ pub enum UpdateDeploymentStrategyErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeploymentStrategyError {
@@ -3637,21 +3637,21 @@ impl UpdateDeploymentStrategyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeploymentStrategyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentStrategyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentStrategyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentStrategyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentStrategyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentStrategyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentStrategyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentStrategyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3689,7 +3689,7 @@ pub enum UpdateEnvironmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
@@ -3754,21 +3754,21 @@ impl UpdateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3806,7 +3806,7 @@ pub enum ValidateConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateConfigurationError {
@@ -3871,21 +3871,21 @@ impl ValidateConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidateConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ValidateConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ValidateConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ValidateConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

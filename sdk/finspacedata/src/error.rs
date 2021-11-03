@@ -23,7 +23,7 @@ pub enum CreateChangesetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChangesetError {
@@ -90,32 +90,32 @@ impl CreateChangesetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChangesetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangesetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChangesetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangesetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChangesetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChangesetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChangesetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateChangesetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateChangesetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateChangesetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateChangesetErrorKind::ValidationException(_))
     }
@@ -153,7 +153,7 @@ pub enum GetProgrammaticAccessCredentialsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProgrammaticAccessCredentialsError {
@@ -225,21 +225,21 @@ impl GetProgrammaticAccessCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProgrammaticAccessCredentialsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetProgrammaticAccessCredentialsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProgrammaticAccessCredentialsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetProgrammaticAccessCredentialsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetProgrammaticAccessCredentialsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProgrammaticAccessCredentialsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetProgrammaticAccessCredentialsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetProgrammaticAccessCredentialsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -284,7 +284,7 @@ pub enum GetWorkingLocationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkingLocationError {
@@ -350,28 +350,28 @@ impl GetWorkingLocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkingLocationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWorkingLocationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkingLocationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkingLocationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWorkingLocationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkingLocationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkingLocationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWorkingLocationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkingLocationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkingLocationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWorkingLocationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

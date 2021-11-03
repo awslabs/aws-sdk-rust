@@ -234,6 +234,18 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_language_model_name(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map
+        .get_all("x-amzn-transcribe-language-model-name")
+        .iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_start_stream_transcription_start_stream_transcription_output_media_encoding(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<

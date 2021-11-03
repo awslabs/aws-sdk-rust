@@ -16,7 +16,7 @@ pub enum GetPersonalizedRankingErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPersonalizedRankingError {
@@ -80,14 +80,14 @@ impl GetPersonalizedRankingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPersonalizedRankingErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPersonalizedRankingErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonalizedRankingErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonalizedRankingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPersonalizedRankingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum GetRecommendationsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecommendationsError {
@@ -186,14 +186,14 @@ impl GetRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecommendationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRecommendationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -19,7 +19,7 @@ pub enum CreateContainerErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>A service limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContainerError {
@@ -84,18 +84,18 @@ impl CreateContainerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContainerErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `CreateContainerErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateContainerErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateContainerErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateContainerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateContainerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -134,7 +134,7 @@ pub enum DeleteContainerErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContainerError {
@@ -199,21 +199,21 @@ impl DeleteContainerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContainerErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `DeleteContainerErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContainerErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteContainerErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteContainerErrorKind::InternalServerError(_))
     }
@@ -251,7 +251,7 @@ pub enum DeleteContainerPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContainerPolicyError {
@@ -317,28 +317,28 @@ impl DeleteContainerPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContainerPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `DeleteContainerPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContainerPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteContainerPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContainerPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -380,7 +380,7 @@ pub enum DeleteCorsPolicyErrorKind {
     CorsPolicyNotFoundException(crate::error::CorsPolicyNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCorsPolicyError {
@@ -446,28 +446,28 @@ impl DeleteCorsPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCorsPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `DeleteCorsPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCorsPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCorsPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCorsPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCorsPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCorsPolicyErrorKind::CorsPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCorsPolicyErrorKind::CorsPolicyNotFoundException`.
     pub fn is_cors_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCorsPolicyErrorKind::CorsPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCorsPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteCorsPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -509,7 +509,7 @@ pub enum DeleteLifecyclePolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLifecyclePolicyError {
@@ -575,28 +575,28 @@ impl DeleteLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -638,7 +638,7 @@ pub enum DeleteMetricPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMetricPolicyError {
@@ -704,28 +704,28 @@ impl DeleteMetricPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMetricPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `DeleteMetricPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMetricPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteMetricPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMetricPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -762,7 +762,7 @@ pub enum DescribeContainerErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContainerError {
@@ -826,14 +826,14 @@ impl DescribeContainerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContainerErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContainerErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContainerErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContainerErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeContainerErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -873,7 +873,7 @@ pub enum GetContainerPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerPolicyError {
@@ -939,28 +939,28 @@ impl GetContainerPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `GetContainerPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetContainerPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1002,7 +1002,7 @@ pub enum GetCorsPolicyErrorKind {
     CorsPolicyNotFoundException(crate::error::CorsPolicyNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCorsPolicyError {
@@ -1068,28 +1068,28 @@ impl GetCorsPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCorsPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `GetCorsPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCorsPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetCorsPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `GetCorsPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCorsPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCorsPolicyErrorKind::CorsPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetCorsPolicyErrorKind::CorsPolicyNotFoundException`.
     pub fn is_cors_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCorsPolicyErrorKind::CorsPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCorsPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetCorsPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetCorsPolicyErrorKind::InternalServerError(_))
     }
@@ -1128,7 +1128,7 @@ pub enum GetLifecyclePolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLifecyclePolicyError {
@@ -1194,28 +1194,28 @@ impl GetLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1257,7 +1257,7 @@ pub enum GetMetricPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMetricPolicyError {
@@ -1323,25 +1323,25 @@ impl GetMetricPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMetricPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `GetMetricPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `GetMetricPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMetricPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetMetricPolicyErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetMetricPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetMetricPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1376,7 +1376,7 @@ pub struct ListContainersError {
 pub enum ListContainersErrorKind {
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContainersError {
@@ -1439,7 +1439,7 @@ impl ListContainersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContainersErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListContainersErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListContainersErrorKind::InternalServerError(_))
     }
@@ -1473,7 +1473,7 @@ pub enum ListTagsForResourceErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1538,21 +1538,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1591,7 +1591,7 @@ pub enum PutContainerPolicyErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutContainerPolicyError {
@@ -1656,21 +1656,21 @@ impl PutContainerPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutContainerPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `PutContainerPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `PutContainerPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutContainerPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1709,7 +1709,7 @@ pub enum PutCorsPolicyErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutCorsPolicyError {
@@ -1774,21 +1774,21 @@ impl PutCorsPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutCorsPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `PutCorsPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCorsPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutCorsPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `PutCorsPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCorsPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutCorsPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutCorsPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutCorsPolicyErrorKind::InternalServerError(_))
     }
@@ -1824,7 +1824,7 @@ pub enum PutLifecyclePolicyErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLifecyclePolicyError {
@@ -1889,21 +1889,21 @@ impl PutLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecyclePolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecyclePolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1942,7 +1942,7 @@ pub enum PutMetricPolicyErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetricPolicyError {
@@ -2007,21 +2007,21 @@ impl PutMetricPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetricPolicyErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `PutMetricPolicyErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricPolicyErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricPolicyErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `PutMetricPolicyErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricPolicyErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutMetricPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutMetricPolicyErrorKind::InternalServerError(_))
     }
@@ -2057,7 +2057,7 @@ pub enum StartAccessLoggingErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAccessLoggingError {
@@ -2122,21 +2122,21 @@ impl StartAccessLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAccessLoggingErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `StartAccessLoggingErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAccessLoggingErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartAccessLoggingErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `StartAccessLoggingErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAccessLoggingErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartAccessLoggingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartAccessLoggingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2175,7 +2175,7 @@ pub enum StopAccessLoggingErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopAccessLoggingError {
@@ -2240,21 +2240,21 @@ impl StopAccessLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopAccessLoggingErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `StopAccessLoggingErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAccessLoggingErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopAccessLoggingErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `StopAccessLoggingErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAccessLoggingErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopAccessLoggingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StopAccessLoggingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2293,7 +2293,7 @@ pub enum TagResourceErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2358,18 +2358,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ContainerInUseException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
@@ -2405,7 +2405,7 @@ pub enum UntagResourceErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2470,21 +2470,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ContainerInUseException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ContainerInUseException`.
     pub fn is_container_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ContainerInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }

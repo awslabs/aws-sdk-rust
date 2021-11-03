@@ -32,7 +32,7 @@ pub enum AssociateServiceQuotaTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateServiceQuotaTemplateError {
@@ -117,56 +117,56 @@ impl AssociateServiceQuotaTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::OrganizationNotInAllFeaturesModeException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::OrganizationNotInAllFeaturesModeException`.
     pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::OrganizationNotInAllFeaturesModeException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceQuotaTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AssociateServiceQuotaTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -235,7 +235,7 @@ pub enum DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceQuotaIncreaseRequestFromTemplateError {
@@ -331,18 +331,18 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -351,36 +351,36 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -456,7 +456,7 @@ pub enum DisassociateServiceQuotaTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateServiceQuotaTemplateError {
@@ -543,56 +543,56 @@ impl DisassociateServiceQuotaTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException`.
     pub fn is_service_quota_template_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateServiceQuotaTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateServiceQuotaTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -661,7 +661,7 @@ pub enum GetAssociationForServiceQuotaTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssociationForServiceQuotaTemplateError {
@@ -752,42 +752,42 @@ impl GetAssociationForServiceQuotaTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociationForServiceQuotaTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociationForServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociationForServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociationForServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociationForServiceQuotaTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException`.
     pub fn is_service_quota_template_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -796,7 +796,7 @@ impl GetAssociationForServiceQuotaTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -805,7 +805,7 @@ impl GetAssociationForServiceQuotaTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAssociationForServiceQuotaTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -871,7 +871,7 @@ pub enum GetAWSDefaultServiceQuotaErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAWSDefaultServiceQuotaError {
@@ -938,35 +938,35 @@ impl GetAWSDefaultServiceQuotaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `GetAWSDefaultServiceQuotaErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAWSDefaultServiceQuotaErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAWSDefaultServiceQuotaErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetAWSDefaultServiceQuotaErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAWSDefaultServiceQuotaErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1011,7 +1011,7 @@ pub enum GetRequestedServiceQuotaChangeErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRequestedServiceQuotaChangeError {
@@ -1087,35 +1087,35 @@ impl GetRequestedServiceQuotaChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRequestedServiceQuotaChangeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRequestedServiceQuotaChangeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRequestedServiceQuotaChangeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRequestedServiceQuotaChangeErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `GetRequestedServiceQuotaChangeErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRequestedServiceQuotaChangeErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetRequestedServiceQuotaChangeErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `GetRequestedServiceQuotaChangeErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRequestedServiceQuotaChangeErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRequestedServiceQuotaChangeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRequestedServiceQuotaChangeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRequestedServiceQuotaChangeErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRequestedServiceQuotaChangeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRequestedServiceQuotaChangeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1166,7 +1166,7 @@ pub enum GetServiceQuotaErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceQuotaError {
@@ -1233,32 +1233,32 @@ impl GetServiceQuotaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceQuotaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetServiceQuotaErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetServiceQuotaErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1312,7 +1312,7 @@ pub enum GetServiceQuotaIncreaseRequestFromTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceQuotaIncreaseRequestFromTemplateError {
@@ -1406,32 +1406,32 @@ impl GetServiceQuotaIncreaseRequestFromTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(&self.kind, GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(_))
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1440,25 +1440,25 @@ impl GetServiceQuotaIncreaseRequestFromTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(&self.kind, GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(_))
     }
-    /// Returns true if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1529,7 +1529,7 @@ pub enum ListAWSDefaultServiceQuotasErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAWSDefaultServiceQuotasError {
@@ -1599,42 +1599,42 @@ impl ListAWSDefaultServiceQuotasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSDefaultServiceQuotasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSDefaultServiceQuotasErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSDefaultServiceQuotasErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSDefaultServiceQuotasErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSDefaultServiceQuotasErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSDefaultServiceQuotasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAWSDefaultServiceQuotasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1684,7 +1684,7 @@ pub enum ListRequestedServiceQuotaChangeHistoryErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRequestedServiceQuotaChangeHistoryError {
@@ -1767,42 +1767,42 @@ impl ListRequestedServiceQuotaChangeHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1864,7 +1864,7 @@ pub enum ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRequestedServiceQuotaChangeHistoryByQuotaError {
@@ -1951,21 +1951,21 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1974,21 +1974,21 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaError {
             )
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2055,7 +2055,7 @@ pub enum ListServiceQuotaIncreaseRequestsInTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceQuotaIncreaseRequestsInTemplateError {
@@ -2146,32 +2146,32 @@ impl ListServiceQuotaIncreaseRequestsInTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(&self.kind, ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AwsServiceAccessNotEnabledException(_))
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotaIncreaseRequestsInTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotaIncreaseRequestsInTemplateErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2180,18 +2180,18 @@ impl ListServiceQuotaIncreaseRequestsInTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotaIncreaseRequestsInTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(&self.kind, ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TemplatesNotAvailableInRegionException(_))
     }
-    /// Returns true if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2259,7 +2259,7 @@ pub enum ListServiceQuotasErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceQuotasError {
@@ -2327,39 +2327,39 @@ impl ListServiceQuotasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotasErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotasErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceQuotasErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListServiceQuotasErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListServiceQuotasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListServiceQuotasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2405,7 +2405,7 @@ pub enum ListServicesErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServicesError {
@@ -2472,29 +2472,29 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServicesErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServicesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2539,7 +2539,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2606,35 +2606,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2691,7 +2691,7 @@ pub enum PutServiceQuotaIncreaseRequestIntoTemplateErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutServiceQuotaIncreaseRequestIntoTemplateError {
@@ -2788,32 +2788,32 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AwsServiceAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AwsServiceAccessNotEnabledException`.
     pub fn is_aws_service_access_not_enabled_exception(&self) -> bool {
         matches!(&self.kind, PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AwsServiceAccessNotEnabledException(_))
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoAvailableOrganizationException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoAvailableOrganizationException`.
     pub fn is_no_available_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2822,32 +2822,32 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateError {
             )
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::QuotaExceededException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::QuotaExceededException`.
     pub fn is_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::QuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TemplatesNotAvailableInRegionException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TemplatesNotAvailableInRegionException`.
     pub fn is_templates_not_available_in_region_exception(&self) -> bool {
         matches!(&self.kind, PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TemplatesNotAvailableInRegionException(_))
     }
-    /// Returns true if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2928,7 +2928,7 @@ pub enum RequestServiceQuotaIncreaseErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestServiceQuotaIncreaseError {
@@ -3005,63 +3005,63 @@ impl RequestServiceQuotaIncreaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::DependencyAccessDeniedException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::DependencyAccessDeniedException`.
     pub fn is_dependency_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::DependencyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::QuotaExceededException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::QuotaExceededException`.
     pub fn is_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::QuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestServiceQuotaIncreaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RequestServiceQuotaIncreaseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RequestServiceQuotaIncreaseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3122,7 +3122,7 @@ pub enum TagResourceErrorKind {
     /// <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag
     /// restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3191,40 +3191,40 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NoSuchResourceException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagPolicyViolationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagPolicyViolationException`.
     pub fn is_tag_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -3268,7 +3268,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
     /// an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3335,29 +3335,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::IllegalArgumentException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::IllegalArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NoSuchResourceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::NoSuchResourceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

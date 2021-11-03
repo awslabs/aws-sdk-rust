@@ -2,318 +2,6 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStudioComponentOutput {
-    /// <p>Information about the studio component.</p>
-    pub studio_component: std::option::Option<crate::model::StudioComponent>,
-}
-impl std::fmt::Debug for UpdateStudioComponentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioComponentOutput");
-        formatter.field("studio_component", &self.studio_component);
-        formatter.finish()
-    }
-}
-/// See [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
-pub mod update_studio_component_output {
-    /// A builder for [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
-    }
-    impl Builder {
-        /// <p>Information about the studio component.</p>
-        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
-            self.studio_component = Some(input);
-            self
-        }
-        /// <p>Information about the studio component.</p>
-        pub fn set_studio_component(
-            mut self,
-            input: std::option::Option<crate::model::StudioComponent>,
-        ) -> Self {
-            self.studio_component = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
-        pub fn build(self) -> crate::output::UpdateStudioComponentOutput {
-            crate::output::UpdateStudioComponentOutput {
-                studio_component: self.studio_component,
-            }
-        }
-    }
-}
-impl UpdateStudioComponentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
-    pub fn builder() -> crate::output::update_studio_component_output::Builder {
-        crate::output::update_studio_component_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStudioOutput {
-    /// <p>Information about a studio.</p>
-    pub studio: std::option::Option<crate::model::Studio>,
-}
-impl std::fmt::Debug for UpdateStudioOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioOutput");
-        formatter.field("studio", &self.studio);
-        formatter.finish()
-    }
-}
-/// See [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
-pub mod update_studio_output {
-    /// A builder for [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio: std::option::Option<crate::model::Studio>,
-    }
-    impl Builder {
-        /// <p>Information about a studio.</p>
-        pub fn studio(mut self, input: crate::model::Studio) -> Self {
-            self.studio = Some(input);
-            self
-        }
-        /// <p>Information about a studio.</p>
-        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
-            self.studio = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
-        pub fn build(self) -> crate::output::UpdateStudioOutput {
-            crate::output::UpdateStudioOutput {
-                studio: self.studio,
-            }
-        }
-    }
-}
-impl UpdateStudioOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
-    pub fn builder() -> crate::output::update_studio_output::Builder {
-        crate::output::update_studio_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStreamingImageOutput {
-    /// <p></p>
-    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
-}
-impl std::fmt::Debug for UpdateStreamingImageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamingImageOutput");
-        formatter.field("streaming_image", &self.streaming_image);
-        formatter.finish()
-    }
-}
-/// See [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
-pub mod update_streaming_image_output {
-    /// A builder for [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
-    }
-    impl Builder {
-        /// <p></p>
-        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
-            self.streaming_image = Some(input);
-            self
-        }
-        /// <p></p>
-        pub fn set_streaming_image(
-            mut self,
-            input: std::option::Option<crate::model::StreamingImage>,
-        ) -> Self {
-            self.streaming_image = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
-        pub fn build(self) -> crate::output::UpdateStreamingImageOutput {
-            crate::output::UpdateStreamingImageOutput {
-                streaming_image: self.streaming_image,
-            }
-        }
-    }
-}
-impl UpdateStreamingImageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
-    pub fn builder() -> crate::output::update_streaming_image_output::Builder {
-        crate::output::update_streaming_image_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLaunchProfileMemberOutput {
-    /// <p>The member.</p>
-    pub member: std::option::Option<crate::model::LaunchProfileMembership>,
-}
-impl std::fmt::Debug for UpdateLaunchProfileMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchProfileMemberOutput");
-        formatter.field("member", &self.member);
-        formatter.finish()
-    }
-}
-/// See [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
-pub mod update_launch_profile_member_output {
-    /// A builder for [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) member: std::option::Option<crate::model::LaunchProfileMembership>,
-    }
-    impl Builder {
-        /// <p>The member.</p>
-        pub fn member(mut self, input: crate::model::LaunchProfileMembership) -> Self {
-            self.member = Some(input);
-            self
-        }
-        /// <p>The member.</p>
-        pub fn set_member(
-            mut self,
-            input: std::option::Option<crate::model::LaunchProfileMembership>,
-        ) -> Self {
-            self.member = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
-        pub fn build(self) -> crate::output::UpdateLaunchProfileMemberOutput {
-            crate::output::UpdateLaunchProfileMemberOutput {
-                member: self.member,
-            }
-        }
-    }
-}
-impl UpdateLaunchProfileMemberOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
-    pub fn builder() -> crate::output::update_launch_profile_member_output::Builder {
-        crate::output::update_launch_profile_member_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateLaunchProfileOutput {
-    /// <p>The launch profile.</p>
-    pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
-}
-impl std::fmt::Debug for UpdateLaunchProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchProfileOutput");
-        formatter.field("launch_profile", &self.launch_profile);
-        formatter.finish()
-    }
-}
-/// See [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
-pub mod update_launch_profile_output {
-    /// A builder for [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) launch_profile: std::option::Option<crate::model::LaunchProfile>,
-    }
-    impl Builder {
-        /// <p>The launch profile.</p>
-        pub fn launch_profile(mut self, input: crate::model::LaunchProfile) -> Self {
-            self.launch_profile = Some(input);
-            self
-        }
-        /// <p>The launch profile.</p>
-        pub fn set_launch_profile(
-            mut self,
-            input: std::option::Option<crate::model::LaunchProfile>,
-        ) -> Self {
-            self.launch_profile = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
-        pub fn build(self) -> crate::output::UpdateLaunchProfileOutput {
-            crate::output::UpdateLaunchProfileOutput {
-                launch_profile: self.launch_profile,
-            }
-        }
-    }
-}
-impl UpdateLaunchProfileOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
-    pub fn builder() -> crate::output::update_launch_profile_output::Builder {
-        crate::output::update_launch_profile_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-pub mod untag_resource_output {
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-        pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
-        }
-    }
-}
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
-pub mod tag_resource_output {
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
-        pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
-        }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
@@ -392,94 +80,153 @@ impl PutStudioMembersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutLaunchProfileMembersOutput {}
-impl std::fmt::Debug for PutLaunchProfileMembersOutput {
+pub struct ListStudioMembersOutput {
+    /// <p>A list of members.</p>
+    pub members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListStudioMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLaunchProfileMembersOutput");
+        let mut formatter = f.debug_struct("ListStudioMembersOutput");
+        formatter.field("members", &self.members);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
-/// See [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
-pub mod put_launch_profile_members_output {
-    /// A builder for [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+/// See [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
+pub mod list_studio_members_output {
+    /// A builder for [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
     impl Builder {
-        /// Consumes the builder and constructs a [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
-        pub fn build(self) -> crate::output::PutLaunchProfileMembersOutput {
-            crate::output::PutLaunchProfileMembersOutput {}
+        /// Appends an item to `members`.
+        ///
+        /// To override the contents of this collection use [`set_members`](Self::set_members).
+        ///
+        /// <p>A list of members.</p>
+        pub fn members(mut self, input: impl Into<crate::model::StudioMembership>) -> Self {
+            let mut v = self.members.unwrap_or_default();
+            v.push(input.into());
+            self.members = Some(v);
+            self
+        }
+        /// <p>A list of members.</p>
+        pub fn set_members(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
+        ) -> Self {
+            self.members = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
+        pub fn build(self) -> crate::output::ListStudioMembersOutput {
+            crate::output::ListStudioMembersOutput {
+                members: self.members,
+                next_token: self.next_token,
+            }
         }
     }
 }
-impl PutLaunchProfileMembersOutput {
-    /// Creates a new builder-style object to manufacture [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
-    pub fn builder() -> crate::output::put_launch_profile_members_output::Builder {
-        crate::output::put_launch_profile_members_output::Builder::default()
+impl ListStudioMembersOutput {
+    /// Creates a new builder-style object to manufacture [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
+    pub fn builder() -> crate::output::list_studio_members_output::Builder {
+        crate::output::list_studio_members_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+pub struct GetStudioMemberOutput {
+    /// <p>The member.</p>
+    pub member: std::option::Option<crate::model::StudioMembership>,
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
+impl std::fmt::Debug for GetStudioMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
+        let mut formatter = f.debug_struct("GetStudioMemberOutput");
+        formatter.field("member", &self.member);
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-pub mod list_tags_for_resource_output {
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
+pub mod get_studio_member_output {
+    /// A builder for [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) member: std::option::Option<crate::model::StudioMembership>,
     }
     impl Builder {
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
+        /// <p>The member.</p>
+        pub fn member(mut self, input: crate::model::StudioMembership) -> Self {
+            self.member = Some(input);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-        pub fn set_tags(
+        /// <p>The member.</p>
+        pub fn set_member(
             mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
+            input: std::option::Option<crate::model::StudioMembership>,
         ) -> Self {
-            self.tags = input;
+            self.member = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        /// Consumes the builder and constructs a [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
+        pub fn build(self) -> crate::output::GetStudioMemberOutput {
+            crate::output::GetStudioMemberOutput {
+                member: self.member,
+            }
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
+impl GetStudioMemberOutput {
+    /// Creates a new builder-style object to manufacture [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
+    pub fn builder() -> crate::output::get_studio_member_output::Builder {
+        crate::output::get_studio_member_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioMemberOutput {}
+impl std::fmt::Debug for DeleteStudioMemberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioMemberOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
+pub mod delete_studio_member_output {
+    /// A builder for [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
+        pub fn build(self) -> crate::output::DeleteStudioMemberOutput {
+            crate::output::DeleteStudioMemberOutput {}
+        }
+    }
+}
+impl DeleteStudioMemberOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
+    pub fn builder() -> crate::output::delete_studio_member_output::Builder {
+        crate::output::delete_studio_member_output::Builder::default()
     }
 }
 
@@ -558,72 +305,192 @@ impl ListStudiosOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListStudioMembersOutput {
-    /// <p>A list of members.</p>
-    pub members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
+pub struct CreateStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub studio: std::option::Option<crate::model::Studio>,
 }
-impl std::fmt::Debug for ListStudioMembersOutput {
+impl std::fmt::Debug for CreateStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudioMembersOutput");
-        formatter.field("members", &self.members);
-        formatter.field("next_token", &self.next_token);
+        let mut formatter = f.debug_struct("CreateStudioOutput");
+        formatter.field("studio", &self.studio);
         formatter.finish()
     }
 }
-/// See [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
-pub mod list_studio_members_output {
-    /// A builder for [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
+/// See [`CreateStudioOutput`](crate::output::CreateStudioOutput)
+pub mod create_studio_output {
+    /// A builder for [`CreateStudioOutput`](crate::output::CreateStudioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) studio: std::option::Option<crate::model::Studio>,
     }
     impl Builder {
-        /// Appends an item to `members`.
-        ///
-        /// To override the contents of this collection use [`set_members`](Self::set_members).
-        ///
-        /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::StudioMembership>) -> Self {
-            let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
-            self.members = Some(v);
+        /// <p>Information about a studio.</p>
+        pub fn studio(mut self, input: crate::model::Studio) -> Self {
+            self.studio = Some(input);
             self
         }
-        /// <p>A list of members.</p>
-        pub fn set_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
-        ) -> Self {
-            self.members = input;
+        /// <p>Information about a studio.</p>
+        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
+            self.studio = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
-        pub fn build(self) -> crate::output::ListStudioMembersOutput {
-            crate::output::ListStudioMembersOutput {
-                members: self.members,
-                next_token: self.next_token,
+        /// Consumes the builder and constructs a [`CreateStudioOutput`](crate::output::CreateStudioOutput)
+        pub fn build(self) -> crate::output::CreateStudioOutput {
+            crate::output::CreateStudioOutput {
+                studio: self.studio,
             }
         }
     }
 }
-impl ListStudioMembersOutput {
-    /// Creates a new builder-style object to manufacture [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput)
-    pub fn builder() -> crate::output::list_studio_members_output::Builder {
-        crate::output::list_studio_members_output::Builder::default()
+impl CreateStudioOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStudioOutput`](crate::output::CreateStudioOutput)
+    pub fn builder() -> crate::output::create_studio_output::Builder {
+        crate::output::create_studio_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub studio: std::option::Option<crate::model::Studio>,
+}
+impl std::fmt::Debug for DeleteStudioOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioOutput");
+        formatter.field("studio", &self.studio);
+        formatter.finish()
+    }
+}
+/// See [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
+pub mod delete_studio_output {
+    /// A builder for [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio: std::option::Option<crate::model::Studio>,
+    }
+    impl Builder {
+        /// <p>Information about a studio.</p>
+        pub fn studio(mut self, input: crate::model::Studio) -> Self {
+            self.studio = Some(input);
+            self
+        }
+        /// <p>Information about a studio.</p>
+        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
+            self.studio = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
+        pub fn build(self) -> crate::output::DeleteStudioOutput {
+            crate::output::DeleteStudioOutput {
+                studio: self.studio,
+            }
+        }
+    }
+}
+impl DeleteStudioOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
+    pub fn builder() -> crate::output::delete_studio_output::Builder {
+        crate::output::delete_studio_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub studio: std::option::Option<crate::model::Studio>,
+}
+impl std::fmt::Debug for UpdateStudioOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStudioOutput");
+        formatter.field("studio", &self.studio);
+        formatter.finish()
+    }
+}
+/// See [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
+pub mod update_studio_output {
+    /// A builder for [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio: std::option::Option<crate::model::Studio>,
+    }
+    impl Builder {
+        /// <p>Information about a studio.</p>
+        pub fn studio(mut self, input: crate::model::Studio) -> Self {
+            self.studio = Some(input);
+            self
+        }
+        /// <p>Information about a studio.</p>
+        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
+            self.studio = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
+        pub fn build(self) -> crate::output::UpdateStudioOutput {
+            crate::output::UpdateStudioOutput {
+                studio: self.studio,
+            }
+        }
+    }
+}
+impl UpdateStudioOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
+    pub fn builder() -> crate::output::update_studio_output::Builder {
+        crate::output::update_studio_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub studio: std::option::Option<crate::model::Studio>,
+}
+impl std::fmt::Debug for GetStudioOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStudioOutput");
+        formatter.field("studio", &self.studio);
+        formatter.finish()
+    }
+}
+/// See [`GetStudioOutput`](crate::output::GetStudioOutput)
+pub mod get_studio_output {
+    /// A builder for [`GetStudioOutput`](crate::output::GetStudioOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio: std::option::Option<crate::model::Studio>,
+    }
+    impl Builder {
+        /// <p>Information about a studio.</p>
+        pub fn studio(mut self, input: crate::model::Studio) -> Self {
+            self.studio = Some(input);
+            self
+        }
+        /// <p>Information about a studio.</p>
+        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
+            self.studio = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStudioOutput`](crate::output::GetStudioOutput)
+        pub fn build(self) -> crate::output::GetStudioOutput {
+            crate::output::GetStudioOutput {
+                studio: self.studio,
+            }
+        }
+    }
+}
+impl GetStudioOutput {
+    /// Creates a new builder-style object to manufacture [`GetStudioOutput`](crate::output::GetStudioOutput)
+    pub fn builder() -> crate::output::get_studio_output::Builder {
+        crate::output::get_studio_output::Builder::default()
     }
 }
 
@@ -703,6 +570,420 @@ impl ListStudioComponentsOutput {
     }
 }
 
+/// <p/>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl std::fmt::Debug for CreateStudioComponentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStudioComponentOutput");
+        formatter.field("studio_component", &self.studio_component);
+        formatter.finish()
+    }
+}
+/// See [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
+pub mod create_studio_component_output {
+    /// A builder for [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
+    }
+    impl Builder {
+        /// <p>Information about the studio component.</p>
+        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
+            self.studio_component = Some(input);
+            self
+        }
+        /// <p>Information about the studio component.</p>
+        pub fn set_studio_component(
+            mut self,
+            input: std::option::Option<crate::model::StudioComponent>,
+        ) -> Self {
+            self.studio_component = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
+        pub fn build(self) -> crate::output::CreateStudioComponentOutput {
+            crate::output::CreateStudioComponentOutput {
+                studio_component: self.studio_component,
+            }
+        }
+    }
+}
+impl CreateStudioComponentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
+    pub fn builder() -> crate::output::create_studio_component_output::Builder {
+        crate::output::create_studio_component_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl std::fmt::Debug for DeleteStudioComponentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStudioComponentOutput");
+        formatter.field("studio_component", &self.studio_component);
+        formatter.finish()
+    }
+}
+/// See [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
+pub mod delete_studio_component_output {
+    /// A builder for [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
+    }
+    impl Builder {
+        /// <p>Information about the studio component.</p>
+        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
+            self.studio_component = Some(input);
+            self
+        }
+        /// <p>Information about the studio component.</p>
+        pub fn set_studio_component(
+            mut self,
+            input: std::option::Option<crate::model::StudioComponent>,
+        ) -> Self {
+            self.studio_component = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
+        pub fn build(self) -> crate::output::DeleteStudioComponentOutput {
+            crate::output::DeleteStudioComponentOutput {
+                studio_component: self.studio_component,
+            }
+        }
+    }
+}
+impl DeleteStudioComponentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
+    pub fn builder() -> crate::output::delete_studio_component_output::Builder {
+        crate::output::delete_studio_component_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl std::fmt::Debug for UpdateStudioComponentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStudioComponentOutput");
+        formatter.field("studio_component", &self.studio_component);
+        formatter.finish()
+    }
+}
+/// See [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
+pub mod update_studio_component_output {
+    /// A builder for [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
+    }
+    impl Builder {
+        /// <p>Information about the studio component.</p>
+        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
+            self.studio_component = Some(input);
+            self
+        }
+        /// <p>Information about the studio component.</p>
+        pub fn set_studio_component(
+            mut self,
+            input: std::option::Option<crate::model::StudioComponent>,
+        ) -> Self {
+            self.studio_component = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
+        pub fn build(self) -> crate::output::UpdateStudioComponentOutput {
+            crate::output::UpdateStudioComponentOutput {
+                studio_component: self.studio_component,
+            }
+        }
+    }
+}
+impl UpdateStudioComponentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput)
+    pub fn builder() -> crate::output::update_studio_component_output::Builder {
+        crate::output::update_studio_component_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl std::fmt::Debug for GetStudioComponentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStudioComponentOutput");
+        formatter.field("studio_component", &self.studio_component);
+        formatter.finish()
+    }
+}
+/// See [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
+pub mod get_studio_component_output {
+    /// A builder for [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
+    }
+    impl Builder {
+        /// <p>Information about the studio component.</p>
+        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
+            self.studio_component = Some(input);
+            self
+        }
+        /// <p>Information about the studio component.</p>
+        pub fn set_studio_component(
+            mut self,
+            input: std::option::Option<crate::model::StudioComponent>,
+        ) -> Self {
+            self.studio_component = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
+        pub fn build(self) -> crate::output::GetStudioComponentOutput {
+            crate::output::GetStudioComponentOutput {
+                studio_component: self.studio_component,
+            }
+        }
+    }
+}
+impl GetStudioComponentOutput {
+    /// Creates a new builder-style object to manufacture [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
+    pub fn builder() -> crate::output::get_studio_component_output::Builder {
+        crate::output::get_studio_component_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopStreamingSessionOutput {
+    /// <p>A streaming session is a virtual workstation created using a particular launch
+    /// profile.</p>
+    pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl std::fmt::Debug for StopStreamingSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopStreamingSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
+pub mod stop_streaming_session_output {
+    /// A builder for [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
+    }
+    impl Builder {
+        /// <p>A streaming session is a virtual workstation created using a particular launch
+        /// profile.</p>
+        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>A streaming session is a virtual workstation created using a particular launch
+        /// profile.</p>
+        pub fn set_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSession>,
+        ) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
+        pub fn build(self) -> crate::output::StopStreamingSessionOutput {
+            crate::output::StopStreamingSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl StopStreamingSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput)
+    pub fn builder() -> crate::output::stop_streaming_session_output::Builder {
+        crate::output::stop_streaming_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartStreamingSessionOutput {
+    /// <p>A streaming session is a virtual workstation created using a particular launch
+    /// profile.</p>
+    pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl std::fmt::Debug for StartStreamingSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartStreamingSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
+pub mod start_streaming_session_output {
+    /// A builder for [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
+    }
+    impl Builder {
+        /// <p>A streaming session is a virtual workstation created using a particular launch
+        /// profile.</p>
+        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>A streaming session is a virtual workstation created using a particular launch
+        /// profile.</p>
+        pub fn set_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSession>,
+        ) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
+        pub fn build(self) -> crate::output::StartStreamingSessionOutput {
+            crate::output::StartStreamingSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl StartStreamingSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput)
+    pub fn builder() -> crate::output::start_streaming_session_output::Builder {
+        crate::output::start_streaming_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingSessionStreamOutput {
+    /// <p>The stream.</p>
+    pub stream: std::option::Option<crate::model::StreamingSessionStream>,
+}
+impl std::fmt::Debug for GetStreamingSessionStreamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingSessionStreamOutput");
+        formatter.field("stream", &self.stream);
+        formatter.finish()
+    }
+}
+/// See [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
+pub mod get_streaming_session_stream_output {
+    /// A builder for [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream: std::option::Option<crate::model::StreamingSessionStream>,
+    }
+    impl Builder {
+        /// <p>The stream.</p>
+        pub fn stream(mut self, input: crate::model::StreamingSessionStream) -> Self {
+            self.stream = Some(input);
+            self
+        }
+        /// <p>The stream.</p>
+        pub fn set_stream(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSessionStream>,
+        ) -> Self {
+            self.stream = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
+        pub fn build(self) -> crate::output::GetStreamingSessionStreamOutput {
+            crate::output::GetStreamingSessionStreamOutput {
+                stream: self.stream,
+            }
+        }
+    }
+}
+impl GetStreamingSessionStreamOutput {
+    /// Creates a new builder-style object to manufacture [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
+    pub fn builder() -> crate::output::get_streaming_session_stream_output::Builder {
+        crate::output::get_streaming_session_stream_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStreamingSessionStreamOutput {
+    /// <p>The stream.</p>
+    pub stream: std::option::Option<crate::model::StreamingSessionStream>,
+}
+impl std::fmt::Debug for CreateStreamingSessionStreamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStreamingSessionStreamOutput");
+        formatter.field("stream", &self.stream);
+        formatter.finish()
+    }
+}
+/// See [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
+pub mod create_streaming_session_stream_output {
+    /// A builder for [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream: std::option::Option<crate::model::StreamingSessionStream>,
+    }
+    impl Builder {
+        /// <p>The stream.</p>
+        pub fn stream(mut self, input: crate::model::StreamingSessionStream) -> Self {
+            self.stream = Some(input);
+            self
+        }
+        /// <p>The stream.</p>
+        pub fn set_stream(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSessionStream>,
+        ) -> Self {
+            self.stream = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
+        pub fn build(self) -> crate::output::CreateStreamingSessionStreamOutput {
+            crate::output::CreateStreamingSessionStreamOutput {
+                stream: self.stream,
+            }
+        }
+    }
+}
+impl CreateStreamingSessionStreamOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
+    pub fn builder() -> crate::output::create_streaming_session_stream_output::Builder {
+        crate::output::create_streaming_session_stream_output::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -772,6 +1053,159 @@ impl ListStreamingSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsOutput`](crate::output::ListStreamingSessionsOutput)
     pub fn builder() -> crate::output::list_streaming_sessions_output::Builder {
         crate::output::list_streaming_sessions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl std::fmt::Debug for CreateStreamingSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateStreamingSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
+pub mod create_streaming_session_output {
+    /// A builder for [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
+    }
+    impl Builder {
+        /// <p>The session.</p>
+        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>The session.</p>
+        pub fn set_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSession>,
+        ) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
+        pub fn build(self) -> crate::output::CreateStreamingSessionOutput {
+            crate::output::CreateStreamingSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl CreateStreamingSessionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
+    pub fn builder() -> crate::output::create_streaming_session_output::Builder {
+        crate::output::create_streaming_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl std::fmt::Debug for DeleteStreamingSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStreamingSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
+pub mod delete_streaming_session_output {
+    /// A builder for [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
+    }
+    impl Builder {
+        /// <p>The session.</p>
+        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>The session.</p>
+        pub fn set_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSession>,
+        ) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
+        pub fn build(self) -> crate::output::DeleteStreamingSessionOutput {
+            crate::output::DeleteStreamingSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl DeleteStreamingSessionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
+    pub fn builder() -> crate::output::delete_streaming_session_output::Builder {
+        crate::output::delete_streaming_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl std::fmt::Debug for GetStreamingSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
+pub mod get_streaming_session_output {
+    /// A builder for [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
+    }
+    impl Builder {
+        /// <p>The session.</p>
+        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>The session.</p>
+        pub fn set_session(
+            mut self,
+            input: std::option::Option<crate::model::StreamingSession>,
+        ) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
+        pub fn build(self) -> crate::output::GetStreamingSessionOutput {
+            crate::output::GetStreamingSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl GetStreamingSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
+    pub fn builder() -> crate::output::get_streaming_session_output::Builder {
+        crate::output::get_streaming_session_output::Builder::default()
     }
 }
 
@@ -851,72 +1285,285 @@ impl ListStreamingImagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListLaunchProfilesOutput {
-    /// <p>A collection of launch profiles.</p>
-    pub launch_profiles: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
+pub struct CreateStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
-impl std::fmt::Debug for ListLaunchProfilesOutput {
+impl std::fmt::Debug for CreateStreamingImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLaunchProfilesOutput");
-        formatter.field("launch_profiles", &self.launch_profiles);
-        formatter.field("next_token", &self.next_token);
+        let mut formatter = f.debug_struct("CreateStreamingImageOutput");
+        formatter.field("streaming_image", &self.streaming_image);
         formatter.finish()
     }
 }
-/// See [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
-pub mod list_launch_profiles_output {
-    /// A builder for [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
+/// See [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
+pub mod create_streaming_image_output {
+    /// A builder for [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) launch_profiles: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
     }
     impl Builder {
-        /// Appends an item to `launch_profiles`.
-        ///
-        /// To override the contents of this collection use [`set_launch_profiles`](Self::set_launch_profiles).
-        ///
-        /// <p>A collection of launch profiles.</p>
-        pub fn launch_profiles(mut self, input: impl Into<crate::model::LaunchProfile>) -> Self {
-            let mut v = self.launch_profiles.unwrap_or_default();
-            v.push(input.into());
-            self.launch_profiles = Some(v);
+        /// <p>The streaming image.</p>
+        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
+            self.streaming_image = Some(input);
             self
         }
-        /// <p>A collection of launch profiles.</p>
-        pub fn set_launch_profiles(
+        /// <p>The streaming image.</p>
+        pub fn set_streaming_image(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
+            input: std::option::Option<crate::model::StreamingImage>,
         ) -> Self {
-            self.launch_profiles = input;
+            self.streaming_image = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
-        pub fn build(self) -> crate::output::ListLaunchProfilesOutput {
-            crate::output::ListLaunchProfilesOutput {
-                launch_profiles: self.launch_profiles,
-                next_token: self.next_token,
+        /// Consumes the builder and constructs a [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
+        pub fn build(self) -> crate::output::CreateStreamingImageOutput {
+            crate::output::CreateStreamingImageOutput {
+                streaming_image: self.streaming_image,
             }
         }
     }
 }
-impl ListLaunchProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
-    pub fn builder() -> crate::output::list_launch_profiles_output::Builder {
-        crate::output::list_launch_profiles_output::Builder::default()
+impl CreateStreamingImageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
+    pub fn builder() -> crate::output::create_streaming_image_output::Builder {
+        crate::output::create_streaming_image_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
+}
+impl std::fmt::Debug for DeleteStreamingImageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStreamingImageOutput");
+        formatter.field("streaming_image", &self.streaming_image);
+        formatter.finish()
+    }
+}
+/// See [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
+pub mod delete_streaming_image_output {
+    /// A builder for [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
+    }
+    impl Builder {
+        /// <p>The streaming image.</p>
+        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
+            self.streaming_image = Some(input);
+            self
+        }
+        /// <p>The streaming image.</p>
+        pub fn set_streaming_image(
+            mut self,
+            input: std::option::Option<crate::model::StreamingImage>,
+        ) -> Self {
+            self.streaming_image = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
+        pub fn build(self) -> crate::output::DeleteStreamingImageOutput {
+            crate::output::DeleteStreamingImageOutput {
+                streaming_image: self.streaming_image,
+            }
+        }
+    }
+}
+impl DeleteStreamingImageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
+    pub fn builder() -> crate::output::delete_streaming_image_output::Builder {
+        crate::output::delete_streaming_image_output::Builder::default()
+    }
+}
+
+/// <p/>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStreamingImageOutput {
+    /// <p/>
+    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
+}
+impl std::fmt::Debug for UpdateStreamingImageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStreamingImageOutput");
+        formatter.field("streaming_image", &self.streaming_image);
+        formatter.finish()
+    }
+}
+/// See [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
+pub mod update_streaming_image_output {
+    /// A builder for [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
+    }
+    impl Builder {
+        /// <p/>
+        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
+            self.streaming_image = Some(input);
+            self
+        }
+        /// <p/>
+        pub fn set_streaming_image(
+            mut self,
+            input: std::option::Option<crate::model::StreamingImage>,
+        ) -> Self {
+            self.streaming_image = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
+        pub fn build(self) -> crate::output::UpdateStreamingImageOutput {
+            crate::output::UpdateStreamingImageOutput {
+                streaming_image: self.streaming_image,
+            }
+        }
+    }
+}
+impl UpdateStreamingImageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput)
+    pub fn builder() -> crate::output::update_streaming_image_output::Builder {
+        crate::output::update_streaming_image_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
+}
+impl std::fmt::Debug for GetStreamingImageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStreamingImageOutput");
+        formatter.field("streaming_image", &self.streaming_image);
+        formatter.finish()
+    }
+}
+/// See [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
+pub mod get_streaming_image_output {
+    /// A builder for [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
+    }
+    impl Builder {
+        /// <p>The streaming image.</p>
+        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
+            self.streaming_image = Some(input);
+            self
+        }
+        /// <p>The streaming image.</p>
+        pub fn set_streaming_image(
+            mut self,
+            input: std::option::Option<crate::model::StreamingImage>,
+        ) -> Self {
+            self.streaming_image = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
+        pub fn build(self) -> crate::output::GetStreamingImageOutput {
+            crate::output::GetStreamingImageOutput {
+                streaming_image: self.streaming_image,
+            }
+        }
+    }
+}
+impl GetStreamingImageOutput {
+    /// Creates a new builder-style object to manufacture [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
+    pub fn builder() -> crate::output::get_streaming_image_output::Builder {
+        crate::output::get_streaming_image_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLaunchProfileMemberOutput {
+    /// <p>The updated member. </p>
+    pub member: std::option::Option<crate::model::LaunchProfileMembership>,
+}
+impl std::fmt::Debug for UpdateLaunchProfileMemberOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLaunchProfileMemberOutput");
+        formatter.field("member", &self.member);
+        formatter.finish()
+    }
+}
+/// See [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
+pub mod update_launch_profile_member_output {
+    /// A builder for [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) member: std::option::Option<crate::model::LaunchProfileMembership>,
+    }
+    impl Builder {
+        /// <p>The updated member. </p>
+        pub fn member(mut self, input: crate::model::LaunchProfileMembership) -> Self {
+            self.member = Some(input);
+            self
+        }
+        /// <p>The updated member. </p>
+        pub fn set_member(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfileMembership>,
+        ) -> Self {
+            self.member = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
+        pub fn build(self) -> crate::output::UpdateLaunchProfileMemberOutput {
+            crate::output::UpdateLaunchProfileMemberOutput {
+                member: self.member,
+            }
+        }
+    }
+}
+impl UpdateLaunchProfileMemberOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput)
+    pub fn builder() -> crate::output::update_launch_profile_member_output::Builder {
+        crate::output::update_launch_profile_member_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutLaunchProfileMembersOutput {}
+impl std::fmt::Debug for PutLaunchProfileMembersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutLaunchProfileMembersOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+pub mod put_launch_profile_members_output {
+    /// A builder for [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+        pub fn build(self) -> crate::output::PutLaunchProfileMembersOutput {
+            crate::output::PutLaunchProfileMembersOutput {}
+        }
+    }
+}
+impl PutLaunchProfileMembersOutput {
+    /// Creates a new builder-style object to manufacture [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+    pub fn builder() -> crate::output::put_launch_profile_members_output::Builder {
+        crate::output::put_launch_profile_members_output::Builder::default()
     }
 }
 
@@ -990,454 +1637,6 @@ impl ListLaunchProfileMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput)
     pub fn builder() -> crate::output::list_launch_profile_members_output::Builder {
         crate::output::list_launch_profile_members_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEulasOutput {
-    /// <p>A collection of EULA resources.</p>
-    pub eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListEulasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulasOutput");
-        formatter.field("eulas", &self.eulas);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-/// See [`ListEulasOutput`](crate::output::ListEulasOutput)
-pub mod list_eulas_output {
-    /// A builder for [`ListEulasOutput`](crate::output::ListEulasOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `eulas`.
-        ///
-        /// To override the contents of this collection use [`set_eulas`](Self::set_eulas).
-        ///
-        /// <p>A collection of EULA resources.</p>
-        pub fn eulas(mut self, input: impl Into<crate::model::Eula>) -> Self {
-            let mut v = self.eulas.unwrap_or_default();
-            v.push(input.into());
-            self.eulas = Some(v);
-            self
-        }
-        /// <p>A collection of EULA resources.</p>
-        pub fn set_eulas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Eula>>,
-        ) -> Self {
-            self.eulas = input;
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListEulasOutput`](crate::output::ListEulasOutput)
-        pub fn build(self) -> crate::output::ListEulasOutput {
-            crate::output::ListEulasOutput {
-                eulas: self.eulas,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListEulasOutput {
-    /// Creates a new builder-style object to manufacture [`ListEulasOutput`](crate::output::ListEulasOutput)
-    pub fn builder() -> crate::output::list_eulas_output::Builder {
-        crate::output::list_eulas_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEulaAcceptancesOutput {
-    /// <p>A collection of EULA acceptances.</p>
-    pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub next_token: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ListEulaAcceptancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulaAcceptancesOutput");
-        formatter.field("eula_acceptances", &self.eula_acceptances);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
-/// See [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
-pub mod list_eula_acceptances_output {
-    /// A builder for [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) eula_acceptances:
-            std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
-        pub(crate) next_token: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// Appends an item to `eula_acceptances`.
-        ///
-        /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
-        ///
-        /// <p>A collection of EULA acceptances.</p>
-        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
-            let mut v = self.eula_acceptances.unwrap_or_default();
-            v.push(input.into());
-            self.eula_acceptances = Some(v);
-            self
-        }
-        /// <p>A collection of EULA acceptances.</p>
-        pub fn set_eula_acceptances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
-        ) -> Self {
-            self.eula_acceptances = input;
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(input.into());
-            self
-        }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
-        pub fn build(self) -> crate::output::ListEulaAcceptancesOutput {
-            crate::output::ListEulaAcceptancesOutput {
-                eula_acceptances: self.eula_acceptances,
-                next_token: self.next_token,
-            }
-        }
-    }
-}
-impl ListEulaAcceptancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
-    pub fn builder() -> crate::output::list_eula_acceptances_output::Builder {
-        crate::output::list_eula_acceptances_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioMemberOutput {
-    /// <p>The member.</p>
-    pub member: std::option::Option<crate::model::StudioMembership>,
-}
-impl std::fmt::Debug for GetStudioMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioMemberOutput");
-        formatter.field("member", &self.member);
-        formatter.finish()
-    }
-}
-/// See [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
-pub mod get_studio_member_output {
-    /// A builder for [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) member: std::option::Option<crate::model::StudioMembership>,
-    }
-    impl Builder {
-        /// <p>The member.</p>
-        pub fn member(mut self, input: crate::model::StudioMembership) -> Self {
-            self.member = Some(input);
-            self
-        }
-        /// <p>The member.</p>
-        pub fn set_member(
-            mut self,
-            input: std::option::Option<crate::model::StudioMembership>,
-        ) -> Self {
-            self.member = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
-        pub fn build(self) -> crate::output::GetStudioMemberOutput {
-            crate::output::GetStudioMemberOutput {
-                member: self.member,
-            }
-        }
-    }
-}
-impl GetStudioMemberOutput {
-    /// Creates a new builder-style object to manufacture [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput)
-    pub fn builder() -> crate::output::get_studio_member_output::Builder {
-        crate::output::get_studio_member_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioComponentOutput {
-    /// <p>Information about the studio component.</p>
-    pub studio_component: std::option::Option<crate::model::StudioComponent>,
-}
-impl std::fmt::Debug for GetStudioComponentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioComponentOutput");
-        formatter.field("studio_component", &self.studio_component);
-        formatter.finish()
-    }
-}
-/// See [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
-pub mod get_studio_component_output {
-    /// A builder for [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
-    }
-    impl Builder {
-        /// <p>Information about the studio component.</p>
-        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
-            self.studio_component = Some(input);
-            self
-        }
-        /// <p>Information about the studio component.</p>
-        pub fn set_studio_component(
-            mut self,
-            input: std::option::Option<crate::model::StudioComponent>,
-        ) -> Self {
-            self.studio_component = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
-        pub fn build(self) -> crate::output::GetStudioComponentOutput {
-            crate::output::GetStudioComponentOutput {
-                studio_component: self.studio_component,
-            }
-        }
-    }
-}
-impl GetStudioComponentOutput {
-    /// Creates a new builder-style object to manufacture [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput)
-    pub fn builder() -> crate::output::get_studio_component_output::Builder {
-        crate::output::get_studio_component_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStudioOutput {
-    /// <p>Information about a studio.</p>
-    pub studio: std::option::Option<crate::model::Studio>,
-}
-impl std::fmt::Debug for GetStudioOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioOutput");
-        formatter.field("studio", &self.studio);
-        formatter.finish()
-    }
-}
-/// See [`GetStudioOutput`](crate::output::GetStudioOutput)
-pub mod get_studio_output {
-    /// A builder for [`GetStudioOutput`](crate::output::GetStudioOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio: std::option::Option<crate::model::Studio>,
-    }
-    impl Builder {
-        /// <p>Information about a studio.</p>
-        pub fn studio(mut self, input: crate::model::Studio) -> Self {
-            self.studio = Some(input);
-            self
-        }
-        /// <p>Information about a studio.</p>
-        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
-            self.studio = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStudioOutput`](crate::output::GetStudioOutput)
-        pub fn build(self) -> crate::output::GetStudioOutput {
-            crate::output::GetStudioOutput {
-                studio: self.studio,
-            }
-        }
-    }
-}
-impl GetStudioOutput {
-    /// Creates a new builder-style object to manufacture [`GetStudioOutput`](crate::output::GetStudioOutput)
-    pub fn builder() -> crate::output::get_studio_output::Builder {
-        crate::output::get_studio_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingSessionStreamOutput {
-    /// <p>The stream.</p>
-    pub stream: std::option::Option<crate::model::StreamingSessionStream>,
-}
-impl std::fmt::Debug for GetStreamingSessionStreamOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionStreamOutput");
-        formatter.field("stream", &self.stream);
-        formatter.finish()
-    }
-}
-/// See [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
-pub mod get_streaming_session_stream_output {
-    /// A builder for [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) stream: std::option::Option<crate::model::StreamingSessionStream>,
-    }
-    impl Builder {
-        /// <p>The stream.</p>
-        pub fn stream(mut self, input: crate::model::StreamingSessionStream) -> Self {
-            self.stream = Some(input);
-            self
-        }
-        /// <p>The stream.</p>
-        pub fn set_stream(
-            mut self,
-            input: std::option::Option<crate::model::StreamingSessionStream>,
-        ) -> Self {
-            self.stream = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
-        pub fn build(self) -> crate::output::GetStreamingSessionStreamOutput {
-            crate::output::GetStreamingSessionStreamOutput {
-                stream: self.stream,
-            }
-        }
-    }
-}
-impl GetStreamingSessionStreamOutput {
-    /// Creates a new builder-style object to manufacture [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput)
-    pub fn builder() -> crate::output::get_streaming_session_stream_output::Builder {
-        crate::output::get_streaming_session_stream_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingSessionOutput {
-    /// <p>The session.</p>
-    pub session: std::option::Option<crate::model::StreamingSession>,
-}
-impl std::fmt::Debug for GetStreamingSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionOutput");
-        formatter.field("session", &self.session);
-        formatter.finish()
-    }
-}
-/// See [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
-pub mod get_streaming_session_output {
-    /// A builder for [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
-    }
-    impl Builder {
-        /// <p>The session.</p>
-        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
-            self.session = Some(input);
-            self
-        }
-        /// <p>The session.</p>
-        pub fn set_session(
-            mut self,
-            input: std::option::Option<crate::model::StreamingSession>,
-        ) -> Self {
-            self.session = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
-        pub fn build(self) -> crate::output::GetStreamingSessionOutput {
-            crate::output::GetStreamingSessionOutput {
-                session: self.session,
-            }
-        }
-    }
-}
-impl GetStreamingSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput)
-    pub fn builder() -> crate::output::get_streaming_session_output::Builder {
-        crate::output::get_streaming_session_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetStreamingImageOutput {
-    /// <p>The streaming image.</p>
-    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
-}
-impl std::fmt::Debug for GetStreamingImageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingImageOutput");
-        formatter.field("streaming_image", &self.streaming_image);
-        formatter.finish()
-    }
-}
-/// See [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
-pub mod get_streaming_image_output {
-    /// A builder for [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
-    }
-    impl Builder {
-        /// <p>The streaming image.</p>
-        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
-            self.streaming_image = Some(input);
-            self
-        }
-        /// <p>The streaming image.</p>
-        pub fn set_streaming_image(
-            mut self,
-            input: std::option::Option<crate::model::StreamingImage>,
-        ) -> Self {
-            self.streaming_image = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
-        pub fn build(self) -> crate::output::GetStreamingImageOutput {
-            crate::output::GetStreamingImageOutput {
-                streaming_image: self.streaming_image,
-            }
-        }
-    }
-}
-impl GetStreamingImageOutput {
-    /// Creates a new builder-style object to manufacture [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput)
-    pub fn builder() -> crate::output::get_streaming_image_output::Builder {
-        crate::output::get_streaming_image_output::Builder::default()
     }
 }
 
@@ -1662,334 +1861,6 @@ impl GetLaunchProfileDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetLaunchProfileOutput {
-    /// <p>The launch profile.</p>
-    pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
-}
-impl std::fmt::Debug for GetLaunchProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchProfileOutput");
-        formatter.field("launch_profile", &self.launch_profile);
-        formatter.finish()
-    }
-}
-/// See [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
-pub mod get_launch_profile_output {
-    /// A builder for [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) launch_profile: std::option::Option<crate::model::LaunchProfile>,
-    }
-    impl Builder {
-        /// <p>The launch profile.</p>
-        pub fn launch_profile(mut self, input: crate::model::LaunchProfile) -> Self {
-            self.launch_profile = Some(input);
-            self
-        }
-        /// <p>The launch profile.</p>
-        pub fn set_launch_profile(
-            mut self,
-            input: std::option::Option<crate::model::LaunchProfile>,
-        ) -> Self {
-            self.launch_profile = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
-        pub fn build(self) -> crate::output::GetLaunchProfileOutput {
-            crate::output::GetLaunchProfileOutput {
-                launch_profile: self.launch_profile,
-            }
-        }
-    }
-}
-impl GetLaunchProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
-    pub fn builder() -> crate::output::get_launch_profile_output::Builder {
-        crate::output::get_launch_profile_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetEulaOutput {
-    /// <p>The EULA.</p>
-    pub eula: std::option::Option<crate::model::Eula>,
-}
-impl std::fmt::Debug for GetEulaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEulaOutput");
-        formatter.field("eula", &self.eula);
-        formatter.finish()
-    }
-}
-/// See [`GetEulaOutput`](crate::output::GetEulaOutput)
-pub mod get_eula_output {
-    /// A builder for [`GetEulaOutput`](crate::output::GetEulaOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) eula: std::option::Option<crate::model::Eula>,
-    }
-    impl Builder {
-        /// <p>The EULA.</p>
-        pub fn eula(mut self, input: crate::model::Eula) -> Self {
-            self.eula = Some(input);
-            self
-        }
-        /// <p>The EULA.</p>
-        pub fn set_eula(mut self, input: std::option::Option<crate::model::Eula>) -> Self {
-            self.eula = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GetEulaOutput`](crate::output::GetEulaOutput)
-        pub fn build(self) -> crate::output::GetEulaOutput {
-            crate::output::GetEulaOutput { eula: self.eula }
-        }
-    }
-}
-impl GetEulaOutput {
-    /// Creates a new builder-style object to manufacture [`GetEulaOutput`](crate::output::GetEulaOutput)
-    pub fn builder() -> crate::output::get_eula_output::Builder {
-        crate::output::get_eula_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioMemberOutput {}
-impl std::fmt::Debug for DeleteStudioMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioMemberOutput");
-        formatter.finish()
-    }
-}
-/// See [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
-pub mod delete_studio_member_output {
-    /// A builder for [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
-        pub fn build(self) -> crate::output::DeleteStudioMemberOutput {
-            crate::output::DeleteStudioMemberOutput {}
-        }
-    }
-}
-impl DeleteStudioMemberOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
-    pub fn builder() -> crate::output::delete_studio_member_output::Builder {
-        crate::output::delete_studio_member_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioComponentOutput {
-    /// <p>Information about the studio component.</p>
-    pub studio_component: std::option::Option<crate::model::StudioComponent>,
-}
-impl std::fmt::Debug for DeleteStudioComponentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioComponentOutput");
-        formatter.field("studio_component", &self.studio_component);
-        formatter.finish()
-    }
-}
-/// See [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
-pub mod delete_studio_component_output {
-    /// A builder for [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
-    }
-    impl Builder {
-        /// <p>Information about the studio component.</p>
-        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
-            self.studio_component = Some(input);
-            self
-        }
-        /// <p>Information about the studio component.</p>
-        pub fn set_studio_component(
-            mut self,
-            input: std::option::Option<crate::model::StudioComponent>,
-        ) -> Self {
-            self.studio_component = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
-        pub fn build(self) -> crate::output::DeleteStudioComponentOutput {
-            crate::output::DeleteStudioComponentOutput {
-                studio_component: self.studio_component,
-            }
-        }
-    }
-}
-impl DeleteStudioComponentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput)
-    pub fn builder() -> crate::output::delete_studio_component_output::Builder {
-        crate::output::delete_studio_component_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStudioOutput {
-    /// <p>Information about a studio.</p>
-    pub studio: std::option::Option<crate::model::Studio>,
-}
-impl std::fmt::Debug for DeleteStudioOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioOutput");
-        formatter.field("studio", &self.studio);
-        formatter.finish()
-    }
-}
-/// See [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
-pub mod delete_studio_output {
-    /// A builder for [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio: std::option::Option<crate::model::Studio>,
-    }
-    impl Builder {
-        /// <p>Information about a studio.</p>
-        pub fn studio(mut self, input: crate::model::Studio) -> Self {
-            self.studio = Some(input);
-            self
-        }
-        /// <p>Information about a studio.</p>
-        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
-            self.studio = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
-        pub fn build(self) -> crate::output::DeleteStudioOutput {
-            crate::output::DeleteStudioOutput {
-                studio: self.studio,
-            }
-        }
-    }
-}
-impl DeleteStudioOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
-    pub fn builder() -> crate::output::delete_studio_output::Builder {
-        crate::output::delete_studio_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStreamingSessionOutput {
-    /// <p>The session.</p>
-    pub session: std::option::Option<crate::model::StreamingSession>,
-}
-impl std::fmt::Debug for DeleteStreamingSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingSessionOutput");
-        formatter.field("session", &self.session);
-        formatter.finish()
-    }
-}
-/// See [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
-pub mod delete_streaming_session_output {
-    /// A builder for [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
-    }
-    impl Builder {
-        /// <p>The session.</p>
-        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
-            self.session = Some(input);
-            self
-        }
-        /// <p>The session.</p>
-        pub fn set_session(
-            mut self,
-            input: std::option::Option<crate::model::StreamingSession>,
-        ) -> Self {
-            self.session = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
-        pub fn build(self) -> crate::output::DeleteStreamingSessionOutput {
-            crate::output::DeleteStreamingSessionOutput {
-                session: self.session,
-            }
-        }
-    }
-}
-impl DeleteStreamingSessionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput)
-    pub fn builder() -> crate::output::delete_streaming_session_output::Builder {
-        crate::output::delete_streaming_session_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteStreamingImageOutput {
-    /// <p>The streaming image.</p>
-    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
-}
-impl std::fmt::Debug for DeleteStreamingImageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingImageOutput");
-        formatter.field("streaming_image", &self.streaming_image);
-        formatter.finish()
-    }
-}
-/// See [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
-pub mod delete_streaming_image_output {
-    /// A builder for [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
-    }
-    impl Builder {
-        /// <p>The streaming image.</p>
-        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
-            self.streaming_image = Some(input);
-            self
-        }
-        /// <p>The streaming image.</p>
-        pub fn set_streaming_image(
-            mut self,
-            input: std::option::Option<crate::model::StreamingImage>,
-        ) -> Self {
-            self.streaming_image = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
-        pub fn build(self) -> crate::output::DeleteStreamingImageOutput {
-            crate::output::DeleteStreamingImageOutput {
-                streaming_image: self.streaming_image,
-            }
-        }
-    }
-}
-impl DeleteStreamingImageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput)
-    pub fn builder() -> crate::output::delete_streaming_image_output::Builder {
-        crate::output::delete_streaming_image_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileMemberOutput {}
 impl std::fmt::Debug for DeleteLaunchProfileMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2014,6 +1885,129 @@ impl DeleteLaunchProfileMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
     pub fn builder() -> crate::output::delete_launch_profile_member_output::Builder {
         crate::output::delete_launch_profile_member_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLaunchProfilesOutput {
+    /// <p>A collection of launch profiles.</p>
+    pub launch_profiles: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListLaunchProfilesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLaunchProfilesOutput");
+        formatter.field("launch_profiles", &self.launch_profiles);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
+pub mod list_launch_profiles_output {
+    /// A builder for [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_profiles: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `launch_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_launch_profiles`](Self::set_launch_profiles).
+        ///
+        /// <p>A collection of launch profiles.</p>
+        pub fn launch_profiles(mut self, input: impl Into<crate::model::LaunchProfile>) -> Self {
+            let mut v = self.launch_profiles.unwrap_or_default();
+            v.push(input.into());
+            self.launch_profiles = Some(v);
+            self
+        }
+        /// <p>A collection of launch profiles.</p>
+        pub fn set_launch_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
+        ) -> Self {
+            self.launch_profiles = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
+        pub fn build(self) -> crate::output::ListLaunchProfilesOutput {
+            crate::output::ListLaunchProfilesOutput {
+                launch_profiles: self.launch_profiles,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLaunchProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput)
+    pub fn builder() -> crate::output::list_launch_profiles_output::Builder {
+        crate::output::list_launch_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
+}
+impl std::fmt::Debug for CreateLaunchProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLaunchProfileOutput");
+        formatter.field("launch_profile", &self.launch_profile);
+        formatter.finish()
+    }
+}
+/// See [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
+pub mod create_launch_profile_output {
+    /// A builder for [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_profile: std::option::Option<crate::model::LaunchProfile>,
+    }
+    impl Builder {
+        /// <p>The launch profile.</p>
+        pub fn launch_profile(mut self, input: crate::model::LaunchProfile) -> Self {
+            self.launch_profile = Some(input);
+            self
+        }
+        /// <p>The launch profile.</p>
+        pub fn set_launch_profile(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfile>,
+        ) -> Self {
+            self.launch_profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
+        pub fn build(self) -> crate::output::CreateLaunchProfileOutput {
+            crate::output::CreateLaunchProfileOutput {
+                launch_profile: self.launch_profile,
+            }
+        }
+    }
+}
+impl CreateLaunchProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
+    pub fn builder() -> crate::output::create_launch_profile_output::Builder {
+        crate::output::create_launch_profile_output::Builder::default()
     }
 }
 
@@ -2071,272 +2065,20 @@ impl DeleteLaunchProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStudioComponentOutput {
-    /// <p>Information about the studio component.</p>
-    pub studio_component: std::option::Option<crate::model::StudioComponent>,
-}
-impl std::fmt::Debug for CreateStudioComponentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioComponentOutput");
-        formatter.field("studio_component", &self.studio_component);
-        formatter.finish()
-    }
-}
-/// See [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
-pub mod create_studio_component_output {
-    /// A builder for [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio_component: std::option::Option<crate::model::StudioComponent>,
-    }
-    impl Builder {
-        /// <p>Information about the studio component.</p>
-        pub fn studio_component(mut self, input: crate::model::StudioComponent) -> Self {
-            self.studio_component = Some(input);
-            self
-        }
-        /// <p>Information about the studio component.</p>
-        pub fn set_studio_component(
-            mut self,
-            input: std::option::Option<crate::model::StudioComponent>,
-        ) -> Self {
-            self.studio_component = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
-        pub fn build(self) -> crate::output::CreateStudioComponentOutput {
-            crate::output::CreateStudioComponentOutput {
-                studio_component: self.studio_component,
-            }
-        }
-    }
-}
-impl CreateStudioComponentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput)
-    pub fn builder() -> crate::output::create_studio_component_output::Builder {
-        crate::output::create_studio_component_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStudioOutput {
-    /// <p>Information about a studio.</p>
-    pub studio: std::option::Option<crate::model::Studio>,
-}
-impl std::fmt::Debug for CreateStudioOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioOutput");
-        formatter.field("studio", &self.studio);
-        formatter.finish()
-    }
-}
-/// See [`CreateStudioOutput`](crate::output::CreateStudioOutput)
-pub mod create_studio_output {
-    /// A builder for [`CreateStudioOutput`](crate::output::CreateStudioOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) studio: std::option::Option<crate::model::Studio>,
-    }
-    impl Builder {
-        /// <p>Information about a studio.</p>
-        pub fn studio(mut self, input: crate::model::Studio) -> Self {
-            self.studio = Some(input);
-            self
-        }
-        /// <p>Information about a studio.</p>
-        pub fn set_studio(mut self, input: std::option::Option<crate::model::Studio>) -> Self {
-            self.studio = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateStudioOutput`](crate::output::CreateStudioOutput)
-        pub fn build(self) -> crate::output::CreateStudioOutput {
-            crate::output::CreateStudioOutput {
-                studio: self.studio,
-            }
-        }
-    }
-}
-impl CreateStudioOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStudioOutput`](crate::output::CreateStudioOutput)
-    pub fn builder() -> crate::output::create_studio_output::Builder {
-        crate::output::create_studio_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingSessionStreamOutput {
-    /// <p>The stream.</p>
-    pub stream: std::option::Option<crate::model::StreamingSessionStream>,
-}
-impl std::fmt::Debug for CreateStreamingSessionStreamOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionStreamOutput");
-        formatter.field("stream", &self.stream);
-        formatter.finish()
-    }
-}
-/// See [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
-pub mod create_streaming_session_stream_output {
-    /// A builder for [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) stream: std::option::Option<crate::model::StreamingSessionStream>,
-    }
-    impl Builder {
-        /// <p>The stream.</p>
-        pub fn stream(mut self, input: crate::model::StreamingSessionStream) -> Self {
-            self.stream = Some(input);
-            self
-        }
-        /// <p>The stream.</p>
-        pub fn set_stream(
-            mut self,
-            input: std::option::Option<crate::model::StreamingSessionStream>,
-        ) -> Self {
-            self.stream = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
-        pub fn build(self) -> crate::output::CreateStreamingSessionStreamOutput {
-            crate::output::CreateStreamingSessionStreamOutput {
-                stream: self.stream,
-            }
-        }
-    }
-}
-impl CreateStreamingSessionStreamOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput)
-    pub fn builder() -> crate::output::create_streaming_session_stream_output::Builder {
-        crate::output::create_streaming_session_stream_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingSessionOutput {
-    /// <p>The session.</p>
-    pub session: std::option::Option<crate::model::StreamingSession>,
-}
-impl std::fmt::Debug for CreateStreamingSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionOutput");
-        formatter.field("session", &self.session);
-        formatter.finish()
-    }
-}
-/// See [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
-pub mod create_streaming_session_output {
-    /// A builder for [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) session: std::option::Option<crate::model::StreamingSession>,
-    }
-    impl Builder {
-        /// <p>The session.</p>
-        pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
-            self.session = Some(input);
-            self
-        }
-        /// <p>The session.</p>
-        pub fn set_session(
-            mut self,
-            input: std::option::Option<crate::model::StreamingSession>,
-        ) -> Self {
-            self.session = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
-        pub fn build(self) -> crate::output::CreateStreamingSessionOutput {
-            crate::output::CreateStreamingSessionOutput {
-                session: self.session,
-            }
-        }
-    }
-}
-impl CreateStreamingSessionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput)
-    pub fn builder() -> crate::output::create_streaming_session_output::Builder {
-        crate::output::create_streaming_session_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingImageOutput {
-    #[allow(missing_docs)] // documentation missing in model
-    pub streaming_image: std::option::Option<crate::model::StreamingImage>,
-}
-impl std::fmt::Debug for CreateStreamingImageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingImageOutput");
-        formatter.field("streaming_image", &self.streaming_image);
-        formatter.finish()
-    }
-}
-/// See [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
-pub mod create_streaming_image_output {
-    /// A builder for [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
-            self.streaming_image = Some(input);
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_streaming_image(
-            mut self,
-            input: std::option::Option<crate::model::StreamingImage>,
-        ) -> Self {
-            self.streaming_image = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
-        pub fn build(self) -> crate::output::CreateStreamingImageOutput {
-            crate::output::CreateStreamingImageOutput {
-                streaming_image: self.streaming_image,
-            }
-        }
-    }
-}
-impl CreateStreamingImageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput)
-    pub fn builder() -> crate::output::create_streaming_image_output::Builder {
-        crate::output::create_streaming_image_output::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLaunchProfileOutput {
+pub struct UpdateLaunchProfileOutput {
     /// <p>The launch profile.</p>
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
-impl std::fmt::Debug for CreateLaunchProfileOutput {
+impl std::fmt::Debug for UpdateLaunchProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLaunchProfileOutput");
+        let mut formatter = f.debug_struct("UpdateLaunchProfileOutput");
         formatter.field("launch_profile", &self.launch_profile);
         formatter.finish()
     }
 }
-/// See [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
-pub mod create_launch_profile_output {
-    /// A builder for [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
+/// See [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
+pub mod update_launch_profile_output {
+    /// A builder for [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2356,18 +2098,260 @@ pub mod create_launch_profile_output {
             self.launch_profile = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
-        pub fn build(self) -> crate::output::CreateLaunchProfileOutput {
-            crate::output::CreateLaunchProfileOutput {
+        /// Consumes the builder and constructs a [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
+        pub fn build(self) -> crate::output::UpdateLaunchProfileOutput {
+            crate::output::UpdateLaunchProfileOutput {
                 launch_profile: self.launch_profile,
             }
         }
     }
 }
-impl CreateLaunchProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput)
-    pub fn builder() -> crate::output::create_launch_profile_output::Builder {
-        crate::output::create_launch_profile_output::Builder::default()
+impl UpdateLaunchProfileOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput)
+    pub fn builder() -> crate::output::update_launch_profile_output::Builder {
+        crate::output::update_launch_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
+}
+impl std::fmt::Debug for GetLaunchProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLaunchProfileOutput");
+        formatter.field("launch_profile", &self.launch_profile);
+        formatter.finish()
+    }
+}
+/// See [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
+pub mod get_launch_profile_output {
+    /// A builder for [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_profile: std::option::Option<crate::model::LaunchProfile>,
+    }
+    impl Builder {
+        /// <p>The launch profile.</p>
+        pub fn launch_profile(mut self, input: crate::model::LaunchProfile) -> Self {
+            self.launch_profile = Some(input);
+            self
+        }
+        /// <p>The launch profile.</p>
+        pub fn set_launch_profile(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfile>,
+        ) -> Self {
+            self.launch_profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
+        pub fn build(self) -> crate::output::GetLaunchProfileOutput {
+            crate::output::GetLaunchProfileOutput {
+                launch_profile: self.launch_profile,
+            }
+        }
+    }
+}
+impl GetLaunchProfileOutput {
+    /// Creates a new builder-style object to manufacture [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput)
+    pub fn builder() -> crate::output::get_launch_profile_output::Builder {
+        crate::output::get_launch_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEulasOutput {
+    /// <p>A collection of EULA resources.</p>
+    pub eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListEulasOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEulasOutput");
+        formatter.field("eulas", &self.eulas);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEulasOutput`](crate::output::ListEulasOutput)
+pub mod list_eulas_output {
+    /// A builder for [`ListEulasOutput`](crate::output::ListEulasOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `eulas`.
+        ///
+        /// To override the contents of this collection use [`set_eulas`](Self::set_eulas).
+        ///
+        /// <p>A collection of EULA resources.</p>
+        pub fn eulas(mut self, input: impl Into<crate::model::Eula>) -> Self {
+            let mut v = self.eulas.unwrap_or_default();
+            v.push(input.into());
+            self.eulas = Some(v);
+            self
+        }
+        /// <p>A collection of EULA resources.</p>
+        pub fn set_eulas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Eula>>,
+        ) -> Self {
+            self.eulas = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEulasOutput`](crate::output::ListEulasOutput)
+        pub fn build(self) -> crate::output::ListEulasOutput {
+            crate::output::ListEulasOutput {
+                eulas: self.eulas,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEulasOutput {
+    /// Creates a new builder-style object to manufacture [`ListEulasOutput`](crate::output::ListEulasOutput)
+    pub fn builder() -> crate::output::list_eulas_output::Builder {
+        crate::output::list_eulas_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEulaOutput {
+    /// <p>The EULA.</p>
+    pub eula: std::option::Option<crate::model::Eula>,
+}
+impl std::fmt::Debug for GetEulaOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEulaOutput");
+        formatter.field("eula", &self.eula);
+        formatter.finish()
+    }
+}
+/// See [`GetEulaOutput`](crate::output::GetEulaOutput)
+pub mod get_eula_output {
+    /// A builder for [`GetEulaOutput`](crate::output::GetEulaOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) eula: std::option::Option<crate::model::Eula>,
+    }
+    impl Builder {
+        /// <p>The EULA.</p>
+        pub fn eula(mut self, input: crate::model::Eula) -> Self {
+            self.eula = Some(input);
+            self
+        }
+        /// <p>The EULA.</p>
+        pub fn set_eula(mut self, input: std::option::Option<crate::model::Eula>) -> Self {
+            self.eula = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEulaOutput`](crate::output::GetEulaOutput)
+        pub fn build(self) -> crate::output::GetEulaOutput {
+            crate::output::GetEulaOutput { eula: self.eula }
+        }
+    }
+}
+impl GetEulaOutput {
+    /// Creates a new builder-style object to manufacture [`GetEulaOutput`](crate::output::GetEulaOutput)
+    pub fn builder() -> crate::output::get_eula_output::Builder {
+        crate::output::get_eula_output::Builder::default()
+    }
+}
+
+/// <p/>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEulaAcceptancesOutput {
+    /// <p>A collection of EULA acceptances.</p>
+    pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListEulaAcceptancesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEulaAcceptancesOutput");
+        formatter.field("eula_acceptances", &self.eula_acceptances);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
+pub mod list_eula_acceptances_output {
+    /// A builder for [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) eula_acceptances:
+            std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `eula_acceptances`.
+        ///
+        /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
+        ///
+        /// <p>A collection of EULA acceptances.</p>
+        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
+            let mut v = self.eula_acceptances.unwrap_or_default();
+            v.push(input.into());
+            self.eula_acceptances = Some(v);
+            self
+        }
+        /// <p>A collection of EULA acceptances.</p>
+        pub fn set_eula_acceptances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
+        ) -> Self {
+            self.eula_acceptances = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
+        pub fn build(self) -> crate::output::ListEulaAcceptancesOutput {
+            crate::output::ListEulaAcceptancesOutput {
+                eula_acceptances: self.eula_acceptances,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEulaAcceptancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput)
+    pub fn builder() -> crate::output::list_eula_acceptances_output::Builder {
+        crate::output::list_eula_acceptances_output::Builder::default()
     }
 }
 
@@ -2426,5 +2410,132 @@ impl AcceptEulasOutput {
     /// Creates a new builder-style object to manufacture [`AcceptEulasOutput`](crate::output::AcceptEulasOutput)
     pub fn builder() -> crate::output::accept_eulas_output::Builder {
         crate::output::accept_eulas_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }

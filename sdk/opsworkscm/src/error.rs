@@ -21,7 +21,7 @@ pub enum AssociateNodeErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateNodeError {
@@ -86,18 +86,18 @@ impl AssociateNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateNodeErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `AssociateNodeErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, AssociateNodeErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `AssociateNodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateNodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateNodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateNodeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateNodeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AssociateNodeErrorKind::ValidationException(_))
     }
@@ -138,7 +138,7 @@ pub enum CreateBackupErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupError {
@@ -204,22 +204,22 @@ impl CreateBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::ValidationException(_))
     }
@@ -261,7 +261,7 @@ pub enum CreateServerErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServerError {
@@ -327,25 +327,25 @@ impl CreateServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateServerErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateServerErrorKind::ValidationException(_))
     }
@@ -384,7 +384,7 @@ pub enum DeleteBackupErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupError {
@@ -449,18 +449,18 @@ impl DeleteBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::ValidationException(_))
     }
@@ -498,7 +498,7 @@ pub enum DeleteServerErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServerError {
@@ -563,18 +563,18 @@ impl DeleteServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteServerErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteServerErrorKind::ValidationException(_))
     }
@@ -603,7 +603,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -696,7 +696,7 @@ pub enum DescribeBackupsErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupsError {
@@ -761,21 +761,21 @@ impl DescribeBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::ValidationException(_))
     }
@@ -813,7 +813,7 @@ pub enum DescribeEventsErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -878,21 +878,21 @@ impl DescribeEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeEventsErrorKind::ValidationException(_))
     }
@@ -927,7 +927,7 @@ pub enum DescribeNodeAssociationStatusErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNodeAssociationStatusError {
@@ -996,14 +996,14 @@ impl DescribeNodeAssociationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNodeAssociationStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeNodeAssociationStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodeAssociationStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodeAssociationStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeNodeAssociationStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1045,7 +1045,7 @@ pub enum DescribeServersErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServersError {
@@ -1110,21 +1110,21 @@ impl DescribeServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeServersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeServersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeServersErrorKind::ValidationException(_))
     }
@@ -1162,7 +1162,7 @@ pub enum DisassociateNodeErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateNodeError {
@@ -1227,21 +1227,21 @@ impl DisassociateNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateNodeErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DisassociateNodeErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateNodeErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateNodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateNodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateNodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateNodeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateNodeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1282,7 +1282,7 @@ pub enum ExportServerEngineAttributeErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportServerEngineAttributeError {
@@ -1349,21 +1349,21 @@ impl ExportServerEngineAttributeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportServerEngineAttributeErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ExportServerEngineAttributeErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportServerEngineAttributeErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ExportServerEngineAttributeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExportServerEngineAttributeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportServerEngineAttributeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExportServerEngineAttributeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ExportServerEngineAttributeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1401,7 +1401,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1465,14 +1465,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1512,7 +1512,7 @@ pub enum RestoreServerErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreServerError {
@@ -1577,18 +1577,18 @@ impl RestoreServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreServerErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `RestoreServerErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, RestoreServerErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `RestoreServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreServerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RestoreServerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RestoreServerErrorKind::ValidationException(_))
     }
@@ -1626,7 +1626,7 @@ pub enum StartMaintenanceErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMaintenanceError {
@@ -1691,21 +1691,21 @@ impl StartMaintenanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMaintenanceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `StartMaintenanceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMaintenanceErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `StartMaintenanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartMaintenanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMaintenanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMaintenanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartMaintenanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1746,7 +1746,7 @@ pub enum TagResourceErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1811,18 +1811,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1860,7 +1860,7 @@ pub enum UntagResourceErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1925,18 +1925,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -1974,7 +1974,7 @@ pub enum UpdateServerErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServerError {
@@ -2039,18 +2039,18 @@ impl UpdateServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::ValidationException(_))
     }
@@ -2088,7 +2088,7 @@ pub enum UpdateServerEngineAttributesErrorKind {
     /// <p>One or more of the provided request parameters are not valid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServerEngineAttributesError {
@@ -2155,21 +2155,21 @@ impl UpdateServerEngineAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServerEngineAttributesErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateServerEngineAttributesErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerEngineAttributesErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerEngineAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServerEngineAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerEngineAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerEngineAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateServerEngineAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

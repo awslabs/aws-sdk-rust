@@ -335,9 +335,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Adds a key-value pair to `regions`.
@@ -365,12 +368,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_regions(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -379,9 +384,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResponsePlan`.
     ///
     /// <p>Creates a response plan that automates the initial response to incidents. A response
-    /// plan engages contacts, starts chat channel collaboration, and
-    /// initiates
-    /// runbooks at the beginning of an incident.</p>
+    /// plan engages contacts, starts chat channel collaboration, and initiates runbooks at the
+    /// beginning of an incident.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -430,17 +434,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -478,16 +487,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template(input);
             self
         }
-        /// <p>The
-        /// AWS Chatbot
-        /// chat channel used for collaboration during an incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an
+        /// incident.</p>
         pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(inp);
             self
         }
-        /// <p>The
-        /// AWS Chatbot
-        /// chat channel used for collaboration during an incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an
+        /// incident.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -605,29 +612,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are adding the event
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+        /// added.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are adding the event
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
+        /// added.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -660,12 +672,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema
+        /// imposed.</p>
         pub fn event_data(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data(inp);
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema
+        /// imposed.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_data(input);
             self
@@ -722,9 +736,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
@@ -790,9 +807,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
@@ -808,9 +828,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
-    /// <p>Deletes the resource policy that
-    /// AWS
-    /// Resource Access Manager uses to share your Incident Manager resource.</p>
+    /// <p>Deletes the resource policy that Resource Access Manager uses to share your Incident Manager
+    /// resource.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -859,9 +878,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
@@ -887,9 +909,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResponsePlan`.
     ///
-    /// <p>Deletes the specified response plan. Deleting a response plan stops all linked
-    /// CloudWatch alarms and EventBridge events from creating an incident with this response
-    /// plan.</p>
+    /// <p>Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this
+    /// response plan.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -938,9 +959,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -1005,17 +1029,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1023,12 +1052,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(inp);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self
@@ -1036,7 +1067,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetIncidentRecord`.
     ///
-    /// <p>Returns the details of the specified incident record.</p>
+    /// <p>Returns the details for the specified incident record.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetIncidentRecord<
         C = aws_smithy_client::erase::DynConnector,
@@ -1085,9 +1116,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
@@ -1152,9 +1186,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
@@ -1219,9 +1256,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
@@ -1306,9 +1346,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -1373,17 +1416,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1391,12 +1439,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(inp);
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self
@@ -1454,17 +1504,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filter the list of incident records you are searching through. You can filter on the
-        /// following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter
+        /// on the following keys:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1487,12 +1540,27 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all incident
+        /// records.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// incident records that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// incident records that match any of the values provided.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
         }
-        /// <p>Filter the list of incident records you are searching through. You can filter on the
-        /// following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter
+        /// on the following keys:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1513,6 +1581,21 @@ pub mod fluent_builders {
         /// <p>
         /// <code>createdBy</code>
         /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all incident
+        /// records.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// incident records that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// incident records that match any of the values provided.</p>
         /// </li>
         /// </ul>
         pub fn set_filters(
@@ -1594,17 +1677,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record that you are listing related items for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+        /// items.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record that you are listing related items for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
+        /// items.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1684,9 +1772,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results per page. </p>
@@ -1761,9 +1852,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of response plans per page.</p>
@@ -1838,9 +1932,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -1856,7 +1953,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTimelineEvents`.
     ///
-    /// <p>Lists timeline events of the specified incident record.</p>
+    /// <p>Lists timeline events for the specified incident record.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListTimelineEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -1905,17 +2002,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the event is part of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1941,6 +2043,21 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all timeline
+        /// events.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// timeline events that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// timeline events that match any of the values provided.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -1957,6 +2074,21 @@ pub mod fluent_builders {
         /// <p>
         /// <code>eventType</code>
         /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Note the following when deciding how to use Filters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify a Filter, the response includes all timeline
+        /// events.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// timeline events that match all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter with more than one value, the response returns
+        /// timeline events that match any of the values provided.</p>
         /// </li>
         /// </ul>
         pub fn set_filters(
@@ -2066,9 +2198,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
@@ -2096,7 +2231,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartIncident`.
     ///
-    /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or manually. </p>
+    /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or
+    /// manually. </p>
     #[derive(std::fmt::Debug)]
     pub struct StartIncident<
         C = aws_smithy_client::erase::DynConnector,
@@ -2145,29 +2281,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, SNS topics, runbooks, title, and impact of the incident. </p>
+        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn response_plan_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.response_plan_arn(inp);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, SNS topics, runbooks, title, and impact of the incident. </p>
+        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn set_response_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2277,13 +2418,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an S3 bucket. </p>
+        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn related_items(mut self, inp: impl Into<crate::model::RelatedItem>) -> Self {
             self.inner = self.inner.related_items(inp);
             self
         }
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an S3 bucket. </p>
+        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn set_related_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
@@ -2343,9 +2484,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
@@ -2433,9 +2577,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
@@ -2518,9 +2665,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
@@ -2543,12 +2693,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deletion_protected(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2556,7 +2708,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIncidentRecord`.
     ///
-    /// <p>Update the details of an incident record. You can use this action to update an
+    /// <p>Update the details of an incident record. You can use this operation to update an
     /// incident record from the defined chat channel. For more information about using actions
     /// in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>
     #[derive(std::fmt::Debug)]
@@ -2607,17 +2759,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2632,36 +2789,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The title of the incident is a brief and easily recognizable.</p>
+        /// <p>A brief description of the incident.</p>
         pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.title(inp);
             self
         }
-        /// <p>The title of the incident is a brief and easily recognizable.</p>
+        /// <p>A brief description of the incident.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>The summary describes what has happened during the incident.</p>
+        /// <p>A longer description of what occurred during the incident.</p>
         pub fn summary(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.summary(inp);
             self
         }
-        /// <p>The summary describes what has happened during the incident.</p>
+        /// <p>A longer description of what occurred during the incident.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_summary(input);
             self
         }
-        /// <p>Defines the impact to customers and applications. Providing an impact overwrites the
-        /// impact provided by the response plan.</p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+        /// overwrites the impact provided by the response plan.</p>
         /// <p class="title">
         /// <b>Possible impacts:</b>
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
+        /// <code>1</code> - Critical impact, full application failure that impacts many
+        /// to all customers. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -2670,12 +2827,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
+        /// <code>3</code> - Medium impact, the application is providing reduced service
         /// to customers.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+        /// <code>4</code> - Low impact, customer aren't impacted by the problem
         /// yet.</p>
         /// </li>
         /// <li>
@@ -2688,16 +2845,16 @@ pub mod fluent_builders {
             self.inner = self.inner.impact(inp);
             self
         }
-        /// <p>Defines the impact to customers and applications. Providing an impact overwrites the
-        /// impact provided by the response plan.</p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
+        /// overwrites the impact provided by the response plan.</p>
         /// <p class="title">
         /// <b>Possible impacts:</b>
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
+        /// <code>1</code> - Critical impact, full application failure that impacts many
+        /// to all customers. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -2706,12 +2863,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
+        /// <code>3</code> - Medium impact, the application is providing reduced service
         /// to customers.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
+        /// <code>4</code> - Low impact, customer aren't impacted by the problem
         /// yet.</p>
         /// </li>
         /// <li>
@@ -2724,12 +2881,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_impact(input);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or
+        /// <code>Resolved</code>.</p>
         pub fn status(mut self, inp: crate::model::IncidentRecordStatus) -> Self {
             self.inner = self.inner.status(inp);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or
+        /// <code>Resolved</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -2737,12 +2896,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+        /// <p>The Chatbot chat channel where responders can collaborate.</p>
         pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(inp);
             self
         }
-        /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+        /// <p>The Chatbot chat channel where responders can collaborate.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -2754,8 +2913,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
         pub fn notification_targets(
             mut self,
@@ -2764,8 +2924,9 @@ pub mod fluent_builders {
             self.inner = self.inner.notification_targets(inp);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
         pub fn set_notification_targets(
             mut self,
@@ -2826,29 +2987,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are updating related items
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+        /// are updating.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record you are updating related items
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
+        /// are updating.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2921,9 +3087,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
@@ -2953,12 +3122,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3015,17 +3186,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3040,22 +3216,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The long format name of the response plan. Can't contain spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain
+        /// spaces.</p>
         pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(inp);
             self
         }
-        /// <p>The long format name of the response plan. Can't contain spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain
+        /// spaces.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The short format name of the incident. Can't contain spaces.</p>
+        /// <p>The short format name of the incident. The title can't contain spaces.</p>
         pub fn incident_template_title(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_template_title(inp);
             self
         }
-        /// <p>The short format name of the incident. Can't contain spaces.</p>
+        /// <p>The short format name of the incident. The title can't contain spaces.</p>
         pub fn set_incident_template_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3140,7 +3318,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_summary(input);
             self
         }
-        /// <p>Used to create only one incident record for an incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+        /// same incident in the same account.</p>
         pub fn incident_template_dedupe_string(
             mut self,
             inp: impl Into<std::string::String>,
@@ -3148,7 +3327,8 @@ pub mod fluent_builders {
             self.inner = self.inner.incident_template_dedupe_string(inp);
             self
         }
-        /// <p>Used to create only one incident record for an incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
+        /// same incident in the same account.</p>
         pub fn set_incident_template_dedupe_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3160,7 +3340,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
             inp: impl Into<crate::model::NotificationTargetItem>,
@@ -3168,7 +3349,8 @@ pub mod fluent_builders {
             self.inner = self.inner.incident_template_notification_targets(inp);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn set_incident_template_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -3176,18 +3358,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_notification_targets(input);
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(inp);
             self
         }
-        /// <p>The
-        /// AWS
-        /// Chatbot chat channel used for collaboration during an
+        /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn set_chat_channel(
@@ -3280,29 +3458,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified
+        /// details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part
-        /// of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that the timeline event is part
-        /// of.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
+        /// event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3310,12 +3493,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(inp);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using
+        /// <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self

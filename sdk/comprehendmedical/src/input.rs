@@ -44,7 +44,7 @@ pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsE
 impl DescribeEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionV2Job`](crate::operation::DescribeEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -76,6 +76,7 @@ impl DescribeEntitiesDetectionV2JobInput {
             input: &crate::input::DescribeEntitiesDetectionV2JobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -136,9 +137,10 @@ impl DescribeEntitiesDetectionV2JobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -196,7 +198,7 @@ pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErro
 impl DescribeIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeICD10CMInferenceJob`](crate::operation::DescribeICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -228,6 +230,7 @@ impl DescribeIcd10CmInferenceJobInput {
             input: &crate::input::DescribeIcd10CmInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -288,9 +291,10 @@ impl DescribeIcd10CmInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -348,7 +352,7 @@ pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribePhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePHIDetectionJob`](crate::operation::DescribePHIDetectionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -380,6 +384,7 @@ impl DescribePhiDetectionJobInput {
             input: &crate::input::DescribePhiDetectionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -444,9 +449,10 @@ impl DescribePhiDetectionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -504,7 +510,7 @@ pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsError
 impl DescribeRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRxNormInferenceJob`](crate::operation::DescribeRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -536,6 +542,7 @@ impl DescribeRxNormInferenceJobInput {
             input: &crate::input::DescribeRxNormInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -596,9 +603,10 @@ impl DescribeRxNormInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -653,7 +661,7 @@ pub type DetectEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -685,6 +693,7 @@ impl DetectEntitiesInput {
             input: &crate::input::DetectEntitiesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -746,9 +755,10 @@ impl DetectEntitiesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -803,7 +813,7 @@ pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DetectEntitiesV2Input {
     /// Consumes the builder and constructs an Operation<[`DetectEntitiesV2`](crate::operation::DetectEntitiesV2)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -835,6 +845,7 @@ impl DetectEntitiesV2Input {
             input: &crate::input::DetectEntitiesV2Input,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -897,9 +908,10 @@ impl DetectEntitiesV2Input {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -952,7 +964,7 @@ pub type DetectPhiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectPhiInput {
     /// Consumes the builder and constructs an Operation<[`DetectPHI`](crate::operation::DetectPHI)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -984,6 +996,7 @@ impl DetectPhiInput {
             input: &crate::input::DetectPhiInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1043,9 +1056,10 @@ impl DetectPhiInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1100,7 +1114,7 @@ pub type InferIcd10CmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl InferIcd10CmInput {
     /// Consumes the builder and constructs an Operation<[`InferICD10CM`](crate::operation::InferICD10CM)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1132,6 +1146,7 @@ impl InferIcd10CmInput {
             input: &crate::input::InferIcd10CmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1193,9 +1208,10 @@ impl InferIcd10CmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1250,7 +1266,7 @@ pub type InferRxNormInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl InferRxNormInput {
     /// Consumes the builder and constructs an Operation<[`InferRxNorm`](crate::operation::InferRxNorm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1282,6 +1298,7 @@ impl InferRxNormInput {
             input: &crate::input::InferRxNormInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1343,9 +1360,10 @@ impl InferRxNormInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1430,7 +1448,7 @@ pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::AwsErro
 impl ListEntitiesDetectionV2JobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionV2Jobs`](crate::operation::ListEntitiesDetectionV2Jobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1462,6 +1480,7 @@ impl ListEntitiesDetectionV2JobsInput {
             input: &crate::input::ListEntitiesDetectionV2JobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1522,9 +1541,10 @@ impl ListEntitiesDetectionV2JobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1609,7 +1629,7 @@ pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListIcd10CmInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListICD10CMInferenceJobs`](crate::operation::ListICD10CMInferenceJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1641,6 +1661,7 @@ impl ListIcd10CmInferenceJobsInput {
             input: &crate::input::ListIcd10CmInferenceJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1705,9 +1726,10 @@ impl ListIcd10CmInferenceJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1791,7 +1813,7 @@ pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListPhiDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPHIDetectionJobs`](crate::operation::ListPHIDetectionJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1823,6 +1845,7 @@ impl ListPhiDetectionJobsInput {
             input: &crate::input::ListPhiDetectionJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1887,9 +1910,10 @@ impl ListPhiDetectionJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1974,7 +1998,7 @@ pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListRxNormInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListRxNormInferenceJobs`](crate::operation::ListRxNormInferenceJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2006,6 +2030,7 @@ impl ListRxNormInferenceJobsInput {
             input: &crate::input::ListRxNormInferenceJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2070,9 +2095,10 @@ impl ListRxNormInferenceJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2221,7 +2247,7 @@ pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErro
 impl StartEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionV2Job`](crate::operation::StartEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2253,6 +2279,7 @@ impl StartEntitiesDetectionV2JobInput {
             input: &crate::input::StartEntitiesDetectionV2JobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2316,9 +2343,10 @@ impl StartEntitiesDetectionV2JobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2467,7 +2495,7 @@ pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRe
 impl StartIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartICD10CMInferenceJob`](crate::operation::StartICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2499,6 +2527,7 @@ impl StartIcd10CmInferenceJobInput {
             input: &crate::input::StartIcd10CmInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2566,9 +2595,10 @@ impl StartIcd10CmInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2716,7 +2746,7 @@ pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl StartPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPHIDetectionJob`](crate::operation::StartPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2748,6 +2778,7 @@ impl StartPhiDetectionJobInput {
             input: &crate::input::StartPhiDetectionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2815,9 +2846,10 @@ impl StartPhiDetectionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2966,7 +2998,7 @@ pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StartRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartRxNormInferenceJob`](crate::operation::StartRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2998,6 +3030,7 @@ impl StartRxNormInferenceJobInput {
             input: &crate::input::StartRxNormInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3065,9 +3098,10 @@ impl StartRxNormInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3123,7 +3157,7 @@ pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsError
 impl StopEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionV2Job`](crate::operation::StopEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3155,6 +3189,7 @@ impl StopEntitiesDetectionV2JobInput {
             input: &crate::input::StopEntitiesDetectionV2JobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3215,9 +3250,10 @@ impl StopEntitiesDetectionV2JobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3273,7 +3309,7 @@ pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRet
 impl StopIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopICD10CMInferenceJob`](crate::operation::StopICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3305,6 +3341,7 @@ impl StopIcd10CmInferenceJobInput {
             input: &crate::input::StopIcd10CmInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3369,9 +3406,10 @@ impl StopIcd10CmInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3426,7 +3464,7 @@ pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StopPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPHIDetectionJob`](crate::operation::StopPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3458,6 +3496,7 @@ impl StopPhiDetectionJobInput {
             input: &crate::input::StopPhiDetectionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3520,9 +3559,10 @@ impl StopPhiDetectionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3577,7 +3617,7 @@ pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StopRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopRxNormInferenceJob`](crate::operation::StopRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3609,6 +3649,7 @@ impl StopRxNormInferenceJobInput {
             input: &crate::input::StopRxNormInferenceJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3673,9 +3714,10 @@ impl StopRxNormInferenceJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

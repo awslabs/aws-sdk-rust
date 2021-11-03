@@ -19,7 +19,7 @@ pub enum AcceptPortfolioShareErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptPortfolioShareError {
@@ -84,21 +84,21 @@ impl AcceptPortfolioShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptPortfolioShareErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `AcceptPortfolioShareErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptPortfolioShareErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptPortfolioShareErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AcceptPortfolioShareErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptPortfolioShareErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptPortfolioShareErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptPortfolioShareErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum AssociateBudgetWithResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateBudgetWithResourceError {
@@ -211,28 +211,28 @@ impl AssociateBudgetWithResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateBudgetWithResourceErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `AssociateBudgetWithResourceErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateBudgetWithResourceErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateBudgetWithResourceErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `AssociateBudgetWithResourceErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateBudgetWithResourceErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateBudgetWithResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateBudgetWithResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateBudgetWithResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateBudgetWithResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateBudgetWithResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -276,7 +276,7 @@ pub enum AssociatePrincipalWithPortfolioErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociatePrincipalWithPortfolioError {
@@ -350,21 +350,21 @@ impl AssociatePrincipalWithPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociatePrincipalWithPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `AssociatePrincipalWithPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePrincipalWithPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePrincipalWithPortfolioErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociatePrincipalWithPortfolioErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePrincipalWithPortfolioErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePrincipalWithPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociatePrincipalWithPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -409,7 +409,7 @@ pub enum AssociateProductWithPortfolioErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateProductWithPortfolioError {
@@ -481,21 +481,21 @@ impl AssociateProductWithPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateProductWithPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `AssociateProductWithPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProductWithPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProductWithPortfolioErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateProductWithPortfolioErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProductWithPortfolioErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProductWithPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateProductWithPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -538,7 +538,7 @@ pub enum AssociateServiceActionWithProvisioningArtifactErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateServiceActionWithProvisioningArtifactError {
@@ -616,21 +616,21 @@ impl AssociateServiceActionWithProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceActionWithProvisioningArtifactErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceActionWithProvisioningArtifactErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateServiceActionWithProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -686,7 +686,7 @@ pub enum AssociateTagOptionWithResourceErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTagOptionWithResourceError {
@@ -767,42 +767,42 @@ impl AssociateTagOptionWithResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTagOptionWithResourceErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTagOptionWithResourceErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTagOptionWithResourceErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTagOptionWithResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTagOptionWithResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTagOptionWithResourceErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `AssociateTagOptionWithResourceErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -847,7 +847,7 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactError {
 pub enum BatchAssociateServiceActionWithProvisioningArtifactErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateServiceActionWithProvisioningArtifactError {
@@ -923,7 +923,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateServiceActionWithProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `BatchAssociateServiceActionWithProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateServiceActionWithProvisioningArtifactErrorKind::InvalidParametersException(_))
     }
@@ -956,7 +956,7 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactError {
 pub enum BatchDisassociateServiceActionFromProvisioningArtifactErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateServiceActionFromProvisioningArtifactError {
@@ -1032,7 +1032,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::InvalidParametersException(_))
     }
@@ -1067,7 +1067,7 @@ pub enum CopyProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyProductError {
@@ -1131,14 +1131,14 @@ impl CopyProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CopyProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CopyProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CopyProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1178,7 +1178,7 @@ pub enum CreateConstraintErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConstraintError {
@@ -1244,28 +1244,28 @@ impl CreateConstraintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConstraintErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `CreateConstraintErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConstraintErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConstraintErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreateConstraintErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConstraintErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConstraintErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConstraintErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConstraintErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConstraintErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateConstraintErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1307,7 +1307,7 @@ pub enum CreatePortfolioErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePortfolioError {
@@ -1372,21 +1372,21 @@ impl CreatePortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreatePortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePortfolioErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `CreatePortfolioErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1430,7 +1430,7 @@ pub enum CreatePortfolioShareErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePortfolioShareError {
@@ -1497,35 +1497,35 @@ impl CreatePortfolioShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePortfolioShareErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreatePortfolioShareErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioShareErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioShareErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreatePortfolioShareErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioShareErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioShareErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePortfolioShareErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioShareErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioShareErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `CreatePortfolioShareErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortfolioShareErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortfolioShareErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePortfolioShareErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1568,7 +1568,7 @@ pub enum CreateProductErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProductError {
@@ -1633,21 +1633,21 @@ impl CreateProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreateProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProductErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProductErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProductErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProductErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `CreateProductErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1686,7 +1686,7 @@ pub enum CreateProvisionedProductPlanErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProvisionedProductPlanError {
@@ -1755,21 +1755,21 @@ impl CreateProvisionedProductPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProvisionedProductPlanErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreateProvisionedProductPlanErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProvisionedProductPlanErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProvisionedProductPlanErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreateProvisionedProductPlanErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProvisionedProductPlanErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProvisionedProductPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProvisionedProductPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1812,7 +1812,7 @@ pub enum CreateProvisioningArtifactErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProvisioningArtifactError {
@@ -1879,21 +1879,21 @@ impl CreateProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreateProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProvisioningArtifactErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProvisioningArtifactErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProvisioningArtifactErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProvisioningArtifactErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1930,7 +1930,7 @@ pub enum CreateServiceActionErrorKind {
     /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
     /// resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceActionError {
@@ -1994,14 +1994,14 @@ impl CreateServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceActionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `CreateServiceActionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceActionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceActionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateServiceActionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2041,7 +2041,7 @@ pub enum CreateTagOptionErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagOptionError {
@@ -2106,21 +2106,21 @@ impl CreateTagOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagOptionErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `CreateTagOptionErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagOptionErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagOptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTagOptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagOptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagOptionErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `CreateTagOptionErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2156,7 +2156,7 @@ pub enum DeleteConstraintErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConstraintError {
@@ -2220,14 +2220,14 @@ impl DeleteConstraintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConstraintErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeleteConstraintErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConstraintErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConstraintErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConstraintErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2268,7 +2268,7 @@ pub enum DeletePortfolioErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePortfolioError {
@@ -2334,28 +2334,28 @@ impl DeletePortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeletePortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeletePortfolioErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `DeletePortfolioErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2397,7 +2397,7 @@ pub enum DeletePortfolioShareErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePortfolioShareError {
@@ -2463,28 +2463,28 @@ impl DeletePortfolioShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePortfolioShareErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeletePortfolioShareErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioShareErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioShareErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeletePortfolioShareErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioShareErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioShareErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DeletePortfolioShareErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortfolioShareErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortfolioShareErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePortfolioShareErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2527,7 +2527,7 @@ pub enum DeleteProductErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProductError {
@@ -2593,28 +2593,28 @@ impl DeleteProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeleteProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProductErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteProductErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProductErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProductErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProductErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `DeleteProductErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2651,7 +2651,7 @@ pub enum DeleteProvisionedProductPlanErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProvisionedProductPlanError {
@@ -2719,14 +2719,14 @@ impl DeleteProvisionedProductPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProvisionedProductPlanErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedProductPlanErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisionedProductPlanErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisionedProductPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedProductPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2767,7 +2767,7 @@ pub enum DeleteProvisioningArtifactErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProvisioningArtifactError {
@@ -2834,21 +2834,21 @@ impl DeleteProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DeleteProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisioningArtifactErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisioningArtifactErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteProvisioningArtifactErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisioningArtifactErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2884,7 +2884,7 @@ pub enum DeleteServiceActionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceActionError {
@@ -2948,14 +2948,14 @@ impl DeleteServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceActionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteServiceActionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceActionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServiceActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2994,7 +2994,7 @@ pub enum DeleteTagOptionErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagOptionError {
@@ -3059,21 +3059,21 @@ impl DeleteTagOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagOptionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteTagOptionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagOptionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagOptionErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `DeleteTagOptionErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3107,7 +3107,7 @@ pub struct DescribeConstraintError {
 pub enum DescribeConstraintErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConstraintError {
@@ -3170,7 +3170,7 @@ impl DescribeConstraintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConstraintErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConstraintErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3202,7 +3202,7 @@ pub struct DescribeCopyProductStatusError {
 pub enum DescribeCopyProductStatusErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCopyProductStatusError {
@@ -3265,7 +3265,7 @@ impl DescribeCopyProductStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCopyProductStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCopyProductStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3297,7 +3297,7 @@ pub struct DescribePortfolioError {
 pub enum DescribePortfolioErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePortfolioError {
@@ -3360,7 +3360,7 @@ impl DescribePortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3394,7 +3394,7 @@ pub enum DescribePortfolioSharesErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePortfolioSharesError {
@@ -3458,14 +3458,14 @@ impl DescribePortfolioSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePortfolioSharesErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribePortfolioSharesErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortfolioSharesErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortfolioSharesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePortfolioSharesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3502,7 +3502,7 @@ pub enum DescribePortfolioShareStatusErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePortfolioShareStatusError {
@@ -3573,21 +3573,21 @@ impl DescribePortfolioShareStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePortfolioShareStatusErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribePortfolioShareStatusErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortfolioShareStatusErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortfolioShareStatusErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DescribePortfolioShareStatusErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortfolioShareStatusErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortfolioShareStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePortfolioShareStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3629,7 +3629,7 @@ pub enum DescribeProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProductError {
@@ -3693,14 +3693,14 @@ impl DescribeProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3735,7 +3735,7 @@ pub enum DescribeProductAsAdminErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProductAsAdminError {
@@ -3799,14 +3799,14 @@ impl DescribeProductAsAdminError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProductAsAdminErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProductAsAdminErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProductAsAdminErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProductAsAdminErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProductAsAdminErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3841,7 +3841,7 @@ pub enum DescribeProductViewErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProductViewError {
@@ -3905,14 +3905,14 @@ impl DescribeProductViewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProductViewErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProductViewErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProductViewErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProductViewErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProductViewErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3947,7 +3947,7 @@ pub enum DescribeProvisionedProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProvisionedProductError {
@@ -4013,14 +4013,14 @@ impl DescribeProvisionedProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProvisionedProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProvisionedProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProvisionedProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProvisionedProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProvisionedProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4055,7 +4055,7 @@ pub enum DescribeProvisionedProductPlanErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProvisionedProductPlanError {
@@ -4126,14 +4126,14 @@ impl DescribeProvisionedProductPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProvisionedProductPlanErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProvisionedProductPlanErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProvisionedProductPlanErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProvisionedProductPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProvisionedProductPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4172,7 +4172,7 @@ pub enum DescribeProvisioningArtifactErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProvisioningArtifactError {
@@ -4240,14 +4240,14 @@ impl DescribeProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProvisioningArtifactErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4286,7 +4286,7 @@ pub enum DescribeProvisioningParametersErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProvisioningParametersError {
@@ -4357,14 +4357,14 @@ impl DescribeProvisioningParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProvisioningParametersErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeProvisioningParametersErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProvisioningParametersErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProvisioningParametersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProvisioningParametersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4401,7 +4401,7 @@ pub struct DescribeRecordError {
 pub enum DescribeRecordErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRecordError {
@@ -4464,7 +4464,7 @@ impl DescribeRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRecordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRecordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4496,7 +4496,7 @@ pub struct DescribeServiceActionError {
 pub enum DescribeServiceActionErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceActionError {
@@ -4559,7 +4559,7 @@ impl DescribeServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServiceActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4593,7 +4593,7 @@ pub enum DescribeServiceActionExecutionParametersErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceActionExecutionParametersError {
@@ -4664,14 +4664,14 @@ impl DescribeServiceActionExecutionParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceActionExecutionParametersErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DescribeServiceActionExecutionParametersErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceActionExecutionParametersErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceActionExecutionParametersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServiceActionExecutionParametersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4714,7 +4714,7 @@ pub enum DescribeTagOptionErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagOptionError {
@@ -4778,14 +4778,14 @@ impl DescribeTagOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagOptionErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `DescribeTagOptionErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4823,7 +4823,7 @@ pub enum DisableAWSOrganizationsAccessErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableAWSOrganizationsAccessError {
@@ -4895,21 +4895,21 @@ impl DisableAWSOrganizationsAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableAWSOrganizationsAccessErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DisableAWSOrganizationsAccessErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSOrganizationsAccessErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSOrganizationsAccessErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DisableAWSOrganizationsAccessErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSOrganizationsAccessErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSOrganizationsAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableAWSOrganizationsAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4947,7 +4947,7 @@ pub struct DisassociateBudgetFromResourceError {
 pub enum DisassociateBudgetFromResourceErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateBudgetFromResourceError {
@@ -5015,7 +5015,7 @@ impl DisassociateBudgetFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateBudgetFromResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateBudgetFromResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5051,7 +5051,7 @@ pub enum DisassociatePrincipalFromPortfolioErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociatePrincipalFromPortfolioError {
@@ -5122,14 +5122,14 @@ impl DisassociatePrincipalFromPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociatePrincipalFromPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DisassociatePrincipalFromPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePrincipalFromPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePrincipalFromPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociatePrincipalFromPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5170,7 +5170,7 @@ pub enum DisassociateProductFromPortfolioErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateProductFromPortfolioError {
@@ -5244,21 +5244,21 @@ impl DisassociateProductFromPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateProductFromPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `DisassociateProductFromPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateProductFromPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateProductFromPortfolioErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DisassociateProductFromPortfolioErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateProductFromPortfolioErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateProductFromPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateProductFromPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5298,7 +5298,7 @@ pub struct DisassociateServiceActionFromProvisioningArtifactError {
 pub enum DisassociateServiceActionFromProvisioningArtifactErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateServiceActionFromProvisioningArtifactError {
@@ -5370,7 +5370,7 @@ impl DisassociateServiceActionFromProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateServiceActionFromProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateServiceActionFromProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5412,7 +5412,7 @@ pub enum DisassociateTagOptionFromResourceErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTagOptionFromResourceError {
@@ -5483,14 +5483,14 @@ impl DisassociateTagOptionFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateTagOptionFromResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateTagOptionFromResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTagOptionFromResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTagOptionFromResourceErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `DisassociateTagOptionFromResourceErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5532,7 +5532,7 @@ pub enum EnableAWSOrganizationsAccessErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAWSOrganizationsAccessError {
@@ -5601,21 +5601,21 @@ impl EnableAWSOrganizationsAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableAWSOrganizationsAccessErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `EnableAWSOrganizationsAccessErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSOrganizationsAccessErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSOrganizationsAccessErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `EnableAWSOrganizationsAccessErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSOrganizationsAccessErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSOrganizationsAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableAWSOrganizationsAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5658,7 +5658,7 @@ pub enum ExecuteProvisionedProductPlanErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteProvisionedProductPlanError {
@@ -5730,21 +5730,21 @@ impl ExecuteProvisionedProductPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductPlanErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductPlanErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteProvisionedProductPlanErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductPlanErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductPlanErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteProvisionedProductPlanErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5787,7 +5787,7 @@ pub enum ExecuteProvisionedProductServiceActionErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteProvisionedProductServiceActionError {
@@ -5861,21 +5861,21 @@ impl ExecuteProvisionedProductServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteProvisionedProductServiceActionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteProvisionedProductServiceActionErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteProvisionedProductServiceActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5919,7 +5919,7 @@ pub enum GetAWSOrganizationsAccessStatusErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAWSOrganizationsAccessStatusError {
@@ -5990,14 +5990,14 @@ impl GetAWSOrganizationsAccessStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAWSOrganizationsAccessStatusErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `GetAWSOrganizationsAccessStatusErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAWSOrganizationsAccessStatusErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAWSOrganizationsAccessStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAWSOrganizationsAccessStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6036,7 +6036,7 @@ pub enum GetProvisionedProductOutputsErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProvisionedProductOutputsError {
@@ -6104,14 +6104,14 @@ impl GetProvisionedProductOutputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProvisionedProductOutputsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `GetProvisionedProductOutputsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProvisionedProductOutputsErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `GetProvisionedProductOutputsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetProvisionedProductOutputsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6155,7 +6155,7 @@ pub enum ImportAsProvisionedProductErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportAsProvisionedProductError {
@@ -6225,28 +6225,28 @@ impl ImportAsProvisionedProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportAsProvisionedProductErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `ImportAsProvisionedProductErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAsProvisionedProductErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAsProvisionedProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ImportAsProvisionedProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAsProvisionedProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAsProvisionedProductErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ImportAsProvisionedProductErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAsProvisionedProductErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAsProvisionedProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportAsProvisionedProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6283,7 +6283,7 @@ pub enum ListAcceptedPortfolioSharesErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAcceptedPortfolioSharesError {
@@ -6351,14 +6351,14 @@ impl ListAcceptedPortfolioSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAcceptedPortfolioSharesErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListAcceptedPortfolioSharesErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAcceptedPortfolioSharesErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListAcceptedPortfolioSharesErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `ListAcceptedPortfolioSharesErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6397,7 +6397,7 @@ pub enum ListBudgetsForResourceErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBudgetsForResourceError {
@@ -6461,14 +6461,14 @@ impl ListBudgetsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBudgetsForResourceErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListBudgetsForResourceErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBudgetsForResourceErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListBudgetsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBudgetsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6503,7 +6503,7 @@ pub enum ListConstraintsForPortfolioErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConstraintsForPortfolioError {
@@ -6571,14 +6571,14 @@ impl ListConstraintsForPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConstraintsForPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListConstraintsForPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConstraintsForPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListConstraintsForPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConstraintsForPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6615,7 +6615,7 @@ pub enum ListLaunchPathsErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLaunchPathsError {
@@ -6679,14 +6679,14 @@ impl ListLaunchPathsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLaunchPathsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListLaunchPathsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchPathsErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchPathsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLaunchPathsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6723,7 +6723,7 @@ pub enum ListOrganizationPortfolioAccessErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOrganizationPortfolioAccessError {
@@ -6797,21 +6797,21 @@ impl ListOrganizationPortfolioAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOrganizationPortfolioAccessErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListOrganizationPortfolioAccessErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationPortfolioAccessErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationPortfolioAccessErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `ListOrganizationPortfolioAccessErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationPortfolioAccessErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationPortfolioAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListOrganizationPortfolioAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6853,7 +6853,7 @@ pub enum ListPortfolioAccessErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPortfolioAccessError {
@@ -6917,14 +6917,14 @@ impl ListPortfolioAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPortfolioAccessErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListPortfolioAccessErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPortfolioAccessErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListPortfolioAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPortfolioAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6957,7 +6957,7 @@ pub struct ListPortfoliosError {
 pub enum ListPortfoliosErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPortfoliosError {
@@ -7020,7 +7020,7 @@ impl ListPortfoliosError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPortfoliosErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListPortfoliosErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7054,7 +7054,7 @@ pub enum ListPortfoliosForProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPortfoliosForProductError {
@@ -7118,14 +7118,14 @@ impl ListPortfoliosForProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPortfoliosForProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListPortfoliosForProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPortfoliosForProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListPortfoliosForProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPortfoliosForProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7160,7 +7160,7 @@ pub enum ListPrincipalsForPortfolioErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPrincipalsForPortfolioError {
@@ -7226,14 +7226,14 @@ impl ListPrincipalsForPortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPrincipalsForPortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListPrincipalsForPortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsForPortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsForPortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPrincipalsForPortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7268,7 +7268,7 @@ pub enum ListProvisionedProductPlansErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProvisionedProductPlansError {
@@ -7336,14 +7336,14 @@ impl ListProvisionedProductPlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProvisionedProductPlansErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListProvisionedProductPlansErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisionedProductPlansErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisionedProductPlansErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProvisionedProductPlansErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7380,7 +7380,7 @@ pub enum ListProvisioningArtifactsErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProvisioningArtifactsError {
@@ -7444,14 +7444,14 @@ impl ListProvisioningArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProvisioningArtifactsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListProvisioningArtifactsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisioningArtifactsErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisioningArtifactsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProvisioningArtifactsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7486,7 +7486,7 @@ pub enum ListProvisioningArtifactsForServiceActionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProvisioningArtifactsForServiceActionError {
@@ -7557,14 +7557,14 @@ impl ListProvisioningArtifactsForServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProvisioningArtifactsForServiceActionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListProvisioningArtifactsForServiceActionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisioningArtifactsForServiceActionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisioningArtifactsForServiceActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProvisioningArtifactsForServiceActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7603,7 +7603,7 @@ pub struct ListRecordHistoryError {
 pub enum ListRecordHistoryErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecordHistoryError {
@@ -7666,7 +7666,7 @@ impl ListRecordHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecordHistoryErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListRecordHistoryErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7704,7 +7704,7 @@ pub enum ListResourcesForTagOptionErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesForTagOptionError {
@@ -7771,21 +7771,21 @@ impl ListResourcesForTagOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesForTagOptionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListResourcesForTagOptionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesForTagOptionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesForTagOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesForTagOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesForTagOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesForTagOptionErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `ListResourcesForTagOptionErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7821,7 +7821,7 @@ pub struct ListServiceActionsError {
 pub enum ListServiceActionsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceActionsError {
@@ -7884,7 +7884,7 @@ impl ListServiceActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceActionsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListServiceActionsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7918,7 +7918,7 @@ pub enum ListServiceActionsForProvisioningArtifactErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceActionsForProvisioningArtifactError {
@@ -7989,14 +7989,14 @@ impl ListServiceActionsForProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceActionsForProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListServiceActionsForProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceActionsForProvisioningArtifactErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceActionsForProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListServiceActionsForProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8037,7 +8037,7 @@ pub enum ListStackInstancesForProvisionedProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackInstancesForProvisionedProductError {
@@ -8108,14 +8108,14 @@ impl ListStackInstancesForProvisionedProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStackInstancesForProvisionedProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListStackInstancesForProvisionedProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStackInstancesForProvisionedProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListStackInstancesForProvisionedProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStackInstancesForProvisionedProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8158,7 +8158,7 @@ pub enum ListTagOptionsErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagOptionsError {
@@ -8222,14 +8222,14 @@ impl ListTagOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagOptionsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ListTagOptionsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagOptionsErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagOptionsErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `ListTagOptionsErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8266,7 +8266,7 @@ pub enum ProvisionProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ProvisionProductError {
@@ -8331,21 +8331,21 @@ impl ProvisionProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ProvisionProductErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `ProvisionProductErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionProductErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ProvisionProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ProvisionProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8379,7 +8379,7 @@ pub struct RejectPortfolioShareError {
 pub enum RejectPortfolioShareErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectPortfolioShareError {
@@ -8442,7 +8442,7 @@ impl RejectPortfolioShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectPortfolioShareErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RejectPortfolioShareErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8474,7 +8474,7 @@ pub struct ScanProvisionedProductsError {
 pub enum ScanProvisionedProductsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ScanProvisionedProductsError {
@@ -8537,7 +8537,7 @@ impl ScanProvisionedProductsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ScanProvisionedProductsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `ScanProvisionedProductsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8569,7 +8569,7 @@ pub struct SearchProductsError {
 pub enum SearchProductsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchProductsError {
@@ -8632,7 +8632,7 @@ impl SearchProductsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchProductsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `SearchProductsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8666,7 +8666,7 @@ pub enum SearchProductsAsAdminErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchProductsAsAdminError {
@@ -8730,14 +8730,14 @@ impl SearchProductsAsAdminError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchProductsAsAdminErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `SearchProductsAsAdminErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchProductsAsAdminErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `SearchProductsAsAdminErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchProductsAsAdminErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8770,7 +8770,7 @@ pub struct SearchProvisionedProductsError {
 pub enum SearchProvisionedProductsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchProvisionedProductsError {
@@ -8833,7 +8833,7 @@ impl SearchProvisionedProductsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchProvisionedProductsErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `SearchProvisionedProductsErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8865,7 +8865,7 @@ pub struct TerminateProvisionedProductError {
 pub enum TerminateProvisionedProductErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateProvisionedProductError {
@@ -8930,7 +8930,7 @@ impl TerminateProvisionedProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateProvisionedProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TerminateProvisionedProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8964,7 +8964,7 @@ pub enum UpdateConstraintErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConstraintError {
@@ -9028,14 +9028,14 @@ impl UpdateConstraintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConstraintErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateConstraintErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConstraintErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConstraintErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConstraintErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9077,7 +9077,7 @@ pub enum UpdatePortfolioErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePortfolioError {
@@ -9143,28 +9143,28 @@ impl UpdatePortfolioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePortfolioErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9206,7 +9206,7 @@ pub enum UpdatePortfolioShareErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePortfolioShareError {
@@ -9272,28 +9272,28 @@ impl UpdatePortfolioShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePortfolioShareErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioShareErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioShareErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioShareErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioShareErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioShareErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioShareErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioShareErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortfolioShareErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortfolioShareErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePortfolioShareErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9334,7 +9334,7 @@ pub enum UpdateProductErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProductError {
@@ -9399,21 +9399,21 @@ impl UpdateProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProductErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProductErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `UpdateProductErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9449,7 +9449,7 @@ pub enum UpdateProvisionedProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProvisionedProductError {
@@ -9513,14 +9513,14 @@ impl UpdateProvisionedProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProvisionedProductErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateProvisionedProductErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProvisionedProductErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProvisionedProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProvisionedProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9558,7 +9558,7 @@ pub enum UpdateProvisionedProductPropertiesErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProvisionedProductPropertiesError {
@@ -9632,21 +9632,21 @@ impl UpdateProvisionedProductPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProvisionedProductPropertiesErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateProvisionedProductPropertiesErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProvisionedProductPropertiesErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProvisionedProductPropertiesErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateProvisionedProductPropertiesErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProvisionedProductPropertiesErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProvisionedProductPropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProvisionedProductPropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9688,7 +9688,7 @@ pub enum UpdateProvisioningArtifactErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProvisioningArtifactError {
@@ -9754,14 +9754,14 @@ impl UpdateProvisioningArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProvisioningArtifactErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateProvisioningArtifactErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProvisioningArtifactErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProvisioningArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProvisioningArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9796,7 +9796,7 @@ pub enum UpdateServiceActionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceActionError {
@@ -9860,14 +9860,14 @@ impl UpdateServiceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceActionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateServiceActionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceActionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServiceActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9908,7 +9908,7 @@ pub enum UpdateTagOptionErrorKind {
     /// not been performed for this account. Please use the AWS console to perform the migration
     /// process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTagOptionError {
@@ -9974,28 +9974,28 @@ impl UpdateTagOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTagOptionErrorKind::DuplicateResourceException`.
+    /// Returns `true` if the error kind is `UpdateTagOptionErrorKind::DuplicateResourceException`.
     pub fn is_duplicate_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagOptionErrorKind::DuplicateResourceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagOptionErrorKind::InvalidParametersException`.
+    /// Returns `true` if the error kind is `UpdateTagOptionErrorKind::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagOptionErrorKind::InvalidParametersException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTagOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagOptionErrorKind::TagOptionNotMigratedException`.
+    /// Returns `true` if the error kind is `UpdateTagOptionErrorKind::TagOptionNotMigratedException`.
     pub fn is_tag_option_not_migrated_exception(&self) -> bool {
         matches!(
             &self.kind,

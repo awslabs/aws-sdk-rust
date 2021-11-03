@@ -24,7 +24,7 @@ pub enum CreateBackupPlanErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupPlanError {
@@ -91,35 +91,35 @@ impl CreateBackupPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupPlanErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateBackupPlanErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupPlanErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupPlanErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBackupPlanErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupPlanErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBackupPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -165,7 +165,7 @@ pub enum CreateBackupSelectionErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupSelectionError {
@@ -232,35 +232,35 @@ impl CreateBackupSelectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupSelectionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateBackupSelectionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupSelectionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupSelectionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupSelectionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupSelectionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupSelectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBackupSelectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupSelectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupSelectionErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupSelectionErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupSelectionErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupSelectionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBackupSelectionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -306,7 +306,7 @@ pub enum CreateBackupVaultErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupVaultError {
@@ -373,35 +373,35 @@ impl CreateBackupVaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupVaultErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateBackupVaultErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupVaultErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupVaultErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupVaultErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupVaultErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupVaultErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBackupVaultErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupVaultErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupVaultErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `CreateBackupVaultErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupVaultErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupVaultErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBackupVaultErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -447,7 +447,7 @@ pub enum CreateFrameworkErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFrameworkError {
@@ -514,35 +514,35 @@ impl CreateFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFrameworkErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateFrameworkErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFrameworkErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFrameworkErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateFrameworkErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFrameworkErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFrameworkErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFrameworkErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFrameworkErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFrameworkErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `CreateFrameworkErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFrameworkErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFrameworkErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateFrameworkErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -588,7 +588,7 @@ pub enum CreateReportPlanErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReportPlanError {
@@ -655,35 +655,35 @@ impl CreateReportPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReportPlanErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReportPlanErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportPlanErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateReportPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportPlanErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateReportPlanErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportPlanErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `CreateReportPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateReportPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -729,7 +729,7 @@ pub enum DeleteBackupPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupPlanError {
@@ -796,35 +796,35 @@ impl DeleteBackupPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupPlanErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackupPlanErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupPlanErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -867,7 +867,7 @@ pub enum DeleteBackupSelectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupSelectionError {
@@ -933,28 +933,28 @@ impl DeleteBackupSelectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupSelectionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupSelectionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupSelectionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupSelectionErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupSelectionErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupSelectionErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupSelectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupSelectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupSelectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupSelectionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupSelectionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -999,7 +999,7 @@ pub enum DeleteBackupVaultErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupVaultError {
@@ -1066,35 +1066,35 @@ impl DeleteBackupVaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupVaultErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1137,7 +1137,7 @@ pub enum DeleteBackupVaultAccessPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupVaultAccessPolicyError {
@@ -1214,28 +1214,28 @@ impl DeleteBackupVaultAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultAccessPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultAccessPolicyErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1288,7 +1288,7 @@ pub enum DeleteBackupVaultLockConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupVaultLockConfigurationError {
@@ -1368,35 +1368,35 @@ impl DeleteBackupVaultLockConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1449,7 +1449,7 @@ pub enum DeleteBackupVaultNotificationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupVaultNotificationsError {
@@ -1526,28 +1526,28 @@ impl DeleteBackupVaultNotificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultNotificationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultNotificationsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultNotificationsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultNotificationsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupVaultNotificationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1600,7 +1600,7 @@ pub enum DeleteFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFrameworkError {
@@ -1667,32 +1667,32 @@ impl DeleteFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFrameworkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFrameworkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteFrameworkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteFrameworkErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFrameworkErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFrameworkErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFrameworkErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFrameworkErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFrameworkErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFrameworkErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteFrameworkErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1741,7 +1741,7 @@ pub enum DeleteRecoveryPointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRecoveryPointError {
@@ -1809,42 +1809,42 @@ impl DeleteRecoveryPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecoveryPointErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecoveryPointErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecoveryPointErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecoveryPointErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecoveryPointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecoveryPointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRecoveryPointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1891,7 +1891,7 @@ pub enum DeleteReportPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReportPlanError {
@@ -1958,32 +1958,32 @@ impl DeleteReportPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReportPlanErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteReportPlanErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteReportPlanErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteReportPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteReportPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteReportPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteReportPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteReportPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2028,7 +2028,7 @@ pub enum DescribeBackupJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupJobError {
@@ -2095,35 +2095,35 @@ impl DescribeBackupJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupJobErrorKind::DependencyFailureException`.
+    /// Returns `true` if the error kind is `DescribeBackupJobErrorKind::DependencyFailureException`.
     pub fn is_dependency_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupJobErrorKind::DependencyFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeBackupJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeBackupJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBackupJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeBackupJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2166,7 +2166,7 @@ pub enum DescribeBackupVaultErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupVaultError {
@@ -2232,28 +2232,28 @@ impl DescribeBackupVaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupVaultErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeBackupVaultErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupVaultErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupVaultErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeBackupVaultErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupVaultErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupVaultErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBackupVaultErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupVaultErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupVaultErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeBackupVaultErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2295,7 +2295,7 @@ pub enum DescribeCopyJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCopyJobError {
@@ -2361,28 +2361,28 @@ impl DescribeCopyJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCopyJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeCopyJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCopyJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCopyJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeCopyJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCopyJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCopyJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCopyJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCopyJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCopyJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeCopyJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2424,7 +2424,7 @@ pub enum DescribeFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFrameworkError {
@@ -2490,28 +2490,28 @@ impl DescribeFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFrameworkErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeFrameworkErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFrameworkErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFrameworkErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeFrameworkErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFrameworkErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFrameworkErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeFrameworkErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2549,7 +2549,7 @@ pub enum DescribeGlobalSettingsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalSettingsError {
@@ -2613,14 +2613,14 @@ impl DescribeGlobalSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGlobalSettingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGlobalSettingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalSettingsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2660,7 +2660,7 @@ pub enum DescribeProtectedResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProtectedResourceError {
@@ -2732,28 +2732,28 @@ impl DescribeProtectedResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProtectedResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeProtectedResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectedResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectedResourceErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeProtectedResourceErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectedResourceErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectedResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProtectedResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectedResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectedResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeProtectedResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2799,7 +2799,7 @@ pub enum DescribeRecoveryPointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRecoveryPointError {
@@ -2865,28 +2865,28 @@ impl DescribeRecoveryPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRecoveryPointErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRecoveryPointErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecoveryPointErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecoveryPointErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRecoveryPointErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecoveryPointErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecoveryPointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRecoveryPointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecoveryPointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecoveryPointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRecoveryPointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2921,7 +2921,7 @@ pub struct DescribeRegionSettingsError {
 pub enum DescribeRegionSettingsErrorKind {
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRegionSettingsError {
@@ -2984,7 +2984,7 @@ impl DescribeRegionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRegionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRegionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3020,7 +3020,7 @@ pub enum DescribeReportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReportJobError {
@@ -3085,21 +3085,21 @@ impl DescribeReportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReportJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeReportJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeReportJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3140,7 +3140,7 @@ pub enum DescribeReportPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReportPlanError {
@@ -3206,28 +3206,28 @@ impl DescribeReportPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReportPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeReportPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeReportPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReportPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeReportPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3271,7 +3271,7 @@ pub enum DescribeRestoreJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRestoreJobError {
@@ -3338,35 +3338,35 @@ impl DescribeRestoreJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRestoreJobErrorKind::DependencyFailureException`.
+    /// Returns `true` if the error kind is `DescribeRestoreJobErrorKind::DependencyFailureException`.
     pub fn is_dependency_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRestoreJobErrorKind::DependencyFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRestoreJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRestoreJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRestoreJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRestoreJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeRestoreJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRestoreJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRestoreJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRestoreJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRestoreJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRestoreJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRestoreJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3415,7 +3415,7 @@ pub enum DisassociateRecoveryPointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateRecoveryPointError {
@@ -3491,42 +3491,42 @@ impl DisassociateRecoveryPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRecoveryPointErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRecoveryPointErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRecoveryPointErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRecoveryPointErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRecoveryPointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRecoveryPointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateRecoveryPointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3576,7 +3576,7 @@ pub enum ExportBackupPlanTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportBackupPlanTemplateError {
@@ -3646,28 +3646,28 @@ impl ExportBackupPlanTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportBackupPlanTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportBackupPlanTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBackupPlanTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBackupPlanTemplateErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ExportBackupPlanTemplateErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBackupPlanTemplateErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBackupPlanTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExportBackupPlanTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportBackupPlanTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExportBackupPlanTemplateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportBackupPlanTemplateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3713,7 +3713,7 @@ pub enum GetBackupPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupPlanError {
@@ -3779,28 +3779,28 @@ impl GetBackupPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBackupPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3846,7 +3846,7 @@ pub enum GetBackupPlanFromJSONErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupPlanFromJSONError {
@@ -3913,35 +3913,35 @@ impl GetBackupPlanFromJSONError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupPlanFromJSONErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromJSONErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromJSONErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromJSONErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromJSONErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromJSONErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromJSONErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromJSONErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromJSONErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromJSONErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromJSONErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromJSONErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromJSONErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromJSONErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3984,7 +3984,7 @@ pub enum GetBackupPlanFromTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupPlanFromTemplateError {
@@ -4056,28 +4056,28 @@ impl GetBackupPlanFromTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupPlanFromTemplateErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromTemplateErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromTemplateErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromTemplateErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromTemplateErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromTemplateErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupPlanFromTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupPlanFromTemplateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupPlanFromTemplateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4123,7 +4123,7 @@ pub enum GetBackupSelectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupSelectionError {
@@ -4189,28 +4189,28 @@ impl GetBackupSelectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupSelectionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupSelectionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupSelectionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupSelectionErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupSelectionErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupSelectionErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupSelectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBackupSelectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupSelectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupSelectionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupSelectionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4252,7 +4252,7 @@ pub enum GetBackupVaultAccessPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupVaultAccessPolicyError {
@@ -4324,28 +4324,28 @@ impl GetBackupVaultAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultAccessPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultAccessPolicyErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4393,7 +4393,7 @@ pub enum GetBackupVaultNotificationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackupVaultNotificationsError {
@@ -4467,28 +4467,28 @@ impl GetBackupVaultNotificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultNotificationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultNotificationsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetBackupVaultNotificationsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultNotificationsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackupVaultNotificationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4536,7 +4536,7 @@ pub enum GetRecoveryPointRestoreMetadataErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecoveryPointRestoreMetadataError {
@@ -4613,28 +4613,28 @@ impl GetRecoveryPointRestoreMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecoveryPointRestoreMetadataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecoveryPointRestoreMetadataErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecoveryPointRestoreMetadataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetRecoveryPointRestoreMetadataErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4677,7 +4677,7 @@ pub struct GetSupportedResourceTypesError {
 pub enum GetSupportedResourceTypesErrorKind {
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSupportedResourceTypesError {
@@ -4742,7 +4742,7 @@ impl GetSupportedResourceTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSupportedResourceTypesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetSupportedResourceTypesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4777,7 +4777,7 @@ pub enum ListBackupJobsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupJobsError {
@@ -4841,14 +4841,14 @@ impl ListBackupJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupJobsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupJobsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4888,7 +4888,7 @@ pub enum ListBackupPlansErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupPlansError {
@@ -4954,28 +4954,28 @@ impl ListBackupPlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupPlansErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlansErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlansErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlansErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlansErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlansErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlansErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBackupPlansErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlansErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlansErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupPlansErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5017,7 +5017,7 @@ pub enum ListBackupPlanTemplatesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupPlanTemplatesError {
@@ -5087,28 +5087,28 @@ impl ListBackupPlanTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupPlanTemplatesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlanTemplatesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanTemplatesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanTemplatesErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlanTemplatesErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanTemplatesErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanTemplatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBackupPlanTemplatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanTemplatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanTemplatesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupPlanTemplatesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5154,7 +5154,7 @@ pub enum ListBackupPlanVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupPlanVersionsError {
@@ -5224,28 +5224,28 @@ impl ListBackupPlanVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupPlanVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlanVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanVersionsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupPlanVersionsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanVersionsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBackupPlanVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupPlanVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupPlanVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupPlanVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5287,7 +5287,7 @@ pub enum ListBackupSelectionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupSelectionsError {
@@ -5353,28 +5353,28 @@ impl ListBackupSelectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupSelectionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupSelectionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupSelectionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupSelectionsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupSelectionsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupSelectionsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupSelectionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBackupSelectionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupSelectionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupSelectionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupSelectionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5416,7 +5416,7 @@ pub enum ListBackupVaultsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupVaultsError {
@@ -5482,28 +5482,28 @@ impl ListBackupVaultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupVaultsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupVaultsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupVaultsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupVaultsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListBackupVaultsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupVaultsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupVaultsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBackupVaultsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackupVaultsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackupVaultsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBackupVaultsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5541,7 +5541,7 @@ pub enum ListCopyJobsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCopyJobsError {
@@ -5605,14 +5605,14 @@ impl ListCopyJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCopyJobsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListCopyJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCopyJobsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListCopyJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListCopyJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5648,7 +5648,7 @@ pub enum ListFrameworksErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFrameworksError {
@@ -5712,14 +5712,14 @@ impl ListFrameworksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFrameworksErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFrameworksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFrameworksErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFrameworksErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListFrameworksErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5755,7 +5755,7 @@ pub enum ListProtectedResourcesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProtectedResourcesError {
@@ -5821,14 +5821,14 @@ impl ListProtectedResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProtectedResourcesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListProtectedResourcesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProtectedResourcesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListProtectedResourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListProtectedResourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5868,7 +5868,7 @@ pub enum ListRecoveryPointsByBackupVaultErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecoveryPointsByBackupVaultError {
@@ -5945,28 +5945,28 @@ impl ListRecoveryPointsByBackupVaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByBackupVaultErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByBackupVaultErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByBackupVaultErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByBackupVaultErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6016,7 +6016,7 @@ pub enum ListRecoveryPointsByResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecoveryPointsByResourceError {
@@ -6090,28 +6090,28 @@ impl ListRecoveryPointsByResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByResourceErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByResourceErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByResourceErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecoveryPointsByResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecoveryPointsByResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRecoveryPointsByResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6157,7 +6157,7 @@ pub enum ListReportJobsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportJobsError {
@@ -6221,14 +6221,14 @@ impl ListReportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportJobsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListReportJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportJobsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListReportJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6264,7 +6264,7 @@ pub enum ListReportPlansErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportPlansError {
@@ -6328,14 +6328,14 @@ impl ListReportPlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportPlansErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListReportPlansErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportPlansErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportPlansErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListReportPlansErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6375,7 +6375,7 @@ pub enum ListRestoreJobsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRestoreJobsError {
@@ -6441,28 +6441,28 @@ impl ListRestoreJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRestoreJobsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListRestoreJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRestoreJobsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRestoreJobsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListRestoreJobsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRestoreJobsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListRestoreJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRestoreJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRestoreJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRestoreJobsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRestoreJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6504,7 +6504,7 @@ pub enum ListTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -6570,25 +6570,25 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6630,7 +6630,7 @@ pub enum PutBackupVaultAccessPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBackupVaultAccessPolicyError {
@@ -6702,28 +6702,28 @@ impl PutBackupVaultAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultAccessPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultAccessPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultAccessPolicyErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultAccessPolicyErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutBackupVaultAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutBackupVaultAccessPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6774,7 +6774,7 @@ pub enum PutBackupVaultLockConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBackupVaultLockConfigurationError {
@@ -6854,35 +6854,35 @@ impl PutBackupVaultLockConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultLockConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutBackupVaultLockConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultLockConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6935,7 +6935,7 @@ pub enum PutBackupVaultNotificationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBackupVaultNotificationsError {
@@ -7009,28 +7009,28 @@ impl PutBackupVaultNotificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultNotificationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultNotificationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultNotificationsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `PutBackupVaultNotificationsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultNotificationsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutBackupVaultNotificationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupVaultNotificationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutBackupVaultNotificationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7084,7 +7084,7 @@ pub enum StartBackupJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBackupJobError {
@@ -7152,42 +7152,42 @@ impl StartBackupJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBackupJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBackupJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBackupJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBackupJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBackupJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartBackupJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartBackupJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7237,7 +7237,7 @@ pub enum StartCopyJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCopyJobError {
@@ -7305,39 +7305,39 @@ impl StartCopyJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCopyJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCopyJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StartCopyJobErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCopyJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCopyJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartCopyJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartCopyJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7381,7 +7381,7 @@ pub enum StartReportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReportJobError {
@@ -7447,28 +7447,28 @@ impl StartReportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReportJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartReportJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `StartReportJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartReportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartReportJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7510,7 +7510,7 @@ pub enum StartRestoreJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartRestoreJobError {
@@ -7576,28 +7576,28 @@ impl StartRestoreJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartRestoreJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartRestoreJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRestoreJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartRestoreJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `StartRestoreJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRestoreJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartRestoreJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartRestoreJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRestoreJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartRestoreJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartRestoreJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7642,7 +7642,7 @@ pub enum StopBackupJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopBackupJobError {
@@ -7709,35 +7709,35 @@ impl StopBackupJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopBackupJobErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StopBackupJobErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBackupJobErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StopBackupJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopBackupJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBackupJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopBackupJobErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `StopBackupJobErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBackupJobErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StopBackupJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopBackupJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBackupJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopBackupJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopBackupJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7783,7 +7783,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7850,32 +7850,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7918,7 +7918,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7984,28 +7984,28 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8047,7 +8047,7 @@ pub enum UpdateBackupPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBackupPlanError {
@@ -8113,28 +8113,28 @@ impl UpdateBackupPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBackupPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateBackupPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackupPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackupPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateBackupPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackupPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackupPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBackupPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackupPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackupPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateBackupPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8184,7 +8184,7 @@ pub enum UpdateFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFrameworkError {
@@ -8253,46 +8253,46 @@ impl UpdateFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFrameworkErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateFrameworkErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFrameworkErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFrameworkErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFrameworkErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFrameworkErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFrameworkErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8338,7 +8338,7 @@ pub enum UpdateGlobalSettingsErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalSettingsError {
@@ -8404,28 +8404,28 @@ impl UpdateGlobalSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8467,7 +8467,7 @@ pub enum UpdateRecoveryPointLifecycleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRecoveryPointLifecycleError {
@@ -8541,28 +8541,28 @@ impl UpdateRecoveryPointLifecycleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecoveryPointLifecycleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecoveryPointLifecycleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecoveryPointLifecycleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8610,7 +8610,7 @@ pub enum UpdateRegionSettingsErrorKind {
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRegionSettingsError {
@@ -8675,21 +8675,21 @@ impl UpdateRegionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRegionSettingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateRegionSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegionSettingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegionSettingsErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateRegionSettingsErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegionSettingsErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRegionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8733,7 +8733,7 @@ pub enum UpdateReportPlanErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReportPlanError {
@@ -8800,32 +8800,32 @@ impl UpdateReportPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReportPlanErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateReportPlanErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateReportPlanErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateReportPlanErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateReportPlanErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportPlanErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportPlanErrorKind::MissingParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateReportPlanErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportPlanErrorKind::MissingParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportPlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReportPlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportPlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportPlanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateReportPlanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,

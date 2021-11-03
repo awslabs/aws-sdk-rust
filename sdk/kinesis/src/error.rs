@@ -24,7 +24,7 @@ pub enum AddTagsToStreamErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToStreamError {
@@ -90,28 +90,28 @@ impl AddTagsToStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToStreamErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToStreamErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsToStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -153,7 +153,7 @@ pub enum CreateStreamErrorKind {
     /// <p>The requested resource exceeds the maximum number allowed, or the number of
     /// concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamError {
@@ -218,18 +218,18 @@ impl CreateStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateStreamErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateStreamErrorKind::LimitExceededException(_))
     }
@@ -270,7 +270,7 @@ pub enum DecreaseStreamRetentionPeriodErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DecreaseStreamRetentionPeriodError {
@@ -343,28 +343,28 @@ impl DecreaseStreamRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DecreaseStreamRetentionPeriodErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DecreaseStreamRetentionPeriodErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DecreaseStreamRetentionPeriodErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DecreaseStreamRetentionPeriodErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -410,7 +410,7 @@ pub enum DeleteStreamErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamError {
@@ -475,15 +475,15 @@ impl DeleteStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -524,7 +524,7 @@ pub enum DeregisterStreamConsumerErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterStreamConsumerError {
@@ -589,21 +589,21 @@ impl DeregisterStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterStreamConsumerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeregisterStreamConsumerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterStreamConsumerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterStreamConsumerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeregisterStreamConsumerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterStreamConsumerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterStreamConsumerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterStreamConsumerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -638,7 +638,7 @@ pub enum DescribeLimitsErrorKind {
     /// <p>The requested resource exceeds the maximum number allowed, or the number of
     /// concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLimitsError {
@@ -701,7 +701,7 @@ impl DescribeLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLimitsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeLimitsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -737,7 +737,7 @@ pub enum DescribeStreamErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamError {
@@ -801,14 +801,14 @@ impl DescribeStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -848,7 +848,7 @@ pub enum DescribeStreamConsumerErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamConsumerError {
@@ -913,21 +913,21 @@ impl DescribeStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamConsumerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeStreamConsumerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamConsumerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamConsumerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeStreamConsumerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamConsumerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamConsumerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamConsumerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -965,7 +965,7 @@ pub enum DescribeStreamSummaryErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamSummaryError {
@@ -1029,14 +1029,14 @@ impl DescribeStreamSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamSummaryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeStreamSummaryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamSummaryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamSummaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamSummaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1079,7 +1079,7 @@ pub enum DisableEnhancedMonitoringErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableEnhancedMonitoringError {
@@ -1145,28 +1145,28 @@ impl DisableEnhancedMonitoringError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableEnhancedMonitoringErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableEnhancedMonitoringErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DisableEnhancedMonitoringErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableEnhancedMonitoringErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisableEnhancedMonitoringErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableEnhancedMonitoringErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisableEnhancedMonitoringErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableEnhancedMonitoringErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1211,7 +1211,7 @@ pub enum EnableEnhancedMonitoringErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableEnhancedMonitoringError {
@@ -1277,28 +1277,28 @@ impl EnableEnhancedMonitoringError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableEnhancedMonitoringErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableEnhancedMonitoringErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `EnableEnhancedMonitoringErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableEnhancedMonitoringErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `EnableEnhancedMonitoringErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableEnhancedMonitoringErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableEnhancedMonitoringErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableEnhancedMonitoringErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum GetRecordsErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecordsError {
@@ -1438,46 +1438,46 @@ impl GetRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsDisabledException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::ExpiredIteratorException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::ExpiredIteratorException`.
     pub fn is_expired_iterator_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::ExpiredIteratorException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsOptInRequired`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsOptInRequired`.
     pub fn is_kms_opt_in_required(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsOptInRequired(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsThrottlingException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsThrottlingException`.
     pub fn is_kms_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecordsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `GetRecordsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecordsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1529,7 +1529,7 @@ pub enum GetShardIteratorErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetShardIteratorError {
@@ -1596,21 +1596,21 @@ impl GetShardIteratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetShardIteratorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetShardIteratorErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetShardIteratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetShardIteratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1656,7 +1656,7 @@ pub enum IncreaseStreamRetentionPeriodErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for IncreaseStreamRetentionPeriodError {
@@ -1729,28 +1729,28 @@ impl IncreaseStreamRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `IncreaseStreamRetentionPeriodErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             IncreaseStreamRetentionPeriodErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `IncreaseStreamRetentionPeriodErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             IncreaseStreamRetentionPeriodErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1801,7 +1801,7 @@ pub enum ListShardsErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListShardsError {
@@ -1868,26 +1868,26 @@ impl ListShardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListShardsErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `ListShardsErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListShardsErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListShardsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListShardsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, ListShardsErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `ListShardsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `ListShardsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, ListShardsErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `ListShardsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListShardsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListShardsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListShardsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListShardsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1935,7 +1935,7 @@ pub enum ListStreamConsumersErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamConsumersError {
@@ -2002,35 +2002,35 @@ impl ListStreamConsumersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamConsumersErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `ListStreamConsumersErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamConsumersErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamConsumersErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListStreamConsumersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamConsumersErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamConsumersErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `ListStreamConsumersErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamConsumersErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamConsumersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListStreamConsumersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamConsumersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamConsumersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStreamConsumersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2067,7 +2067,7 @@ pub enum ListStreamsErrorKind {
     /// <p>The requested resource exceeds the maximum number allowed, or the number of
     /// concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamsError {
@@ -2130,7 +2130,7 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::LimitExceededException(_))
     }
@@ -2166,7 +2166,7 @@ pub enum ListTagsForStreamErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForStreamError {
@@ -2231,21 +2231,21 @@ impl ListTagsForStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2289,7 +2289,7 @@ pub enum MergeShardsErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeShardsError {
@@ -2355,22 +2355,22 @@ impl MergeShardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeShardsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeShardsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `MergeShardsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, MergeShardsErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `MergeShardsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, MergeShardsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `MergeShardsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2436,7 +2436,7 @@ pub enum PutRecordErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRecordError {
@@ -2507,42 +2507,42 @@ impl PutRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsDisabledException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsNotFoundException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsOptInRequired`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsOptInRequired`.
     pub fn is_kms_opt_in_required(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsOptInRequired(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsThrottlingException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsThrottlingException`.
     pub fn is_kms_throttling_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsThrottlingException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRecordErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `PutRecordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRecordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRecordErrorKind::ResourceNotFoundException(_))
     }
@@ -2610,7 +2610,7 @@ pub enum PutRecordsErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRecordsError {
@@ -2681,42 +2681,42 @@ impl PutRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsDisabledException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsNotFoundException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsOptInRequired`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsOptInRequired`.
     pub fn is_kms_opt_in_required(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsOptInRequired(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsThrottlingException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsThrottlingException`.
     pub fn is_kms_throttling_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsThrottlingException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRecordsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, PutRecordsErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `PutRecordsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRecordsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2766,7 +2766,7 @@ pub enum RegisterStreamConsumerErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterStreamConsumerError {
@@ -2832,28 +2832,28 @@ impl RegisterStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterStreamConsumerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `RegisterStreamConsumerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterStreamConsumerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterStreamConsumerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `RegisterStreamConsumerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterStreamConsumerErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterStreamConsumerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterStreamConsumerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterStreamConsumerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterStreamConsumerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterStreamConsumerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2898,7 +2898,7 @@ pub enum RemoveTagsFromStreamErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromStreamError {
@@ -2964,28 +2964,28 @@ impl RemoveTagsFromStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromStreamErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromStreamErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromStreamErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub enum SplitShardErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SplitShardError {
@@ -3096,19 +3096,19 @@ impl SplitShardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SplitShardErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `SplitShardErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, SplitShardErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `SplitShardErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `SplitShardErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, SplitShardErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `SplitShardErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SplitShardErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, SplitShardErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `SplitShardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SplitShardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3173,7 +3173,7 @@ pub enum StartStreamEncryptionErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartStreamEncryptionError {
@@ -3245,70 +3245,70 @@ impl StartStreamEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsOptInRequired`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsOptInRequired`.
     pub fn is_kms_opt_in_required(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsOptInRequired(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsThrottlingException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsThrottlingException`.
     pub fn is_kms_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamEncryptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamEncryptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartStreamEncryptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3359,7 +3359,7 @@ pub enum StopStreamEncryptionErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStreamEncryptionError {
@@ -3425,28 +3425,28 @@ impl StopStreamEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopStreamEncryptionErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamEncryptionErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamEncryptionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamEncryptionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamEncryptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamEncryptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamEncryptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopStreamEncryptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3491,7 +3491,7 @@ pub enum UpdateShardCountErrorKind {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateShardCountError {
@@ -3557,28 +3557,28 @@ impl UpdateShardCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateShardCountErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateShardCountErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateShardCountErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateShardCountErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateShardCountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateShardCountErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateShardCountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

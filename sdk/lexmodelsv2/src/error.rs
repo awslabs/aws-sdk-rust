@@ -31,7 +31,7 @@ pub enum BuildBotLocaleErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BuildBotLocaleError {
@@ -99,36 +99,36 @@ impl BuildBotLocaleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, BuildBotLocaleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BuildBotLocaleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             BuildBotLocaleErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BuildBotLocaleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, BuildBotLocaleErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `BuildBotLocaleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BuildBotLocaleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, BuildBotLocaleErrorKind::ValidationException(_))
     }
@@ -179,7 +179,7 @@ pub enum CreateBotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotError {
@@ -247,33 +247,33 @@ impl CreateBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ValidationException(_))
     }
@@ -324,7 +324,7 @@ pub enum CreateBotAliasErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotAliasError {
@@ -392,36 +392,36 @@ impl CreateBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBotAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotAliasErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotAliasErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotAliasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateBotAliasErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateBotAliasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateBotAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateBotAliasErrorKind::ValidationException(_))
     }
@@ -472,7 +472,7 @@ pub enum CreateBotLocaleErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotLocaleError {
@@ -540,36 +540,36 @@ impl CreateBotLocaleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBotLocaleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotLocaleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotLocaleErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotLocaleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateBotLocaleErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateBotLocaleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateBotLocaleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateBotLocaleErrorKind::ValidationException(_))
     }
@@ -620,7 +620,7 @@ pub enum CreateBotVersionErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotVersionError {
@@ -688,39 +688,39 @@ impl CreateBotVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBotVersionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotVersionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateBotVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -773,7 +773,7 @@ pub enum CreateExportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExportError {
@@ -841,36 +841,36 @@ impl CreateExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateExportErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateExportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateExportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateExportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateExportErrorKind::ValidationException(_))
     }
@@ -921,7 +921,7 @@ pub enum CreateIntentErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIntentError {
@@ -989,36 +989,36 @@ impl CreateIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateIntentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateIntentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateIntentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateIntentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateIntentErrorKind::ValidationException(_))
     }
@@ -1068,7 +1068,7 @@ pub enum CreateResourcePolicyErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourcePolicyError {
@@ -1136,42 +1136,42 @@ impl CreateResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1228,7 +1228,7 @@ pub enum CreateResourcePolicyStatementErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourcePolicyStatementError {
@@ -1308,49 +1308,49 @@ impl CreateResourcePolicyStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourcePolicyStatementErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourcePolicyStatementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateResourcePolicyStatementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1411,7 +1411,7 @@ pub enum CreateSlotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSlotError {
@@ -1479,33 +1479,33 @@ impl CreateSlotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateSlotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSlotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotErrorKind::ValidationException(_))
     }
@@ -1556,7 +1556,7 @@ pub enum CreateSlotTypeErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSlotTypeError {
@@ -1624,36 +1624,36 @@ impl CreateSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotTypeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSlotTypeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotTypeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateSlotTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSlotTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSlotTypeErrorKind::ValidationException(_))
     }
@@ -1701,7 +1701,7 @@ pub enum CreateUploadUrlErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUploadUrlError {
@@ -1768,29 +1768,29 @@ impl CreateUploadUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUploadUrlErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateUploadUrlErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadUrlErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateUploadUrlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateUploadUrlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUploadUrlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUploadUrlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUploadUrlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUploadUrlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUploadUrlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateUploadUrlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadUrlErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateUploadUrlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateUploadUrlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadUrlErrorKind::ValidationException(_))
     }
@@ -1840,7 +1840,7 @@ pub enum DeleteBotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotError {
@@ -1908,33 +1908,33 @@ impl DeleteBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteBotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteBotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotErrorKind::ValidationException(_))
     }
@@ -1985,7 +1985,7 @@ pub enum DeleteBotAliasErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotAliasError {
@@ -2053,36 +2053,36 @@ impl DeleteBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotAliasErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotAliasErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotAliasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteBotAliasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteBotAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotAliasErrorKind::ValidationException(_))
     }
@@ -2133,7 +2133,7 @@ pub enum DeleteBotLocaleErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotLocaleError {
@@ -2201,36 +2201,36 @@ impl DeleteBotLocaleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotLocaleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotLocaleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotLocaleErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotLocaleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotLocaleErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteBotLocaleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteBotLocaleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotLocaleErrorKind::ValidationException(_))
     }
@@ -2281,7 +2281,7 @@ pub enum DeleteBotVersionErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBotVersionError {
@@ -2349,39 +2349,39 @@ impl DeleteBotVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteBotVersionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBotVersionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBotVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteBotVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2431,7 +2431,7 @@ pub enum DeleteExportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteExportError {
@@ -2498,32 +2498,32 @@ impl DeleteExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteExportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteExportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExportErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteExportErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExportErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExportErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteExportErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExportErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteExportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteExportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteExportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteExportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteExportErrorKind::ValidationException(_))
     }
@@ -2569,7 +2569,7 @@ pub enum DeleteImportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImportError {
@@ -2636,32 +2636,32 @@ impl DeleteImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteImportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteImportErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteImportErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteImportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteImportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteImportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteImportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteImportErrorKind::ValidationException(_))
     }
@@ -2711,7 +2711,7 @@ pub enum DeleteIntentErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntentError {
@@ -2779,36 +2779,36 @@ impl DeleteIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteIntentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteIntentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntentErrorKind::ValidationException(_))
     }
@@ -2853,7 +2853,7 @@ pub enum DeleteResourcePolicyErrorKind {
     /// <p>Your request rate is too high. Reduce the frequency of
     /// requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -2919,28 +2919,28 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2986,7 +2986,7 @@ pub enum DeleteResourcePolicyStatementErrorKind {
     /// <p>Your request rate is too high. Reduce the frequency of
     /// requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyStatementError {
@@ -3061,28 +3061,28 @@ impl DeleteResourcePolicyStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyStatementErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyStatementErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyStatementErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyStatementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyStatementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3138,7 +3138,7 @@ pub enum DeleteSlotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSlotError {
@@ -3206,33 +3206,33 @@ impl DeleteSlotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSlotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotErrorKind::ValidationException(_))
     }
@@ -3283,7 +3283,7 @@ pub enum DeleteSlotTypeErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSlotTypeError {
@@ -3351,36 +3351,36 @@ impl DeleteSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSlotTypeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteSlotTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSlotTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSlotTypeErrorKind::ValidationException(_))
     }
@@ -3421,7 +3421,7 @@ pub enum DeleteUtterancesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUtterancesError {
@@ -3486,21 +3486,21 @@ impl DeleteUtterancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUtterancesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUtterancesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUtterancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteUtterancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3546,7 +3546,7 @@ pub enum DescribeBotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBotError {
@@ -3613,29 +3613,29 @@ impl DescribeBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeBotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeBotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DescribeBotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeBotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeBotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeBotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeBotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeBotErrorKind::ValidationException(_))
     }
@@ -3680,7 +3680,7 @@ pub enum DescribeBotAliasErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBotAliasError {
@@ -3747,35 +3747,35 @@ impl DescribeBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBotAliasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeBotAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotAliasErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBotAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotAliasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeBotAliasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotAliasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeBotAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotAliasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBotAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3823,7 +3823,7 @@ pub enum DescribeBotLocaleErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBotLocaleError {
@@ -3890,35 +3890,35 @@ impl DescribeBotLocaleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBotLocaleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeBotLocaleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotLocaleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotLocaleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBotLocaleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotLocaleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotLocaleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeBotLocaleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotLocaleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotLocaleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeBotLocaleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotLocaleErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotLocaleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBotLocaleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3966,7 +3966,7 @@ pub enum DescribeBotVersionErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBotVersionError {
@@ -4033,35 +4033,35 @@ impl DescribeBotVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBotVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeBotVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBotVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeBotVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotVersionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeBotVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBotVersionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBotVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBotVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4107,7 +4107,7 @@ pub enum DescribeExportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportError {
@@ -4173,25 +4173,25 @@ impl DescribeExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeExportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeExportErrorKind::ValidationException(_))
     }
@@ -4233,7 +4233,7 @@ pub enum DescribeImportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImportError {
@@ -4299,25 +4299,25 @@ impl DescribeImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeImportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeImportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeImportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeImportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeImportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeImportErrorKind::ValidationException(_))
     }
@@ -4361,7 +4361,7 @@ pub enum DescribeIntentErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIntentError {
@@ -4428,32 +4428,32 @@ impl DescribeIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIntentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeIntentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIntentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIntentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIntentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIntentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIntentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeIntentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIntentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIntentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeIntentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeIntentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeIntentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeIntentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeIntentErrorKind::ValidationException(_))
     }
@@ -4493,7 +4493,7 @@ pub enum DescribeResourcePolicyErrorKind {
     /// <p>Your request rate is too high. Reduce the frequency of
     /// requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourcePolicyError {
@@ -4558,21 +4558,21 @@ impl DescribeResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4618,7 +4618,7 @@ pub enum DescribeSlotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSlotError {
@@ -4685,32 +4685,32 @@ impl DescribeSlotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSlotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSlotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSlotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeSlotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeSlotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeSlotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeSlotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeSlotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeSlotErrorKind::ValidationException(_))
     }
@@ -4755,7 +4755,7 @@ pub enum DescribeSlotTypeErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSlotTypeError {
@@ -4822,35 +4822,35 @@ impl DescribeSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSlotTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSlotTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotTypeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSlotTypeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotTypeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotTypeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DescribeSlotTypeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotTypeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeSlotTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSlotTypeErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSlotTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeSlotTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4897,7 +4897,7 @@ pub enum ListAggregatedUtterancesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAggregatedUtterancesError {
@@ -4963,28 +4963,28 @@ impl ListAggregatedUtterancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAggregatedUtterancesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAggregatedUtterancesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregatedUtterancesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregatedUtterancesErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `ListAggregatedUtterancesErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregatedUtterancesErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregatedUtterancesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAggregatedUtterancesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAggregatedUtterancesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListAggregatedUtterancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAggregatedUtterancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5028,7 +5028,7 @@ pub enum ListBotAliasesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBotAliasesError {
@@ -5094,25 +5094,25 @@ impl ListBotAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBotAliasesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBotAliasesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotAliasesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotAliasesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBotAliasesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotAliasesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotAliasesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBotAliasesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListBotAliasesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListBotAliasesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBotAliasesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListBotAliasesErrorKind::ValidationException(_))
     }
@@ -5153,7 +5153,7 @@ pub enum ListBotLocalesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBotLocalesError {
@@ -5219,25 +5219,25 @@ impl ListBotLocalesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBotLocalesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBotLocalesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotLocalesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotLocalesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBotLocalesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotLocalesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotLocalesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBotLocalesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListBotLocalesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListBotLocalesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBotLocalesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListBotLocalesErrorKind::ValidationException(_))
     }
@@ -5278,7 +5278,7 @@ pub enum ListBotsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBotsError {
@@ -5344,22 +5344,22 @@ impl ListBotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::ValidationException(_))
     }
@@ -5400,7 +5400,7 @@ pub enum ListBotVersionsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBotVersionsError {
@@ -5466,25 +5466,25 @@ impl ListBotVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBotVersionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBotVersionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotVersionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotVersionsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBotVersionsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotVersionsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBotVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListBotVersionsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListBotVersionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBotVersionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListBotVersionsErrorKind::ValidationException(_))
     }
@@ -5525,7 +5525,7 @@ pub enum ListBuiltInIntentsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuiltInIntentsError {
@@ -5591,28 +5591,28 @@ impl ListBuiltInIntentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuiltInIntentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBuiltInIntentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInIntentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInIntentsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBuiltInIntentsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInIntentsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInIntentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBuiltInIntentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInIntentsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInIntentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBuiltInIntentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5656,7 +5656,7 @@ pub enum ListBuiltInSlotTypesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuiltInSlotTypesError {
@@ -5722,28 +5722,28 @@ impl ListBuiltInSlotTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuiltInSlotTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBuiltInSlotTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInSlotTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInSlotTypesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListBuiltInSlotTypesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInSlotTypesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInSlotTypesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListBuiltInSlotTypesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuiltInSlotTypesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuiltInSlotTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListBuiltInSlotTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5785,7 +5785,7 @@ pub enum ListExportsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExportsError {
@@ -5850,15 +5850,15 @@ impl ListExportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExportsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListExportsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListExportsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListExportsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListExportsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListExportsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::ValidationException(_))
     }
@@ -5896,7 +5896,7 @@ pub enum ListImportsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImportsError {
@@ -5961,15 +5961,15 @@ impl ListImportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImportsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListImportsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListImportsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListImportsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListImportsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListImportsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListImportsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListImportsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListImportsErrorKind::ValidationException(_))
     }
@@ -6009,7 +6009,7 @@ pub enum ListIntentsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIntentsError {
@@ -6075,22 +6075,22 @@ impl ListIntentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIntentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListIntentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListIntentsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListIntentsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListIntentsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIntentsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListIntentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIntentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListIntentsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListIntentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListIntentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListIntentsErrorKind::ValidationException(_))
     }
@@ -6131,7 +6131,7 @@ pub enum ListSlotsErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSlotsError {
@@ -6197,22 +6197,22 @@ impl ListSlotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSlotsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSlotsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListSlotsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListSlotsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListSlotsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSlotsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListSlotsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListSlotsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListSlotsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListSlotsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSlotsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSlotsErrorKind::ValidationException(_))
     }
@@ -6253,7 +6253,7 @@ pub enum ListSlotTypesErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSlotTypesError {
@@ -6319,25 +6319,25 @@ impl ListSlotTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSlotTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSlotTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSlotTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSlotTypesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListSlotTypesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSlotTypesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListSlotTypesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListSlotTypesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListSlotTypesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListSlotTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSlotTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSlotTypesErrorKind::ValidationException(_))
     }
@@ -6379,7 +6379,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6445,28 +6445,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6517,7 +6517,7 @@ pub enum StartImportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImportError {
@@ -6585,33 +6585,33 @@ impl StartImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImportErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartImportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StartImportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartImportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartImportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartImportErrorKind::ValidationException(_))
     }
@@ -6655,7 +6655,7 @@ pub enum TagResourceErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6721,22 +6721,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -6778,7 +6778,7 @@ pub enum UntagResourceErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6844,25 +6844,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -6911,7 +6911,7 @@ pub enum UpdateBotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBotError {
@@ -6979,33 +6979,33 @@ impl UpdateBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ValidationException(_))
     }
@@ -7056,7 +7056,7 @@ pub enum UpdateBotAliasErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBotAliasError {
@@ -7124,36 +7124,36 @@ impl UpdateBotAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotAliasErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotAliasErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotAliasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotAliasErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateBotAliasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateBotAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotAliasErrorKind::ValidationException(_))
     }
@@ -7204,7 +7204,7 @@ pub enum UpdateBotLocaleErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBotLocaleError {
@@ -7272,36 +7272,36 @@ impl UpdateBotLocaleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotLocaleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotLocaleErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotLocaleErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotLocaleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotLocaleErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateBotLocaleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateBotLocaleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotLocaleErrorKind::ValidationException(_))
     }
@@ -7351,7 +7351,7 @@ pub enum UpdateExportErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateExportError {
@@ -7419,36 +7419,36 @@ impl UpdateExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateExportErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateExportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateExportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateExportErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateExportErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateExportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateExportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateExportErrorKind::ValidationException(_))
     }
@@ -7499,7 +7499,7 @@ pub enum UpdateIntentErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIntentError {
@@ -7567,36 +7567,36 @@ impl UpdateIntentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntentErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateIntentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateIntentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntentErrorKind::ValidationException(_))
     }
@@ -7646,7 +7646,7 @@ pub enum UpdateResourcePolicyErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourcePolicyError {
@@ -7714,42 +7714,42 @@ impl UpdateResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourcePolicyErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourcePolicyErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourcePolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourcePolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateResourcePolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7803,7 +7803,7 @@ pub enum UpdateSlotErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSlotError {
@@ -7871,33 +7871,33 @@ impl UpdateSlotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSlotErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSlotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateSlotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSlotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotErrorKind::ValidationException(_))
     }
@@ -7948,7 +7948,7 @@ pub enum UpdateSlotTypeErrorKind {
     /// <p>One of the input parameters in your request isn't valid. Check the
     /// parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSlotTypeError {
@@ -8016,36 +8016,36 @@ impl UpdateSlotTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotTypeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSlotTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSlotTypeErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSlotTypeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotTypeErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateSlotTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSlotTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateSlotTypeErrorKind::ValidationException(_))
     }

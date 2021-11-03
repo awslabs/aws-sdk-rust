@@ -7,6 +7,7 @@ use aws_sdk_dynamodb::input::PutItemInput;
 use aws_sdk_dynamodb::model::AttributeValue;
 use aws_sdk_dynamodb::Config;
 use criterion::{criterion_group, criterion_main, Criterion};
+use futures_util::FutureExt;
 
 macro_rules! attr_s {
     ($str_val:expr) => {
@@ -36,6 +37,8 @@ macro_rules! attr_obj {
 fn do_bench(config: &Config, input: &PutItemInput) {
     let operation = input
         .make_operation(&config)
+        .now_or_never()
+        .unwrap()
         .expect("operation failed to build");
     let (http_request, _parts) = operation.into_request_response().0.into_parts();
     let body = http_request.body().bytes().unwrap();

@@ -225,13 +225,14 @@ impl AsRef<str> for VocabularyFilterMethod {
 pub enum TranscriptResultStream {
     /// <p>A portion of the transcription of the audio stream. Events are sent periodically from
     /// Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio
-    /// stream, or it can be the entire transcription of that portion of the audio stream. </p>
+    /// stream, or it can be the entire transcription of that portion of the audio stream.
+    /// </p>
     TranscriptEvent(crate::model::TranscriptEvent),
 }
 impl TranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`TranscriptResultStream`](crate::model::TranscriptResultStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TranscriptEvent`](crate::model::TranscriptResultStream::TranscriptEvent), extracting the inner [`TranscriptEvent`](crate::model::TranscriptEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(
         &self,
     ) -> std::result::Result<&crate::model::TranscriptEvent, &Self> {
@@ -241,7 +242,7 @@ impl TranscriptResultStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TranscriptResultStream` variant.
+    /// Returns true if this is a [`TranscriptEvent`](crate::model::TranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
         self.as_transcript_event().is_ok()
     }
@@ -1152,8 +1153,8 @@ pub enum AudioStream {
 }
 impl AudioStream {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`AudioStream`](crate::model::AudioStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AudioEvent`](crate::model::AudioStream::AudioEvent), extracting the inner [`AudioEvent`](crate::model::AudioEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_event(&self) -> std::result::Result<&crate::model::AudioEvent, &Self> {
         if let AudioStream::AudioEvent(val) = &self {
             Ok(&val)
@@ -1161,7 +1162,7 @@ impl AudioStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AudioStream` variant.
+    /// Returns true if this is a [`AudioEvent`](crate::model::AudioStream::AudioEvent).
     pub fn is_audio_event(&self) -> bool {
         self.as_audio_event().is_ok()
     }
@@ -1288,8 +1289,8 @@ pub enum MedicalTranscriptResultStream {
 }
 impl MedicalTranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`MedicalTranscriptResultStream`](crate::model::MedicalTranscriptResultStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TranscriptEvent`](crate::model::MedicalTranscriptResultStream::TranscriptEvent), extracting the inner [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(
         &self,
     ) -> std::result::Result<&crate::model::MedicalTranscriptEvent, &Self> {
@@ -1299,7 +1300,7 @@ impl MedicalTranscriptResultStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `MedicalTranscriptResultStream` variant.
+    /// Returns true if this is a [`TranscriptEvent`](crate::model::MedicalTranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
         self.as_transcript_event().is_ok()
     }

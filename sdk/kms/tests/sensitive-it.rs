@@ -71,6 +71,7 @@ async fn create_alias_op() -> Parts<CreateAlias, AwsErrorRetryPolicy> {
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid request")
         .into_request_response();
     parts

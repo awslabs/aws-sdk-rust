@@ -88,6 +88,16 @@ pub fn serialize_operation_crate_operation_create_site(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_network_routes(
+    input: &crate::input::GetNetworkRoutesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_network_routes_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_register_transit_gateway(
     input: &crate::input::RegisterTransitGatewayInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -97,6 +107,16 @@ pub fn serialize_operation_crate_operation_register_transit_gateway(
         &mut object,
         input,
     );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_start_route_analysis(
+    input: &crate::input::StartRouteAnalysisInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_start_route_analysis_input(&mut object, input);
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -150,6 +170,19 @@ pub fn serialize_operation_crate_operation_update_link(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_link_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_network_resource_metadata(
+    input: &crate::input::UpdateNetworkResourceMetadataInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_network_resource_metadata_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

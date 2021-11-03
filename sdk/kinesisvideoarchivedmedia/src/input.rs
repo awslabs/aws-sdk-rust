@@ -68,7 +68,7 @@ pub type GetClipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetClipInput {
     /// Consumes the builder and constructs an Operation<[`GetClip`](crate::operation::GetClip)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -100,6 +100,7 @@ impl GetClipInput {
             input: &crate::input::GetClipInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -154,9 +155,10 @@ impl GetClipInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -539,7 +541,7 @@ pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsError
 impl GetDashStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetDASHStreamingSessionURL`](crate::operation::GetDASHStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -571,6 +573,7 @@ impl GetDashStreamingSessionUrlInput {
             input: &crate::input::GetDashStreamingSessionUrlInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -626,9 +629,10 @@ impl GetDashStreamingSessionUrlInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1094,7 +1098,7 @@ pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorR
 impl GetHlsStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetHLSStreamingSessionURL`](crate::operation::GetHLSStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1126,6 +1130,7 @@ impl GetHlsStreamingSessionUrlInput {
             input: &crate::input::GetHlsStreamingSessionUrlInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1181,9 +1186,10 @@ impl GetHlsStreamingSessionUrlInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1274,7 +1280,7 @@ pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetMediaForFragmentListInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaForFragmentList`](crate::operation::GetMediaForFragmentList)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1306,6 +1312,7 @@ impl GetMediaForFragmentListInput {
             input: &crate::input::GetMediaForFragmentListInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1365,9 +1372,10 @@ impl GetMediaForFragmentListInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1481,7 +1489,7 @@ pub type ListFragmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFragmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListFragments`](crate::operation::ListFragments)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1513,6 +1521,7 @@ impl ListFragmentsInput {
             input: &crate::input::ListFragmentsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1569,9 +1578,10 @@ impl ListFragmentsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

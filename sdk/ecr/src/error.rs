@@ -20,7 +20,7 @@ pub enum BatchCheckLayerAvailabilityErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCheckLayerAvailabilityError {
@@ -89,21 +89,21 @@ impl BatchCheckLayerAvailabilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCheckLayerAvailabilityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchCheckLayerAvailabilityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCheckLayerAvailabilityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCheckLayerAvailabilityErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `BatchCheckLayerAvailabilityErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCheckLayerAvailabilityErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCheckLayerAvailabilityErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `BatchCheckLayerAvailabilityErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -145,7 +145,7 @@ pub enum BatchDeleteImageErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteImageError {
@@ -210,21 +210,21 @@ impl BatchDeleteImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteImageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchDeleteImageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImageErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImageErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteImageErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImageErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImageErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `BatchDeleteImageErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteImageErrorKind::ServerException(_))
     }
@@ -261,7 +261,7 @@ pub enum BatchGetImageErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetImageError {
@@ -326,21 +326,21 @@ impl BatchGetImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetImageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchGetImageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetImageErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetImageErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `BatchGetImageErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetImageErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetImageErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `BatchGetImageErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, BatchGetImageErrorKind::ServerException(_))
     }
@@ -391,7 +391,7 @@ pub enum CompleteLayerUploadErrorKind {
     /// <p>The upload could not be found, or the specified upload ID is not valid for this
     /// repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompleteLayerUploadError {
@@ -462,57 +462,57 @@ impl CompleteLayerUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::EmptyUploadException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::EmptyUploadException`.
     pub fn is_empty_upload_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::EmptyUploadException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::InvalidLayerException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::InvalidLayerException`.
     pub fn is_invalid_layer_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::InvalidLayerException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, CompleteLayerUploadErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::LayerAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::LayerAlreadyExistsException`.
     pub fn is_layer_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::LayerAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::LayerPartTooSmallException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::LayerPartTooSmallException`.
     pub fn is_layer_part_too_small_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::LayerPartTooSmallException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteLayerUploadErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CompleteLayerUploadErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CompleteLayerUploadErrorKind::UploadNotFoundException`.
+    /// Returns `true` if the error kind is `CompleteLayerUploadErrorKind::UploadNotFoundException`.
     pub fn is_upload_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -569,7 +569,7 @@ pub enum CreateRepositoryErrorKind {
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
     /// can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRepositoryError {
@@ -638,43 +638,43 @@ impl CreateRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, CreateRepositoryErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::RepositoryAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::RepositoryAlreadyExistsException`.
     pub fn is_repository_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::RepositoryAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateRepositoryErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -721,7 +721,7 @@ pub enum DeleteLifecyclePolicyErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLifecyclePolicyError {
@@ -789,28 +789,28 @@ impl DeleteLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException`.
     pub fn is_lifecycle_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -854,7 +854,7 @@ pub enum DeleteRegistryPolicyErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRegistryPolicyError {
@@ -920,28 +920,28 @@ impl DeleteRegistryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRegistryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRegistryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryPolicyErrorKind::RegistryPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRegistryPolicyErrorKind::RegistryPolicyNotFoundException`.
     pub fn is_registry_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteRegistryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryPolicyErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteRegistryPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -987,7 +987,7 @@ pub enum DeleteRepositoryErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRepositoryError {
@@ -1054,32 +1054,32 @@ impl DeleteRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, DeleteRepositoryErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::RepositoryNotEmptyException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::RepositoryNotEmptyException`.
     pub fn is_repository_not_empty_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::RepositoryNotEmptyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteRepositoryErrorKind::ServerException(_))
     }
@@ -1121,7 +1121,7 @@ pub enum DeleteRepositoryPolicyErrorKind {
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRepositoryPolicyError {
@@ -1189,28 +1189,28 @@ impl DeleteRepositoryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRepositoryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryPolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryPolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryPolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException`.
     pub fn is_repository_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1257,7 +1257,7 @@ pub enum DescribeImageReplicationStatusErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageReplicationStatusError {
@@ -1333,35 +1333,35 @@ impl DescribeImageReplicationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImageReplicationStatusErrorKind::ImageNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageReplicationStatusErrorKind::ImageNotFoundException`.
     pub fn is_image_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageReplicationStatusErrorKind::ImageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageReplicationStatusErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeImageReplicationStatusErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageReplicationStatusErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageReplicationStatusErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeImageReplicationStatusErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageReplicationStatusErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageReplicationStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeImageReplicationStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1409,7 +1409,7 @@ pub enum DescribeImagesErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImagesError {
@@ -1475,28 +1475,28 @@ impl DescribeImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::ImageNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::ImageNotFoundException`.
     pub fn is_image_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImagesErrorKind::ImageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImagesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImagesErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeImagesErrorKind::ServerException(_))
     }
@@ -1539,7 +1539,7 @@ pub enum DescribeImageScanFindingsErrorKind {
     ScanNotFoundException(crate::error::ScanNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageScanFindingsError {
@@ -1608,35 +1608,35 @@ impl DescribeImageScanFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImageScanFindingsErrorKind::ImageNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::ImageNotFoundException`.
     pub fn is_image_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageScanFindingsErrorKind::ImageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageScanFindingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageScanFindingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageScanFindingsErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageScanFindingsErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageScanFindingsErrorKind::ScanNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::ScanNotFoundException`.
     pub fn is_scan_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImageScanFindingsErrorKind::ScanNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImageScanFindingsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1677,7 +1677,7 @@ pub enum DescribeRegistryErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRegistryError {
@@ -1742,18 +1742,18 @@ impl DescribeRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegistryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeRegistryErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1793,7 +1793,7 @@ pub enum DescribeRepositoriesErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRepositoriesError {
@@ -1858,21 +1858,21 @@ impl DescribeRepositoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRepositoriesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRepositoriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRepositoriesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRepositoriesErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRepositoriesErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRepositoriesErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRepositoriesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeRepositoriesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1909,7 +1909,7 @@ pub enum GetAuthorizationTokenErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAuthorizationTokenError {
@@ -1973,14 +1973,14 @@ impl GetAuthorizationTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAuthorizationTokenErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAuthorizationTokenErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAuthorizationTokenErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAuthorizationTokenErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetAuthorizationTokenErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2025,7 +2025,7 @@ pub enum GetDownloadUrlForLayerErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDownloadUrlForLayerError {
@@ -2092,35 +2092,35 @@ impl GetDownloadUrlForLayerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDownloadUrlForLayerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDownloadUrlForLayerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDownloadUrlForLayerErrorKind::LayerInaccessibleException`.
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerErrorKind::LayerInaccessibleException`.
     pub fn is_layer_inaccessible_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDownloadUrlForLayerErrorKind::LayerInaccessibleException(_)
         )
     }
-    /// Returns true if the error kind is `GetDownloadUrlForLayerErrorKind::LayersNotFoundException`.
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerErrorKind::LayersNotFoundException`.
     pub fn is_layers_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDownloadUrlForLayerErrorKind::LayersNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDownloadUrlForLayerErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDownloadUrlForLayerErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDownloadUrlForLayerErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2165,7 +2165,7 @@ pub enum GetLifecyclePolicyErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLifecyclePolicyError {
@@ -2231,28 +2231,28 @@ impl GetLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException`.
     pub fn is_lifecycle_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::LifecyclePolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, GetLifecyclePolicyErrorKind::ServerException(_))
     }
@@ -2292,7 +2292,7 @@ pub enum GetLifecyclePolicyPreviewErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLifecyclePolicyPreviewError {
@@ -2362,28 +2362,28 @@ impl GetLifecyclePolicyPreviewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyPreviewErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyPreviewErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyPreviewErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewNotFoundException`.
     pub fn is_lifecycle_policy_preview_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyPreviewErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyPreviewErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2427,7 +2427,7 @@ pub enum GetRegistryPolicyErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRegistryPolicyError {
@@ -2493,25 +2493,25 @@ impl GetRegistryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRegistryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetRegistryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegistryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegistryPolicyErrorKind::RegistryPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetRegistryPolicyErrorKind::RegistryPolicyNotFoundException`.
     pub fn is_registry_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegistryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetRegistryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, GetRegistryPolicyErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `GetRegistryPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetRegistryPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2555,7 +2555,7 @@ pub enum GetRepositoryPolicyErrorKind {
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRepositoryPolicyError {
@@ -2623,28 +2623,28 @@ impl GetRepositoryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRepositoryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetRepositoryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryPolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `GetRepositoryPolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryPolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `GetRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException`.
     pub fn is_repository_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `GetRepositoryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, GetRepositoryPolicyErrorKind::ServerException(_))
     }
@@ -2684,7 +2684,7 @@ pub enum InitiateLayerUploadErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitiateLayerUploadError {
@@ -2750,25 +2750,25 @@ impl InitiateLayerUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitiateLayerUploadErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `InitiateLayerUploadErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateLayerUploadErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateLayerUploadErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `InitiateLayerUploadErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, InitiateLayerUploadErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `InitiateLayerUploadErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `InitiateLayerUploadErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateLayerUploadErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateLayerUploadErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `InitiateLayerUploadErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, InitiateLayerUploadErrorKind::ServerException(_))
     }
@@ -2806,7 +2806,7 @@ pub enum ListImagesErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagesError {
@@ -2871,21 +2871,21 @@ impl ListImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagesErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListImagesErrorKind::ServerException(_))
     }
@@ -2922,7 +2922,7 @@ pub enum ListTagsForResourceErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2987,21 +2987,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ServerException(_))
     }
@@ -3058,7 +3058,7 @@ pub enum PutImageErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutImageError {
@@ -3130,58 +3130,58 @@ impl PutImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutImageErrorKind::ImageAlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::ImageAlreadyExistsException`.
     pub fn is_image_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageErrorKind::ImageAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageErrorKind::ImageDigestDoesNotMatchException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::ImageDigestDoesNotMatchException`.
     pub fn is_image_digest_does_not_match_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageErrorKind::ImageDigestDoesNotMatchException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageErrorKind::ImageTagAlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::ImageTagAlreadyExistsException`.
     pub fn is_image_tag_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageErrorKind::ImageTagAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, PutImageErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `PutImageErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, PutImageErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `PutImageErrorKind::LayersNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::LayersNotFoundException`.
     pub fn is_layers_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutImageErrorKind::LayersNotFoundException(_))
     }
-    /// Returns true if the error kind is `PutImageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutImageErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutImageErrorKind::ReferencedImagesNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::ReferencedImagesNotFoundException`.
     pub fn is_referenced_images_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageErrorKind::ReferencedImagesNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutImageErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, PutImageErrorKind::ServerException(_))
     }
@@ -3225,7 +3225,7 @@ pub enum PutImageScanningConfigurationErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutImageScanningConfigurationError {
@@ -3297,21 +3297,21 @@ impl PutImageScanningConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutImageScanningConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutImageScanningConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageScanningConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageScanningConfigurationErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageScanningConfigurationErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageScanningConfigurationErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageScanningConfigurationErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutImageScanningConfigurationErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3355,7 +3355,7 @@ pub enum PutImageTagMutabilityErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutImageTagMutabilityError {
@@ -3420,21 +3420,21 @@ impl PutImageTagMutabilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutImageTagMutabilityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutImageTagMutabilityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageTagMutabilityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageTagMutabilityErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageTagMutabilityErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageTagMutabilityErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageTagMutabilityErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutImageTagMutabilityErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3474,7 +3474,7 @@ pub enum PutLifecyclePolicyErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLifecyclePolicyError {
@@ -3539,21 +3539,21 @@ impl PutLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecyclePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecyclePolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecyclePolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutLifecyclePolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, PutLifecyclePolicyErrorKind::ServerException(_))
     }
@@ -3589,7 +3589,7 @@ pub enum PutRegistryPolicyErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRegistryPolicyError {
@@ -3654,18 +3654,18 @@ impl PutRegistryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRegistryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutRegistryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRegistryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutRegistryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutRegistryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, PutRegistryPolicyErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `PutRegistryPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutRegistryPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3704,7 +3704,7 @@ pub enum PutReplicationConfigurationErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutReplicationConfigurationError {
@@ -3771,21 +3771,21 @@ impl PutReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutReplicationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutReplicationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReplicationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutReplicationConfigurationErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutReplicationConfigurationErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReplicationConfigurationErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutReplicationConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutReplicationConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3825,7 +3825,7 @@ pub enum SetRepositoryPolicyErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetRepositoryPolicyError {
@@ -3890,21 +3890,21 @@ impl SetRepositoryPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetRepositoryPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetRepositoryPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRepositoryPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetRepositoryPolicyErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `SetRepositoryPolicyErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRepositoryPolicyErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetRepositoryPolicyErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `SetRepositoryPolicyErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, SetRepositoryPolicyErrorKind::ServerException(_))
     }
@@ -3949,7 +3949,7 @@ pub enum StartImageScanErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::error::UnsupportedImageTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImageScanError {
@@ -4017,39 +4017,39 @@ impl StartImageScanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::ImageNotFoundException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::ImageNotFoundException`.
     pub fn is_image_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageScanErrorKind::ImageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageScanErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageScanErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageScanErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, StartImageScanErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `StartImageScanErrorKind::UnsupportedImageTypeException`.
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::UnsupportedImageTypeException`.
     pub fn is_unsupported_image_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4100,7 +4100,7 @@ pub enum StartLifecyclePolicyPreviewErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartLifecyclePolicyPreviewError {
@@ -4175,35 +4175,35 @@ impl StartLifecyclePolicyPreviewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartLifecyclePolicyPreviewErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLifecyclePolicyPreviewErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyNotFoundException`.
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyNotFoundException`.
     pub fn is_lifecycle_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewInProgressException`.
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewInProgressException`.
     pub fn is_lifecycle_policy_preview_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `StartLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartLifecyclePolicyPreviewErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4257,7 +4257,7 @@ pub enum TagResourceErrorKind {
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
     /// can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4324,32 +4324,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -4394,7 +4394,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
     /// can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4461,32 +4461,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TooManyTagsException(_))
     }
@@ -4537,7 +4537,7 @@ pub enum UploadLayerPartErrorKind {
     /// <p>The upload could not be found, or the specified upload ID is not valid for this
     /// repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadLayerPartError {
@@ -4606,43 +4606,43 @@ impl UploadLayerPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::InvalidLayerPartException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::InvalidLayerPartException`.
     pub fn is_invalid_layer_part_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadLayerPartErrorKind::InvalidLayerPartException(_)
         )
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadLayerPartErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, UploadLayerPartErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadLayerPartErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::RepositoryNotFoundException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UploadLayerPartErrorKind::RepositoryNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UploadLayerPartErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `UploadLayerPartErrorKind::UploadNotFoundException`.
+    /// Returns `true` if the error kind is `UploadLayerPartErrorKind::UploadNotFoundException`.
     pub fn is_upload_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

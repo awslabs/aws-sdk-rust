@@ -22,7 +22,7 @@ pub enum CreateBudgetErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBudgetError {
@@ -89,29 +89,29 @@ impl CreateBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateBudgetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateBudgetErrorKind::CreationLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetErrorKind::CreationLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, CreateBudgetErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `CreateBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -157,7 +157,7 @@ pub enum CreateBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBudgetActionError {
@@ -225,42 +225,42 @@ impl CreateBudgetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetActionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::CreationLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetActionErrorKind::CreationLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetActionErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetActionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBudgetActionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBudgetActionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -307,7 +307,7 @@ pub enum CreateNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNotificationError {
@@ -375,42 +375,42 @@ impl CreateNotificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::CreationLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationErrorKind::CreationLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -457,7 +457,7 @@ pub enum CreateSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubscriberError {
@@ -525,42 +525,42 @@ impl CreateSubscriberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::CreationLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriberErrorKind::CreationLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriberErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateSubscriberErrorKind::NotFoundException(_))
     }
@@ -600,7 +600,7 @@ pub enum DeleteBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBudgetError {
@@ -666,22 +666,22 @@ impl DeleteBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteBudgetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, DeleteBudgetErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `DeleteBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBudgetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBudgetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBudgetErrorKind::NotFoundException(_))
     }
@@ -722,7 +722,7 @@ pub enum DeleteBudgetActionErrorKind {
     /// <p> The request was received and recognized by the server, but the server rejected that
     /// particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBudgetActionError {
@@ -789,35 +789,35 @@ impl DeleteBudgetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBudgetActionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBudgetActionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBudgetActionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBudgetActionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBudgetActionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBudgetActionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBudgetActionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBudgetActionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBudgetActionErrorKind::ResourceLockedException`.
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -859,7 +859,7 @@ pub enum DeleteNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotificationError {
@@ -925,28 +925,28 @@ impl DeleteNotificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNotificationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -987,7 +987,7 @@ pub enum DeleteSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubscriberError {
@@ -1053,28 +1053,28 @@ impl DeleteSubscriberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSubscriberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSubscriberErrorKind::NotFoundException(_))
     }
@@ -1112,7 +1112,7 @@ pub enum DescribeBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetError {
@@ -1178,28 +1178,28 @@ impl DescribeBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBudgetErrorKind::NotFoundException(_))
     }
@@ -1237,7 +1237,7 @@ pub enum DescribeBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetActionError {
@@ -1303,28 +1303,28 @@ impl DescribeBudgetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetActionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1367,7 +1367,7 @@ pub enum DescribeBudgetActionHistoriesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetActionHistoriesError {
@@ -1441,35 +1441,35 @@ impl DescribeBudgetActionHistoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetActionHistoriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionHistoriesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionHistoriesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1515,7 +1515,7 @@ pub enum DescribeBudgetActionsForAccountErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetActionsForAccountError {
@@ -1592,28 +1592,28 @@ impl DescribeBudgetActionsForAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForAccountErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1662,7 +1662,7 @@ pub enum DescribeBudgetActionsForBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetActionsForBudgetError {
@@ -1738,35 +1738,35 @@ impl DescribeBudgetActionsForBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetActionsForBudgetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1816,7 +1816,7 @@ pub enum DescribeBudgetPerformanceHistoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetPerformanceHistoryError {
@@ -1897,42 +1897,42 @@ impl DescribeBudgetPerformanceHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1989,7 +1989,7 @@ pub enum DescribeBudgetsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBudgetsError {
@@ -2057,42 +2057,42 @@ impl DescribeBudgetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetsErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBudgetsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBudgetsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBudgetsErrorKind::NotFoundException(_))
     }
@@ -2136,7 +2136,7 @@ pub enum DescribeNotificationsForBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotificationsForBudgetError {
@@ -2215,42 +2215,42 @@ impl DescribeNotificationsForBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationsForBudgetErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationsForBudgetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2303,7 +2303,7 @@ pub enum DescribeSubscribersForNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubscribersForNotificationError {
@@ -2384,42 +2384,42 @@ impl DescribeSubscribersForNotificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscribersForNotificationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscribersForNotificationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2475,7 +2475,7 @@ pub enum ExecuteBudgetActionErrorKind {
     /// <p> The request was received and recognized by the server, but the server rejected that
     /// particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteBudgetActionError {
@@ -2542,35 +2542,35 @@ impl ExecuteBudgetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteBudgetActionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteBudgetActionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteBudgetActionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteBudgetActionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteBudgetActionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteBudgetActionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteBudgetActionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteBudgetActionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteBudgetActionErrorKind::ResourceLockedException`.
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2612,7 +2612,7 @@ pub enum UpdateBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBudgetError {
@@ -2678,22 +2678,22 @@ impl UpdateBudgetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBudgetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateBudgetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateBudgetErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, UpdateBudgetErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `UpdateBudgetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBudgetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBudgetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBudgetErrorKind::NotFoundException(_))
     }
@@ -2734,7 +2734,7 @@ pub enum UpdateBudgetActionErrorKind {
     /// <p> The request was received and recognized by the server, but the server rejected that
     /// particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBudgetActionError {
@@ -2801,35 +2801,35 @@ impl UpdateBudgetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBudgetActionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBudgetActionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBudgetActionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBudgetActionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBudgetActionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBudgetActionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBudgetActionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBudgetActionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBudgetActionErrorKind::ResourceLockedException`.
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2873,7 +2873,7 @@ pub enum UpdateNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNotificationError {
@@ -2940,35 +2940,35 @@ impl UpdateNotificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNotificationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3012,7 +3012,7 @@ pub enum UpdateSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSubscriberError {
@@ -3079,35 +3079,35 @@ impl UpdateSubscriberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSubscriberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriberErrorKind::DuplicateRecordException`.
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriberErrorKind::DuplicateRecordException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriberErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriberErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriberErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriberErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSubscriberErrorKind::NotFoundException(_))
     }

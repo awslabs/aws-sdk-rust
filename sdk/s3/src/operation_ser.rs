@@ -4,7 +4,11 @@ pub fn ser_payload_complete_multipart_upload_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_complete_multipart_upload_input_multipart_upload(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -16,7 +20,11 @@ pub fn ser_payload_create_bucket_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_create_bucket_input_create_bucket_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -28,7 +36,11 @@ pub fn ser_payload_delete_objects_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]
     Ok(aws_smithy_http::body::SdkBody::from(
@@ -44,7 +56,11 @@ pub fn ser_payload_put_bucket_accelerate_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_accelerate_configuration_input_accelerate_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -56,7 +72,11 @@ pub fn ser_payload_put_bucket_acl_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_acl_input_access_control_policy(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -68,7 +88,11 @@ pub fn ser_payload_put_bucket_analytics_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_analytics_configuration_input_analytics_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -80,7 +104,11 @@ pub fn ser_payload_put_bucket_cors_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_cors_input_cors_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -92,7 +120,11 @@ pub fn ser_payload_put_bucket_encryption_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_encryption_input_server_side_encryption_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -104,7 +136,11 @@ pub fn ser_payload_put_bucket_intelligent_tiering_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_intelligent_tiering_configuration_input_intelligent_tiering_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -116,7 +152,11 @@ pub fn ser_payload_put_bucket_inventory_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_inventory_configuration_input_inventory_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -128,7 +168,11 @@ pub fn ser_payload_put_bucket_lifecycle_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -140,7 +184,11 @@ pub fn ser_payload_put_bucket_logging_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_logging_input_bucket_logging_status(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -152,7 +200,11 @@ pub fn ser_payload_put_bucket_metrics_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_metrics_configuration_input_metrics_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -164,7 +216,11 @@ pub fn ser_payload_put_bucket_notification_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_notification_configuration_input_notification_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -176,7 +232,11 @@ pub fn ser_payload_put_bucket_ownership_controls_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_ownership_controls_input_ownership_controls(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -199,7 +259,11 @@ pub fn ser_payload_put_bucket_replication_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_replication_input_replication_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -211,7 +275,11 @@ pub fn ser_payload_put_bucket_request_payment_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_request_payment_input_request_payment_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -223,7 +291,11 @@ pub fn ser_payload_put_bucket_tagging_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_tagging_input_tagging(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -235,7 +307,11 @@ pub fn ser_payload_put_bucket_versioning_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_versioning_input_versioning_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -247,7 +323,11 @@ pub fn ser_payload_put_bucket_website_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_bucket_website_input_website_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -266,7 +346,11 @@ pub fn ser_payload_put_object_acl_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_acl_input_access_control_policy(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -278,7 +362,11 @@ pub fn ser_payload_put_object_legal_hold_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_legal_hold_input_legal_hold(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -290,7 +378,11 @@ pub fn ser_payload_put_object_lock_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_lock_configuration_input_object_lock_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -302,7 +394,11 @@ pub fn ser_payload_put_object_retention_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_retention_input_retention(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -314,7 +410,11 @@ pub fn ser_payload_put_object_tagging_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_object_tagging_input_tagging(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -326,7 +426,11 @@ pub fn ser_payload_put_public_access_block_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_put_public_access_block_input_public_access_block_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -338,7 +442,11 @@ pub fn ser_payload_restore_object_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_xml_unset_payload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::xml_ser::serialize_member_com_amazonaws_s3_synthetic_restore_object_input_restore_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -372,4 +480,8 @@ pub fn ser_payload_write_get_object_response_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     #[allow(clippy::useless_conversion)]
     Ok(aws_smithy_http::body::SdkBody::from(payload.into_inner()))
+}
+
+pub fn rest_xml_unset_payload() -> std::vec::Vec<u8> {
+    vec![]
 }

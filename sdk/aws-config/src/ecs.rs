@@ -5,7 +5,7 @@
 
 //! Ecs Credentials Provider
 //!
-//! This credential provider is frequently used with an AWS-provided credentials service (eg.
+//! This credential provider is frequently used with an AWS-provided credentials service (e.g.
 //! [IAM Roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html).
 //! However, it's possible to use environment variables to configure this provider to use your own
 //! credentials sources.

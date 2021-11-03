@@ -3498,6 +3498,22 @@ pub enum GameServerGroupInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C5aXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    C6g12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C6gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    C6gXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     M410xlarge,
     #[allow(missing_docs)] // documentation missing in model
     M42xlarge,
@@ -3539,6 +3555,22 @@ pub enum GameServerGroupInstanceType {
     M5aLarge,
     #[allow(missing_docs)] // documentation missing in model
     M5aXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6g12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    M6gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    M6gXlarge,
     #[allow(missing_docs)] // documentation missing in model
     R416xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -3583,6 +3615,22 @@ pub enum GameServerGroupInstanceType {
     R5aLarge,
     #[allow(missing_docs)] // documentation missing in model
     R5aXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6g12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R6gMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    R6gXlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3610,6 +3658,14 @@ impl std::convert::From<&str> for GameServerGroupInstanceType {
             "c5a.8xlarge" => GameServerGroupInstanceType::C5a8xlarge,
             "c5a.large" => GameServerGroupInstanceType::C5aLarge,
             "c5a.xlarge" => GameServerGroupInstanceType::C5aXlarge,
+            "c6g.12xlarge" => GameServerGroupInstanceType::C6g12xlarge,
+            "c6g.16xlarge" => GameServerGroupInstanceType::C6g16xlarge,
+            "c6g.2xlarge" => GameServerGroupInstanceType::C6g2xlarge,
+            "c6g.4xlarge" => GameServerGroupInstanceType::C6g4xlarge,
+            "c6g.8xlarge" => GameServerGroupInstanceType::C6g8xlarge,
+            "c6g.large" => GameServerGroupInstanceType::C6gLarge,
+            "c6g.medium" => GameServerGroupInstanceType::C6gMedium,
+            "c6g.xlarge" => GameServerGroupInstanceType::C6gXlarge,
             "m4.10xlarge" => GameServerGroupInstanceType::M410xlarge,
             "m4.2xlarge" => GameServerGroupInstanceType::M42xlarge,
             "m4.4xlarge" => GameServerGroupInstanceType::M44xlarge,
@@ -3631,6 +3687,14 @@ impl std::convert::From<&str> for GameServerGroupInstanceType {
             "m5a.8xlarge" => GameServerGroupInstanceType::M5a8xlarge,
             "m5a.large" => GameServerGroupInstanceType::M5aLarge,
             "m5a.xlarge" => GameServerGroupInstanceType::M5aXlarge,
+            "m6g.12xlarge" => GameServerGroupInstanceType::M6g12xlarge,
+            "m6g.16xlarge" => GameServerGroupInstanceType::M6g16xlarge,
+            "m6g.2xlarge" => GameServerGroupInstanceType::M6g2xlarge,
+            "m6g.4xlarge" => GameServerGroupInstanceType::M6g4xlarge,
+            "m6g.8xlarge" => GameServerGroupInstanceType::M6g8xlarge,
+            "m6g.large" => GameServerGroupInstanceType::M6gLarge,
+            "m6g.medium" => GameServerGroupInstanceType::M6gMedium,
+            "m6g.xlarge" => GameServerGroupInstanceType::M6gXlarge,
             "r4.16xlarge" => GameServerGroupInstanceType::R416xlarge,
             "r4.2xlarge" => GameServerGroupInstanceType::R42xlarge,
             "r4.4xlarge" => GameServerGroupInstanceType::R44xlarge,
@@ -3653,6 +3717,14 @@ impl std::convert::From<&str> for GameServerGroupInstanceType {
             "r5a.8xlarge" => GameServerGroupInstanceType::R5a8xlarge,
             "r5a.large" => GameServerGroupInstanceType::R5aLarge,
             "r5a.xlarge" => GameServerGroupInstanceType::R5aXlarge,
+            "r6g.12xlarge" => GameServerGroupInstanceType::R6g12xlarge,
+            "r6g.16xlarge" => GameServerGroupInstanceType::R6g16xlarge,
+            "r6g.2xlarge" => GameServerGroupInstanceType::R6g2xlarge,
+            "r6g.4xlarge" => GameServerGroupInstanceType::R6g4xlarge,
+            "r6g.8xlarge" => GameServerGroupInstanceType::R6g8xlarge,
+            "r6g.large" => GameServerGroupInstanceType::R6gLarge,
+            "r6g.medium" => GameServerGroupInstanceType::R6gMedium,
+            "r6g.xlarge" => GameServerGroupInstanceType::R6gXlarge,
             other => GameServerGroupInstanceType::Unknown(other.to_owned()),
         }
     }
@@ -3689,6 +3761,14 @@ impl GameServerGroupInstanceType {
             GameServerGroupInstanceType::C5a8xlarge => "c5a.8xlarge",
             GameServerGroupInstanceType::C5aLarge => "c5a.large",
             GameServerGroupInstanceType::C5aXlarge => "c5a.xlarge",
+            GameServerGroupInstanceType::C6g12xlarge => "c6g.12xlarge",
+            GameServerGroupInstanceType::C6g16xlarge => "c6g.16xlarge",
+            GameServerGroupInstanceType::C6g2xlarge => "c6g.2xlarge",
+            GameServerGroupInstanceType::C6g4xlarge => "c6g.4xlarge",
+            GameServerGroupInstanceType::C6g8xlarge => "c6g.8xlarge",
+            GameServerGroupInstanceType::C6gLarge => "c6g.large",
+            GameServerGroupInstanceType::C6gMedium => "c6g.medium",
+            GameServerGroupInstanceType::C6gXlarge => "c6g.xlarge",
             GameServerGroupInstanceType::M410xlarge => "m4.10xlarge",
             GameServerGroupInstanceType::M42xlarge => "m4.2xlarge",
             GameServerGroupInstanceType::M44xlarge => "m4.4xlarge",
@@ -3710,6 +3790,14 @@ impl GameServerGroupInstanceType {
             GameServerGroupInstanceType::M5a8xlarge => "m5a.8xlarge",
             GameServerGroupInstanceType::M5aLarge => "m5a.large",
             GameServerGroupInstanceType::M5aXlarge => "m5a.xlarge",
+            GameServerGroupInstanceType::M6g12xlarge => "m6g.12xlarge",
+            GameServerGroupInstanceType::M6g16xlarge => "m6g.16xlarge",
+            GameServerGroupInstanceType::M6g2xlarge => "m6g.2xlarge",
+            GameServerGroupInstanceType::M6g4xlarge => "m6g.4xlarge",
+            GameServerGroupInstanceType::M6g8xlarge => "m6g.8xlarge",
+            GameServerGroupInstanceType::M6gLarge => "m6g.large",
+            GameServerGroupInstanceType::M6gMedium => "m6g.medium",
+            GameServerGroupInstanceType::M6gXlarge => "m6g.xlarge",
             GameServerGroupInstanceType::R416xlarge => "r4.16xlarge",
             GameServerGroupInstanceType::R42xlarge => "r4.2xlarge",
             GameServerGroupInstanceType::R44xlarge => "r4.4xlarge",
@@ -3732,6 +3820,14 @@ impl GameServerGroupInstanceType {
             GameServerGroupInstanceType::R5a8xlarge => "r5a.8xlarge",
             GameServerGroupInstanceType::R5aLarge => "r5a.large",
             GameServerGroupInstanceType::R5aXlarge => "r5a.xlarge",
+            GameServerGroupInstanceType::R6g12xlarge => "r6g.12xlarge",
+            GameServerGroupInstanceType::R6g16xlarge => "r6g.16xlarge",
+            GameServerGroupInstanceType::R6g2xlarge => "r6g.2xlarge",
+            GameServerGroupInstanceType::R6g4xlarge => "r6g.4xlarge",
+            GameServerGroupInstanceType::R6g8xlarge => "r6g.8xlarge",
+            GameServerGroupInstanceType::R6gLarge => "r6g.large",
+            GameServerGroupInstanceType::R6gMedium => "r6g.medium",
+            GameServerGroupInstanceType::R6gXlarge => "r6g.xlarge",
             GameServerGroupInstanceType::Unknown(s) => s.as_ref(),
         }
     }
@@ -3759,6 +3855,14 @@ impl GameServerGroupInstanceType {
             "c5a.8xlarge",
             "c5a.large",
             "c5a.xlarge",
+            "c6g.12xlarge",
+            "c6g.16xlarge",
+            "c6g.2xlarge",
+            "c6g.4xlarge",
+            "c6g.8xlarge",
+            "c6g.large",
+            "c6g.medium",
+            "c6g.xlarge",
             "m4.10xlarge",
             "m4.2xlarge",
             "m4.4xlarge",
@@ -3780,6 +3884,14 @@ impl GameServerGroupInstanceType {
             "m5a.8xlarge",
             "m5a.large",
             "m5a.xlarge",
+            "m6g.12xlarge",
+            "m6g.16xlarge",
+            "m6g.2xlarge",
+            "m6g.4xlarge",
+            "m6g.8xlarge",
+            "m6g.large",
+            "m6g.medium",
+            "m6g.xlarge",
             "r4.16xlarge",
             "r4.2xlarge",
             "r4.4xlarge",
@@ -3802,6 +3914,14 @@ impl GameServerGroupInstanceType {
             "r5a.8xlarge",
             "r5a.large",
             "r5a.xlarge",
+            "r6g.12xlarge",
+            "r6g.16xlarge",
+            "r6g.2xlarge",
+            "r6g.4xlarge",
+            "r6g.8xlarge",
+            "r6g.large",
+            "r6g.medium",
+            "r6g.xlarge",
         ]
     }
 }

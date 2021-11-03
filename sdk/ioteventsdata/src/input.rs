@@ -52,7 +52,7 @@ pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl BatchAcknowledgeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchAcknowledgeAlarm`](crate::operation::BatchAcknowledgeAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -84,6 +84,7 @@ impl BatchAcknowledgeAlarmInput {
             input: &crate::input::BatchAcknowledgeAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -143,9 +144,10 @@ impl BatchAcknowledgeAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -213,7 +215,7 @@ pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl BatchDisableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableAlarm`](crate::operation::BatchDisableAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -245,6 +247,7 @@ impl BatchDisableAlarmInput {
             input: &crate::input::BatchDisableAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -302,9 +305,10 @@ impl BatchDisableAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -372,7 +376,7 @@ pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl BatchEnableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableAlarm`](crate::operation::BatchEnableAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -404,6 +408,7 @@ impl BatchEnableAlarmInput {
             input: &crate::input::BatchEnableAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -461,9 +466,10 @@ impl BatchEnableAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -531,7 +537,7 @@ pub type BatchPutMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -563,6 +569,7 @@ impl BatchPutMessageInput {
             input: &crate::input::BatchPutMessageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -620,9 +627,10 @@ impl BatchPutMessageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -690,7 +698,7 @@ pub type BatchResetAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl BatchResetAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchResetAlarm`](crate::operation::BatchResetAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -722,6 +730,7 @@ impl BatchResetAlarmInput {
             input: &crate::input::BatchResetAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -779,9 +788,10 @@ impl BatchResetAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -849,7 +859,7 @@ pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl BatchSnoozeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchSnoozeAlarm`](crate::operation::BatchSnoozeAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -881,6 +891,7 @@ impl BatchSnoozeAlarmInput {
             input: &crate::input::BatchSnoozeAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -938,9 +949,10 @@ impl BatchSnoozeAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1005,7 +1017,7 @@ pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl BatchUpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDetector`](crate::operation::BatchUpdateDetector)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1037,6 +1049,7 @@ impl BatchUpdateDetectorInput {
             input: &crate::input::BatchUpdateDetectorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1094,9 +1107,10 @@ impl BatchUpdateDetectorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1168,7 +1182,7 @@ pub type DescribeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarm`](crate::operation::DescribeAlarm)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1227,12 +1241,8 @@ impl DescribeAlarmInput {
             input: &crate::input::DescribeAlarmInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1280,16 +1290,9 @@ impl DescribeAlarmInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeAlarmInput`](crate::input::DescribeAlarmInput)
@@ -1356,7 +1359,7 @@ pub type DescribeDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1415,12 +1418,8 @@ impl DescribeDetectorInput {
             input: &crate::input::DescribeDetectorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1468,16 +1467,9 @@ impl DescribeDetectorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput)
@@ -1552,7 +1544,7 @@ pub type ListAlarmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarms`](crate::operation::ListAlarms)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1617,12 +1609,8 @@ impl ListAlarmsInput {
             input: &crate::input::ListAlarmsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1670,16 +1658,9 @@ impl ListAlarmsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListAlarmsInput`](crate::input::ListAlarmsInput)
@@ -1766,7 +1747,7 @@ pub type ListDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1834,12 +1815,8 @@ impl ListDetectorsInput {
             input: &crate::input::ListDetectorsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1887,16 +1864,9 @@ impl ListDetectorsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDetectorsInput`](crate::input::ListDetectorsInput)

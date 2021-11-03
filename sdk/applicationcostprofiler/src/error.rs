@@ -20,7 +20,7 @@ pub enum DeleteReportDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReportDefinitionError {
@@ -86,28 +86,28 @@ impl DeleteReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum GetReportDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReportDefinitionError {
@@ -214,28 +214,28 @@ impl GetReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReportDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetReportDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReportDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetReportDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetReportDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReportDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetReportDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetReportDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReportDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -276,7 +276,7 @@ pub enum ImportApplicationUsageErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportApplicationUsageError {
@@ -342,28 +342,28 @@ impl ImportApplicationUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportApplicationUsageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportApplicationUsageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportApplicationUsageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportApplicationUsageErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ImportApplicationUsageErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportApplicationUsageErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ImportApplicationUsageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ImportApplicationUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportApplicationUsageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ImportApplicationUsageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ImportApplicationUsageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -404,7 +404,7 @@ pub enum ListReportDefinitionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportDefinitionsError {
@@ -470,28 +470,28 @@ impl ListReportDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportDefinitionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListReportDefinitionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportDefinitionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportDefinitionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListReportDefinitionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportDefinitionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportDefinitionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListReportDefinitionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportDefinitionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportDefinitionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListReportDefinitionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -534,7 +534,7 @@ pub enum PutReportDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutReportDefinitionError {
@@ -601,35 +601,35 @@ impl PutReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -671,7 +671,7 @@ pub enum UpdateReportDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReportDefinitionError {
@@ -737,28 +737,28 @@ impl UpdateReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReportDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateReportDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateReportDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateReportDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -3258,8 +3258,8 @@ pub enum AnnotationValue {
     StringValue(std::string::String),
 }
 impl AnnotationValue {
-    /// Tries to convert the enum instance into its [`AnnotationValue`](crate::model::AnnotationValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BooleanValue`](crate::model::AnnotationValue::BooleanValue), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let AnnotationValue::BooleanValue(val) = &self {
             Ok(&val)
@@ -3267,12 +3267,12 @@ impl AnnotationValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnnotationValue` variant.
+    /// Returns true if this is a [`BooleanValue`](crate::model::AnnotationValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AnnotationValue`](crate::model::AnnotationValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`NumberValue`](crate::model::AnnotationValue::NumberValue), extracting the inner [`f64`](f64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
         if let AnnotationValue::NumberValue(val) = &self {
             Ok(&val)
@@ -3280,12 +3280,12 @@ impl AnnotationValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnnotationValue` variant.
+    /// Returns true if this is a [`NumberValue`](crate::model::AnnotationValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AnnotationValue`](crate::model::AnnotationValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::AnnotationValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnnotationValue::StringValue(val) = &self {
             Ok(&val)
@@ -3293,7 +3293,7 @@ impl AnnotationValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnnotationValue` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::AnnotationValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }

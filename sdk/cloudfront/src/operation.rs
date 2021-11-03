@@ -471,6 +471,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRealtimeLogConfig 
     }
 }
 
+/// Operation shape for `CreateResponseHeadersPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_response_headers_policy`](crate::client::Client::create_response_headers_policy).
+///
+/// See [`crate::client::fluent_builders::CreateResponseHeadersPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateResponseHeadersPolicy {
+    _private: (),
+}
+impl CreateResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::create_response_headers_policy_input::Builder {
+        crate::input::create_response_headers_policy_input::Builder::default()
+    }
+    /// Creates a new `CreateResponseHeadersPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateResponseHeadersPolicy {
+    type Output = std::result::Result<
+        crate::output::CreateResponseHeadersPolicyOutput,
+        crate::error::CreateResponseHeadersPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_response_headers_policy_error(response)
+        } else {
+            crate::operation_deser::parse_create_response_headers_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -907,6 +941,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRealtimeLogConfig 
             crate::operation_deser::parse_delete_realtime_log_config_error(response)
         } else {
             crate::operation_deser::parse_delete_realtime_log_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteResponseHeadersPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_response_headers_policy`](crate::client::Client::delete_response_headers_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteResponseHeadersPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteResponseHeadersPolicy {
+    _private: (),
+}
+impl DeleteResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::delete_response_headers_policy_input::Builder {
+        crate::input::delete_response_headers_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteResponseHeadersPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteResponseHeadersPolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteResponseHeadersPolicyOutput,
+        crate::error::DeleteResponseHeadersPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_response_headers_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_response_headers_policy_response(response)
         }
     }
 }
@@ -1657,6 +1725,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRealtimeLogConfig {
     }
 }
 
+/// Operation shape for `GetResponseHeadersPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_response_headers_policy`](crate::client::Client::get_response_headers_policy).
+///
+/// See [`crate::client::fluent_builders::GetResponseHeadersPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetResponseHeadersPolicy {
+    _private: (),
+}
+impl GetResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::get_response_headers_policy_input::Builder {
+        crate::input::get_response_headers_policy_input::Builder::default()
+    }
+    /// Creates a new `GetResponseHeadersPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResponseHeadersPolicy {
+    type Output = std::result::Result<
+        crate::output::GetResponseHeadersPolicyOutput,
+        crate::error::GetResponseHeadersPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_response_headers_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_response_headers_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetResponseHeadersPolicyConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_response_headers_policy_config`](crate::client::Client::get_response_headers_policy_config).
+///
+/// See [`crate::client::fluent_builders::GetResponseHeadersPolicyConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetResponseHeadersPolicyConfig {
+    _private: (),
+}
+impl GetResponseHeadersPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput)
+    pub fn builder() -> crate::input::get_response_headers_policy_config_input::Builder {
+        crate::input::get_response_headers_policy_config_input::Builder::default()
+    }
+    /// Creates a new `GetResponseHeadersPolicyConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResponseHeadersPolicyConfig {
+    type Output = std::result::Result<
+        crate::output::GetResponseHeadersPolicyConfigOutput,
+        crate::error::GetResponseHeadersPolicyConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_response_headers_policy_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_response_headers_policy_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2006,6 +2142,45 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByRealt
     }
 }
 
+/// Operation shape for `ListDistributionsByResponseHeadersPolicyId`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_distributions_by_response_headers_policy_id`](crate::client::Client::list_distributions_by_response_headers_policy_id).
+///
+/// See [`crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDistributionsByResponseHeadersPolicyId {
+    _private: (),
+}
+impl ListDistributionsByResponseHeadersPolicyId {
+    /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput)
+    pub fn builder() -> crate::input::list_distributions_by_response_headers_policy_id_input::Builder
+    {
+        crate::input::list_distributions_by_response_headers_policy_id_input::Builder::default()
+    }
+    /// Creates a new `ListDistributionsByResponseHeadersPolicyId` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByResponseHeadersPolicyId {
+    type Output = std::result::Result<
+        crate::output::ListDistributionsByResponseHeadersPolicyIdOutput,
+        crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_distributions_by_response_headers_policy_id_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_distributions_by_response_headers_policy_id_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `ListDistributionsByWebACLId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2302,6 +2477,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRealtimeLogConfigs {
             crate::operation_deser::parse_list_realtime_log_configs_error(response)
         } else {
             crate::operation_deser::parse_list_realtime_log_configs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResponseHeadersPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_response_headers_policies`](crate::client::Client::list_response_headers_policies).
+///
+/// See [`crate::client::fluent_builders::ListResponseHeadersPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListResponseHeadersPolicies {
+    _private: (),
+}
+impl ListResponseHeadersPolicies {
+    /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput)
+    pub fn builder() -> crate::input::list_response_headers_policies_input::Builder {
+        crate::input::list_response_headers_policies_input::Builder::default()
+    }
+    /// Creates a new `ListResponseHeadersPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResponseHeadersPolicies {
+    type Output = std::result::Result<
+        crate::output::ListResponseHeadersPoliciesOutput,
+        crate::error::ListResponseHeadersPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_response_headers_policies_error(response)
+        } else {
+            crate::operation_deser::parse_list_response_headers_policies_response(response)
         }
     }
 }
@@ -2838,6 +3047,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRealtimeLogConfig 
             crate::operation_deser::parse_update_realtime_log_config_error(response)
         } else {
             crate::operation_deser::parse_update_realtime_log_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateResponseHeadersPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_response_headers_policy`](crate::client::Client::update_response_headers_policy).
+///
+/// See [`crate::client::fluent_builders::UpdateResponseHeadersPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateResponseHeadersPolicy {
+    _private: (),
+}
+impl UpdateResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::update_response_headers_policy_input::Builder {
+        crate::input::update_response_headers_policy_input::Builder::default()
+    }
+    /// Creates a new `UpdateResponseHeadersPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResponseHeadersPolicy {
+    type Output = std::result::Result<
+        crate::output::UpdateResponseHeadersPolicyOutput,
+        crate::error::UpdateResponseHeadersPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_response_headers_policy_error(response)
+        } else {
+            crate::operation_deser::parse_update_response_headers_policy_response(response)
         }
     }
 }

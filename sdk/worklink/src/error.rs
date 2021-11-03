@@ -24,7 +24,7 @@ pub enum AssociateDomainErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDomainError {
@@ -92,42 +92,42 @@ impl AssociateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDomainErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDomainErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDomainErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDomainErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDomainErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `AssociateDomainErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum AssociateWebsiteAuthorizationProviderErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateWebsiteAuthorizationProviderError {
@@ -257,42 +257,42 @@ impl AssociateWebsiteAuthorizationProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -353,7 +353,7 @@ pub enum AssociateWebsiteCertificateAuthorityErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateWebsiteCertificateAuthorityError {
@@ -436,42 +436,42 @@ impl AssociateWebsiteCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteCertificateAuthorityErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `AssociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -532,7 +532,7 @@ pub enum CreateFleetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetError {
@@ -600,39 +600,39 @@ impl CreateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::UnauthorizedException(_))
     }
@@ -674,7 +674,7 @@ pub enum DeleteFleetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetError {
@@ -741,32 +741,32 @@ impl DeleteFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::UnauthorizedException(_))
     }
@@ -807,7 +807,7 @@ pub enum DescribeAuditStreamConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAuditStreamConfigurationError {
@@ -887,35 +887,35 @@ impl DescribeAuditStreamConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAuditStreamConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeAuditStreamConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAuditStreamConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAuditStreamConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAuditStreamConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAuditStreamConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAuditStreamConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAuditStreamConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAuditStreamConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAuditStreamConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAuditStreamConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAuditStreamConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAuditStreamConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeAuditStreamConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -969,7 +969,7 @@ pub enum DescribeCompanyNetworkConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCompanyNetworkConfigurationError {
@@ -1049,35 +1049,35 @@ impl DescribeCompanyNetworkConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCompanyNetworkConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCompanyNetworkConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCompanyNetworkConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCompanyNetworkConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeCompanyNetworkConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1133,7 +1133,7 @@ pub enum DescribeDeviceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeviceError {
@@ -1200,35 +1200,35 @@ impl DescribeDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1272,7 +1272,7 @@ pub enum DescribeDevicePolicyConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDevicePolicyConfigurationError {
@@ -1352,35 +1352,35 @@ impl DescribeDevicePolicyConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDevicePolicyConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeDevicePolicyConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDevicePolicyConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDevicePolicyConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDevicePolicyConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDevicePolicyConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDevicePolicyConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDevicePolicyConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDevicePolicyConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDevicePolicyConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeDevicePolicyConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDevicePolicyConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDevicePolicyConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeDevicePolicyConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1434,7 +1434,7 @@ pub enum DescribeDomainErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainError {
@@ -1501,35 +1501,35 @@ impl DescribeDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1573,7 +1573,7 @@ pub enum DescribeFleetMetadataErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetMetadataError {
@@ -1640,35 +1640,35 @@ impl DescribeFleetMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetMetadataErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeFleetMetadataErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetMetadataErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetMetadataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetMetadataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetMetadataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetMetadataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetMetadataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetMetadataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetMetadataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeFleetMetadataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetMetadataErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetMetadataErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetMetadataErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1712,7 +1712,7 @@ pub enum DescribeIdentityProviderConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityProviderConfigurationError {
@@ -1792,35 +1792,35 @@ impl DescribeIdentityProviderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityProviderConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityProviderConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeIdentityProviderConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1876,7 +1876,7 @@ pub enum DescribeWebsiteCertificateAuthorityErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWebsiteCertificateAuthorityError {
@@ -1956,35 +1956,35 @@ impl DescribeWebsiteCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWebsiteCertificateAuthorityErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWebsiteCertificateAuthorityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2040,7 +2040,7 @@ pub enum DisassociateDomainErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDomainError {
@@ -2107,35 +2107,35 @@ impl DisassociateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDomainErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateDomainErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDomainErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDomainErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateDomainErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDomainErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDomainErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateDomainErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDomainErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDomainErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DisassociateDomainErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2181,7 +2181,7 @@ pub enum DisassociateWebsiteAuthorizationProviderErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateWebsiteAuthorizationProviderError {
@@ -2264,42 +2264,42 @@ impl DisassociateWebsiteAuthorizationProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2358,7 +2358,7 @@ pub enum DisassociateWebsiteCertificateAuthorityErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateWebsiteCertificateAuthorityError {
@@ -2438,35 +2438,35 @@ impl DisassociateWebsiteCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DisassociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2522,7 +2522,7 @@ pub enum ListDevicesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicesError {
@@ -2589,32 +2589,32 @@ impl ListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::UnauthorizedException(_))
     }
@@ -2655,7 +2655,7 @@ pub enum ListDomainsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainsError {
@@ -2722,32 +2722,32 @@ impl ListDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::UnauthorizedException(_))
     }
@@ -2786,7 +2786,7 @@ pub enum ListFleetsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFleetsError {
@@ -2852,22 +2852,22 @@ impl ListFleetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFleetsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::UnauthorizedException(_))
     }
@@ -2899,7 +2899,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2962,7 +2962,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3002,7 +3002,7 @@ pub enum ListWebsiteAuthorizationProvidersErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWebsiteAuthorizationProvidersError {
@@ -3082,35 +3082,35 @@ impl ListWebsiteAuthorizationProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteAuthorizationProvidersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteAuthorizationProvidersErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteAuthorizationProvidersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteAuthorizationProvidersErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListWebsiteAuthorizationProvidersErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3162,7 +3162,7 @@ pub enum ListWebsiteCertificateAuthoritiesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWebsiteCertificateAuthoritiesError {
@@ -3239,28 +3239,28 @@ impl ListWebsiteCertificateAuthoritiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteCertificateAuthoritiesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteCertificateAuthoritiesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebsiteCertificateAuthoritiesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListWebsiteCertificateAuthoritiesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3311,7 +3311,7 @@ pub enum RestoreDomainAccessErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDomainAccessError {
@@ -3378,35 +3378,35 @@ impl RestoreDomainAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDomainAccessErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RestoreDomainAccessErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDomainAccessErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDomainAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RestoreDomainAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDomainAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDomainAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreDomainAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDomainAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDomainAccessErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RestoreDomainAccessErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDomainAccessErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDomainAccessErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `RestoreDomainAccessErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3450,7 +3450,7 @@ pub enum RevokeDomainAccessErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeDomainAccessError {
@@ -3517,35 +3517,35 @@ impl RevokeDomainAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeDomainAccessErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RevokeDomainAccessErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDomainAccessErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDomainAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RevokeDomainAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDomainAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDomainAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RevokeDomainAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDomainAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDomainAccessErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RevokeDomainAccessErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDomainAccessErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDomainAccessErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `RevokeDomainAccessErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3589,7 +3589,7 @@ pub enum SignOutUserErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignOutUserError {
@@ -3656,32 +3656,32 @@ impl SignOutUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SignOutUserErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `SignOutUserErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignOutUserErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SignOutUserErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SignOutUserErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, SignOutUserErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `SignOutUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SignOutUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignOutUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SignOutUserErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SignOutUserErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             SignOutUserErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `SignOutUserErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `SignOutUserErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, SignOutUserErrorKind::UnauthorizedException(_))
     }
@@ -3714,7 +3714,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3777,7 +3777,7 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
@@ -3806,7 +3806,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3869,7 +3869,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3909,7 +3909,7 @@ pub enum UpdateAuditStreamConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAuditStreamConfigurationError {
@@ -3987,35 +3987,35 @@ impl UpdateAuditStreamConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAuditStreamConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateAuditStreamConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuditStreamConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuditStreamConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAuditStreamConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuditStreamConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuditStreamConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAuditStreamConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuditStreamConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuditStreamConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAuditStreamConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuditStreamConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuditStreamConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateAuditStreamConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4067,7 +4067,7 @@ pub enum UpdateCompanyNetworkConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCompanyNetworkConfigurationError {
@@ -4147,35 +4147,35 @@ impl UpdateCompanyNetworkConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCompanyNetworkConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCompanyNetworkConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCompanyNetworkConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCompanyNetworkConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateCompanyNetworkConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4229,7 +4229,7 @@ pub enum UpdateDevicePolicyConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDevicePolicyConfigurationError {
@@ -4309,35 +4309,35 @@ impl UpdateDevicePolicyConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDevicePolicyConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateDevicePolicyConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevicePolicyConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevicePolicyConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDevicePolicyConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevicePolicyConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevicePolicyConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDevicePolicyConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevicePolicyConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevicePolicyConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateDevicePolicyConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevicePolicyConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevicePolicyConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDevicePolicyConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4389,7 +4389,7 @@ pub enum UpdateDomainMetadataErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainMetadataError {
@@ -4456,35 +4456,35 @@ impl UpdateDomainMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainMetadataErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateDomainMetadataErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainMetadataErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainMetadataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDomainMetadataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainMetadataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainMetadataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDomainMetadataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainMetadataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainMetadataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateDomainMetadataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainMetadataErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainMetadataErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDomainMetadataErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4528,7 +4528,7 @@ pub enum UpdateFleetMetadataErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFleetMetadataError {
@@ -4595,35 +4595,35 @@ impl UpdateFleetMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFleetMetadataErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFleetMetadataErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetMetadataErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetMetadataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateFleetMetadataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetMetadataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetMetadataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFleetMetadataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetMetadataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetMetadataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFleetMetadataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetMetadataErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetMetadataErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateFleetMetadataErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4667,7 +4667,7 @@ pub enum UpdateIdentityProviderConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIdentityProviderConfigurationError {
@@ -4747,35 +4747,35 @@ impl UpdateIdentityProviderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityProviderConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityProviderConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateIdentityProviderConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,

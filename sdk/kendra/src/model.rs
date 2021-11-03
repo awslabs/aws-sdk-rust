@@ -9650,8 +9650,8 @@ pub enum DocumentAttributeValue {
     StringValue(std::string::String),
 }
 impl DocumentAttributeValue {
-    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DateValue`](crate::model::DocumentAttributeValue::DateValue), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_date_value(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
         if let DocumentAttributeValue::DateValue(val) = &self {
             Ok(&val)
@@ -9659,12 +9659,12 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
+    /// Returns true if this is a [`DateValue`](crate::model::DocumentAttributeValue::DateValue).
     pub fn is_date_value(&self) -> bool {
         self.as_date_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`LongValue`](crate::model::DocumentAttributeValue::LongValue), extracting the inner [`i64`](i64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let DocumentAttributeValue::LongValue(val) = &self {
             Ok(&val)
@@ -9672,12 +9672,12 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
+    /// Returns true if this is a [`LongValue`](crate::model::DocumentAttributeValue::LongValue).
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringListValue`](crate::model::DocumentAttributeValue::StringListValue), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_list_value(
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
@@ -9687,12 +9687,12 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
+    /// Returns true if this is a [`StringListValue`](crate::model::DocumentAttributeValue::StringListValue).
     pub fn is_string_list_value(&self) -> bool {
         self.as_string_list_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::DocumentAttributeValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let DocumentAttributeValue::StringValue(val) = &self {
             Ok(&val)
@@ -9700,7 +9700,7 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::DocumentAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }

@@ -176,6 +176,40 @@ pub fn parse_associate_trial_component_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_describe_model_package_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchDescribeModelPackageOutput,
+    crate::error::BatchDescribeModelPackageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchDescribeModelPackageError::unhandled)?;
+    Err(crate::error::BatchDescribeModelPackageError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_describe_model_package_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchDescribeModelPackageOutput,
+    crate::error::BatchDescribeModelPackageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_describe_model_package_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_describe_model_package(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchDescribeModelPackageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_action_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateActionOutput, crate::error::CreateActionError> {
@@ -11826,6 +11860,32 @@ pub fn parse_update_pipeline_execution_response(
             output,
         )
         .map_err(crate::error::UpdatePipelineExecutionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_project_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateProjectError::unhandled)?;
+    Err(crate::error::UpdateProjectError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_project_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_project_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_project(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateProjectError::unhandled)?;
         output.build()
     })
 }

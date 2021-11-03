@@ -417,6 +417,11 @@ pub fn serialize_structure_crate_model_hls_package(
         crate::json_ser::serialize_structure_crate_model_hls_encryption(&mut object_98, var_97);
         object_98.finish();
     }
+    if input.include_dvb_subtitles {
+        object
+            .key("includeDvbSubtitles")
+            .boolean(input.include_dvb_subtitles);
+    }
     if input.include_iframe_only_stream {
         object
             .key("includeIframeOnlyStream")

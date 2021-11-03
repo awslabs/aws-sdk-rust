@@ -26,7 +26,7 @@ pub enum DeleteSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
     /// to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSessionError {
@@ -93,29 +93,29 @@ impl DeleteSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSessionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::NotFoundException(_))
     }
@@ -157,7 +157,7 @@ pub enum GetSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
     /// to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionError {
@@ -223,19 +223,19 @@ impl GetSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::NotFoundException(_))
     }
@@ -309,7 +309,7 @@ pub enum PostContentErrorKind {
     /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid
     /// value. </p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostContentError {
@@ -382,53 +382,53 @@ impl PostContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostContentErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostContentErrorKind::DependencyFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PostContentErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostContentErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PostContentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::LoopDetectedException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::LoopDetectedException`.
     pub fn is_loop_detected_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::LoopDetectedException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::NotAcceptableException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::NotAcceptableException`.
     pub fn is_not_acceptable_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::NotAcceptableException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::RequestTimeoutException(_))
     }
-    /// Returns true if the error kind is `PostContentErrorKind::UnsupportedMediaTypeException`.
+    /// Returns `true` if the error kind is `PostContentErrorKind::UnsupportedMediaTypeException`.
     pub fn is_unsupported_media_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -505,7 +505,7 @@ pub enum PostTextErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
     /// to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostTextError {
@@ -575,35 +575,35 @@ impl PostTextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostTextErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::DependencyFailedException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::LoopDetectedException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::LoopDetectedException`.
     pub fn is_loop_detected_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::LoopDetectedException(_))
     }
-    /// Returns true if the error kind is `PostTextErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PostTextErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::NotFoundException(_))
     }
@@ -674,7 +674,7 @@ pub enum PutSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
     /// to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSessionError {
@@ -744,38 +744,38 @@ impl PutSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSessionErrorKind::DependencyFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::NotAcceptableException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::NotAcceptableException`.
     pub fn is_not_acceptable_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::NotAcceptableException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::NotFoundException(_))
     }

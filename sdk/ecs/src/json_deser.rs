@@ -3535,6 +3535,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "platformFamily" => {
+                                builder = builder.set_platform_family(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "taskDefinition" => {
                                 builder = builder.set_task_definition(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -3835,6 +3844,15 @@ where
                             }
                             "platformVersion" => {
                                 builder = builder.set_platform_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "platformFamily" => {
+                                builder = builder.set_platform_family(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -4295,6 +4313,11 @@ where
                             "compatibilities" => {
                                 builder = builder.set_compatibilities(
                                     crate::json_deser::deser_list_com_amazonaws_ecs_compatibility_list(tokens)?
+                                );
+                            }
+                            "runtimePlatform" => {
+                                builder = builder.set_runtime_platform(
+                                    crate::json_deser::deser_structure_crate_model_runtime_platform(tokens)?
                                 );
                             }
                             "requiresCompatibilities" => {
@@ -5033,6 +5056,15 @@ where
                             }
                             "platformVersion" => {
                                 builder = builder.set_platform_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "platformFamily" => {
+                                builder = builder.set_platform_family(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -6219,6 +6251,67 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_runtime_platform<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::RuntimePlatform>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::RuntimePlatform::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "cpuArchitecture" => {
+                                builder = builder.set_cpu_architecture(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CpuArchitecture::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "operatingSystemFamily" => {
+                                builder = builder.set_operating_system_family(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::OsFamily::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_ecs_inference_accelerators<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -7295,6 +7388,15 @@ where
                             }
                             "platformVersion" => {
                                 builder = builder.set_platform_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "platformFamily" => {
+                                builder = builder.set_platform_family(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

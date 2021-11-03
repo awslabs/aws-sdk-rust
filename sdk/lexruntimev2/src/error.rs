@@ -24,7 +24,7 @@ pub enum DeleteSessionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSessionError {
@@ -92,33 +92,33 @@ impl DeleteSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::ValidationException(_))
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSessionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::ConflictException(_))
     }
@@ -160,7 +160,7 @@ pub enum GetSessionErrorKind {
     ValidationException(crate::error::ValidationException),
     /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionError {
@@ -227,26 +227,26 @@ impl GetSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::ValidationException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::InternalServerException(_))
     }
@@ -293,7 +293,7 @@ pub enum PutSessionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSessionError {
@@ -363,41 +363,41 @@ impl PutSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::ValidationException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSessionErrorKind::DependencyFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `PutSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::ConflictException(_))
     }
@@ -447,7 +447,7 @@ pub enum RecognizeTextErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecognizeTextError {
@@ -517,44 +517,44 @@ impl RecognizeTextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RecognizeTextErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeTextErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, RecognizeTextErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, RecognizeTextErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RecognizeTextErrorKind::ValidationException(_))
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeTextErrorKind::DependencyFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeTextErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeTextErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RecognizeTextErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, RecognizeTextErrorKind::ConflictException(_))
     }
@@ -604,7 +604,7 @@ pub enum RecognizeUtteranceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecognizeUtteranceError {
@@ -674,56 +674,56 @@ impl RecognizeUtteranceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::ValidationException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::DependencyFailedException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::DependencyFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeUtteranceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeUtteranceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RecognizeUtteranceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,

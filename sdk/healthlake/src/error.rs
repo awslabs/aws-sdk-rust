@@ -20,7 +20,7 @@ pub enum CreateFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFHIRDatastoreError {
@@ -86,28 +86,28 @@ impl CreateFHIRDatastoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFHIRDatastoreErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFHIRDatastoreErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFHIRDatastoreErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFHIRDatastoreErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFHIRDatastoreErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFHIRDatastoreErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFHIRDatastoreErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -152,7 +152,7 @@ pub enum DeleteFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFHIRDatastoreError {
@@ -220,42 +220,42 @@ impl DeleteFHIRDatastoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFHIRDatastoreErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFHIRDatastoreErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFHIRDatastoreErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFHIRDatastoreErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFHIRDatastoreErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -298,7 +298,7 @@ pub enum DescribeFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFHIRDatastoreError {
@@ -364,28 +364,28 @@ impl DescribeFHIRDatastoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFHIRDatastoreErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRDatastoreErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRDatastoreErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRDatastoreErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRDatastoreErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRDatastoreErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -426,7 +426,7 @@ pub enum DescribeFHIRExportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFHIRExportJobError {
@@ -492,28 +492,28 @@ impl DescribeFHIRExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFHIRExportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRExportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRExportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRExportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRExportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -554,7 +554,7 @@ pub enum DescribeFHIRImportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFHIRImportJobError {
@@ -620,28 +620,28 @@ impl DescribeFHIRImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFHIRImportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRImportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRImportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFHIRImportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFHIRImportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -680,7 +680,7 @@ pub enum ListFHIRDatastoresErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFHIRDatastoresError {
@@ -745,21 +745,21 @@ impl ListFHIRDatastoresError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFHIRDatastoresErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRDatastoresErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRDatastoresErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRDatastoresErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRDatastoresErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -801,7 +801,7 @@ pub enum ListFHIRExportJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFHIRExportJobsError {
@@ -868,35 +868,35 @@ impl ListFHIRExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFHIRExportJobsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRExportJobsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRExportJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRExportJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRExportJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRExportJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRExportJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRExportJobsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRExportJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -940,7 +940,7 @@ pub enum ListFHIRImportJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFHIRImportJobsError {
@@ -1007,35 +1007,35 @@ impl ListFHIRImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFHIRImportJobsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRImportJobsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRImportJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRImportJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRImportJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRImportJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRImportJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFHIRImportJobsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFHIRImportJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1073,7 +1073,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1137,14 +1137,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1185,7 +1185,7 @@ pub enum StartFHIRExportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFHIRExportJobError {
@@ -1252,35 +1252,35 @@ impl StartFHIRExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFHIRExportJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRExportJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRExportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRExportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRExportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRExportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRExportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1324,7 +1324,7 @@ pub enum StartFHIRImportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFHIRImportJobError {
@@ -1391,35 +1391,35 @@ impl StartFHIRImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFHIRImportJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRImportJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRImportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRImportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRImportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFHIRImportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartFHIRImportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1457,7 +1457,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1521,14 +1521,14 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1560,7 +1560,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1624,14 +1624,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

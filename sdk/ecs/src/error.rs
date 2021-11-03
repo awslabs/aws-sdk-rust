@@ -29,7 +29,7 @@ pub enum CreateCapacityProviderErrorKind {
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCapacityProviderError {
@@ -96,35 +96,35 @@ impl CreateCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCapacityProviderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCapacityProviderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCapacityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCapacityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCapacityProviderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCapacityProviderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCapacityProviderErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCapacityProviderErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCapacityProviderErrorKind::UpdateInProgressException`.
+    /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -167,7 +167,7 @@ pub enum CreateClusterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -232,18 +232,18 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ServerException(_))
     }
@@ -295,7 +295,7 @@ pub enum CreateServiceErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceError {
@@ -367,47 +367,47 @@ impl CreateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::PlatformUnknownException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::PlatformUnknownException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -476,7 +476,7 @@ pub enum CreateTaskSetErrorKind {
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTaskSetError {
@@ -550,61 +550,61 @@ impl CreateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskSetErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::PlatformUnknownException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::PlatformUnknownException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskSetErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTaskSetErrorKind::ServiceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTaskSetErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `CreateTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -654,7 +654,7 @@ pub enum DeleteAccountSettingErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountSettingError {
@@ -719,21 +719,21 @@ impl DeleteAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccountSettingErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountSettingErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountSettingErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountSettingErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountSettingErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -775,7 +775,7 @@ pub enum DeleteAttributesErrorKind {
     /// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
     /// cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAttributesError {
@@ -840,21 +840,21 @@ impl DeleteAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAttributesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAttributesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAttributesErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAttributesErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -895,7 +895,7 @@ pub enum DeleteCapacityProviderErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCapacityProviderError {
@@ -960,21 +960,21 @@ impl DeleteCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCapacityProviderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCapacityProviderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCapacityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCapacityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCapacityProviderErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1036,7 +1036,7 @@ pub enum DeleteClusterErrorKind {
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -1108,50 +1108,50 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterContainsContainerInstancesException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsContainerInstancesException`.
     pub fn is_cluster_contains_container_instances_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterContainsServicesException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsServicesException`.
     pub fn is_cluster_contains_services_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterContainsServicesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterContainsTasksException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsTasksException`.
     pub fn is_cluster_contains_tasks_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterContainsTasksException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::UpdateInProgressException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1206,7 +1206,7 @@ pub enum DeleteServiceErrorKind {
     /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
     /// Region-specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceError {
@@ -1273,29 +1273,29 @@ impl DeleteServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1356,7 +1356,7 @@ pub enum DeleteTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTaskSetError {
@@ -1427,54 +1427,54 @@ impl DeleteTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskSetErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTaskSetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskSetErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTaskSetErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTaskSetErrorKind::ServiceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::TaskSetNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTaskSetErrorKind::TaskSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTaskSetErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1524,7 +1524,7 @@ pub enum DeregisterContainerInstanceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterContainerInstanceError {
@@ -1592,28 +1592,28 @@ impl DeregisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterContainerInstanceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterContainerInstanceErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterContainerInstanceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterContainerInstanceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterContainerInstanceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterContainerInstanceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1655,7 +1655,7 @@ pub enum DeregisterTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTaskDefinitionError {
@@ -1720,21 +1720,21 @@ impl DeregisterTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTaskDefinitionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTaskDefinitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTaskDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTaskDefinitionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1775,7 +1775,7 @@ pub enum DescribeCapacityProvidersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCapacityProvidersError {
@@ -1840,21 +1840,21 @@ impl DescribeCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCapacityProvidersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCapacityProvidersErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCapacityProvidersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCapacityProvidersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCapacityProvidersErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1895,7 +1895,7 @@ pub enum DescribeClustersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClustersError {
@@ -1960,18 +1960,18 @@ impl DescribeClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeClustersErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeClustersErrorKind::ServerException(_))
     }
@@ -2012,7 +2012,7 @@ pub enum DescribeContainerInstancesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContainerInstancesError {
@@ -2078,28 +2078,28 @@ impl DescribeContainerInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContainerInstancesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContainerInstancesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContainerInstancesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContainerInstancesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContainerInstancesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContainerInstancesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContainerInstancesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2144,7 +2144,7 @@ pub enum DescribeServicesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServicesError {
@@ -2210,25 +2210,25 @@ impl DescribeServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeServicesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServicesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeServicesErrorKind::ServerException(_))
     }
@@ -2267,7 +2267,7 @@ pub enum DescribeTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskDefinitionError {
@@ -2332,21 +2332,21 @@ impl DescribeTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTaskDefinitionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskDefinitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskDefinitionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2390,7 +2390,7 @@ pub enum DescribeTasksErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTasksError {
@@ -2456,25 +2456,25 @@ impl DescribeTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTasksErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeTasksErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeTasksErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeTasksErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTasksErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTasksErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTasksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTasksErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTasksErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeTasksErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeTasksErrorKind::ServerException(_))
     }
@@ -2527,7 +2527,7 @@ pub enum DescribeTaskSetsErrorKind {
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskSetsError {
@@ -2597,50 +2597,50 @@ impl DescribeTaskSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskSetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeTaskSetsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskSetsErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskSetsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeTaskSetsErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskSetsErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskSetsErrorKind::ServiceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskSetsErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2683,7 +2683,7 @@ pub enum DiscoverPollEndpointErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DiscoverPollEndpointError {
@@ -2747,14 +2747,14 @@ impl DiscoverPollEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DiscoverPollEndpointErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DiscoverPollEndpointErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DiscoverPollEndpointErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DiscoverPollEndpointErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DiscoverPollEndpointErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2802,7 +2802,7 @@ pub enum ExecuteCommandErrorKind {
     /// <p>The target container is not properly configured with the execute command agent or the
     /// container is no longer active or running.</p>
     TargetNotConnectedException(crate::error::TargetNotConnectedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteCommandError {
@@ -2870,36 +2870,36 @@ impl ExecuteCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteCommandErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ExecuteCommandErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteCommandErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteCommandErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ExecuteCommandErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `ExecuteCommandErrorKind::TargetNotConnectedException`.
+    /// Returns `true` if the error kind is `ExecuteCommandErrorKind::TargetNotConnectedException`.
     pub fn is_target_not_connected_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2943,7 +2943,7 @@ pub enum ListAccountSettingsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountSettingsError {
@@ -3008,18 +3008,18 @@ impl ListAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountSettingsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListAccountSettingsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListAccountSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountSettingsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListAccountSettingsErrorKind::ServerException(_))
     }
@@ -3054,7 +3054,7 @@ pub enum ListAttributesErrorKind {
     /// <p>The specified parameter is invalid. Review the available parameters for the API
     /// request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttributesError {
@@ -3118,14 +3118,14 @@ impl ListAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttributesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ListAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttributesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3165,7 +3165,7 @@ pub enum ListClustersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
@@ -3230,18 +3230,18 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClustersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ServerException(_))
     }
@@ -3282,7 +3282,7 @@ pub enum ListContainerInstancesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContainerInstancesError {
@@ -3348,28 +3348,28 @@ impl ListContainerInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContainerInstancesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerInstancesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerInstancesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerInstancesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerInstancesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerInstancesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerInstancesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3414,7 +3414,7 @@ pub enum ListServicesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServicesError {
@@ -3480,25 +3480,25 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServicesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServicesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::ServerException(_))
     }
@@ -3540,7 +3540,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3606,25 +3606,25 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ServerException(_))
     }
@@ -3663,7 +3663,7 @@ pub enum ListTaskDefinitionFamiliesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTaskDefinitionFamiliesError {
@@ -3728,21 +3728,21 @@ impl ListTaskDefinitionFamiliesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTaskDefinitionFamiliesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTaskDefinitionFamiliesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListTaskDefinitionFamiliesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTaskDefinitionFamiliesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3783,7 +3783,7 @@ pub enum ListTaskDefinitionsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTaskDefinitionsError {
@@ -3848,18 +3848,18 @@ impl ListTaskDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTaskDefinitionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTaskDefinitionsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListTaskDefinitionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTaskDefinitionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTaskDefinitionsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListTaskDefinitionsErrorKind::ServerException(_))
     }
@@ -3904,7 +3904,7 @@ pub enum ListTasksErrorKind {
     /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
     /// Region-specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTasksError {
@@ -3971,23 +3971,23 @@ impl ListTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::ClusterNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::ServiceNotFoundException(_))
     }
@@ -4027,7 +4027,7 @@ pub enum PutAccountSettingErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSettingError {
@@ -4092,18 +4092,18 @@ impl PutAccountSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountSettingErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutAccountSettingErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, PutAccountSettingErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `PutAccountSettingErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAccountSettingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountSettingErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountSettingErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutAccountSettingErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, PutAccountSettingErrorKind::ServerException(_))
     }
@@ -4141,7 +4141,7 @@ pub enum PutAccountSettingDefaultErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSettingDefaultError {
@@ -4206,21 +4206,21 @@ impl PutAccountSettingDefaultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountSettingDefaultErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountSettingDefaultErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountSettingDefaultErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountSettingDefaultErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountSettingDefaultErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4266,7 +4266,7 @@ pub enum PutAttributesErrorKind {
     /// instances with <a>ListContainerInstances</a>. Amazon ECS container instances are
     /// cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAttributesError {
@@ -4332,28 +4332,28 @@ impl PutAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAttributesErrorKind::AttributeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutAttributesErrorKind::AttributeLimitExceededException`.
     pub fn is_attribute_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAttributesErrorKind::AttributeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutAttributesErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `PutAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAttributesErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAttributesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAttributesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAttributesErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `PutAttributesErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4406,7 +4406,7 @@ pub enum PutClusterCapacityProvidersErrorKind {
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutClusterCapacityProvidersError {
@@ -4478,42 +4478,42 @@ impl PutClusterCapacityProvidersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutClusterCapacityProvidersErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutClusterCapacityProvidersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutClusterCapacityProvidersErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutClusterCapacityProvidersErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutClusterCapacityProvidersErrorKind::UpdateInProgressException`.
+    /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4557,7 +4557,7 @@ pub enum RegisterContainerInstanceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterContainerInstanceError {
@@ -4622,21 +4622,21 @@ impl RegisterContainerInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterContainerInstanceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerInstanceErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerInstanceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerInstanceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerInstanceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4677,7 +4677,7 @@ pub enum RegisterTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTaskDefinitionError {
@@ -4742,21 +4742,21 @@ impl RegisterTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTaskDefinitionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskDefinitionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskDefinitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskDefinitionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4814,7 +4814,7 @@ pub enum RunTaskErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RunTaskError {
@@ -4887,42 +4887,42 @@ impl RunTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::BlockedException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::BlockedException`.
     pub fn is_blocked_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::BlockedException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::ClusterNotFoundException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
             &self.kind,
             RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
         )
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::PlatformUnknownException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::PlatformUnknownException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `RunTaskErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `RunTaskErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::UnsupportedFeatureException(_))
     }
@@ -4971,7 +4971,7 @@ pub enum StartTaskErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTaskError {
@@ -5037,19 +5037,19 @@ impl StartTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTaskErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `StartTaskErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, StartTaskErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `StartTaskErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `StartTaskErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartTaskErrorKind::ClusterNotFoundException(_))
     }
-    /// Returns true if the error kind is `StartTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, StartTaskErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `StartTaskErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `StartTaskErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, StartTaskErrorKind::ServerException(_))
     }
@@ -5091,7 +5091,7 @@ pub enum StopTaskErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTaskError {
@@ -5157,19 +5157,19 @@ impl StopTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopTaskErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `StopTaskErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, StopTaskErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `StopTaskErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `StopTaskErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopTaskErrorKind::ClusterNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, StopTaskErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `StopTaskErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `StopTaskErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, StopTaskErrorKind::ServerException(_))
     }
@@ -5210,7 +5210,7 @@ pub enum SubmitAttachmentStateChangesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitAttachmentStateChangesError {
@@ -5278,28 +5278,28 @@ impl SubmitAttachmentStateChangesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubmitAttachmentStateChangesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitAttachmentStateChangesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitAttachmentStateChangesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitAttachmentStateChangesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitAttachmentStateChangesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5342,7 +5342,7 @@ pub enum SubmitContainerStateChangeErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitContainerStateChangeError {
@@ -5407,21 +5407,21 @@ impl SubmitContainerStateChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubmitContainerStateChangeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitContainerStateChangeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitContainerStateChangeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitContainerStateChangeErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitContainerStateChangeErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5464,7 +5464,7 @@ pub enum SubmitTaskStateChangeErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitTaskStateChangeError {
@@ -5530,28 +5530,28 @@ impl SubmitTaskStateChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubmitTaskStateChangeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitTaskStateChangeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitTaskStateChangeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitTaskStateChangeErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitTaskStateChangeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubmitTaskStateChangeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SubmitTaskStateChangeErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5598,7 +5598,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5665,32 +5665,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServerException(_))
     }
@@ -5735,7 +5735,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5802,32 +5802,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServerException(_))
     }
@@ -5867,7 +5867,7 @@ pub enum UpdateCapacityProviderErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCapacityProviderError {
@@ -5932,21 +5932,21 @@ impl UpdateCapacityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCapacityProviderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCapacityProviderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCapacityProviderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCapacityProviderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCapacityProviderErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5990,7 +5990,7 @@ pub enum UpdateClusterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterError {
@@ -6056,25 +6056,25 @@ impl UpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::ServerException(_))
     }
@@ -6116,7 +6116,7 @@ pub enum UpdateClusterSettingsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterSettingsError {
@@ -6182,28 +6182,28 @@ impl UpdateClusterSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterSettingsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterSettingsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterSettingsErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterSettingsErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterSettingsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6263,7 +6263,7 @@ pub enum UpdateContainerAgentErrorKind {
     /// process can get stuck in that state. However, when the agent reconnects, it resumes
     /// where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContainerAgentError {
@@ -6332,49 +6332,49 @@ impl UpdateContainerAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::MissingVersionException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::MissingVersionException`.
     pub fn is_missing_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::MissingVersionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::NoUpdateAvailableException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::NoUpdateAvailableException`.
     pub fn is_no_update_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::NoUpdateAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerAgentErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerAgentErrorKind::UpdateInProgressException`.
+    /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6422,7 +6422,7 @@ pub enum UpdateContainerInstancesStateErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContainerInstancesStateError {
@@ -6495,28 +6495,28 @@ impl UpdateContainerInstancesStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContainerInstancesStateErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerInstancesStateErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerInstancesStateErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerInstancesStateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerInstancesStateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerInstancesStateErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6581,7 +6581,7 @@ pub enum UpdateServiceErrorKind {
     /// <a>ListServices</a>. Amazon ECS services are cluster-specific and
     /// Region-specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceError {
@@ -6654,54 +6654,54 @@ impl UpdateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::PlatformUnknownException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::PlatformUnknownException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6768,7 +6768,7 @@ pub enum UpdateServicePrimaryTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServicePrimaryTaskSetError {
@@ -6845,63 +6845,63 @@ impl UpdateServicePrimaryTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::ServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6968,7 +6968,7 @@ pub enum UpdateTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task is not supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTaskSetError {
@@ -7039,54 +7039,54 @@ impl UpdateTaskSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskSetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskSetErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::ClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskSetErrorKind::ClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskSetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskSetErrorKind::ServerException(_))
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::ServiceNotActiveException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskSetErrorKind::ServiceNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::ServiceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskSetErrorKind::ServiceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::TaskSetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskSetErrorKind::TaskSetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskSetErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,

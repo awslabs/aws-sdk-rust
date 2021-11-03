@@ -54,7 +54,7 @@ pub type AssociateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AssociateAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAlias`](crate::operation::AssociateAlias)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -113,12 +113,8 @@ impl AssociateAliasInput {
             input: &crate::input::AssociateAliasInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -166,16 +162,9 @@ impl AssociateAliasInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`AssociateAliasInput`](crate::input::AssociateAliasInput)
@@ -226,7 +215,7 @@ pub type CreateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateCachePolicy`](crate::operation::CreateCachePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -258,6 +247,7 @@ impl CreateCachePolicyInput {
             input: &crate::input::CreateCachePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -312,9 +302,10 @@ impl CreateCachePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -379,7 +370,7 @@ pub type CreateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
 impl CreateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`CreateCloudFrontOriginAccessIdentity`](crate::operation::CreateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -412,6 +403,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
             input: &crate::input::CreateCloudFrontOriginAccessIdentityInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -468,9 +460,10 @@ impl CreateCloudFrontOriginAccessIdentityInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -528,7 +521,7 @@ pub type CreateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistribution`](crate::operation::CreateDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -560,6 +553,7 @@ impl CreateDistributionInput {
             input: &crate::input::CreateDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -614,9 +608,10 @@ impl CreateDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -679,7 +674,7 @@ pub type CreateDistributionWithTagsInputOperationRetryAlias = aws_http::AwsError
 impl CreateDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionWithTags`](crate::operation::CreateDistributionWithTags)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -719,6 +714,7 @@ impl CreateDistributionWithTagsInput {
             input: &crate::input::CreateDistributionWithTagsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -774,9 +770,10 @@ impl CreateDistributionWithTagsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -839,7 +836,7 @@ pub type CreateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::Aw
 impl CreateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionConfig`](crate::operation::CreateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -872,6 +869,7 @@ impl CreateFieldLevelEncryptionConfigInput {
             input: &crate::input::CreateFieldLevelEncryptionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -927,9 +925,10 @@ impl CreateFieldLevelEncryptionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -992,7 +991,7 @@ pub type CreateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::A
 impl CreateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionProfile`](crate::operation::CreateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1025,6 +1024,7 @@ impl CreateFieldLevelEncryptionProfileInput {
             input: &crate::input::CreateFieldLevelEncryptionProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1080,9 +1080,10 @@ impl CreateFieldLevelEncryptionProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1171,7 +1172,7 @@ pub type CreateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunction`](crate::operation::CreateFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1203,6 +1204,7 @@ impl CreateFunctionInput {
             input: &crate::input::CreateFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1259,9 +1261,10 @@ impl CreateFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1334,7 +1337,7 @@ pub type CreateInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl CreateInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInvalidation`](crate::operation::CreateInvalidation)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1386,6 +1389,7 @@ impl CreateInvalidationInput {
             input: &crate::input::CreateInvalidationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1440,9 +1444,10 @@ impl CreateInvalidationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1500,7 +1505,7 @@ pub type CreateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeyGroup`](crate::operation::CreateKeyGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1532,6 +1537,7 @@ impl CreateKeyGroupInput {
             input: &crate::input::CreateKeyGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1586,9 +1592,10 @@ impl CreateKeyGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1668,7 +1675,7 @@ pub type CreateMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErr
 impl CreateMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateMonitoringSubscription`](crate::operation::CreateMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1720,6 +1727,7 @@ impl CreateMonitoringSubscriptionInput {
             input: &crate::input::CreateMonitoringSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1775,9 +1783,10 @@ impl CreateMonitoringSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1840,7 +1849,7 @@ pub type CreateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorR
 impl CreateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateOriginRequestPolicy`](crate::operation::CreateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1872,6 +1881,7 @@ impl CreateOriginRequestPolicyInput {
             input: &crate::input::CreateOriginRequestPolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1927,9 +1937,10 @@ impl CreateOriginRequestPolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1987,7 +1998,7 @@ pub type CreatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl CreatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicKey`](crate::operation::CreatePublicKey)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2019,6 +2030,7 @@ impl CreatePublicKeyInput {
             input: &crate::input::CreatePublicKeyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2073,9 +2085,10 @@ impl CreatePublicKeyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2195,7 +2208,7 @@ pub type CreateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateRealtimeLogConfig`](crate::operation::CreateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2227,6 +2240,7 @@ impl CreateRealtimeLogConfigInput {
             input: &crate::input::CreateRealtimeLogConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2286,9 +2300,10 @@ impl CreateRealtimeLogConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2301,6 +2316,163 @@ impl CreateRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateRealtimeLogConfigInput`](crate::input::CreateRealtimeLogConfigInput)
     pub fn builder() -> crate::input::create_realtime_log_config_input::Builder {
         crate::input::create_realtime_log_config_input::Builder::default()
+    }
+}
+
+/// See [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput)
+pub mod create_response_headers_policy_input {
+    /// A builder for [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+    }
+    impl Builder {
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that
+        /// specify the response headers.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.response_headers_policy_config = Some(input);
+            self
+        }
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that
+        /// specify the response headers.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.response_headers_policy_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateResponseHeadersPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateResponseHeadersPolicyInput {
+                response_headers_policy_config: self.response_headers_policy_config,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateResponseHeadersPolicyInputOperationOutputAlias =
+    crate::operation::CreateResponseHeadersPolicy;
+#[doc(hidden)]
+pub type CreateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateResponseHeadersPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateResponseHeadersPolicy`](crate::operation::CreateResponseHeadersPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateResponseHeadersPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateResponseHeadersPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/2020-05-31/response-headers-policy")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateResponseHeadersPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateResponseHeadersPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/xml",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_create_response_headers_policy_input(
+            &self.response_headers_policy_config,
+        )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateResponseHeadersPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateResponseHeadersPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::create_response_headers_policy_input::Builder {
+        crate::input::create_response_headers_policy_input::Builder::default()
     }
 }
 
@@ -2351,7 +2523,7 @@ pub type CreateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErro
 impl CreateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistribution`](crate::operation::CreateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2384,6 +2556,7 @@ impl CreateStreamingDistributionInput {
             input: &crate::input::CreateStreamingDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2439,9 +2612,10 @@ impl CreateStreamingDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2506,7 +2680,7 @@ pub type CreateStreamingDistributionWithTagsInputOperationRetryAlias =
 impl CreateStreamingDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistributionWithTags`](crate::operation::CreateStreamingDistributionWithTags)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2547,6 +2721,7 @@ impl CreateStreamingDistributionWithTagsInput {
             input: &crate::input::CreateStreamingDistributionWithTagsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2602,9 +2777,10 @@ impl CreateStreamingDistributionWithTagsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2679,7 +2855,7 @@ pub type DeleteCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCachePolicy`](crate::operation::DeleteCachePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2751,12 +2927,8 @@ impl DeleteCachePolicyInput {
             input: &crate::input::DeleteCachePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2804,16 +2976,9 @@ impl DeleteCachePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteCachePolicyInput`](crate::input::DeleteCachePolicyInput)
@@ -2877,7 +3042,7 @@ pub type DeleteCloudFrontOriginAccessIdentityInputOperationRetryAlias =
 impl DeleteCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCloudFrontOriginAccessIdentity`](crate::operation::DeleteCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2953,12 +3118,8 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
             input: &crate::input::DeleteCloudFrontOriginAccessIdentityInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3006,16 +3167,9 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteCloudFrontOriginAccessIdentityInput`](crate::input::DeleteCloudFrontOriginAccessIdentityInput)
@@ -3077,7 +3231,7 @@ pub type DeleteDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DeleteDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistribution`](crate::operation::DeleteDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3149,12 +3303,8 @@ impl DeleteDistributionInput {
             input: &crate::input::DeleteDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3202,16 +3352,9 @@ impl DeleteDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDistributionInput`](crate::input::DeleteDistributionInput)
@@ -3274,7 +3417,7 @@ pub type DeleteFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::Aw
 impl DeleteFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionConfig`](crate::operation::DeleteFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3346,12 +3489,8 @@ impl DeleteFieldLevelEncryptionConfigInput {
             input: &crate::input::DeleteFieldLevelEncryptionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3399,16 +3538,9 @@ impl DeleteFieldLevelEncryptionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionConfigInput`](crate::input::DeleteFieldLevelEncryptionConfigInput)
@@ -3471,7 +3603,7 @@ pub type DeleteFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::A
 impl DeleteFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionProfile`](crate::operation::DeleteFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3547,12 +3679,8 @@ impl DeleteFieldLevelEncryptionProfileInput {
             input: &crate::input::DeleteFieldLevelEncryptionProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3600,16 +3728,9 @@ impl DeleteFieldLevelEncryptionProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionProfileInput`](crate::input::DeleteFieldLevelEncryptionProfileInput)
@@ -3671,7 +3792,7 @@ pub type DeleteFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunction`](crate::operation::DeleteFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3743,12 +3864,8 @@ impl DeleteFunctionInput {
             input: &crate::input::DeleteFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3796,16 +3913,9 @@ impl DeleteFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput)
@@ -3871,7 +3981,7 @@ pub type DeleteKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyGroup`](crate::operation::DeleteKeyGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3943,12 +4053,8 @@ impl DeleteKeyGroupInput {
             input: &crate::input::DeleteKeyGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3996,16 +4102,9 @@ impl DeleteKeyGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteKeyGroupInput`](crate::input::DeleteKeyGroupInput)
@@ -4057,7 +4156,7 @@ pub type DeleteMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErr
 impl DeleteMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMonitoringSubscription`](crate::operation::DeleteMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4109,12 +4208,8 @@ impl DeleteMonitoringSubscriptionInput {
             input: &crate::input::DeleteMonitoringSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4162,16 +4257,9 @@ impl DeleteMonitoringSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringSubscriptionInput`](crate::input::DeleteMonitoringSubscriptionInput)
@@ -4240,7 +4328,7 @@ pub type DeleteOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorR
 impl DeleteOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOriginRequestPolicy`](crate::operation::DeleteOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4312,12 +4400,8 @@ impl DeleteOriginRequestPolicyInput {
             input: &crate::input::DeleteOriginRequestPolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4365,16 +4449,9 @@ impl DeleteOriginRequestPolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteOriginRequestPolicyInput`](crate::input::DeleteOriginRequestPolicyInput)
@@ -4436,7 +4513,7 @@ pub type DeletePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DeletePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePublicKey`](crate::operation::DeletePublicKey)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4508,12 +4585,8 @@ impl DeletePublicKeyInput {
             input: &crate::input::DeletePublicKeyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4561,16 +4634,9 @@ impl DeletePublicKeyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeletePublicKeyInput`](crate::input::DeletePublicKeyInput)
@@ -4631,7 +4697,7 @@ pub type DeleteRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRealtimeLogConfig`](crate::operation::DeleteRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4664,6 +4730,7 @@ impl DeleteRealtimeLogConfigInput {
             input: &crate::input::DeleteRealtimeLogConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4723,9 +4790,10 @@ impl DeleteRealtimeLogConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4738,6 +4806,200 @@ impl DeleteRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeLogConfigInput`](crate::input::DeleteRealtimeLogConfigInput)
     pub fn builder() -> crate::input::delete_realtime_log_config_input::Builder {
         crate::input::delete_realtime_log_config_input::Builder::default()
+    }
+}
+
+/// See [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput)
+pub mod delete_response_headers_policy_input {
+    /// A builder for [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the response headers policy that you are deleting.</p>
+        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are deleting.</p>
+        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The version of the response headers policy that you are deleting.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+        /// get using <code>ListResponseHeadersPolicies</code>,
+        /// <code>GetResponseHeadersPolicy</code>, or
+        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The version of the response headers policy that you are deleting.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+        /// get using <code>ListResponseHeadersPolicies</code>,
+        /// <code>GetResponseHeadersPolicy</code>, or
+        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteResponseHeadersPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteResponseHeadersPolicyInput {
+                id: self.id,
+                if_match: self.if_match,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteResponseHeadersPolicyInputOperationOutputAlias =
+    crate::operation::DeleteResponseHeadersPolicy;
+#[doc(hidden)]
+pub type DeleteResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteResponseHeadersPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteResponseHeadersPolicy`](crate::operation::DeleteResponseHeadersPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteResponseHeadersPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteResponseHeadersPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_33 = &_input.id;
+            let input_33 =
+                input_33
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_33, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/2020-05-31/response-headers-policy/{Id}", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::DeleteResponseHeadersPolicyInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            if let Some(inner_34) = &_input.if_match {
+                let formatted_35 = AsRef::<str>::as_ref(inner_34);
+                if !formatted_35.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_35;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "if_match",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("If-Match", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteResponseHeadersPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteResponseHeadersPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResponseHeadersPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteResponseHeadersPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::delete_response_headers_policy_input::Builder {
+        crate::input::delete_response_headers_policy_input::Builder::default()
     }
 }
 
@@ -4795,7 +5057,7 @@ pub type DeleteStreamingDistributionInputOperationRetryAlias = aws_http::AwsErro
 impl DeleteStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingDistribution`](crate::operation::DeleteStreamingDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4809,15 +5071,15 @@ impl DeleteStreamingDistributionInput {
             _input: &crate::input::DeleteStreamingDistributionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.id;
-            let input_33 =
-                input_33
+            let input_36 = &_input.id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_33, false);
+            let id = aws_smithy_http::label::fmt_string(input_36, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4833,11 +5095,11 @@ impl DeleteStreamingDistributionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_34) = &_input.if_match {
-                let formatted_35 = AsRef::<str>::as_ref(inner_34);
-                if !formatted_35.is_empty() {
+            if let Some(inner_37) = &_input.if_match {
+                let formatted_38 = AsRef::<str>::as_ref(inner_37);
+                if !formatted_38.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_35;
+                    let header_value = formatted_38;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -4867,12 +5129,8 @@ impl DeleteStreamingDistributionInput {
             input: &crate::input::DeleteStreamingDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4920,16 +5178,9 @@ impl DeleteStreamingDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStreamingDistributionInput`](crate::input::DeleteStreamingDistributionInput)
@@ -4992,7 +5243,7 @@ pub type DescribeFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFunction`](crate::operation::DescribeFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5006,15 +5257,15 @@ impl DescribeFunctionInput {
             _input: &crate::input::DescribeFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.name;
-            let input_36 =
-                input_36
+            let input_39 = &_input.name;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_36, false);
+            let name = aws_smithy_http::label::fmt_string(input_39, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -5027,8 +5278,8 @@ impl DescribeFunctionInput {
         }
         fn uri_query(_input: &crate::input::DescribeFunctionInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_37) = &_input.stage {
-                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_40) = &_input.stage {
+                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_40));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5047,12 +5298,8 @@ impl DescribeFunctionInput {
             input: &crate::input::DescribeFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5100,16 +5347,9 @@ impl DescribeFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeFunctionInput`](crate::input::DescribeFunctionInput)
@@ -5163,7 +5403,7 @@ pub type GetCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicy`](crate::operation::GetCachePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5177,15 +5417,15 @@ impl GetCachePolicyInput {
             _input: &crate::input::GetCachePolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.id;
-            let input_38 =
-                input_38
+            let input_41 = &_input.id;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_38, false);
+            let id = aws_smithy_http::label::fmt_string(input_41, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5211,12 +5451,8 @@ impl GetCachePolicyInput {
             input: &crate::input::GetCachePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5264,16 +5500,9 @@ impl GetCachePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetCachePolicyInput`](crate::input::GetCachePolicyInput)
@@ -5327,7 +5556,7 @@ pub type GetCachePolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetCachePolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicyConfig`](crate::operation::GetCachePolicyConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5341,15 +5570,15 @@ impl GetCachePolicyConfigInput {
             _input: &crate::input::GetCachePolicyConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.id;
-            let input_39 =
-                input_39
+            let input_42 = &_input.id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_39, false);
+            let id = aws_smithy_http::label::fmt_string(input_42, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5375,12 +5604,8 @@ impl GetCachePolicyConfigInput {
             input: &crate::input::GetCachePolicyConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5428,16 +5653,9 @@ impl GetCachePolicyConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetCachePolicyConfigInput`](crate::input::GetCachePolicyConfigInput)
@@ -5484,7 +5702,7 @@ pub type GetCloudFrontOriginAccessIdentityInputOperationRetryAlias = aws_http::A
 impl GetCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentity`](crate::operation::GetCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5498,15 +5716,15 @@ impl GetCloudFrontOriginAccessIdentityInput {
             _input: &crate::input::GetCloudFrontOriginAccessIdentityInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.id;
-            let input_40 =
-                input_40
+            let input_43 = &_input.id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_40, false);
+            let id = aws_smithy_http::label::fmt_string(input_43, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5536,12 +5754,8 @@ impl GetCloudFrontOriginAccessIdentityInput {
             input: &crate::input::GetCloudFrontOriginAccessIdentityInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5589,16 +5803,9 @@ impl GetCloudFrontOriginAccessIdentityInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityInput`](crate::input::GetCloudFrontOriginAccessIdentityInput)
@@ -5646,7 +5853,7 @@ pub type GetCloudFrontOriginAccessIdentityConfigInputOperationRetryAlias =
 impl GetCloudFrontOriginAccessIdentityConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentityConfig`](crate::operation::GetCloudFrontOriginAccessIdentityConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5660,15 +5867,15 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
             _input: &crate::input::GetCloudFrontOriginAccessIdentityConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.id;
-            let input_41 =
-                input_41
+            let input_44 = &_input.id;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_41, false);
+            let id = aws_smithy_http::label::fmt_string(input_44, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5698,12 +5905,8 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
             input: &crate::input::GetCloudFrontOriginAccessIdentityConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5751,16 +5954,9 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityConfigInput`](crate::input::GetCloudFrontOriginAccessIdentityConfigInput)
@@ -5806,7 +6002,7 @@ pub type GetDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetDistribution`](crate::operation::GetDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5820,15 +6016,15 @@ impl GetDistributionInput {
             _input: &crate::input::GetDistributionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_42 = &_input.id;
-            let input_42 =
-                input_42
+            let input_45 = &_input.id;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_42, false);
+            let id = aws_smithy_http::label::fmt_string(input_45, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5854,12 +6050,8 @@ impl GetDistributionInput {
             input: &crate::input::GetDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5907,16 +6099,9 @@ impl GetDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDistributionInput`](crate::input::GetDistributionInput)
@@ -5962,7 +6147,7 @@ pub type GetDistributionConfigInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl GetDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfig`](crate::operation::GetDistributionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5976,15 +6161,15 @@ impl GetDistributionConfigInput {
             _input: &crate::input::GetDistributionConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.id;
-            let input_43 =
-                input_43
+            let input_46 = &_input.id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_43, false);
+            let id = aws_smithy_http::label::fmt_string(input_46, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6010,12 +6195,8 @@ impl GetDistributionConfigInput {
             input: &crate::input::GetDistributionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6063,16 +6244,9 @@ impl GetDistributionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigInput`](crate::input::GetDistributionConfigInput)
@@ -6119,7 +6293,7 @@ pub type GetFieldLevelEncryptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetFieldLevelEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryption`](crate::operation::GetFieldLevelEncryption)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6133,15 +6307,15 @@ impl GetFieldLevelEncryptionInput {
             _input: &crate::input::GetFieldLevelEncryptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.id;
-            let input_44 =
-                input_44
+            let input_47 = &_input.id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_44, false);
+            let id = aws_smithy_http::label::fmt_string(input_47, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6167,12 +6341,8 @@ impl GetFieldLevelEncryptionInput {
             input: &crate::input::GetFieldLevelEncryptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6220,16 +6390,9 @@ impl GetFieldLevelEncryptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionInput`](crate::input::GetFieldLevelEncryptionInput)
@@ -6276,7 +6439,7 @@ pub type GetFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsEr
 impl GetFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionConfig`](crate::operation::GetFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6290,15 +6453,15 @@ impl GetFieldLevelEncryptionConfigInput {
             _input: &crate::input::GetFieldLevelEncryptionConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_45 = &_input.id;
-            let input_45 =
-                input_45
+            let input_48 = &_input.id;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_45, false);
+            let id = aws_smithy_http::label::fmt_string(input_48, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6328,12 +6491,8 @@ impl GetFieldLevelEncryptionConfigInput {
             input: &crate::input::GetFieldLevelEncryptionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6381,16 +6540,9 @@ impl GetFieldLevelEncryptionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionConfigInput`](crate::input::GetFieldLevelEncryptionConfigInput)
@@ -6437,7 +6589,7 @@ pub type GetFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsE
 impl GetFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfile`](crate::operation::GetFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6451,15 +6603,15 @@ impl GetFieldLevelEncryptionProfileInput {
             _input: &crate::input::GetFieldLevelEncryptionProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_46 = &_input.id;
-            let input_46 =
-                input_46
+            let input_49 = &_input.id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_46, false);
+            let id = aws_smithy_http::label::fmt_string(input_49, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6489,12 +6641,8 @@ impl GetFieldLevelEncryptionProfileInput {
             input: &crate::input::GetFieldLevelEncryptionProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6542,16 +6690,9 @@ impl GetFieldLevelEncryptionProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionProfileInput`](crate::input::GetFieldLevelEncryptionProfileInput)
@@ -6599,7 +6740,7 @@ pub type GetFieldLevelEncryptionProfileConfigInputOperationRetryAlias =
 impl GetFieldLevelEncryptionProfileConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfileConfig`](crate::operation::GetFieldLevelEncryptionProfileConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6613,15 +6754,15 @@ impl GetFieldLevelEncryptionProfileConfigInput {
             _input: &crate::input::GetFieldLevelEncryptionProfileConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.id;
-            let input_47 =
-                input_47
+            let input_50 = &_input.id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_47, false);
+            let id = aws_smithy_http::label::fmt_string(input_50, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6651,12 +6792,8 @@ impl GetFieldLevelEncryptionProfileConfigInput {
             input: &crate::input::GetFieldLevelEncryptionProfileConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6704,16 +6841,9 @@ impl GetFieldLevelEncryptionProfileConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionProfileConfigInput`](crate::input::GetFieldLevelEncryptionProfileConfigInput)
@@ -6776,7 +6906,7 @@ pub type GetFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetFunctionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunction`](crate::operation::GetFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6790,15 +6920,15 @@ impl GetFunctionInput {
             _input: &crate::input::GetFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.name;
-            let input_48 =
-                input_48
+            let input_51 = &_input.name;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_48, false);
+            let name = aws_smithy_http::label::fmt_string(input_51, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -6811,8 +6941,8 @@ impl GetFunctionInput {
         }
         fn uri_query(_input: &crate::input::GetFunctionInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_49) = &_input.stage {
-                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_49));
+            if let Some(inner_52) = &_input.stage {
+                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_52));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6831,12 +6961,8 @@ impl GetFunctionInput {
             input: &crate::input::GetFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6884,16 +7010,9 @@ impl GetFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput)
@@ -6958,7 +7077,7 @@ pub type GetInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`GetInvalidation`](crate::operation::GetInvalidation)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6972,30 +7091,30 @@ impl GetInvalidationInput {
             _input: &crate::input::GetInvalidationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.distribution_id;
-            let input_50 =
-                input_50
+            let input_53 = &_input.distribution_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "distribution_id",
                         details: "cannot be empty or unset",
                     })?;
-            let distribution_id = aws_smithy_http::label::fmt_string(input_50, false);
+            let distribution_id = aws_smithy_http::label::fmt_string(input_53, false);
             if distribution_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "distribution_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_51 = &_input.id;
-            let input_51 =
-                input_51
+            let input_54 = &_input.id;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_51, false);
+            let id = aws_smithy_http::label::fmt_string(input_54, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7026,12 +7145,8 @@ impl GetInvalidationInput {
             input: &crate::input::GetInvalidationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7079,16 +7194,9 @@ impl GetInvalidationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetInvalidationInput`](crate::input::GetInvalidationInput)
@@ -7136,7 +7244,7 @@ pub type GetKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroup`](crate::operation::GetKeyGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7150,15 +7258,15 @@ impl GetKeyGroupInput {
             _input: &crate::input::GetKeyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.id;
-            let input_52 =
-                input_52
+            let input_55 = &_input.id;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_52, false);
+            let id = aws_smithy_http::label::fmt_string(input_55, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7184,12 +7292,8 @@ impl GetKeyGroupInput {
             input: &crate::input::GetKeyGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7237,16 +7341,9 @@ impl GetKeyGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetKeyGroupInput`](crate::input::GetKeyGroupInput)
@@ -7294,7 +7391,7 @@ pub type GetKeyGroupConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetKeyGroupConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroupConfig`](crate::operation::GetKeyGroupConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7308,15 +7405,15 @@ impl GetKeyGroupConfigInput {
             _input: &crate::input::GetKeyGroupConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_53 = &_input.id;
-            let input_53 =
-                input_53
+            let input_56 = &_input.id;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_53, false);
+            let id = aws_smithy_http::label::fmt_string(input_56, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7342,12 +7439,8 @@ impl GetKeyGroupConfigInput {
             input: &crate::input::GetKeyGroupConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7395,16 +7488,9 @@ impl GetKeyGroupConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetKeyGroupConfigInput`](crate::input::GetKeyGroupConfigInput)
@@ -7456,7 +7542,7 @@ pub type GetMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorR
 impl GetMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`GetMonitoringSubscription`](crate::operation::GetMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7470,15 +7556,15 @@ impl GetMonitoringSubscriptionInput {
             _input: &crate::input::GetMonitoringSubscriptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_54 = &_input.distribution_id;
-            let input_54 =
-                input_54
+            let input_57 = &_input.distribution_id;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "distribution_id",
                         details: "cannot be empty or unset",
                     })?;
-            let distribution_id = aws_smithy_http::label::fmt_string(input_54, false);
+            let distribution_id = aws_smithy_http::label::fmt_string(input_57, false);
             if distribution_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "distribution_id",
@@ -7508,12 +7594,8 @@ impl GetMonitoringSubscriptionInput {
             input: &crate::input::GetMonitoringSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7561,16 +7643,9 @@ impl GetMonitoringSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetMonitoringSubscriptionInput`](crate::input::GetMonitoringSubscriptionInput)
@@ -7624,7 +7699,7 @@ pub type GetOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicy`](crate::operation::GetOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7638,15 +7713,15 @@ impl GetOriginRequestPolicyInput {
             _input: &crate::input::GetOriginRequestPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_55 = &_input.id;
-            let input_55 =
-                input_55
+            let input_58 = &_input.id;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_55, false);
+            let id = aws_smithy_http::label::fmt_string(input_58, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7672,12 +7747,8 @@ impl GetOriginRequestPolicyInput {
             input: &crate::input::GetOriginRequestPolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7725,16 +7796,9 @@ impl GetOriginRequestPolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyInput`](crate::input::GetOriginRequestPolicyInput)
@@ -7789,7 +7853,7 @@ pub type GetOriginRequestPolicyConfigInputOperationRetryAlias = aws_http::AwsErr
 impl GetOriginRequestPolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicyConfig`](crate::operation::GetOriginRequestPolicyConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7803,15 +7867,15 @@ impl GetOriginRequestPolicyConfigInput {
             _input: &crate::input::GetOriginRequestPolicyConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_56 = &_input.id;
-            let input_56 =
-                input_56
+            let input_59 = &_input.id;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_56, false);
+            let id = aws_smithy_http::label::fmt_string(input_59, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7841,12 +7905,8 @@ impl GetOriginRequestPolicyConfigInput {
             input: &crate::input::GetOriginRequestPolicyConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7894,16 +7954,9 @@ impl GetOriginRequestPolicyConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyConfigInput`](crate::input::GetOriginRequestPolicyConfigInput)
@@ -7949,7 +8002,7 @@ pub type GetPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7963,15 +8016,15 @@ impl GetPublicKeyInput {
             _input: &crate::input::GetPublicKeyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_57 = &_input.id;
-            let input_57 =
-                input_57
+            let input_60 = &_input.id;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_57, false);
+            let id = aws_smithy_http::label::fmt_string(input_60, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7997,12 +8050,8 @@ impl GetPublicKeyInput {
             input: &crate::input::GetPublicKeyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8050,16 +8099,9 @@ impl GetPublicKeyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetPublicKeyInput`](crate::input::GetPublicKeyInput)
@@ -8105,7 +8147,7 @@ pub type GetPublicKeyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetPublicKeyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKeyConfig`](crate::operation::GetPublicKeyConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8119,15 +8161,15 @@ impl GetPublicKeyConfigInput {
             _input: &crate::input::GetPublicKeyConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.id;
-            let input_58 =
-                input_58
+            let input_61 = &_input.id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_58, false);
+            let id = aws_smithy_http::label::fmt_string(input_61, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8153,12 +8195,8 @@ impl GetPublicKeyConfigInput {
             input: &crate::input::GetPublicKeyConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8206,16 +8244,9 @@ impl GetPublicKeyConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetPublicKeyConfigInput`](crate::input::GetPublicKeyConfigInput)
@@ -8275,7 +8306,7 @@ pub type GetRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetRealtimeLogConfig`](crate::operation::GetRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8308,6 +8339,7 @@ impl GetRealtimeLogConfigInput {
             input: &crate::input::GetRealtimeLogConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8367,9 +8399,10 @@ impl GetRealtimeLogConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8382,6 +8415,322 @@ impl GetRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`GetRealtimeLogConfigInput`](crate::input::GetRealtimeLogConfigInput)
     pub fn builder() -> crate::input::get_realtime_log_config_input::Builder {
         crate::input::get_realtime_log_config_input::Builder::default()
+    }
+}
+
+/// See [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput)
+pub mod get_response_headers_policy_input {
+    /// A builder for [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetResponseHeadersPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetResponseHeadersPolicyInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetResponseHeadersPolicyInputOperationOutputAlias =
+    crate::operation::GetResponseHeadersPolicy;
+#[doc(hidden)]
+pub type GetResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetResponseHeadersPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicy`](crate::operation::GetResponseHeadersPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResponseHeadersPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetResponseHeadersPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_62 = &_input.id;
+            let input_62 =
+                input_62
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_62, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/2020-05-31/response-headers-policy/{Id}", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResponseHeadersPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResponseHeadersPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResponseHeadersPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResponseHeadersPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::get_response_headers_policy_input::Builder {
+        crate::input::get_response_headers_policy_input::Builder::default()
+    }
+}
+
+/// See [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput)
+pub mod get_response_headers_policy_config_input {
+    /// A builder for [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetResponseHeadersPolicyConfigInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetResponseHeadersPolicyConfigInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetResponseHeadersPolicyConfigInputOperationOutputAlias =
+    crate::operation::GetResponseHeadersPolicyConfig;
+#[doc(hidden)]
+pub type GetResponseHeadersPolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetResponseHeadersPolicyConfigInput {
+    /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicyConfig`](crate::operation::GetResponseHeadersPolicyConfig)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResponseHeadersPolicyConfig,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetResponseHeadersPolicyConfigInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_63 = &_input.id;
+            let input_63 =
+                input_63
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_63, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2020-05-31/response-headers-policy/{Id}/config",
+                Id = id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResponseHeadersPolicyConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResponseHeadersPolicyConfigInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResponseHeadersPolicyConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResponseHeadersPolicyConfig",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput)
+    pub fn builder() -> crate::input::get_response_headers_policy_config_input::Builder {
+        crate::input::get_response_headers_policy_config_input::Builder::default()
     }
 }
 
@@ -8423,7 +8772,7 @@ pub type GetStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl GetStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistribution`](crate::operation::GetStreamingDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8437,15 +8786,15 @@ impl GetStreamingDistributionInput {
             _input: &crate::input::GetStreamingDistributionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_59 = &_input.id;
-            let input_59 =
-                input_59
+            let input_64 = &_input.id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_59, false);
+            let id = aws_smithy_http::label::fmt_string(input_64, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8471,12 +8820,8 @@ impl GetStreamingDistributionInput {
             input: &crate::input::GetStreamingDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8524,16 +8869,9 @@ impl GetStreamingDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionInput`](crate::input::GetStreamingDistributionInput)
@@ -8580,7 +8918,7 @@ pub type GetStreamingDistributionConfigInputOperationRetryAlias = aws_http::AwsE
 impl GetStreamingDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistributionConfig`](crate::operation::GetStreamingDistributionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8594,15 +8932,15 @@ impl GetStreamingDistributionConfigInput {
             _input: &crate::input::GetStreamingDistributionConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_60 = &_input.id;
-            let input_60 =
-                input_60
+            let input_65 = &_input.id;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_60, false);
+            let id = aws_smithy_http::label::fmt_string(input_65, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8632,12 +8970,8 @@ impl GetStreamingDistributionConfigInput {
             input: &crate::input::GetStreamingDistributionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8685,16 +9019,9 @@ impl GetStreamingDistributionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionConfigInput`](crate::input::GetStreamingDistributionConfigInput)
@@ -8723,7 +9050,7 @@ pub mod list_cache_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
@@ -8739,7 +9066,7 @@ pub mod list_cache_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn set_type(
@@ -8797,7 +9124,7 @@ pub type ListCachePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListCachePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListCachePolicies`](crate::operation::ListCachePolicies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8816,16 +9143,16 @@ impl ListCachePoliciesInput {
         }
         fn uri_query(_input: &crate::input::ListCachePoliciesInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_61) = &_input.r#type {
-                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_61));
+            if let Some(inner_66) = &_input.r#type {
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_66));
             }
-            if let Some(inner_62) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+            if let Some(inner_67) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_67));
             }
-            if let Some(inner_63) = &_input.max_items {
+            if let Some(inner_68) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
                 );
             }
         }
@@ -8845,12 +9172,8 @@ impl ListCachePoliciesInput {
             input: &crate::input::ListCachePoliciesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8898,16 +9221,9 @@ impl ListCachePoliciesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListCachePoliciesInput`](crate::input::ListCachePoliciesInput)
@@ -8979,7 +9295,7 @@ pub type ListCloudFrontOriginAccessIdentitiesInputOperationRetryAlias =
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListCloudFrontOriginAccessIdentities`](crate::operation::ListCloudFrontOriginAccessIdentities)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9002,13 +9318,13 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_64) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_64));
+            if let Some(inner_69) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
             }
-            if let Some(inner_65) = &_input.max_items {
+            if let Some(inner_70) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
                 );
             }
         }
@@ -9028,12 +9344,8 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
             input: &crate::input::ListCloudFrontOriginAccessIdentitiesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9081,16 +9393,9 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesInput`](crate::input::ListCloudFrontOriginAccessIdentitiesInput)
@@ -9185,7 +9490,7 @@ pub type ListConflictingAliasesInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListConflictingAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListConflictingAliases`](crate::operation::ListConflictingAliases)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9204,22 +9509,22 @@ impl ListConflictingAliasesInput {
         }
         fn uri_query(_input: &crate::input::ListConflictingAliasesInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_66) = &_input.distribution_id {
+            if let Some(inner_71) = &_input.distribution_id {
                 query.push_kv(
                     "DistributionId",
-                    &aws_smithy_http::query::fmt_string(&inner_66),
+                    &aws_smithy_http::query::fmt_string(&inner_71),
                 );
             }
-            if let Some(inner_67) = &_input.alias {
-                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_67));
+            if let Some(inner_72) = &_input.alias {
+                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_72));
             }
-            if let Some(inner_68) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_68));
+            if let Some(inner_73) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_73));
             }
-            if let Some(inner_69) = &_input.max_items {
+            if let Some(inner_74) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
                 );
             }
         }
@@ -9239,12 +9544,8 @@ impl ListConflictingAliasesInput {
             input: &crate::input::ListConflictingAliasesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9292,16 +9593,9 @@ impl ListConflictingAliasesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListConflictingAliasesInput`](crate::input::ListConflictingAliasesInput)
@@ -9369,7 +9663,7 @@ pub type ListDistributionsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributions`](crate::operation::ListDistributions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9388,13 +9682,13 @@ impl ListDistributionsInput {
         }
         fn uri_query(_input: &crate::input::ListDistributionsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_70) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_70));
+            if let Some(inner_75) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
             }
-            if let Some(inner_71) = &_input.max_items {
+            if let Some(inner_76) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
                 );
             }
         }
@@ -9414,12 +9708,8 @@ impl ListDistributionsInput {
             input: &crate::input::ListDistributionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9467,16 +9757,9 @@ impl ListDistributionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsInput`](crate::input::ListDistributionsInput)
@@ -9558,7 +9841,7 @@ pub type ListDistributionsByCachePolicyIdInputOperationRetryAlias = aws_http::Aw
 impl ListDistributionsByCachePolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByCachePolicyId`](crate::operation::ListDistributionsByCachePolicyId)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9572,15 +9855,15 @@ impl ListDistributionsByCachePolicyIdInput {
             _input: &crate::input::ListDistributionsByCachePolicyIdInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.cache_policy_id;
-            let input_72 =
-                input_72
+            let input_77 = &_input.cache_policy_id;
+            let input_77 =
+                input_77
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cache_policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let cache_policy_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let cache_policy_id = aws_smithy_http::label::fmt_string(input_77, false);
             if cache_policy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cache_policy_id",
@@ -9600,13 +9883,13 @@ impl ListDistributionsByCachePolicyIdInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_73) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_73));
+            if let Some(inner_78) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_78));
             }
-            if let Some(inner_74) = &_input.max_items {
+            if let Some(inner_79) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                 );
             }
         }
@@ -9626,12 +9909,8 @@ impl ListDistributionsByCachePolicyIdInput {
             input: &crate::input::ListDistributionsByCachePolicyIdInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9679,16 +9958,9 @@ impl ListDistributionsByCachePolicyIdInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByCachePolicyIdInput`](crate::input::ListDistributionsByCachePolicyIdInput)
@@ -9767,7 +10039,7 @@ pub type ListDistributionsByKeyGroupInputOperationRetryAlias = aws_http::AwsErro
 impl ListDistributionsByKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByKeyGroup`](crate::operation::ListDistributionsByKeyGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9781,15 +10053,15 @@ impl ListDistributionsByKeyGroupInput {
             _input: &crate::input::ListDistributionsByKeyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_75 = &_input.key_group_id;
-            let input_75 =
-                input_75
+            let input_80 = &_input.key_group_id;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let key_group_id = aws_smithy_http::label::fmt_string(input_75, false);
+            let key_group_id = aws_smithy_http::label::fmt_string(input_80, false);
             if key_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key_group_id",
@@ -9809,13 +10081,13 @@ impl ListDistributionsByKeyGroupInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_76) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_76));
+            if let Some(inner_81) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_81));
             }
-            if let Some(inner_77) = &_input.max_items {
+            if let Some(inner_82) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_82).encode(),
                 );
             }
         }
@@ -9835,12 +10107,8 @@ impl ListDistributionsByKeyGroupInput {
             input: &crate::input::ListDistributionsByKeyGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9888,16 +10156,9 @@ impl ListDistributionsByKeyGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByKeyGroupInput`](crate::input::ListDistributionsByKeyGroupInput)
@@ -9984,7 +10245,7 @@ pub type ListDistributionsByOriginRequestPolicyIdInputOperationRetryAlias =
 impl ListDistributionsByOriginRequestPolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByOriginRequestPolicyId`](crate::operation::ListDistributionsByOriginRequestPolicyId)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9998,15 +10259,15 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             _input: &crate::input::ListDistributionsByOriginRequestPolicyIdInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.origin_request_policy_id;
-            let input_78 =
-                input_78
+            let input_83 = &_input.origin_request_policy_id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "origin_request_policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let origin_request_policy_id = aws_smithy_http::label::fmt_string(input_78, false);
+            let origin_request_policy_id = aws_smithy_http::label::fmt_string(input_83, false);
             if origin_request_policy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "origin_request_policy_id",
@@ -10026,13 +10287,13 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_79) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_79));
+            if let Some(inner_84) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
             }
-            if let Some(inner_80) = &_input.max_items {
+            if let Some(inner_85) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
                 );
             }
         }
@@ -10052,12 +10313,8 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             input: &crate::input::ListDistributionsByOriginRequestPolicyIdInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10105,16 +10362,9 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByOriginRequestPolicyIdInput`](crate::input::ListDistributionsByOriginRequestPolicyIdInput)
@@ -10217,7 +10467,7 @@ pub type ListDistributionsByRealtimeLogConfigInputOperationRetryAlias =
 impl ListDistributionsByRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByRealtimeLogConfig`](crate::operation::ListDistributionsByRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10250,6 +10500,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
             input: &crate::input::ListDistributionsByRealtimeLogConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10305,9 +10556,10 @@ impl ListDistributionsByRealtimeLogConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10320,6 +10572,213 @@ impl ListDistributionsByRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByRealtimeLogConfigInput`](crate::input::ListDistributionsByRealtimeLogConfigInput)
     pub fn builder() -> crate::input::list_distributions_by_realtime_log_config_input::Builder {
         crate::input::list_distributions_by_realtime_log_config_input::Builder::default()
+    }
+}
+
+/// See [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput)
+pub mod list_distributions_by_response_headers_policy_id_input {
+    /// A builder for [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) response_headers_policy_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Use this field when paginating results to indicate where to begin in your list of
+        /// distribution IDs. The response includes distribution IDs in the list that occur after
+        /// the marker. To get the next page of the list, set this field’s value to the value of
+        /// <code>NextMarker</code> from the current page’s response.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of
+        /// distribution IDs. The response includes distribution IDs in the list that occur after
+        /// the marker. To get the next page of the list, set this field’s value to the value of
+        /// <code>NextMarker</code> from the current page’s response.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+        /// list.</p>
+        pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_headers_policy_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+        /// list.</p>
+        pub fn set_response_headers_policy_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_headers_policy_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::ListDistributionsByResponseHeadersPolicyIdInput {
+                    marker: self.marker,
+                    max_items: self.max_items,
+                    response_headers_policy_id: self.response_headers_policy_id,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListDistributionsByResponseHeadersPolicyIdInputOperationOutputAlias =
+    crate::operation::ListDistributionsByResponseHeadersPolicyId;
+#[doc(hidden)]
+pub type ListDistributionsByResponseHeadersPolicyIdInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl ListDistributionsByResponseHeadersPolicyIdInput {
+    /// Consumes the builder and constructs an Operation<[`ListDistributionsByResponseHeadersPolicyId`](crate::operation::ListDistributionsByResponseHeadersPolicyId)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDistributionsByResponseHeadersPolicyId,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_86 = &_input.response_headers_policy_id;
+            let input_86 =
+                input_86
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "response_headers_policy_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let response_headers_policy_id = aws_smithy_http::label::fmt_string(input_86, false);
+            if response_headers_policy_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "response_headers_policy_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2020-05-31/distributionsByResponseHeadersPolicyId/{ResponseHeadersPolicyId}",
+                ResponseHeadersPolicyId = response_headers_policy_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
+            mut output: &mut String,
+        ) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_87) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_87));
+            }
+            if let Some(inner_88) = &_input.max_items {
+                query.push_kv(
+                    "MaxItems",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDistributionsByResponseHeadersPolicyId::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDistributionsByResponseHeadersPolicyId",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput)
+    pub fn builder() -> crate::input::list_distributions_by_response_headers_policy_id_input::Builder
+    {
+        crate::input::list_distributions_by_response_headers_policy_id_input::Builder::default()
     }
 }
 
@@ -10401,7 +10860,7 @@ pub type ListDistributionsByWebAclIdInputOperationRetryAlias = aws_http::AwsErro
 impl ListDistributionsByWebAclIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByWebACLId`](crate::operation::ListDistributionsByWebACLId)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10415,15 +10874,15 @@ impl ListDistributionsByWebAclIdInput {
             _input: &crate::input::ListDistributionsByWebAclIdInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.web_acl_id;
-            let input_81 =
-                input_81
+            let input_89 = &_input.web_acl_id;
+            let input_89 =
+                input_89
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "web_acl_id",
                         details: "cannot be empty or unset",
                     })?;
-            let web_acl_id = aws_smithy_http::label::fmt_string(input_81, false);
+            let web_acl_id = aws_smithy_http::label::fmt_string(input_89, false);
             if web_acl_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "web_acl_id",
@@ -10443,13 +10902,13 @@ impl ListDistributionsByWebAclIdInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_82) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_82));
+            if let Some(inner_90) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_90));
             }
-            if let Some(inner_83) = &_input.max_items {
+            if let Some(inner_91) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
                 );
             }
         }
@@ -10469,12 +10928,8 @@ impl ListDistributionsByWebAclIdInput {
             input: &crate::input::ListDistributionsByWebAclIdInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10522,16 +10977,9 @@ impl ListDistributionsByWebAclIdInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdInput`](crate::input::ListDistributionsByWebAclIdInput)
@@ -10596,7 +11044,7 @@ pub type ListFieldLevelEncryptionConfigsInputOperationRetryAlias = aws_http::Aws
 impl ListFieldLevelEncryptionConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionConfigs`](crate::operation::ListFieldLevelEncryptionConfigs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10619,13 +11067,13 @@ impl ListFieldLevelEncryptionConfigsInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_84) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+            if let Some(inner_92) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_92));
             }
-            if let Some(inner_85) = &_input.max_items {
+            if let Some(inner_93) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
                 );
             }
         }
@@ -10645,12 +11093,8 @@ impl ListFieldLevelEncryptionConfigsInput {
             input: &crate::input::ListFieldLevelEncryptionConfigsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10698,16 +11142,9 @@ impl ListFieldLevelEncryptionConfigsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionConfigsInput`](crate::input::ListFieldLevelEncryptionConfigsInput)
@@ -10772,7 +11209,7 @@ pub type ListFieldLevelEncryptionProfilesInputOperationRetryAlias = aws_http::Aw
 impl ListFieldLevelEncryptionProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionProfiles`](crate::operation::ListFieldLevelEncryptionProfiles)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10795,13 +11232,13 @@ impl ListFieldLevelEncryptionProfilesInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_86) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_86));
+            if let Some(inner_94) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_94));
             }
-            if let Some(inner_87) = &_input.max_items {
+            if let Some(inner_95) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
                 );
             }
         }
@@ -10821,12 +11258,8 @@ impl ListFieldLevelEncryptionProfilesInput {
             input: &crate::input::ListFieldLevelEncryptionProfilesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10874,16 +11307,9 @@ impl ListFieldLevelEncryptionProfilesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionProfilesInput`](crate::input::ListFieldLevelEncryptionProfilesInput)
@@ -10966,7 +11392,7 @@ pub type ListFunctionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctions`](crate::operation::ListFunctions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10985,17 +11411,17 @@ impl ListFunctionsInput {
         }
         fn uri_query(_input: &crate::input::ListFunctionsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_88) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+            if let Some(inner_96) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_96));
             }
-            if let Some(inner_89) = &_input.max_items {
+            if let Some(inner_97) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_97).encode(),
                 );
             }
-            if let Some(inner_90) = &_input.stage {
-                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_90));
+            if let Some(inner_98) = &_input.stage {
+                query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_98));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11014,12 +11440,8 @@ impl ListFunctionsInput {
             input: &crate::input::ListFunctionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -11067,16 +11489,9 @@ impl ListFunctionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput)
@@ -11163,7 +11578,7 @@ pub type ListInvalidationsInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListInvalidationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvalidations`](crate::operation::ListInvalidations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11177,15 +11592,15 @@ impl ListInvalidationsInput {
             _input: &crate::input::ListInvalidationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_91 = &_input.distribution_id;
-            let input_91 =
-                input_91
+            let input_99 = &_input.distribution_id;
+            let input_99 =
+                input_99
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "distribution_id",
                         details: "cannot be empty or unset",
                     })?;
-            let distribution_id = aws_smithy_http::label::fmt_string(input_91, false);
+            let distribution_id = aws_smithy_http::label::fmt_string(input_99, false);
             if distribution_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "distribution_id",
@@ -11202,13 +11617,13 @@ impl ListInvalidationsInput {
         }
         fn uri_query(_input: &crate::input::ListInvalidationsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_92) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_92));
+            if let Some(inner_100) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_100));
             }
-            if let Some(inner_93) = &_input.max_items {
+            if let Some(inner_101) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
                 );
             }
         }
@@ -11228,12 +11643,8 @@ impl ListInvalidationsInput {
             input: &crate::input::ListInvalidationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -11281,16 +11692,9 @@ impl ListInvalidationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListInvalidationsInput`](crate::input::ListInvalidationsInput)
@@ -11356,7 +11760,7 @@ pub type ListKeyGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListKeyGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyGroups`](crate::operation::ListKeyGroups)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11375,13 +11779,13 @@ impl ListKeyGroupsInput {
         }
         fn uri_query(_input: &crate::input::ListKeyGroupsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_94) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_94));
+            if let Some(inner_102) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_102));
             }
-            if let Some(inner_95) = &_input.max_items {
+            if let Some(inner_103) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_103).encode(),
                 );
             }
         }
@@ -11401,12 +11805,8 @@ impl ListKeyGroupsInput {
             input: &crate::input::ListKeyGroupsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -11454,16 +11854,9 @@ impl ListKeyGroupsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListKeyGroupsInput`](crate::input::ListKeyGroupsInput)
@@ -11492,7 +11885,7 @@ pub mod list_origin_request_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
@@ -11508,7 +11901,7 @@ pub mod list_origin_request_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn set_type(
@@ -11567,7 +11960,7 @@ pub type ListOriginRequestPoliciesInputOperationRetryAlias = aws_http::AwsErrorR
 impl ListOriginRequestPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListOriginRequestPolicies`](crate::operation::ListOriginRequestPolicies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11589,16 +11982,16 @@ impl ListOriginRequestPoliciesInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_96) = &_input.r#type {
-                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_96));
+            if let Some(inner_104) = &_input.r#type {
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_104));
             }
-            if let Some(inner_97) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_97));
+            if let Some(inner_105) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_105));
             }
-            if let Some(inner_98) = &_input.max_items {
+            if let Some(inner_106) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_106).encode(),
                 );
             }
         }
@@ -11618,12 +12011,8 @@ impl ListOriginRequestPoliciesInput {
             input: &crate::input::ListOriginRequestPoliciesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -11671,16 +12060,9 @@ impl ListOriginRequestPoliciesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListOriginRequestPoliciesInput`](crate::input::ListOriginRequestPoliciesInput)
@@ -11744,7 +12126,7 @@ pub type ListPublicKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11763,13 +12145,13 @@ impl ListPublicKeysInput {
         }
         fn uri_query(_input: &crate::input::ListPublicKeysInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_99) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_99));
+            if let Some(inner_107) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_107));
             }
-            if let Some(inner_100) = &_input.max_items {
+            if let Some(inner_108) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_100).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
                 );
             }
         }
@@ -11789,12 +12171,8 @@ impl ListPublicKeysInput {
             input: &crate::input::ListPublicKeysInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -11842,16 +12220,9 @@ impl ListPublicKeysInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListPublicKeysInput`](crate::input::ListPublicKeysInput)
@@ -11917,7 +12288,7 @@ pub type ListRealtimeLogConfigsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListRealtimeLogConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeLogConfigs`](crate::operation::ListRealtimeLogConfigs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11936,14 +12307,14 @@ impl ListRealtimeLogConfigsInput {
         }
         fn uri_query(_input: &crate::input::ListRealtimeLogConfigsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_101) = &_input.max_items {
+            if let Some(inner_109) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_109).encode(),
                 );
             }
-            if let Some(inner_102) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_102));
+            if let Some(inner_110) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_110));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11962,12 +12333,8 @@ impl ListRealtimeLogConfigsInput {
             input: &crate::input::ListRealtimeLogConfigsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -12015,21 +12382,223 @@ impl ListRealtimeLogConfigsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListRealtimeLogConfigsInput`](crate::input::ListRealtimeLogConfigsInput)
     pub fn builder() -> crate::input::list_realtime_log_configs_input::Builder {
         crate::input::list_realtime_log_configs_input::Builder::default()
+    }
+}
+
+/// See [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput)
+pub mod list_response_headers_policies_input {
+    /// A builder for [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom</code> – Gets only the custom policies created in your
+        /// Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom</code> – Gets only the custom policies created in your
+        /// Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response
+        /// headers policies. The response includes response headers policies in the list that occur
+        /// after the marker. To get the next page of the list, set this field’s value to the value
+        /// of <code>NextMarker</code> from the current page’s response. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response
+        /// headers policies. The response includes response headers policies in the list that occur
+        /// after the marker. To get the next page of the list, set this field’s value to the value
+        /// of <code>NextMarker</code> from the current page’s response. </p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListResponseHeadersPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListResponseHeadersPoliciesInput {
+                r#type: self.r#type,
+                marker: self.marker,
+                max_items: self.max_items,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListResponseHeadersPoliciesInputOperationOutputAlias =
+    crate::operation::ListResponseHeadersPolicies;
+#[doc(hidden)]
+pub type ListResponseHeadersPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListResponseHeadersPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListResponseHeadersPolicies`](crate::operation::ListResponseHeadersPolicies)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListResponseHeadersPolicies,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListResponseHeadersPoliciesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/2020-05-31/response-headers-policy")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListResponseHeadersPoliciesInput,
+            mut output: &mut String,
+        ) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_111) = &_input.r#type {
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_111));
+            }
+            if let Some(inner_112) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_112));
+            }
+            if let Some(inner_113) = &_input.max_items {
+                query.push_kv(
+                    "MaxItems",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_113).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResponseHeadersPoliciesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResponseHeadersPoliciesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResponseHeadersPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListResponseHeadersPolicies",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput)
+    pub fn builder() -> crate::input::list_response_headers_policies_input::Builder {
+        crate::input::list_response_headers_policies_input::Builder::default()
     }
 }
 
@@ -12085,7 +12654,7 @@ pub type ListStreamingDistributionsInputOperationRetryAlias = aws_http::AwsError
 impl ListStreamingDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingDistributions`](crate::operation::ListStreamingDistributions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12108,13 +12677,13 @@ impl ListStreamingDistributionsInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_103) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_103));
+            if let Some(inner_114) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_114));
             }
-            if let Some(inner_104) = &_input.max_items {
+            if let Some(inner_115) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_115).encode(),
                 );
             }
         }
@@ -12134,12 +12703,8 @@ impl ListStreamingDistributionsInput {
             input: &crate::input::ListStreamingDistributionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -12187,16 +12752,9 @@ impl ListStreamingDistributionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStreamingDistributionsInput`](crate::input::ListStreamingDistributionsInput)
@@ -12244,7 +12802,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12263,8 +12821,8 @@ impl ListTagsForResourceInput {
         }
         fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_105) = &_input.resource {
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_105));
+            if let Some(inner_116) = &_input.resource {
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_116));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12283,12 +12841,8 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -12336,16 +12890,9 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -12407,7 +12954,7 @@ pub type PublishFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl PublishFunctionInput {
     /// Consumes the builder and constructs an Operation<[`PublishFunction`](crate::operation::PublishFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12421,15 +12968,15 @@ impl PublishFunctionInput {
             _input: &crate::input::PublishFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_106 = &_input.name;
-            let input_106 =
-                input_106
+            let input_117 = &_input.name;
+            let input_117 =
+                input_117
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_106, false);
+            let name = aws_smithy_http::label::fmt_string(input_117, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -12445,11 +12992,11 @@ impl PublishFunctionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_107) = &_input.if_match {
-                let formatted_108 = AsRef::<str>::as_ref(inner_107);
-                if !formatted_108.is_empty() {
+            if let Some(inner_118) = &_input.if_match {
+                let formatted_119 = AsRef::<str>::as_ref(inner_118);
+                if !formatted_119.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_108;
+                    let header_value = formatted_119;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -12479,12 +13026,8 @@ impl PublishFunctionInput {
             input: &crate::input::PublishFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/xml",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -12532,16 +13075,9 @@ impl PublishFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PublishFunctionInput`](crate::input::PublishFunctionInput)
@@ -12601,7 +13137,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12621,8 +13157,8 @@ impl TagResourceInput {
         fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("Operation", "Tag");
-            if let Some(inner_109) = &_input.resource {
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_109));
+            if let Some(inner_120) = &_input.resource {
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_120));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12641,6 +13177,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12694,9 +13231,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12799,7 +13337,7 @@ pub type TestFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TestFunctionInput {
     /// Consumes the builder and constructs an Operation<[`TestFunction`](crate::operation::TestFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12813,15 +13351,15 @@ impl TestFunctionInput {
             _input: &crate::input::TestFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_110 = &_input.name;
-            let input_110 =
-                input_110
+            let input_121 = &_input.name;
+            let input_121 =
+                input_121
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_110, false);
+            let name = aws_smithy_http::label::fmt_string(input_121, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -12837,11 +13375,11 @@ impl TestFunctionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_111) = &_input.if_match {
-                let formatted_112 = AsRef::<str>::as_ref(inner_111);
-                if !formatted_112.is_empty() {
+            if let Some(inner_122) = &_input.if_match {
+                let formatted_123 = AsRef::<str>::as_ref(inner_122);
+                if !formatted_123.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_112;
+                    let header_value = formatted_123;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -12871,6 +13409,7 @@ impl TestFunctionInput {
             input: &crate::input::TestFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12927,9 +13466,10 @@ impl TestFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12996,7 +13536,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13016,8 +13556,8 @@ impl UntagResourceInput {
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("Operation", "Untag");
-            if let Some(inner_113) = &_input.resource {
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_113));
+            if let Some(inner_124) = &_input.resource {
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_124));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13036,6 +13576,7 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13089,9 +13630,10 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13113,11 +13655,24 @@ pub mod update_cache_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
-        pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     }
     impl Builder {
+        /// <p>A cache policy configuration.</p>
+        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
+            self.cache_policy_config = Some(input);
+            self
+        }
+        /// <p>A cache policy configuration.</p>
+        pub fn set_cache_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::CachePolicyConfig>,
+        ) -> Self {
+            self.cache_policy_config = input;
+            self
+        }
         /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
         /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
         /// <code>GetDistributionConfig</code>.</p>
@@ -13146,19 +13701,6 @@ pub mod update_cache_policy_input {
             self.if_match = input;
             self
         }
-        /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
-            self.cache_policy_config = Some(input);
-            self
-        }
-        /// <p>A cache policy configuration.</p>
-        pub fn set_cache_policy_config(
-            mut self,
-            input: std::option::Option<crate::model::CachePolicyConfig>,
-        ) -> Self {
-            self.cache_policy_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateCachePolicyInput`](crate::input::UpdateCachePolicyInput)
         pub fn build(
             self,
@@ -13167,9 +13709,9 @@ pub mod update_cache_policy_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCachePolicyInput {
+                cache_policy_config: self.cache_policy_config,
                 id: self.id,
                 if_match: self.if_match,
-                cache_policy_config: self.cache_policy_config,
             })
         }
     }
@@ -13181,7 +13723,7 @@ pub type UpdateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCachePolicy`](crate::operation::UpdateCachePolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13195,15 +13737,15 @@ impl UpdateCachePolicyInput {
             _input: &crate::input::UpdateCachePolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_114 = &_input.id;
-            let input_114 =
-                input_114
+            let input_125 = &_input.id;
+            let input_125 =
+                input_125
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_114, false);
+            let id = aws_smithy_http::label::fmt_string(input_125, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -13219,11 +13761,11 @@ impl UpdateCachePolicyInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_115) = &_input.if_match {
-                let formatted_116 = AsRef::<str>::as_ref(inner_115);
-                if !formatted_116.is_empty() {
+            if let Some(inner_126) = &_input.if_match {
+                let formatted_127 = AsRef::<str>::as_ref(inner_126);
+                if !formatted_127.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_116;
+                    let header_value = formatted_127;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -13253,6 +13795,7 @@ impl UpdateCachePolicyInput {
             input: &crate::input::UpdateCachePolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13307,9 +13850,10 @@ impl UpdateCachePolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13331,12 +13875,28 @@ pub mod update_cloud_front_origin_access_identity_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) if_match: std::option::Option<std::string::String>,
         pub(crate) cloud_front_origin_access_identity_config:
             std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The identity's configuration information.</p>
+        pub fn cloud_front_origin_access_identity_config(
+            mut self,
+            input: crate::model::CloudFrontOriginAccessIdentityConfig,
+        ) -> Self {
+            self.cloud_front_origin_access_identity_config = Some(input);
+            self
+        }
+        /// <p>The identity's configuration information.</p>
+        pub fn set_cloud_front_origin_access_identity_config(
+            mut self,
+            input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
+        ) -> Self {
+            self.cloud_front_origin_access_identity_config = input;
+            self
+        }
         /// <p>The identity's id.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -13359,22 +13919,6 @@ pub mod update_cloud_front_origin_access_identity_input {
             self.if_match = input;
             self
         }
-        /// <p>The identity's configuration information.</p>
-        pub fn cloud_front_origin_access_identity_config(
-            mut self,
-            input: crate::model::CloudFrontOriginAccessIdentityConfig,
-        ) -> Self {
-            self.cloud_front_origin_access_identity_config = Some(input);
-            self
-        }
-        /// <p>The identity's configuration information.</p>
-        pub fn set_cloud_front_origin_access_identity_config(
-            mut self,
-            input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
-        ) -> Self {
-            self.cloud_front_origin_access_identity_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateCloudFrontOriginAccessIdentityInput`](crate::input::UpdateCloudFrontOriginAccessIdentityInput)
         pub fn build(
             self,
@@ -13383,10 +13927,10 @@ pub mod update_cloud_front_origin_access_identity_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCloudFrontOriginAccessIdentityInput {
-                id: self.id,
-                if_match: self.if_match,
                 cloud_front_origin_access_identity_config: self
                     .cloud_front_origin_access_identity_config,
+                id: self.id,
+                if_match: self.if_match,
             })
         }
     }
@@ -13400,7 +13944,7 @@ pub type UpdateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
 impl UpdateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCloudFrontOriginAccessIdentity`](crate::operation::UpdateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13414,15 +13958,15 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             _input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_117 = &_input.id;
-            let input_117 =
-                input_117
+            let input_128 = &_input.id;
+            let input_128 =
+                input_128
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_117, false);
+            let id = aws_smithy_http::label::fmt_string(input_128, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -13442,11 +13986,11 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_118) = &_input.if_match {
-                let formatted_119 = AsRef::<str>::as_ref(inner_118);
-                if !formatted_119.is_empty() {
+            if let Some(inner_129) = &_input.if_match {
+                let formatted_130 = AsRef::<str>::as_ref(inner_129);
+                if !formatted_130.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_119;
+                    let header_value = formatted_130;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -13476,6 +14020,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13532,9 +14077,10 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13556,11 +14102,24 @@ pub mod update_distribution_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) distribution_config: std::option::Option<crate::model::DistributionConfig>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
-        pub(crate) distribution_config: std::option::Option<crate::model::DistributionConfig>,
     }
     impl Builder {
+        /// <p>The distribution's configuration information.</p>
+        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
+            self.distribution_config = Some(input);
+            self
+        }
+        /// <p>The distribution's configuration information.</p>
+        pub fn set_distribution_config(
+            mut self,
+            input: std::option::Option<crate::model::DistributionConfig>,
+        ) -> Self {
+            self.distribution_config = input;
+            self
+        }
         /// <p>The distribution's id.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -13583,19 +14142,6 @@ pub mod update_distribution_input {
             self.if_match = input;
             self
         }
-        /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
-            self.distribution_config = Some(input);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn set_distribution_config(
-            mut self,
-            input: std::option::Option<crate::model::DistributionConfig>,
-        ) -> Self {
-            self.distribution_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::input::UpdateDistributionInput)
         pub fn build(
             self,
@@ -13604,9 +14150,9 @@ pub mod update_distribution_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDistributionInput {
+                distribution_config: self.distribution_config,
                 id: self.id,
                 if_match: self.if_match,
-                distribution_config: self.distribution_config,
             })
         }
     }
@@ -13618,7 +14164,7 @@ pub type UpdateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl UpdateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistribution`](crate::operation::UpdateDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13632,15 +14178,15 @@ impl UpdateDistributionInput {
             _input: &crate::input::UpdateDistributionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_120 = &_input.id;
-            let input_120 =
-                input_120
+            let input_131 = &_input.id;
+            let input_131 =
+                input_131
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_120, false);
+            let id = aws_smithy_http::label::fmt_string(input_131, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -13656,11 +14202,11 @@ impl UpdateDistributionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_121) = &_input.if_match {
-                let formatted_122 = AsRef::<str>::as_ref(inner_121);
-                if !formatted_122.is_empty() {
+            if let Some(inner_132) = &_input.if_match {
+                let formatted_133 = AsRef::<str>::as_ref(inner_132);
+                if !formatted_133.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_122;
+                    let header_value = formatted_133;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -13690,6 +14236,7 @@ impl UpdateDistributionInput {
             input: &crate::input::UpdateDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13744,9 +14291,10 @@ impl UpdateDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13768,12 +14316,28 @@ pub mod update_field_level_encryption_config_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) if_match: std::option::Option<std::string::String>,
         pub(crate) field_level_encryption_config:
             std::option::Option<crate::model::FieldLevelEncryptionConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>Request to update a field-level encryption configuration. </p>
+        pub fn field_level_encryption_config(
+            mut self,
+            input: crate::model::FieldLevelEncryptionConfig,
+        ) -> Self {
+            self.field_level_encryption_config = Some(input);
+            self
+        }
+        /// <p>Request to update a field-level encryption configuration. </p>
+        pub fn set_field_level_encryption_config(
+            mut self,
+            input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
+        ) -> Self {
+            self.field_level_encryption_config = input;
+            self
+        }
         /// <p>The ID of the configuration you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -13796,22 +14360,6 @@ pub mod update_field_level_encryption_config_input {
             self.if_match = input;
             self
         }
-        /// <p>Request to update a field-level encryption configuration. </p>
-        pub fn field_level_encryption_config(
-            mut self,
-            input: crate::model::FieldLevelEncryptionConfig,
-        ) -> Self {
-            self.field_level_encryption_config = Some(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption configuration. </p>
-        pub fn set_field_level_encryption_config(
-            mut self,
-            input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
-        ) -> Self {
-            self.field_level_encryption_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigInput`](crate::input::UpdateFieldLevelEncryptionConfigInput)
         pub fn build(
             self,
@@ -13820,9 +14368,9 @@ pub mod update_field_level_encryption_config_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFieldLevelEncryptionConfigInput {
+                field_level_encryption_config: self.field_level_encryption_config,
                 id: self.id,
                 if_match: self.if_match,
-                field_level_encryption_config: self.field_level_encryption_config,
             })
         }
     }
@@ -13835,7 +14383,7 @@ pub type UpdateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::Aw
 impl UpdateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionConfig`](crate::operation::UpdateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13849,15 +14397,15 @@ impl UpdateFieldLevelEncryptionConfigInput {
             _input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_123 = &_input.id;
-            let input_123 =
-                input_123
+            let input_134 = &_input.id;
+            let input_134 =
+                input_134
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_123, false);
+            let id = aws_smithy_http::label::fmt_string(input_134, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -13877,11 +14425,11 @@ impl UpdateFieldLevelEncryptionConfigInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_124) = &_input.if_match {
-                let formatted_125 = AsRef::<str>::as_ref(inner_124);
-                if !formatted_125.is_empty() {
+            if let Some(inner_135) = &_input.if_match {
+                let formatted_136 = AsRef::<str>::as_ref(inner_135);
+                if !formatted_136.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_125;
+                    let header_value = formatted_136;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -13911,6 +14459,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
             input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13966,9 +14515,10 @@ impl UpdateFieldLevelEncryptionConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13990,12 +14540,28 @@ pub mod update_field_level_encryption_profile_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) if_match: std::option::Option<std::string::String>,
         pub(crate) field_level_encryption_profile_config:
             std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>Request to update a field-level encryption profile. </p>
+        pub fn field_level_encryption_profile_config(
+            mut self,
+            input: crate::model::FieldLevelEncryptionProfileConfig,
+        ) -> Self {
+            self.field_level_encryption_profile_config = Some(input);
+            self
+        }
+        /// <p>Request to update a field-level encryption profile. </p>
+        pub fn set_field_level_encryption_profile_config(
+            mut self,
+            input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
+        ) -> Self {
+            self.field_level_encryption_profile_config = input;
+            self
+        }
         /// <p>The ID of the field-level encryption profile request. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -14018,22 +14584,6 @@ pub mod update_field_level_encryption_profile_input {
             self.if_match = input;
             self
         }
-        /// <p>Request to update a field-level encryption profile. </p>
-        pub fn field_level_encryption_profile_config(
-            mut self,
-            input: crate::model::FieldLevelEncryptionProfileConfig,
-        ) -> Self {
-            self.field_level_encryption_profile_config = Some(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption profile. </p>
-        pub fn set_field_level_encryption_profile_config(
-            mut self,
-            input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
-        ) -> Self {
-            self.field_level_encryption_profile_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionProfileInput`](crate::input::UpdateFieldLevelEncryptionProfileInput)
         pub fn build(
             self,
@@ -14042,9 +14592,9 @@ pub mod update_field_level_encryption_profile_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFieldLevelEncryptionProfileInput {
+                field_level_encryption_profile_config: self.field_level_encryption_profile_config,
                 id: self.id,
                 if_match: self.if_match,
-                field_level_encryption_profile_config: self.field_level_encryption_profile_config,
             })
         }
     }
@@ -14057,7 +14607,7 @@ pub type UpdateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::A
 impl UpdateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionProfile`](crate::operation::UpdateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14071,15 +14621,15 @@ impl UpdateFieldLevelEncryptionProfileInput {
             _input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_126 = &_input.id;
-            let input_126 =
-                input_126
+            let input_137 = &_input.id;
+            let input_137 =
+                input_137
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_126, false);
+            let id = aws_smithy_http::label::fmt_string(input_137, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14099,11 +14649,11 @@ impl UpdateFieldLevelEncryptionProfileInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_127) = &_input.if_match {
-                let formatted_128 = AsRef::<str>::as_ref(inner_127);
-                if !formatted_128.is_empty() {
+            if let Some(inner_138) = &_input.if_match {
+                let formatted_139 = AsRef::<str>::as_ref(inner_138);
+                if !formatted_139.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_128;
+                    let header_value = formatted_139;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -14133,6 +14683,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
             input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14188,9 +14739,10 @@ impl UpdateFieldLevelEncryptionProfileInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14291,7 +14843,7 @@ pub type UpdateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunction`](crate::operation::UpdateFunction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14305,15 +14857,15 @@ impl UpdateFunctionInput {
             _input: &crate::input::UpdateFunctionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_129 = &_input.name;
-            let input_129 =
-                input_129
+            let input_140 = &_input.name;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_129, false);
+            let name = aws_smithy_http::label::fmt_string(input_140, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -14329,11 +14881,11 @@ impl UpdateFunctionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_130) = &_input.if_match {
-                let formatted_131 = AsRef::<str>::as_ref(inner_130);
-                if !formatted_131.is_empty() {
+            if let Some(inner_141) = &_input.if_match {
+                let formatted_142 = AsRef::<str>::as_ref(inner_141);
+                if !formatted_142.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_131;
+                    let header_value = formatted_142;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -14363,6 +14915,7 @@ impl UpdateFunctionInput {
             input: &crate::input::UpdateFunctionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14419,9 +14972,10 @@ impl UpdateFunctionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14443,11 +14997,24 @@ pub mod update_key_group_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
-        pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     }
     impl Builder {
+        /// <p>The key group configuration.</p>
+        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
+            self.key_group_config = Some(input);
+            self
+        }
+        /// <p>The key group configuration.</p>
+        pub fn set_key_group_config(
+            mut self,
+            input: std::option::Option<crate::model::KeyGroupConfig>,
+        ) -> Self {
+            self.key_group_config = input;
+            self
+        }
         /// <p>The identifier of the key group that you are updating.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -14470,19 +15037,6 @@ pub mod update_key_group_input {
             self.if_match = input;
             self
         }
-        /// <p>The key group configuration.</p>
-        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
-            self.key_group_config = Some(input);
-            self
-        }
-        /// <p>The key group configuration.</p>
-        pub fn set_key_group_config(
-            mut self,
-            input: std::option::Option<crate::model::KeyGroupConfig>,
-        ) -> Self {
-            self.key_group_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateKeyGroupInput`](crate::input::UpdateKeyGroupInput)
         pub fn build(
             self,
@@ -14491,9 +15045,9 @@ pub mod update_key_group_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateKeyGroupInput {
+                key_group_config: self.key_group_config,
                 id: self.id,
                 if_match: self.if_match,
-                key_group_config: self.key_group_config,
             })
         }
     }
@@ -14505,7 +15059,7 @@ pub type UpdateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKeyGroup`](crate::operation::UpdateKeyGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14519,15 +15073,15 @@ impl UpdateKeyGroupInput {
             _input: &crate::input::UpdateKeyGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_132 = &_input.id;
-            let input_132 =
-                input_132
+            let input_143 = &_input.id;
+            let input_143 =
+                input_143
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_132, false);
+            let id = aws_smithy_http::label::fmt_string(input_143, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14543,11 +15097,11 @@ impl UpdateKeyGroupInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_133) = &_input.if_match {
-                let formatted_134 = AsRef::<str>::as_ref(inner_133);
-                if !formatted_134.is_empty() {
+            if let Some(inner_144) = &_input.if_match {
+                let formatted_145 = AsRef::<str>::as_ref(inner_144);
+                if !formatted_145.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_134;
+                    let header_value = formatted_145;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -14577,6 +15131,7 @@ impl UpdateKeyGroupInput {
             input: &crate::input::UpdateKeyGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14631,9 +15186,10 @@ impl UpdateKeyGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14655,12 +15211,28 @@ pub mod update_origin_request_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) if_match: std::option::Option<std::string::String>,
         pub(crate) origin_request_policy_config:
             std::option::Option<crate::model::OriginRequestPolicyConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>An origin request policy configuration.</p>
+        pub fn origin_request_policy_config(
+            mut self,
+            input: crate::model::OriginRequestPolicyConfig,
+        ) -> Self {
+            self.origin_request_policy_config = Some(input);
+            self
+        }
+        /// <p>An origin request policy configuration.</p>
+        pub fn set_origin_request_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
+        ) -> Self {
+            self.origin_request_policy_config = input;
+            self
+        }
         /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
         /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
         /// to <code>GetDistributionConfig</code>.</p>
@@ -14689,22 +15261,6 @@ pub mod update_origin_request_policy_input {
             self.if_match = input;
             self
         }
-        /// <p>An origin request policy configuration.</p>
-        pub fn origin_request_policy_config(
-            mut self,
-            input: crate::model::OriginRequestPolicyConfig,
-        ) -> Self {
-            self.origin_request_policy_config = Some(input);
-            self
-        }
-        /// <p>An origin request policy configuration.</p>
-        pub fn set_origin_request_policy_config(
-            mut self,
-            input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
-        ) -> Self {
-            self.origin_request_policy_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateOriginRequestPolicyInput`](crate::input::UpdateOriginRequestPolicyInput)
         pub fn build(
             self,
@@ -14713,9 +15269,9 @@ pub mod update_origin_request_policy_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateOriginRequestPolicyInput {
+                origin_request_policy_config: self.origin_request_policy_config,
                 id: self.id,
                 if_match: self.if_match,
-                origin_request_policy_config: self.origin_request_policy_config,
             })
         }
     }
@@ -14728,7 +15284,7 @@ pub type UpdateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorR
 impl UpdateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOriginRequestPolicy`](crate::operation::UpdateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14742,15 +15298,15 @@ impl UpdateOriginRequestPolicyInput {
             _input: &crate::input::UpdateOriginRequestPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_135 = &_input.id;
-            let input_135 =
-                input_135
+            let input_146 = &_input.id;
+            let input_146 =
+                input_146
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_135, false);
+            let id = aws_smithy_http::label::fmt_string(input_146, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14766,11 +15322,11 @@ impl UpdateOriginRequestPolicyInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_136) = &_input.if_match {
-                let formatted_137 = AsRef::<str>::as_ref(inner_136);
-                if !formatted_137.is_empty() {
+            if let Some(inner_147) = &_input.if_match {
+                let formatted_148 = AsRef::<str>::as_ref(inner_147);
+                if !formatted_148.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_137;
+                    let header_value = formatted_148;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -14800,6 +15356,7 @@ impl UpdateOriginRequestPolicyInput {
             input: &crate::input::UpdateOriginRequestPolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14855,9 +15412,10 @@ impl UpdateOriginRequestPolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14879,11 +15437,24 @@ pub mod update_public_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
-        pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     }
     impl Builder {
+        /// <p>A public key configuration.</p>
+        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
+            self.public_key_config = Some(input);
+            self
+        }
+        /// <p>A public key configuration.</p>
+        pub fn set_public_key_config(
+            mut self,
+            input: std::option::Option<crate::model::PublicKeyConfig>,
+        ) -> Self {
+            self.public_key_config = input;
+            self
+        }
         /// <p>The identifier of the public key that you are updating.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -14906,19 +15477,6 @@ pub mod update_public_key_input {
             self.if_match = input;
             self
         }
-        /// <p>A public key configuration.</p>
-        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
-            self.public_key_config = Some(input);
-            self
-        }
-        /// <p>A public key configuration.</p>
-        pub fn set_public_key_config(
-            mut self,
-            input: std::option::Option<crate::model::PublicKeyConfig>,
-        ) -> Self {
-            self.public_key_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdatePublicKeyInput`](crate::input::UpdatePublicKeyInput)
         pub fn build(
             self,
@@ -14927,9 +15485,9 @@ pub mod update_public_key_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePublicKeyInput {
+                public_key_config: self.public_key_config,
                 id: self.id,
                 if_match: self.if_match,
-                public_key_config: self.public_key_config,
             })
         }
     }
@@ -14941,7 +15499,7 @@ pub type UpdatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl UpdatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePublicKey`](crate::operation::UpdatePublicKey)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14955,15 +15513,15 @@ impl UpdatePublicKeyInput {
             _input: &crate::input::UpdatePublicKeyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_138 = &_input.id;
-            let input_138 =
-                input_138
+            let input_149 = &_input.id;
+            let input_149 =
+                input_149
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_138, false);
+            let id = aws_smithy_http::label::fmt_string(input_149, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14979,11 +15537,11 @@ impl UpdatePublicKeyInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_139) = &_input.if_match {
-                let formatted_140 = AsRef::<str>::as_ref(inner_139);
-                if !formatted_140.is_empty() {
+            if let Some(inner_150) = &_input.if_match {
+                let formatted_151 = AsRef::<str>::as_ref(inner_150);
+                if !formatted_151.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_140;
+                    let header_value = formatted_151;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -15013,6 +15571,7 @@ impl UpdatePublicKeyInput {
             input: &crate::input::UpdatePublicKeyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15067,9 +15626,10 @@ impl UpdatePublicKeyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15201,7 +15761,7 @@ pub type UpdateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRet
 impl UpdateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRealtimeLogConfig`](crate::operation::UpdateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -15233,6 +15793,7 @@ impl UpdateRealtimeLogConfigInput {
             input: &crate::input::UpdateRealtimeLogConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15292,9 +15853,10 @@ impl UpdateRealtimeLogConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15310,18 +15872,256 @@ impl UpdateRealtimeLogConfigInput {
     }
 }
 
+/// See [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput)
+pub mod update_response_headers_policy_input {
+    /// A builder for [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A response headers policy configuration.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.response_headers_policy_config = Some(input);
+            self
+        }
+        /// <p>A response headers policy configuration.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.response_headers_policy_config = input;
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are updating.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are updating.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The version of the response headers policy that you are updating.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The version of the response headers policy that you are updating.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateResponseHeadersPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateResponseHeadersPolicyInput {
+                response_headers_policy_config: self.response_headers_policy_config,
+                id: self.id,
+                if_match: self.if_match,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateResponseHeadersPolicyInputOperationOutputAlias =
+    crate::operation::UpdateResponseHeadersPolicy;
+#[doc(hidden)]
+pub type UpdateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateResponseHeadersPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResponseHeadersPolicy`](crate::operation::UpdateResponseHeadersPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateResponseHeadersPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateResponseHeadersPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_152 = &_input.id;
+            let input_152 =
+                input_152
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_152, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/2020-05-31/response-headers-policy/{Id}", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::UpdateResponseHeadersPolicyInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            if let Some(inner_153) = &_input.if_match {
+                let formatted_154 = AsRef::<str>::as_ref(inner_153);
+                if !formatted_154.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_154;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "if_match",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("If-Match", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResponseHeadersPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResponseHeadersPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/xml",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_update_response_headers_policy_input(
+            &self.response_headers_policy_config,
+        )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResponseHeadersPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateResponseHeadersPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput)
+    pub fn builder() -> crate::input::update_response_headers_policy_input::Builder {
+        crate::input::update_response_headers_policy_input::Builder::default()
+    }
+}
+
 /// See [`UpdateStreamingDistributionInput`](crate::input::UpdateStreamingDistributionInput)
 pub mod update_streaming_distribution_input {
     /// A builder for [`UpdateStreamingDistributionInput`](crate::input::UpdateStreamingDistributionInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) if_match: std::option::Option<std::string::String>,
         pub(crate) streaming_distribution_config:
             std::option::Option<crate::model::StreamingDistributionConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The streaming distribution's configuration information.</p>
+        pub fn streaming_distribution_config(
+            mut self,
+            input: crate::model::StreamingDistributionConfig,
+        ) -> Self {
+            self.streaming_distribution_config = Some(input);
+            self
+        }
+        /// <p>The streaming distribution's configuration information.</p>
+        pub fn set_streaming_distribution_config(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDistributionConfig>,
+        ) -> Self {
+            self.streaming_distribution_config = input;
+            self
+        }
         /// <p>The streaming distribution's id.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -15344,22 +16144,6 @@ pub mod update_streaming_distribution_input {
             self.if_match = input;
             self
         }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn streaming_distribution_config(
-            mut self,
-            input: crate::model::StreamingDistributionConfig,
-        ) -> Self {
-            self.streaming_distribution_config = Some(input);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn set_streaming_distribution_config(
-            mut self,
-            input: std::option::Option<crate::model::StreamingDistributionConfig>,
-        ) -> Self {
-            self.streaming_distribution_config = input;
-            self
-        }
         /// Consumes the builder and constructs a [`UpdateStreamingDistributionInput`](crate::input::UpdateStreamingDistributionInput)
         pub fn build(
             self,
@@ -15368,9 +16152,9 @@ pub mod update_streaming_distribution_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateStreamingDistributionInput {
+                streaming_distribution_config: self.streaming_distribution_config,
                 id: self.id,
                 if_match: self.if_match,
-                streaming_distribution_config: self.streaming_distribution_config,
             })
         }
     }
@@ -15383,7 +16167,7 @@ pub type UpdateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingDistribution`](crate::operation::UpdateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -15397,15 +16181,15 @@ impl UpdateStreamingDistributionInput {
             _input: &crate::input::UpdateStreamingDistributionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_141 = &_input.id;
-            let input_141 =
-                input_141
+            let input_155 = &_input.id;
+            let input_155 =
+                input_155
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_141, false);
+            let id = aws_smithy_http::label::fmt_string(input_155, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -15425,11 +16209,11 @@ impl UpdateStreamingDistributionInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_142) = &_input.if_match {
-                let formatted_143 = AsRef::<str>::as_ref(inner_142);
-                if !formatted_143.is_empty() {
+            if let Some(inner_156) = &_input.if_match {
+                let formatted_157 = AsRef::<str>::as_ref(inner_156);
+                if !formatted_157.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_143;
+                    let header_value = formatted_157;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "if_match",
@@ -15459,6 +16243,7 @@ impl UpdateStreamingDistributionInput {
             input: &crate::input::UpdateStreamingDistributionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15514,9 +16299,10 @@ impl UpdateStreamingDistributionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15536,24 +16322,51 @@ impl UpdateStreamingDistributionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingDistributionInput {
+    /// <p>The streaming distribution's configuration information.</p>
+    pub streaming_distribution_config:
+        std::option::Option<crate::model::StreamingDistributionConfig>,
     /// <p>The streaming distribution's id.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>The streaming distribution's configuration information.</p>
-    pub streaming_distribution_config:
-        std::option::Option<crate::model::StreamingDistributionConfig>,
 }
 impl std::fmt::Debug for UpdateStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingDistributionInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
         formatter.field(
             "streaming_distribution_config",
             &self.streaming_distribution_config,
         );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResponseHeadersPolicyInput {
+    /// <p>A response headers policy configuration.</p>
+    pub response_headers_policy_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+    /// <p>The identifier for the response headers policy that you are updating.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The version of the response headers policy that you are updating.</p>
+    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+    /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub if_match: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateResponseHeadersPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResponseHeadersPolicyInput");
+        formatter.field(
+            "response_headers_policy_config",
+            &self.response_headers_policy_config,
+        );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
         formatter.finish()
     }
 }
@@ -15594,20 +16407,20 @@ impl std::fmt::Debug for UpdateRealtimeLogConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicKeyInput {
+    /// <p>A public key configuration.</p>
+    pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     /// <p>The identifier of the public key that you are updating.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>A public key configuration.</p>
-    pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
 impl std::fmt::Debug for UpdatePublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePublicKeyInput");
+        formatter.field("public_key_config", &self.public_key_config);
         formatter.field("id", &self.id);
         formatter.field("if_match", &self.if_match);
-        formatter.field("public_key_config", &self.public_key_config);
         formatter.finish()
     }
 }
@@ -15616,6 +16429,8 @@ impl std::fmt::Debug for UpdatePublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginRequestPolicyInput {
+    /// <p>An origin request policy configuration.</p>
+    pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
     /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
     /// to <code>GetDistributionConfig</code>.</p>
@@ -15624,18 +16439,16 @@ pub struct UpdateOriginRequestPolicyInput {
     /// the origin request policy’s <code>ETag</code> field in the response to
     /// <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>An origin request policy configuration.</p>
-    pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
 }
 impl std::fmt::Debug for UpdateOriginRequestPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOriginRequestPolicyInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
         formatter.field(
             "origin_request_policy_config",
             &self.origin_request_policy_config,
         );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
         formatter.finish()
     }
 }
@@ -15644,20 +16457,20 @@ impl std::fmt::Debug for UpdateOriginRequestPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyGroupInput {
+    /// <p>The key group configuration.</p>
+    pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     /// <p>The identifier of the key group that you are updating.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the key group that you are updating. The version is the key group’s
     /// <code>ETag</code> value.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>The key group configuration.</p>
-    pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
 }
 impl std::fmt::Debug for UpdateKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateKeyGroupInput");
+        formatter.field("key_group_config", &self.key_group_config);
         formatter.field("id", &self.id);
         formatter.field("if_match", &self.if_match);
-        formatter.field("key_group_config", &self.key_group_config);
         formatter.finish()
     }
 }
@@ -15692,24 +16505,24 @@ impl std::fmt::Debug for UpdateFunctionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionProfileInput {
+    /// <p>Request to update a field-level encryption profile. </p>
+    pub field_level_encryption_profile_config:
+        std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     /// <p>The ID of the field-level encryption profile request. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Request to update a field-level encryption profile. </p>
-    pub field_level_encryption_profile_config:
-        std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
 }
 impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionProfileInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
         formatter.field(
             "field_level_encryption_profile_config",
             &self.field_level_encryption_profile_config,
         );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
         formatter.finish()
     }
 }
@@ -15718,24 +16531,24 @@ impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionConfigInput {
+    /// <p>Request to update a field-level encryption configuration. </p>
+    pub field_level_encryption_config:
+        std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     /// <p>The ID of the configuration you want to update.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Request to update a field-level encryption configuration. </p>
-    pub field_level_encryption_config:
-        std::option::Option<crate::model::FieldLevelEncryptionConfig>,
 }
 impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionConfigInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
         formatter.field(
             "field_level_encryption_config",
             &self.field_level_encryption_config,
         );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
         formatter.finish()
     }
 }
@@ -15744,20 +16557,20 @@ impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionInput {
+    /// <p>The distribution's configuration information.</p>
+    pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>The distribution's id.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>The distribution's configuration information.</p>
-    pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
 }
 impl std::fmt::Debug for UpdateDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDistributionInput");
+        formatter.field("distribution_config", &self.distribution_config);
         formatter.field("id", &self.id);
         formatter.field("if_match", &self.if_match);
-        formatter.field("distribution_config", &self.distribution_config);
         formatter.finish()
     }
 }
@@ -15766,24 +16579,24 @@ impl std::fmt::Debug for UpdateDistributionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCloudFrontOriginAccessIdentityInput {
+    /// <p>The identity's configuration information.</p>
+    pub cloud_front_origin_access_identity_config:
+        std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The identity's id.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>The identity's configuration information.</p>
-    pub cloud_front_origin_access_identity_config:
-        std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
 }
 impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCloudFrontOriginAccessIdentityInput");
-        formatter.field("id", &self.id);
-        formatter.field("if_match", &self.if_match);
         formatter.field(
             "cloud_front_origin_access_identity_config",
             &self.cloud_front_origin_access_identity_config,
         );
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
         formatter.finish()
     }
 }
@@ -15792,6 +16605,8 @@ impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCachePolicyInput {
+    /// <p>A cache policy configuration.</p>
+    pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
     /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
     /// <code>GetDistributionConfig</code>.</p>
@@ -15800,15 +16615,13 @@ pub struct UpdateCachePolicyInput {
     /// policy’s <code>ETag</code> field in the response to
     /// <code>GetCachePolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>A cache policy configuration.</p>
-    pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
 impl std::fmt::Debug for UpdateCachePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCachePolicyInput");
+        formatter.field("cache_policy_config", &self.cache_policy_config);
         formatter.field("id", &self.id);
         formatter.field("if_match", &self.if_match);
-        formatter.field("cache_policy_config", &self.cache_policy_config);
         formatter.finish()
     }
 }
@@ -15931,6 +16744,42 @@ impl std::fmt::Debug for ListStreamingDistributionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListResponseHeadersPoliciesInput {
+    /// <p>A filter to get only the specified kind of response headers policies. Valid values
+    /// are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>custom</code> – Gets only the custom policies created in your
+    /// Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response
+    /// headers policies. The response includes response headers policies in the list that occur
+    /// after the marker. To get the next page of the list, set this field’s value to the value
+    /// of <code>NextMarker</code> from the current page’s response. </p>
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+    pub max_items: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListResponseHeadersPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListResponseHeadersPoliciesInput");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("marker", &self.marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRealtimeLogConfigsInput {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
@@ -15982,7 +16831,7 @@ pub struct ListOriginRequestPoliciesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
@@ -16142,6 +16991,34 @@ impl std::fmt::Debug for ListDistributionsByWebAclIdInput {
         formatter.field("marker", &self.marker);
         formatter.field("max_items", &self.max_items);
         formatter.field("web_acl_id", &self.web_acl_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDistributionsByResponseHeadersPolicyIdInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distribution IDs. The response includes distribution IDs in the list that occur after
+    /// the marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+    pub max_items: std::option::Option<i32>,
+    /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+    /// list.</p>
+    pub response_headers_policy_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDistributionsByResponseHeadersPolicyIdInput");
+        formatter.field("marker", &self.marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.field(
+            "response_headers_policy_id",
+            &self.response_headers_policy_id,
+        );
         formatter.finish()
     }
 }
@@ -16334,7 +17211,7 @@ pub struct ListCachePoliciesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
@@ -16381,6 +17258,46 @@ pub struct GetStreamingDistributionInput {
 impl std::fmt::Debug for GetStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamingDistributionInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResponseHeadersPolicyConfigInput {
+    /// <p>The identifier for the response headers policy.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+    /// get the policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+    /// cache behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetResponseHeadersPolicyConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResponseHeadersPolicyConfigInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResponseHeadersPolicyInput {
+    /// <p>The identifier for the response headers policy.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+    /// get the policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+    /// cache behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetResponseHeadersPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResponseHeadersPolicyInput");
         formatter.field("id", &self.id);
         formatter.finish()
     }
@@ -16755,6 +17672,29 @@ impl std::fmt::Debug for DeleteStreamingDistributionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResponseHeadersPolicyInput {
+    /// <p>The identifier for the response headers policy that you are deleting.</p>
+    /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The version of the response headers policy that you are deleting.</p>
+    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+    /// get using <code>ListResponseHeadersPolicies</code>,
+    /// <code>GetResponseHeadersPolicy</code>, or
+    /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub if_match: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteResponseHeadersPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteResponseHeadersPolicyInput");
+        formatter.field("id", &self.id);
+        formatter.field("if_match", &self.if_match);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeLogConfigInput {
     /// <p>The name of the real-time log configuration to delete.</p>
     pub name: std::option::Option<std::string::String>,
@@ -17043,6 +17983,26 @@ impl std::fmt::Debug for CreateStreamingDistributionInput {
         formatter.field(
             "streaming_distribution_config",
             &self.streaming_distribution_config,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateResponseHeadersPolicyInput {
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that
+    /// specify the response headers.</p>
+    pub response_headers_policy_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+}
+impl std::fmt::Debug for CreateResponseHeadersPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateResponseHeadersPolicyInput");
+        formatter.field(
+            "response_headers_policy_config",
+            &self.response_headers_policy_config,
         );
         formatter.finish()
     }

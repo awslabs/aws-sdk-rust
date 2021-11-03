@@ -50,7 +50,7 @@ pub enum PayloadChecksumKind {
 #[non_exhaustive]
 #[derive(Debug, Eq, PartialEq)]
 pub enum PercentEncodingMode {
-    /// Re-encode the resulting URL (eg. %30 becomes `%2530)
+    /// Re-encode the resulting URL (e.g. %30 becomes `%2530)
     Double,
 
     /// Take the resulting URL as-is

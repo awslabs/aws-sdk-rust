@@ -26,7 +26,7 @@ pub enum CreateAlarmModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAlarmModelError {
@@ -95,49 +95,49 @@ impl CreateAlarmModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlarmModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlarmModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAlarmModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -187,7 +187,7 @@ pub enum CreateDetectorModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDetectorModelError {
@@ -256,49 +256,49 @@ impl CreateDetectorModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDetectorModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDetectorModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDetectorModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -344,7 +344,7 @@ pub enum CreateInputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInputError {
@@ -411,32 +411,32 @@ impl CreateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::ThrottlingException(_))
     }
@@ -479,7 +479,7 @@ pub enum DeleteAlarmModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlarmModelError {
@@ -547,42 +547,42 @@ impl DeleteAlarmModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAlarmModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -629,7 +629,7 @@ pub enum DeleteDetectorModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDetectorModelError {
@@ -697,42 +697,42 @@ impl DeleteDetectorModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDetectorModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDetectorModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDetectorModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDetectorModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDetectorModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDetectorModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDetectorModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -779,7 +779,7 @@ pub enum DeleteInputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInputError {
@@ -847,36 +847,36 @@ impl DeleteInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::ThrottlingException(_))
     }
@@ -918,7 +918,7 @@ pub enum DescribeAlarmModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlarmModelError {
@@ -985,35 +985,35 @@ impl DescribeAlarmModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlarmModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAlarmModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAlarmModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAlarmModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAlarmModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAlarmModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1057,7 +1057,7 @@ pub enum DescribeDetectorModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDetectorModelError {
@@ -1124,35 +1124,35 @@ impl DescribeDetectorModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDetectorModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1196,7 +1196,7 @@ pub enum DescribeDetectorModelAnalysisErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDetectorModelAnalysisError {
@@ -1274,35 +1274,35 @@ impl DescribeDetectorModelAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDetectorModelAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelAnalysisErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelAnalysisErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelAnalysisErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelAnalysisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelAnalysisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelAnalysisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelAnalysisErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelAnalysisErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorModelAnalysisErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorModelAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDetectorModelAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1352,7 +1352,7 @@ pub enum DescribeInputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputError {
@@ -1419,35 +1419,35 @@ impl DescribeInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeInputErrorKind::ThrottlingException(_))
     }
@@ -1490,7 +1490,7 @@ pub enum DescribeLoggingOptionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoggingOptionsError {
@@ -1558,42 +1558,42 @@ impl DescribeLoggingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1638,7 +1638,7 @@ pub enum GetDetectorModelAnalysisResultsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDetectorModelAnalysisResultsError {
@@ -1716,35 +1716,35 @@ impl GetDetectorModelAnalysisResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDetectorModelAnalysisResultsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetDetectorModelAnalysisResultsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDetectorModelAnalysisResultsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDetectorModelAnalysisResultsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDetectorModelAnalysisResultsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDetectorModelAnalysisResultsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDetectorModelAnalysisResultsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDetectorModelAnalysisResultsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDetectorModelAnalysisResultsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1794,7 +1794,7 @@ pub enum ListAlarmModelsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlarmModelsError {
@@ -1860,28 +1860,28 @@ impl ListAlarmModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAlarmModelsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAlarmModelsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAlarmModelsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAlarmModelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAlarmModelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListAlarmModelsErrorKind::ThrottlingException(_))
     }
@@ -1921,7 +1921,7 @@ pub enum ListAlarmModelVersionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlarmModelVersionsError {
@@ -1988,35 +1988,35 @@ impl ListAlarmModelVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAlarmModelVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAlarmModelVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelVersionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAlarmModelVersionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelVersionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAlarmModelVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAlarmModelVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmModelVersionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmModelVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAlarmModelVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2058,7 +2058,7 @@ pub enum ListDetectorModelsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDetectorModelsError {
@@ -2124,28 +2124,28 @@ impl ListDetectorModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDetectorModelsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDetectorModelsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDetectorModelsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDetectorModelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDetectorModelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2188,7 +2188,7 @@ pub enum ListDetectorModelVersionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDetectorModelVersionsError {
@@ -2257,35 +2257,35 @@ impl ListDetectorModelVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDetectorModelVersionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDetectorModelVersionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelVersionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelVersionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDetectorModelVersionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelVersionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDetectorModelVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDetectorModelVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorModelVersionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorModelVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDetectorModelVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2329,7 +2329,7 @@ pub enum ListInputRoutingsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputRoutingsError {
@@ -2396,35 +2396,35 @@ impl ListInputRoutingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputRoutingsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListInputRoutingsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputRoutingsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputRoutingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInputRoutingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputRoutingsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputRoutingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListInputRoutingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputRoutingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputRoutingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListInputRoutingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputRoutingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputRoutingsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListInputRoutingsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2466,7 +2466,7 @@ pub enum ListInputsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputsError {
@@ -2532,22 +2532,22 @@ impl ListInputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::ThrottlingException(_))
     }
@@ -2587,7 +2587,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2654,35 +2654,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2728,7 +2728,7 @@ pub enum PutLoggingOptionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLoggingOptionsError {
@@ -2796,42 +2796,42 @@ impl PutLoggingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2876,7 +2876,7 @@ pub enum StartDetectorModelAnalysisErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDetectorModelAnalysisError {
@@ -2945,35 +2945,35 @@ impl StartDetectorModelAnalysisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDetectorModelAnalysisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartDetectorModelAnalysisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDetectorModelAnalysisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartDetectorModelAnalysisErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartDetectorModelAnalysisErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDetectorModelAnalysisErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartDetectorModelAnalysisErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartDetectorModelAnalysisErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDetectorModelAnalysisErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDetectorModelAnalysisErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartDetectorModelAnalysisErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDetectorModelAnalysisErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartDetectorModelAnalysisErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartDetectorModelAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3021,7 +3021,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3089,33 +3089,33 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -3157,7 +3157,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3224,35 +3224,35 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -3295,7 +3295,7 @@ pub enum UpdateAlarmModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAlarmModelError {
@@ -3363,42 +3363,42 @@ impl UpdateAlarmModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAlarmModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAlarmModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAlarmModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAlarmModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAlarmModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAlarmModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAlarmModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3445,7 +3445,7 @@ pub enum UpdateDetectorModelErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDetectorModelError {
@@ -3513,42 +3513,42 @@ impl UpdateDetectorModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDetectorModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDetectorModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDetectorModelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDetectorModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDetectorModelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDetectorModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDetectorModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3595,7 +3595,7 @@ pub enum UpdateInputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputError {
@@ -3663,36 +3663,36 @@ impl UpdateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::ThrottlingException(_))
     }

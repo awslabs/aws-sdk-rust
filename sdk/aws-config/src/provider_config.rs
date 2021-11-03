@@ -8,16 +8,14 @@
 use crate::connector::default_connector;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_client::erase::DynConnector;
+use aws_smithy_client::timeout;
 use aws_types::os_shim_internal::{Env, Fs, TimeSource};
 use aws_types::region::Region;
-
-use aws_smithy_client::erase::boxclone::BoxCloneService;
-use aws_smithy_client::timeout;
-use http::Uri;
 use std::fmt::{Debug, Formatter};
 use std::sync::Arc;
-use tokio::net::TcpStream;
-use tower::BoxError;
+
+#[cfg(feature = "tcp-connector")]
+use aws_smithy_client::erase::boxclone::BoxCloneService;
 
 /// Configuration options for Credential Providers
 ///
@@ -44,7 +42,8 @@ pub(crate) type MakeConnectorFn =
 pub(crate) enum HttpConnector {
     Prebuilt(Option<DynConnector>),
     ConnectorFn(Arc<MakeConnectorFn>),
-    TcpConnector(BoxCloneService<Uri, TcpStream, BoxError>),
+    #[cfg(feature = "tcp-connector")]
+    TcpConnector(BoxCloneService<http::Uri, tokio::net::TcpStream, tower::BoxError>),
 }
 
 impl Default for HttpConnector {
@@ -66,6 +65,7 @@ impl HttpConnector {
         match self {
             HttpConnector::Prebuilt(conn) => conn.clone(),
             HttpConnector::ConnectorFn(func) => func(&settings, sleep),
+            #[cfg(feature = "tcp-connector")]
             HttpConnector::TcpConnector(connection) => Some(DynConnector::new(
                 aws_smithy_client::hyper_ext::Adapter::builder()
                     .timeout(&settings.timeout_settings)
@@ -123,12 +123,13 @@ impl ProviderConfig {
 
 /// HttpSettings for HTTP connectors
 ///
-/// # Stabilility
+/// # Stability
 /// As HTTP settings stabilize, they will move to `aws-types::config::Config` so that they
 /// can be used to configure HTTP connectors for service clients.
 #[non_exhaustive]
 #[derive(Default)]
 pub(crate) struct HttpSettings {
+    #[allow(dead_code)] // Always set, but only referenced in certain feature configurations
     pub(crate) timeout_settings: timeout::Settings,
 }
 
@@ -279,7 +280,11 @@ impl ProviderConfig {
     ///
     /// # Stability
     /// This method is may to change to support HTTP configuration.
-    pub fn with_tcp_connector(self, connector: BoxCloneService<Uri, TcpStream, BoxError>) -> Self {
+    #[cfg(feature = "tcp-connector")]
+    pub fn with_tcp_connector(
+        self,
+        connector: BoxCloneService<http::Uri, tokio::net::TcpStream, tower::BoxError>,
+    ) -> Self {
         ProviderConfig {
             connector: HttpConnector::TcpConnector(connector),
             ..self

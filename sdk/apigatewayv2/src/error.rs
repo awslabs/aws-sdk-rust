@@ -20,7 +20,7 @@ pub enum CreateApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiError {
@@ -86,19 +86,19 @@ impl CreateApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateApiErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateApiErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateApiErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateApiErrorKind::TooManyRequestsException(_))
     }
@@ -136,7 +136,7 @@ pub enum CreateApiMappingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiMappingError {
@@ -202,22 +202,22 @@ impl CreateApiMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApiMappingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApiMappingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiMappingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiMappingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateApiMappingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateApiMappingErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateApiMappingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateApiMappingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateApiMappingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateApiMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateApiMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -258,7 +258,7 @@ pub enum CreateAuthorizerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAuthorizerError {
@@ -324,22 +324,22 @@ impl CreateAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAuthorizerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAuthorizerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAuthorizerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAuthorizerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAuthorizerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAuthorizerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAuthorizerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAuthorizerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAuthorizerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAuthorizerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -380,7 +380,7 @@ pub enum CreateDeploymentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
@@ -446,22 +446,22 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDeploymentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDeploymentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -504,7 +504,7 @@ pub enum CreateDomainNameErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainNameError {
@@ -571,29 +571,29 @@ impl CreateDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainNameErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDomainNameErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainNameErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainNameErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDomainNameErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainNameErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainNameErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDomainNameErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainNameErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDomainNameErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDomainNameErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainNameErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDomainNameErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateDomainNameErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -635,7 +635,7 @@ pub enum CreateIntegrationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIntegrationError {
@@ -701,22 +701,22 @@ impl CreateIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIntegrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateIntegrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntegrationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntegrationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateIntegrationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateIntegrationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateIntegrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateIntegrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateIntegrationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateIntegrationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateIntegrationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -757,7 +757,7 @@ pub enum CreateIntegrationResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIntegrationResponseError {
@@ -823,28 +823,28 @@ impl CreateIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIntegrationResponseErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateIntegrationResponseErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntegrationResponseErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntegrationResponseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateIntegrationResponseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntegrationResponseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntegrationResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateIntegrationResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIntegrationResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateIntegrationResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -885,7 +885,7 @@ pub enum CreateModelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelError {
@@ -951,19 +951,19 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1004,7 +1004,7 @@ pub enum CreateRouteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRouteError {
@@ -1070,19 +1070,19 @@ impl CreateRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1123,7 +1123,7 @@ pub enum CreateRouteResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRouteResponseError {
@@ -1189,28 +1189,28 @@ impl CreateRouteResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRouteResponseErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRouteResponseErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRouteResponseErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRouteResponseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRouteResponseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRouteResponseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRouteResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRouteResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRouteResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRouteResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateRouteResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1251,7 +1251,7 @@ pub enum CreateStageErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStageError {
@@ -1317,19 +1317,19 @@ impl CreateStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateStageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateStageErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateStageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateStageErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateStageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateStageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateStageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateStageErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateStageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum CreateVpcLinkErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcLinkError {
@@ -1430,11 +1430,11 @@ impl CreateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVpcLinkErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVpcLinkErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateVpcLinkErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateVpcLinkErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVpcLinkErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1469,7 +1469,7 @@ pub enum DeleteAccessLogSettingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessLogSettingsError {
@@ -1533,14 +1533,14 @@ impl DeleteAccessLogSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessLogSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccessLogSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessLogSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessLogSettingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAccessLogSettingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1575,7 +1575,7 @@ pub enum DeleteApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiError {
@@ -1639,11 +1639,11 @@ impl DeleteApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiErrorKind::TooManyRequestsException(_))
     }
@@ -1677,7 +1677,7 @@ pub enum DeleteApiMappingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiMappingError {
@@ -1742,18 +1742,18 @@ impl DeleteApiMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApiMappingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApiMappingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiMappingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiMappingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApiMappingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiMappingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApiMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApiMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1789,7 +1789,7 @@ pub enum DeleteAuthorizerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAuthorizerError {
@@ -1853,11 +1853,11 @@ impl DeleteAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAuthorizerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAuthorizerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAuthorizerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAuthorizerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAuthorizerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1892,7 +1892,7 @@ pub enum DeleteCorsConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCorsConfigurationError {
@@ -1956,14 +1956,14 @@ impl DeleteCorsConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCorsConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCorsConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCorsConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCorsConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteCorsConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1998,7 +1998,7 @@ pub enum DeleteDeploymentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeploymentError {
@@ -2062,11 +2062,11 @@ impl DeleteDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeploymentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDeploymentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDeploymentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2101,7 +2101,7 @@ pub enum DeleteDomainNameErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainNameError {
@@ -2165,11 +2165,11 @@ impl DeleteDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainNameErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDomainNameErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainNameErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainNameErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteDomainNameErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2204,7 +2204,7 @@ pub enum DeleteIntegrationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntegrationError {
@@ -2268,11 +2268,11 @@ impl DeleteIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntegrationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2307,7 +2307,7 @@ pub enum DeleteIntegrationResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntegrationResponseError {
@@ -2371,14 +2371,14 @@ impl DeleteIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntegrationResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntegrationResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2413,7 +2413,7 @@ pub enum DeleteModelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelError {
@@ -2477,11 +2477,11 @@ impl DeleteModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2516,7 +2516,7 @@ pub enum DeleteRouteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteError {
@@ -2580,11 +2580,11 @@ impl DeleteRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2619,7 +2619,7 @@ pub enum DeleteRouteRequestParameterErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteRequestParameterError {
@@ -2683,14 +2683,14 @@ impl DeleteRouteRequestParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRouteRequestParameterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRouteRequestParameterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRouteRequestParameterErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRouteRequestParameterErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRouteRequestParameterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2725,7 +2725,7 @@ pub enum DeleteRouteResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteResponseError {
@@ -2789,14 +2789,14 @@ impl DeleteRouteResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRouteResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRouteResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRouteResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRouteResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRouteResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2831,7 +2831,7 @@ pub enum DeleteRouteSettingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteSettingsError {
@@ -2895,14 +2895,14 @@ impl DeleteRouteSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRouteSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRouteSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRouteSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRouteSettingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRouteSettingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2937,7 +2937,7 @@ pub enum DeleteStageErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStageError {
@@ -3001,11 +3001,11 @@ impl DeleteStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteStageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteStageErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteStageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3040,7 +3040,7 @@ pub enum DeleteVpcLinkErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcLinkError {
@@ -3104,11 +3104,11 @@ impl DeleteVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVpcLinkErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVpcLinkErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteVpcLinkErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteVpcLinkErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVpcLinkErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3145,7 +3145,7 @@ pub enum ExportApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportApiError {
@@ -3210,15 +3210,15 @@ impl ExportApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExportApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExportApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ExportApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExportApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ExportApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ExportApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ExportApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ExportApiErrorKind::TooManyRequestsException(_))
     }
@@ -3251,7 +3251,7 @@ pub enum GetApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiError {
@@ -3315,11 +3315,11 @@ impl GetApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetApiErrorKind::TooManyRequestsException(_))
     }
@@ -3353,7 +3353,7 @@ pub enum GetApiMappingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiMappingError {
@@ -3418,15 +3418,15 @@ impl GetApiMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApiMappingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApiMappingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApiMappingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApiMappingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApiMappingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApiMappingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApiMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApiMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3464,7 +3464,7 @@ pub enum GetApiMappingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiMappingsError {
@@ -3529,15 +3529,15 @@ impl GetApiMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApiMappingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApiMappingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApiMappingsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApiMappingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApiMappingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApiMappingsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApiMappingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApiMappingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3575,7 +3575,7 @@ pub enum GetApisErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApisError {
@@ -3640,15 +3640,15 @@ impl GetApisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApisErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApisErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApisErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApisErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApisErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApisErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApisErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApisErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetApisErrorKind::TooManyRequestsException(_))
     }
@@ -3681,7 +3681,7 @@ pub enum GetAuthorizerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAuthorizerError {
@@ -3745,11 +3745,11 @@ impl GetAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAuthorizerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAuthorizerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAuthorizerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAuthorizerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAuthorizerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3786,7 +3786,7 @@ pub enum GetAuthorizersErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAuthorizersError {
@@ -3851,15 +3851,15 @@ impl GetAuthorizersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAuthorizersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAuthorizersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAuthorizersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAuthorizersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAuthorizersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAuthorizersErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAuthorizersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAuthorizersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3895,7 +3895,7 @@ pub enum GetDeploymentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentError {
@@ -3959,11 +3959,11 @@ impl GetDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4000,7 +4000,7 @@ pub enum GetDeploymentsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentsError {
@@ -4065,15 +4065,15 @@ impl GetDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeploymentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeploymentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDeploymentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4109,7 +4109,7 @@ pub enum GetDomainNameErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainNameError {
@@ -4173,11 +4173,11 @@ impl GetDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainNameErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainNameErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainNameErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDomainNameErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDomainNameErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4214,7 +4214,7 @@ pub enum GetDomainNamesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainNamesError {
@@ -4279,15 +4279,15 @@ impl GetDomainNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainNamesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDomainNamesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDomainNamesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDomainNamesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainNamesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainNamesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDomainNamesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDomainNamesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4323,7 +4323,7 @@ pub enum GetIntegrationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationError {
@@ -4387,11 +4387,11 @@ impl GetIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4426,7 +4426,7 @@ pub enum GetIntegrationResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationResponseError {
@@ -4490,14 +4490,14 @@ impl GetIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntegrationResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntegrationResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIntegrationResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4534,7 +4534,7 @@ pub enum GetIntegrationResponsesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationResponsesError {
@@ -4599,21 +4599,21 @@ impl GetIntegrationResponsesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntegrationResponsesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntegrationResponsesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationResponsesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationResponsesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntegrationResponsesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationResponsesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationResponsesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIntegrationResponsesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4651,7 +4651,7 @@ pub enum GetIntegrationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationsError {
@@ -4716,15 +4716,15 @@ impl GetIntegrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntegrationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntegrationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetIntegrationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntegrationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetIntegrationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIntegrationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4760,7 +4760,7 @@ pub enum GetModelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelError {
@@ -4824,11 +4824,11 @@ impl GetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetModelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetModelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetModelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetModelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetModelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetModelErrorKind::TooManyRequestsException(_))
     }
@@ -4862,7 +4862,7 @@ pub enum GetModelsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelsError {
@@ -4927,15 +4927,15 @@ impl GetModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetModelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetModelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetModelsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetModelsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetModelsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetModelsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetModelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetModelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetModelsErrorKind::TooManyRequestsException(_))
     }
@@ -4968,7 +4968,7 @@ pub enum GetModelTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelTemplateError {
@@ -5032,11 +5032,11 @@ impl GetModelTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetModelTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetModelTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetModelTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetModelTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetModelTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5071,7 +5071,7 @@ pub enum GetRouteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRouteError {
@@ -5135,11 +5135,11 @@ impl GetRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetRouteErrorKind::TooManyRequestsException(_))
     }
@@ -5171,7 +5171,7 @@ pub enum GetRouteResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRouteResponseError {
@@ -5235,11 +5235,11 @@ impl GetRouteResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRouteResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRouteResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRouteResponseErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRouteResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRouteResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5276,7 +5276,7 @@ pub enum GetRouteResponsesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRouteResponsesError {
@@ -5341,18 +5341,18 @@ impl GetRouteResponsesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRouteResponsesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRouteResponsesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRouteResponsesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRouteResponsesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRouteResponsesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRouteResponsesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRouteResponsesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRouteResponsesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5390,7 +5390,7 @@ pub enum GetRoutesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoutesError {
@@ -5455,15 +5455,15 @@ impl GetRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoutesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRoutesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetRoutesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetRoutesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRoutesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRoutesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRoutesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRoutesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetRoutesErrorKind::TooManyRequestsException(_))
     }
@@ -5496,7 +5496,7 @@ pub enum GetStageErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStageError {
@@ -5560,11 +5560,11 @@ impl GetStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetStageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStageErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetStageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetStageErrorKind::TooManyRequestsException(_))
     }
@@ -5598,7 +5598,7 @@ pub enum GetStagesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStagesError {
@@ -5663,15 +5663,15 @@ impl GetStagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStagesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetStagesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetStagesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetStagesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetStagesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStagesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStagesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetStagesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetStagesErrorKind::TooManyRequestsException(_))
     }
@@ -5708,7 +5708,7 @@ pub enum GetTagsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagsError {
@@ -5774,19 +5774,19 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::TooManyRequestsException(_))
     }
@@ -5820,7 +5820,7 @@ pub enum GetVpcLinkErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpcLinkError {
@@ -5884,11 +5884,11 @@ impl GetVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVpcLinkErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVpcLinkErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVpcLinkErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetVpcLinkErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetVpcLinkErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetVpcLinkErrorKind::TooManyRequestsException(_))
     }
@@ -5920,7 +5920,7 @@ pub enum GetVpcLinksErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpcLinksError {
@@ -5984,11 +5984,11 @@ impl GetVpcLinksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVpcLinksErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVpcLinksErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetVpcLinksErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetVpcLinksErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetVpcLinksErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6027,7 +6027,7 @@ pub enum ImportApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportApiError {
@@ -6093,19 +6093,19 @@ impl ImportApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ImportApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ImportApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ImportApiErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ImportApiErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ImportApiErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ImportApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ImportApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ImportApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ImportApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ImportApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ImportApiErrorKind::TooManyRequestsException(_))
     }
@@ -6143,7 +6143,7 @@ pub enum ReimportApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReimportApiError {
@@ -6209,19 +6209,19 @@ impl ReimportApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReimportApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ReimportApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ReimportApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ReimportApiErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ReimportApiErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ReimportApiErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ReimportApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ReimportApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ReimportApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ReimportApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ReimportApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6258,7 +6258,7 @@ pub enum ResetAuthorizersCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetAuthorizersCacheError {
@@ -6322,14 +6322,14 @@ impl ResetAuthorizersCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetAuthorizersCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResetAuthorizersCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetAuthorizersCacheErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetAuthorizersCacheErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ResetAuthorizersCacheErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6368,7 +6368,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6434,19 +6434,19 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6487,7 +6487,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6553,19 +6553,19 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6606,7 +6606,7 @@ pub enum UpdateApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiError {
@@ -6672,19 +6672,19 @@ impl UpdateApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateApiErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateApiErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiErrorKind::TooManyRequestsException(_))
     }
@@ -6722,7 +6722,7 @@ pub enum UpdateApiMappingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiMappingError {
@@ -6788,22 +6788,22 @@ impl UpdateApiMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApiMappingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApiMappingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiMappingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiMappingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateApiMappingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiMappingErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateApiMappingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApiMappingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiMappingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApiMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApiMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6844,7 +6844,7 @@ pub enum UpdateAuthorizerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAuthorizerError {
@@ -6910,22 +6910,22 @@ impl UpdateAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAuthorizerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAuthorizerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAuthorizerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAuthorizerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateAuthorizerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateAuthorizerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAuthorizerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAuthorizerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateAuthorizerErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAuthorizerErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6966,7 +6966,7 @@ pub enum UpdateDeploymentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeploymentError {
@@ -7032,22 +7032,22 @@ impl UpdateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeploymentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDeploymentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDeploymentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDeploymentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7088,7 +7088,7 @@ pub enum UpdateDomainNameErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainNameError {
@@ -7154,22 +7154,22 @@ impl UpdateDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainNameErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDomainNameErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainNameErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainNameErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateDomainNameErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainNameErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainNameErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDomainNameErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainNameErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainNameErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateDomainNameErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7210,7 +7210,7 @@ pub enum UpdateIntegrationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIntegrationError {
@@ -7276,22 +7276,22 @@ impl UpdateIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIntegrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntegrationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntegrationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntegrationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateIntegrationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntegrationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateIntegrationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7332,7 +7332,7 @@ pub enum UpdateIntegrationResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIntegrationResponseError {
@@ -7398,28 +7398,28 @@ impl UpdateIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIntegrationResponseErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationResponseErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntegrationResponseErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntegrationResponseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationResponseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntegrationResponseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntegrationResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIntegrationResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateIntegrationResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7460,7 +7460,7 @@ pub enum UpdateModelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateModelError {
@@ -7526,19 +7526,19 @@ impl UpdateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateModelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateModelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateModelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateModelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateModelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateModelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7579,7 +7579,7 @@ pub enum UpdateRouteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRouteError {
@@ -7645,19 +7645,19 @@ impl UpdateRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7698,7 +7698,7 @@ pub enum UpdateRouteResponseErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRouteResponseError {
@@ -7764,28 +7764,28 @@ impl UpdateRouteResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRouteResponseErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRouteResponseErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRouteResponseErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRouteResponseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRouteResponseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRouteResponseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRouteResponseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRouteResponseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRouteResponseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRouteResponseErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateRouteResponseErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7826,7 +7826,7 @@ pub enum UpdateStageErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStageError {
@@ -7892,19 +7892,19 @@ impl UpdateStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateStageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateStageErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateStageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateStageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateStageErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateStageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateStageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateStageErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateStageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7943,7 +7943,7 @@ pub enum UpdateVpcLinkErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVpcLinkError {
@@ -8008,15 +8008,15 @@ impl UpdateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVpcLinkErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVpcLinkErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateVpcLinkErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateVpcLinkErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVpcLinkErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateVpcLinkErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateVpcLinkErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVpcLinkErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

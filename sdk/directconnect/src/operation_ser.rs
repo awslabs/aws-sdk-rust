@@ -136,6 +136,19 @@ pub fn serialize_operation_crate_operation_confirm_connection(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_confirm_customer_agreement(
+    input: &crate::input::ConfirmCustomerAgreementInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_confirm_customer_agreement_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_confirm_private_virtual_interface(
     input: &crate::input::ConfirmPrivateVirtualInterfaceInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -409,6 +422,12 @@ pub fn serialize_operation_crate_operation_describe_connections_on_interconnect(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_describe_customer_metadata(
+    _input: &crate::input::DescribeCustomerMetadataInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    Ok(aws_smithy_http::body::SdkBody::from("{}"))
+}
+
 pub fn serialize_operation_crate_operation_describe_direct_connect_gateway_association_proposals(
     input: &crate::input::DescribeDirectConnectGatewayAssociationProposalsInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -515,6 +534,19 @@ pub fn serialize_operation_crate_operation_describe_locations(
     _input: &crate::input::DescribeLocationsInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
     Ok(aws_smithy_http::body::SdkBody::from("{}"))
+}
+
+pub fn serialize_operation_crate_operation_describe_router_configuration(
+    input: &crate::input::DescribeRouterConfigurationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_router_configuration_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
 pub fn serialize_operation_crate_operation_describe_tags(
@@ -637,6 +669,19 @@ pub fn serialize_operation_crate_operation_update_connection(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_connection_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_direct_connect_gateway(
+    input: &crate::input::UpdateDirectConnectGatewayInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_direct_connect_gateway_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

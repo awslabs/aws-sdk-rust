@@ -28,7 +28,7 @@ pub enum DeleteThingShadowErrorKind {
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteThingShadowError {
@@ -100,56 +100,56 @@ impl DeleteThingShadowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteThingShadowErrorKind::UnauthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteThingShadowErrorKind::UnsupportedDocumentEncodingException`.
+    /// Returns `true` if the error kind is `DeleteThingShadowErrorKind::UnsupportedDocumentEncodingException`.
     pub fn is_unsupported_document_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -202,7 +202,7 @@ pub enum GetRetainedMessageErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRetainedMessageError {
@@ -271,49 +271,49 @@ impl GetRetainedMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetainedMessageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetainedMessageErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetRetainedMessageErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -365,7 +365,7 @@ pub enum GetThingShadowErrorKind {
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetThingShadowError {
@@ -435,53 +435,53 @@ impl GetThingShadowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetThingShadowErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingShadowErrorKind::UnauthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingShadowErrorKind::UnsupportedDocumentEncodingException`.
+    /// Returns `true` if the error kind is `GetThingShadowErrorKind::UnsupportedDocumentEncodingException`.
     pub fn is_unsupported_document_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -532,7 +532,7 @@ pub enum ListNamedShadowsForThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNamedShadowsForThingError {
@@ -601,49 +601,49 @@ impl ListNamedShadowsForThingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedShadowsForThingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedShadowsForThingErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListNamedShadowsForThingErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -691,7 +691,7 @@ pub enum ListRetainedMessagesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRetainedMessagesError {
@@ -759,42 +759,42 @@ impl ListRetainedMessagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetainedMessagesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetainedMessagesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetainedMessagesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetainedMessagesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetainedMessagesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetainedMessagesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListRetainedMessagesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -837,7 +837,7 @@ pub enum PublishErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishError {
@@ -903,19 +903,19 @@ impl PublishError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `PublishErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `PublishErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, PublishErrorKind::UnauthorizedException(_))
     }
@@ -963,7 +963,7 @@ pub enum UpdateThingShadowErrorKind {
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateThingShadowError {
@@ -1036,60 +1036,60 @@ impl UpdateThingShadowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateThingShadowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::RequestEntityTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::RequestEntityTooLargeException`.
     pub fn is_request_entity_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::RequestEntityTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingShadowErrorKind::UnauthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingShadowErrorKind::UnsupportedDocumentEncodingException`.
+    /// Returns `true` if the error kind is `UpdateThingShadowErrorKind::UnsupportedDocumentEncodingException`.
     pub fn is_unsupported_document_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,

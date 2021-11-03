@@ -20,7 +20,7 @@ pub enum AcceptDomainTransferFromAnotherAwsAccountErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptDomainTransferFromAnotherAwsAccountError {
@@ -94,21 +94,21 @@ impl AcceptDomainTransferFromAnotherAwsAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded`.
+    /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -154,7 +154,7 @@ pub enum CancelDomainTransferToAnotherAwsAccountErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelDomainTransferToAnotherAwsAccountError {
@@ -223,14 +223,14 @@ impl CancelDomainTransferToAnotherAwsAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -271,7 +271,7 @@ pub enum CheckDomainAvailabilityErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckDomainAvailabilityError {
@@ -335,14 +335,14 @@ impl CheckDomainAvailabilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckDomainAvailabilityErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CheckDomainAvailabilityErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CheckDomainAvailabilityErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CheckDomainAvailabilityErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `CheckDomainAvailabilityErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -379,7 +379,7 @@ pub enum CheckDomainTransferabilityErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckDomainTransferabilityError {
@@ -443,14 +443,14 @@ impl CheckDomainTransferabilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckDomainTransferabilityErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CheckDomainTransferabilityErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CheckDomainTransferabilityErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CheckDomainTransferabilityErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `CheckDomainTransferabilityErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -489,7 +489,7 @@ pub enum DeleteTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsForDomainError {
@@ -554,18 +554,18 @@ impl DeleteTagsForDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsForDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteTagsForDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteTagsForDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsForDomainErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsForDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, DeleteTagsForDomainErrorKind::UnsupportedTld(_))
     }
@@ -600,7 +600,7 @@ pub enum DisableDomainAutoRenewErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableDomainAutoRenewError {
@@ -664,11 +664,11 @@ impl DisableDomainAutoRenewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableDomainAutoRenewErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DisableDomainAutoRenewErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DisableDomainAutoRenewErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DisableDomainAutoRenewErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `DisableDomainAutoRenewErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -711,7 +711,7 @@ pub enum DisableDomainTransferLockErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableDomainTransferLockError {
@@ -778,35 +778,35 @@ impl DisableDomainTransferLockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableDomainTransferLockErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             DisableDomainTransferLockErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `DisableDomainTransferLockErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DisableDomainTransferLockErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DisableDomainTransferLockErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             DisableDomainTransferLockErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `DisableDomainTransferLockErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             DisableDomainTransferLockErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `DisableDomainTransferLockErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -848,7 +848,7 @@ pub enum EnableDomainAutoRenewErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableDomainAutoRenewError {
@@ -913,18 +913,18 @@ impl EnableDomainAutoRenewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableDomainAutoRenewErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, EnableDomainAutoRenewErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `EnableDomainAutoRenewErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             EnableDomainAutoRenewErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `EnableDomainAutoRenewErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -968,7 +968,7 @@ pub enum EnableDomainTransferLockErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableDomainTransferLockError {
@@ -1035,35 +1035,35 @@ impl EnableDomainTransferLockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableDomainTransferLockErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             EnableDomainTransferLockErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `EnableDomainTransferLockErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             EnableDomainTransferLockErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `EnableDomainTransferLockErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             EnableDomainTransferLockErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `EnableDomainTransferLockErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             EnableDomainTransferLockErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `EnableDomainTransferLockErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -1105,7 +1105,7 @@ pub enum GetContactReachabilityStatusErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactReachabilityStatusError {
@@ -1170,21 +1170,21 @@ impl GetContactReachabilityStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactReachabilityStatusErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetContactReachabilityStatusErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetContactReachabilityStatusErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `GetContactReachabilityStatusErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -1222,7 +1222,7 @@ pub enum GetDomainDetailErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainDetailError {
@@ -1286,11 +1286,11 @@ impl GetDomainDetailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainDetailErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetDomainDetailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetDomainDetailErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetDomainDetailErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `GetDomainDetailErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, GetDomainDetailErrorKind::UnsupportedTld(_))
     }
@@ -1324,7 +1324,7 @@ pub enum GetDomainSuggestionsErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainSuggestionsError {
@@ -1388,11 +1388,11 @@ impl GetDomainSuggestionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainSuggestionsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetDomainSuggestionsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetDomainSuggestionsErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetDomainSuggestionsErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `GetDomainSuggestionsErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, GetDomainSuggestionsErrorKind::UnsupportedTld(_))
     }
@@ -1424,7 +1424,7 @@ pub enum GetOperationDetailErrorKind {
     /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
     /// the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOperationDetailError {
@@ -1487,7 +1487,7 @@ impl GetOperationDetailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOperationDetailErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetOperationDetailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetOperationDetailErrorKind::InvalidInput(_))
     }
@@ -1518,7 +1518,7 @@ pub enum ListDomainsErrorKind {
     /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
     /// the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainsError {
@@ -1581,7 +1581,7 @@ impl ListDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::InvalidInput(_))
     }
@@ -1612,7 +1612,7 @@ pub enum ListOperationsErrorKind {
     /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
     /// the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOperationsError {
@@ -1675,7 +1675,7 @@ impl ListOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOperationsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListOperationsErrorKind::InvalidInput(_))
     }
@@ -1710,7 +1710,7 @@ pub enum ListTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForDomainError {
@@ -1775,18 +1775,18 @@ impl ListTagsForDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTagsForDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListTagsForDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForDomainErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, ListTagsForDomainErrorKind::UnsupportedTld(_))
     }
@@ -1829,7 +1829,7 @@ pub enum RegisterDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDomainError {
@@ -1897,30 +1897,30 @@ impl RegisterDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::DomainLimitExceeded`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::DomainLimitExceeded(_))
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDomainErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::TldRulesViolation(_))
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::UnsupportedTld(_))
     }
@@ -1958,7 +1958,7 @@ pub enum RejectDomainTransferFromAnotherAwsAccountErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectDomainTransferFromAnotherAwsAccountError {
@@ -2029,14 +2029,14 @@ impl RejectDomainTransferFromAnotherAwsAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2085,7 +2085,7 @@ pub enum RenewDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RenewDomainError {
@@ -2152,23 +2152,23 @@ impl RenewDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RenewDomainErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `RenewDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `RenewDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `RenewDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `RenewDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `RenewDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::OperationLimitExceeded(_))
     }
-    /// Returns true if the error kind is `RenewDomainErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `RenewDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::TldRulesViolation(_))
     }
-    /// Returns true if the error kind is `RenewDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `RenewDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::UnsupportedTld(_))
     }
@@ -2207,7 +2207,7 @@ pub enum ResendContactReachabilityEmailErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResendContactReachabilityEmailError {
@@ -2277,21 +2277,21 @@ impl ResendContactReachabilityEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResendContactReachabilityEmailErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ResendContactReachabilityEmailErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ResendContactReachabilityEmailErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ResendContactReachabilityEmailErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -2329,7 +2329,7 @@ pub enum RetrieveDomainAuthCodeErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetrieveDomainAuthCodeError {
@@ -2393,11 +2393,11 @@ impl RetrieveDomainAuthCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetrieveDomainAuthCodeErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `RetrieveDomainAuthCodeErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, RetrieveDomainAuthCodeErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `RetrieveDomainAuthCodeErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `RetrieveDomainAuthCodeErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -2442,7 +2442,7 @@ pub enum TransferDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransferDomainError {
@@ -2510,30 +2510,30 @@ impl TransferDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::DomainLimitExceeded`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::DomainLimitExceeded(_))
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             TransferDomainErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::TldRulesViolation(_))
     }
-    /// Returns true if the error kind is `TransferDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `TransferDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::UnsupportedTld(_))
     }
@@ -2573,7 +2573,7 @@ pub enum TransferDomainToAnotherAwsAccountErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransferDomainToAnotherAwsAccountError {
@@ -2643,21 +2643,21 @@ impl TransferDomainToAnotherAwsAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -2703,7 +2703,7 @@ pub enum UpdateDomainContactErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainContactError {
@@ -2770,32 +2770,32 @@ impl UpdateDomainContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainContactErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateDomainContactErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UpdateDomainContactErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, UpdateDomainContactErrorKind::UnsupportedTld(_))
     }
@@ -2838,7 +2838,7 @@ pub enum UpdateDomainContactPrivacyErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainContactPrivacyError {
@@ -2905,35 +2905,35 @@ impl UpdateDomainContactPrivacyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainContactPrivacyErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactPrivacyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactPrivacyErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactPrivacyErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainContactPrivacyErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -2979,7 +2979,7 @@ pub enum UpdateDomainNameserversErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainNameserversError {
@@ -3046,35 +3046,35 @@ impl UpdateDomainNameserversError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainNameserversErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainNameserversErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainNameserversErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainNameserversErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainNameserversErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainNameserversErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainNameserversErrorKind::TldRulesViolation`.
+    /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainNameserversErrorKind::TldRulesViolation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainNameserversErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(
             &self.kind,
@@ -3116,7 +3116,7 @@ pub enum UpdateTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTagsForDomainError {
@@ -3181,18 +3181,18 @@ impl UpdateTagsForDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTagsForDomainErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateTagsForDomainErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UpdateTagsForDomainErrorKind::OperationLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagsForDomainErrorKind::OperationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagsForDomainErrorKind::UnsupportedTld`.
+    /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
         matches!(&self.kind, UpdateTagsForDomainErrorKind::UnsupportedTld(_))
     }
@@ -3225,7 +3225,7 @@ pub enum ViewBillingErrorKind {
     /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
     /// the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ViewBillingError {
@@ -3288,7 +3288,7 @@ impl ViewBillingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ViewBillingErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ViewBillingErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ViewBillingErrorKind::InvalidInput(_))
     }

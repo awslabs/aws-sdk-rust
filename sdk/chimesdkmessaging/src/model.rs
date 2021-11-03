@@ -266,8 +266,9 @@ pub struct Processor {
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
     /// At this point, we support only 1 processor within a flow.</p>
     pub execution_order: std::option::Option<i32>,
-    /// <p>Determines whether to continue or stop processing if communication with processor fails. If the last processor in a channel flow sequence has a fallback action of CONTINUE, and communication
-    /// with the processor fails, the message is considered processed and sent to the recipients in the channel.</p>
+    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
+    /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
+    /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fallback_action: std::option::Option<crate::model::FallbackAction>,
 }
 impl std::fmt::Debug for Processor {
@@ -327,14 +328,16 @@ pub mod processor {
             self.execution_order = input;
             self
         }
-        /// <p>Determines whether to continue or stop processing if communication with processor fails. If the last processor in a channel flow sequence has a fallback action of CONTINUE, and communication
-        /// with the processor fails, the message is considered processed and sent to the recipients in the channel.</p>
+        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
+        /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
+        /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
         pub fn fallback_action(mut self, input: crate::model::FallbackAction) -> Self {
             self.fallback_action = Some(input);
             self
         }
-        /// <p>Determines whether to continue or stop processing if communication with processor fails. If the last processor in a channel flow sequence has a fallback action of CONTINUE, and communication
-        /// with the processor fails, the message is considered processed and sent to the recipients in the channel.</p>
+        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
+        /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
+        /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
         pub fn set_fallback_action(
             mut self,
             input: std::option::Option<crate::model::FallbackAction>,
@@ -701,6 +704,205 @@ impl Tag {
     }
 }
 
+/// <p>A list of message attribute values.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MessageAttributeValue {
+    /// <p>The strings in a message attribute value.</p>
+    pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for MessageAttributeValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageAttributeValue");
+        formatter.field("string_values", &self.string_values);
+        formatter.finish()
+    }
+}
+/// See [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+pub mod message_attribute_value {
+    /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) string_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `string_values`.
+        ///
+        /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
+        ///
+        /// <p>The strings in a message attribute value.</p>
+        pub fn string_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.string_values.unwrap_or_default();
+            v.push(input.into());
+            self.string_values = Some(v);
+            self
+        }
+        /// <p>The strings in a message attribute value.</p>
+        pub fn set_string_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.string_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+        pub fn build(self) -> crate::model::MessageAttributeValue {
+            crate::model::MessageAttributeValue {
+                string_values: self.string_values,
+            }
+        }
+    }
+}
+impl MessageAttributeValue {
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+    pub fn builder() -> crate::model::message_attribute_value::Builder {
+        crate::model::message_attribute_value::Builder::default()
+    }
+}
+
+/// <p>The push notification configuration of the message.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PushNotificationConfiguration {
+    /// <p>The title of the push notification.</p>
+    pub title: std::option::Option<std::string::String>,
+    /// <p>The body of the push notification.</p>
+    pub body: std::option::Option<std::string::String>,
+    /// <p>Enum value that indicates the type of the push notification for a message.
+    /// <code>DEFAULT</code>: Normal mobile push notification.
+    /// <code>VOIP</code>: VOIP mobile push notification.</p>
+    pub r#type: std::option::Option<crate::model::PushNotificationType>,
+}
+impl std::fmt::Debug for PushNotificationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PushNotificationConfiguration");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("body", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+pub mod push_notification_configuration {
+    /// A builder for [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) title: std::option::Option<std::string::String>,
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::PushNotificationType>,
+    }
+    impl Builder {
+        /// <p>The title of the push notification.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
+            self
+        }
+        /// <p>The title of the push notification.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
+            self
+        }
+        /// <p>The body of the push notification.</p>
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
+            self
+        }
+        /// <p>The body of the push notification.</p>
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
+            self
+        }
+        /// <p>Enum value that indicates the type of the push notification for a message.
+        /// <code>DEFAULT</code>: Normal mobile push notification.
+        /// <code>VOIP</code>: VOIP mobile push notification.</p>
+        pub fn r#type(mut self, input: crate::model::PushNotificationType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Enum value that indicates the type of the push notification for a message.
+        /// <code>DEFAULT</code>: Normal mobile push notification.
+        /// <code>VOIP</code>: VOIP mobile push notification.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::PushNotificationType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+        pub fn build(self) -> crate::model::PushNotificationConfiguration {
+            crate::model::PushNotificationConfiguration {
+                title: self.title,
+                body: self.body,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl PushNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+    pub fn builder() -> crate::model::push_notification_configuration::Builder {
+        crate::model::push_notification_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PushNotificationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    Voip,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PushNotificationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => PushNotificationType::Default,
+            "VOIP" => PushNotificationType::Voip,
+            other => PushNotificationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PushNotificationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PushNotificationType::from(s))
+    }
+}
+impl PushNotificationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PushNotificationType::Default => "DEFAULT",
+            PushNotificationType::Voip => "VOIP",
+            PushNotificationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "VOIP"]
+    }
+}
+impl AsRef<str> for PushNotificationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -808,6 +1010,255 @@ impl ChannelMessageType {
 impl AsRef<str> for ChannelMessageType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelMembershipPreferences {
+    /// <p>The push notification configuration of a message.</p>
+    pub push_notifications: std::option::Option<crate::model::PushNotificationPreferences>,
+}
+impl std::fmt::Debug for ChannelMembershipPreferences {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelMembershipPreferences");
+        formatter.field("push_notifications", &self.push_notifications);
+        formatter.finish()
+    }
+}
+/// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+pub mod channel_membership_preferences {
+    /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) push_notifications:
+            std::option::Option<crate::model::PushNotificationPreferences>,
+    }
+    impl Builder {
+        /// <p>The push notification configuration of a message.</p>
+        pub fn push_notifications(
+            mut self,
+            input: crate::model::PushNotificationPreferences,
+        ) -> Self {
+            self.push_notifications = Some(input);
+            self
+        }
+        /// <p>The push notification configuration of a message.</p>
+        pub fn set_push_notifications(
+            mut self,
+            input: std::option::Option<crate::model::PushNotificationPreferences>,
+        ) -> Self {
+            self.push_notifications = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+        pub fn build(self) -> crate::model::ChannelMembershipPreferences {
+            crate::model::ChannelMembershipPreferences {
+                push_notifications: self.push_notifications,
+            }
+        }
+    }
+}
+impl ChannelMembershipPreferences {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+    pub fn builder() -> crate::model::channel_membership_preferences::Builder {
+        crate::model::channel_membership_preferences::Builder::default()
+    }
+}
+
+/// <p>The channel membership preferences for push notification.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PushNotificationPreferences {
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
+    /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
+    /// </p>
+    pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
+    /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
+    pub filter_rule: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PushNotificationPreferences {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PushNotificationPreferences");
+        formatter.field("allow_notifications", &self.allow_notifications);
+        formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+pub mod push_notification_preferences {
+    /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) allow_notifications: std::option::Option<crate::model::AllowNotifications>,
+        pub(crate) filter_rule: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
+        /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
+        /// </p>
+        pub fn allow_notifications(mut self, input: crate::model::AllowNotifications) -> Self {
+            self.allow_notifications = Some(input);
+            self
+        }
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
+        /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
+        /// </p>
+        pub fn set_allow_notifications(
+            mut self,
+            input: std::option::Option<crate::model::AllowNotifications>,
+        ) -> Self {
+            self.allow_notifications = input;
+            self
+        }
+        /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
+        pub fn filter_rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter_rule = Some(input.into());
+            self
+        }
+        /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
+        pub fn set_filter_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+        pub fn build(self) -> crate::model::PushNotificationPreferences {
+            crate::model::PushNotificationPreferences {
+                allow_notifications: self.allow_notifications,
+                filter_rule: self.filter_rule,
+            }
+        }
+    }
+}
+impl PushNotificationPreferences {
+    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+    pub fn builder() -> crate::model::push_notification_preferences::Builder {
+        crate::model::push_notification_preferences::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AllowNotifications {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Filtered,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AllowNotifications {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => AllowNotifications::All,
+            "FILTERED" => AllowNotifications::Filtered,
+            "NONE" => AllowNotifications::None,
+            other => AllowNotifications::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AllowNotifications {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AllowNotifications::from(s))
+    }
+}
+impl AllowNotifications {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AllowNotifications::All => "ALL",
+            AllowNotifications::Filtered => "FILTERED",
+            AllowNotifications::None => "NONE",
+            AllowNotifications::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "FILTERED", "NONE"]
+    }
+}
+impl AsRef<str> for AllowNotifications {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The details of a user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name in an Identity.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Identity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Identity");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`Identity`](crate::model::Identity)
+pub mod identity {
+    /// A builder for [`Identity`](crate::model::Identity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN in an Identity.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN in an Identity.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name in an Identity.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name in an Identity.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
+        pub fn build(self) -> crate::model::Identity {
+            crate::model::Identity {
+                arn: self.arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
     }
 }
 
@@ -1205,69 +1656,6 @@ impl ChannelModeratorSummary {
     }
 }
 
-/// <p>The details of a user.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Identity {
-    /// <p>The ARN in an Identity.</p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The name in an Identity.</p>
-    pub name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
-/// See [`Identity`](crate::model::Identity)
-pub mod identity {
-    /// A builder for [`Identity`](crate::model::Identity)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ARN in an Identity.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN in an Identity.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The name in an Identity.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name in an Identity.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
-        pub fn build(self) -> crate::model::Identity {
-            crate::model::Identity {
-                arn: self.arn,
-                name: self.name,
-            }
-        }
-    }
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
-
 /// <p>Summary of the messages in a <code>Channel</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1293,6 +1681,10 @@ pub struct ChannelMessageSummary {
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
     /// processing stage.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    pub message_attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    >,
 }
 impl std::fmt::Debug for ChannelMessageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1307,6 +1699,7 @@ impl std::fmt::Debug for ChannelMessageSummary {
         formatter.field("sender", &self.sender);
         formatter.field("redacted", &self.redacted);
         formatter.field("status", &self.status);
+        formatter.field("message_attributes", &self.message_attributes);
         formatter.finish()
     }
 }
@@ -1326,6 +1719,9 @@ pub mod channel_message_summary {
         pub(crate) sender: std::option::Option<crate::model::Identity>,
         pub(crate) redacted: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+        pub(crate) message_attributes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+        >,
     }
     impl Builder {
         /// <p>The ID of the message.</p>
@@ -1445,6 +1841,31 @@ pub mod channel_message_summary {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>The message attribues listed in a the summary of a channel message.</p>
+        pub fn message_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::MessageAttributeValue>,
+        ) -> Self {
+            let mut hash_map = self.message_attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.message_attributes = Some(hash_map);
+            self
+        }
+        /// <p>The message attribues listed in a the summary of a channel message.</p>
+        pub fn set_message_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+            >,
+        ) -> Self {
+            self.message_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
         pub fn build(self) -> crate::model::ChannelMessageSummary {
             crate::model::ChannelMessageSummary {
@@ -1458,6 +1879,7 @@ pub mod channel_message_summary {
                 sender: self.sender,
                 redacted: self.redacted.unwrap_or_default(),
                 status: self.status,
+                message_attributes: self.message_attributes,
             }
         }
     }
@@ -1985,6 +2407,10 @@ pub struct ChannelMessage {
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
     /// <p>The status of the channel message.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    pub message_attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    >,
 }
 impl std::fmt::Debug for ChannelMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2001,6 +2427,7 @@ impl std::fmt::Debug for ChannelMessage {
         formatter.field("redacted", &self.redacted);
         formatter.field("persistence", &self.persistence);
         formatter.field("status", &self.status);
+        formatter.field("message_attributes", &self.message_attributes);
         formatter.finish()
     }
 }
@@ -2022,6 +2449,9 @@ pub mod channel_message {
         pub(crate) redacted: std::option::Option<bool>,
         pub(crate) persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+        pub(crate) message_attributes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+        >,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2162,6 +2592,31 @@ pub mod channel_message {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+        pub fn message_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::MessageAttributeValue>,
+        ) -> Self {
+            let mut hash_map = self.message_attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.message_attributes = Some(hash_map);
+            self
+        }
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+        pub fn set_message_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+            >,
+        ) -> Self {
+            self.message_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMessage`](crate::model::ChannelMessage)
         pub fn build(self) -> crate::model::ChannelMessage {
             crate::model::ChannelMessage {
@@ -2177,6 +2632,7 @@ pub mod channel_message {
                 redacted: self.redacted.unwrap_or_default(),
                 persistence: self.persistence,
                 status: self.status,
+                message_attributes: self.message_attributes,
             }
         }
     }
@@ -2930,7 +3386,7 @@ impl ChannelMessageCallback {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipError {
-    /// <p>The ARN of the member that the service couldn't add.</p>
+    /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
@@ -2957,12 +3413,12 @@ pub mod batch_create_channel_membership_error {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the member that the service couldn't add.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
         pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the member that the service couldn't add.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.member_arn = input;
             self

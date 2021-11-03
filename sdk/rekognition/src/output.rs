@@ -2,6 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDatasetEntriesOutput {}
+impl std::fmt::Debug for UpdateDatasetEntriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDatasetEntriesOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput)
+pub mod update_dataset_entries_output {
+    /// A builder for [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput)
+        pub fn build(self) -> crate::output::UpdateDatasetEntriesOutput {
+            crate::output::UpdateDatasetEntriesOutput {}
+        }
+    }
+}
+impl UpdateDatasetEntriesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput)
+    pub fn builder() -> crate::output::update_dataset_entries_output::Builder {
+        crate::output::update_dataset_entries_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1241,6 +1271,182 @@ impl ListFacesOutput {
     /// Creates a new builder-style object to manufacture [`ListFacesOutput`](crate::output::ListFacesOutput)
     pub fn builder() -> crate::output::list_faces_output::Builder {
         crate::output::list_faces_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasetLabelsOutput {
+    /// <p>
+    /// A list of the labels in the dataset.
+    /// </p>
+    pub dataset_label_descriptions:
+        std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListDatasetLabelsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasetLabelsOutput");
+        formatter.field(
+            "dataset_label_descriptions",
+            &self.dataset_label_descriptions,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDatasetLabelsOutput`](crate::output::ListDatasetLabelsOutput)
+pub mod list_dataset_labels_output {
+    /// A builder for [`ListDatasetLabelsOutput`](crate::output::ListDatasetLabelsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_label_descriptions:
+            std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `dataset_label_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_dataset_label_descriptions`](Self::set_dataset_label_descriptions).
+        ///
+        /// <p>
+        /// A list of the labels in the dataset.
+        /// </p>
+        pub fn dataset_label_descriptions(
+            mut self,
+            input: impl Into<crate::model::DatasetLabelDescription>,
+        ) -> Self {
+            let mut v = self.dataset_label_descriptions.unwrap_or_default();
+            v.push(input.into());
+            self.dataset_label_descriptions = Some(v);
+            self
+        }
+        /// <p>
+        /// A list of the labels in the dataset.
+        /// </p>
+        pub fn set_dataset_label_descriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
+        ) -> Self {
+            self.dataset_label_descriptions = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasetLabelsOutput`](crate::output::ListDatasetLabelsOutput)
+        pub fn build(self) -> crate::output::ListDatasetLabelsOutput {
+            crate::output::ListDatasetLabelsOutput {
+                dataset_label_descriptions: self.dataset_label_descriptions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDatasetLabelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatasetLabelsOutput`](crate::output::ListDatasetLabelsOutput)
+    pub fn builder() -> crate::output::list_dataset_labels_output::Builder {
+        crate::output::list_dataset_labels_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasetEntriesOutput {
+    /// <p>
+    /// A list of entries (images) in the dataset.
+    /// </p>
+    pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListDatasetEntriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasetEntriesOutput");
+        formatter.field("dataset_entries", &self.dataset_entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput)
+pub mod list_dataset_entries_output {
+    /// A builder for [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `dataset_entries`.
+        ///
+        /// To override the contents of this collection use [`set_dataset_entries`](Self::set_dataset_entries).
+        ///
+        /// <p>
+        /// A list of entries (images) in the dataset.
+        /// </p>
+        pub fn dataset_entries(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dataset_entries.unwrap_or_default();
+            v.push(input.into());
+            self.dataset_entries = Some(v);
+            self
+        }
+        /// <p>
+        /// A list of entries (images) in the dataset.
+        /// </p>
+        pub fn set_dataset_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dataset_entries = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput)
+        pub fn build(self) -> crate::output::ListDatasetEntriesOutput {
+            crate::output::ListDatasetEntriesOutput {
+                dataset_entries: self.dataset_entries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDatasetEntriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput)
+    pub fn builder() -> crate::output::list_dataset_entries_output::Builder {
+        crate::output::list_dataset_entries_output::Builder::default()
     }
 }
 
@@ -2893,6 +3099,36 @@ impl GetCelebrityInfoOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DistributeDatasetEntriesOutput {}
+impl std::fmt::Debug for DistributeDatasetEntriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DistributeDatasetEntriesOutput");
+        formatter.finish()
+    }
+}
+/// See [`DistributeDatasetEntriesOutput`](crate::output::DistributeDatasetEntriesOutput)
+pub mod distribute_dataset_entries_output {
+    /// A builder for [`DistributeDatasetEntriesOutput`](crate::output::DistributeDatasetEntriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DistributeDatasetEntriesOutput`](crate::output::DistributeDatasetEntriesOutput)
+        pub fn build(self) -> crate::output::DistributeDatasetEntriesOutput {
+            crate::output::DistributeDatasetEntriesOutput {}
+        }
+    }
+}
+impl DistributeDatasetEntriesOutput {
+    /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesOutput`](crate::output::DistributeDatasetEntriesOutput)
+    pub fn builder() -> crate::output::distribute_dataset_entries_output::Builder {
+        crate::output::distribute_dataset_entries_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextOutput {
     /// <p>An array of text that was detected in the input image.</p>
     pub text_detections: std::option::Option<std::vec::Vec<crate::model::TextDetection>>,
@@ -3853,6 +4089,63 @@ impl DescribeProjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDatasetOutput {
+    /// <p>
+    /// The description for the dataset.
+    /// </p>
+    pub dataset_description: std::option::Option<crate::model::DatasetDescription>,
+}
+impl std::fmt::Debug for DescribeDatasetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDatasetOutput");
+        formatter.field("dataset_description", &self.dataset_description);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
+pub mod describe_dataset_output {
+    /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_description: std::option::Option<crate::model::DatasetDescription>,
+    }
+    impl Builder {
+        /// <p>
+        /// The description for the dataset.
+        /// </p>
+        pub fn dataset_description(mut self, input: crate::model::DatasetDescription) -> Self {
+            self.dataset_description = Some(input);
+            self
+        }
+        /// <p>
+        /// The description for the dataset.
+        /// </p>
+        pub fn set_dataset_description(
+            mut self,
+            input: std::option::Option<crate::model::DatasetDescription>,
+        ) -> Self {
+            self.dataset_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
+        pub fn build(self) -> crate::output::DescribeDatasetOutput {
+            crate::output::DescribeDatasetOutput {
+                dataset_description: self.dataset_description,
+            }
+        }
+    }
+}
+impl DescribeDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
+    pub fn builder() -> crate::output::describe_dataset_output::Builder {
+        crate::output::describe_dataset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCollectionOutput {
     /// <p>The number of faces that are indexed into the collection. To index faces into a
     /// collection, use <a>IndexFaces</a>.</p>
@@ -4159,6 +4452,36 @@ impl DeleteFacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDatasetOutput {}
+impl std::fmt::Debug for DeleteDatasetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDatasetOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+pub mod delete_dataset_output {
+    /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+        pub fn build(self) -> crate::output::DeleteDatasetOutput {
+            crate::output::DeleteDatasetOutput {}
+        }
+    }
+}
+impl DeleteDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+    pub fn builder() -> crate::output::delete_dataset_output::Builder {
+        crate::output::delete_dataset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCollectionOutput {
     /// <p>HTTP status code that indicates the result of the operation.</p>
     pub status_code: std::option::Option<i32>,
@@ -4357,6 +4680,60 @@ impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput)
     pub fn builder() -> crate::output::create_project_output::Builder {
         crate::output::create_project_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDatasetOutput {
+    /// <p>
+    /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateDatasetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDatasetOutput");
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
+pub mod create_dataset_output {
+    /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
+        pub fn build(self) -> crate::output::CreateDatasetOutput {
+            crate::output::CreateDatasetOutput {
+                dataset_arn: self.dataset_arn,
+            }
+        }
+    }
+}
+impl CreateDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
+    pub fn builder() -> crate::output::create_dataset_output::Builder {
+        crate::output::create_dataset_output::Builder::default()
     }
 }
 

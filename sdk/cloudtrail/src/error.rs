@@ -54,7 +54,7 @@ pub enum AddTagsErrorKind {
     TagsLimitExceededException(crate::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -125,54 +125,54 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::CloudTrailArnInvalidException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::CloudTrailArnInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidTrailNameException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::ResourceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::ResourceTypeNotSupportedException`.
     pub fn is_resource_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::ResourceTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::TagsLimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::TagsLimitExceededException`.
     pub fn is_tags_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::TagsLimitExceededException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -306,7 +306,7 @@ pub enum CreateTrailErrorKind {
     TrailNotProvidedException(crate::error::TrailNotProvidedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrailError {
@@ -404,187 +404,187 @@ impl CreateTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::CloudTrailAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::CloudTrailAccessNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::CloudTrailInvalidClientTokenIdException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::CloudTrailInvalidClientTokenIdException`.
     pub fn is_cloud_trail_invalid_client_token_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::CloudTrailInvalidClientTokenIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException`.
     pub fn is_cloud_watch_logs_delivery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InsufficientEncryptionPolicyException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InsufficientEncryptionPolicyException`.
     pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InsufficientEncryptionPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InsufficientS3BucketPolicyException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InsufficientS3BucketPolicyException`.
     pub fn is_insufficient_s3_bucket_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InsufficientS3BucketPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InsufficientSnsTopicPolicyException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InsufficientSnsTopicPolicyException`.
     pub fn is_insufficient_sns_topic_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InsufficientSnsTopicPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException`.
     pub fn is_invalid_cloud_watch_logs_log_group_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidCloudWatchLogsRoleArnException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidCloudWatchLogsRoleArnException`.
     pub fn is_invalid_cloud_watch_logs_role_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidCloudWatchLogsRoleArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidKmsKeyIdException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidKmsKeyIdException`.
     pub fn is_invalid_kms_key_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidKmsKeyIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidS3BucketNameException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidS3BucketNameException`.
     pub fn is_invalid_s3_bucket_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidS3BucketNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidS3PrefixException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidS3PrefixException`.
     pub fn is_invalid_s3_prefix_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidS3PrefixException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidSnsTopicNameException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidSnsTopicNameException`.
     pub fn is_invalid_sns_topic_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidSnsTopicNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, CreateTrailErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::KmsKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::KmsKeyDisabledException`.
     pub fn is_kms_key_disabled_exception(&self) -> bool {
         matches!(&self.kind, CreateTrailErrorKind::KmsKeyDisabledException(_))
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::KmsKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::KmsKeyNotFoundException`.
     pub fn is_kms_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTrailErrorKind::KmsKeyNotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::MaximumNumberOfTrailsExceededException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::MaximumNumberOfTrailsExceededException`.
     pub fn is_maximum_number_of_trails_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::MaximumNumberOfTrailsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException`.
     pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::OrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::OrganizationsNotInUseException`.
     pub fn is_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::OrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::S3BucketDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::S3BucketDoesNotExistException`.
     pub fn is_s3_bucket_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::S3BucketDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::TrailAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::TrailAlreadyExistsException`.
     pub fn is_trail_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::TrailAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::TrailNotProvidedException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::TrailNotProvidedException`.
     pub fn is_trail_not_provided_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrailErrorKind::TrailNotProvidedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrailErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -687,7 +687,7 @@ pub enum DeleteTrailErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrailError {
@@ -759,50 +759,50 @@ impl DeleteTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteTrailErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTrailErrorKind::TrailNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteTrailErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -865,7 +865,7 @@ pub enum DescribeTrailsErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrailsError {
@@ -930,21 +930,21 @@ impl DescribeTrailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrailsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `DescribeTrailsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTrailsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTrailsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DescribeTrailsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTrailsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTrailsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeTrailsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1002,7 +1002,7 @@ pub enum GetEventSelectorsErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventSelectorsError {
@@ -1068,28 +1068,28 @@ impl GetEventSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEventSelectorsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSelectorsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSelectorsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSelectorsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSelectorsErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSelectorsErrorKind::TrailNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSelectorsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1150,7 +1150,7 @@ pub enum GetInsightSelectorsErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightSelectorsError {
@@ -1217,35 +1217,35 @@ impl GetInsightSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightSelectorsErrorKind::InsightNotEnabledException`.
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::InsightNotEnabledException`.
     pub fn is_insight_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightSelectorsErrorKind::InsightNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightSelectorsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightSelectorsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightSelectorsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightSelectorsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightSelectorsErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightSelectorsErrorKind::TrailNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightSelectorsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1305,7 +1305,7 @@ pub enum GetTrailErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTrailError {
@@ -1371,22 +1371,22 @@ impl GetTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTrailErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `GetTrailErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, GetTrailErrorKind::InvalidTrailNameException(_))
     }
-    /// Returns true if the error kind is `GetTrailErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetTrailErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTrailErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTrailErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `GetTrailErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTrailErrorKind::TrailNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTrailErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetTrailErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1445,7 +1445,7 @@ pub enum GetTrailStatusErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTrailStatusError {
@@ -1511,28 +1511,28 @@ impl GetTrailStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTrailStatusErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `GetTrailStatusErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTrailStatusErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetTrailStatusErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetTrailStatusErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTrailStatusErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTrailStatusErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `GetTrailStatusErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTrailStatusErrorKind::TrailNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTrailStatusErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetTrailStatusErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1573,7 +1573,7 @@ pub enum ListPublicKeysErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPublicKeysError {
@@ -1639,28 +1639,28 @@ impl ListPublicKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPublicKeysErrorKind::InvalidTimeRangeException`.
+    /// Returns `true` if the error kind is `ListPublicKeysErrorKind::InvalidTimeRangeException`.
     pub fn is_invalid_time_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublicKeysErrorKind::InvalidTimeRangeException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublicKeysErrorKind::InvalidTokenException`.
+    /// Returns `true` if the error kind is `ListPublicKeysErrorKind::InvalidTokenException`.
     pub fn is_invalid_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublicKeysErrorKind::InvalidTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublicKeysErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListPublicKeysErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublicKeysErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublicKeysErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ListPublicKeysErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1728,7 +1728,7 @@ pub enum ListTagsErrorKind {
     ResourceTypeNotSupportedException(crate::error::ResourceTypeNotSupportedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -1797,40 +1797,40 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::CloudTrailArnInvalidException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudTrailArnInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidTokenException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidTokenException`.
     pub fn is_invalid_token_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidTokenException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidTrailNameException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceTypeNotSupportedException`.
     pub fn is_resource_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::ResourceTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1870,7 +1870,7 @@ pub enum ListTrailsErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrailsError {
@@ -1934,14 +1934,14 @@ impl ListTrailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrailsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListTrailsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTrailsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTrailsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ListTrailsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1986,7 +1986,7 @@ pub enum LookupEventsErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LookupEventsError {
@@ -2055,49 +2055,49 @@ impl LookupEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::InvalidEventCategoryException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::InvalidEventCategoryException`.
     pub fn is_invalid_event_category_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::InvalidEventCategoryException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::InvalidLookupAttributesException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::InvalidLookupAttributesException`.
     pub fn is_invalid_lookup_attributes_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::InvalidLookupAttributesException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::InvalidTimeRangeException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::InvalidTimeRangeException`.
     pub fn is_invalid_time_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::InvalidTimeRangeException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupEventsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `LookupEventsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `LookupEventsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2195,7 +2195,7 @@ pub enum PutEventSelectorsErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventSelectorsError {
@@ -2269,56 +2269,56 @@ impl PutEventSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::InvalidEventSelectorsException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::InvalidEventSelectorsException`.
     pub fn is_invalid_event_selectors_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::InvalidEventSelectorsException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::TrailNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventSelectorsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2402,7 +2402,7 @@ pub enum PutInsightSelectorsErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInsightSelectorsError {
@@ -2481,74 +2481,74 @@ impl PutInsightSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException`.
     pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException`.
     pub fn is_insufficient_s3_bucket_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::InvalidInsightSelectorsException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InvalidInsightSelectorsException`.
     pub fn is_invalid_insight_selectors_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::InvalidInsightSelectorsException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, PutInsightSelectorsErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::S3BucketDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::S3BucketDoesNotExistException`.
     pub fn is_s3_bucket_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::S3BucketDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightSelectorsErrorKind::TrailNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightSelectorsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2634,7 +2634,7 @@ pub enum RemoveTagsErrorKind {
     ResourceTypeNotSupportedException(crate::error::ResourceTypeNotSupportedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsError {
@@ -2704,56 +2704,56 @@ impl RemoveTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::CloudTrailArnInvalidException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::CloudTrailArnInvalidException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InvalidTagParameterException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InvalidTagParameterException`.
     pub fn is_invalid_tag_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::InvalidTagParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::ResourceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::ResourceTypeNotSupportedException`.
     pub fn is_resource_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::ResourceTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2828,7 +2828,7 @@ pub enum StartLoggingErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartLoggingError {
@@ -2899,46 +2899,46 @@ impl StartLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLoggingErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLoggingErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLoggingErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLoggingErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartLoggingErrorKind::TrailNotFoundException(_))
     }
-    /// Returns true if the error kind is `StartLoggingErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3014,7 +3014,7 @@ pub enum StopLoggingErrorKind {
     TrailNotFoundException(crate::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopLoggingError {
@@ -3085,46 +3085,46 @@ impl StopLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopLoggingErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopLoggingErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopLoggingErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopLoggingErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopLoggingErrorKind::TrailNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopLoggingErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3279,7 +3279,7 @@ pub enum UpdateTrailErrorKind {
     TrailNotProvidedException(crate::error::TrailNotProvidedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrailError {
@@ -3377,184 +3377,184 @@ impl UpdateTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::CloudTrailAccessNotEnabledException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException`.
     pub fn is_cloud_trail_invalid_client_token_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException`.
     pub fn is_cloud_watch_logs_delivery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InsufficientEncryptionPolicyException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InsufficientEncryptionPolicyException`.
     pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InsufficientEncryptionPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InsufficientS3BucketPolicyException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InsufficientS3BucketPolicyException`.
     pub fn is_insufficient_s3_bucket_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InsufficientS3BucketPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InsufficientSnsTopicPolicyException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InsufficientSnsTopicPolicyException`.
     pub fn is_insufficient_sns_topic_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InsufficientSnsTopicPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException`.
     pub fn is_invalid_cloud_watch_logs_log_group_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidCloudWatchLogsRoleArnException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidCloudWatchLogsRoleArnException`.
     pub fn is_invalid_cloud_watch_logs_role_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidCloudWatchLogsRoleArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidEventSelectorsException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidEventSelectorsException`.
     pub fn is_invalid_event_selectors_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidEventSelectorsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidHomeRegionException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidHomeRegionException`.
     pub fn is_invalid_home_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidHomeRegionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidKmsKeyIdException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidKmsKeyIdException`.
     pub fn is_invalid_kms_key_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidKmsKeyIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidS3BucketNameException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidS3BucketNameException`.
     pub fn is_invalid_s3_bucket_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidS3BucketNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidS3PrefixException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidS3PrefixException`.
     pub fn is_invalid_s3_prefix_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidS3PrefixException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidSnsTopicNameException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidSnsTopicNameException`.
     pub fn is_invalid_sns_topic_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidSnsTopicNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::InvalidTrailNameException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::InvalidTrailNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::KmsException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrailErrorKind::KmsException(_))
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::KmsKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::KmsKeyDisabledException`.
     pub fn is_kms_key_disabled_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrailErrorKind::KmsKeyDisabledException(_))
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::KmsKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::KmsKeyNotFoundException`.
     pub fn is_kms_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrailErrorKind::KmsKeyNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::NotOrganizationMasterAccountException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::NotOrganizationMasterAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException`.
     pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::OrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::OrganizationsNotInUseException`.
     pub fn is_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::OrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::S3BucketDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::S3BucketDoesNotExistException`.
     pub fn is_s3_bucket_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::S3BucketDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::TrailNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrailErrorKind::TrailNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::TrailNotProvidedException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::TrailNotProvidedException`.
     pub fn is_trail_not_provided_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::TrailNotProvidedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrailErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,

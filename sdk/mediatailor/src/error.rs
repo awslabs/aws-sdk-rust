@@ -12,7 +12,7 @@ pub struct ConfigureLogsForPlaybackConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfigureLogsForPlaybackConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfigureLogsForPlaybackConfigurationError {
@@ -101,7 +101,7 @@ pub struct CreateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
@@ -185,7 +185,7 @@ pub struct CreatePrefetchScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePrefetchScheduleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePrefetchScheduleError {
@@ -269,7 +269,7 @@ pub struct CreateProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProgramErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProgramError {
@@ -353,7 +353,7 @@ pub struct CreateSourceLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSourceLocationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSourceLocationError {
@@ -437,7 +437,7 @@ pub struct CreateVodSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVodSourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVodSourceError {
@@ -521,7 +521,7 @@ pub struct DeleteChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
@@ -605,7 +605,7 @@ pub struct DeleteChannelPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelPolicyError {
@@ -689,7 +689,7 @@ pub struct DeletePlaybackConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlaybackConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlaybackConfigurationError {
@@ -773,7 +773,7 @@ pub struct DeletePrefetchScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePrefetchScheduleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePrefetchScheduleError {
@@ -857,7 +857,7 @@ pub struct DeleteProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProgramErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProgramError {
@@ -941,7 +941,7 @@ pub struct DeleteSourceLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSourceLocationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSourceLocationError {
@@ -1025,7 +1025,7 @@ pub struct DeleteVodSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVodSourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVodSourceError {
@@ -1109,7 +1109,7 @@ pub struct DescribeChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
@@ -1193,7 +1193,7 @@ pub struct DescribeProgramError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProgramErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProgramError {
@@ -1277,7 +1277,7 @@ pub struct DescribeSourceLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSourceLocationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSourceLocationError {
@@ -1361,7 +1361,7 @@ pub struct DescribeVodSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVodSourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVodSourceError {
@@ -1445,7 +1445,7 @@ pub struct GetChannelPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChannelPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChannelPolicyError {
@@ -1529,7 +1529,7 @@ pub struct GetChannelScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChannelScheduleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChannelScheduleError {
@@ -1613,7 +1613,7 @@ pub struct GetPlaybackConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPlaybackConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPlaybackConfigurationError {
@@ -1697,7 +1697,7 @@ pub struct GetPrefetchScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPrefetchScheduleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPrefetchScheduleError {
@@ -1781,7 +1781,7 @@ pub struct ListAlertsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAlertsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlertsError {
@@ -1865,7 +1865,7 @@ pub struct ListChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChannelsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
@@ -1949,7 +1949,7 @@ pub struct ListPlaybackConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlaybackConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlaybackConfigurationsError {
@@ -2033,7 +2033,7 @@ pub struct ListPrefetchSchedulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPrefetchSchedulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPrefetchSchedulesError {
@@ -2117,7 +2117,7 @@ pub struct ListSourceLocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSourceLocationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSourceLocationsError {
@@ -2203,7 +2203,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// Invalid request parameters.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2266,7 +2266,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2296,7 +2296,7 @@ pub struct ListVodSourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVodSourcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVodSourcesError {
@@ -2380,7 +2380,7 @@ pub struct PutChannelPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutChannelPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutChannelPolicyError {
@@ -2464,7 +2464,7 @@ pub struct PutPlaybackConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPlaybackConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPlaybackConfigurationError {
@@ -2548,7 +2548,7 @@ pub struct StartChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartChannelError {
@@ -2632,7 +2632,7 @@ pub struct StopChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopChannelError {
@@ -2718,7 +2718,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// Invalid request parameters.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2781,7 +2781,7 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
@@ -2810,7 +2810,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// Invalid request parameters.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2873,7 +2873,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
@@ -2900,7 +2900,7 @@ pub struct UpdateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
@@ -2984,7 +2984,7 @@ pub struct UpdateSourceLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSourceLocationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSourceLocationError {
@@ -3068,7 +3068,7 @@ pub struct UpdateVodSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVodSourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVodSourceError {

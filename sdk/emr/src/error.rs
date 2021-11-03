@@ -17,7 +17,7 @@ pub enum AddInstanceFleetErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddInstanceFleetError {
@@ -81,14 +81,14 @@ impl AddInstanceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddInstanceFleetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AddInstanceFleetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddInstanceFleetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AddInstanceFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AddInstanceFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum AddInstanceGroupsErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddInstanceGroupsError {
@@ -185,7 +185,7 @@ impl AddInstanceGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddInstanceGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddInstanceGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -218,7 +218,7 @@ pub enum AddJobFlowStepsErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddJobFlowStepsError {
@@ -281,7 +281,7 @@ impl AddJobFlowStepsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddJobFlowStepsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddJobFlowStepsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AddJobFlowStepsErrorKind::InternalServerError(_))
     }
@@ -313,7 +313,7 @@ pub enum AddTagsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -377,11 +377,11 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidRequestException(_))
     }
@@ -414,7 +414,7 @@ pub enum CancelStepsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelStepsError {
@@ -478,11 +478,11 @@ impl CancelStepsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelStepsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelStepsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CancelStepsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CancelStepsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CancelStepsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CancelStepsErrorKind::InvalidRequestException(_))
     }
@@ -515,7 +515,7 @@ pub enum CreateSecurityConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSecurityConfigurationError {
@@ -579,14 +579,14 @@ impl CreateSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecurityConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -622,7 +622,7 @@ pub enum CreateStudioErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStudioError {
@@ -686,14 +686,14 @@ impl CreateStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -729,7 +729,7 @@ pub enum CreateStudioSessionMappingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStudioSessionMappingError {
@@ -793,14 +793,14 @@ impl CreateStudioSessionMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStudioSessionMappingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateStudioSessionMappingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioSessionMappingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioSessionMappingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateStudioSessionMappingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -836,7 +836,7 @@ pub enum DeleteSecurityConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSecurityConfigurationError {
@@ -900,14 +900,14 @@ impl DeleteSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecurityConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -943,7 +943,7 @@ pub enum DeleteStudioErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioError {
@@ -1007,14 +1007,14 @@ impl DeleteStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1050,7 +1050,7 @@ pub enum DeleteStudioSessionMappingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioSessionMappingError {
@@ -1114,14 +1114,14 @@ impl DeleteStudioSessionMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioSessionMappingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteStudioSessionMappingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioSessionMappingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioSessionMappingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteStudioSessionMappingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1157,7 +1157,7 @@ pub enum DescribeClusterErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterError {
@@ -1221,14 +1221,14 @@ impl DescribeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1262,7 +1262,7 @@ pub enum DescribeJobFlowsErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobFlowsError {
@@ -1325,7 +1325,7 @@ impl DescribeJobFlowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobFlowsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeJobFlowsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1360,7 +1360,7 @@ pub enum DescribeNotebookExecutionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotebookExecutionError {
@@ -1424,14 +1424,14 @@ impl DescribeNotebookExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNotebookExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeNotebookExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotebookExecutionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotebookExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeNotebookExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1467,7 +1467,7 @@ pub enum DescribeReleaseLabelErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReleaseLabelError {
@@ -1531,14 +1531,14 @@ impl DescribeReleaseLabelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReleaseLabelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeReleaseLabelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReleaseLabelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReleaseLabelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeReleaseLabelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1574,7 +1574,7 @@ pub enum DescribeSecurityConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecurityConfigurationError {
@@ -1645,14 +1645,14 @@ impl DescribeSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSecurityConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSecurityConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSecurityConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSecurityConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeSecurityConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1688,7 +1688,7 @@ pub enum DescribeStepErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStepError {
@@ -1752,14 +1752,14 @@ impl DescribeStepError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStepErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeStepErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStepErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStepErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeStepErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1795,7 +1795,7 @@ pub enum DescribeStudioErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStudioError {
@@ -1859,14 +1859,14 @@ impl DescribeStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStudioErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeStudioErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStudioErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStudioErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeStudioErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1897,7 +1897,7 @@ pub struct GetAutoTerminationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAutoTerminationPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAutoTerminationPolicyError {
@@ -1986,7 +1986,7 @@ pub enum GetBlockPublicAccessConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlockPublicAccessConfigurationError {
@@ -2057,14 +2057,14 @@ impl GetBlockPublicAccessConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlockPublicAccessConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetBlockPublicAccessConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlockPublicAccessConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlockPublicAccessConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetBlockPublicAccessConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2099,7 +2099,7 @@ pub struct GetManagedScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetManagedScalingPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetManagedScalingPolicyError {
@@ -2188,7 +2188,7 @@ pub enum GetStudioSessionMappingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStudioSessionMappingError {
@@ -2252,14 +2252,14 @@ impl GetStudioSessionMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStudioSessionMappingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetStudioSessionMappingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioSessionMappingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioSessionMappingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetStudioSessionMappingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2295,7 +2295,7 @@ pub enum ListBootstrapActionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBootstrapActionsError {
@@ -2359,14 +2359,14 @@ impl ListBootstrapActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBootstrapActionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListBootstrapActionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBootstrapActionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListBootstrapActionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListBootstrapActionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2402,7 +2402,7 @@ pub enum ListClustersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
@@ -2466,14 +2466,14 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClustersErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2509,7 +2509,7 @@ pub enum ListInstanceFleetsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceFleetsError {
@@ -2573,14 +2573,14 @@ impl ListInstanceFleetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceFleetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInstanceFleetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceFleetsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceFleetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInstanceFleetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2616,7 +2616,7 @@ pub enum ListInstanceGroupsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceGroupsError {
@@ -2680,14 +2680,14 @@ impl ListInstanceGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceGroupsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInstanceGroupsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceGroupsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceGroupsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInstanceGroupsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2723,7 +2723,7 @@ pub enum ListInstancesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstancesError {
@@ -2787,14 +2787,14 @@ impl ListInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstancesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInstancesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstancesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstancesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInstancesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2830,7 +2830,7 @@ pub enum ListNotebookExecutionsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNotebookExecutionsError {
@@ -2894,14 +2894,14 @@ impl ListNotebookExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNotebookExecutionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListNotebookExecutionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListNotebookExecutionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListNotebookExecutionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListNotebookExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2937,7 +2937,7 @@ pub enum ListReleaseLabelsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReleaseLabelsError {
@@ -3001,14 +3001,14 @@ impl ListReleaseLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReleaseLabelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListReleaseLabelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReleaseLabelsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListReleaseLabelsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListReleaseLabelsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3044,7 +3044,7 @@ pub enum ListSecurityConfigurationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSecurityConfigurationsError {
@@ -3108,14 +3108,14 @@ impl ListSecurityConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSecurityConfigurationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSecurityConfigurationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecurityConfigurationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecurityConfigurationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListSecurityConfigurationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3151,7 +3151,7 @@ pub enum ListStepsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStepsError {
@@ -3215,11 +3215,11 @@ impl ListStepsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStepsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListStepsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListStepsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListStepsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListStepsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListStepsErrorKind::InvalidRequestException(_))
     }
@@ -3252,7 +3252,7 @@ pub enum ListStudiosErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudiosError {
@@ -3316,11 +3316,11 @@ impl ListStudiosError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::InvalidRequestException(_))
     }
@@ -3353,7 +3353,7 @@ pub enum ListStudioSessionMappingsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudioSessionMappingsError {
@@ -3417,14 +3417,14 @@ impl ListStudioSessionMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudioSessionMappingsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListStudioSessionMappingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioSessionMappingsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioSessionMappingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListStudioSessionMappingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3460,7 +3460,7 @@ pub enum ModifyClusterErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterError {
@@ -3524,11 +3524,11 @@ impl ModifyClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ModifyClusterErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3564,7 +3564,7 @@ pub enum ModifyInstanceFleetErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceFleetError {
@@ -3628,14 +3628,14 @@ impl ModifyInstanceFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyInstanceFleetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ModifyInstanceFleetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyInstanceFleetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyInstanceFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyInstanceFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3669,7 +3669,7 @@ pub enum ModifyInstanceGroupsErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceGroupsError {
@@ -3732,7 +3732,7 @@ impl ModifyInstanceGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyInstanceGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ModifyInstanceGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -3762,7 +3762,7 @@ pub struct PutAutoScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAutoScalingPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAutoScalingPolicyError {
@@ -3846,7 +3846,7 @@ pub struct PutAutoTerminationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAutoTerminationPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAutoTerminationPolicyError {
@@ -3935,7 +3935,7 @@ pub enum PutBlockPublicAccessConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBlockPublicAccessConfigurationError {
@@ -4006,14 +4006,14 @@ impl PutBlockPublicAccessConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBlockPublicAccessConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutBlockPublicAccessConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutBlockPublicAccessConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutBlockPublicAccessConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutBlockPublicAccessConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4048,7 +4048,7 @@ pub struct PutManagedScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutManagedScalingPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutManagedScalingPolicyError {
@@ -4132,7 +4132,7 @@ pub struct RemoveAutoScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveAutoScalingPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAutoScalingPolicyError {
@@ -4216,7 +4216,7 @@ pub struct RemoveAutoTerminationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveAutoTerminationPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAutoTerminationPolicyError {
@@ -4300,7 +4300,7 @@ pub struct RemoveManagedScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveManagedScalingPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveManagedScalingPolicyError {
@@ -4389,7 +4389,7 @@ pub enum RemoveTagsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsError {
@@ -4453,11 +4453,11 @@ impl RemoveTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::InvalidRequestException(_))
     }
@@ -4488,7 +4488,7 @@ pub enum RunJobFlowErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RunJobFlowError {
@@ -4551,7 +4551,7 @@ impl RunJobFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RunJobFlowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RunJobFlowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, RunJobFlowErrorKind::InternalServerError(_))
     }
@@ -4581,7 +4581,7 @@ pub enum SetTerminationProtectionErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTerminationProtectionError {
@@ -4644,7 +4644,7 @@ impl SetTerminationProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTerminationProtectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SetTerminationProtectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -4677,7 +4677,7 @@ pub enum SetVisibleToAllUsersErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetVisibleToAllUsersError {
@@ -4740,7 +4740,7 @@ impl SetVisibleToAllUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetVisibleToAllUsersErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SetVisibleToAllUsersErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -4775,7 +4775,7 @@ pub enum StartNotebookExecutionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartNotebookExecutionError {
@@ -4839,14 +4839,14 @@ impl StartNotebookExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartNotebookExecutionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartNotebookExecutionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartNotebookExecutionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartNotebookExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartNotebookExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4882,7 +4882,7 @@ pub enum StopNotebookExecutionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopNotebookExecutionError {
@@ -4946,14 +4946,14 @@ impl StopNotebookExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopNotebookExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StopNotebookExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StopNotebookExecutionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StopNotebookExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopNotebookExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4987,7 +4987,7 @@ pub enum TerminateJobFlowsErrorKind {
     /// <p>Indicates that an error occurred while processing the request and that the request was
     /// not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateJobFlowsError {
@@ -5050,7 +5050,7 @@ impl TerminateJobFlowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateJobFlowsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TerminateJobFlowsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -5085,7 +5085,7 @@ pub enum UpdateStudioErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStudioError {
@@ -5149,14 +5149,14 @@ impl UpdateStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5192,7 +5192,7 @@ pub enum UpdateStudioSessionMappingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStudioSessionMappingError {
@@ -5256,14 +5256,14 @@ impl UpdateStudioSessionMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStudioSessionMappingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateStudioSessionMappingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioSessionMappingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioSessionMappingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateStudioSessionMappingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,

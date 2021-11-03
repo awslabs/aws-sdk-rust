@@ -14,7 +14,7 @@ pub struct GetRawMessageContentError {
 pub enum GetRawMessageContentErrorKind {
     /// <p>The requested email message is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRawMessageContentError {
@@ -77,7 +77,7 @@ impl GetRawMessageContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRawMessageContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRawMessageContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -132,7 +132,7 @@ pub enum PutRawMessageContentErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The requested email message is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRawMessageContentError {
@@ -198,25 +198,25 @@ impl PutRawMessageContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRawMessageContentErrorKind::InvalidContentLocation`.
+    /// Returns `true` if the error kind is `PutRawMessageContentErrorKind::InvalidContentLocation`.
     pub fn is_invalid_content_location(&self) -> bool {
         matches!(
             &self.kind,
             PutRawMessageContentErrorKind::InvalidContentLocation(_)
         )
     }
-    /// Returns true if the error kind is `PutRawMessageContentErrorKind::MessageFrozen`.
+    /// Returns `true` if the error kind is `PutRawMessageContentErrorKind::MessageFrozen`.
     pub fn is_message_frozen(&self) -> bool {
         matches!(&self.kind, PutRawMessageContentErrorKind::MessageFrozen(_))
     }
-    /// Returns true if the error kind is `PutRawMessageContentErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `PutRawMessageContentErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(
             &self.kind,
             PutRawMessageContentErrorKind::MessageRejected(_)
         )
     }
-    /// Returns true if the error kind is `PutRawMessageContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRawMessageContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -343,7 +343,7 @@ pub type DescribeDimensionKeysInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeDimensionKeysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDimensionKeys`](crate::operation::DescribeDimensionKeys)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -375,6 +375,7 @@ impl DescribeDimensionKeysInput {
             input: &crate::input::DescribeDimensionKeysInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -439,9 +440,10 @@ impl DescribeDimensionKeysInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -573,7 +575,7 @@ pub type GetDimensionKeyDetailsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetDimensionKeyDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionKeyDetails`](crate::operation::GetDimensionKeyDetails)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -605,6 +607,7 @@ impl GetDimensionKeyDetailsInput {
             input: &crate::input::GetDimensionKeyDetailsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -669,9 +672,10 @@ impl GetDimensionKeyDetailsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -916,7 +920,7 @@ pub type GetResourceMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetResourceMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceMetrics`](crate::operation::GetResourceMetrics)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -948,6 +952,7 @@ impl GetResourceMetricsInput {
             input: &crate::input::GetResourceMetricsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1010,9 +1015,10 @@ impl GetResourceMetricsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

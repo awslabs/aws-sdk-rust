@@ -32,7 +32,7 @@ struct Opt {
     #[structopt(short, long)]
     output_file: String,
 
-    /// Whether to display additonal runtime information.
+    /// Whether to display additional runtime information.
     #[structopt(short, long)]
     verbose: bool,
 }

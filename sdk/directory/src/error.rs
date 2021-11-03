@@ -22,7 +22,7 @@ pub enum AcceptSharedDirectoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptSharedDirectoryError {
@@ -91,35 +91,35 @@ impl AcceptSharedDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptSharedDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AcceptSharedDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptSharedDirectoryErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptSharedDirectoryErrorKind::DirectoryAlreadySharedException`.
+    /// Returns `true` if the error kind is `AcceptSharedDirectoryErrorKind::DirectoryAlreadySharedException`.
     pub fn is_directory_already_shared_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptSharedDirectoryErrorKind::DirectoryAlreadySharedException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptSharedDirectoryErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `AcceptSharedDirectoryErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptSharedDirectoryErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptSharedDirectoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AcceptSharedDirectoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptSharedDirectoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptSharedDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AcceptSharedDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -168,7 +168,7 @@ pub enum AddIpRoutesErrorKind {
     IpRouteLimitExceededException(crate::error::IpRouteLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddIpRoutesError {
@@ -237,46 +237,46 @@ impl AddIpRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, AddIpRoutesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddIpRoutesErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddIpRoutesErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddIpRoutesErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddIpRoutesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::IpRouteLimitExceededException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::IpRouteLimitExceededException`.
     pub fn is_ip_route_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddIpRoutesErrorKind::IpRouteLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddIpRoutesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AddIpRoutesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AddIpRoutesErrorKind::ServiceException(_))
     }
@@ -331,7 +331,7 @@ pub enum AddRegionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRegionError {
@@ -403,58 +403,58 @@ impl AddRegionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AddRegionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, AddRegionErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::DirectoryAlreadyInRegionException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::DirectoryAlreadyInRegionException`.
     pub fn is_directory_already_in_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRegionErrorKind::DirectoryAlreadyInRegionException(_)
         )
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRegionErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRegionErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRegionErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, AddRegionErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::RegionLimitExceededException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::RegionLimitExceededException`.
     pub fn is_region_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddRegionErrorKind::RegionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AddRegionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AddRegionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddRegionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -503,7 +503,7 @@ pub enum AddTagsToResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The maximum allowed number of tags was exceeded.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -570,29 +570,29 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, AddTagsToResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AddTagsToResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -632,7 +632,7 @@ pub enum CancelSchemaExtensionErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSchemaExtensionError {
@@ -697,21 +697,21 @@ impl CancelSchemaExtensionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelSchemaExtensionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CancelSchemaExtensionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSchemaExtensionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSchemaExtensionErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CancelSchemaExtensionErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSchemaExtensionErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSchemaExtensionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CancelSchemaExtensionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -753,7 +753,7 @@ pub enum ConnectDirectoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConnectDirectoryError {
@@ -819,25 +819,25 @@ impl ConnectDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConnectDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ConnectDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ConnectDirectoryErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ConnectDirectoryErrorKind::DirectoryLimitExceededException`.
+    /// Returns `true` if the error kind is `ConnectDirectoryErrorKind::DirectoryLimitExceededException`.
     pub fn is_directory_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectDirectoryErrorKind::DirectoryLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectDirectoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ConnectDirectoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectDirectoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ConnectDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ConnectDirectoryErrorKind::ServiceException(_))
     }
@@ -877,7 +877,7 @@ pub enum CreateAliasErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
@@ -944,32 +944,32 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::ServiceException(_))
     }
@@ -1016,7 +1016,7 @@ pub enum CreateComputerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComputerError {
@@ -1086,50 +1086,50 @@ impl CreateComputerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::AuthenticationFailedException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::AuthenticationFailedException`.
     pub fn is_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputerErrorKind::AuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateComputerErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputerErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputerErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputerErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateComputerErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateComputerErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateComputerErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1180,7 +1180,7 @@ pub enum CreateConditionalForwarderErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConditionalForwarderError {
@@ -1257,49 +1257,49 @@ impl CreateConditionalForwarderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConditionalForwarderErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConditionalForwarderErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateConditionalForwarderErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1353,7 +1353,7 @@ pub enum CreateDirectoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectoryError {
@@ -1419,25 +1419,25 @@ impl CreateDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateDirectoryErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::DirectoryLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::DirectoryLimitExceededException`.
     pub fn is_directory_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::DirectoryLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDirectoryErrorKind::ServiceException(_))
     }
@@ -1479,7 +1479,7 @@ pub enum CreateLogSubscriptionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLogSubscriptionError {
@@ -1549,42 +1549,42 @@ impl CreateLogSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogSubscriptionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogSubscriptionErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogSubscriptionErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogSubscriptionErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogSubscriptionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogSubscriptionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateLogSubscriptionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1633,7 +1633,7 @@ pub enum CreateMicrosoftADErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMicrosoftADError {
@@ -1700,29 +1700,29 @@ impl CreateMicrosoftADError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMicrosoftADErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateMicrosoftADErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateMicrosoftADErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateMicrosoftADErrorKind::DirectoryLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMicrosoftADErrorKind::DirectoryLimitExceededException`.
     pub fn is_directory_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMicrosoftADErrorKind::DirectoryLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMicrosoftADErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateMicrosoftADErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMicrosoftADErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMicrosoftADErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateMicrosoftADErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateMicrosoftADErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateMicrosoftADErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateMicrosoftADErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1768,7 +1768,7 @@ pub enum CreateSnapshotErrorKind {
     /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
     /// for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotError {
@@ -1835,29 +1835,29 @@ impl CreateSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateSnapshotErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::SnapshotLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotLimitExceededException`.
     pub fn is_snapshot_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1903,7 +1903,7 @@ pub enum CreateTrustErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrustError {
@@ -1971,36 +1971,36 @@ impl CreateTrustError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateTrustErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrustErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrustErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrustErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateTrustErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateTrustErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateTrustErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2047,7 +2047,7 @@ pub enum DeleteConditionalForwarderErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConditionalForwarderError {
@@ -2121,42 +2121,42 @@ impl DeleteConditionalForwarderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConditionalForwarderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConditionalForwarderErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConditionalForwarderErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConditionalForwarderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConditionalForwarderErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConditionalForwarderErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteConditionalForwarderErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2203,7 +2203,7 @@ pub enum DeleteDirectoryErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectoryError {
@@ -2268,18 +2268,18 @@ impl DeleteDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteDirectoryErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDirectoryErrorKind::ServiceException(_))
     }
@@ -2316,7 +2316,7 @@ pub enum DeleteLogSubscriptionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLogSubscriptionError {
@@ -2382,28 +2382,28 @@ impl DeleteLogSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLogSubscriptionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteLogSubscriptionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogSubscriptionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogSubscriptionErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteLogSubscriptionErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogSubscriptionErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogSubscriptionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteLogSubscriptionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogSubscriptionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogSubscriptionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteLogSubscriptionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2444,7 +2444,7 @@ pub enum DeleteSnapshotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotError {
@@ -2510,25 +2510,25 @@ impl DeleteSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteSnapshotErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteSnapshotErrorKind::ServiceException(_))
     }
@@ -2568,7 +2568,7 @@ pub enum DeleteTrustErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrustError {
@@ -2635,29 +2635,29 @@ impl DeleteTrustError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrustErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteTrustErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteTrustErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteTrustErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteTrustErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrustErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrustErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteTrustErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrustErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrustErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteTrustErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteTrustErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteTrustErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteTrustErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2708,7 +2708,7 @@ pub enum DeregisterCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterCertificateError {
@@ -2780,56 +2780,56 @@ impl DeregisterCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::CertificateDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::CertificateDoesNotExistException`.
     pub fn is_certificate_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::CertificateDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::CertificateInUseException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::CertificateInUseException`.
     pub fn is_certificate_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::CertificateInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterCertificateErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeregisterCertificateErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2876,7 +2876,7 @@ pub enum DeregisterEventTopicErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterEventTopicError {
@@ -2942,28 +2942,28 @@ impl DeregisterEventTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterEventTopicErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterEventTopicErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterEventTopicErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterEventTopicErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeregisterEventTopicErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterEventTopicErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterEventTopicErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterEventTopicErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterEventTopicErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterEventTopicErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeregisterEventTopicErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3008,7 +3008,7 @@ pub enum DescribeCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCertificateError {
@@ -3076,39 +3076,39 @@ impl DescribeCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::CertificateDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::CertificateDoesNotExistException`.
     pub fn is_certificate_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateErrorKind::CertificateDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeCertificateErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCertificateErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3155,7 +3155,7 @@ pub enum DescribeClientAuthenticationSettingsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientAuthenticationSettingsError {
@@ -3236,42 +3236,42 @@ impl DescribeClientAuthenticationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientAuthenticationSettingsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientAuthenticationSettingsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3328,7 +3328,7 @@ pub enum DescribeConditionalForwardersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConditionalForwardersError {
@@ -3407,42 +3407,42 @@ impl DescribeConditionalForwardersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConditionalForwardersErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConditionalForwardersErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConditionalForwardersErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConditionalForwardersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConditionalForwardersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConditionalForwardersErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeConditionalForwardersErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3495,7 +3495,7 @@ pub enum DescribeDirectoriesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectoriesError {
@@ -3562,32 +3562,32 @@ impl DescribeDirectoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectoriesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeDirectoriesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeDirectoriesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeDirectoriesErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeDirectoriesErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectoriesErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectoriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeDirectoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectoriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectoriesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeDirectoriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDirectoriesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDirectoriesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeDirectoriesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3633,7 +3633,7 @@ pub enum DescribeDomainControllersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainControllersError {
@@ -3705,42 +3705,42 @@ impl DescribeDomainControllersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainControllersErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainControllersErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainControllersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainControllersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainControllersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainControllersErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeDomainControllersErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3785,7 +3785,7 @@ pub enum DescribeEventTopicsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventTopicsError {
@@ -3851,25 +3851,25 @@ impl DescribeEventTopicsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventTopicsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeEventTopicsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeEventTopicsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeEventTopicsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeEventTopicsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventTopicsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventTopicsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeEventTopicsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventTopicsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventTopicsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeEventTopicsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3914,7 +3914,7 @@ pub enum DescribeLDAPSSettingsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLDAPSSettingsError {
@@ -3982,42 +3982,42 @@ impl DescribeLDAPSSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLDAPSSettingsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLDAPSSettingsErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLDAPSSettingsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLDAPSSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLDAPSSettingsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLDAPSSettingsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeLDAPSSettingsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4066,7 +4066,7 @@ pub enum DescribeRegionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRegionsError {
@@ -4135,43 +4135,43 @@ impl DescribeRegionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeRegionsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegionsErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribeRegionsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DescribeRegionsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeRegionsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4219,7 +4219,7 @@ pub enum DescribeSharedDirectoriesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSharedDirectoriesError {
@@ -4291,42 +4291,42 @@ impl DescribeSharedDirectoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSharedDirectoriesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSharedDirectoriesErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSharedDirectoriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSharedDirectoriesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSharedDirectoriesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSharedDirectoriesErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeSharedDirectoriesErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4373,7 +4373,7 @@ pub enum DescribeSnapshotsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotsError {
@@ -4440,32 +4440,32 @@ impl DescribeSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeSnapshotsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribeSnapshotsErrorKind::ServiceException(_))
     }
@@ -4508,7 +4508,7 @@ pub enum DescribeTrustsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrustsError {
@@ -4576,36 +4576,36 @@ impl DescribeTrustsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeTrustsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTrustsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTrustsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTrustsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribeTrustsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DescribeTrustsErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeTrustsErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4652,7 +4652,7 @@ pub enum DisableClientAuthenticationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableClientAuthenticationError {
@@ -4726,42 +4726,42 @@ impl DisableClientAuthenticationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableClientAuthenticationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableClientAuthenticationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableClientAuthenticationErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::InvalidClientAuthStatusException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::InvalidClientAuthStatusException`.
     pub fn is_invalid_client_auth_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableClientAuthenticationErrorKind::InvalidClientAuthStatusException(_)
         )
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableClientAuthenticationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DisableClientAuthenticationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DisableClientAuthenticationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4817,7 +4817,7 @@ pub enum DisableLDAPSErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableLDAPSError {
@@ -4886,43 +4886,43 @@ impl DisableLDAPSError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DisableLDAPSErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableLDAPSErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableLDAPSErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::InvalidLdapsStatusException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::InvalidLdapsStatusException`.
     pub fn is_invalid_ldaps_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableLDAPSErrorKind::InvalidLdapsStatusException(_)
         )
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableLDAPSErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DisableLDAPSErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DisableLDAPSErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DisableLDAPSErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4964,7 +4964,7 @@ pub enum DisableRadiusErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableRadiusError {
@@ -5029,18 +5029,18 @@ impl DisableRadiusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableRadiusErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DisableRadiusErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DisableRadiusErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DisableRadiusErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisableRadiusErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableRadiusErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DisableRadiusErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableRadiusErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DisableRadiusErrorKind::ServiceException(_))
     }
@@ -5079,7 +5079,7 @@ pub enum DisableSsoErrorKind {
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableSsoError {
@@ -5146,32 +5146,32 @@ impl DisableSsoError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableSsoErrorKind::AuthenticationFailedException`.
+    /// Returns `true` if the error kind is `DisableSsoErrorKind::AuthenticationFailedException`.
     pub fn is_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSsoErrorKind::AuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSsoErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DisableSsoErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DisableSsoErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DisableSsoErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisableSsoErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSsoErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSsoErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `DisableSsoErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSsoErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSsoErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableSsoErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DisableSsoErrorKind::ServiceException(_))
     }
@@ -5217,7 +5217,7 @@ pub enum EnableClientAuthenticationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableClientAuthenticationError {
@@ -5294,49 +5294,49 @@ impl EnableClientAuthenticationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::InvalidClientAuthStatusException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::InvalidClientAuthStatusException`.
     pub fn is_invalid_client_auth_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::InvalidClientAuthStatusException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::NoAvailableCertificateException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::NoAvailableCertificateException`.
     pub fn is_no_available_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::NoAvailableCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableClientAuthenticationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `EnableClientAuthenticationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `EnableClientAuthenticationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5398,7 +5398,7 @@ pub enum EnableLDAPSErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableLDAPSError {
@@ -5468,50 +5468,50 @@ impl EnableLDAPSError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, EnableLDAPSErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableLDAPSErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableLDAPSErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::InvalidLdapsStatusException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::InvalidLdapsStatusException`.
     pub fn is_invalid_ldaps_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableLDAPSErrorKind::InvalidLdapsStatusException(_)
         )
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableLDAPSErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::NoAvailableCertificateException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::NoAvailableCertificateException`.
     pub fn is_no_available_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableLDAPSErrorKind::NoAvailableCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnableLDAPSErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `EnableLDAPSErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `EnableLDAPSErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5558,7 +5558,7 @@ pub enum EnableRadiusErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableRadiusError {
@@ -5625,32 +5625,32 @@ impl EnableRadiusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableRadiusErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `EnableRadiusErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, EnableRadiusErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `EnableRadiusErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `EnableRadiusErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableRadiusErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `EnableRadiusErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `EnableRadiusErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableRadiusErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `EnableRadiusErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `EnableRadiusErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableRadiusErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `EnableRadiusErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableRadiusErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnableRadiusErrorKind::ServiceException(_))
     }
@@ -5691,7 +5691,7 @@ pub enum EnableSsoErrorKind {
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSsoError {
@@ -5758,32 +5758,32 @@ impl EnableSsoError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableSsoErrorKind::AuthenticationFailedException`.
+    /// Returns `true` if the error kind is `EnableSsoErrorKind::AuthenticationFailedException`.
     pub fn is_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSsoErrorKind::AuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSsoErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `EnableSsoErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, EnableSsoErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `EnableSsoErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `EnableSsoErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSsoErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSsoErrorKind::InsufficientPermissionsException`.
+    /// Returns `true` if the error kind is `EnableSsoErrorKind::InsufficientPermissionsException`.
     pub fn is_insufficient_permissions_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSsoErrorKind::InsufficientPermissionsException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSsoErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableSsoErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnableSsoErrorKind::ServiceException(_))
     }
@@ -5820,7 +5820,7 @@ pub enum GetDirectoryLimitsErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDirectoryLimitsError {
@@ -5885,18 +5885,18 @@ impl GetDirectoryLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDirectoryLimitsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetDirectoryLimitsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryLimitsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetDirectoryLimitsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDirectoryLimitsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDirectoryLimitsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDirectoryLimitsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDirectoryLimitsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryLimitsErrorKind::ServiceException(_))
     }
@@ -5931,7 +5931,7 @@ pub enum GetSnapshotLimitsErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSnapshotLimitsError {
@@ -5996,18 +5996,18 @@ impl GetSnapshotLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSnapshotLimitsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetSnapshotLimitsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetSnapshotLimitsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetSnapshotLimitsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetSnapshotLimitsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotLimitsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotLimitsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetSnapshotLimitsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetSnapshotLimitsErrorKind::ServiceException(_))
     }
@@ -6048,7 +6048,7 @@ pub enum ListCertificatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCertificatesError {
@@ -6116,36 +6116,36 @@ impl ListCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListCertificatesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCertificatesErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCertificatesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCertificatesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListCertificatesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListCertificatesErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6190,7 +6190,7 @@ pub enum ListIpRoutesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIpRoutesError {
@@ -6257,32 +6257,32 @@ impl ListIpRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIpRoutesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListIpRoutesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListIpRoutesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListIpRoutesErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListIpRoutesErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIpRoutesErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListIpRoutesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListIpRoutesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIpRoutesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListIpRoutesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListIpRoutesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIpRoutesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListIpRoutesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListIpRoutesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListIpRoutesErrorKind::ServiceException(_))
     }
@@ -6321,7 +6321,7 @@ pub enum ListLogSubscriptionsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLogSubscriptionsError {
@@ -6387,28 +6387,28 @@ impl ListLogSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLogSubscriptionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListLogSubscriptionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogSubscriptionsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogSubscriptionsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListLogSubscriptionsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogSubscriptionsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogSubscriptionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListLogSubscriptionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogSubscriptionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogSubscriptionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListLogSubscriptionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6449,7 +6449,7 @@ pub enum ListSchemaExtensionsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemaExtensionsError {
@@ -6515,28 +6515,28 @@ impl ListSchemaExtensionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemaExtensionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListSchemaExtensionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaExtensionsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaExtensionsErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListSchemaExtensionsErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaExtensionsErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaExtensionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSchemaExtensionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaExtensionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaExtensionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListSchemaExtensionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6579,7 +6579,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6646,32 +6646,32 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6723,7 +6723,7 @@ pub enum RegisterCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterCertificateError {
@@ -6798,60 +6798,60 @@ impl RegisterCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::CertificateAlreadyExistsException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::CertificateAlreadyExistsException`.
     pub fn is_certificate_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::CertificateAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::CertificateLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::CertificateLimitExceededException`.
     pub fn is_certificate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::CertificateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RegisterCertificateErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::InvalidCertificateException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::InvalidCertificateException`.
     pub fn is_invalid_certificate_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::InvalidCertificateException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCertificateErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `RegisterCertificateErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6897,7 +6897,7 @@ pub enum RegisterEventTopicErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterEventTopicError {
@@ -6963,25 +6963,25 @@ impl RegisterEventTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterEventTopicErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterEventTopicErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RegisterEventTopicErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RegisterEventTopicErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterEventTopicErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterEventTopicErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterEventTopicErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterEventTopicErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterEventTopicErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterEventTopicErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RegisterEventTopicErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, RegisterEventTopicErrorKind::ServiceException(_))
     }
@@ -7021,7 +7021,7 @@ pub enum RejectSharedDirectoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectSharedDirectoryError {
@@ -7090,35 +7090,35 @@ impl RejectSharedDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectSharedDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RejectSharedDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectSharedDirectoryErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `RejectSharedDirectoryErrorKind::DirectoryAlreadySharedException`.
+    /// Returns `true` if the error kind is `RejectSharedDirectoryErrorKind::DirectoryAlreadySharedException`.
     pub fn is_directory_already_shared_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectSharedDirectoryErrorKind::DirectoryAlreadySharedException(_)
         )
     }
-    /// Returns true if the error kind is `RejectSharedDirectoryErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `RejectSharedDirectoryErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectSharedDirectoryErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RejectSharedDirectoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RejectSharedDirectoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectSharedDirectoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RejectSharedDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RejectSharedDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7162,7 +7162,7 @@ pub enum RemoveIpRoutesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveIpRoutesError {
@@ -7229,32 +7229,32 @@ impl RemoveIpRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveIpRoutesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RemoveIpRoutesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RemoveIpRoutesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RemoveIpRoutesErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveIpRoutesErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveIpRoutesErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveIpRoutesErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `RemoveIpRoutesErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveIpRoutesErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveIpRoutesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RemoveIpRoutesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveIpRoutesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveIpRoutesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemoveIpRoutesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, RemoveIpRoutesErrorKind::ServiceException(_))
     }
@@ -7297,7 +7297,7 @@ pub enum RemoveRegionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRegionError {
@@ -7365,33 +7365,33 @@ impl RemoveRegionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RemoveRegionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RemoveRegionErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::DirectoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::DirectoryDoesNotExistException`.
     pub fn is_directory_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRegionErrorKind::DirectoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRegionErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, RemoveRegionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `RemoveRegionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `RemoveRegionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7434,7 +7434,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -7500,28 +7500,28 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7569,7 +7569,7 @@ pub enum ResetUserPasswordErrorKind {
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// <p>The user provided a username that does not exist in your directory.</p>
     UserDoesNotExistException(crate::error::UserDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetUserPasswordError {
@@ -7638,43 +7638,43 @@ impl ResetUserPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ResetUserPasswordErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetUserPasswordErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetUserPasswordErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetUserPasswordErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ResetUserPasswordErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetUserPasswordErrorKind::UnsupportedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ResetUserPasswordErrorKind::UserDoesNotExistException`.
+    /// Returns `true` if the error kind is `ResetUserPasswordErrorKind::UserDoesNotExistException`.
     pub fn is_user_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7718,7 +7718,7 @@ pub enum RestoreFromSnapshotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreFromSnapshotError {
@@ -7784,25 +7784,25 @@ impl RestoreFromSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreFromSnapshotErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RestoreFromSnapshotErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, RestoreFromSnapshotErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `RestoreFromSnapshotErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `RestoreFromSnapshotErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromSnapshotErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromSnapshotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RestoreFromSnapshotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromSnapshotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RestoreFromSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7856,7 +7856,7 @@ pub enum ShareDirectoryErrorKind {
     ShareLimitExceededException(crate::error::ShareLimitExceededException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ShareDirectoryError {
@@ -7928,64 +7928,64 @@ impl ShareDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ShareDirectoryErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::DirectoryAlreadySharedException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::DirectoryAlreadySharedException`.
     pub fn is_directory_already_shared_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::DirectoryAlreadySharedException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::OrganizationsException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::OrganizationsException`.
     pub fn is_organizations_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::OrganizationsException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ShareDirectoryErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::ShareLimitExceededException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::ShareLimitExceededException`.
     pub fn is_share_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ShareDirectoryErrorKind::ShareLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ShareDirectoryErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ShareDirectoryErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8038,7 +8038,7 @@ pub enum StartSchemaExtensionErrorKind {
     /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
     /// for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSchemaExtensionError {
@@ -8106,42 +8106,42 @@ impl StartSchemaExtensionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaExtensionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaExtensionErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaExtensionErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaExtensionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaExtensionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaExtensionErrorKind::SnapshotLimitExceededException`.
+    /// Returns `true` if the error kind is `StartSchemaExtensionErrorKind::SnapshotLimitExceededException`.
     pub fn is_snapshot_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8186,7 +8186,7 @@ pub enum UnshareDirectoryErrorKind {
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnshareDirectoryError {
@@ -8253,32 +8253,32 @@ impl UnshareDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnshareDirectoryErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UnshareDirectoryErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UnshareDirectoryErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UnshareDirectoryErrorKind::DirectoryNotSharedException`.
+    /// Returns `true` if the error kind is `UnshareDirectoryErrorKind::DirectoryNotSharedException`.
     pub fn is_directory_not_shared_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareDirectoryErrorKind::DirectoryNotSharedException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareDirectoryErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `UnshareDirectoryErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareDirectoryErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareDirectoryErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `UnshareDirectoryErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareDirectoryErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareDirectoryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UnshareDirectoryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UnshareDirectoryErrorKind::ServiceException(_))
     }
@@ -8321,7 +8321,7 @@ pub enum UpdateConditionalForwarderErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConditionalForwarderError {
@@ -8395,42 +8395,42 @@ impl UpdateConditionalForwarderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConditionalForwarderErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConditionalForwarderErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConditionalForwarderErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConditionalForwarderErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConditionalForwarderErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConditionalForwarderErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdateConditionalForwarderErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8486,7 +8486,7 @@ pub enum UpdateNumberOfDomainControllersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNumberOfDomainControllersError {
@@ -8568,49 +8568,49 @@ impl UpdateNumberOfDomainControllersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::DomainControllerLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::DomainControllerLimitExceededException`.
     pub fn is_domain_controller_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::DomainControllerLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNumberOfDomainControllersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNumberOfDomainControllersErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdateNumberOfDomainControllersErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8664,7 +8664,7 @@ pub enum UpdateRadiusErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRadiusError {
@@ -8730,25 +8730,25 @@ impl UpdateRadiusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRadiusErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateRadiusErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateRadiusErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateRadiusErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateRadiusErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRadiusErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRadiusErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateRadiusErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRadiusErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRadiusErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateRadiusErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateRadiusErrorKind::ServiceException(_))
     }
@@ -8786,7 +8786,7 @@ pub enum UpdateTrustErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrustError {
@@ -8852,25 +8852,25 @@ impl UpdateTrustError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrustErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateTrustErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrustErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateTrustErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateTrustErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrustErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrustErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateTrustErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrustErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrustErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateTrustErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrustErrorKind::ServiceException(_))
     }
@@ -8910,7 +8910,7 @@ pub enum VerifyTrustErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyTrustError {
@@ -8977,29 +8977,29 @@ impl VerifyTrustError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `VerifyTrustErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `VerifyTrustErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, VerifyTrustErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `VerifyTrustErrorKind::EntityDoesNotExistException`.
+    /// Returns `true` if the error kind is `VerifyTrustErrorKind::EntityDoesNotExistException`.
     pub fn is_entity_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyTrustErrorKind::EntityDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyTrustErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `VerifyTrustErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             VerifyTrustErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `VerifyTrustErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `VerifyTrustErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, VerifyTrustErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `VerifyTrustErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `VerifyTrustErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -18,7 +18,7 @@ pub enum CancelJournalKinesisStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJournalKinesisStreamError {
@@ -85,21 +85,21 @@ impl CancelJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJournalKinesisStreamErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelJournalKinesisStreamErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelJournalKinesisStreamErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelJournalKinesisStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelJournalKinesisStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -141,7 +141,7 @@ pub enum CreateLedgerErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource can't be modified at this time.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLedgerError {
@@ -207,25 +207,25 @@ impl CreateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLedgerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateLedgerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLedgerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLedgerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateLedgerErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateLedgerErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateLedgerErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLedgerErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLedgerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateLedgerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateLedgerErrorKind::ResourceInUseException(_))
     }
@@ -263,7 +263,7 @@ pub enum DeleteLedgerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLedgerError {
@@ -329,25 +329,25 @@ impl DeleteLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLedgerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteLedgerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLedgerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteLedgerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteLedgerErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteLedgerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLedgerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLedgerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLedgerErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DeleteLedgerErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -386,7 +386,7 @@ pub enum DescribeJournalKinesisStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJournalKinesisStreamError {
@@ -457,21 +457,21 @@ impl DescribeJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJournalKinesisStreamErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeJournalKinesisStreamErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJournalKinesisStreamErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -511,7 +511,7 @@ pub struct DescribeJournalS3ExportError {
 pub enum DescribeJournalS3ExportErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJournalS3ExportError {
@@ -574,7 +574,7 @@ impl DescribeJournalS3ExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJournalS3ExportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJournalS3ExportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -608,7 +608,7 @@ pub enum DescribeLedgerErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLedgerError {
@@ -672,14 +672,14 @@ impl DescribeLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLedgerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeLedgerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLedgerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLedgerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -714,7 +714,7 @@ pub enum ExportJournalToS3ErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportJournalToS3Error {
@@ -780,14 +780,14 @@ impl ExportJournalToS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportJournalToS3ErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExportJournalToS3ErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportJournalToS3ErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -824,7 +824,7 @@ pub enum GetBlockErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlockError {
@@ -889,15 +889,15 @@ impl GetBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlockErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetBlockErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetBlockErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetBlockErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBlockErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBlockErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBlockErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `GetBlockErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -935,7 +935,7 @@ pub enum GetDigestErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDigestError {
@@ -1000,15 +1000,15 @@ impl GetDigestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDigestErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDigestErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetDigestErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetDigestErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDigestErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDigestErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDigestErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `GetDigestErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1046,7 +1046,7 @@ pub enum GetRevisionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRevisionError {
@@ -1111,21 +1111,21 @@ impl GetRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRevisionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetRevisionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRevisionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetRevisionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRevisionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRevisionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRevisionErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `GetRevisionErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1163,7 +1163,7 @@ pub enum ListJournalKinesisStreamsForLedgerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJournalKinesisStreamsForLedgerError {
@@ -1237,21 +1237,21 @@ impl ListJournalKinesisStreamsForLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1289,7 +1289,7 @@ pub struct ListJournalS3ExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJournalS3ExportsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJournalS3ExportsError {
@@ -1373,7 +1373,7 @@ pub struct ListJournalS3ExportsForLedgerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJournalS3ExportsForLedgerErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJournalS3ExportsForLedgerError {
@@ -1460,7 +1460,7 @@ pub struct ListLedgersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLedgersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLedgersError {
@@ -1548,7 +1548,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1612,14 +1612,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1656,7 +1656,7 @@ pub enum StreamJournalToKinesisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StreamJournalToKinesisError {
@@ -1723,21 +1723,21 @@ impl StreamJournalToKinesisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StreamJournalToKinesisErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StreamJournalToKinesisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StreamJournalToKinesisErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StreamJournalToKinesisErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StreamJournalToKinesisErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StreamJournalToKinesisErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException`.
+    /// Returns `true` if the error kind is `StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException`.
     pub fn is_resource_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1775,7 +1775,7 @@ pub enum TagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1839,14 +1839,14 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1881,7 +1881,7 @@ pub enum UntagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1945,14 +1945,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1987,7 +1987,7 @@ pub enum UpdateLedgerErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLedgerError {
@@ -2051,14 +2051,14 @@ impl UpdateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLedgerErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateLedgerErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLedgerErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLedgerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLedgerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2093,7 +2093,7 @@ pub enum UpdateLedgerPermissionsModeErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLedgerPermissionsModeError {
@@ -2161,14 +2161,14 @@ impl UpdateLedgerPermissionsModeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLedgerPermissionsModeErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateLedgerPermissionsModeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

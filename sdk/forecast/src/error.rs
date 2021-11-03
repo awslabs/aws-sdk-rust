@@ -19,7 +19,7 @@ pub enum CreateDatasetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>There is already a resource with this name. Try again with a different name.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetError {
@@ -84,18 +84,18 @@ impl CreateDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum CreateDatasetGroupErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetGroupError {
@@ -206,35 +206,35 @@ impl CreateDatasetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetGroupErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetGroupErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetGroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetGroupErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -280,7 +280,7 @@ pub enum CreateDatasetImportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetImportJobError {
@@ -349,35 +349,35 @@ impl CreateDatasetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetImportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetImportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetImportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetImportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetImportJobErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetImportJobErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetImportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetImportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -423,7 +423,7 @@ pub enum CreateForecastErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateForecastError {
@@ -490,35 +490,35 @@ impl CreateForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateForecastErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateForecastErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateForecastErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateForecastErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateForecastErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateForecastErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -564,7 +564,7 @@ pub enum CreateForecastExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateForecastExportJobError {
@@ -633,35 +633,35 @@ impl CreateForecastExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateForecastExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateForecastExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastExportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateForecastExportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastExportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastExportJobErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateForecastExportJobErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastExportJobErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastExportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateForecastExportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateForecastExportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateForecastExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateForecastExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -709,7 +709,7 @@ pub enum CreatePredictorErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePredictorError {
@@ -776,35 +776,35 @@ impl CreatePredictorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePredictorErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePredictorErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePredictorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePredictorErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreatePredictorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePredictorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -850,7 +850,7 @@ pub enum CreatePredictorBacktestExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePredictorBacktestExportJobError {
@@ -930,35 +930,35 @@ impl CreatePredictorBacktestExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePredictorBacktestExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePredictorBacktestExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorBacktestExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorBacktestExportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePredictorBacktestExportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorBacktestExportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorBacktestExportJobErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePredictorBacktestExportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1010,7 +1010,7 @@ pub enum DeleteDatasetErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetError {
@@ -1075,18 +1075,18 @@ impl DeleteDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1126,7 +1126,7 @@ pub enum DeleteDatasetGroupErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetGroupError {
@@ -1191,21 +1191,21 @@ impl DeleteDatasetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDatasetGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetGroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteDatasetGroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetGroupErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1245,7 +1245,7 @@ pub enum DeleteDatasetImportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetImportJobError {
@@ -1310,21 +1310,21 @@ impl DeleteDatasetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetImportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDatasetImportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetImportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetImportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteDatasetImportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetImportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1364,7 +1364,7 @@ pub enum DeleteForecastErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteForecastError {
@@ -1429,21 +1429,21 @@ impl DeleteForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteForecastErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteForecastErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteForecastErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteForecastErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteForecastErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteForecastErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteForecastErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteForecastErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1483,7 +1483,7 @@ pub enum DeleteForecastExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteForecastExportJobError {
@@ -1548,21 +1548,21 @@ impl DeleteForecastExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteForecastExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteForecastExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteForecastExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteForecastExportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteForecastExportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteForecastExportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteForecastExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteForecastExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1602,7 +1602,7 @@ pub enum DeletePredictorErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePredictorError {
@@ -1667,21 +1667,21 @@ impl DeletePredictorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePredictorErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePredictorErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePredictorErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePredictorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeletePredictorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePredictorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePredictorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePredictorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1721,7 +1721,7 @@ pub enum DeletePredictorBacktestExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePredictorBacktestExportJobError {
@@ -1795,21 +1795,21 @@ impl DeletePredictorBacktestExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePredictorBacktestExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePredictorBacktestExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePredictorBacktestExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePredictorBacktestExportJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeletePredictorBacktestExportJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePredictorBacktestExportJobErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1855,7 +1855,7 @@ pub enum DeleteResourceTreeErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceTreeError {
@@ -1920,21 +1920,21 @@ impl DeleteResourceTreeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceTreeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteResourceTreeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceTreeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceTreeErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteResourceTreeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceTreeErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceTreeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceTreeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1972,7 +1972,7 @@ pub enum DescribeDatasetErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetError {
@@ -2036,14 +2036,14 @@ impl DescribeDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2080,7 +2080,7 @@ pub enum DescribeDatasetGroupErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetGroupError {
@@ -2144,14 +2144,14 @@ impl DescribeDatasetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeDatasetGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2188,7 +2188,7 @@ pub enum DescribeDatasetImportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetImportJobError {
@@ -2252,14 +2252,14 @@ impl DescribeDatasetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetImportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeDatasetImportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetImportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2296,7 +2296,7 @@ pub enum DescribeForecastErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeForecastError {
@@ -2360,14 +2360,14 @@ impl DescribeForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeForecastErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeForecastErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeForecastErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeForecastErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeForecastErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2404,7 +2404,7 @@ pub enum DescribeForecastExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeForecastExportJobError {
@@ -2468,14 +2468,14 @@ impl DescribeForecastExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeForecastExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeForecastExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeForecastExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeForecastExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeForecastExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2512,7 +2512,7 @@ pub enum DescribePredictorErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePredictorError {
@@ -2576,14 +2576,14 @@ impl DescribePredictorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePredictorErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribePredictorErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePredictorErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePredictorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePredictorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2620,7 +2620,7 @@ pub enum DescribePredictorBacktestExportJobErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePredictorBacktestExportJobError {
@@ -2691,14 +2691,14 @@ impl DescribePredictorBacktestExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePredictorBacktestExportJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribePredictorBacktestExportJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePredictorBacktestExportJobErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePredictorBacktestExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2741,7 +2741,7 @@ pub enum GetAccuracyMetricsErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccuracyMetricsError {
@@ -2806,21 +2806,21 @@ impl GetAccuracyMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccuracyMetricsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetAccuracyMetricsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccuracyMetricsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccuracyMetricsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `GetAccuracyMetricsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccuracyMetricsErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccuracyMetricsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAccuracyMetricsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2854,7 +2854,7 @@ pub struct ListDatasetGroupsError {
 pub enum ListDatasetGroupsErrorKind {
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetGroupsError {
@@ -2917,7 +2917,7 @@ impl ListDatasetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetGroupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDatasetGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2952,7 +2952,7 @@ pub enum ListDatasetImportJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetImportJobsError {
@@ -3016,14 +3016,14 @@ impl ListDatasetImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetImportJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDatasetImportJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetImportJobsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetImportJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDatasetImportJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3056,7 +3056,7 @@ pub struct ListDatasetsError {
 pub enum ListDatasetsErrorKind {
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetsError {
@@ -3119,7 +3119,7 @@ impl ListDatasetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3154,7 +3154,7 @@ pub enum ListForecastExportJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListForecastExportJobsError {
@@ -3218,14 +3218,14 @@ impl ListForecastExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListForecastExportJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListForecastExportJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListForecastExportJobsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListForecastExportJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListForecastExportJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3261,7 +3261,7 @@ pub enum ListForecastsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListForecastsError {
@@ -3325,11 +3325,11 @@ impl ListForecastsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListForecastsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListForecastsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListForecastsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListForecastsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListForecastsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3365,7 +3365,7 @@ pub enum ListPredictorBacktestExportJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPredictorBacktestExportJobsError {
@@ -3436,14 +3436,14 @@ impl ListPredictorBacktestExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPredictorBacktestExportJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPredictorBacktestExportJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPredictorBacktestExportJobsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPredictorBacktestExportJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPredictorBacktestExportJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3481,7 +3481,7 @@ pub enum ListPredictorsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPredictorsError {
@@ -3545,14 +3545,14 @@ impl ListPredictorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPredictorsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPredictorsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPredictorsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPredictorsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPredictorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3589,7 +3589,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3653,14 +3653,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3699,7 +3699,7 @@ pub enum StopResourceErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopResourceError {
@@ -3764,15 +3764,15 @@ impl StopResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StopResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StopResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StopResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StopResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StopResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3812,7 +3812,7 @@ pub enum TagResourceErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3877,15 +3877,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3923,7 +3923,7 @@ pub enum UntagResourceErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3987,11 +3987,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4030,7 +4030,7 @@ pub enum UpdateDatasetGroupErrorKind {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDatasetGroupError {
@@ -4095,21 +4095,21 @@ impl UpdateDatasetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDatasetGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDatasetGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetGroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateDatasetGroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetGroupErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDatasetGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

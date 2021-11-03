@@ -88,7 +88,7 @@ pub type DeleteAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlternateContact`](crate::operation::DeleteAlternateContact)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -120,6 +120,7 @@ impl DeleteAlternateContactInput {
             input: &crate::input::DeleteAlternateContactInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -179,9 +180,10 @@ impl DeleteAlternateContactInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -285,7 +287,7 @@ pub type GetAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`GetAlternateContact`](crate::operation::GetAlternateContact)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -317,6 +319,7 @@ impl GetAlternateContactInput {
             input: &crate::input::GetAlternateContactInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -374,9 +377,10 @@ impl GetAlternateContactInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -531,7 +535,7 @@ pub type PutAlternateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl PutAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`PutAlternateContact`](crate::operation::PutAlternateContact)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -563,6 +567,7 @@ impl PutAlternateContactInput {
             input: &crate::input::PutAlternateContactInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -620,9 +625,10 @@ impl PutAlternateContactInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

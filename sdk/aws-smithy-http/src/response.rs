@@ -50,7 +50,7 @@ pub trait ParseHttpResponse {
     /// APIs like AwsJson 1.0/1.1 and the error path of most streaming APIs
     ///
     /// Using an explicit body type of Bytes here is a conscious decision—If you _really_ need
-    /// to precisely control how the data is loaded into memory (eg. by using `bytes::Buf`), implement
+    /// to precisely control how the data is loaded into memory (e.g. by using `bytes::Buf`), implement
     /// your handler in `parse_unloaded`.
     ///
     /// Production code will never call `parse_loaded` without first calling `parse_unloaded`. However,

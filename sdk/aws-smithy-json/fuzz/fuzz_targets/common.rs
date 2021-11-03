@@ -14,7 +14,7 @@ pub fn run_data(data: &[u8]) {
         aws_smithy_json::deserialize::json_token_iter(data).collect::<Result<Vec<Token>, Error>>()
     {
         // Exercise string unescaping since the later comparison against Serde
-        // reserializes, and thus, loses UTF-16 surrogate pairs.
+        // re-serializes, and thus, loses UTF-16 surrogate pairs.
         for token in tokens {
             if let Token::ValueString { value, .. } = token {
                 if let Ok(unescaped) = value.to_unescaped() {

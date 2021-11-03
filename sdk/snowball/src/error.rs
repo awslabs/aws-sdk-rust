@@ -21,7 +21,7 @@ pub enum CancelClusterErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelClusterError {
@@ -86,21 +86,21 @@ impl CancelClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelClusterErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `CancelClusterErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelClusterErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `CancelClusterErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CancelClusterErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelClusterErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CancelClusterErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `CancelClusterErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -141,7 +141,7 @@ pub enum CancelJobErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobError {
@@ -206,15 +206,15 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::InvalidJobStateException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::InvalidResourceException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::KmsRequestFailedException(_))
     }
@@ -250,7 +250,7 @@ pub enum CreateAddressErrorKind {
     /// occurred. Check the address with your region's carrier and try again. If the issue persists,
     /// contact AWS Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAddressError {
@@ -314,14 +314,14 @@ impl CreateAddressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAddressErrorKind::InvalidAddressException`.
+    /// Returns `true` if the error kind is `CreateAddressErrorKind::InvalidAddressException`.
     pub fn is_invalid_address_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAddressErrorKind::InvalidAddressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAddressErrorKind::UnsupportedAddressException`.
+    /// Returns `true` if the error kind is `CreateAddressErrorKind::UnsupportedAddressException`.
     pub fn is_unsupported_address_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -364,7 +364,7 @@ pub enum CreateClusterErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -430,28 +430,28 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::Ec2RequestFailedException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::Ec2RequestFailedException`.
     pub fn is_ec2_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::Ec2RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidInputCombinationException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidInputCombinationException`.
     pub fn is_invalid_input_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidInputCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -500,7 +500,7 @@ pub enum CreateJobErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobError {
@@ -567,29 +567,29 @@ impl CreateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ClusterLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ClusterLimitExceededException`.
     pub fn is_cluster_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::ClusterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::Ec2RequestFailedException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::Ec2RequestFailedException`.
     pub fn is_ec2_request_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::Ec2RequestFailedException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InvalidInputCombinationException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InvalidInputCombinationException`.
     pub fn is_invalid_input_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::InvalidInputCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InvalidResourceException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::KmsRequestFailedException(_))
     }
@@ -623,7 +623,7 @@ pub enum CreateLongTermPricingErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLongTermPricingError {
@@ -686,7 +686,7 @@ impl CreateLongTermPricingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLongTermPricingErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CreateLongTermPricingErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -733,7 +733,7 @@ pub enum CreateReturnShippingLabelErrorKind {
     ReturnShippingLabelAlreadyExistsException(
         crate::error::ReturnShippingLabelAlreadyExistsException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReturnShippingLabelError {
@@ -804,35 +804,35 @@ impl CreateReturnShippingLabelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReturnShippingLabelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateReturnShippingLabelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReturnShippingLabelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReturnShippingLabelErrorKind::InvalidInputCombinationException`.
+    /// Returns `true` if the error kind is `CreateReturnShippingLabelErrorKind::InvalidInputCombinationException`.
     pub fn is_invalid_input_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReturnShippingLabelErrorKind::InvalidInputCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReturnShippingLabelErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `CreateReturnShippingLabelErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReturnShippingLabelErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReturnShippingLabelErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CreateReturnShippingLabelErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReturnShippingLabelErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReturnShippingLabelErrorKind::ReturnShippingLabelAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReturnShippingLabelErrorKind::ReturnShippingLabelAlreadyExistsException`.
     pub fn is_return_shipping_label_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -873,7 +873,7 @@ pub enum DescribeAddressErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddressError {
@@ -936,7 +936,7 @@ impl DescribeAddressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAddressErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `DescribeAddressErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -973,7 +973,7 @@ pub enum DescribeAddressesErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddressesError {
@@ -1037,14 +1037,14 @@ impl DescribeAddressesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAddressesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeAddressesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAddressesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAddressesErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `DescribeAddressesErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1078,7 +1078,7 @@ pub enum DescribeClusterErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterError {
@@ -1141,7 +1141,7 @@ impl DescribeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `DescribeClusterErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1174,7 +1174,7 @@ pub enum DescribeJobErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobError {
@@ -1237,7 +1237,7 @@ impl DescribeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1275,7 +1275,7 @@ pub enum DescribeReturnShippingLabelErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReturnShippingLabelError {
@@ -1340,21 +1340,21 @@ impl DescribeReturnShippingLabelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReturnShippingLabelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeReturnShippingLabelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReturnShippingLabelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReturnShippingLabelErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `DescribeReturnShippingLabelErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReturnShippingLabelErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReturnShippingLabelErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `DescribeReturnShippingLabelErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1392,7 +1392,7 @@ pub enum GetJobManifestErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobManifestError {
@@ -1456,14 +1456,14 @@ impl GetJobManifestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobManifestErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `GetJobManifestErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobManifestErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobManifestErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `GetJobManifestErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1500,7 +1500,7 @@ pub enum GetJobUnlockCodeErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobUnlockCodeError {
@@ -1564,14 +1564,14 @@ impl GetJobUnlockCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobUnlockCodeErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `GetJobUnlockCodeErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobUnlockCodeErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobUnlockCodeErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `GetJobUnlockCodeErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1602,7 +1602,7 @@ pub struct GetSnowballUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSnowballUsageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSnowballUsageError {
@@ -1692,7 +1692,7 @@ pub enum GetSoftwareUpdatesErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSoftwareUpdatesError {
@@ -1756,14 +1756,14 @@ impl GetSoftwareUpdatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSoftwareUpdatesErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `GetSoftwareUpdatesErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSoftwareUpdatesErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetSoftwareUpdatesErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `GetSoftwareUpdatesErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1801,7 +1801,7 @@ pub enum ListClusterJobsErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClusterJobsError {
@@ -1865,14 +1865,14 @@ impl ListClusterJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClusterJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListClusterJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClusterJobsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListClusterJobsErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `ListClusterJobsErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1907,7 +1907,7 @@ pub enum ListClustersErrorKind {
     /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
     /// again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClustersError {
@@ -1970,7 +1970,7 @@ impl ListClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClustersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListClustersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2007,7 +2007,7 @@ pub enum ListCompatibleImagesErrorKind {
     /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
     /// again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCompatibleImagesError {
@@ -2071,14 +2071,14 @@ impl ListCompatibleImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCompatibleImagesErrorKind::Ec2RequestFailedException`.
+    /// Returns `true` if the error kind is `ListCompatibleImagesErrorKind::Ec2RequestFailedException`.
     pub fn is_ec2_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCompatibleImagesErrorKind::Ec2RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ListCompatibleImagesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCompatibleImagesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2113,7 +2113,7 @@ pub enum ListJobsErrorKind {
     /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
     /// again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -2176,7 +2176,7 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InvalidNextTokenException(_))
     }
@@ -2210,7 +2210,7 @@ pub enum ListLongTermPricingErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLongTermPricingError {
@@ -2274,14 +2274,14 @@ impl ListLongTermPricingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLongTermPricingErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListLongTermPricingErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLongTermPricingErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListLongTermPricingErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `ListLongTermPricingErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2327,7 +2327,7 @@ pub enum UpdateClusterErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterError {
@@ -2394,35 +2394,35 @@ impl UpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::Ec2RequestFailedException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::Ec2RequestFailedException`.
     pub fn is_ec2_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::Ec2RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidInputCombinationException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidInputCombinationException`.
     pub fn is_invalid_input_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidInputCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2475,7 +2475,7 @@ pub enum UpdateJobErrorKind {
     /// <p>The provided AWS Key Management Service key lacks the permissions to perform the
     /// specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobError {
@@ -2543,33 +2543,33 @@ impl UpdateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::ClusterLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::ClusterLimitExceededException`.
     pub fn is_cluster_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobErrorKind::ClusterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::Ec2RequestFailedException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::Ec2RequestFailedException`.
     pub fn is_ec2_request_failed_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::Ec2RequestFailedException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::InvalidInputCombinationException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::InvalidInputCombinationException`.
     pub fn is_invalid_input_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobErrorKind::InvalidInputCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::InvalidJobStateException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::InvalidResourceException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::KmsRequestFailedException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::KmsRequestFailedException`.
     pub fn is_kms_request_failed_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::KmsRequestFailedException(_))
     }
@@ -2607,7 +2607,7 @@ pub enum UpdateJobShipmentStateErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobShipmentStateError {
@@ -2671,14 +2671,14 @@ impl UpdateJobShipmentStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobShipmentStateErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `UpdateJobShipmentStateErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobShipmentStateErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobShipmentStateErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `UpdateJobShipmentStateErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2712,7 +2712,7 @@ pub enum UpdateLongTermPricingErrorKind {
     /// <p>The specified resource can't be found. Check the information you provided in your last
     /// request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLongTermPricingError {
@@ -2775,7 +2775,7 @@ impl UpdateLongTermPricingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLongTermPricingErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `UpdateLongTermPricingErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,

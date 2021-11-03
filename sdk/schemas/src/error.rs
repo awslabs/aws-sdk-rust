@@ -24,7 +24,7 @@ pub enum CreateDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDiscovererError {
@@ -92,36 +92,36 @@ impl CreateDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiscovererErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDiscovererErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateDiscovererErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -168,7 +168,7 @@ pub enum CreateRegistryErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRegistryError {
@@ -236,33 +236,33 @@ impl CreateRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRegistryErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateRegistryErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateRegistryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -305,7 +305,7 @@ pub enum CreateSchemaErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     #[allow(missing_docs)] // documentation missing in model
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSchemaError {
@@ -371,22 +371,22 @@ impl CreateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -431,7 +431,7 @@ pub enum DeleteDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDiscovererError {
@@ -499,36 +499,36 @@ impl DeleteDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiscovererErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiscovererErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiscovererErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -575,7 +575,7 @@ pub enum DeleteRegistryErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRegistryError {
@@ -643,33 +643,33 @@ impl DeleteRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteRegistryErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteRegistryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRegistryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -716,7 +716,7 @@ pub enum DeleteResourcePolicyErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -784,42 +784,42 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -866,7 +866,7 @@ pub enum DeleteSchemaErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSchemaError {
@@ -934,33 +934,33 @@ impl DeleteSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::UnauthorizedException(_))
     }
@@ -1004,7 +1004,7 @@ pub enum DeleteSchemaVersionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSchemaVersionError {
@@ -1072,42 +1072,42 @@ impl DeleteSchemaVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1154,7 +1154,7 @@ pub enum DescribeCodeBindingErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCodeBindingError {
@@ -1222,42 +1222,42 @@ impl DescribeCodeBindingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCodeBindingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCodeBindingErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCodeBindingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCodeBindingErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCodeBindingErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCodeBindingErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeCodeBindingErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1304,7 +1304,7 @@ pub enum DescribeDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDiscovererError {
@@ -1372,42 +1372,42 @@ impl DescribeDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDiscovererErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDiscovererErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDiscovererErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1454,7 +1454,7 @@ pub enum DescribeRegistryErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRegistryError {
@@ -1522,36 +1522,36 @@ impl DescribeRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegistryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeRegistryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegistryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeRegistryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRegistryErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRegistryErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeRegistryErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1598,7 +1598,7 @@ pub enum DescribeSchemaErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSchemaError {
@@ -1666,33 +1666,33 @@ impl DescribeSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeSchemaErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeSchemaErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeSchemaErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSchemaErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSchemaErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeSchemaErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1741,7 +1741,7 @@ pub enum ExportSchemaErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportSchemaError {
@@ -1810,40 +1810,40 @@ impl ExportSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExportSchemaErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ExportSchemaErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ExportSchemaErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSchemaErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSchemaErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSchemaErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ExportSchemaErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ExportSchemaErrorKind::UnauthorizedException(_))
     }
@@ -1888,7 +1888,7 @@ pub enum GetCodeBindingSourceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCodeBindingSourceError {
@@ -1956,42 +1956,42 @@ impl GetCodeBindingSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeBindingSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeBindingSourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeBindingSourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeBindingSourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeBindingSourceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeBindingSourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetCodeBindingSourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2036,7 +2036,7 @@ pub enum GetDiscoveredSchemaErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiscoveredSchemaError {
@@ -2103,35 +2103,35 @@ impl GetDiscoveredSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiscoveredSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDiscoveredSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredSchemaErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetDiscoveredSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredSchemaErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetDiscoveredSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDiscoveredSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoveredSchemaErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoveredSchemaErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetDiscoveredSchemaErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2177,7 +2177,7 @@ pub enum GetResourcePolicyErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePolicyError {
@@ -2245,39 +2245,39 @@ impl GetResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetResourcePolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2322,7 +2322,7 @@ pub enum ListDiscoverersErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDiscoverersError {
@@ -2389,29 +2389,29 @@ impl ListDiscoverersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDiscoverersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDiscoverersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListDiscoverersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListDiscoverersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListDiscoverersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListDiscoverersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListDiscoverersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListDiscoverersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoverersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoverersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDiscoverersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoverersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoverersErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListDiscoverersErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2455,7 +2455,7 @@ pub enum ListRegistriesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRegistriesError {
@@ -2522,29 +2522,29 @@ impl ListRegistriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListRegistriesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListRegistriesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegistriesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegistriesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2588,7 +2588,7 @@ pub enum ListSchemasErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemasError {
@@ -2655,29 +2655,29 @@ impl ListSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemasErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemasErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::UnauthorizedException(_))
     }
@@ -2720,7 +2720,7 @@ pub enum ListSchemaVersionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemaVersionsError {
@@ -2788,42 +2788,42 @@ impl ListSchemaVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2866,7 +2866,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2932,28 +2932,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3000,7 +3000,7 @@ pub enum PutCodeBindingErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutCodeBindingError {
@@ -3069,37 +3069,37 @@ impl PutCodeBindingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutCodeBindingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PutCodeBindingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::GoneException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::GoneException`.
     pub fn is_gone_exception(&self) -> bool {
         matches!(&self.kind, PutCodeBindingErrorKind::GoneException(_))
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCodeBindingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutCodeBindingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCodeBindingErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `PutCodeBindingErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `PutCodeBindingErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3149,7 +3149,7 @@ pub enum PutResourcePolicyErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -3218,46 +3218,46 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutResourcePolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3303,7 +3303,7 @@ pub enum SearchSchemasErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchSchemasError {
@@ -3370,29 +3370,29 @@ impl SearchSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchSchemasErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SearchSchemasErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SearchSchemasErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SearchSchemasErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SearchSchemasErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, SearchSchemasErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `SearchSchemasErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `SearchSchemasErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchSchemasErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SearchSchemasErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `SearchSchemasErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchSchemasErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `SearchSchemasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `SearchSchemasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, SearchSchemasErrorKind::UnauthorizedException(_))
     }
@@ -3435,7 +3435,7 @@ pub enum StartDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDiscovererError {
@@ -3503,33 +3503,33 @@ impl StartDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartDiscovererErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StartDiscovererErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartDiscovererErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StartDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3576,7 +3576,7 @@ pub enum StopDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDiscovererError {
@@ -3644,33 +3644,33 @@ impl StopDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StopDiscovererErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StopDiscovererErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopDiscovererErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StopDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StopDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3713,7 +3713,7 @@ pub enum TagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3779,22 +3779,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -3832,7 +3832,7 @@ pub enum UntagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3898,22 +3898,22 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -3955,7 +3955,7 @@ pub enum UpdateDiscovererErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDiscovererError {
@@ -4023,36 +4023,36 @@ impl UpdateDiscovererError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDiscovererErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateDiscovererErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDiscovererErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDiscovererErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDiscovererErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDiscovererErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDiscovererErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4099,7 +4099,7 @@ pub enum UpdateRegistryErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRegistryError {
@@ -4167,33 +4167,33 @@ impl UpdateRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateRegistryErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateRegistryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRegistryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4238,7 +4238,7 @@ pub enum UpdateSchemaErrorKind {
     NotFoundException(crate::error::NotFoundException),
     #[allow(missing_docs)] // documentation missing in model
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSchemaError {
@@ -4305,26 +4305,26 @@ impl UpdateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,

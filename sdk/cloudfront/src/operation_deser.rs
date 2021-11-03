@@ -319,7 +319,7 @@ pub fn parse_create_cache_policy_response(
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_cache_policy_create_cache_policy_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateCachePolicyError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateCachePolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -434,11 +434,11 @@ pub fn parse_create_cloud_front_origin_access_identity_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -922,6 +922,20 @@ pub fn parse_create_distribution_error(
                                                     }
             tmp
         })},
+        "NoSuchResponseHeadersPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1054,6 +1068,20 @@ pub fn parse_create_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1288,7 +1316,7 @@ pub fn parse_create_distribution_response(
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_distribution_create_distribution_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateDistributionError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateDistributionError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1790,6 +1818,20 @@ pub fn parse_create_distribution_with_tags_error(
                                                     }
             tmp
         })},
+        "NoSuchResponseHeadersPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1922,6 +1964,20 @@ pub fn parse_create_distribution_with_tags_error(
                     #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2146,11 +2202,11 @@ pub fn parse_create_distribution_with_tags_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_distribution_with_tags_create_distribution_with_tags_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateDistributionWithTagsError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateDistributionWithTagsError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_distribution_with_tags_create_distribution_with_tags_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateDistributionWithTagsError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateDistributionWithTagsError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -2304,14 +2360,14 @@ pub fn parse_create_field_level_encryption_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption(
             crate::http_serde::deser_payload_create_field_level_encryption_config_create_field_level_encryption_config_output_field_level_encryption(response.body().as_ref())?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -2465,14 +2521,14 @@ pub fn parse_create_field_level_encryption_profile_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_profile(
             crate::http_serde::deser_payload_create_field_level_encryption_profile_create_field_level_encryption_profile_output_field_level_encryption_profile(response.body().as_ref())?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateFieldLevelEncryptionProfileError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionProfileError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -2797,7 +2853,7 @@ pub fn parse_create_invalidation_response(
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_invalidation_create_invalidation_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateInvalidationError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateInvalidationError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -3181,11 +3237,11 @@ pub fn parse_create_origin_request_policy_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_origin_request_policy_create_origin_request_policy_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_origin_request_policy_create_origin_request_policy_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateOriginRequestPolicyError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateOriginRequestPolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output = output.set_origin_request_policy(
             crate::http_serde::deser_payload_create_origin_request_policy_create_origin_request_policy_output_origin_request_policy(response.body().as_ref())?
@@ -3430,6 +3486,140 @@ pub fn parse_create_realtime_log_config_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_response_headers_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateResponseHeadersPolicyOutput,
+    crate::error::CreateResponseHeadersPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateResponseHeadersPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResponseHeadersPolicyAlreadyExists" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCustomHeadersInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_custom_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyResponseHeadersPolicies" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_response_headers_policies::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_response_headers_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateResponseHeadersPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_response_headers_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateResponseHeadersPolicyOutput,
+    crate::error::CreateResponseHeadersPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_response_headers_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_create_response_headers_policy_create_response_headers_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::CreateResponseHeadersPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_location(
+            crate::http_serde::deser_header_create_response_headers_policy_create_response_headers_policy_output_location(response.headers())
+                                    .map_err(|_|crate::error::CreateResponseHeadersPolicyError::unhandled("Failed to parse Location from header `Location"))?
+        );
+        output = output.set_response_headers_policy(
+            crate::http_serde::deser_payload_create_response_headers_policy_create_response_headers_policy_output_response_headers_policy(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_streaming_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3634,11 +3824,11 @@ pub fn parse_create_streaming_distribution_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_streaming_distribution_create_streaming_distribution_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateStreamingDistributionError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateStreamingDistributionError::unhandled("Failed to parse Location from header `Location"))?
         );
         output = output.set_streaming_distribution(
             crate::http_serde::deser_payload_create_streaming_distribution_create_streaming_distribution_output_streaming_distribution(response.body().as_ref())?
@@ -3865,11 +4055,11 @@ pub fn parse_create_streaming_distribution_with_tags_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::CreateStreamingDistributionWithTagsError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::CreateStreamingDistributionWithTagsError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::http_serde::deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateStreamingDistributionWithTagsError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateStreamingDistributionWithTagsError::unhandled("Failed to parse Location from header `Location"))?
         );
         output = output.set_streaming_distribution(
             crate::http_serde::deser_payload_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_streaming_distribution(response.body().as_ref())?
@@ -5194,6 +5384,161 @@ pub fn parse_delete_realtime_log_config_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_response_headers_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteResponseHeadersPolicyOutput,
+    crate::error::DeleteResponseHeadersPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteResponseHeadersPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::DeleteResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "IllegalDelete" => crate::error::DeleteResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_delete::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_delete_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidIfMatchVersion" => crate::error::DeleteResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchResponseHeadersPolicy" => crate::error::DeleteResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::no_such_response_headers_policy::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "PreconditionFailed" => {
+            crate::error::DeleteResponseHeadersPolicyError {
+                meta: generic,
+                kind: crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::precondition_failed::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResponseHeadersPolicyInUse" => crate::error::DeleteResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::response_headers_policy_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteResponseHeadersPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_response_headers_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteResponseHeadersPolicyOutput,
+    crate::error::DeleteResponseHeadersPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_response_headers_policy_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_streaming_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5569,7 +5914,7 @@ pub fn parse_get_cache_policy_config_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_cache_policy_config_get_cache_policy_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetCachePolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetCachePolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -5642,7 +5987,7 @@ pub fn parse_get_cloud_front_origin_access_identity_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_cloud_front_origin_access_identity_get_cloud_front_origin_access_identity_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -5717,7 +6062,7 @@ pub fn parse_get_cloud_front_origin_access_identity_config_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -5883,7 +6228,7 @@ pub fn parse_get_distribution_config_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_distribution_config_get_distribution_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetDistributionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetDistributionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -5967,7 +6312,7 @@ pub fn parse_get_field_level_encryption_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_field_level_encryption_get_field_level_encryption_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetFieldLevelEncryptionError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetFieldLevelEncryptionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption(
             crate::http_serde::deser_payload_get_field_level_encryption_get_field_level_encryption_output_field_level_encryption(response.body().as_ref())?
@@ -6042,7 +6387,7 @@ pub fn parse_get_field_level_encryption_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_field_level_encryption_config_get_field_level_encryption_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_config(
             crate::http_serde::deser_payload_get_field_level_encryption_config_get_field_level_encryption_config_output_field_level_encryption_config(response.body().as_ref())?
@@ -6113,7 +6458,7 @@ pub fn parse_get_field_level_encryption_profile_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_field_level_encryption_profile_get_field_level_encryption_profile_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_profile(
             crate::http_serde::deser_payload_get_field_level_encryption_profile_get_field_level_encryption_profile_output_field_level_encryption_profile(response.body().as_ref())?
@@ -6186,7 +6531,7 @@ pub fn parse_get_field_level_encryption_profile_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_profile_config(
             crate::http_serde::deser_payload_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(response.body().as_ref())?
@@ -6679,7 +7024,7 @@ pub fn parse_get_origin_request_policy_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_origin_request_policy_get_origin_request_policy_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_origin_request_policy(
             crate::http_serde::deser_payload_get_origin_request_policy_get_origin_request_policy_output_origin_request_policy(response.body().as_ref())?
@@ -6764,7 +7109,7 @@ pub fn parse_get_origin_request_policy_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_origin_request_policy_config_get_origin_request_policy_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetOriginRequestPolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetOriginRequestPolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_origin_request_policy_config(
             crate::http_serde::deser_payload_get_origin_request_policy_config_get_origin_request_policy_config_output_origin_request_policy_config(response.body().as_ref())?
@@ -6928,7 +7273,7 @@ pub fn parse_get_public_key_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_public_key_config_get_public_key_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetPublicKeyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetPublicKeyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_public_key_config(
             crate::http_serde::deser_payload_get_public_key_config_get_public_key_config_output_public_key_config(response.body().as_ref())?
@@ -7038,6 +7383,176 @@ pub fn parse_get_realtime_log_config_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_response_headers_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResponseHeadersPolicyOutput,
+    crate::error::GetResponseHeadersPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetResponseHeadersPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetResponseHeadersPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchResponseHeadersPolicy" => crate::error::GetResponseHeadersPolicyError {
+            meta: generic,
+            kind: crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetResponseHeadersPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_response_headers_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResponseHeadersPolicyOutput,
+    crate::error::GetResponseHeadersPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_response_headers_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_response_headers_policy_get_response_headers_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetResponseHeadersPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_response_headers_policy(
+            crate::http_serde::deser_payload_get_response_headers_policy_get_response_headers_policy_output_response_headers_policy(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_response_headers_policy_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResponseHeadersPolicyConfigOutput,
+    crate::error::GetResponseHeadersPolicyConfigError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetResponseHeadersPolicyConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetResponseHeadersPolicyConfigError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetResponseHeadersPolicyConfigError {
+            meta: generic,
+            kind: crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetResponseHeadersPolicyConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchResponseHeadersPolicy" => crate::error::GetResponseHeadersPolicyConfigError {
+            meta: generic,
+            kind:
+                crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::no_such_response_headers_policy::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetResponseHeadersPolicyConfigError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::GetResponseHeadersPolicyConfigError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_response_headers_policy_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetResponseHeadersPolicyConfigOutput,
+    crate::error::GetResponseHeadersPolicyConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_response_headers_policy_config_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_response_headers_policy_config_get_response_headers_policy_config_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetResponseHeadersPolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_response_headers_policy_config(
+            crate::http_serde::deser_payload_get_response_headers_policy_config_get_response_headers_policy_config_output_response_headers_policy_config(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_streaming_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -7113,7 +7628,7 @@ pub fn parse_get_streaming_distribution_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_streaming_distribution(
             crate::http_serde::deser_payload_get_streaming_distribution_get_streaming_distribution_output_streaming_distribution(response.body().as_ref())?
@@ -7198,7 +7713,7 @@ pub fn parse_get_streaming_distribution_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_get_streaming_distribution_config_get_streaming_distribution_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::GetStreamingDistributionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::GetStreamingDistributionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_streaming_distribution_config(
             crate::http_serde::deser_payload_get_streaming_distribution_config_get_streaming_distribution_config_output_streaming_distribution_config(response.body().as_ref())?
@@ -7836,6 +8351,89 @@ pub fn parse_list_distributions_by_realtime_log_config_response(
         let _ = response;
         output = output.set_distribution_list(
             crate::http_serde::deser_payload_list_distributions_by_realtime_log_config_list_distributions_by_realtime_log_config_output_distribution_list(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_distributions_by_response_headers_policy_id_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDistributionsByResponseHeadersPolicyIdOutput,
+    crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchResponseHeadersPolicy" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListDistributionsByResponseHeadersPolicyIdError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_distributions_by_response_headers_policy_id_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDistributionsByResponseHeadersPolicyIdOutput,
+    crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::list_distributions_by_response_headers_policy_id_output::Builder::default();
+        let _ = response;
+        output = output.set_distribution_id_list(
+            crate::http_serde::deser_payload_list_distributions_by_response_headers_policy_id_list_distributions_by_response_headers_policy_id_output_distribution_id_list(response.body().as_ref())?
         );
         output.build()
     })
@@ -8527,6 +9125,111 @@ pub fn parse_list_realtime_log_configs_response(
         let _ = response;
         output = output.set_realtime_log_configs(
             crate::http_serde::deser_payload_list_realtime_log_configs_list_realtime_log_configs_output_realtime_log_configs(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_response_headers_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListResponseHeadersPoliciesOutput,
+    crate::error::ListResponseHeadersPoliciesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListResponseHeadersPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListResponseHeadersPoliciesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::ListResponseHeadersPoliciesError {
+            meta: generic,
+            kind: crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListResponseHeadersPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidArgument" => crate::error::ListResponseHeadersPoliciesError {
+            meta: generic,
+            kind: crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListResponseHeadersPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchResponseHeadersPolicy" => crate::error::ListResponseHeadersPoliciesError {
+            meta: generic,
+            kind: crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::no_such_response_headers_policy::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListResponseHeadersPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::ListResponseHeadersPoliciesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_response_headers_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListResponseHeadersPoliciesOutput,
+    crate::error::ListResponseHeadersPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_response_headers_policies_output::Builder::default();
+        let _ = response;
+        output = output.set_response_headers_policy_list(
+            crate::http_serde::deser_payload_list_response_headers_policies_list_response_headers_policies_output_response_headers_policy_list(response.body().as_ref())?
         );
         output.build()
     })
@@ -9602,7 +10305,7 @@ pub fn parse_update_cloud_front_origin_access_identity_response(
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_update_cloud_front_origin_access_identity_update_cloud_front_origin_access_identity_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output.build()
     })
@@ -10086,6 +10789,20 @@ pub fn parse_update_distribution_error(
                                                     }
             tmp
         })},
+        "NoSuchResponseHeadersPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "PreconditionFailed" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::PreconditionFailed({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -10218,6 +10935,20 @@ pub fn parse_update_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -10644,7 +11375,7 @@ pub fn parse_update_field_level_encryption_config_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_update_field_level_encryption_config_update_field_level_encryption_config_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::UpdateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::UpdateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption(
             crate::http_serde::deser_payload_update_field_level_encryption_config_update_field_level_encryption_config_output_field_level_encryption(response.body().as_ref())?
@@ -10857,7 +11588,7 @@ pub fn parse_update_field_level_encryption_profile_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_update_field_level_encryption_profile_update_field_level_encryption_profile_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::UpdateFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::UpdateFieldLevelEncryptionProfileError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_profile(
             crate::http_serde::deser_payload_update_field_level_encryption_profile_update_field_level_encryption_profile_output_field_level_encryption_profile(response.body().as_ref())?
@@ -11367,7 +12098,7 @@ pub fn parse_update_origin_request_policy_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_update_origin_request_policy_update_origin_request_policy_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::UpdateOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::UpdateOriginRequestPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_origin_request_policy(
             crate::http_serde::deser_payload_update_origin_request_policy_update_origin_request_policy_output_origin_request_policy(response.body().as_ref())?
@@ -11662,6 +12393,178 @@ pub fn parse_update_realtime_log_config_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_response_headers_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateResponseHeadersPolicyOutput,
+    crate::error::UpdateResponseHeadersPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateResponseHeadersPolicyError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IllegalUpdate" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::IllegalUpdate({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InconsistentQuantities" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidArgument" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidArgument({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidIfMatchVersion" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PreconditionFailed" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResponseHeadersPolicyAlreadyExists" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyCustomHeadersInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_custom_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateResponseHeadersPolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_response_headers_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateResponseHeadersPolicyOutput,
+    crate::error::UpdateResponseHeadersPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_response_headers_policy_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_update_response_headers_policy_update_response_headers_policy_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::UpdateResponseHeadersPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_response_headers_policy(
+            crate::http_serde::deser_payload_update_response_headers_policy_update_response_headers_policy_output_response_headers_policy(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_streaming_distribution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -11880,7 +12783,7 @@ pub fn parse_update_streaming_distribution_response(
         let _ = response;
         output = output.set_e_tag(
             crate::http_serde::deser_header_update_streaming_distribution_update_streaming_distribution_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::UpdateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::UpdateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_streaming_distribution(
             crate::http_serde::deser_payload_update_streaming_distribution_update_streaming_distribution_output_streaming_distribution(response.body().as_ref())?

@@ -203,6 +203,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceUser {
     }
 }
 
+/// Operation shape for `DeregisterAppInstanceUserEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`deregister_app_instance_user_endpoint`](crate::client::Client::deregister_app_instance_user_endpoint).
+///
+/// See [`crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeregisterAppInstanceUserEndpoint {
+    _private: (),
+}
+impl DeregisterAppInstanceUserEndpoint {
+    /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::deregister_app_instance_user_endpoint_input::Builder {
+        crate::input::deregister_app_instance_user_endpoint_input::Builder::default()
+    }
+    /// Creates a new `DeregisterAppInstanceUserEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeregisterAppInstanceUserEndpoint {
+    type Output = std::result::Result<
+        crate::output::DeregisterAppInstanceUserEndpointOutput,
+        crate::error::DeregisterAppInstanceUserEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_deregister_app_instance_user_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_app_instance_user_endpoint_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeAppInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -301,6 +335,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser 
             crate::operation_deser::parse_describe_app_instance_user_error(response)
         } else {
             crate::operation_deser::parse_describe_app_instance_user_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeAppInstanceUserEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_app_instance_user_endpoint`](crate::client::Client::describe_app_instance_user_endpoint).
+///
+/// See [`crate::client::fluent_builders::DescribeAppInstanceUserEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeAppInstanceUserEndpoint {
+    _private: (),
+}
+impl DescribeAppInstanceUserEndpoint {
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::describe_app_instance_user_endpoint_input::Builder {
+        crate::input::describe_app_instance_user_endpoint_input::Builder::default()
+    }
+    /// Creates a new `DescribeAppInstanceUserEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUserEndpoint {
+    type Output = std::result::Result<
+        crate::output::DescribeAppInstanceUserEndpointOutput,
+        crate::error::DescribeAppInstanceUserEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_app_instance_user_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_describe_app_instance_user_endpoint_response(response)
         }
     }
 }
@@ -407,6 +475,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstances {
     }
 }
 
+/// Operation shape for `ListAppInstanceUserEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_app_instance_user_endpoints`](crate::client::Client::list_app_instance_user_endpoints).
+///
+/// See [`crate::client::fluent_builders::ListAppInstanceUserEndpoints`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAppInstanceUserEndpoints {
+    _private: (),
+}
+impl ListAppInstanceUserEndpoints {
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+    pub fn builder() -> crate::input::list_app_instance_user_endpoints_input::Builder {
+        crate::input::list_app_instance_user_endpoints_input::Builder::default()
+    }
+    /// Creates a new `ListAppInstanceUserEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUserEndpoints {
+    type Output = std::result::Result<
+        crate::output::ListAppInstanceUserEndpointsOutput,
+        crate::error::ListAppInstanceUserEndpointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_app_instance_user_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_list_app_instance_user_endpoints_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListAppInstanceUsers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -441,6 +543,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUsers {
     }
 }
 
+/// Operation shape for `ListTagsForResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+///
+/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    /// Creates a new `ListTagsForResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PutAppInstanceRetentionSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -471,6 +607,104 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionS
             crate::operation_deser::parse_put_app_instance_retention_settings_error(response)
         } else {
             crate::operation_deser::parse_put_app_instance_retention_settings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RegisterAppInstanceUserEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`register_app_instance_user_endpoint`](crate::client::Client::register_app_instance_user_endpoint).
+///
+/// See [`crate::client::fluent_builders::RegisterAppInstanceUserEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RegisterAppInstanceUserEndpoint {
+    _private: (),
+}
+impl RegisterAppInstanceUserEndpoint {
+    /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::register_app_instance_user_endpoint_input::Builder {
+        crate::input::register_app_instance_user_endpoint_input::Builder::default()
+    }
+    /// Creates a new `RegisterAppInstanceUserEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RegisterAppInstanceUserEndpoint {
+    type Output = std::result::Result<
+        crate::output::RegisterAppInstanceUserEndpointOutput,
+        crate::error::RegisterAppInstanceUserEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_register_app_instance_user_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_register_app_instance_user_endpoint_response(response)
+        }
+    }
+}
+
+/// Operation shape for `TagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`tag_resource`](crate::client::Client::tag_resource).
+///
+/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    /// Creates a new `TagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UntagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`untag_resource`](crate::client::Client::untag_resource).
+///
+/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    /// Creates a new `UntagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -539,6 +773,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUser {
             crate::operation_deser::parse_update_app_instance_user_error(response)
         } else {
             crate::operation_deser::parse_update_app_instance_user_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAppInstanceUserEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_app_instance_user_endpoint`](crate::client::Client::update_app_instance_user_endpoint).
+///
+/// See [`crate::client::fluent_builders::UpdateAppInstanceUserEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAppInstanceUserEndpoint {
+    _private: (),
+}
+impl UpdateAppInstanceUserEndpoint {
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::update_app_instance_user_endpoint_input::Builder {
+        crate::input::update_app_instance_user_endpoint_input::Builder::default()
+    }
+    /// Creates a new `UpdateAppInstanceUserEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUserEndpoint {
+    type Output = std::result::Result<
+        crate::output::UpdateAppInstanceUserEndpointOutput,
+        crate::error::UpdateAppInstanceUserEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_app_instance_user_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_update_app_instance_user_endpoint_response(response)
         }
     }
 }

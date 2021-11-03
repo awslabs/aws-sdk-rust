@@ -378,6 +378,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmConnection {
     }
 }
 
+/// Operation shape for `ConfirmCustomerAgreement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`confirm_customer_agreement`](crate::client::Client::confirm_customer_agreement).
+///
+/// See [`crate::client::fluent_builders::ConfirmCustomerAgreement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ConfirmCustomerAgreement {
+    _private: (),
+}
+impl ConfirmCustomerAgreement {
+    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput)
+    pub fn builder() -> crate::input::confirm_customer_agreement_input::Builder {
+        crate::input::confirm_customer_agreement_input::Builder::default()
+    }
+    /// Creates a new `ConfirmCustomerAgreement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ConfirmCustomerAgreement {
+    type Output = std::result::Result<
+        crate::output::ConfirmCustomerAgreementOutput,
+        crate::error::ConfirmCustomerAgreementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_confirm_customer_agreement_error(response)
+        } else {
+            crate::operation_deser::parse_confirm_customer_agreement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ConfirmPrivateVirtualInterface`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1198,6 +1232,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectionsOnInt
     }
 }
 
+/// Operation shape for `DescribeCustomerMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_customer_metadata`](crate::client::Client::describe_customer_metadata).
+///
+/// See [`crate::client::fluent_builders::DescribeCustomerMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeCustomerMetadata {
+    _private: (),
+}
+impl DescribeCustomerMetadata {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput)
+    pub fn builder() -> crate::input::describe_customer_metadata_input::Builder {
+        crate::input::describe_customer_metadata_input::Builder::default()
+    }
+    /// Creates a new `DescribeCustomerMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomerMetadata {
+    type Output = std::result::Result<
+        crate::output::DescribeCustomerMetadataOutput,
+        crate::error::DescribeCustomerMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_customer_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_describe_customer_metadata_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeDirectConnectGatewayAssociationProposals`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1542,6 +1610,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocations {
             crate::operation_deser::parse_describe_locations_error(response)
         } else {
             crate::operation_deser::parse_describe_locations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeRouterConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_router_configuration`](crate::client::Client::describe_router_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeRouterConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeRouterConfiguration {
+    _private: (),
+}
+impl DescribeRouterConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput)
+    pub fn builder() -> crate::input::describe_router_configuration_input::Builder {
+        crate::input::describe_router_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeRouterConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeRouterConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeRouterConfigurationOutput,
+        crate::error::DescribeRouterConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_router_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_router_configuration_response(response)
         }
     }
 }
@@ -1910,6 +2012,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnection {
             crate::operation_deser::parse_update_connection_error(response)
         } else {
             crate::operation_deser::parse_update_connection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDirectConnectGateway`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_direct_connect_gateway`](crate::client::Client::update_direct_connect_gateway).
+///
+/// See [`crate::client::fluent_builders::UpdateDirectConnectGateway`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDirectConnectGateway {
+    _private: (),
+}
+impl UpdateDirectConnectGateway {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput)
+    pub fn builder() -> crate::input::update_direct_connect_gateway_input::Builder {
+        crate::input::update_direct_connect_gateway_input::Builder::default()
+    }
+    /// Creates a new `UpdateDirectConnectGateway` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectConnectGateway {
+    type Output = std::result::Result<
+        crate::output::UpdateDirectConnectGatewayOutput,
+        crate::error::UpdateDirectConnectGatewayError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_direct_connect_gateway_error(response)
+        } else {
+            crate::operation_deser::parse_update_direct_connect_gateway_response(response)
         }
     }
 }

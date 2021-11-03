@@ -38,10 +38,10 @@ impl AsRef<str> for Signature {
 /// a signature.
 ///
 /// Prior to signing, the following fields MUST be present in the property bag:
-/// - [`SigningRegion`](SigningRegion): The region used when signing the request, eg. `us-east-1`
-/// - [`SigningService`](SigningService): The name of the service to use when signing the request, eg. `dynamodb`
+/// - [`SigningRegion`](SigningRegion): The region used when signing the request, e.g. `us-east-1`
+/// - [`SigningService`](SigningService): The name of the service to use when signing the request, e.g. `dynamodb`
 /// - [`Credentials`](Credentials): Credentials to sign with
-/// - [`OperationSigningConfig`](OperationSigningConfig): Operation specific signing configuration, eg.
+/// - [`OperationSigningConfig`](OperationSigningConfig): Operation specific signing configuration, e.g.
 ///   changes to URL encoding behavior, or headers that must be omitted.
 /// If any of these fields are missing, the middleware will return an error.
 ///

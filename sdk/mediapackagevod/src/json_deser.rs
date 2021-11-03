@@ -1516,6 +1516,13 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_mediapackagevod___list_of_hls_manifest(tokens)?
                                 );
                             }
+                            "includeDvbSubtitles" => {
+                                builder = builder.set_include_dvb_subtitles(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             "segmentDurationSeconds" => {
                                 builder = builder.set_segment_duration_seconds(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(

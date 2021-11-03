@@ -851,6 +851,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupPoli
     }
 }
 
+/// Operation shape for `GetResolverConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resolver_config`](crate::client::Client::get_resolver_config).
+///
+/// See [`crate::client::fluent_builders::GetResolverConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetResolverConfig {
+    _private: (),
+}
+impl GetResolverConfig {
+    /// Creates a new builder-style object to manufacture [`GetResolverConfigInput`](crate::input::GetResolverConfigInput)
+    pub fn builder() -> crate::input::get_resolver_config_input::Builder {
+        crate::input::get_resolver_config_input::Builder::default()
+    }
+    /// Creates a new `GetResolverConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResolverConfig {
+    type Output = std::result::Result<
+        crate::output::GetResolverConfigOutput,
+        crate::error::GetResolverConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resolver_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_resolver_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetResolverDnssecConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1359,6 +1393,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRules {
             crate::operation_deser::parse_list_firewall_rules_error(response)
         } else {
             crate::operation_deser::parse_list_firewall_rules_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResolverConfigs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resolver_configs`](crate::client::Client::list_resolver_configs).
+///
+/// See [`crate::client::fluent_builders::ListResolverConfigs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListResolverConfigs {
+    _private: (),
+}
+impl ListResolverConfigs {
+    /// Creates a new builder-style object to manufacture [`ListResolverConfigsInput`](crate::input::ListResolverConfigsInput)
+    pub fn builder() -> crate::input::list_resolver_configs_input::Builder {
+        crate::input::list_resolver_configs_input::Builder::default()
+    }
+    /// Creates a new `ListResolverConfigs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResolverConfigs {
+    type Output = std::result::Result<
+        crate::output::ListResolverConfigsOutput,
+        crate::error::ListResolverConfigsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resolver_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_resolver_configs_response(response)
         }
     }
 }
@@ -1937,6 +2005,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRuleGroupA
             crate::operation_deser::parse_update_firewall_rule_group_association_error(response)
         } else {
             crate::operation_deser::parse_update_firewall_rule_group_association_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateResolverConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_resolver_config`](crate::client::Client::update_resolver_config).
+///
+/// See [`crate::client::fluent_builders::UpdateResolverConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateResolverConfig {
+    _private: (),
+}
+impl UpdateResolverConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::input::UpdateResolverConfigInput)
+    pub fn builder() -> crate::input::update_resolver_config_input::Builder {
+        crate::input::update_resolver_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateResolverConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateResolverConfigOutput,
+        crate::error::UpdateResolverConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_resolver_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_resolver_config_response(response)
         }
     }
 }

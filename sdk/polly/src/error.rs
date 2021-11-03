@@ -20,7 +20,7 @@ pub enum DeleteLexiconErrorKind {
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLexiconError {
@@ -84,14 +84,14 @@ impl DeleteLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLexiconErrorKind::LexiconNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLexiconErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLexiconErrorKind::LexiconNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLexiconErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteLexiconErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -127,7 +127,7 @@ pub enum DescribeVoicesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVoicesError {
@@ -191,14 +191,14 @@ impl DescribeVoicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVoicesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeVoicesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVoicesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVoicesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeVoicesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -237,7 +237,7 @@ pub enum GetLexiconErrorKind {
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLexiconError {
@@ -301,11 +301,11 @@ impl GetLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLexiconErrorKind::LexiconNotFoundException`.
+    /// Returns `true` if the error kind is `GetLexiconErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLexiconErrorKind::LexiconNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetLexiconErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetLexiconErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetLexiconErrorKind::ServiceFailureException(_))
     }
@@ -341,7 +341,7 @@ pub enum GetSpeechSynthesisTaskErrorKind {
     /// <p>The Speech Synthesis task with requested Task ID cannot be
     /// found.</p>
     SynthesisTaskNotFoundException(crate::error::SynthesisTaskNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSpeechSynthesisTaskError {
@@ -408,21 +408,21 @@ impl GetSpeechSynthesisTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException`.
+    /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException`.
     pub fn is_invalid_task_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetSpeechSynthesisTaskErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException`.
+    /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException`.
     pub fn is_synthesis_task_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -459,7 +459,7 @@ pub enum ListLexiconsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLexiconsError {
@@ -523,14 +523,14 @@ impl ListLexiconsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLexiconsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListLexiconsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLexiconsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListLexiconsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListLexiconsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -566,7 +566,7 @@ pub enum ListSpeechSynthesisTasksErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSpeechSynthesisTasksError {
@@ -630,14 +630,14 @@ impl ListSpeechSynthesisTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSpeechSynthesisTasksErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSpeechSynthesisTasksErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -688,7 +688,7 @@ pub enum PutLexiconErrorKind {
     /// <p>The language specified in the lexicon is unsupported. For a list of
     /// supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLexiconError {
@@ -757,43 +757,43 @@ impl PutLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::InvalidLexiconException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::InvalidLexiconException`.
     pub fn is_invalid_lexicon_exception(&self) -> bool {
         matches!(&self.kind, PutLexiconErrorKind::InvalidLexiconException(_))
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::LexiconSizeExceededException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::LexiconSizeExceededException`.
     pub fn is_lexicon_size_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLexiconErrorKind::LexiconSizeExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::MaxLexemeLengthExceededException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::MaxLexemeLengthExceededException`.
     pub fn is_max_lexeme_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLexiconErrorKind::MaxLexemeLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::MaxLexiconsNumberExceededException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::MaxLexiconsNumberExceededException`.
     pub fn is_max_lexicons_number_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLexiconErrorKind::MaxLexiconsNumberExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, PutLexiconErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::UnsupportedPlsAlphabetException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::UnsupportedPlsAlphabetException`.
     pub fn is_unsupported_pls_alphabet_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLexiconErrorKind::UnsupportedPlsAlphabetException(_)
         )
     }
-    /// Returns true if the error kind is `PutLexiconErrorKind::UnsupportedPlsLanguageException`.
+    /// Returns `true` if the error kind is `PutLexiconErrorKind::UnsupportedPlsLanguageException`.
     pub fn is_unsupported_pls_language_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -875,7 +875,7 @@ pub enum StartSpeechSynthesisTaskErrorKind {
     /// billed characters. SSML tags are not counted as billed
     /// characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSpeechSynthesisTaskError {
@@ -955,84 +955,84 @@ impl StartSpeechSynthesisTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException`.
     pub fn is_invalid_s3_bucket_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException`.
     pub fn is_invalid_s3_key_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException`.
     pub fn is_invalid_sample_rate_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException`.
     pub fn is_invalid_sns_topic_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSsmlException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSsmlException`.
     pub fn is_invalid_ssml_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException`.
     pub fn is_language_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException`.
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException`.
     pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
         )
     }
-    /// Returns true if the error kind is `StartSpeechSynthesisTaskErrorKind::TextLengthExceededException`.
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::TextLengthExceededException`.
     pub fn is_text_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1116,7 +1116,7 @@ pub enum SynthesizeSpeechErrorKind {
     /// billed characters. SSML tags are not counted as billed
     /// characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SynthesizeSpeechError {
@@ -1189,63 +1189,63 @@ impl SynthesizeSpeechError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::EngineNotSupportedException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::EngineNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::InvalidSampleRateException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::InvalidSampleRateException`.
     pub fn is_invalid_sample_rate_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::InvalidSampleRateException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::InvalidSsmlException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::InvalidSsmlException`.
     pub fn is_invalid_ssml_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::InvalidSsmlException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::LanguageNotSupportedException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::LanguageNotSupportedException`.
     pub fn is_language_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::LanguageNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::LexiconNotFoundException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::LexiconNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException`.
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException`.
     pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
         )
     }
-    /// Returns true if the error kind is `SynthesizeSpeechErrorKind::TextLengthExceededException`.
+    /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::TextLengthExceededException`.
     pub fn is_text_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,

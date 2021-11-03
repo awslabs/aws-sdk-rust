@@ -68,7 +68,7 @@ pub type CreateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErro
 impl CreateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateCallAnalyticsCategory`](crate::operation::CreateCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -100,6 +100,7 @@ impl CreateCallAnalyticsCategoryInput {
             input: &crate::input::CreateCallAnalyticsCategoryInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -160,9 +161,10 @@ impl CreateCallAnalyticsCategoryInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -297,7 +299,7 @@ pub type CreateLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateLanguageModel`](crate::operation::CreateLanguageModel)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -329,6 +331,7 @@ impl CreateLanguageModelInput {
             input: &crate::input::CreateLanguageModelInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -391,9 +394,10 @@ impl CreateLanguageModelInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -541,7 +545,7 @@ pub type CreateMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateMedicalVocabulary`](crate::operation::CreateMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -573,6 +577,7 @@ impl CreateMedicalVocabularyInput {
             input: &crate::input::CreateMedicalVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -637,9 +642,10 @@ impl CreateMedicalVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -791,7 +797,7 @@ pub type CreateVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabulary`](crate::operation::CreateVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -823,6 +829,7 @@ impl CreateVocabularyInput {
             input: &crate::input::CreateVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -885,9 +892,10 @@ impl CreateVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1039,7 +1047,7 @@ pub type CreateVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabularyFilter`](crate::operation::CreateVocabularyFilter)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1071,6 +1079,7 @@ impl CreateVocabularyFilterInput {
             input: &crate::input::CreateVocabularyFilterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1135,9 +1144,10 @@ impl CreateVocabularyFilterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1198,7 +1208,7 @@ pub type DeleteCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErro
 impl DeleteCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsCategory`](crate::operation::DeleteCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1230,6 +1240,7 @@ impl DeleteCallAnalyticsCategoryInput {
             input: &crate::input::DeleteCallAnalyticsCategoryInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1290,9 +1301,10 @@ impl DeleteCallAnalyticsCategoryInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1350,7 +1362,7 @@ pub type DeleteCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsJob`](crate::operation::DeleteCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1382,6 +1394,7 @@ impl DeleteCallAnalyticsJobInput {
             input: &crate::input::DeleteCallAnalyticsJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1446,9 +1459,10 @@ impl DeleteCallAnalyticsJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1503,7 +1517,7 @@ pub type DeleteLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLanguageModel`](crate::operation::DeleteLanguageModel)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1535,6 +1549,7 @@ impl DeleteLanguageModelInput {
             input: &crate::input::DeleteLanguageModelInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1597,9 +1612,10 @@ impl DeleteLanguageModelInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1663,7 +1679,7 @@ pub type DeleteMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsEr
 impl DeleteMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalTranscriptionJob`](crate::operation::DeleteMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1695,6 +1711,7 @@ impl DeleteMedicalTranscriptionJobInput {
             input: &crate::input::DeleteMedicalTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1755,9 +1772,10 @@ impl DeleteMedicalTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1816,7 +1834,7 @@ pub type DeleteMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalVocabulary`](crate::operation::DeleteMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1848,6 +1866,7 @@ impl DeleteMedicalVocabularyInput {
             input: &crate::input::DeleteMedicalVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1912,9 +1931,10 @@ impl DeleteMedicalVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1972,7 +1992,7 @@ pub type DeleteTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTranscriptionJob`](crate::operation::DeleteTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2004,6 +2024,7 @@ impl DeleteTranscriptionJobInput {
             input: &crate::input::DeleteTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2068,9 +2089,10 @@ impl DeleteTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2128,7 +2150,7 @@ pub type DeleteVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabulary`](crate::operation::DeleteVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2160,6 +2182,7 @@ impl DeleteVocabularyInput {
             input: &crate::input::DeleteVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2222,9 +2245,10 @@ impl DeleteVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2282,7 +2306,7 @@ pub type DeleteVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabularyFilter`](crate::operation::DeleteVocabularyFilter)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2314,6 +2338,7 @@ impl DeleteVocabularyFilterInput {
             input: &crate::input::DeleteVocabularyFilterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2378,9 +2403,10 @@ impl DeleteVocabularyFilterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2435,7 +2461,7 @@ pub type DescribeLanguageModelInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLanguageModel`](crate::operation::DescribeLanguageModel)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2467,6 +2493,7 @@ impl DescribeLanguageModelInput {
             input: &crate::input::DescribeLanguageModelInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2531,9 +2558,10 @@ impl DescribeLanguageModelInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2592,7 +2620,7 @@ pub type GetCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErrorRe
 impl GetCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsCategory`](crate::operation::GetCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2624,6 +2652,7 @@ impl GetCallAnalyticsCategoryInput {
             input: &crate::input::GetCallAnalyticsCategoryInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2688,9 +2717,10 @@ impl GetCallAnalyticsCategoryInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2750,7 +2780,7 @@ pub type GetCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsJob`](crate::operation::GetCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2782,6 +2812,7 @@ impl GetCallAnalyticsJobInput {
             input: &crate::input::GetCallAnalyticsJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2844,9 +2875,10 @@ impl GetCallAnalyticsJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2908,7 +2940,7 @@ pub type GetMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsError
 impl GetMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalTranscriptionJob`](crate::operation::GetMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2940,6 +2972,7 @@ impl GetMedicalTranscriptionJobInput {
             input: &crate::input::GetMedicalTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3000,9 +3033,10 @@ impl GetMedicalTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3060,7 +3094,7 @@ pub type GetMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalVocabulary`](crate::operation::GetMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3092,6 +3126,7 @@ impl GetMedicalVocabularyInput {
             input: &crate::input::GetMedicalVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3154,9 +3189,10 @@ impl GetMedicalVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3214,7 +3250,7 @@ pub type GetTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscriptionJob`](crate::operation::GetTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3246,6 +3282,7 @@ impl GetTranscriptionJobInput {
             input: &crate::input::GetTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3308,9 +3345,10 @@ impl GetTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3370,7 +3408,7 @@ pub type GetVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabulary`](crate::operation::GetVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3402,6 +3440,7 @@ impl GetVocabularyInput {
             input: &crate::input::GetVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3463,9 +3502,10 @@ impl GetVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3523,7 +3563,7 @@ pub type GetVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabularyFilter`](crate::operation::GetVocabularyFilter)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3555,6 +3595,7 @@ impl GetVocabularyFilterInput {
             input: &crate::input::GetVocabularyFilterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3617,9 +3658,10 @@ impl GetVocabularyFilterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3693,7 +3735,7 @@ pub type ListCallAnalyticsCategoriesInputOperationRetryAlias = aws_http::AwsErro
 impl ListCallAnalyticsCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsCategories`](crate::operation::ListCallAnalyticsCategories)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3741,6 +3783,7 @@ impl ListCallAnalyticsCategoriesInput {
             input: &crate::input::ListCallAnalyticsCategoriesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3801,9 +3844,10 @@ impl ListCallAnalyticsCategoriesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3914,7 +3958,7 @@ pub type ListCallAnalyticsJobsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListCallAnalyticsJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsJobs`](crate::operation::ListCallAnalyticsJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3968,6 +4012,7 @@ impl ListCallAnalyticsJobsInput {
             input: &crate::input::ListCallAnalyticsJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4032,9 +4077,10 @@ impl ListCallAnalyticsJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4137,7 +4183,7 @@ pub type ListLanguageModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListLanguageModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListLanguageModels`](crate::operation::ListLanguageModels)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4194,6 +4240,7 @@ impl ListLanguageModelsInput {
             input: &crate::input::ListLanguageModelsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4256,9 +4303,10 @@ impl ListLanguageModelsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4366,7 +4414,7 @@ pub type ListMedicalTranscriptionJobsInputOperationRetryAlias = aws_http::AwsErr
 impl ListMedicalTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalTranscriptionJobs`](crate::operation::ListMedicalTranscriptionJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4423,6 +4471,7 @@ impl ListMedicalTranscriptionJobsInput {
             input: &crate::input::ListMedicalTranscriptionJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4483,9 +4532,10 @@ impl ListMedicalTranscriptionJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4593,7 +4643,7 @@ pub type ListMedicalVocabulariesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListMedicalVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalVocabularies`](crate::operation::ListMedicalVocabularies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4650,6 +4700,7 @@ impl ListMedicalVocabulariesInput {
             input: &crate::input::ListMedicalVocabulariesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4714,9 +4765,10 @@ impl ListMedicalVocabulariesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4741,12 +4793,24 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists all tags associated with a given Amazon Resource Name (ARN).</p>
+        /// <p>Lists all tags associated with a given Amazon Resource Name (ARN). ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>Lists all tags associated with a given Amazon Resource Name (ARN).</p>
+        /// <p>Lists all tags associated with a given Amazon Resource Name (ARN). ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4771,7 +4835,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4803,6 +4867,7 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4865,9 +4930,10 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4972,7 +5038,7 @@ pub type ListTranscriptionJobsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTranscriptionJobs`](crate::operation::ListTranscriptionJobs)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5026,6 +5092,7 @@ impl ListTranscriptionJobsInput {
             input: &crate::input::ListTranscriptionJobsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5090,9 +5157,10 @@ impl ListTranscriptionJobsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5199,7 +5267,7 @@ pub type ListVocabulariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularies`](crate::operation::ListVocabularies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5256,6 +5324,7 @@ impl ListVocabulariesInput {
             input: &crate::input::ListVocabulariesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5318,9 +5387,10 @@ impl ListVocabulariesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5406,7 +5476,7 @@ pub type ListVocabularyFiltersInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListVocabularyFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularyFilters`](crate::operation::ListVocabularyFilters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5457,6 +5527,7 @@ impl ListVocabularyFiltersInput {
             input: &crate::input::ListVocabularyFiltersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5521,9 +5592,10 @@ impl ListVocabularyFiltersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5789,7 +5861,7 @@ pub type StartCallAnalyticsJobInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`StartCallAnalyticsJob`](crate::operation::StartCallAnalyticsJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5821,6 +5893,7 @@ impl StartCallAnalyticsJobInput {
             input: &crate::input::StartCallAnalyticsJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5885,9 +5958,10 @@ impl StartCallAnalyticsJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6079,7 +6153,7 @@ pub mod start_medical_transcription_job_input {
         /// <ul>
         /// <li>
         /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-        /// account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// account: "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
         /// </li>
         /// <li>
         /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
@@ -6112,7 +6186,7 @@ pub mod start_medical_transcription_job_input {
         /// <ul>
         /// <li>
         /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-        /// account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// account: "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
         /// </li>
         /// <li>
         /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
@@ -6267,7 +6341,7 @@ pub type StartMedicalTranscriptionJobInputOperationRetryAlias = aws_http::AwsErr
 impl StartMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalTranscriptionJob`](crate::operation::StartMedicalTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6299,6 +6373,7 @@ impl StartMedicalTranscriptionJobInput {
             input: &crate::input::StartMedicalTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6359,9 +6434,10 @@ impl StartMedicalTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6402,6 +6478,9 @@ pub mod start_transcription_job_input {
         pub(crate) language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
         pub(crate) subtitles: std::option::Option<crate::model::Subtitles>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) language_id_settings: std::option::Option<
+            std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+        >,
     }
     impl Builder {
         /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
@@ -6563,7 +6642,7 @@ pub mod start_transcription_job_input {
         /// ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
         /// </li>
         /// <li>
-        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p>
         /// </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the transcription job is encrypted with the default
@@ -6596,7 +6675,7 @@ pub mod start_transcription_job_input {
         /// ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
         /// </li>
         /// <li>
-        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p>
         /// </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the transcription job is encrypted with the default
@@ -6761,6 +6840,38 @@ pub mod start_transcription_job_input {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `language_id_settings`.
+        ///
+        /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
+        ///
+        /// <p>The language identification settings associated with your transcription job. These settings include
+        /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>.</p>
+        pub fn language_id_settings(
+            mut self,
+            k: impl Into<crate::model::LanguageCode>,
+            v: impl Into<crate::model::LanguageIdSettings>,
+        ) -> Self {
+            let mut hash_map = self.language_id_settings.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.language_id_settings = Some(hash_map);
+            self
+        }
+        /// <p>The language identification settings associated with your transcription job. These settings include
+        /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>.</p>
+        pub fn set_language_id_settings(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::LanguageCode,
+                    crate::model::LanguageIdSettings,
+                >,
+            >,
+        ) -> Self {
+            self.language_id_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTranscriptionJobInput`](crate::input::StartTranscriptionJobInput)
         pub fn build(
             self,
@@ -6786,6 +6897,7 @@ pub mod start_transcription_job_input {
                 language_options: self.language_options,
                 subtitles: self.subtitles,
                 tags: self.tags,
+                language_id_settings: self.language_id_settings,
             })
         }
     }
@@ -6797,7 +6909,7 @@ pub type StartTranscriptionJobInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTranscriptionJob`](crate::operation::StartTranscriptionJob)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6829,6 +6941,7 @@ impl StartTranscriptionJobInput {
             input: &crate::input::StartTranscriptionJobInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6893,9 +7006,10 @@ impl StartTranscriptionJobInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6921,12 +7035,24 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6971,7 +7097,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7003,6 +7129,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7064,9 +7191,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7092,12 +7220,26 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.
+        /// ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.
+        /// ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+        /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+        /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+        /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+        /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+        /// <code>language-model</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7142,7 +7284,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7174,6 +7316,7 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7235,9 +7378,10 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7321,7 +7465,7 @@ pub type UpdateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::AwsErro
 impl UpdateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCallAnalyticsCategory`](crate::operation::UpdateCallAnalyticsCategory)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7353,6 +7497,7 @@ impl UpdateCallAnalyticsCategoryInput {
             input: &crate::input::UpdateCallAnalyticsCategoryInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7413,9 +7558,10 @@ impl UpdateCallAnalyticsCategoryInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7534,7 +7680,7 @@ pub type UpdateMedicalVocabularyInputOperationRetryAlias = aws_http::AwsErrorRet
 impl UpdateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMedicalVocabulary`](crate::operation::UpdateMedicalVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7566,6 +7712,7 @@ impl UpdateMedicalVocabularyInput {
             input: &crate::input::UpdateMedicalVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7630,9 +7777,10 @@ impl UpdateMedicalVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7759,7 +7907,7 @@ pub type UpdateVocabularyInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabulary`](crate::operation::UpdateVocabulary)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7791,6 +7939,7 @@ impl UpdateVocabularyInput {
             input: &crate::input::UpdateVocabularyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7853,9 +8002,10 @@ impl UpdateVocabularyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7967,7 +8117,7 @@ pub type UpdateVocabularyFilterInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl UpdateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabularyFilter`](crate::operation::UpdateVocabularyFilter)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7999,6 +8149,7 @@ impl UpdateVocabularyFilterInput {
             input: &crate::input::UpdateVocabularyFilterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8063,9 +8214,10 @@ impl UpdateVocabularyFilterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8207,7 +8359,14 @@ impl std::fmt::Debug for UpdateCallAnalyticsCategoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.
+    /// ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+    /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+    /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+    /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+    /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+    /// <code>language-model</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys you want to remove from a specified Amazon Transcribe resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8225,7 +8384,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag. ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+    /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+    /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+    /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+    /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+    /// <code>language-model</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you are assigning to a given Amazon Transcribe resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8305,7 +8470,7 @@ pub struct StartTranscriptionJobInput {
     /// ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
     /// </li>
     /// <li>
-    /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+    /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p>
     /// </li>
     /// </ul>
     /// <p>If you don't specify an encryption key, the output of the transcription job is encrypted with the default
@@ -8340,6 +8505,12 @@ pub struct StartTranscriptionJobInput {
     pub subtitles: std::option::Option<crate::model::Subtitles>,
     /// <p>Add tags to an Amazon Transcribe transcription job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The language identification settings associated with your transcription job. These settings include
+    /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+    /// <code>LanguageModelName</code>.</p>
+    pub language_id_settings: std::option::Option<
+        std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+    >,
 }
 impl std::fmt::Debug for StartTranscriptionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8364,6 +8535,7 @@ impl std::fmt::Debug for StartTranscriptionJobInput {
         formatter.field("language_options", &self.language_options);
         formatter.field("subtitles", &self.subtitles);
         formatter.field("tags", &self.tags);
+        formatter.field("language_id_settings", &self.language_id_settings);
         formatter.finish()
     }
 }
@@ -8427,7 +8599,7 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <ul>
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-    /// account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+    /// account: "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
     /// </li>
     /// <li>
     /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
@@ -8661,7 +8833,13 @@ impl std::fmt::Debug for ListTranscriptionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>Lists all tags associated with a given Amazon Resource Name (ARN).</p>
+    /// <p>Lists all tags associated with a given Amazon Resource Name (ARN). ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example,
+    /// <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid
+    /// values for <code>resource-type</code> are: <code>transcription-job</code>,
+    /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
+    /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+    /// <code>language-model</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {

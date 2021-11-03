@@ -14,7 +14,7 @@ pub struct PutEventsError {
 pub enum PutEventsErrorKind {
     /// <p>Provide a valid value for the field or parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventsError {
@@ -77,7 +77,7 @@ impl PutEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::InvalidInputException(_))
     }
@@ -110,7 +110,7 @@ pub enum PutItemsErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutItemsError {
@@ -175,15 +175,15 @@ impl PutItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutItemsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutItemsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PutItemsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PutItemsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutItemsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, PutItemsErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `PutItemsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutItemsErrorKind::ResourceNotFoundException(_))
     }
@@ -218,7 +218,7 @@ pub enum PutUsersErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutUsersError {
@@ -283,15 +283,15 @@ impl PutUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutUsersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutUsersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PutUsersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PutUsersErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `PutUsersErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, PutUsersErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `PutUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutUsersErrorKind::ResourceNotFoundException(_))
     }

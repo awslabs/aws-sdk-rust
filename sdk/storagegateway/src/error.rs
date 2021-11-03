@@ -18,7 +18,7 @@ pub enum ActivateGatewayErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateGatewayError {
@@ -82,11 +82,11 @@ impl ActivateGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateGatewayErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ActivateGatewayErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ActivateGatewayErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ActivateGatewayErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ActivateGatewayErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -123,7 +123,7 @@ pub enum AddCacheErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddCacheError {
@@ -187,11 +187,11 @@ impl AddCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddCacheErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddCacheErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AddCacheErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AddCacheErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AddCacheErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -228,7 +228,7 @@ pub enum AddTagsToResourceErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -292,14 +292,14 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -336,7 +336,7 @@ pub enum AddUploadBufferErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddUploadBufferError {
@@ -400,11 +400,11 @@ impl AddUploadBufferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddUploadBufferErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddUploadBufferErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AddUploadBufferErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AddUploadBufferErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AddUploadBufferErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -441,7 +441,7 @@ pub enum AddWorkingStorageErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddWorkingStorageError {
@@ -505,14 +505,14 @@ impl AddWorkingStorageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddWorkingStorageErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddWorkingStorageErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AddWorkingStorageErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AddWorkingStorageErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AddWorkingStorageErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -549,7 +549,7 @@ pub enum AssignTapePoolErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssignTapePoolError {
@@ -613,11 +613,11 @@ impl AssignTapePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssignTapePoolErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssignTapePoolErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AssignTapePoolErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AssignTapePoolErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AssignTapePoolErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -654,7 +654,7 @@ pub enum AssociateFileSystemErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateFileSystemError {
@@ -718,14 +718,14 @@ impl AssociateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssociateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFileSystemErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AssociateFileSystemErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -762,7 +762,7 @@ pub enum AttachVolumeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachVolumeError {
@@ -826,11 +826,11 @@ impl AttachVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AttachVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, AttachVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `AttachVolumeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `AttachVolumeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -867,7 +867,7 @@ pub enum CancelArchivalErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelArchivalError {
@@ -931,11 +931,11 @@ impl CancelArchivalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelArchivalErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelArchivalErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CancelArchivalErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CancelArchivalErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CancelArchivalErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -972,7 +972,7 @@ pub enum CancelRetrievalErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelRetrievalError {
@@ -1036,11 +1036,11 @@ impl CancelRetrievalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelRetrievalErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelRetrievalErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CancelRetrievalErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CancelRetrievalErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CancelRetrievalErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1077,7 +1077,7 @@ pub enum CreateCachediSCSIVolumeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCachediSCSIVolumeError {
@@ -1143,14 +1143,14 @@ impl CreateCachediSCSIVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCachediSCSIVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateCachediSCSIVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachediSCSIVolumeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachediSCSIVolumeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateCachediSCSIVolumeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1189,7 +1189,7 @@ pub enum CreateNFSFileShareErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNFSFileShareError {
@@ -1253,14 +1253,14 @@ impl CreateNFSFileShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNFSFileShareErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateNFSFileShareErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateNFSFileShareErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateNFSFileShareErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateNFSFileShareErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1297,7 +1297,7 @@ pub enum CreateSMBFileShareErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSMBFileShareError {
@@ -1361,14 +1361,14 @@ impl CreateSMBFileShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSMBFileShareErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateSMBFileShareErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateSMBFileShareErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateSMBFileShareErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateSMBFileShareErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1408,7 +1408,7 @@ pub enum CreateSnapshotErrorKind {
     /// <p>An internal server error has occurred because the service is unavailable. For more
     /// information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotError {
@@ -1473,18 +1473,18 @@ impl CreateSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateSnapshotErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::InvalidGatewayRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1525,7 +1525,7 @@ pub enum CreateSnapshotFromVolumeRecoveryPointErrorKind {
     /// <p>An internal server error has occurred because the service is unavailable. For more
     /// information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotFromVolumeRecoveryPointError {
@@ -1599,21 +1599,21 @@ impl CreateSnapshotFromVolumeRecoveryPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1659,7 +1659,7 @@ pub enum CreateStorediSCSIVolumeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStorediSCSIVolumeError {
@@ -1725,14 +1725,14 @@ impl CreateStorediSCSIVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStorediSCSIVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateStorediSCSIVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorediSCSIVolumeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorediSCSIVolumeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateStorediSCSIVolumeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1771,7 +1771,7 @@ pub enum CreateTapePoolErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTapePoolError {
@@ -1835,11 +1835,11 @@ impl CreateTapePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTapePoolErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateTapePoolErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTapePoolErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateTapePoolErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateTapePoolErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1876,7 +1876,7 @@ pub enum CreateTapesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTapesError {
@@ -1940,11 +1940,11 @@ impl CreateTapesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTapesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateTapesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTapesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateTapesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateTapesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1981,7 +1981,7 @@ pub enum CreateTapeWithBarcodeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTapeWithBarcodeError {
@@ -2045,14 +2045,14 @@ impl CreateTapeWithBarcodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTapeWithBarcodeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateTapeWithBarcodeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateTapeWithBarcodeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateTapeWithBarcodeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `CreateTapeWithBarcodeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2089,7 +2089,7 @@ pub enum DeleteAutomaticTapeCreationPolicyErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAutomaticTapeCreationPolicyError {
@@ -2160,14 +2160,14 @@ impl DeleteAutomaticTapeCreationPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2206,7 +2206,7 @@ pub enum DeleteBandwidthRateLimitErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBandwidthRateLimitError {
@@ -2272,14 +2272,14 @@ impl DeleteBandwidthRateLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBandwidthRateLimitErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteBandwidthRateLimitErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBandwidthRateLimitErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2318,7 +2318,7 @@ pub enum DeleteChapCredentialsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChapCredentialsError {
@@ -2382,14 +2382,14 @@ impl DeleteChapCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChapCredentialsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteChapCredentialsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChapCredentialsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChapCredentialsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteChapCredentialsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2426,7 +2426,7 @@ pub enum DeleteFileShareErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFileShareError {
@@ -2490,11 +2490,11 @@ impl DeleteFileShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFileShareErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteFileShareErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteFileShareErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteFileShareErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteFileShareErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2531,7 +2531,7 @@ pub enum DeleteGatewayErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGatewayError {
@@ -2595,11 +2595,11 @@ impl DeleteGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteGatewayErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2636,7 +2636,7 @@ pub enum DeleteSnapshotScheduleErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotScheduleError {
@@ -2702,14 +2702,14 @@ impl DeleteSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSnapshotScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteSnapshotScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotScheduleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2746,7 +2746,7 @@ pub enum DeleteTapeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTapeError {
@@ -2810,11 +2810,11 @@ impl DeleteTapeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTapeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteTapeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTapeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteTapeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteTapeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2851,7 +2851,7 @@ pub enum DeleteTapeArchiveErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTapeArchiveError {
@@ -2915,14 +2915,14 @@ impl DeleteTapeArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTapeArchiveErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteTapeArchiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTapeArchiveErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTapeArchiveErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteTapeArchiveErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2959,7 +2959,7 @@ pub enum DeleteTapePoolErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTapePoolError {
@@ -3023,11 +3023,11 @@ impl DeleteTapePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTapePoolErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteTapePoolErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTapePoolErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteTapePoolErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteTapePoolErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3064,7 +3064,7 @@ pub enum DeleteVolumeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVolumeError {
@@ -3128,11 +3128,11 @@ impl DeleteVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3169,7 +3169,7 @@ pub enum DescribeAvailabilityMonitorTestErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAvailabilityMonitorTestError {
@@ -3238,14 +3238,14 @@ impl DescribeAvailabilityMonitorTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAvailabilityMonitorTestErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityMonitorTestErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityMonitorTestErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3284,7 +3284,7 @@ pub enum DescribeBandwidthRateLimitErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBandwidthRateLimitError {
@@ -3350,14 +3350,14 @@ impl DescribeBandwidthRateLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBandwidthRateLimitErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeBandwidthRateLimitErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBandwidthRateLimitErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3396,7 +3396,7 @@ pub enum DescribeBandwidthRateLimitScheduleErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBandwidthRateLimitScheduleError {
@@ -3467,14 +3467,14 @@ impl DescribeBandwidthRateLimitScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3515,7 +3515,7 @@ pub enum DescribeCacheErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCacheError {
@@ -3579,11 +3579,11 @@ impl DescribeCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCacheErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeCacheErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeCacheErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeCacheErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeCacheErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3620,7 +3620,7 @@ pub enum DescribeCachediSCSIVolumesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCachediSCSIVolumesError {
@@ -3686,14 +3686,14 @@ impl DescribeCachediSCSIVolumesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCachediSCSIVolumesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeCachediSCSIVolumesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCachediSCSIVolumesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3732,7 +3732,7 @@ pub enum DescribeChapCredentialsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChapCredentialsError {
@@ -3798,14 +3798,14 @@ impl DescribeChapCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChapCredentialsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeChapCredentialsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChapCredentialsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChapCredentialsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeChapCredentialsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3844,7 +3844,7 @@ pub enum DescribeFileSystemAssociationsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFileSystemAssociationsError {
@@ -3913,14 +3913,14 @@ impl DescribeFileSystemAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFileSystemAssociationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeFileSystemAssociationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemAssociationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3959,7 +3959,7 @@ pub enum DescribeGatewayInformationErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGatewayInformationError {
@@ -4025,14 +4025,14 @@ impl DescribeGatewayInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGatewayInformationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeGatewayInformationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayInformationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayInformationErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeGatewayInformationErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4071,7 +4071,7 @@ pub enum DescribeMaintenanceStartTimeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceStartTimeError {
@@ -4137,14 +4137,14 @@ impl DescribeMaintenanceStartTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceStartTimeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceStartTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceStartTimeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4183,7 +4183,7 @@ pub enum DescribeNFSFileSharesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNFSFileSharesError {
@@ -4247,14 +4247,14 @@ impl DescribeNFSFileSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNFSFileSharesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeNFSFileSharesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNFSFileSharesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNFSFileSharesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeNFSFileSharesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4291,7 +4291,7 @@ pub enum DescribeSMBFileSharesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSMBFileSharesError {
@@ -4355,14 +4355,14 @@ impl DescribeSMBFileSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSMBFileSharesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeSMBFileSharesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSMBFileSharesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSMBFileSharesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeSMBFileSharesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4399,7 +4399,7 @@ pub enum DescribeSMBSettingsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSMBSettingsError {
@@ -4463,14 +4463,14 @@ impl DescribeSMBSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSMBSettingsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeSMBSettingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSMBSettingsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSMBSettingsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeSMBSettingsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4507,7 +4507,7 @@ pub enum DescribeSnapshotScheduleErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotScheduleError {
@@ -4573,14 +4573,14 @@ impl DescribeSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSnapshotScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeSnapshotScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotScheduleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4619,7 +4619,7 @@ pub enum DescribeStorediSCSIVolumesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStorediSCSIVolumesError {
@@ -4685,14 +4685,14 @@ impl DescribeStorediSCSIVolumesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStorediSCSIVolumesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeStorediSCSIVolumesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorediSCSIVolumesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4731,7 +4731,7 @@ pub enum DescribeTapeArchivesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTapeArchivesError {
@@ -4795,14 +4795,14 @@ impl DescribeTapeArchivesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTapeArchivesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTapeArchivesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTapeArchivesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTapeArchivesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeTapeArchivesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4839,7 +4839,7 @@ pub enum DescribeTapeRecoveryPointsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTapeRecoveryPointsError {
@@ -4905,14 +4905,14 @@ impl DescribeTapeRecoveryPointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTapeRecoveryPointsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTapeRecoveryPointsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTapeRecoveryPointsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4951,7 +4951,7 @@ pub enum DescribeTapesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTapesError {
@@ -5015,11 +5015,11 @@ impl DescribeTapesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTapesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTapesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeTapesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeTapesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeTapesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5056,7 +5056,7 @@ pub enum DescribeUploadBufferErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUploadBufferError {
@@ -5120,14 +5120,14 @@ impl DescribeUploadBufferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUploadBufferErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeUploadBufferErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUploadBufferErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUploadBufferErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeUploadBufferErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5164,7 +5164,7 @@ pub enum DescribeVTLDevicesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVTLDevicesError {
@@ -5228,14 +5228,14 @@ impl DescribeVTLDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVTLDevicesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeVTLDevicesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVTLDevicesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVTLDevicesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeVTLDevicesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5272,7 +5272,7 @@ pub enum DescribeWorkingStorageErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkingStorageError {
@@ -5338,14 +5338,14 @@ impl DescribeWorkingStorageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkingStorageErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeWorkingStorageErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkingStorageErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkingStorageErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DescribeWorkingStorageErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5382,7 +5382,7 @@ pub enum DetachVolumeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachVolumeError {
@@ -5446,11 +5446,11 @@ impl DetachVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetachVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DetachVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DetachVolumeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DetachVolumeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5487,7 +5487,7 @@ pub enum DisableGatewayErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableGatewayError {
@@ -5551,11 +5551,11 @@ impl DisableGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableGatewayErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisableGatewayErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DisableGatewayErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DisableGatewayErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DisableGatewayErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5592,7 +5592,7 @@ pub enum DisassociateFileSystemErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFileSystemError {
@@ -5658,14 +5658,14 @@ impl DisassociateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisassociateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFileSystemErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `DisassociateFileSystemErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5702,7 +5702,7 @@ pub enum JoinDomainErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for JoinDomainError {
@@ -5766,11 +5766,11 @@ impl JoinDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `JoinDomainErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `JoinDomainErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, JoinDomainErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `JoinDomainErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `JoinDomainErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5807,7 +5807,7 @@ pub enum ListAutomaticTapeCreationPoliciesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAutomaticTapeCreationPoliciesError {
@@ -5878,14 +5878,14 @@ impl ListAutomaticTapeCreationPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5924,7 +5924,7 @@ pub enum ListFileSharesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFileSharesError {
@@ -5988,11 +5988,11 @@ impl ListFileSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFileSharesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListFileSharesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListFileSharesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListFileSharesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListFileSharesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6029,7 +6029,7 @@ pub enum ListFileSystemAssociationsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFileSystemAssociationsError {
@@ -6095,14 +6095,14 @@ impl ListFileSystemAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFileSystemAssociationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListFileSystemAssociationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListFileSystemAssociationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6141,7 +6141,7 @@ pub enum ListGatewaysErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGatewaysError {
@@ -6205,11 +6205,11 @@ impl ListGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGatewaysErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListGatewaysErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListGatewaysErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListGatewaysErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListGatewaysErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6246,7 +6246,7 @@ pub enum ListLocalDisksErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLocalDisksError {
@@ -6310,11 +6310,11 @@ impl ListLocalDisksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLocalDisksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListLocalDisksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListLocalDisksErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListLocalDisksErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListLocalDisksErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6351,7 +6351,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6415,14 +6415,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6459,7 +6459,7 @@ pub enum ListTapePoolsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTapePoolsError {
@@ -6523,11 +6523,11 @@ impl ListTapePoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTapePoolsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTapePoolsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListTapePoolsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListTapePoolsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListTapePoolsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6564,7 +6564,7 @@ pub enum ListTapesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTapesError {
@@ -6628,11 +6628,11 @@ impl ListTapesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTapesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTapesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListTapesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListTapesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListTapesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6669,7 +6669,7 @@ pub enum ListVolumeInitiatorsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVolumeInitiatorsError {
@@ -6733,14 +6733,14 @@ impl ListVolumeInitiatorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVolumeInitiatorsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListVolumeInitiatorsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListVolumeInitiatorsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6777,7 +6777,7 @@ pub enum ListVolumeRecoveryPointsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVolumeRecoveryPointsError {
@@ -6843,14 +6843,14 @@ impl ListVolumeRecoveryPointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVolumeRecoveryPointsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListVolumeRecoveryPointsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListVolumeRecoveryPointsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListVolumeRecoveryPointsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListVolumeRecoveryPointsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6889,7 +6889,7 @@ pub enum ListVolumesErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVolumesError {
@@ -6953,11 +6953,11 @@ impl ListVolumesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVolumesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListVolumesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListVolumesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListVolumesErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ListVolumesErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6994,7 +6994,7 @@ pub enum NotifyWhenUploadedErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyWhenUploadedError {
@@ -7058,14 +7058,14 @@ impl NotifyWhenUploadedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyWhenUploadedErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `NotifyWhenUploadedErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             NotifyWhenUploadedErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `NotifyWhenUploadedErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `NotifyWhenUploadedErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7102,7 +7102,7 @@ pub enum RefreshCacheErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RefreshCacheError {
@@ -7166,11 +7166,11 @@ impl RefreshCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RefreshCacheErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RefreshCacheErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, RefreshCacheErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `RefreshCacheErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `RefreshCacheErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7207,7 +7207,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -7273,14 +7273,14 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7317,7 +7317,7 @@ pub enum ResetCacheErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetCacheError {
@@ -7381,11 +7381,11 @@ impl ResetCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetCacheErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ResetCacheErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ResetCacheErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ResetCacheErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ResetCacheErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7422,7 +7422,7 @@ pub enum RetrieveTapeArchiveErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetrieveTapeArchiveError {
@@ -7486,14 +7486,14 @@ impl RetrieveTapeArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetrieveTapeArchiveErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RetrieveTapeArchiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RetrieveTapeArchiveErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7530,7 +7530,7 @@ pub enum RetrieveTapeRecoveryPointErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetrieveTapeRecoveryPointError {
@@ -7596,14 +7596,14 @@ impl RetrieveTapeRecoveryPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetrieveTapeRecoveryPointErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RetrieveTapeRecoveryPointErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RetrieveTapeRecoveryPointErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7642,7 +7642,7 @@ pub enum SetLocalConsolePasswordErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetLocalConsolePasswordError {
@@ -7708,14 +7708,14 @@ impl SetLocalConsolePasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetLocalConsolePasswordErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SetLocalConsolePasswordErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             SetLocalConsolePasswordErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `SetLocalConsolePasswordErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `SetLocalConsolePasswordErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7754,7 +7754,7 @@ pub enum SetSMBGuestPasswordErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSMBGuestPasswordError {
@@ -7818,14 +7818,14 @@ impl SetSMBGuestPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSMBGuestPasswordErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SetSMBGuestPasswordErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             SetSMBGuestPasswordErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7862,7 +7862,7 @@ pub enum ShutdownGatewayErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ShutdownGatewayError {
@@ -7926,11 +7926,11 @@ impl ShutdownGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ShutdownGatewayErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ShutdownGatewayErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ShutdownGatewayErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ShutdownGatewayErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `ShutdownGatewayErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7967,7 +7967,7 @@ pub enum StartAvailabilityMonitorTestErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAvailabilityMonitorTestError {
@@ -8033,14 +8033,14 @@ impl StartAvailabilityMonitorTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAvailabilityMonitorTestErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartAvailabilityMonitorTestErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartAvailabilityMonitorTestErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8079,7 +8079,7 @@ pub enum StartGatewayErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartGatewayError {
@@ -8143,11 +8143,11 @@ impl StartGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartGatewayErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartGatewayErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, StartGatewayErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `StartGatewayErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `StartGatewayErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8184,7 +8184,7 @@ pub enum UpdateAutomaticTapeCreationPolicyErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAutomaticTapeCreationPolicyError {
@@ -8255,14 +8255,14 @@ impl UpdateAutomaticTapeCreationPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8301,7 +8301,7 @@ pub enum UpdateBandwidthRateLimitErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBandwidthRateLimitError {
@@ -8367,14 +8367,14 @@ impl UpdateBandwidthRateLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBandwidthRateLimitErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateBandwidthRateLimitErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBandwidthRateLimitErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateBandwidthRateLimitErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8413,7 +8413,7 @@ pub enum UpdateBandwidthRateLimitScheduleErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBandwidthRateLimitScheduleError {
@@ -8482,14 +8482,14 @@ impl UpdateBandwidthRateLimitScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8528,7 +8528,7 @@ pub enum UpdateChapCredentialsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChapCredentialsError {
@@ -8592,14 +8592,14 @@ impl UpdateChapCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChapCredentialsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateChapCredentialsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChapCredentialsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChapCredentialsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateChapCredentialsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8636,7 +8636,7 @@ pub enum UpdateFileSystemAssociationErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFileSystemAssociationError {
@@ -8702,14 +8702,14 @@ impl UpdateFileSystemAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFileSystemAssociationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateFileSystemAssociationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemAssociationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8748,7 +8748,7 @@ pub enum UpdateGatewayInformationErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayInformationError {
@@ -8814,14 +8814,14 @@ impl UpdateGatewayInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayInformationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateGatewayInformationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayInformationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayInformationErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateGatewayInformationErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8860,7 +8860,7 @@ pub enum UpdateGatewaySoftwareNowErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewaySoftwareNowError {
@@ -8926,14 +8926,14 @@ impl UpdateGatewaySoftwareNowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewaySoftwareNowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateGatewaySoftwareNowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewaySoftwareNowErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewaySoftwareNowErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateGatewaySoftwareNowErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8972,7 +8972,7 @@ pub enum UpdateMaintenanceStartTimeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMaintenanceStartTimeError {
@@ -9038,14 +9038,14 @@ impl UpdateMaintenanceStartTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMaintenanceStartTimeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceStartTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMaintenanceStartTimeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9084,7 +9084,7 @@ pub enum UpdateNFSFileShareErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNFSFileShareError {
@@ -9148,14 +9148,14 @@ impl UpdateNFSFileShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNFSFileShareErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateNFSFileShareErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNFSFileShareErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNFSFileShareErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateNFSFileShareErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9192,7 +9192,7 @@ pub enum UpdateSMBFileShareErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSMBFileShareError {
@@ -9256,14 +9256,14 @@ impl UpdateSMBFileShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSMBFileShareErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateSMBFileShareErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSMBFileShareErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSMBFileShareErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateSMBFileShareErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9300,7 +9300,7 @@ pub enum UpdateSMBFileShareVisibilityErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSMBFileShareVisibilityError {
@@ -9366,14 +9366,14 @@ impl UpdateSMBFileShareVisibilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSMBFileShareVisibilityErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateSMBFileShareVisibilityErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSMBFileShareVisibilityErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9412,7 +9412,7 @@ pub enum UpdateSMBLocalGroupsErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSMBLocalGroupsError {
@@ -9476,14 +9476,14 @@ impl UpdateSMBLocalGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSMBLocalGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateSMBLocalGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSMBLocalGroupsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9520,7 +9520,7 @@ pub enum UpdateSMBSecurityStrategyErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSMBSecurityStrategyError {
@@ -9586,14 +9586,14 @@ impl UpdateSMBSecurityStrategyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSMBSecurityStrategyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateSMBSecurityStrategyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSMBSecurityStrategyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9632,7 +9632,7 @@ pub enum UpdateSnapshotScheduleErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSnapshotScheduleError {
@@ -9698,14 +9698,14 @@ impl UpdateSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSnapshotScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateSnapshotScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSnapshotScheduleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateSnapshotScheduleErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9742,7 +9742,7 @@ pub enum UpdateVTLDeviceTypeErrorKind {
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For
     /// more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVTLDeviceTypeError {
@@ -9806,14 +9806,14 @@ impl UpdateVTLDeviceTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVTLDeviceTypeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateVTLDeviceTypeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVTLDeviceTypeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException`.
+    /// Returns `true` if the error kind is `UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException`.
     pub fn is_invalid_gateway_request_exception(&self) -> bool {
         matches!(
             &self.kind,

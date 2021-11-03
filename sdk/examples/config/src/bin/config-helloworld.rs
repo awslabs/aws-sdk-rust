@@ -18,7 +18,7 @@ struct Opt {
     #[structopt(long)]
     resource_id: String,
 
-    /// The resource type, eg. "AWS::EC2::SecurityGroup"
+    /// The resource type, e.g. "AWS::EC2::SecurityGroup"
     #[structopt(long)]
     resource_type: String,
 

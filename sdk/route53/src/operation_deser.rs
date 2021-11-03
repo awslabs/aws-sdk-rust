@@ -702,7 +702,7 @@ pub fn parse_create_health_check_response(
         .map_err(crate::error::CreateHealthCheckError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_health_check_create_health_check_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateHealthCheckError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateHealthCheckError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1142,7 +1142,7 @@ pub fn parse_create_key_signing_key_response(
         .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_key_signing_key_create_key_signing_key_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateKeySigningKeyError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateKeySigningKeyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1274,7 +1274,7 @@ pub fn parse_create_query_logging_config_response(
         .map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_query_logging_config_create_query_logging_config_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateQueryLoggingConfigError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateQueryLoggingConfigError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1460,7 +1460,7 @@ pub fn parse_create_reusable_delegation_set_response(
         .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_reusable_delegation_set_create_reusable_delegation_set_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateReusableDelegationSetError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateReusableDelegationSetError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1578,7 +1578,7 @@ pub fn parse_create_traffic_policy_response(
         .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_traffic_policy_create_traffic_policy_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateTrafficPolicyError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateTrafficPolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1696,7 +1696,7 @@ pub fn parse_create_traffic_policy_instance_response(
         .map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_traffic_policy_instance_create_traffic_policy_instance_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateTrafficPolicyInstanceError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateTrafficPolicyInstanceError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1814,7 +1814,7 @@ pub fn parse_create_traffic_policy_version_response(
         .map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_traffic_policy_version_create_traffic_policy_version_output_location(response.headers())
-                                        .map_err(|_|crate::error::CreateTrafficPolicyVersionError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::error::CreateTrafficPolicyVersionError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })

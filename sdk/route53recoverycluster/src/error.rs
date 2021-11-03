@@ -24,7 +24,7 @@ pub enum GetRoutingControlStateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoutingControlStateError {
@@ -94,42 +94,42 @@ impl GetRoutingControlStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoutingControlStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoutingControlStateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoutingControlStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoutingControlStateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoutingControlStateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -180,7 +180,7 @@ pub enum UpdateRoutingControlStateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoutingControlStateError {
@@ -251,49 +251,49 @@ impl UpdateRoutingControlStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -345,7 +345,7 @@ pub enum UpdateRoutingControlStatesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoutingControlStatesError {
@@ -416,49 +416,49 @@ impl UpdateRoutingControlStatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoutingControlStatesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoutingControlStatesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -24,7 +24,7 @@ pub enum AcceptPageErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptPageError {
@@ -91,26 +91,26 @@ impl AcceptPageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptPageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AcceptPageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AcceptPageErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AcceptPageErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AcceptPageErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, AcceptPageErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `AcceptPageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptPageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptPageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptPageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AcceptPageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AcceptPageErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `AcceptPageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AcceptPageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AcceptPageErrorKind::ValidationException(_))
     }
@@ -153,7 +153,7 @@ pub enum ActivateContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateContactChannelError {
@@ -220,35 +220,35 @@ impl ActivateContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ActivateContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ActivateContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateContactChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ActivateContactChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateContactChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ActivateContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ActivateContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -298,7 +298,7 @@ pub enum CreateContactErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactError {
@@ -367,40 +367,40 @@ impl CreateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::ValidationException(_))
     }
@@ -447,7 +447,7 @@ pub enum CreateContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactChannelError {
@@ -515,42 +515,42 @@ impl CreateContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactChannelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactChannelErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -597,7 +597,7 @@ pub enum DeactivateContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateContactChannelError {
@@ -664,35 +664,35 @@ impl DeactivateContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeactivateContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeactivateContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateContactChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeactivateContactChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateContactChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeactivateContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeactivateContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -738,7 +738,7 @@ pub enum DeleteContactErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactError {
@@ -805,29 +805,29 @@ impl DeleteContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::ValidationException(_))
     }
@@ -870,7 +870,7 @@ pub enum DeleteContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactChannelError {
@@ -937,35 +937,35 @@ impl DeleteContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1013,7 +1013,7 @@ pub enum DescribeEngagementErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEngagementError {
@@ -1081,42 +1081,42 @@ impl DescribeEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngagementErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngagementErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngagementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngagementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngagementErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngagementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeEngagementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1165,7 +1165,7 @@ pub enum DescribePageErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePageError {
@@ -1233,36 +1233,36 @@ impl DescribePageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribePageErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePageErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePageErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribePageErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribePageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribePageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribePageErrorKind::ValidationException(_))
     }
@@ -1308,7 +1308,7 @@ pub enum GetContactErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactError {
@@ -1376,30 +1376,30 @@ impl GetContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::DataEncryptionException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::ValidationException(_))
     }
@@ -1445,7 +1445,7 @@ pub enum GetContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactChannelError {
@@ -1513,42 +1513,42 @@ impl GetContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactChannelErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1595,7 +1595,7 @@ pub enum GetContactPolicyErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactPolicyError {
@@ -1662,35 +1662,35 @@ impl GetContactPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContactPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactPolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetContactPolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactPolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContactPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetContactPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactPolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetContactPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1738,7 +1738,7 @@ pub enum ListContactChannelsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactChannelsError {
@@ -1806,42 +1806,42 @@ impl ListContactChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactChannelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactChannelsErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactChannelsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactChannelsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactChannelsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactChannelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListContactChannelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1886,7 +1886,7 @@ pub enum ListContactsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactsError {
@@ -1952,22 +1952,22 @@ impl ListContactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::ValidationException(_))
     }
@@ -2007,7 +2007,7 @@ pub enum ListEngagementsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEngagementsError {
@@ -2073,25 +2073,25 @@ impl ListEngagementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEngagementsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEngagementsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEngagementsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEngagementsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEngagementsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEngagementsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEngagementsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEngagementsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListEngagementsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListEngagementsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEngagementsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListEngagementsErrorKind::ValidationException(_))
     }
@@ -2133,7 +2133,7 @@ pub enum ListPageReceiptsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPageReceiptsError {
@@ -2200,35 +2200,35 @@ impl ListPageReceiptsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPageReceiptsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPageReceiptsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPageReceiptsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPageReceiptsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPageReceiptsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPageReceiptsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPageReceiptsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPageReceiptsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPageReceiptsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPageReceiptsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPageReceiptsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPageReceiptsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListPageReceiptsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPageReceiptsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2274,7 +2274,7 @@ pub enum ListPagesByContactErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPagesByContactError {
@@ -2341,35 +2341,35 @@ impl ListPagesByContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPagesByContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPagesByContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByContactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPagesByContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPagesByContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByContactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPagesByContactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByContactErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPagesByContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2415,7 +2415,7 @@ pub enum ListPagesByEngagementErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPagesByEngagementError {
@@ -2482,35 +2482,35 @@ impl ListPagesByEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPagesByEngagementErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPagesByEngagementErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByEngagementErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByEngagementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPagesByEngagementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByEngagementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPagesByEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByEngagementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByEngagementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPagesByEngagementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPagesByEngagementErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListPagesByEngagementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPagesByEngagementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2556,7 +2556,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2623,35 +2623,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2699,7 +2699,7 @@ pub enum PutContactPolicyErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutContactPolicyError {
@@ -2767,39 +2767,39 @@ impl PutContactPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContactPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutContactPolicyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContactPolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContactPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContactPolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutContactPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutContactPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2850,7 +2850,7 @@ pub enum SendActivationCodeErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendActivationCodeError {
@@ -2919,49 +2919,49 @@ impl SendActivationCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendActivationCodeErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `SendActivationCodeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SendActivationCodeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3011,7 +3011,7 @@ pub enum StartEngagementErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartEngagementError {
@@ -3079,39 +3079,39 @@ impl StartEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEngagementErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEngagementErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEngagementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEngagementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartEngagementErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartEngagementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartEngagementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartEngagementErrorKind::ValidationException(_))
     }
@@ -3155,7 +3155,7 @@ pub enum StopEngagementErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopEngagementError {
@@ -3222,32 +3222,32 @@ impl StopEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopEngagementErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopEngagementErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopEngagementErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopEngagementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopEngagementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopEngagementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopEngagementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopEngagementErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopEngagementErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StopEngagementErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StopEngagementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopEngagementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopEngagementErrorKind::ValidationException(_))
     }
@@ -3292,7 +3292,7 @@ pub enum TagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3360,33 +3360,33 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -3430,7 +3430,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3497,29 +3497,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -3566,7 +3566,7 @@ pub enum UpdateContactErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactError {
@@ -3635,43 +3635,43 @@ impl UpdateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::ValidationException(_))
     }
@@ -3720,7 +3720,7 @@ pub enum UpdateContactChannelErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
     /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactChannelError {
@@ -3789,49 +3789,49 @@ impl UpdateContactChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::DataEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::DataEncryptionException`.
     pub fn is_data_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::DataEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactChannelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateContactChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

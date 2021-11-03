@@ -20,7 +20,7 @@ pub enum CreateDevicePoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDevicePoolError {
@@ -86,22 +86,22 @@ impl CreateDevicePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDevicePoolErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateDevicePoolErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, CreateDevicePoolErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `CreateDevicePoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDevicePoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevicePoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevicePoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDevicePoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDevicePoolErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDevicePoolErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateDevicePoolErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -142,7 +142,7 @@ pub enum CreateInstanceProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceProfileError {
@@ -208,28 +208,28 @@ impl CreateInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateInstanceProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -270,7 +270,7 @@ pub enum CreateNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkProfileError {
@@ -336,28 +336,28 @@ impl CreateNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNetworkProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNetworkProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateNetworkProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -400,7 +400,7 @@ pub enum CreateProjectErrorKind {
     ServiceAccountException(crate::error::ServiceAccountException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -467,29 +467,29 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ServiceAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::TagOperationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::TagOperationException`.
     pub fn is_tag_operation_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::TagOperationException(_))
     }
@@ -528,7 +528,7 @@ pub enum CreateRemoteAccessSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRemoteAccessSessionError {
@@ -594,28 +594,28 @@ impl CreateRemoteAccessSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRemoteAccessSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateRemoteAccessSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRemoteAccessSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRemoteAccessSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRemoteAccessSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRemoteAccessSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRemoteAccessSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRemoteAccessSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRemoteAccessSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRemoteAccessSessionErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateRemoteAccessSessionErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -655,7 +655,7 @@ pub enum CreateTestGridProjectErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTestGridProjectError {
@@ -720,21 +720,21 @@ impl CreateTestGridProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTestGridProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateTestGridProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTestGridProjectErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTestGridProjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateTestGridProjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTestGridProjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTestGridProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTestGridProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -773,7 +773,7 @@ pub enum CreateTestGridUrlErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTestGridUrlError {
@@ -838,18 +838,18 @@ impl CreateTestGridUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTestGridUrlErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateTestGridUrlErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, CreateTestGridUrlErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `CreateTestGridUrlErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateTestGridUrlErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTestGridUrlErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTestGridUrlErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateTestGridUrlErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTestGridUrlErrorKind::NotFoundException(_))
     }
@@ -886,7 +886,7 @@ pub enum CreateUploadErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUploadError {
@@ -952,19 +952,19 @@ impl CreateUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUploadErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateUploadErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `CreateUploadErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUploadErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateUploadErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateUploadErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateUploadErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateUploadErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateUploadErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1003,7 +1003,7 @@ pub enum CreateVPCEConfigurationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVPCEConfigurationError {
@@ -1068,21 +1068,21 @@ impl CreateVPCEConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVPCEConfigurationErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `CreateVPCEConfigurationErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCEConfigurationErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCEConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVPCEConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCEConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCEConfigurationErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `CreateVPCEConfigurationErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1122,7 +1122,7 @@ pub enum DeleteDevicePoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDevicePoolError {
@@ -1188,22 +1188,22 @@ impl DeleteDevicePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDevicePoolErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteDevicePoolErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, DeleteDevicePoolErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `DeleteDevicePoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteDevicePoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDevicePoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDevicePoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDevicePoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDevicePoolErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDevicePoolErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteDevicePoolErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1244,7 +1244,7 @@ pub enum DeleteInstanceProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceProfileError {
@@ -1310,28 +1310,28 @@ impl DeleteInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteInstanceProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1372,7 +1372,7 @@ pub enum DeleteNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkProfileError {
@@ -1438,28 +1438,28 @@ impl DeleteNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNetworkProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNetworkProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNetworkProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNetworkProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteNetworkProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1500,7 +1500,7 @@ pub enum DeleteProjectErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -1566,22 +1566,22 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1622,7 +1622,7 @@ pub enum DeleteRemoteAccessSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRemoteAccessSessionError {
@@ -1688,28 +1688,28 @@ impl DeleteRemoteAccessSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRemoteAccessSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteRemoteAccessSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemoteAccessSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemoteAccessSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteRemoteAccessSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemoteAccessSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemoteAccessSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRemoteAccessSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRemoteAccessSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRemoteAccessSessionErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteRemoteAccessSessionErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1750,7 +1750,7 @@ pub enum DeleteRunErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRunError {
@@ -1816,19 +1816,19 @@ impl DeleteRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRunErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteRunErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, DeleteRunErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `DeleteRunErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteRunErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteRunErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteRunErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRunErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRunErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteRunErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteRunErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, DeleteRunErrorKind::ServiceAccountException(_))
     }
@@ -1867,7 +1867,7 @@ pub enum DeleteTestGridProjectErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTestGridProjectError {
@@ -1933,28 +1933,28 @@ impl DeleteTestGridProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTestGridProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteTestGridProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTestGridProjectErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTestGridProjectErrorKind::CannotDeleteException`.
+    /// Returns `true` if the error kind is `DeleteTestGridProjectErrorKind::CannotDeleteException`.
     pub fn is_cannot_delete_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTestGridProjectErrorKind::CannotDeleteException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTestGridProjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteTestGridProjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTestGridProjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTestGridProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTestGridProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1995,7 +1995,7 @@ pub enum DeleteUploadErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUploadError {
@@ -2061,19 +2061,19 @@ impl DeleteUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUploadErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteUploadErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, DeleteUploadErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `DeleteUploadErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteUploadErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteUploadErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteUploadErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUploadErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUploadErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteUploadErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteUploadErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2115,7 +2115,7 @@ pub enum DeleteVPCEConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVPCEConfigurationError {
@@ -2181,28 +2181,28 @@ impl DeleteVPCEConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVPCEConfigurationErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `DeleteVPCEConfigurationErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCEConfigurationErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCEConfigurationErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DeleteVPCEConfigurationErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCEConfigurationErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCEConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVPCEConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCEConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCEConfigurationErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `DeleteVPCEConfigurationErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2243,7 +2243,7 @@ pub enum GetAccountSettingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSettingsError {
@@ -2309,28 +2309,28 @@ impl GetAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2371,7 +2371,7 @@ pub enum GetDeviceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceError {
@@ -2437,19 +2437,19 @@ impl GetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ServiceAccountException(_))
     }
@@ -2487,7 +2487,7 @@ pub enum GetDeviceInstanceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceInstanceError {
@@ -2553,22 +2553,22 @@ impl GetDeviceInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceInstanceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetDeviceInstanceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceInstanceErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetDeviceInstanceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDeviceInstanceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceInstanceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeviceInstanceErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetDeviceInstanceErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2609,7 +2609,7 @@ pub enum GetDevicePoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevicePoolError {
@@ -2675,22 +2675,22 @@ impl GetDevicePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevicePoolErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetDevicePoolErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetDevicePoolErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetDevicePoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDevicePoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicePoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicePoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDevicePoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDevicePoolErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDevicePoolErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetDevicePoolErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2731,7 +2731,7 @@ pub enum GetDevicePoolCompatibilityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevicePoolCompatibilityError {
@@ -2797,28 +2797,28 @@ impl GetDevicePoolCompatibilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevicePoolCompatibilityErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetDevicePoolCompatibilityErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicePoolCompatibilityErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicePoolCompatibilityErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDevicePoolCompatibilityErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicePoolCompatibilityErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicePoolCompatibilityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDevicePoolCompatibilityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicePoolCompatibilityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicePoolCompatibilityErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetDevicePoolCompatibilityErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2859,7 +2859,7 @@ pub enum GetInstanceProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceProfileError {
@@ -2925,28 +2925,28 @@ impl GetInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetInstanceProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2987,7 +2987,7 @@ pub enum GetJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobError {
@@ -3053,19 +3053,19 @@ impl GetJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::ServiceAccountException(_))
     }
@@ -3103,7 +3103,7 @@ pub enum GetNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetNetworkProfileError {
@@ -3169,22 +3169,22 @@ impl GetNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetNetworkProfileErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetNetworkProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetNetworkProfileErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetNetworkProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetNetworkProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3228,7 +3228,7 @@ pub enum GetOfferingStatusErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOfferingStatusError {
@@ -3295,29 +3295,29 @@ impl GetOfferingStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOfferingStatusErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetOfferingStatusErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetOfferingStatusErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetOfferingStatusErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetOfferingStatusErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOfferingStatusErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetOfferingStatusErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `GetOfferingStatusErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOfferingStatusErrorKind::NotEligibleException(_)
         )
     }
-    /// Returns true if the error kind is `GetOfferingStatusErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOfferingStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOfferingStatusErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetOfferingStatusErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetOfferingStatusErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3359,7 +3359,7 @@ pub enum GetProjectErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProjectError {
@@ -3425,19 +3425,19 @@ impl GetProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetProjectErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetProjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetProjectErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetProjectErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetProjectErrorKind::ServiceAccountException(_))
     }
@@ -3475,7 +3475,7 @@ pub enum GetRemoteAccessSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRemoteAccessSessionError {
@@ -3541,28 +3541,28 @@ impl GetRemoteAccessSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRemoteAccessSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetRemoteAccessSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRemoteAccessSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetRemoteAccessSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetRemoteAccessSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRemoteAccessSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetRemoteAccessSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRemoteAccessSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRemoteAccessSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRemoteAccessSessionErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetRemoteAccessSessionErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3603,7 +3603,7 @@ pub enum GetRunErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRunError {
@@ -3669,19 +3669,19 @@ impl GetRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRunErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetRunErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetRunErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetRunErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetRunErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetRunErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetRunErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRunErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRunErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRunErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetRunErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetRunErrorKind::ServiceAccountException(_))
     }
@@ -3719,7 +3719,7 @@ pub enum GetSuiteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuiteError {
@@ -3785,19 +3785,19 @@ impl GetSuiteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSuiteErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetSuiteErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetSuiteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSuiteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetSuiteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSuiteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSuiteErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetSuiteErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteErrorKind::ServiceAccountException(_))
     }
@@ -3835,7 +3835,7 @@ pub enum GetTestErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTestError {
@@ -3901,19 +3901,19 @@ impl GetTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTestErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetTestErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetTestErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetTestErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetTestErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetTestErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetTestErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTestErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTestErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTestErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetTestErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetTestErrorKind::ServiceAccountException(_))
     }
@@ -3950,7 +3950,7 @@ pub enum GetTestGridProjectErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTestGridProjectError {
@@ -4015,21 +4015,21 @@ impl GetTestGridProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTestGridProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetTestGridProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTestGridProjectErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetTestGridProjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTestGridProjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTestGridProjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTestGridProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTestGridProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4068,7 +4068,7 @@ pub enum GetTestGridSessionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTestGridSessionError {
@@ -4133,21 +4133,21 @@ impl GetTestGridSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTestGridSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetTestGridSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTestGridSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetTestGridSessionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTestGridSessionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTestGridSessionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTestGridSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTestGridSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4187,7 +4187,7 @@ pub enum GetUploadErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUploadError {
@@ -4253,19 +4253,19 @@ impl GetUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUploadErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetUploadErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, GetUploadErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `GetUploadErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetUploadErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetUploadErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetUploadErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetUploadErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUploadErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetUploadErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetUploadErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, GetUploadErrorKind::ServiceAccountException(_))
     }
@@ -4301,7 +4301,7 @@ pub enum GetVPCEConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVPCEConfigurationError {
@@ -4366,21 +4366,21 @@ impl GetVPCEConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVPCEConfigurationErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `GetVPCEConfigurationErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVPCEConfigurationErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetVPCEConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVPCEConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVPCEConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVPCEConfigurationErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `GetVPCEConfigurationErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4420,7 +4420,7 @@ pub enum InstallToRemoteAccessSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InstallToRemoteAccessSessionError {
@@ -4486,28 +4486,28 @@ impl InstallToRemoteAccessSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InstallToRemoteAccessSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `InstallToRemoteAccessSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             InstallToRemoteAccessSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `InstallToRemoteAccessSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `InstallToRemoteAccessSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             InstallToRemoteAccessSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `InstallToRemoteAccessSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `InstallToRemoteAccessSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InstallToRemoteAccessSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InstallToRemoteAccessSessionErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `InstallToRemoteAccessSessionErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4548,7 +4548,7 @@ pub enum ListArtifactsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListArtifactsError {
@@ -4614,22 +4614,22 @@ impl ListArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListArtifactsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListArtifactsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListArtifactsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListArtifactsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListArtifactsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListArtifactsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListArtifactsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListArtifactsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListArtifactsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListArtifactsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListArtifactsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4670,7 +4670,7 @@ pub enum ListDeviceInstancesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceInstancesError {
@@ -4736,28 +4736,28 @@ impl ListDeviceInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeviceInstancesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListDeviceInstancesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceInstancesErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceInstancesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListDeviceInstancesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceInstancesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceInstancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDeviceInstancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceInstancesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceInstancesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListDeviceInstancesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4798,7 +4798,7 @@ pub enum ListDevicePoolsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicePoolsError {
@@ -4864,22 +4864,22 @@ impl ListDevicePoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevicePoolsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListDevicePoolsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListDevicePoolsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListDevicePoolsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListDevicePoolsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicePoolsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicePoolsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDevicePoolsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListDevicePoolsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListDevicePoolsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListDevicePoolsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4920,7 +4920,7 @@ pub enum ListDevicesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicesError {
@@ -4986,19 +4986,19 @@ impl ListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::ServiceAccountException(_))
     }
@@ -5036,7 +5036,7 @@ pub enum ListInstanceProfilesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstanceProfilesError {
@@ -5102,28 +5102,28 @@ impl ListInstanceProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstanceProfilesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceProfilesErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceProfilesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceProfilesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceProfilesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstanceProfilesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstanceProfilesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListInstanceProfilesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5164,7 +5164,7 @@ pub enum ListJobsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -5230,19 +5230,19 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ServiceAccountException(_))
     }
@@ -5280,7 +5280,7 @@ pub enum ListNetworkProfilesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNetworkProfilesError {
@@ -5346,28 +5346,28 @@ impl ListNetworkProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNetworkProfilesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListNetworkProfilesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNetworkProfilesErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListNetworkProfilesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListNetworkProfilesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNetworkProfilesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListNetworkProfilesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListNetworkProfilesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNetworkProfilesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListNetworkProfilesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListNetworkProfilesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5411,7 +5411,7 @@ pub enum ListOfferingPromotionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingPromotionsError {
@@ -5478,35 +5478,35 @@ impl ListOfferingPromotionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOfferingPromotionsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListOfferingPromotionsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingPromotionsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingPromotionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListOfferingPromotionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingPromotionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingPromotionsErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `ListOfferingPromotionsErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingPromotionsErrorKind::NotEligibleException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingPromotionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListOfferingPromotionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingPromotionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingPromotionsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListOfferingPromotionsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5551,7 +5551,7 @@ pub enum ListOfferingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingsError {
@@ -5618,26 +5618,26 @@ impl ListOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::NotEligibleException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5682,7 +5682,7 @@ pub enum ListOfferingTransactionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingTransactionsError {
@@ -5749,35 +5749,35 @@ impl ListOfferingTransactionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOfferingTransactionsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListOfferingTransactionsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingTransactionsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingTransactionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListOfferingTransactionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingTransactionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingTransactionsErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `ListOfferingTransactionsErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingTransactionsErrorKind::NotEligibleException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingTransactionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListOfferingTransactionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingTransactionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingTransactionsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListOfferingTransactionsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5819,7 +5819,7 @@ pub enum ListProjectsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -5885,19 +5885,19 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5938,7 +5938,7 @@ pub enum ListRemoteAccessSessionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRemoteAccessSessionsError {
@@ -6004,28 +6004,28 @@ impl ListRemoteAccessSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRemoteAccessSessionsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListRemoteAccessSessionsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRemoteAccessSessionsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListRemoteAccessSessionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListRemoteAccessSessionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRemoteAccessSessionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListRemoteAccessSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRemoteAccessSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRemoteAccessSessionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRemoteAccessSessionsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListRemoteAccessSessionsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6066,7 +6066,7 @@ pub enum ListRunsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRunsError {
@@ -6132,19 +6132,19 @@ impl ListRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRunsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListRunsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListRunsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListRunsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListRunsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListRunsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListRunsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRunsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListRunsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListRunsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListRunsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListRunsErrorKind::ServiceAccountException(_))
     }
@@ -6182,7 +6182,7 @@ pub enum ListSamplesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSamplesError {
@@ -6248,19 +6248,19 @@ impl ListSamplesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSamplesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListSamplesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListSamplesErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListSamplesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListSamplesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListSamplesErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListSamplesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListSamplesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListSamplesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListSamplesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListSamplesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListSamplesErrorKind::ServiceAccountException(_))
     }
@@ -6298,7 +6298,7 @@ pub enum ListSuitesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSuitesError {
@@ -6364,19 +6364,19 @@ impl ListSuitesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSuitesErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListSuitesErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListSuitesErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListSuitesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListSuitesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListSuitesErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListSuitesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListSuitesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListSuitesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListSuitesErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListSuitesErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListSuitesErrorKind::ServiceAccountException(_))
     }
@@ -6412,7 +6412,7 @@ pub enum ListTagsForResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6477,21 +6477,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TagOperationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TagOperationException`.
     pub fn is_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6528,7 +6528,7 @@ pub enum ListTestGridProjectsErrorKind {
     /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
     /// error. </p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTestGridProjectsError {
@@ -6592,14 +6592,14 @@ impl ListTestGridProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTestGridProjectsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTestGridProjectsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridProjectsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridProjectsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTestGridProjectsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6637,7 +6637,7 @@ pub enum ListTestGridSessionActionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTestGridSessionActionsError {
@@ -6702,21 +6702,21 @@ impl ListTestGridSessionActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTestGridSessionActionsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionActionsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionActionsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionActionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionActionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionActionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionActionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionActionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6755,7 +6755,7 @@ pub enum ListTestGridSessionArtifactsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTestGridSessionArtifactsError {
@@ -6822,21 +6822,21 @@ impl ListTestGridSessionArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTestGridSessionArtifactsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionArtifactsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionArtifactsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionArtifactsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionArtifactsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionArtifactsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionArtifactsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionArtifactsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6875,7 +6875,7 @@ pub enum ListTestGridSessionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTestGridSessionsError {
@@ -6940,21 +6940,21 @@ impl ListTestGridSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTestGridSessionsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTestGridSessionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTestGridSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTestGridSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6994,7 +6994,7 @@ pub enum ListTestsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTestsError {
@@ -7060,19 +7060,19 @@ impl ListTestsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTestsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListTestsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListTestsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListTestsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTestsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListTestsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListTestsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTestsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTestsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTestsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListTestsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListTestsErrorKind::ServiceAccountException(_))
     }
@@ -7110,7 +7110,7 @@ pub enum ListUniqueProblemsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUniqueProblemsError {
@@ -7176,28 +7176,28 @@ impl ListUniqueProblemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUniqueProblemsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListUniqueProblemsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUniqueProblemsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListUniqueProblemsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListUniqueProblemsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUniqueProblemsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListUniqueProblemsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListUniqueProblemsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUniqueProblemsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUniqueProblemsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListUniqueProblemsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7238,7 +7238,7 @@ pub enum ListUploadsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUploadsError {
@@ -7304,19 +7304,19 @@ impl ListUploadsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUploadsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListUploadsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ListUploadsErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ListUploadsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListUploadsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListUploadsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListUploadsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListUploadsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUploadsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUploadsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListUploadsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ListUploadsErrorKind::ServiceAccountException(_))
     }
@@ -7350,7 +7350,7 @@ pub enum ListVPCEConfigurationsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVPCEConfigurationsError {
@@ -7414,14 +7414,14 @@ impl ListVPCEConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVPCEConfigurationsErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ListVPCEConfigurationsErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVPCEConfigurationsErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListVPCEConfigurationsErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ListVPCEConfigurationsErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7463,7 +7463,7 @@ pub enum PurchaseOfferingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseOfferingError {
@@ -7530,29 +7530,29 @@ impl PurchaseOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::NotEligibleException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7597,7 +7597,7 @@ pub enum RenewOfferingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RenewOfferingError {
@@ -7664,26 +7664,26 @@ impl RenewOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RenewOfferingErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `RenewOfferingErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, RenewOfferingErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `RenewOfferingErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RenewOfferingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RenewOfferingErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RenewOfferingErrorKind::NotEligibleException`.
+    /// Returns `true` if the error kind is `RenewOfferingErrorKind::NotEligibleException`.
     pub fn is_not_eligible_exception(&self) -> bool {
         matches!(&self.kind, RenewOfferingErrorKind::NotEligibleException(_))
     }
-    /// Returns true if the error kind is `RenewOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RenewOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RenewOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RenewOfferingErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `RenewOfferingErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7727,7 +7727,7 @@ pub enum ScheduleRunErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ScheduleRunError {
@@ -7794,23 +7794,23 @@ impl ScheduleRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ScheduleRunErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `ScheduleRunErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, ScheduleRunErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `ScheduleRunErrorKind::IdempotencyException`.
+    /// Returns `true` if the error kind is `ScheduleRunErrorKind::IdempotencyException`.
     pub fn is_idempotency_exception(&self) -> bool {
         matches!(&self.kind, ScheduleRunErrorKind::IdempotencyException(_))
     }
-    /// Returns true if the error kind is `ScheduleRunErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ScheduleRunErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ScheduleRunErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ScheduleRunErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ScheduleRunErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ScheduleRunErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ScheduleRunErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `ScheduleRunErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, ScheduleRunErrorKind::ServiceAccountException(_))
     }
@@ -7849,7 +7849,7 @@ pub enum StopJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopJobError {
@@ -7915,19 +7915,19 @@ impl StopJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopJobErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `StopJobErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, StopJobErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `StopJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StopJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StopJobErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StopJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopJobErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `StopJobErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, StopJobErrorKind::ServiceAccountException(_))
     }
@@ -7965,7 +7965,7 @@ pub enum StopRemoteAccessSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopRemoteAccessSessionError {
@@ -8031,28 +8031,28 @@ impl StopRemoteAccessSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopRemoteAccessSessionErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `StopRemoteAccessSessionErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRemoteAccessSessionErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `StopRemoteAccessSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StopRemoteAccessSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRemoteAccessSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StopRemoteAccessSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopRemoteAccessSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRemoteAccessSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopRemoteAccessSessionErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `StopRemoteAccessSessionErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8093,7 +8093,7 @@ pub enum StopRunErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopRunError {
@@ -8159,19 +8159,19 @@ impl StopRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopRunErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `StopRunErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, StopRunErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `StopRunErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StopRunErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StopRunErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StopRunErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopRunErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopRunErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopRunErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `StopRunErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(&self.kind, StopRunErrorKind::ServiceAccountException(_))
     }
@@ -8213,7 +8213,7 @@ pub enum TagResourceErrorKind {
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
     /// can be applied to a repository is 50. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -8280,23 +8280,23 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagOperationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagOperationException`.
     pub fn is_tag_operation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagOperationException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagPolicyException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -8333,7 +8333,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -8398,15 +8398,15 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagOperationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagOperationException`.
     pub fn is_tag_operation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagOperationException(_))
     }
@@ -8443,7 +8443,7 @@ pub enum UpdateDeviceInstanceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceInstanceError {
@@ -8509,28 +8509,28 @@ impl UpdateDeviceInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceInstanceErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateDeviceInstanceErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceInstanceErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceInstanceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeviceInstanceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceInstanceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceInstanceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceInstanceErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateDeviceInstanceErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8571,7 +8571,7 @@ pub enum UpdateDevicePoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDevicePoolError {
@@ -8637,22 +8637,22 @@ impl UpdateDevicePoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDevicePoolErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateDevicePoolErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, UpdateDevicePoolErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `UpdateDevicePoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDevicePoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevicePoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevicePoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDevicePoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDevicePoolErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDevicePoolErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateDevicePoolErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8693,7 +8693,7 @@ pub enum UpdateInstanceProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInstanceProfileError {
@@ -8759,28 +8759,28 @@ impl UpdateInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInstanceProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateInstanceProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateInstanceProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInstanceProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateInstanceProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8821,7 +8821,7 @@ pub enum UpdateNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNetworkProfileError {
@@ -8887,28 +8887,28 @@ impl UpdateNetworkProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNetworkProfileErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNetworkProfileErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateNetworkProfileErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8949,7 +8949,7 @@ pub enum UpdateProjectErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -9015,22 +9015,22 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9072,7 +9072,7 @@ pub enum UpdateTestGridProjectErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTestGridProjectError {
@@ -9138,28 +9138,28 @@ impl UpdateTestGridProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTestGridProjectErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateTestGridProjectErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTestGridProjectErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTestGridProjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateTestGridProjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTestGridProjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTestGridProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTestGridProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTestGridProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTestGridProjectErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTestGridProjectErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9200,7 +9200,7 @@ pub enum UpdateUploadErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUploadError {
@@ -9266,19 +9266,19 @@ impl UpdateUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUploadErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateUploadErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(&self.kind, UpdateUploadErrorKind::ArgumentException(_))
     }
-    /// Returns true if the error kind is `UpdateUploadErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateUploadErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateUploadErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateUploadErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUploadErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateUploadErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateUploadErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateUploadErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9320,7 +9320,7 @@ pub enum UpdateVPCEConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>There was a problem with the service account.</p>
     ServiceAccountException(crate::error::ServiceAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVPCEConfigurationError {
@@ -9386,28 +9386,28 @@ impl UpdateVPCEConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVPCEConfigurationErrorKind::ArgumentException`.
+    /// Returns `true` if the error kind is `UpdateVPCEConfigurationErrorKind::ArgumentException`.
     pub fn is_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVPCEConfigurationErrorKind::ArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVPCEConfigurationErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateVPCEConfigurationErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVPCEConfigurationErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVPCEConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVPCEConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVPCEConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVPCEConfigurationErrorKind::ServiceAccountException`.
+    /// Returns `true` if the error kind is `UpdateVPCEConfigurationErrorKind::ServiceAccountException`.
     pub fn is_service_account_exception(&self) -> bool {
         matches!(
             &self.kind,
