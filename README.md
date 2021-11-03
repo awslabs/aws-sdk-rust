@@ -18,8 +18,8 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
     ```toml
     [dependencies]
-    aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.22-alpha", package = "aws-config" }
-    aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.22-alpha", package = "aws-sdk-dynamodb" }
+    aws-config = "0.0.22-alpha"
+    aws-sdk-dynamodb = "0.0.22-alpha"
     tokio = { version = "1", features = ["full"] }
     ```
 
@@ -27,8 +27,9 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
    - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
    - Web Identity Token credentials from the environment or container (including EKS)
    - The default credentials files located in `~/.aws/config` and `~/.aws/credentials` (location can vary per platform)
+   - ECS Container Credentials (IAM roles for tasks)
    - EC2 Instance Metadata Service (IAM Roles attached to instance)
-**Note:** SSO, and ECS credential sources are not supported yet.
+**Note:** SSO is not supported yet.
 
 4. Make a request using DynamoDB
 
