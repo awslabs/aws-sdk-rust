@@ -50,10 +50,15 @@ impl fmt::Display for PackageHandle {
 /// Represents a crate (called Package since crate is a reserved word).
 #[derive(Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Package {
+    /// Package name and version information
     pub handle: PackageHandle,
+    /// Package category (Generated, SmithyRuntime, AwsRuntime, etc.)
     pub category: PackageCategory,
+    /// Location to the crate on the current file system
     pub crate_path: PathBuf,
+    /// Location to the crate manifest on the current file system
     pub manifest_path: PathBuf,
+    /// Dependencies used by this package
     pub local_dependencies: BTreeSet<PackageHandle>,
 }
 

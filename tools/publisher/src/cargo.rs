@@ -6,13 +6,11 @@
 //! Module for interacting with Cargo.
 
 mod add_owner;
-mod check_published;
 mod get_owners;
 mod publish;
 mod yank;
 
 pub use add_owner::AddOwner;
-pub use check_published::CheckPublished;
 pub use get_owners::GetOwners;
 pub use publish::Publish;
 pub use yank::Yank;

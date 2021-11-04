@@ -6,16 +6,27 @@
 use crate::cargo::{self, CargoOperation};
 use crate::fs::Fs;
 use crate::package::{
-    continue_batches_from, discover_package_batches, Package, PackageBatch, PackageStats,
+    continue_batches_from, discover_package_batches, Package, PackageBatch, PackageHandle,
+    PackageStats,
 };
 use crate::repo::discover_repository;
 use crate::{CRATE_OWNER, REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
+use crates_io_api::AsyncClient;
 use dialoguer::Confirm;
+use lazy_static::lazy_static;
 use std::sync::Arc;
 use std::time::Duration;
 use tokio::sync::Semaphore;
 use tracing::info;
+
+lazy_static! {
+    static ref CRATES_IO_CLIENT: AsyncClient = AsyncClient::new(
+        "AWS_RUST_SDK_PUBLISHER (aws-sdk-rust@amazon.com)",
+        Duration::from_secs(1)
+    )
+    .expect("valid client");
+}
 
 pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
     // Make sure cargo exists
@@ -49,7 +60,7 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
             let permit = semaphore.clone().acquire_owned().await.unwrap();
             tasks.push(tokio::spawn(async move {
                 // Only publish if it hasn't been published yet.
-                if !is_published(&package).await? {
+                if !is_published(&package.handle).await? {
                     info!("Publishing `{}`...", package.handle);
                     cargo::Publish::new(&package.handle, &package.crate_path)
                         .spawn()
@@ -75,30 +86,26 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
     Ok(())
 }
 
-async fn is_published(package: &Package) -> Result<bool> {
-    cargo::CheckPublished::new(&package.handle, &package.crate_path)
-        .spawn()
-        .await
+async fn is_published(handle: &PackageHandle) -> Result<bool> {
+    let expected_version = handle.version.to_string();
+    let crate_info = CRATES_IO_CLIENT.get_crate(&handle.name).await?;
+    Ok(crate_info
+        .versions
+        .iter()
+        .any(|crate_version| crate_version.num == expected_version))
 }
 
 /// Waits for the given package to show up on crates.io
 async fn wait_for_eventual_consistency(package: &Package) -> Result<()> {
-    // HACK: the correct version of aws-sigv4 won't ever be shown by search unless
-    // we yank the original version by David or get out of alpha/dev preview.
-    // Just skip it on this check for now.
-    if package.handle.name == "aws-sigv4" {
-        return Ok(());
-    }
-
     let max_wait_time = 10usize;
     for _ in 0..max_wait_time {
-        if !is_published(package).await? {
+        if !is_published(&package.handle).await? {
             tokio::time::sleep(Duration::from_secs(1)).await;
         } else {
             return Ok(());
         }
     }
-    if !is_published(package).await? {
+    if !is_published(&package.handle).await? {
         return Err(anyhow::Error::msg(format!(
             "package wasn't found on crates.io {} seconds after publish",
             max_wait_time
@@ -151,5 +158,21 @@ fn confirm_plan(batches: &[PackageBatch], stats: PackageStats) -> Result<()> {
         Ok(())
     } else {
         Err(anyhow::Error::msg("aborted"))
+    }
+}
+
+#[cfg(test)]
+mod test {
+
+    use super::*;
+    use crate::package::PackageHandle;
+
+    #[tokio::test]
+    async fn crate_published_works() {
+        let handle = PackageHandle::new("aws-smithy-http", "0.27.0-alpha.1".parse().unwrap());
+        assert_eq!(is_published(&handle).await.expect("failed"), true);
+        // we will never publish this version
+        let handle = PackageHandle::new("aws-smithy-http", "0.21.0-alpha.1".parse().unwrap());
+        assert_eq!(is_published(&handle).await.expect("failed"), false);
     }
 }
